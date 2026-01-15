@@ -1,0 +1,22 @@
+{
+  "name": "keyboard-maestro-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Keyboard Maestro automation - log analysis, macro CRUD, and execution",
+  "type": "module",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "verify": "tsc && node build/verify.js",
+    "setup": "tsc && node build/setup.js",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  }
+}

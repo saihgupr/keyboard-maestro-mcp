@@ -1,0 +1,5 @@
+node_modules/
+build/
+images/
+.git-backup-*
+.DS_Store
