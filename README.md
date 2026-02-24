@@ -38,7 +38,7 @@ Your AI assistant becomes a power user of your Mac. It can read, create, modify,
 ## Quick Start
 
 ```bash
-git clone https://github.com/DiggingForDinos/keyboard-maestro-mcp.git
+git clone https://github.com/saihgupr/keyboard-maestro-mcp.git
 cd keyboard-maestro-mcp
 npm install
 npm run setup
@@ -123,6 +123,6 @@ If you prefer to configure manually, add this to your AI client's MCP config:
 
 ## Support
 
-Having issues? [Open an issue on GitHub](https://github.com/DiggingForDinos/keyboard-maestro-mcp/issues)
+Having issues? [Open an issue on GitHub](https://github.com/saihgupr/keyboard-maestro-mcp/issues)
 
 If you like this project, please consider giving the repo a ⭐ star!
