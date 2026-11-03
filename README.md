@@ -104,21 +104,19 @@ The setup wizard will configure your AI client automatically. It supports:
 | `km_get_errors` | Find recent macro failures |
 | `km_get_log` | Search the engine log |
 
-## Testing Your Setup
+## Support
 
-**Quick check:**
+Having issues? [Open an issue on GitHub](https://github.com/saihgupr/keyboard-maestro-mcp/issues)
+
+If you like this project, please consider giving the repo a ⭐ star!
+
+<details>
+<summary>Advanced: verify, test, and manual setup</summary>
+
 ```bash
 npm run verify
-```
-
-**Interactive testing:**
-```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
-
-## Manual Configuration
-
-If you prefer to configure manually, add this to your AI client's MCP config:
 
 ```json
 {
@@ -131,11 +129,7 @@ If you prefer to configure manually, add this to your AI client's MCP config:
 }
 ```
 
-## Support
-
-Having issues? [Open an issue on GitHub](https://github.com/saihgupr/keyboard-maestro-mcp/issues)
-
-If you like this project, please consider giving the repo a ⭐ star!
+</details>
 
 ---
 
