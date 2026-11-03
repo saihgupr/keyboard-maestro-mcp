@@ -2,11 +2,15 @@
   <img src="docs/banner.jpg" alt="Keyboard Maestro MCP" width="100%">
 </p>
 
-<p align="center"><sub>Unofficial. Not affiliated with Stairways Software.</sub></p>
-
 # Keyboard Maestro MCP
 
 An MCP server for Keyboard Maestro. Manage your macros with natural language commands.
+
+<p align="center">
+  <img src="docs/demo.gif" alt="An MCP client cloning a Keyboard Maestro macro six times into a group" width="100%">
+</p>
+
+<p align="center"><sub>A client driving the server: one macro cloned six times into a group. No clicks, no import.</sub></p>
 
 
 ## What Can You Do?
@@ -100,21 +104,19 @@ The setup wizard will configure your AI client automatically. It supports:
 | `km_get_errors` | Find recent macro failures |
 | `km_get_log` | Search the engine log |
 
-## Testing Your Setup
+## Support
 
-**Quick check:**
+Having issues? [Open an issue on GitHub](https://github.com/saihgupr/keyboard-maestro-mcp/issues)
+
+If you like this project, please consider giving the repo a ⭐ star!
+
+<details>
+<summary>Advanced: verify, test, and manual setup</summary>
+
 ```bash
 npm run verify
-```
-
-**Interactive testing:**
-```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
-
-## Manual Configuration
-
-If you prefer to configure manually, add this to your AI client's MCP config:
 
 ```json
 {
@@ -127,8 +129,6 @@ If you prefer to configure manually, add this to your AI client's MCP config:
 }
 ```
 
-## Support
+</details>
 
-Having issues? [Open an issue on GitHub](https://github.com/saihgupr/keyboard-maestro-mcp/issues)
-
-If you like this project, please consider giving the repo a ⭐ star!
+A community project. Not affiliated with Stairways Software.
