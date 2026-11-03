@@ -8,6 +8,12 @@
 
 An MCP server for Keyboard Maestro. Manage your macros with natural language commands.
 
+<p align="center">
+  <img src="docs/demo.gif" alt="An MCP client cloning a Keyboard Maestro macro six times into a group" width="100%">
+</p>
+
+<p align="center"><sub>A client driving the server: one macro cloned six times into a group. No clicks, no import.</sub></p>
+
 
 ## What Can You Do?
 
