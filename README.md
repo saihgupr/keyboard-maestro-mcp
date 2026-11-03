@@ -133,4 +133,4 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 ---
 
-<p align="center"><sub>Unofficial. Not affiliated with Stairways Software.</sub></p>
+<p align="center"><sub>A community project. Not affiliated with Stairways Software.</sub></p>
