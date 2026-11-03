@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="docs/banner.jpg" alt="Keyboard Maestro MCP" width="100%">
+</p>
+
+<p align="center"><sub>Unofficial. Not affiliated with Stairways Software.</sub></p>
+
 # Keyboard Maestro MCP
 
 An MCP server for Keyboard Maestro. Manage your macros with natural language commands.
