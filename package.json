@@ -1,6 +1,6 @@
 {
   "name": "keyboard-maestro-mcp",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "MCP server for Keyboard Maestro automation - log analysis, macro CRUD, and execution",
   "type": "module",
   "main": "build/index.js",
