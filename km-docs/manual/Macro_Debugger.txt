@@ -1,0 +1,40 @@
+====== Macro Debugger ======
+
+Keyboard Maestro includes a built-in macro debugger which you can turn on by choosing the [[Menus#Start_Debugging|Status Menu ➤ Start Debugging menu]] or by using one of the [[action:Debugger_Start|Debugger actions]].  This will display the [[Windows#Macro_Debugger|Macro Debugger window]].
+
+{{ macrodebugger.png?nolink&683 |Macro Debugger}}
+
+Once debugging, you can control whether new macros start paused or start running.
+
+The macro debugger shows all running macros, and what action they are currently executing (including showing nested actions).
+
+Using the buttons on the left, you can:
+
+* **Continue** the macro – allowing it to run until completion, or until it hits a Debugger Breakpoint action.
+* **Pause** the macro.
+* **Step Over** the current action, including any subactions.
+* **Step In To** the current action, stepping in to any included subaction.
+* **Step Out Of** the current action and any other actions at the same level.
+
+The buttons on the right let you:
+
+* **Edit** the current action in the editor.
+* **Cancel** the macro.
+
+The button at the top right toggles displaying variables. The debugger will show the ten most recently modified (by this macro instance) variables and a summary of their values. If you want to show more information, you can use the [[action:Log|Log]] action to log details to the Engine.log file, or use the [[action:Display_Text|Display Text]] action to display information in a window.
+
+To debug a macro:
+
+* Make sure the “Pause New Macros” is checked.
+* Trigger your macro.
+* Your macro will appear in the Debug window.
+* Click on the icon/button with the down arrow to step into the macro to the first step.
+* Click again to advance to further steps/Action.
+
+All the debugger actions can also be done via [[action:Debugger_Start|the Debugger actions]].
+
+Keep in mind that once a macro has started executing, the engine has taken a copy of the macro to execute, so any changes you make in the editor will not affect the execution of the macro (although any changes you make to a sub macro that has not yet started executing would apply).
+
+Also keep in mind that macros can often be time sensitive, so if you find your macro runs fine when stepped through in the debugger, but not when run normally, the issue is quite possibly that the macro is executing actions like click actions before the system has caught up and the screen is stable.  Add an appropriate Pause action if that is the case.
+
+If you close the debugger window, the paused macros will resume their normal operation.

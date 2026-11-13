@@ -1,0 +1,15 @@
+====== Get Location ======
+
+The //Get Location// action (v11.0+) lets you get the location as coordinates of the Mac.
+
+{{ get-location-action.png?nolink&674x114 | Get Location Action }}
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[:Tokens|All Tokens]]
+
+=== Actions ===
+
+* [[:Actions|All Actions]]

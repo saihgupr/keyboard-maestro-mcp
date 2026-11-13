@@ -1,0 +1,11 @@
+The  Simulate Scroll Wheel action simulates scrolling the mouse wheel up or down, left or right. There are two parameters to set.
+
+Select from the pop-up whether to scroll:
+  *up
+  *down
+  *left
+  *right
+
+Then either enter a number or select from the stepper how many pixels to move in the selected direction.
+
+{{:action:simulatescrollwheel.png|}}

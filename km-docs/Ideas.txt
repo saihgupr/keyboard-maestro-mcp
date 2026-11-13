@@ -1,0 +1,79 @@
+====== Ideas ======
+
+This is a collection of some of the most impressive and also easiest macros users wrote. As an inspiration and starter for fellow Keyboard Maestros.
+
+==== Text ====
+
+A macro with the following layout:
+
+    Type the ⌘C Keystroke
+    Filter Clipboard with XXX
+    Type the ⌘V Keystroke
+
+Will serve as a template for many useful macros:
+
+* lowercase text
+* UPPERCASE text
+* Title Case text
+* Smart Quotes
+* Dumb Quotes
+* Encode HTML Entities
+* Remove Style
+* Calculate
+
+You cal also use filters to count the number of characters, words or lines, and then replace the Paste action with:
+
+    Notification ‘Word Count:’ %Clipboard%
+
+==== Windows ====
+
+Using the ''Move Front Window by Pixels'' action you can create a window mover group. I personally have this in a group that is ''activated/deactivated with a hot key''. This way I can execute macros multiple times after another, e.g. to move a window.
+
+* ←, →, ↑, and ↓ move windows by 1px. 
+* with ⇧ as additional modifier windows move by 25px. 
+* with ⌥ windows resize by 1px.
+* ⇧ and ⌥ resize windows by 25px.
+
+Also nice and useful are macros to maximize and center windows.
+
+The ''Manipulate Window'' action is also great to save and recall "window presets", so that you can quickly move and resize windows to your preferred dimensions, e.g.:
+
+    Resize Front Window to Pixels 1280x720
+    Center Front Window
+
+If you found a particular window size that you like use a Measure Window action to get its dimensions:
+
+    Set Variable ‘WindowSize’ to Text ‘%WindowSize%1%’
+    Display Text ‘%Variable%WindowSize%’
+
+This will save the front window's dimensions to a variable named ''WindowSize''. You can view the value of this variable in the preferences. Alternatively add a ''Set Variable ‘WindowSize’ to Text ‘%Delete%’'' to delete the variable at the end.
+
+Slightly more advanced are macros to move a window to screen edges without resizing.
+
+[Download Move To Screen Edges macros](http://cl.ly/3q013I021Q18)
+
+=== Where's my mouse? ===
+
+Create a new macro and map it to the hot key "m" inside the Windows macro group:
+
+    Highlight Oval at MOUSEX(),MOUSEY(),200,100
+
+==== Keyboard shortcut “Guide” creation by Bob Rutledge  ====
+
+During a recent CMUG General Meeting demo of Keyboard Maestro, I showed a couple of shortcut key “guides”. The guides are placed adjacent to the keyboard function keys to provide a visual reminder of what shortcuts were available. In this article I will give a general method for producing the guides using Apple Pages.
+
+1. Measure the width of the line of function keys on your particular keyboard. For instance, my wireless keyboard measures 11 inches and my portable’s keyboard measures 9.25 inches . (The extended keyboard will be discussed later.)
+2. Count the number of function keys (should be 12) and add two (esc & eject keys.)
+3. Open a new Pages file in landscape orientation with minimal borders.
+4. Insert a table equal in width to the keyboard measurement and divided into 14 equal cells.   In this example, 4 rows have been used so that the command [⌘], option [⌥] and shift [⇧] modifier keys can be used with the 12 function keys. One could add a forth row for the control [∧] modifier key and even more for double or triple modifiers. However, too many rows can become bulky and confusing. Most folks will likely be happy with two to four rows. 
+
+{{ :keyboard-guide.png?nolink |}}
+
+4. Select the entire table and format the text centered in the cells both horizontally and vertically. Chose a small but readable text size and font. Helvetica 10 pt works for me.
+6. Select the entire table and set the cell height to a minimal size. This keeps the guide as small as possible.
+7. Next, one might wish to copy and paste several tables beneath the first for future modification or for different machines.
+8. Lastly, type short notations into the appropriate cells to complete your personalized guide.
+
+If one has an extended keyboard (almost 16 inches wide), a guide can be created in two or three sections to accommodate the navigation and numerical pad sections. However, the same general steps would be used.
+
+Guides can be printed onto full sheet adhesive labels or attached with double sided tape or adhesive spray. Depending upon the height, one might attach the guide to the keyboard itself. (On my portable, the guide is adhered to the hinge surface.) In some cases, an angled display stand with flat legs to be slid under a keyboard may need to be constructed. (Such is the case with my Mac’s extended keyboard.) Even a creased and bent piece of heavy cardboard may suffice. However its mounted, the guide should serve as a quick visual reference and free your mind to remember things other than all those shortcuts.

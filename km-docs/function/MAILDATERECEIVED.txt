@@ -1,0 +1,17 @@
+====== MAILDATERECEIVED Function ======
+
+The MAILDATERECEIVED() function returns the [[:unixtime|]] of the currently selected mail message.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MAILDATESENT]]
+* [[MAILFLAG]]
+* [[MAILFLAGGED]]
+* [[MAILJUNKSTATUS]]
+* [[MAILREADSTATUS]]
+* [[MAILWASFORWARDED]]
+* [[MAILWASREDIRECTED]]
+* [[MAILWASREPLIEDTO]]
+* [[:Functions|See all Functions]]

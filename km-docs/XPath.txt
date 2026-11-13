@@ -1,0 +1,6 @@
+====== XPath ======
+
+[[https://www.w3schools.com/xml/xpath_syntax.asp|XPath]] is a query language for selecting nodes from an HTML document.
+
+In Keyboard Maestro, in the various [[actions:Browser_Actions|Browser Actions]] and tokens you can use an XPath as long as it starts with “/html”, “/HTML” or “`//`”.  Otherwise, it is typically considered to be JavaScript code or just a plain name, depending on the action or token in question.
+

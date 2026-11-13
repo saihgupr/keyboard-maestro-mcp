@@ -1,0 +1,148 @@
+Dates and Times
+===============
+
+Keyboard Maestro offers a very full featured set of date and time [[Tokens|tokens]], formats, and calculations.
+
+[[token:ICUDateTime|Date/Time tokens]] are like text expansion codes that return date/time values as text in the specified format.
+
+===== Examples =====
+
+==== 1. Get Current Date/Time ====
+
+The most commonly used token is for returning the current date/time in the format you like:
+
+''%ICUDateTime%**format**%'' where **format** is from the [ICU Date/Time codes](https://www.keyboardmaestro.com/action/linkthru?icudatetimereference).
+
+For example, using the [[action:Set_Variable_to_Text|Set Variable to Text]] Action:\\ 
+{{:km7-set-var-to-date.png|}}
+
+==== 2. Add Time to Date ====
+
+This example adds days to the current date using a Keyboard Maestro Variable.  See below for other options.{{:add-days-current-date-km-7.3.png?nolink|}}
+
+For more info see this Forum Topic:  [Add Time to Current Date @Example](https://forum.keyboardmaestro.com/t/date-add-time-to-current-date-example/7213), which provides instructions and a complete macro.
+
+
+===== Date/Time Formats =====
+
+###Here are some common examples:
+
+^Usage^Token and Format^Results^
+|[[http://www.iso.org/iso/home/standards/iso8601.htm | ISO/International]]|%ICUDateTime%yyyy-MM-dd%|2015-11-28|
+|Australia\\  Europe|%ICUDateTime%dd/MM/yyyy%|28/11/2015|
+|United States|%ICUDateTime%EEE, MMM d, yyyy%|Sat, Nov 28, 2015|
+|United States|%ICUDateTime%MM/dd/yyyy%|11/28/2015|
+|Use in File Name|%ICUDateTime%yyyy-MM-dd-HHmmssA%|2015-11-28-15210755267426|
+
+You can embed most any characters you want with the Format Codes.
+
+###Format Codes
+
+**For the complete list** of codes, see the [ICU Date/Time codes](https://www.keyboardmaestro.com/action/linkthru?icudatetimereference).
+
+
+**Some Commonly Used Format Codes**
+^Period^  Format\\  Code  ^Example^Results^
+^Year|  y((Do not use capital Y (year of "Week of Year")!))  |yy\\  yyyy|96\\  1996|
+^Month|  M  |M\\  MM\\  MMM\\  MMMM|9\\  09\\  Sep\\  September|
+^Day|  d  |d\\  dd|2\\  02|
+^Weekday Name|  E  |EEE\\  EEEE|Tue\\  Tuesday|
+^AM/PM|  a  |a\\  a|am\\  pm|
+^Hour (am/pm)|  h  |h\\  hh|7\\  07|
+^Hour (24 hrs)|  H  |H\\  HH|19\\  19|
+^Minute|  m  |m\\  mm|4\\  04|
+^Second|  s  |s\\  ss|5\\  05|
+^Fractional Second\\  (truncates)|  S  |S\\  SSS|1\\  123|
+
+(!) Do not use capital "Y" (year of "Week of Year") unless you really mean it or you will get oddly strange results at the beginning/end of each year.
+
+===== Date/Time Tokens & Formulas =====
+
+Also see Wiki article [[token:ICUDateTime]] token
+
+^Date/Time Token/Formula^Example^
+|**//%ICUDateTime%<format>%//**\\  Returns Current Date/Time (local)|Get Current Date/Time\\  %ICUDateTime%EEE, MMM d, yyyy%\\  => Sat, Nov 28, 2015|
+|**//%ICUDateTimePlus%<Quantity>%<TimeUnit>%<format>%//**\\  Adds to Current Date/Time (local)|Add 3 days\\  %ICUDateTimePlus%**3%Days**%EEE, MMM d, yyyy%\\  => Tue, Dec 1, 2015|
+|**//%ICUDateTimeMinus%<Quantity>%<TimeUnit>%<format>%//**\\  Subtracts from Current Date/Time (local)|Subtract 1 month\\  %ICUDateTimeMinus%**1%Months**%EEE, MMM d, yyyy%\\  => Wed, Oct 28, 2015|
+|**//%ICUDateTimeFor%NOW()<+ or –\><Seconds>%format%//**\\  Adds or Subtracts from Current Date/Time (GMT)|Add 1 hour to Current GMT\\  %ICUDateTimeFor%NOW()+ **(60\*60)** %EEE, MMM d, yyyy h:mm%\\  => Sat, Nov 28, 2015 7:14|
+|**//%ICUDateTimeFor% TIME(<Year>, <Month>, <Day> [, <Hour>, <Min>, Sec>])%<format>%//**\\  Sets absolute date/time (GMT)|Set absolute date in **GMT**\\  %ICUDateTimeFor% TIME(2015, 12, 25) %EEE, MMM d, yyyy%\\  => Thu, Dec 24, 2015\\  \\  Set absolute date in **LOCAL** time\\  %ICUDateTimeFor% TIME(2015, 12, 25) **- GMTOFFSET()** %EEE, MMM d, yyyy%\\  => Fri, Dec 25, 2015|
+|**//%ICUDateTimePlus%<Formula for Quantity>%<TimeUnit>%<format>%//**\\  Using functions to calculate date offset.|**Get Date for Selected Prior Day Number**\\  `%ICUDateTimePlus%-(DOW() + 7 - DayNum)%Days%EEE, MMM d, yyyy%`\\ If Current Date is Dec 25, 2016, and _DayNum_ is 1:\\  => Sun, Dec 18, 2016\\ where "DayNum" is the number of the weekday (can be a Variable)|
+
+*where*
+
+* <TimeUnit> is one of the following: Seconds, Minutes, Hours, Days, Weeks, Months, Years, or a weekday, Sundays, Mondays, Tuesdays, Wednesdays, Thursdays, Fridays, Saturdays.
+* <Quantity> is the number of <TimeUnit>s
+* <format> is the format of text returned, using the [ICU Date/Time codes](https://www.keyboardmaestro.com/action/linkthru?icudatetimereference)
+* [[function:NOW|NOW()]] and [[function:TIME|TIME()]] functions return the current time in GMT
+* <+ or –\> is the operator to add (+) or subtract (–)
+* <Seconds> is the number of seconds to add/subtract
+* [ ] indicate optional terms
+* *<Year>, <Month>, <Day>, <Hour>, <Min>, Sec> are in integer units for the indicated period.*
+
+Since [[function:TIME|TIME()]] and [[function:NOW|NOW()]] returns the specified date/time in GMT :!: , you can adjust for your local time zone by subtracting the [[function:GMTOFFSET|GMTOFFSET()]] function
+
+[[token:ICUDateTimeFor|%ICUDateTimeFor%]] [[function:TIME|TIME(2015, 12, 25)]] - [[function:GMTOFFSET|GMTOFFSET()]] %EEE, MMM d, yyyy% => Fri, Dec 25, 2015
+
+===== Date/Time Functions and Calculations =====
+
+Here are some other date/time related tokens and functions:
+
+[Editor: Plan to put in table with descriptions]
+
+* [[function:DAY|DAY() (function)]]
+* [[function:DOW|DOW() (function)]]
+* [[function:GMTOFFSET|GMTOFFSET() (function)]]
+* [[function:JD2TIME|JD2TIME() (function)]]
+* [[function:MJD2TIME|MJD2TIME() (function)]]
+* [[function:NOW|NOW() (function)]] (unixtime)
+* [[function:TIME|TIME() (function)]] (unixtime)
+* [[function:TIME2JD|TIME2JD() (function)]]
+* [[function:TIME2MJD|TIME2MJD() (function)]]
+* [[token:ICUDateTime|%ICUDateTime% (token)]]
+* [[token:ICUDateTimeFor|%ICUDateTimeFor% (token)]]
+* [[token:ICUDateTimeMinus|%ICUDateTimeMinus% (token)]]
+* [[token:ICUDateTimePlus|%ICUDateTimePlus% (token)]]
+* [[token:LongDate|%LongDate% (token)]] (local)
+* [[token:LongTime|%LongTime% (token)]] (local)
+* [[token:NumberDate|%NumberDate% (token)]] (local)
+* [[token:ShortDate|%ShortDate% (token)]] (local)
+* [[token:ShortTime|%ShortTime% (token)]] (local)
+* [[JulianDate|JulianDate]]
+* [[unixtime]] in GMT
+
+===== Mixing Functions and Tokens =====
+
+You might expect “%[[token:ICUDateTimeFor|ICUDateTimeFor]]%[[function:TIME|TIME(2017, 1, 1)]]%EEE, MMM d, yyyy%” to yield `Sun, Jan 1, 2017`. However, it may yield `Sat, Dec 31, 2016`, depending on your local time zone.
+
+Here is why:
+
+* The [[function:TIME|TIME()]] function takes and returns the values in GMT.
+* The [[token:ICUDateTimeFor|%ICUDateTimeFor%]] token displays the localized time.
+* Thus, for [[function:TIME|TIME(Year, Month, Day)]] (which is in GMT), the ICUDateTimeFor  displayed date in local time will be one less for anyone with a negative time zone offset.
+* It is best is to use [[function:TIME|TIME(Year, Month, Day, 12, 0, 0)]] which will give noon GMT time, and thus the same day in local time for pretty much everyone in the world (everyone with time zone differences strictly between -12 hours and +12 hours).
+
+So, if you use “%[[token:ICUDateTimeFor|ICUDateTimeFor]]%[[function:TIME|TIME(2017, 1, 1 , 12, 0, 0)]]%EEE, MMM d, yyyy%” you will now get the expected result of `Sun, Jan 1, 2017`
+
+===== Discussion on Keyboard Maestro Forum =====
+
+For a more complete discussion on the many different ways to use date and times, see [KM dates & times: Notes on anchors, intervals, and translations](https://forum.keyboardmaestro.com/t/km-dates-times-notes-on-anchors-intervals-and-translations/1935) (Aug 2015), with contributions by @[ComplexPoint](https://forum.keyboardmaestro.com/users/ComplexPoint), @[peternlewis](https://forum.keyboardmaestro.com/users/peternlewis), and others.
+
+===== Localization =====
+
+Prior to Mojave, and after Keyboard Maestro 9.0, dates should be in your chosen language.  Unfortunately Apple changed Mojave and later to make the system return dates only in the Keyboard Maestro localized language (ie, English), regardless of your chosen locale.  Keyboard Maestro 9.0 works around this by claiming to be in all locales, even though it is really only localized for English itself.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Filter|Filter]] (Process Text Tokens)
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [KM dates & times: Notes on calculations, anchors, intervals, and translations](https://forum.keyboardmaestro.com/t/km-dates-times-notes-on-anchors-intervals-and-translations/1935) (Aug 2015)
+- [[https://forum.keyboardmaestro.com/t/date-calculations/2165|Date Calculations]]
+- [[https://forum.keyboardmaestro.com/t/previous-date-variables-best-way/3311/4|Previous Date Variables]]
+- [[https://forum.keyboardmaestro.com/t/icudatetime-format-from-locale/3458/5|%ICUDateTime% format from locale]]
+- [[https://forum.keyboardmaestro.com/t/issue-with-date-time-functions/5856|Issue with Date/Time Functions]]
+- [[https://forum.keyboardmaestro.com/tags/date_time|Keyboard Maestro Forum topics about Dates and Times]]

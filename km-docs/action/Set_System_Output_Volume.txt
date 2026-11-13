@@ -1,0 +1,27 @@
+====== System Sound Volume Actions ======
+
+The //Increase System Sound Volume// and //Decrease System Sound Volume// actions increase or decrease the system volume by one unit (one unit is 1/16th of the total range). 
+
+The //Small Increase System Sound Volume// and //Small Decrease System Sound Volume// actions (v9.0+) increase or decrease the system volume by one quarter of a unit.
+
+To mute or unmute sound use the //Toggle System Sound Mute// action. 
+
+When you use these actions the system volume overlay briefly appears on the screen.
+
+Or use the //Set System Volume// action to set the volume to a specific amount.
+
+If the System Preferences Sound setting //Play feedback when volume is changed// is checked then you will hear a beep when the volume changes.
+
+To set the system volume to a specific value use the //Set System Output Volume// action. Set the slider to the desired level. The action tells you the specific percentage level of the slider position. No overlay appears on screen with this action and there is no sound feedback.
+
+===== See Also =====
+
+==== Actions ====
+
+* Small Decrease System Sound Volume
+* Small Increase System Sound Volume
+* Decrease System Sound Volume
+* Increase System Sound Volume
+* Set System Output Volume
+* Toggle System Sound Mute
+* [[:Actions|See all Actions]]

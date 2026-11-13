@@ -1,0 +1,20 @@
+====== Log Action ======
+
+The *Log* action writes a message to the Keyboard Maestro Engine.log file.
+
+Enter the text to log in the //Text// area. Use the arrow at the right-hand end of the text area to insert any of numerous text tokens, including dates and times, variables, machine information, macro information and system information.
+
+Note that you can open the Logs folder from the Keyboard Maestro Help menu.
+
+{{:action:writetolog.png|}}
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Notification|Notification]]
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens |See all Tokens]]

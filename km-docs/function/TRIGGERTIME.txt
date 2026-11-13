@@ -1,0 +1,9 @@
+====== TRIGGERTIME Function ======
+
+The TRIGGERTIME() function returns the [[:unixtime]] that this macro instance was triggered.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

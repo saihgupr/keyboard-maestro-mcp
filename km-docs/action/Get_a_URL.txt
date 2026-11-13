@@ -1,0 +1,26 @@
+====== Get a URL ======
+
+The //Get a URL// action (v8+) downloads from a specified web location.
+
+{{ get-url.png?nolink&575x175 | Get a URL }}
+
+==== Output of Results ====
+
+The results can be:
+
+{{page>include:ScriptOutput#}}
+
+You can (v9.0+) include a parameter if desired. The Gear menu controls what characters of the parameter(s) are encoded. For `Percent Encode Parameter Fields` (the default), all characters other than `=` and `&` (and letters and digits) are percent encoded. For `Percent Encode Parameter`, all characters (other than letters and digits) are percent encoded.
+
+If the output is going to a clipboard or a file, the downloaded data can be an image.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Open_a_URL|Open a URL]] action
+* [[action:Open a File Folder or Application|Open a File Folder or Application]]
+
+==== Forum ====
+
+* [[https://forum.keyboardmaestro.com/t/how-to-download-an-image-from-an-url-and-then-copy-to-clipboard/7578|How to download an image from an URL and then copy to clipboard?]]

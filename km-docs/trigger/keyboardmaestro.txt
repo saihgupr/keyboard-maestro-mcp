@@ -1,0 +1,54 @@
+====== keyboardmaestro CLI Tool ======
+
+You can use the keyboardmaestro CLI Tool to trigger or edit macros.
+
+The keyboardmaestro command line tool is included within the Keyboard Maestro.app package, in the Contents/MacOS folder, so if the Keyboard Maestro.app package is installed in the normal location in the /Applications folder, the path to the command will be:
+
+    /Applications/Keyboard Maestro.app/Contents/MacOS/keyboardmaestro
+
+You might like to make a link from the `/usr/local/bin` folder like this:
+
+    sudo ln -s '/Applications/Keyboard Maestro.app/Contents/MacOS/keyboardmaestro' /usr/local/bin/keyboardmaestro
+
+Or include an alias to the command like this:
+
+    alias keyboardmaestro='/Applications/Keyboard\ Maestro.app/Contents/MacOS/keyboardmaestro'
+
+then:
+
+    keyboardmaestro [options...] <macro name/uid>
+
+Like most CLI tools, you can ask for help by passing the argument `--help`. The arguments are:
+
+^Short^Long^Meaning^
+| -a | --async | Do not wait for macro to complete |
+| -e | --edit | Edit the macro instead of triggering it |
+| -h | --help | Show the help message |
+| -p | --parameter <value> | Pass value as the [[token:TriggerValue|%TriggerValue%]] parameter.\ Use `-` to read the value from stdin |
+| -v | --verbose | Show debugging information |
+| -V | --version | Show version number |
+
+This command will edit or trigger a Keyboard Maestro macro as specified.
+
+The macro name can be the name of a unique macro, the UUID of a macro, or the XML of an action to execute.
+
+In edit mode, the macro name can be the name or UUID of a macro, macro group or smart macro.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Execute a Macro|Execute a Macro]]
+* [[:Actions|See all Actions]]
+
+==== Tokens ====
+
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+==== Triggers ====
+
+* [[Script|Script]] trigger
+* [[URL|URL]] trigger
+* [[Trigger File|Trigger File]]
+* [[/Triggers|All Triggers]]

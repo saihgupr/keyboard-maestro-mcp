@@ -1,0 +1,21 @@
+====== Stream Deck Set Title ======
+
+The //Stream Deck Set Title// action (v9.0+) allows you to set a [[/Stream Deck]] button to a specified title.  The button title in the Stream Deck configuration must be empty, otherwise it will override any title set with this action.
+
+{{ stream-deck-set-title.png?nolink&503x139 | Stream Deck Set Title }}
+
+You specify the Button ID of the button to change.  If two buttons have the same ID, both will change.
+
+You also specify the new title.
+
+The Button ID and title field are both token [[/Text_Fields|Text Fields]].
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Stream Deck Set Title]]
+* [[action:Stream Deck Set Image]]
+* [[action:Stream Deck Show OK]]
+* [[action:Stream Deck Show Alert]]
+* [[:Actions|See all Actions]]

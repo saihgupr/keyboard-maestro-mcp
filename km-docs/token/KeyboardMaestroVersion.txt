@@ -1,0 +1,13 @@
+====== KeyboardMaestroVersion Token ======
+
+The //%KeyboardMaestroVersion%// and //%KeyboardMaestroLongVersion%// tokens (v11.0+) return the version of Keyboard Maestro that is currently running.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens |See all Tokens]]

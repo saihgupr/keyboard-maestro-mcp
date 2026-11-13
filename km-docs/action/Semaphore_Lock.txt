@@ -1,0 +1,58 @@
+====== Semaphore Actions ======
+
+The //Semaphore actions// (Lock, Unlock and Reset) allow you to prevent (a) multiple triggers of the same macro from executing simultaneously, and/or (b) multiple macros from executing simultaneously.
+
+===== Background =====
+
+When you trigger a macro, the Keyboard Maestro Engine takes a copy of it and starts executing it.  If you trigger another macro before the first one finishes, that will start executing as well - both will be executing more or less simultaneously.
+
+==== Macros Triggered by the User ====
+
+Although it is rare to have multiple macros triggered at the same time, the normal behaviour in Keyboard Maestro is that all triggered macros run simultaneously, with actions from each independently triggered macro running at the same time.
+
+Most macros are triggered explicitly manually, and typically the user waits for them to complete before they trigger another macro. So macros triggered like this will rarely run at the same time.
+
+==== Macros Triggered in the Background ====
+
+But there is another class of macros that operate in the background, most especially time triggered macros. Macros that are triggered independent of the UI and the user's awareness. Typically these will be written so as not to impact the user since the user won't be expecting them to run. So they might be things like backup scripts, or automatic download scripts, or the like. Things that happen in the background, or that wait for the user to be idle before doing stuff in the foreground. Often these sorts of macros run for a significant amount of time.
+
+===== Preventing Multiple Executions of One or More Macros =====
+
+Occasionally there are cases where multiple macros can be triggered, or the same macro triggered again, before the other macros complete. This can sometimes cause a problem, which needs to be prevented.
+
+**The //Semaphore actions// require a _Semaphore Name_, which uniquely identify each _Semaphore Lock_.**  Use a different _Semaphore Name_ to identify different (independent) _Semaphore Locks_.
+
+**In order to prevent simultaneous executions (instances) of one or more macros that have _Semaphore Locks_ with the same _Semaphore Name_, do the following:**\\
+
+  * Place a //Semaphore Lock// Action (using the same Semaphore Name) as the first action of each Macro that you wish to prevent executing simultaneously.
+  * The lock will remain in place, preventing the other macros from executing, until the current macro instance (("macro instances" refers to both additional instances of the same macro _and_ instances of other macros that use the same named Semaphore Lock Action.)) completes or until the semaphore is unlocked with a Semaphore Unlock action.
+  * When the Semaphore is _unlocked_ the next macro instance in the queue will execute in First In First Out (FIFO) order.  Since the first Action is a _Semaphore Lock_, only one macro instance is executed at a time.
+  * You can also cause all additional macro instances  to be immediately cancelled by setting a very short timeout (1 hundredth of a second) for the Semaphore Lock Action.  When the Semaphore Local Action times out, it cancels the pending execution of that macro instance.
+
+
+
+Semaphore Lock can be balanced by a Semaphore Unlock, but a Semaphore is implicitly unlocked when the macro that locked it completes.
+
+Semaphore Reset will forcibly unlock a semaphore and should generally not be used except in very unusual circumstances.
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+- [[action:Semaphore Reset|Semaphore Reset]]
+- [[action:Semaphore Unlock|Semaphore Unlock]]
+- [[:Actions|See all Actions]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/finish-executing-applescript-before-executing-key-commands/1465/3|Finish Executing AppleScript Before Executing Key Commands]]
+
+- [[https://forum.keyboardmaestro.com/t/how-to-prevent-a-timed-macro-from-executing-twice-at-the-same-time/1770/8|How to prevent a timed macro from executing twice at the same time?]]
+
+- [[https://forum.keyboardmaestro.com/t/how-is-a-semaphore-unlock-and-semaphore-reset-different/4119|How is a "Semaphore Unlock" and "Semaphore Reset" different?]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Semaphore|Keyboard Maestro Forum topics about Semaphore Lock action]]

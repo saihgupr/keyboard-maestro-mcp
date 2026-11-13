@@ -1,0 +1,480 @@
+~~INTOC~~
+
+====== Troubleshooting ======
+
+This Wiki article is intended to address situations where you find that Keyboard Maestro does not work as you expect, or works in an unexpected way, and you have been unable to identify the cause and fix it.  This article aims to help you resolve this issue and make Keyboard Maestro work as you intend.   This article does _not_ address _how to_ questions (please post those to the [[/Forum|Keyboard Maestro Forum]]).
+
+===== When Does the Issue First Occur =====
+
+**Unexpected behavior in Keyboard Maestro may occur in the following situations:**
+
+1. Immediately after you have installed Keyboard Maestro on a specific Mac -- See [[#Situation_1_--_New_Install|Situation #1]].
+1. Immediately after you have update macOS -- See [[#Situation_2_--_System_Update|Situation #2]].
+1. Immediately after you have updated Keyboard Maestro to a new version -- See [[#Situation_3_--_After_Update_to_New_Version_of_Keyboard_Maestro|Situation #3]].
+1. Keyboard Maestro’s behavior changes unexpectedly, and without apparent cause, some time (say a week or more) after it has been running as expected without any issues -- See [[#Situation_4_--_After_Working_Fine_for_a_While|Situation #4]].
+1. After you have created a new Macro, or added new Actions, that you have not used before -- See [[#Situation_5_--_After_New_Macros_or_Actions|Situation #5]].
+
+===== General Troubleshooting =====
+
+==== All Situations ====
+
+You should try these steps for regardless of your situation, as they are most likely to either fix or at least identify the cause of the issue.
+
+1. **Restart Your Mac**
+  1. As with all unexpected behavior on your Mac, the first line of recovery is to restart your Mac.
+  1. Often it will be a permanent fix, but sometimes the issue will reoccur after some time.
+  1. Try this first, and then you only need to do more troubleshooting if the issue returns.
+1. **Run the [[Troubleshooting#Use_the_Interactive_Help_Wizard|Interactive Help Wizard]] from the Keyboard Maestro Editor Help menu**
+  1. Choose the “Something expected is not happening” or “Something unexpected is happening”.
+  1. Keyboard Maestro will check all of the key requirements and display the results.
+1. See [[Troubleshooting#Run-Away_Login_Macros|Options for Launching Keyboard Maestro Editor]]
+
+==== Situation #1 -- New Install ====
+
+There are several key issues that can occur immediately after you install Keyboard Maestro.\\
+Again, first Run the _Interactive Help Wizard_ from the Keyboard Maestro Editor Help menu.  Then review the specific issues below.
+
+1. Downloading/Installing an app in a zip package from a web site (not Apple Store) may result in Apple imposed "App Translocation", which causes Keyboard Maestro to be launched improperly.
+  1. If this has happened, you should see an error message something like this:\\ `AppTranslocation Security is active, this will cause problems`
+  1. To fix this, see [[assistance:Translocation_Problem|How To Fix Translocation Problem]]
+1. Unable to Run Some Macros due to macOS Accessibility Restrictions
+  1. To fix this, see [[assistance:Accessibility_Permission_Problem|How To Fix Accessibility Permission]]
+1. Safari is not responding to [[actions:Browser_Actions|FrontBrowser or Safari]]  related Keyboard Maestro Actions and [[token:SafariTitle|Tokens]]
+  1. To Fix, see [How To Enable Safari to Respond to KM Actions](https://forum.keyboardmaestro.com/t/safari-10-11-5-km-actions-tokens-not-working-how-to-fix/3765)
+1. Google Chrome (or Chrome-based Browsers) is not responding to FrontBrowser or Chrome related Actions and Tokens
+  1. To fix, see [How to Enable Google Chrome to Respond to KM Actions](https://forum.keyboardmaestro.com/t/announcement-google-chrome-68-disables-km-access-how-to-fix/10969)
+
+==== Situation #2 -- After a System Update ====
+
+If Keyboard Maestro had been running fine, and then does not work as expected after upgrading macOS:
+
+1. Immediately after a system update, it is wise to Restart an additional time. Many times we have found the system to not be in a totally stable state after an update, and a Restart gives a clean fresh start.
+1. If lots of macros are failing, run the _Interactive Help Wizard_ from the Keyboard Maestro Editor Help menu and see if that helps.
+1. Check the Security preferences pane and verify that you have all the relevant security permissions.
+1. Keep in mind that after a system update (or any specific application update), your macro might break simply because things in the system or application have changed since the macro was created. See if the macro simply needs adjusting.
+
+==== Situation #3 -- After Update to New Version of Keyboard Maestro ====
+
+If Keyboard Maestro had been running fine, and then does not work as expected after an upgrade, then do the following:
+
+1. As usual, restart your Mac.  This will likely fix the issue.
+1. Run the _Interactive Help Wizard_ from the Keyboard Maestro Editor Help menu.
+1. If the issue persists, then you _may_ have found a bug.  To confirm and get feedback for possible workarounds, post your issue in the [[/Forum|Keyboard Maestro Forum]].  Be sure to provide:
+  1. Your versions of macOS and Keyboard Maestro.
+  1. Observed Behavior.
+  1. Expected Behavior.
+  1. Upload example Macro that produces the issue.
+
+==== Situation #4 -- After Working Fine for a While ====
+
+1. If Keyboard Maestro has been working well, as expected, for a while (let's say a week or more), and then it suddenly behaves in an unexpected manner, then most likely that is due to something that has recently changed.\\
+So, ask yourself what has changed:
+  1. Keyboard Maestro update.
+  1. macOS updates.
+  1. Install of new apps, or app updates.
+  1. Especially any utilities (like Clipboard managers).
+  1. etc.
+1. If you identify a recent change, then you need to determine if that is causing the issue with Keyboard Maestro. The best way to do this is to [Start up your Mac in safe mode](https://support.apple.com/guide/mac-help/start-up-your-mac-in-safe-mode-mh21245/mac).
+    1. This will prevent all start-up items from starting.
+    1. Then launch KM and test your macros.
+    1. If they work fine then it is that change that is causing the problem.
+1. If this does not resolve your issue, then try using the Keyboard Maestro built-in _Interactive Help Wizard_.
+1. If that does not help, then you can search (using the Browser Find menu) the below Keyboard Maestro specific issues to find one or more that relates to your situation.
+
+==== Situation #5 -- If a Macro “Does Nothing” ====
+
+1. The issue is most likely caused by improper macro activation.
+1. Use the Interactive Help in the Help menu to determine if the macro is active.
+1. It will also show you if the macro triggers.
+1. If it triggers, it might be a problem with your actions, see the next section.
+
+==== Situation #6 -- After New Macros or Actions ====
+
+1. The issue is most likely caused by improper use of the Action.
+1. Click on the _Gear_ popup menu at the top right of the Action, and select _Help_ to get detailed help from the Wiki.
+1. If the previous Action was a command to an app, changed the window or focus, then you may need a short _Pause_ after that Action.
+1. If the action might be failing, first ensure the the Keyboard Maestro Engine can display notification (otherwise it might be telling you the action is failing and you are not seeing it).
+1. You can also check for any errors reported in the Log file. Choose Open Logs Folder from the Help menu and you can see anything reported in the Engine.log file that might indicate a problem - this will also confirm that the macro is triggering - if not, check out the previous section for answers related to that.
+1. If you still can't resolve the issue, then submit a topic to the [[/Forum|Keyboard Maestro Forum]].  Please read [Tip: How Do I Get The Best Answer in the Shortest Time?](https://forum.keyboardmaestro.com/t/tip-how-do-i-get-the-best-answer-in-the-shortest-time/10797)
+
+===== Use the Interactive Help Wizard =====
+
+Generally Keyboard Maestro will only do what you tell it to do, but sometimes that can still result in something you don’t expect happening.  Here is what to do:  (v8+)
+
+* Choose Interactive Help from the Keyboard Maestro Editor Help menu.
+
+* Then choose one of the following:
+  * Something unexpected is happening...
+  * Something expected is _not_ happening...
+
+Then follow the instructions.
+
+===== Macro Issues =====
+
+==== Macros Not Firing (Triggered) ====
+
+A relatively common situation occurs when a macro you expect to fire is not firing.  Here is what to do:  (v8+)
+
+* Choose Interactive Help (previously Assistance) from the Help menu.
+* Click the *Something expected is not happening* link.
+* Keyboard Maestro will verify that things look good, specifically:
+   * The Keyboard Maestro Engine is running.
+   * The Keyboard Maestro Engine is set to launch at login (optional, but a good idea).
+   * Keyboard Maestro can communicate with the Keyboard Maestro Engine.
+   * Translocation Security is not hampering Keyboard Maestro.
+   * Secure Input Mode is not currently enabled.
+   * Accessibility Permissions are enabled.
+* If there are any problems, resolve them.  Otherwise, click Continue.
+* Select the problematic macro from the popup menu.
+* Again, Keyboard Maestro will verify that things look good, specifically:
+   * The containing Macro Group is enabled.
+   * The containing Macro Group is active.
+   * The Macro itself is enabled.
+   * The macro has a trigger.
+   * The macro has some enabled actions.
+* If there are any problems, resolve them.  Otherwise, trigger the macro.
+* Keyboard Maestro will show you what macros have been triggered in the window.
+* If the macro triggers, but does not do what you expect, then you need to look at the actions.
+
+==== Macros Not Firing After You Login ====
+
+The macros are all performed by the Keyboard Maestro Engine.  You can start it by launching the Keyboard Maestro application, or have the engine start automatically by enabling the “Launch Engine at Login” preference in the Keyboard Maestro General Preferences pane.
+
+==== Run-Away Login Macros ====
+
+If you have a macro that is triggered by log in that you cannot stop, then you can take these steps to stop the macro and prevent future occurrences of it:
+
+  - **Cancel _ALL_ Macros**
+    - Hold down <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⇧</kbd> (that's Control-Option-Shift) and click on Keyboard Maestro Status Menu icon in the Apple Menu Bar.\\
+ 
+  - **Launch the Keyboard Maestro editor app without starting its _Engine_**
+    - Hold down <kbd>⌘</kbd><kbd>⌃</kbd><kbd>⌥</kbd><kbd>⇧</kbd> (that is Command-Control-Option-Shift) and click on the _Keyboard Maestro app in the Dock_, or double-click in the _Applications_ folder.
+    - This will quit the Keyboard Maestro _Engine_ and start the Keyboard Maestro app _without_ starting its _Engine_.
+    - Locate the problem Macro, and remove the trigger or disable it.
+ 
+  - **Restart Your Mac in [[https://support.apple.com/en-us/HT201262|Safe Mode]] Without Login Items**
+    - Use this option if //none of the above work//.
+    - Hold down <kbd>⇧</kbd> (that is Shift) immediately after you select //Restart..//. from the Apple menu.
+    - This will prevent the apps/processes in your //System Preferences > Users & Groups > Login Items// from launching (opening) when you log in, including the Keyboard Maestro Engine.
+    - Then Hold down <kbd>⌘</kbd><kbd>⌃</kbd><kbd>⌥</kbd><kbd>⇧</kbd> when you launch Keyboard Maestro.
+    - As noted above, this will prevent the //Engine// from starting, and you can fix, disable, or delete the macro causing the issue.
+
+==== Macros Not Being Saved ====
+
+If your macros are not being saved (ie, you make changes in Keyboard Maestro, and then quit and relaunch Keyboard Maestro and the changes are lost, and Keyboard Maestro Engine never notices any changes) then this is likely because Keyboard Maestro cannot save the macros file.  In Keyboard Maestro, choose Help -> Open Preferences Folder, and ensure that that folder is writeable and that the Keyboard Maestro Macros.plist file it contains is writeable.  If you're still having the problem, consider using the Disk Utility’s Fix Permissions action, and/or removing the Keyboard Maestro preferences folder, creating a new once, and moving the contents of the old one to the new one.
+
+==== Timing Between Actions ====
+
+A common situation is that you have written your macro, you are sure you have included all the steps, but the macro fails part way, e.g. it seems to skip steps or stops half way. This is often caused by timing issues: Keyboard Maestro executes an action in the macro before the receiving program is ready for that action. 
+
+Most of the actions in a script are immediate: Keyboard Maestro will execute them and then attempts to wait until they are completed, but for some actions it is not possible to tell when the action is completed.  So Keyboard Maestro will move on to the next step immediately. If Keyboard Maestro does not wait sufficiently long for the result of an action, you must tell it to explicitly.
+
+To make the macro wait, there are two options:
+
+* [[action:Pause|Pause]]: this adds a pause of a fixed length
+* [[action:Pause_Until|Pause Until]]: this tells Keyboard Maestro to wait until some [[/Conditions|condition]] is met (e.g. the front window title, a key is down, and a dozen more options).
+* [[action:Pause_Until_Change|Pause Until Change]]: this tells Keyboard Maestro to wait until something happens (e.g. the clipboard or front application changes).
+
+Often, adding pauses to your macro will solve the timing issues. A pause of 0.3 seconds is often enough, but in some cases (e.g. a [[action:Activate_a_Specific_Application|Activate a Specific Application]] action when there are many applications open and your system is running out of memory) longer pauses (several seconds) may be necessary.
+
+===== Typing Issues =====
+
+==== Sometimes Typing in Password Fields Drops Characters ====
+
+When Keyboard Maestro simulates a keystroke, it simulates both the press and the release.  If the key is already being held down by you (eg because you pressed the key as a trigger), then Keyboard Maestro notices this, and first releases the key, and then presses and releases the key.
+
+However, in a password field (or any time Secure Input is enabled), Keyboard Maestro and other applications cannot see the state of the keyboard (for obvious security reasons).  Because of this, Keyboard Maestro does not know that you are still holding down a key and therefore cannot know to release it.  So if it tries to simulate the same key that you are holding down, in a password field, it will still simulate the press and release, but because the key is already held down, the press will not do anything and the keystroke will be lost.
+
+This happens most commonly when you have a hot key trigger with the same key (eg Control-T) as a key you want to type in to a password field (eg "Hello there").  Because it is a password field, the only indication will be a missing bullet (•) (so ten instead of 11 bullets) and then an "invalid password" error, which makes this problem hard do diagnose.  
+
+==== Sometimes Typing results in Characters Missing or out of Order ====
+
+This typically happens in web fields (especially Facebook) or cross platform apps.
+
+The system has a queue for keyboard events, so they are sent by Keyboard Maestro in the correct order and then processed by the system  in that order. The problems happen after that.
+
+Typically you see this in fields where the app is processing the field. Essentially the app reads the field, does some processing or checking and then writes the field back, and the typing happens fast enough (as could keyboard typing if you could type fast enough) that changes happen while the field is being read/written and so characters are jumbled or lost.
+
+You can slow the typing down by using Set Action Delay action (https://wiki.keyboardmaestro.com/action/Set_Action_Delay) to increase the delay for normal typing. Only do it for the current macro (not permanently) since this issue is relatively rare, and generally only applies to certain apps or fields.
+
+==== Everything is lowercase in remote desktops/virtual machines ====
+
+Yes, unfortunately these types of environments seem to miss the shift key and the consequential uppercasing of lettings and symbols.
+
+===== Clipboard Issues =====
+
+==== Sometimes the Wrong Thing is Pasted ====
+
+Occasionally, you can have cases where you try to Insert Text by Pasting, or Paste from a Named Clipboard or the like, and the wrong thing is pasted.
+
+There are two potential causes of this.  The first is that some applications may cache the clipboard, resulting in the new clipboard that Keyboard Maestro sets not being seen by the application.  This is particularly prevalent in cross platform applications or applications that expect very large clipboards.  A solution to this may require setting the clipboard, and then executing some other action to wake up the application to the change, such as changing out of the application and then back, or clicking in the menu bar.
+
+A more common, but more random, cause is due to the different nature of setting/reading the clipboard, and simulating a Command-C/Command-V to copy/paste.  To understand what is going on, keep in mind:
+
+* Setting (or reading) the system clipboard is a synchronous action (it happens immediately).
+* Copy or Paste is done via a Command-C or Command-V, and this is an asynchronous action - the keystroke is posted to the event queue and the system/application will process it at some unknown future time.
+
+Keyboard Maestro includes an automatic delay after posting a command key to allow the application to process it, but it's possible for the system / application to be slow in processing it and thus resulting in the wrong order of execution.  For example, if you do this:
+
+    Insert Text by Pasting "A"
+    Insert Text by Pasting "B"
+
+The sequence is actually:
+
+     Set Clipboard to "A"
+     Post a Command V to the keyboard event queue
+     Pause a short while
+     Set Clipboard to "B"
+     Post a Command V to the keyboard event queue
+     Pause a short while
+
+If the application / system is slow, then the pause will not be long enough, and what will actually happen on the application end is:
+
+     The clipboard changes to "A"
+     The clipboard changes to "B"
+     A Command-V is received
+     A Command-V is received
+
+So B will be posted twice.  A similar affect can happen if you actively delete the pasted clipboard using the Delete Clipboard action - the old clipboard may be restored before the Command-V is processed.
+
+There are four possible solutions to ensure robustness in these sorts of cases:
+
+* Insert all the text in one go.  Eg, Insert Text by Pasting "%CurrentClipboard% - %PastClipboard%1%" or "%NamedClipboard%A% and %NamedClipboard%B%".
+* Add an explicit Pause action. Eg, Insert Text by Pasting "A", Pause 1 Second, Insert Text by Pasting "B".
+* Explicitly specify the actions and add an explicit Pause. Eg, Command-C, Pause 1 Second, Set Named Clipboard to Current Clipboard.
+* Increase the inbuilt pause after a Command key is simulated (see the [Preferences](http://www.keyboardmaestro.com/documentation/5/preferences.html) section of the documentation).
+
+==== Removing Styles Changes The Text ====
+
+Although most people consider the clipboard to be a single thing (an image, some styled text, an slide in Keynote, whatever), in truth a single clipboard entry is made up of a variety of different things, each somehow representing the thing you copied.
+
+For example, if you copy some text in Pages, then the clipboard might contain a variety of things like:
+
+* Some plain text in UTF8
+* Some plain text in UTF16
+* Some RTF styled text
+* Some iWork-specific representation of the styled text
+* An image of the styled text
+* A reference to the location in the document
+
+These different forms of the information on the clipboard are called “flavors”.
+
+When an application pastes anything from the clipboard, it tries to choose the best representation.  So Pages or Numbers might use the iWork representation of the text, another word processor might use the RTF version, a plain text application like BBEdit might use the UTF8 text, an image application like Acorn might use the image, and so on.
+
+Generally, these different pieces of information should all be logically the same.  That is, you would expect that if you paste in the RTF, and then remove styles, you would get the same result as if you used the plain text.
+
+Unfortunately, as the saying goes, in theory there should be no difference between theory and practice, but in practice there is.
+
+Sometimes application will put different text in the RTF than in the plain text.  For example, if you copy an entry from a styled list, the plain text might have just the characters, and the styled text might also have a bullet character at the front (or vice versa).
+
+When you use any action in Keyboard Maestro that requires only plain text, it will read the plain text version of the clipboard (eg *Filter Text: Remove Styles*, or *Set Variable to %Current Clipboard%*).
+
+When you use any action that can deal with styled text, it will read the RTF or other styled text version of the clipboard if possible (eg *Set Named Clipboard to styled text %CurrentClipboard%*).
+
+However, when Keyboard Maestro creates a clipboard entry (either for a named clipboard or the system clipboard) based on styled text, the result will always be matching plain and styled text, and any other clipboard flavors will be thrown away).
+
+So if you have a situation where the plain text and the plain text of the styled text differ, you can get the plain text of the styled text by reading the clipboard as styled text, and then storing it somewhere (in a named clipboard or the system clipboard), and then (since that will now be clean without discrepancies) getting the plain text of that.
+
+Eg:
+    * Set Clipboard to Styled Text %CurrentClipboard%
+    * Filter Clipboard: Remove Styles
+
+===== Keyboard Maestro Issues =====
+
+==== Accessibility ====
+
+Keyboard Maestro requires accessibility permissions to perform many of its actions. Sadly the macOS system security permissions have been quite buggy since Mojave, and continuing through at least Monterey. See the [[assistance:Accessibility_Permission_Problem|Accessibility Permission Problem]] assistance for more information if you have trouble setting hot keys, typing keys, moving windows, etc.
+
+==== Secure Input Mode ====
+
+Mac OS X will not let applications watch the keyboard when you are in a password field (to prevent hackers getting hold of your passwords).  However, the system can sometimes get into a state where it thinks it is permanently in a password fields.  Almost anything that asks for a password could cause the problem (eg, 1Password extension, VPN connections, Mail, etc).  Quitting the appropriate affected application or restarting will resolve the issue (until it reappears). Terminal has a Secure Keyboard Entry mode, as does Webroot SecureAnywhere by default.
+
+Keyboard Maestro 6 and later detects the case where the Secure Input Mode flag is left on and alerts you to the issue.
+
+Choose Interactive Help (v9+) from the Help menu and click the *Something unexpected is happening* link and Keyboard Maestro will tell you if there are any obvious issues.
+
+A related, very unusual case is that Terminal has a Secure Keyboard Entry mode (in the Terminal menu) - if you turn that on, that may also cause problems.
+
+And a final new cause for this may be Parallels Version 8, which apparently can interfere with the keyboard event queue and/or hot keys.  Restarting Parallels may help.
+
+There is a [[https://forum.keyboardmaestro.com/t/disable-secure-input/2410|forum topic]] on the subject and the Smile Software folks have a [very good page](http://smilesoftware.com/textexpander/secureinput.html) on this subject (as it affects TextExpander similarly to Keyboard Maestro) which lists a lot of possible causes.
+
+Note that there is nothing Keyboard Maestro can do to “work around” Secure Input Mode - it is a system security feature that has been erroneously left on.  Keyboard Maestro can detect and report it, but it can no more work around the problem that it could bypass any other security features of Mac OS X.
+
+As of 7.1+, Keyboard Maestro will tell you if it detects the system is in Secure Input Mode and if possible indicate the process which is causing the issue in the Keyboard Maestro status menu or by clicking the yellow warning triangle in the bottom right corner of the Keyboard Maestro editor.  For older versions, there is a [[https://forum.keyboardmaestro.com/t/keyboard-maestro-find-app-with-secure-input-macro/2504|macro to find the offending app]] on the forum.
+
+==== Preference Write Failed ====
+
+If Keyboard Maestro cannot write to its preferences folder, it should alert you to the problem by beeping every time you make changes to a macro.  Alternatively, if changes you are making to macros, variables, or Named Clipboards or the like are not sticking, the problem is likely caused by incorrect ownership or permissions of the Keyboard Maestro preference folder or its contents.  This most often happens after a poor migration or backup restore of the folder.
+
+Quit Keyboard Maestro, and open the Keyboard Maestro Preferences folder - in the Finder, hold the Option key down, select the menu Go ➤ Library, then drill down into Application Support and find the Keyboard Maestro folder.
+
+Select the folder and choose File ➤ Get Info and then look at the Sharing & Permissions section, and ensure it is owned by you and you have Read & Write privileges.  If it is not owned by you, you will need to [change the owner](http://osxdaily.com/2013/04/23/change-file-ownership-mac-os-x/).  If you do not have Read & Write permissions, you need to change that.
+
+Then also look at the contents of the folder and ensure all the files and folders have the correct owners and permissions (you can select multiple files in the Finder and then hold the Option key down and choose File ➤ Show Inspector to look at all of them).  Correct the ownership and permissions if necessary.
+
+Sometimes saving preferences may fail due to a spurious access-control list (ACL), which cannot be corrected from the Finder.  From the Terminal, you can check the ACL with `ls -el` and fix it with `chmod -a or -N`, for example, 
+
+```
+chmod -N ~/Library/Application\ Support/Keyboard\ Maestro/Keyboard\ Maestro\ Macros.plist
+```
+
+or, in more drastic cases:
+
+```
+chmod -R -a "everyone deny delete"  ~/Library/Preferences/com.stairways.*
+chmod -R -a "everyone deny delete"  ~/Library/Application\ Support/Keyboard\ Maestro
+```
+
+==== App Translocation Security ====
+
+To resolve App Translocation, in the Finder, move the Keyboard Maestro.app anywhere (the /Applications folder is generally the best place for it).
+
+In macOS Sierra, Apple added a strange security feature called App Translocation (sometimes known as Gatekeeper Path Randomization) which means that after downloading an application, if you do not move the resulting application somewhere (anywhere!), the application will be run as if it is located at a randomly chosen path by the system.  The consequence of this is that Launch Engine at Login will not work (because the Keyboard Maestro Engine will have a random, different, path each time), and version updates will fail (because Keyboard Maestro cannot replace itself).
+
+Manually moving the application **in the Finder** will turn off App Translocation.  Moving it by other means (eg, PathFinder, Hazel, Keyboard Maestro, whatever) will not remove translocation.
+
+Choose Interactive Help (v9+) (previously Assistance in v8) from the Help menu and click the *Something unexpected is happening* link and Keyboard Maestro will tell you if there are any obvious issues.
+
+You can determine if an application is running Translocated by looking at it with the Activity Monitor.  Double click on the process in the listing to inspect it, and then look at its Open Files and Ports.  One of the first entries will be the application executable, and if it is being Translocated it will have a long path, something like this:
+
+''/private/var/folders/9t/ld0kwsdn6mx13x87bw01bh_w0000gn/T/AppTranslocation/A5CA1CC2-10E0-4DD2-9962-7E484D2CFFED/d/Keyboard Maestro.app/Contents/MacOS/Keyboard Maestro''
+
+If you still cannot get the flag removed, you can use the Terminal command:
+
+    xattr -dr com.apple.quarantine "/Applications/Keyboard Maestro.app"
+
+assuming that `Keyboard Maestro.app` is in the Applications folder.
+
+===== Palette Issues =====
+
+==== No Palettes or Dialogs Appear ====
+
+If you set the Keyboard Maestro Engine Login Item to launch as Hidden, then it is not able to display palettes or dialogs (like the Alert or Prompt For User Input dialogs).  Uncheck the "Hide" checkbox in the Accounts -> Login Items system preference and quit and relaunch the Keyboard Maestro Engine to resolve the issue.  This appears resolved in Mavericks.
+
+==== The Global Floating Palette has disappeared ====
+
+If you close the global floating palette it will not repeat until either you relaunch the Keyboard Maestro Engine, or you show it again using the [Show/Toggle Global Macro Palette](https://wiki.keyboardmaestro.com/action/Toggle_Global_Macro_Palette) action.
+
+If you wish to briefly hide all the palettes (eg while watching a video), you can use the [Conceal Macro Palettes until Application Switch](https://wiki.keyboardmaestro.com/action/Conceal_Macro_Palettes) action.
+
+
+===== Trigger Issues =====
+
+==== Typed String Triggers Not Working ====
+
+See [Not Being Able To Enter a Hot Key](#Not_Being_Able_To_Enter_a_Hot_Key).
+
+==== Not Being Able To Enter a Hot Key ====
+
+If Typed String triggers are not working, or if you try to create a hot key and find that when you select the hot key it turns blue, but then when you type a keystroke it is not noticed, then there are two possible causes.
+
+If Access for Assistive Devices is not enabled, then Keyboard Maestro cannot watch the keyboard for keystrokes.  Keyboard Maestro warns you of this when you launch it, as well as with a small yellow warning triangle in the bottom right corner of the main window.  Click on the triangle and follow the instructions to enable access for assistive devices.  In Mavericks, the accessibility preferences are in the System Preferences Security & Privacy panel, Privacy pane - there are some reports that Mavericks can get confused if you have two different versions of Keyboard Maestro on your Mac, so check that panel closely.
+
+Choose Interactive Help (v9+) (previously Assistance in v8) from the Help menu and click the *Something unexpected is happening* link and Keyboard Maestro will tell you if there are any obvious issues.
+
+An alternative cause for this issue is [[#Secure Input Mode]].
+
+
+
+===== Script Issues =====
+
+
+==== Scripts Are Not Working Because the Path is Wrong When Executed in Keyboard Maestro ====
+
+In essence, the _default_ path in a Keyboard Maestro Execute Shell Script is **nothing**, since Keyboard Maestro executes scripts using the bash shell in non-interactive mode.
+
+To learn how to set a path in a Keyboard Maestro Execute Shell Script Action, see 
+[[action:Execute_a_Shell_Script#Path_in_Shell_Scripts|Execute a Shell Script]].
+
+
+
+===== User Interface Issues =====
+
+==== Stuck Modifiers Keys and Wacom Drivers ====
+
+It appears that recent versions of Wacom’s drivers can result in stuck modifier keys (Option, Shift, Command, Control) when used with Keyboard Maestro, either when pressing hot keys or when Keyboard Maestro is simulating keystrokes.  See the forum post [Keyboard misbehavior triggered by...?](https://forum.keyboardmaestro.com/t/keyboard-misbehavior-triggered-by/4481/34).
+
+==== Keyboard Issues ====
+
+* [How to Troubleshoot Keyboard Issues ](https://forum.keyboardmaestro.com/t/how-to-troubleshoot-keyboard-issues/7544)
+
+
+
+===== Issues with Other Apps =====
+
+==== The Case of the Vanishing Insertion Cursor in Mail ====
+
+When I hide Mail, and then show it later, the insertion cursor has disappeared, what’s up with that?
+
+Congratulations, you have found a bug, but it is a bug in Mac OS X and/or Mail.  You can reproduce this vanishing insertion cursor without Keyboard Maestro by quitting Keyboard Maestro and the Keyboard Maestro Engine, switch to Mail, create a new Mail message, with the insertion point blinking away.  Command-Tab to the Finder, then Command-Tab, select Mail, press H to hide it, select the Finder.  Then Command-Tab, select Mail. You can now type, but there is no insertion point.  Switching the front two windows twice restores the cursor.
+
+But, aha!  You have Keyboard Maestro!  Why do something manually when you can automate the process.  Make a macro that is triggered when you activate Mail, with actions:
+
+* Bring Window With Index 2 to Front
+* Bring Window With Index 2 to Front
+
+Problem solved until Apple get around to fixing the issue.  This bug in Mail appears to be resolved in Yosemite.
+
+
+==== The Select Menu Item Action Is Not Working in Photoshop, Finale or Another Application ====
+
+Cross platform apps, including often Adobe apps, and Finale, do not necessarily update or even build their menu bar until the menu is selected with the mouse.  When asked for the menus via the accessibility subsystem, the menus are either not there, or not currently correctly built for the context (eg, menus may be disabled or invisible when they should not be).
+
+Options to force the application into updating its menus include:
+
+* Switch out and back to the application, and then use the Select Menu Item action.
+* Simulate a click in the menu bar, and then use the Select Menu Item action.
+* Desperate measures, simulate a click in the menu bar, and then use arrows and typeahead (Insert Text by Typing) to select the menu item.
+
+Often, simulating a click in the menu bar to the right of the Help menu will be sufficient to cause the menus to be rebuild.
+
+==== Google Chrome Actions are Not Working ====
+
+The Chrome (and Safari) actions work by making AppleScript requests.
+
+Chrome's auto-update mechanism seems to frequently break the AppleScript connections.  Alternatively, having multiple versions of Chrome and/or Chrome within a Virtual Machine may cause problems.
+
+Restarting Google Chrome, Keyboard Maestro Engine, or restarting your Mac will usually resolve the broken connection.
+
+Configuring an explicit version for the Google Chrome application  by using the Terminal command:
+
+> defaults write com.stairways.keyboardmaestro.engine AppleScriptGoogleChromeName "/Applications/Google Chrome.app"
+
+may resolve the issue if it is caused by multiple versions of Chrome.
+
+An alternative cause can be because the actions work by executing the AppleScript via a osascript, and it is possible for all [[#Execute Script Actions are Not Working]].
+
+==== Safari Actions are Not Working ====
+
+The Safari (and Chrome) actions work by making AppleScript requests.
+
+As of OS X 10.11.5 it appears that Safari defaults to disallowing JavaScript from Apple Events.  This will stop various of the Safari actions from working.  To resolve this you must:
+
+* Enable the Develop menu in Safari if not already enabled in Safari’s Advanced preferences.
+* Enable *Allow JavaScript from Apple Events* in the Develop menu.
+
+
+===== macOS Issues =====
+
+
+==== Mojave and Later Security Preferences Issues ====
+
+Sadly the System Security Permissions have been rather buggy since Mojave, and this continues right through to Monterey. Combined with the increasing number of different permissions you need to enable can make it challenging when starting out with Keyboard Maestro, or after major system updates. These forum topics cover various issues:
+
+See Forum topics:
+  - [Resolving Catalina/Mojave Accessibility/Security Permissions Issues ](https://forum.keyboardmaestro.com/t/tip-resolving-catalina-mojave-accessibility-security-permissions-issues/16620)
+  - [Resolving Big Sur Accessibility, Security, and Other Issues ](https://forum.keyboardmaestro.com/t/tip-resolving-big-sur-accessibility-security-and-other-issues/20159)
+  - [macOS Big Sur: Using and Upgrading To ](https://forum.keyboardmaestro.com/t/macos-big-sur-using-and-upgrading-to/19637)
+
+===== Virtual Machine Issues =====
+
+==== Not Working With Parallels ====
+
+In Parallels, make sure the ”Enabled Mac OS X system shortcuts” preference is enabled, which will ensure Parallels reads the keyboard from the keyboard queue.
+
+===== Other Issues =====
+
+==== Other troubleshooting information ====
+
+See also the [Troubleshooting page](http://www.keyboardmaestro.com/documentation/6/troubleshooting.html) of the Keyboard Maestro documentation and [Philippe Martin’s Debugging Macros](http://flipmartin.net/software/tips-and-tricks-for-keyboard-maestro#dbg) section of his extensive [Tips & Tricks for Keyboard Maestro](http://flipmartin.net/software/tips-and-tricks-for-keyboard-maestro) article.

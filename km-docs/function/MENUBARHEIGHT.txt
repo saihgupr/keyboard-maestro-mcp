@@ -1,0 +1,23 @@
+====== MENUBARHEIGHT Function ======
+
+The *MENUBARHEIGHT()* function returns the height of the menu bar in pixels, generally 22.
+
+===== See Also =====
+
+==== Actions====
+
+* [[action:Manipulate_a_Window|Manipulate a Window]] action
+* [[action:Move_or_Click_Mouse|Move or Click Mouse]] action
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[function:MOUSEBUTTON|MOUSEBUTTON]] function
+* [[function:MOUSEX|MOUSEX]] function
+* [[function:MOUSEY|MOUSEY]] function
+* [[function:SCREEN|SCREEN]] function
+* [[function:SCREENVISIBLE| SCREENVISIBLE]] function
+* [[function:SCREENCOUNT| SCREENCOUNT]] function
+* [[function:WINDOW|WINDOW]] function
+* [[function:WINDOWCOUNT|WINDOWCOUNT]] function
+* [[:Functions|See all Functions]]

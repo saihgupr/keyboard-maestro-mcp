@@ -1,0 +1,11 @@
+====== EXP Function ======
+
+The EXP(x) function returns exponentiation of e.
+
+    EXP(1) ~ 2.71828183
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

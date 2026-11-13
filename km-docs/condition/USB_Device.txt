@@ -1,0 +1,25 @@
+The //USB Device condition// looks for a USB Device with a name that:
+
+* is exactly (case insensitively) a specified string.
+* contains (case insensitively) a specified string.
+* matches a specified [[:Regular Expressions|regular expression]].
+
+and then checks whether it:
+
+* exists.
+* does not exist.
+
+Since USB Device names may be quite arbitrary, and may not match your expectations for the name of the device, if your text insertion point is in the name field of this condition and you connect (or turn on) the device, Keyboard Maestro will fill the name in for you.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]

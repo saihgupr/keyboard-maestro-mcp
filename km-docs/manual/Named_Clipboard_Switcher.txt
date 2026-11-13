@@ -1,0 +1,25 @@
+====== Named Clipboard Switcher ======
+
+The Named~~Clipboard~~Switcher enables you to define any number of named clipboards which can be use to Cut or Copy into and Paste from in any application. To use the Named~~Clipboard~~Switcher you simply trigger the Named~~Clipboard~~Switcher macro.  The Named~~Clipboard~~Switcher will present you with a window allowing you to select the named clipboard to use.
+
+{{ namedclipboardswitcher.png?nolink&673x647 | Named Clipboard Switcher Window }}
+
+You can press arrow keys to scroll through the clipboard entries, or you can use type-ahead to select a named clipboard, and you can use the search field to filter the clipboards.
+
+You can cut or copy the current selection into the selected clipboard, or paste the selected clipboard into the current selection (hold down the shift key to paste as plain text).
+
+You can drag text and images out from the clipboard switcher to other applications.
+
+You can include information about the clipboard entry (index, time copied, size) by toggling the BUTTON{{{i}}} button.  Whether the switcher closes when you paste something is controlled by the BUTTON{{{x}}} button.  The switcher honours the text size setting in the Preferences.
+
+In the BUTTON{{{⚙}}} menu in each clipboard entry, you can Cut, Copy or Paste to/from the item or use it Set the System Clipboard, optionally removing styles or forcing it as an image.  You can also Rename or Delete the item.
+
+You can select multiple entries and paste them as a single unit.  The BUTTON{{{⚙}}} menu includes a selection for the separator to include between items when pasting multiple entires.
+
+Any active macros that have the Clipboard Filter trigger will be displayed in the BUTTON{{{⚙}}} menu.  They can use the Trigger Clipboard facility to operate on the selected clipboard, allowing you to make macros that apply to any selected clipboard (for example, save the clipboard to disk, or uppercase it).
+
+You can toggle to the [[manual:Clipboard_History_Switcher|Clipboard History Switcher]] by clicking on the BUTTON{{{🕘}}} button.
+
+By default, Keyboard~~Maestro creates three Named~~Clipboard~~Switcher macros in the “Switcher~~Group” Macro~~Group, triggered by Command-Shift-X, C and V (Cut, Copy and Paste).  You can disable the Macros by selecting the Switcher~~Group, then selecting the macros and and clicking the BUTTON{{{✓}}} button below the Macros list.
+
+You can add or delete named clipboards in the [[Windows#Preferences_Clipboards_Pane|Clipboards preference pane]].

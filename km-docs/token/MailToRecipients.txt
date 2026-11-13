@@ -1,0 +1,1 @@
+The //%MailToRecipients%// token returns comma separated list of the to recipients in the currently selected mail message.

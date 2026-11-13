@@ -1,0 +1,32 @@
+====== Prompt for File Action ======
+
+The //Prompt for File// action (v8+) prompts for selected files or folders and saves the path(s) into a variable.
+
+{{ promptforfile.png?nolink&575x202 | Prompt for File }}
+
+You can prompt for an existing file(s) or folder(s), or for a new file or folder.
+
+You can choose whether you want to select only a single file or folder, or allow selecting multiple files or folders (v10.0+).
+
+You can prompt for a new file or new folder, or for a new folder and create it if necessary (v10.0+).
+
+For a new file or folder, you can specify the default file name.
+
+For an existing file, you can specify the allowed file types with a space or comma separated list of extensions or [[https://en.wikipedia.org/wiki/Uniform_Type_Identifier|Uniform Type Specifiers]] such as `public.image`.
+
+You can (v9.0+) specify the title of the prompt and the default directory.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Prompt_for_User_Input|Prompt for User Input]]
+* [[action:Custom_HTML_Prompt|Custom HTML Prompt]] action
+* [[action:Prompt_With_List|Prompt With List]] action
+* [[action:Prompt_for_Screen_Rectangle|Prompt for Screen Rectangle]] action
+* [[action:Get_Touch_Bar_Selection|Get Touch Bar Selection]] action
+* [[:Actions|All Actions]]
+
+==== Forum ====
+
+* [MACRO: Prompt for File Action](https://forum.keyboardmaestro.com/t/move-copy-with-dialogue-box/8108)

@@ -1,0 +1,23 @@
+====== Remote Trigger ======
+
+The //Remote Trigger// action (v8+) triggers a remote macro that has the [[trigger:Remote|Remote]] trigger.  It does this by connecting to the remote Stairways Software web server using the appropriate URL for the matching Remote trigger.
+
+It is basically just a simplified version of the [[action:Get_a_URL|Get a URL]] action.
+
+{{ remote-trigger.png?nolink&575x146 | Remote Trigger }}
+
+The result from the server is the number of listening macros that the server currently knows about.  So if it is 0, then no macro will be triggered.  If it is more than 0, then probably that many remote macros will be triggered (though the normal caveats apply about anything that happens over the Internet).
+
+Enter the information from the matching [[trigger:Remote]] trigger.
+
+You can (v9.0+) include a parameter if desired.
+
+===== See Also =====
+
+==== Triggers ====
+
+* [[trigger:Remote]]
+
+==== Actions ====
+
+* [[action:Get_a_URL|Get a URL]]

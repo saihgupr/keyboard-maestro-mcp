@@ -1,0 +1,85 @@
+====== Remote Trigger ======
+
+The *Remote trigger* (v8+) lets you trigger selected macros from any device on the Internet, without authentication, via a Stairways Software web server.  Of course, you have to have set this [[:Triggers|trigger]] on the [[manual:Macros|Macro]] first.
+
+For a good discussion, see:
+  * [Tip:  How & When to Use the Remote Trigger](https://forum.keyboardmaestro.com/t/triggering-keyboard-maestro-macros-remotely/8277?u=jmichaeltx), 2017-10-13, peternlewis
+  * [Macro Triggers that Use a URL](https://forum.keyboardmaestro.com/t/request-for-a-working-example-of-remote-trigger/10844/10?u=jmichaeltx), 2018-07-15, peternlewis
+
+---
+
+===== Read Before Your Use the Remote Trigger =====
+**Clearly there are some serious security issues with this, so you should use a lot of caution when you allow any macro to be executed with a Remote trigger.**
+
+{{:trigger:caution-small.png?nolink |}}
+
+  * **A macro with the _Remote Trigger_ may be used by anyone who knows the trigger code from anywhere on the Internet.**
+* **It should only be used with a very safe macro**, such as:\\     • Restarting a service that is always supposed to be running, or\\     • Launching iTunes or\\     • Some other fairly innocuous activity.
+  * **This feature of Keyboard Maestro is not guaranteed indefinitely**, and may be removed at any time without notice.
+  * **The trigger will not be 100% reliable**
+    * It is dependent on many devices on the Internet, some outside the control of Stairways Software, between the device which invokes the trigger and Keyboard Maestro on your Mac.
+    * **So it should not be used in cases where it is essential that the target Macro be executed.**
+  * **Your macro _could_ be triggered by anyone who just happens to use the same pair of Remote Trigger UniqueIDs.**
+  * The _Remote Trigger_ does not use, and is not dependent on the local built-in Keyboard Maestro [[trigger:Web_Server|Web Server]].
+
+---
+
+===== How To Use =====
+
+==== Macro Setup ====
+
+Create a New Macro, and follow these steps:
+  - Click on the ➕ to add a trigger, and select "Remote Trigger".
+  - That will add the trigger and generate UniqueID1 and UniqueID2 for you to use in the Remote Trigger URL:
+    * {{:trigger:remote-trigger-example.png?nolink|}}
+  - Paste the URL on the Clipboard somewhere for safe-keeping.
+    * Probably best to store in a password manager like 1Password.
+    * Remember:  Anyone with this URL can trigger your macro.
+
+==== URL for Remote Trigger ====
+
+
+
+The trigger uses a URL in the form of:
+
+```html
+https://trigger.keyboardmaestro.com/t/<UniqueID1>/<UniqueID2>?TriggerValue
+```
+
+where:
+
+  * //UniqueID1// can either be specified by you, or can be a unique ID for your Mac (so that each Mac you sync macros to has a different trigger value).
+  * //UniqueID2// can be defined by you, and defaults to a Globally Unique ID.
+  * **It is best to not change these IDs to ensure that no one else is using the same ID as you are.**
+
+==== How To Invoke Remote Trigger ====
+  - In the Remote trigger section of the Macro, click the _Copy_ button (as shown in the above screen shot), and it will copy the URL required.
+  - Paste it into any app or tool that will open a URL, like:
+      - The Address bar of any web browser
+      - The `/bin/open` command in Terminal, or a [[action:Execute_a_Shell_Script|Execute a Shell Script]]
+      - [[action:Open_a_URL|Open a URL action]]
+
+==== More Information ====
+
+
+If more than one macro (on any Mac, anywhere in the world, yours, or anyone else's) has the same pair of UniqueIDs, then all those macros will trigger when the URL is accessed.
+
+Generally, you should use the default values unless there is some reason to change them (such as explicitly wishing to trigger multiple macros in multiple locations).
+
+When the macro executes, its [[token:TriggerValue|%TriggerValue%]] token will hold the //TriggerValue// used in the Remote Trigger URL.
+
+As with all triggers, macros are only available if they are currently active, that is if they are enabled and in a Macro Group that is enabled and active.
+
+For example, if you are running some sort of process on your Mac that occasionally fails, you could write a script to restart it and make it available as a Remote triggered Macro, which you (or anyone else) could then execute to restart the process.
+
+===== Using with Web Services =====
+
+You can also connect up web services (eg [[https://healthchecks.io|HealthChecks.io]]) to trigger a macro based on whatever conditions they operate on.
+
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[Public_Web|Public Web]] trigger
+* [[/Triggers|All Triggers]]

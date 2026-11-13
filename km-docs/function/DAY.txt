@@ -1,0 +1,48 @@
+====== DAY Function ======
+
+The DAY([unixtime]) function returns the day of the month (1-31), either the current day, or the day of the specified [[:unixtime]].
+
+    DAY() === the current day
+    DAY( unixtime ) === the day of the month of the unix time
+
+[[https://en.wikipedia.org/wiki/Unix_time|Unix Time]] (also known as POSIX time or Epoch time) is a system for describing instants in time, defined as the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970
+
+Example: 1451492206 – the corresponding ISO 8601 formatted date is 2015-12-30T16:16:46Z
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Filter|Filter]] (Process Text Tokens)
+* [[:Actions|See all Actions]]
+
+=== Functions === 
+
+* [[YEAR]]
+* [[MONTH]]
+* [[DAY]]
+* [[DOW]]
+* [[HOUR]]
+* [[MINUTE]]
+* [[SECOND]]
+* [[TIME]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:ICUDateTime|%ICUDateTime%]] (local)
+* [[token:ICUDateTimeFor|%ICUDateTimeFor%]] (local)
+* [[token:ICUDateTimeMinus|%ICUDateTimeMinus%]] (local)
+* [[token:ICUDateTimePlus|%ICUDateTimePlus%]] (local)
+* [[token:LongDate|%LongDate%]] (local)
+* [[token:LongTime|%LongTime%]] (local)
+* [[token:NumberDate|%NumberDate%]] (local)
+* [[token:ShortDate|%ShortDate%]] (local)
+* [[token:ShortTime|%ShortTime%]] (local)
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+- [[:Dates_and_Times|Dates and Times]]
+- [[:JulianDate|JulianDate]]
+- [[:unixtime]] in GMT

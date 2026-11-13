@@ -1,0 +1,28 @@
+The *Activate Application Switcher* action is essentially a highly specialized macro action that enables you to launch, switch, hide, and quit applications. By triggering the macro, the Application Switcher enables you to switch between all running applications. Once the switching window appears, you may select the application to activate, and Application Switcher will take you to it.
+
+The Activate Application Switcher action lets you choose from three themes (vertical list, horizontal icons, or icon grid), as well as configure the icon size, color tint, and the sort order.
+
+You can also choose to hide other applications when switching. You can also choose to have the switcher appear under the mouse.
+
+You can select various applications to always be displayed, even if they are not currently running, perfect for launching frequently used applications. In the Excluded preference pane, you can configure various applications to never be displayed.
+
+While the Application Switcher window is displayed, you can perform various actions:
+
+* Press “q” to mark (or unmark) an application to be quit.
+* Press “k” twice to mark an application to be force quit.
+* Press “s” or “h” to mark (or unmark) an application to be hidden.
+* Press “l” or “z” to mark (or unmark) an application to be launched.
+* Press “a” to hide (or show) “always included” applications.
+* Press “e” to show (or hide) “always ignored” applications.
+* Press “j” to show (or hide) “recently quit” applications.
+* Press “c” to select the current application.
+* Press “f” to select the Finder.
+* Press “d” to switch directly to the current application and hide other applications.
+* Press “i” to Get Info on the current application.
+* Press “r” to reveal the current application in the Finder.
+
+{{ :action:applicationswitcher.png |}}
+
+Click and hold on any icon to bring up a menu of the available options.
+
+By default, Keyboard Maestro creates an Activate Application Switcher macro in the “Switcher Group” Macro Group, triggered by Command-Tab. You can disable this Macro by selecting the Switcher Group, then selecting the Activate Application Switcher macro and clicking the ✓ button below the Macros list. You can edit this macro to change the trigger to to any other desired Hot Key avoid replacing the system application switcher.

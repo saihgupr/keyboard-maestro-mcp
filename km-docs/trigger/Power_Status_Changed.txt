@@ -1,0 +1,15 @@
+====== Power Status Changed Trigger ======
+
+The //Power Status Changed trigger// (v10.0+) executes the macro when your Mac connects or disconnects from a power supply.
+
+===== See Also =====
+
+=== Triggers===
+
+* [[:Triggers|See all Triggers]]
+
+=== Functions===
+
+* [[function:BATTERY|BATTERY]] function
+* [[:Functions|See all Functions]]
+

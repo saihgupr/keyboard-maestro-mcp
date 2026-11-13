@@ -1,0 +1,21 @@
+====== Appearance Changed Trigger ======
+
+The //Appearance Changed trigger// (v10.0+) executes the macro when your Mac changes system appearance.
+
+===== See Also =====
+
+=== Triggers===
+
+* [[:Triggers|See all Triggers]]
+
+=== Actions ===
+
+* [[action:Set_System_to_Dark_Mode|Set System to Dark Mode]] action
+* [[action:Set_Keyboard_Maestro_to_Dark_Mode|Set Keyboard Maestro to Dark Mode]] action
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:DARKMODE|DARKMODE]] function
+* [[function:KMDARKMODE|KMDARKMODE]] function
+* [[:Functions|See all Functions]]

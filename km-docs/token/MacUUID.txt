@@ -1,0 +1,20 @@
+The //%MacUUID%// token returns a unique ID for this Mac.  You can test this with Macro Syncing to have your macro behave differently on different Macs.
+
+For example, use the [[action:Set_Clipboard_to_Text|Set Clipboard to Text action]] to copy the value of the *%MacUUID%* token on a specific Mac.
+
+{{ :token:set-clipboard-to-macuuid.png?nolink |}}
+
+Just "Try" the action to copy it, no need to create a macro, then you can delete the action.
+
+Then paste that in to an [[action:If_Then_Else|If Then Else action]] with a Text condition.
+
+{{ :token:if-macuuid.png?nolink |}}
+
+If you migrate or transfer your preferences to a new Mac, you might end up with the MacUUID and MacRemoteUUID copied resulting in both Macs having the same UUID. If you intend to continue to using both Macs, you can delete them from the new Mac with the Terminal command:
+
+```
+defaults delete com.stairways.keyboardmaestro.engine MacUUID
+defaults delete com.stairways.keyboardmaestro.engine MacRemoteUUID
+```
+
+and then new ones will be generated.

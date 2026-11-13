@@ -1,0 +1,11 @@
+The Delete Past Clipboard action deletes a past system clipboard. This can be used to restore the system clipboard after another action sets the clipboard temporarily.
+
+
+Note: the most recent clipboard is number 0.
+
+This screenshot shows a group of actions which copy the words one, two, three and four in that order to the system clipboard. We then delete past clipboard 3. Then we display the clipboard switcher which shows the recent clipboards contain the words four, three and two. Past clipboard 3 contained the word //one// and has been deleted.
+
+
+{{:action:clipboardhistorydemo.png|}}
+
+{{:action:clipboardhistoryswitcher.jpg|}}

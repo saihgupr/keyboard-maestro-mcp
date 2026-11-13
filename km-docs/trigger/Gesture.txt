@@ -1,0 +1,25 @@
+====== Gesture Trigger ======
+
+The *Gesture trigger* (v8+) lets you execute a macro when you draw a shape using the mouse.
+
+The gesture consists of any sequence of one or more directional movements (horizontally, vertically, or diagonally).  The gesture can require a set of modifiers to be pressed, or a specific mouse button to be pressed, and you can optionally make the gesture reversible (so, for example, `up, right, up, left` would also trigger if you drew the shape in the reverse direction `right, down, left, down`).
+
+You can practice gestures by choosing [[manual:Menus#Practice_Gestures|Practice Gestures]] from the [[manual:Menus#Help|Help menu]]
+
+===== See Also =====
+
+=== Actions ===
+
+ * [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]
+

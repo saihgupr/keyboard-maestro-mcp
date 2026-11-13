@@ -1,0 +1,9 @@
+====== TAN Function ======
+
+The TAN(x) function returns the tangent (ratio of the opposite over the adjacent) of its argument which is an angle in radians from the x-axis.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

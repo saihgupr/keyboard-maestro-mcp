@@ -1,0 +1,46 @@
+====== Prompt For Snippet Action ======
+
+The _Prompt For Snippet_ action (v11.0+) allows you to create a snippet built from a template with fields entered when you execute the macro.
+
+The snippet defines the template using the [[token:Ask|%Ask%]] token, which can include a size and a default value.
+
+{{ promptforsnippet.png?nolink | Prompt For Snippet Action }}
+
+The size is roughly the number of characters (default 20), or lines (default 5) if the token is on a line by itself, and the default value is either the specified value if `:` is the separator or the value of the specified variable if `=` is the separator.
+
+This action produces a prompt like this:
+
+{{ prompt-for-snippet-window.png?nolink&901x382 | Prompt For Snippet Window }}
+
+==== Output of Results ====
+
+The results of the prompt can be:
+
+{{page>include:ScriptOutput#}}
+==== Result Button ====
+
+The [[token:PromptButton|%PromptButton%]] token is set to the _name_ of the button pressed, and can be used in actions later in this instance like any other text token.  The deprecated _Result Button_ variable is also set to the _name_ of the button pressed.
+
+(!) Note that the macro will terminate if you press the Cancel button, so to get any result other than OK you will need to use the [[action:Try_or_Catch|Try or Catch]] action to catch the abort and continue anyway.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Alert|Alert]] action
+* [[action:Prompt_for_User_Input|Prompt for User Input]] action
+* [[action:Prompt_With_List|Prompt With List]] action
+* [[action:Prompt_for_File|Prompt for File]] action
+* [[action:Prompt_for_Screen_Rectangle|Prompt for Screen Rectangle]] action
+* [[action:Custom_HTML_Prompt|Custom HTML Prompt]] action
+* [[action:Show_Palette_of_Macros|Show Palette of Macros]] action
+* [[action:Get_Touch_Bar_Selection|Get Touch Bar Selection]] action
+* [[:Actions|All Actions]]
+
+=== Tokens ===
+
+* [[token:Ask|%Ask%]] token
+* [[token:AlertButton|%AlertButton%]] token
+* [[token:PromptButton|%PromptButton%]] token
+* [[token:HTMLResult|%Result%]] token
+* [[:Tokens|All Tokens]]

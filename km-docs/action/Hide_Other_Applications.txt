@@ -1,0 +1,14 @@
+====== Hide Other Applications Action ======
+
+The Hide Other Applications action hides all foreground applications except the current one, optionally honoring the [[manual::Preferences#Excluded_Preferences|excluded applications list]].
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Hide_a_Specific_Application|Hide a Specific Application]] action
+* [[action:Hide_All_Applications|Hide All Applications]] action
+* [[action:Hide_Front_Application|Hide Front Application]] action
+* [[action:Show_a_Specific_Application|Show a Specific Application]] action
+* [[action:Show_All_Applications|Show All Applications]] action
+* [[:Actions|See all Actions]]

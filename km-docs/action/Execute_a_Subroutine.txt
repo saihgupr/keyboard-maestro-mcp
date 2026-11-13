@@ -1,0 +1,27 @@
+====== Execute a Subroutine Action ======
+
+The *Execute a Subroutine* action (v10.0+) allows you to execute another macro like a [[/Subroutines|subroutine]], optionally passing parameters in and receiving a result in return.  The sub-macro will be executed, and when it is finished, execution will continue on from after this action.
+
+The target macro defines the parameters via the [[trigger:Subroutine|Subroutine]] trigger, and you specify the values for those parameters in this action.
+
+You can only use this action to execute sub-macros that include the [[trigger:Subroutine|Subroutine]] trigger, but if you want to execute another macro without parameters or a result you can use the [[action:Execute_a_Macro|Execute a Macro]] action instead.
+
+If the macro returns a value, then you can use the [[action:Return_from_Subroutine|Return from Subroutine]] action to return a value which will be stored in the specified variable.
+
+ExtraSearchTags: *Run Macro*, *Run a Macro*, *Call Macro*, *Sub Macro*
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[trigger:Subroutine|Subroutine]] trigger
+* [[trigger:URL|URL]] triggers
+* [[:Triggers|See all Triggers]]
+
+=== Actions ===
+
+* [[action:Return_from_Subroutine|Return from Subroutine]] action
+* [[action:Execute_a_Macro|Execute a Macro]] action
+* [[/Actions|Actions]]
+
+

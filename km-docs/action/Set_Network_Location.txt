@@ -1,0 +1,3 @@
+The Set Network Location action allows you to set the Network Location from those available in the System Preferences Network pane.
+
+Select a location from the //Network Locations// pop-up. The location is entered in the action’s //Set Network Location// text area.  Text tokens to be used can be selected from the pop-up at the right-hand end of the text area.

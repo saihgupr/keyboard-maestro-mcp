@@ -1,0 +1,11 @@
+====== ABS Function ======
+
+The ABS(x) function takes a number and returns the absolute value of it.  Eg:
+
+    ABS(5) === ABS(-5) === 5
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

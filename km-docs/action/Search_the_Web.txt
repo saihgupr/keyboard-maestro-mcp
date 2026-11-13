@@ -1,0 +1,148 @@
+====== Search the Web Action ======
+
+The Search the Web action has Keyboard Maestro ask you for a search term and then searches a specified web site (by default Google).
+
+When you run the action an input window appears on screen containing placeholder or default text. Type your search term into the input window and press Return. Keyboard Maestro opens the default browser and searches for the search term. Results are displayed in the default browser.
+
+{{:action:searchtheweb.png|}}
+
+Enter a Title for the action in the //Title// text area. By default Keyboard Maestro fills the title area for you with the words: //Search the web with Google//.
+
+Enter a search string in the //URL// text area. By default Keyboard Maestro searches Google and fills the URL text area for you with the string: //%%http:⁄⁄www.google.com/search?q=%Search%%%//.
+
+Enter any default text to be used in the //Default// area. If you don’t enter any text here then the input window displays the title in grey. Anything you type replaces everything displayed in gray. If you enter default text then that is displayed in the input window and selected. To replace the text just start typing or to add to it press the left or right cursor arrow key to move to the start or end and add further text.
+
+
+{{:action:kmsearchweb-title.jpg|}} 
+
+
+{{:action:searchthewebinput.jpg|}}
+
+==== Web Search Engines ====
+
+^Site^URL^
+|Dogpile|<nowiki>http://www.dogpile.com/search/web?q=%Search%</nowiki>|
+|DuckDuckGo|<nowiki>http://duckduckgo.com/?q=%Search%</nowiki>|
+|DuckDuckGo: !Bangs|<nowiki>https://duckduckgo.com/bang?q=%Search%</nowiki>|
+|Startpage|<nowiki>http://startpage.com/do/search?language=english&query=%Search%</nowiki>|
+|Startpage: Past day|<nowiki>http://startpage.com/do/search?language=english&query=%Search%&with_date=d</nowiki>|
+|Startpage: Past month|<nowiki>http://startpage.com/do/search?language=english&query=%Search%&with_date=m</nowiki>|
+|Startpage: Past week|<nowiki>http://startpage.com/do/search?language=english&query=%Search%&with_date=w</nowiki>|
+|Startpage: Past year|<nowiki>http://startpage.com/do/search?language=english&query=%Search%&with_date=y</nowiki>|
+|Bing|<nowiki>http://www.bing.com/search?q=%Search%</nowiki>|
+|Bing: Images|<nowiki>http://www.bing.com/images/search?q=%Search%</nowiki>|
+|Brave Search (without AI summary)|<nowiki>https://search.brave.com/search?q=%Search%&summary=0</nowiki>|
+|Brave Search (with AI summary)|<nowiki>https://search.brave.com/search?q=%Search%&summary=1</nowiki>|
+|Brave Search for images|<nowiki>https://search.brave.com/images?q=%Search%</nowiki>|
+|Google|<nowiki>http://www.google.com/search?q=%Search%</nowiki>|
+|Google: Exact string|<nowiki>http://www.google.com/search?q=%22%Search%%22</nowiki>|
+|Google: Images|<nowiki>https://www.google.com.au/search?tbm=isch&q=%Search%</nowiki>|
+|Google: Web cache|<nowiki>http://webcache.googleusercontent.com/search?q=cache:%Search%</nowiki>|
+|Google: Groups|<nowiki>http://groups.google.com/groups?q=%Search%</nowiki>|
+|Youtube|<nowiki>http://www.youtube.com/results?search_query=%Search%</nowiki>|
+
+==== Keyboard Maestro ====
+|Keyboard Maestro Forum|<nowiki>https://forum.keyboardmaestro.com/search?q=%Search%</nowiki>|
+|Keyboard Maestro Wiki|<nowiki>https://wiki.keyboardmaestro.com/Home_Page?do=search&id=%Search%</nowiki>|
+
+==== Geo Search ====
+
+^Site^URL^
+|Open Street Map|<nowiki>http://nominatim.openstreetmap.org/search.php?q=%Search%&polygon=1&viewbox=</nowiki>|
+|Apple Maps|<nowiki>http://maps.apple.com/?q=%Search%</nowiki>|
+|Bing Maps|<nowiki>http://www.bing.com/maps/?where=%Search%</nowiki>|
+|Google Maps|<nowiki>http://maps.google.com/maps?q=%Search%</nowiki>|
+
+==== Host info ====
+
+^Site^URL^
+|Network-Tools|<nowiki>http://network-tools.com/default.asp?prog=express&host=%Search%</nowiki>|
+|Website subpages list|<nowiki>http://www.sousites.com/%Search%</nowiki>|
+
+==== Dictionaries ====
+
+^Site^URL^
+|Cambridge|<nowiki>https://dictionary.cambridge.org/dictionary/english/%Search%</nowiki>|
+|Dictionary|<nowiki>https://www.dictionary.com/browse/%Search%</nowiki>|
+|Merriam-Webster|<nowiki>https://www.merriam-webster.com/dictionary/%Search%</nowiki>|
+|Oxford English|<nowiki>https://www.oed.com/search/dictionary/?scope=Entries&q=%Search%</nowiki>|
+|Wiktionary|<nowiki>http://en.wiktionary.org/?search=%Search%</nowiki>|
+|Urban dictionary|<nowiki>http://www.urbandictionary.com/define.php?term=%Search%</nowiki>|
+
+==== Translation ====
+
+^Site^URL^
+|IATE: English to any|<nowiki>http://iate.europa.eu/SearchByQuery.do?method=search&valid=Search+&sourceLanguage=en&targetLanguages=s&domain=0&typeOfSearch=s&request=&query=%Search%</nowiki>|
+|IATE: German to English|<nowiki>http://iate.europa.eu/SearchByQuery.do?method=search&valid=Search+&sourceLanguage=de&targetLanguages=en&domain=0&typeOfSearch=s&request=&query=%Search%</nowiki>|
+|Linguee: English/German|<nowiki>http://www.linguee.com/english-german/search?source=auto&query=%Search%</nowiki>|
+|Linguee: English/French|<nowiki>http://www.linguee.com/english-french/search?source=auto&query=%Search%</nowiki>|
+|Linguee: English/Spanish|<nowiki>http://www.linguee.com/english-spanish/search?source=auto&query=%Search%</nowiki>|
+|Leo: English/German|<nowiki>http://dict.leo.org/ende/index_de.html#/search=%Search%&searchLoc=0&resultOrder=expert&multiwordShowSingle=off</nowiki>|
+|Bing translator (any to English)|<nowiki>http://www.bing.com/translator/?from=au&to=en&text=%Search%</nowiki>|
+|Bing webpage translator (any to English)|<nowiki>http://www.microsofttranslator.com/bv.aspx?ref=Internal&a=%Search%</nowiki>|
+|Google translator (any to English)|<nowiki>https://translate.google.com/#auto/en/%Search%</nowiki>|
+|Google webpage translator (any to English)|<nowiki>http://translate.google.com/translate?js=n&sl=auto&tl=en&u=%Search%</nowiki>|
+|Google translator (any to English)|<nowiki>https://translate.google.com/#auto/en/%Search%</nowiki>|
+|LibreTranslate (any to English)|<nowiki>https://libretranslate.com/?source=auto&target=en&q=%Search%
+</nowiki>|
+
+==== References ====
+
+^Site^URL^
+|Wolfram Alpha|<nowiki>http://www.wolframalpha.com/input/?i=%Search%</nowiki>|
+|StackExchange (all)|<nowiki>http://stackexchange.com/search?q=%Search%</nowiki>|
+|StackOverflow|<nowiki>http://stackoverflow.com/search?q=%Search%</nowiki>|
+|Wikipedia|<nowiki>https://en.wikipedia.org/wiki/%Search%</nowiki>|
+|IMDB|<nowiki>http://www.imdb.com/find?s=all&q=%Search%</nowiki>|
+|Vim Wiki|<nowiki>http://vim.wikia.com/wiki/Special:Search?search=%Search%&fulltext=Search</nowiki>|
+|CSS Tricks|<nowiki>https://css-tricks.com/search-results/?q=%Search%</nowiki>|
+|WordPress plugins|<nowiki>https://wordpress.org/plugins/search.php?q=%Search%</nowiki>|
+
+==== Games ====
+
+^Site^URL^
+|Gamespot|<nowiki>http://www.gamespot.com/search/?q=%Search%&indices%5B%5D=article&indices%5B%5D=review&indices%5B%5D=game</nowiki>|
+|Steamprices/sales|<nowiki>https://www.steamprices.com/us/search/?q=%Search%&p=1</nowiki>|
+|Steamprices/sales II|<nowiki>http://steamsales.rhekua.com/search.php?term=%Search%</nowiki>|
+|Kerbal Space Program Wiki|<nowiki>http://wiki.kerbalspaceprogram.com/index.php?search=%Search%</nowiki>|
+
+==== iTunes & Mac App Store ====
+
+^Site^URL^
+|Mac App Store|<nowiki>macappstore://search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?q=%Search%</nowiki>|
+|Apple Music|<nowiki>https://music.apple.com/us/search?term=%Search%</nowiki>|
+
+==== Apple related ====
+
+^Site^URL^
+|Apple Discussions|<nowiki>https://discussions.apple.com/search.jspa?q=%Search%</nowiki>|
+|Ask Different|<nowiki>https://apple.stackexchange.com/search?q=%Search%</nowiki>|
+|Macupdate|<nowiki>http://www.macupdate.com/find/mac/%Search%</nowiki>|
+|MacOSXHints|<nowiki>http://www.macosxhints.com/search.php?query=%Search%&type=stories&mode=search&keyType=all</nowiki>|
+
+==== Shops ====
+
+^Site^URL^
+|Amazon|<nowiki>https://www.amazon.com/s/?url=search-alias%3Daps&field-keywords=%Search%</nowiki>|
+|Ebay|<nowiki>http://www.ebay.com/sch/%Search%</nowiki>|
+
+==== Local (URL schemes) ====
+
+^Site^URL^
+|Man pages|<nowiki>x-man-page://%Search%</nowiki>|
+|Dash|<nowiki>dash://%Search%</nowiki>|
+|Evernote|<nowiki>evernote://search/%Search%</nowiki>|
+
+==== German ====
+|Amazon.de|<nowiki>https://www.amazon.de/s/?url=search-alias%3Daps&field-keywords==%Search%</nowiki>|
+|Dictionary|<nowiki>https://www.duden.de/suchen/dudenonline/%Search%</nowiki>|
+|Wikipedia|<nowiki>https://de.wikipedia.org/wiki/%Search%</nowiki>|
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Open_a_URL|Open a URL]] action
+* [[action:New_Front_Browser_Window|New Front Browser Window]] action
+* [[:Actions|See all Actions]]
+

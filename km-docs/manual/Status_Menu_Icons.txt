@@ -1,0 +1,28 @@
+====== Status Menu Icons ======
+
+Keyboard Maestro allows you to select the status menu icon.
+
+The current lovely status menu icons were done by [[https://www.stairways.com/action/linkthru?iconaholic|Iconaholic]], and you can also use the Classic finger tapping icons.  As well as that, you can get more status menu icons from [[https://www.stairways.com/action/linkthru?getmorestatusmenuicons|our web site]] or [[https://forum.keyboardmaestro.com/c/statusmenuicon|the forum]] and you can create and optionally contribute your own versions.  You can drop a new status menu icon .zip archive on the Keyboard Maestro application dock icon to install it.
+
+The format is fairly simple, you need a folder with the name of the icon (which must be unique relative to other contributed icons), and in that folder you have a sequence of files named StatusItem and then then the animated sequence StatusItem1, StatusItem2, etc. You can have as many as you like.  If the icon is a template icon (black and clear only), then add the word “Template” to the name.  And finally the extension can be either .tiff or .png.  The file should be either a 16x16 icon, or ideally a retina tiff file with both a 16x16 and 32x32 at 144dpi (you can create the retina-ready tiff files using tiffutil -cathidpicheck, or you can use a tool like Opacity.app).
+
+The two default icon folder structures look like this:
+
+* Classic
+  * StatusItem.tiff
+  * StatusItem1.tiff
+  * StatusItem2.tiff
+  * StatusItem3.tiff
+  * StatusItem4.tiff
+  * StatusItem5.tiff
+  * StatusItem6.tiff
+* Iconaholic
+  * StatusItemTemplate.tiff
+  * StatusItem1Template.tiff
+  * StatusItem2Template.tiff
+  * StatusItem3Template.tiff
+  * StatusItem4Template.tiff
+
+Note that the “Template” appears at the end, after the animation index, and there are no spaces anywhere.  You can have spaces in the folder name.
+
+Then you archive the folder into a zip file named NameStatusMenuIcon.zip (eg ClassicStatusMenuIcon.zip) and drop it on the Keyboard Maestro application dock icon or [[mailto:support@stairways.com|email it to us]] with a cover letter indicating your permission for it to be distributed, as well as your name to be published with an optional URL if desired.

@@ -1,0 +1,17 @@
+====== Support ======
+
+For sales enquiries, customer service, technical support, or to contact project management, email us at [[support@stairways.com|support@stairways.com]] or use our [[https://www.stairways.com/form/feedback|Web Site Feedback Form]].
+
+Extensive online documentation on Keyboard Maestro can be found in the [[/User_Manual|Keyboard Maestro User Manual]] and on the wiki at [[/|Keyboard Maestro Wiki]].
+
+You can join the [[https://forum.keyboardmaestro.com/|Keyboard Maestro Forum]] online community consisting of the developers and Keyboard~~Maestro users — this is the best place to get help with specific macros.
+
+For ideas, see the [[Macro Examples]] section, or the [[/Macro_Library|Macro Library]] section of the [[/|Keyboard Maestro Wiki]].
+
+You can download Keyboard~~Maestro from [[https://download.stairways.com/]].  You can download old versions of our applications from the archive site at [[https://files.stairways.com/]].
+
+You can purchase Keyboard~~Maestro at [[https://purchase.stairways.com/]].
+
+You can look up your current or previous license status and serial numbers, and get information about discounted upgrades from [[https://enquiry.stairways.com/]].
+
+For more information about anything to do with Keyboard~~Maestro visit [[https://www.keyboardmaestro.com/]].

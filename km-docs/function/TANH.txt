@@ -1,0 +1,9 @@
+====== TANH Function ======
+
+The TANH(x) function returns the hyperbolic tangent of its argument which is a hyperbolic angle.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

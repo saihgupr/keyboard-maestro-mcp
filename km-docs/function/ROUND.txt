@@ -1,0 +1,20 @@
+====== ROUND Function ======
+
+The ROUND() function takes a number and returns the nearest integer to the argument.  Numbers that are exactly half way (ie, end in ".5") round away from zero.
+
+    ROUND(5.4) === ROUND(5.1) === ROUND(4.5) === 5
+    ROUND(-5.5) === ROUND(-5.9) === ROUND(-6.3) === -6
+
+The ROUND() function (v11.0+) takes a second optional parameter to indicate the number of decimal digits to round to:
+
+    ROUND(5.6789,2) === 5.68
+    ROUND(-5.6789,2) === -5.68
+
+===== See Also =====
+
+=== Functions ===
+
+* [[CEIL]]
+* [[FLOOR]]
+* [[TRUNC]]
+* [[:Functions|See all Functions]]

@@ -1,0 +1,81 @@
+The *Browser Window Actions* let you interact with browser tabs and windows, including creating new windows or tabs, selecting specific tabs, or setting the URL or title.  These actions sit alongside the [[Browser_Form_Actions|browser form actions]] for interacting with the active browser tab.
+
+Like other [[Browser_Actions|browser actions]], these actions work with Safari or Google Chrome (or whichever of the two was last at the front).
+
+There are also a number of functions to get various values from the web browser, including the tab count, tab index, and whether the browser has currently finished loading.
+
+===== New Window =====
+
+The New Window action allows you to specify a URL for the selected browser to open in a new window. Remember to include the //%%http://%%//.
+
+Use the arrow at the right of the URL text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+===== New Tab =====
+
+The New Tab action allows you to specify an URL for the selected browser to open in a new tab. Remember to include the //%%http://%%//.
+
+Use the arrow at the right of the URL text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+Note: If there is already a browser window open the new tab will be created at the end of the existing tabs. If no window is open then no tab will be created.
+
+===== Select Tab =====
+
+The Select Tab action allows you to choose a tab to be made active. Enter the index for the tab in the //Select tab// text area or use the stepper to select an index number.
+
+Note: the index number is counted from the left, starting at 1.
+
+===== Next Tab =====
+
+The Next Tab action selects the next tab to the right of the currently selected tab. Note that if the last tab to the right is currently selected this action will move to the first tab on the left.
+
+===== Previous Tab =====
+
+The Previous Tab action selects the next tab to the left of the currently selected tab. Note that if the last tab to the left is currently selected this action will move to the last tab on the right.
+
+===== Set URL =====
+
+The Set URL action loads a new web page into the currently active browser tab or window. 
+
+Use the menu at the right of the action’s text area to select variables, calculations, clipboards and other tokens to enter into the //With URL// text area.
+
+===== Set Title =====
+
+The Title of a web page is usually displayed in the browser’s active tab or window title bar. 
+
+The Set Title action allows you to change the title that is displayed. 
+
+Enter text in the //With Title// text area.
+
+Use the menu at the right of the text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+Note that various tokens allow you to get the Title of the active browser tab. You may wish to use the Set Title action in conjunction with those tokens.
+
+
+===== See Also =====
+
+* [[Browser_Actions|Browser Actions]]
+* [[Browser_Form_Actions|Browser Form Actions]]
+* [[Wait_For_Browser_to_Finish_Loading| Wait For Browser to Finish Loading actions]]
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:CHROMEISCOMPLETE|CHROMEISCOMPLETE()]]
+* [[function:CHROMETABCOUNT|CHROMETABCOUNT()]]
+* [[function:CHROMETABINDEX|CHROMETABINDEX()]]
+* [[function:FRONTBROWSERISCOMPLETE|FRONTBROWSERISCOMPLETE()]]
+* [[function:FRONTBROWSERTABCOUNT|FRONTBROWSERTABCOUNT()]]
+* [[function:FRONTBROWSERTABINDEX|FRONTBROWSERTABINDEX()]]
+* [[function:SAFARIISCOMPLETE|SAFARIISCOMPLETE()]]
+* [[function:SAFARITABCOUNT|SAFARITABCOUNT()]]
+* [[function:SAFARITABINDEX|SAFARITABINDEX()]]
+* [[:Functions|See all Functions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/send-the-front-most-window-to-back-bring-the-back-to-front/2226/19|Send the front most window to back? bring the back to front?]]
+- [[https://forum.keyboardmaestro.com/t/i-need-a-conditional-if-there-are-two-monitors/3031/5|I need a conditional if there are two monitors]]
+- [[https://forum.keyboardmaestro.com/t/trapping-dialogs-in-pause-condition/3046/4|Trapping dialogs in Pause condition]]

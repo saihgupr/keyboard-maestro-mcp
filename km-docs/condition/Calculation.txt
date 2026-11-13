@@ -1,0 +1,17 @@
+The //Calculation condition// evaluates a calculation which can include variables and [[:Functions|functions]] and returns true if the result is valid and anything other than zero.
+
+For much more detail, see:\\
+[[manual:Calculations|Calculations in the Keyboard Maestro Manual]]
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]

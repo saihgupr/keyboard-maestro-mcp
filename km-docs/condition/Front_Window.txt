@@ -1,0 +1,74 @@
+The //Front Window condition// looks at the front window of a specified application (or the front application) to determine if:
+
+* It exists.
+* It does not exist.
+* The title is (case insensitively) exactly a specified string.
+* The title is not (case insensitively) exactly a specified string.
+* It exists but the title is not (case insensitively) exactly a specified string.
+* The title contains (case insensitively) a specified string.
+* The title does not contain (case insensitively) a specified string.
+* It exists but the title does not contain (case insensitively) a specified string.
+* The title matches a specified regular expression.
+* The title does not match a specified regular expression.
+* It exists but the title does not match a specified regular expression.
+* Is full screen.
+* Is not full screen.
+* It exists but is not full screen.
+
+==== Using the Front Window Title with the Pause Until Action ====
+
+If you are using Keyboard Maestro to execute some type of UI action that uses a dialog window (like Open, Save, Save As), you can use the **[[action:Pause_Until|Pause Until]]** action to pause based on the Window Title, which will often change during the process.
+
+To determine the Window Titles during the process, create a **test** macro with a [[action:Set_Variable_to_Text|Set Variable to Text]] action, and leave it visible while you go through the manual steps.
+
+For example: \\
+{{:condition:km-window-title.png?500|}}
+
+The macro will show the results without running it as you go through the manual steps.
+If the Window Title changes during/after your process, you can use that in a [[action:Pause_Until|Pause Until]] action.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[condition:Any Window|]]
+* [[:Conditions|See all Conditions]]
+
+=== Functions ===
+
+* [[function:CHROMEISCOMPLETE|CHROMEISCOMPLETE()]]
+* [[function:CHROMETABCOUNT|CHROMETABCOUNT()]]
+* [[function:CHROMETABINDEX|CHROMETABINDEX()]]
+* [[function:MENUBARHEIGHT|MENUBARHEIGHT()]]
+* [[function:MOUSEBUTTON|MOUSEBUTTON()]]
+* [[function:MOUSEX|MOUSEX()]]
+* [[function:MOUSEY|MOUSEY()]]
+* [[function:SAFARIISCOMPLETE|SAFARIISCOMPLETE()]]
+* [[function:SAFARITABCOUNT|SAFARITABCOUNT()]]
+* [[function:SAFARITABINDEX|SAFARITABINDEX()]]
+* [[function:SCREEN|SCREEN()]]
+* [[function:SCREENCOUNT|SCREENCOUNT()]]
+* [[function:SCREENVISIBLE|SCREENVISIBLE()]]
+* [[function:WINDOW|WINDOW()]]
+* [[function:WINDOWCOUNT|WINDOWCOUNT()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:CurrentMouse|%CurrentMouse%]]
+* [[token:FrontWindowFrame|%FrontWindowFrame%]]
+* [[token:FrontWindowName|%FrontWindowName%]]
+* [[token:FrontWindowPosition|%FrontWindowPosition%]]
+* [[token:FrontWindowSize|%FrontWindowSize%]]
+* [[token:WindowFrame|%WindowFrame%]]
+* [[token:WindowName|%WindowName%]]
+* [[token:WindowPosition|%WindowPosition%]]
+* [[token:WindowSize|%WindowSize%]]
+* [[:Tokens|See all Tokens]]

@@ -1,0 +1,77 @@
+====== Palettes ======
+
+Keyboard Maestro can display a number of Palettes (or Toolbars).
+
+There are four types of palettes:
+  - Global Macro Palette.
+  - Applications Palette.
+  - Conflict Palette.
+  - Macro Group palettes.
+
+===== 1. Global Macro Palette =====
+
+Any macro with the [[trigger:Global_Macro_Palette|Global Macro Palette trigger]] will be displayed in the _Global Floating Palette_.  This palette appears whenever there is one or more active macros with this trigger, so it may appear and disappear depending on which macros are active (remember that Macro Groups control when a macro is active).
+
+{{:manual:global-macro-palette-km9.gif?nolink|}}
+
+You can control the appearance of the Global Macro Palette in the [[manual:Preferences#Palettes_Preference|Preferences]].
+
+===== 2. Applications Palette =====
+
+The Applications Palette shows the currently running foreground applications.
+
+{{:manual:app-palette-km9.png?nolink&200|}}
+
+You can show/hide the Applications Palette in the [[Windows#Preferences_General_Pane|General preference pane]], or by choosing the [[Menus#Show_Applications_Palette | Status Menu ➤ Show Applications Palette menu]].
+
+You can drag files on to the palette icons, and you can control click on them to perform various actions like hiding or revealing in the Finder.  You can also hold various modifier keys down while clicking to perform the actions.
+
+Applications can be excluded from the palette by selecting *Exclude from Applications Palette* in the contextual menu, or by adjusting the excluded applications in the [[Windows#Preferences_Exclude_Pane | Exclude preference pane]].
+
+You can order the applications alphabetically or by launch date by selecting *Sort by Launch Date* in the contextual menu.
+
+You can control the appearance of the Global Macro Palette in the [[manual:Preferences#Palettes_Preference|Preferences]].
+
+===== 3. Conflict Palette =====
+
+When you use the same trigger (such as a [[/trigger/Hot_Key|hot key]], [[/trigger/USB_Device_Key|device key]], or [[/trigger/Typed_String|typed string]] trigger) that is assigned to more than one active macro, then Keyboard Maestro will display the [[Windows#Conflict_Palette|Conflict Palette]] listing the triggered macros and let you select the desired macro, either by clicking on it or by typing a letter that narrows that palette down until only one macro remains at which point that macro is triggered.
+
+{{:manual:conflict-palette-km9.png?nolink&500|}}
+
+You can use the Conflict Palette to limit the number of hot keys you need to remember by give a bunch of similar or related macros the same hot key and then selecting the desired macro with a further keystroke based on the now visible palette.
+
+You can control the appearance of the Global Macro Palette in the [[manual:Preferences#Palettes_Preference|Preferences]].
+
+===== 4. Macro Group Palette =====
+
+Any Macro Group can be configured to display as a palette.  Since Macro Groups can be configured to be active _only_ in specific applications, you can design Macro Group to display its palette only when a specific application is frontmost.
+
+{{:manual:macro-group-palette-km9.png?nolink|}}
+
+See [[:Macro_Groups#Setup_Criteria_Advanced|Macro Group Setup Criteria (Advanced)]] for the various options for displaying palettes.
+
+===== Control Order of Macros on Palette =====
+
+You can control the order of macros in a macro palette (or the status menu) by prefixing their name with two characters and a closing parenthesis (eg “01)”). The macros will be sorted based on the code, but the code will be stripped off before display in the palette (or status menu).
+
+For a great tool to aid in configuring the Palette for a Macro Group, see the
+**[Palette Organizer](https://forum.keyboardmaestro.com/t/macro-palette-organizer-v1-2-updated/6088)** macro on the forum.
+
+===== Controlling The Display of Palettes =====
+
+==== Display More than One Palette ====
+
+To have more than one macro palette, create a macro group for each desired palette and configure it to show a palette as desired. Put your macros in there. Create as many of these as you like. You can configure the Macro Group so that the macros are only active while the palette is displayed, so if you only display it occasionally, especially only for one action, then they can have very simple hot keys (like plain letters for example).
+
+==== Nested Palettes ====
+
+By using the[[action:Show_Macro_Group|Show Macro Group]] or [[action:Show_Macro_Group_for_One_Action|Show Macro Group for One Action]] actions, you can display a macro group as a palette.  This allows you to build nested palettes.  For example, a palette could contain a number of macros that simply show different macro groups.
+
+==== Enabling and Marking Macros ====
+
+By using the [[action:Mark_Macro|Mark Macro]] or [[action:Mark_Macro|Unmark Macro]] actions, you can have macros shown in macro palettes (or status menus) appear ticked to indicate some state (for example an application dock that marks or unmarks the macro as the application launches or quits).  Alternatively, you can enable and disable macros to have them appear or disappear from a macro palette.  Either of these techniques will allow some level of dynamic behavior of palettes.
+
+==== Appearance and Style ====
+
+You can control the appearance of the palettes in the [[manual:Preferences#Palettes_Preference|Preferences]] or in the macro group configuration.  You can choose the style, the opacity of the palette, the size of the entries, the number of columns, whether the entries include the icon, the text and/or the trigger, the title bar, and whether the palette shrinks when the mouse is not over it.  You can use the styling to build palettes that just display their icon for example, and combined with custom icons for your macros this can create a nice looking icon palette.
+

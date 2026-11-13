@@ -1,0 +1,22 @@
+====== Show Palette of Macros ======
+
+The //Show Palette of Macros// action (v8+) allows you to display a palette of selected macros and select which one to execute.
+
+{{ show-palette-of-macros-action.png?nolink&512x161 | Show Palette of Macros Action }}
+
+You can elect to have only active, only enabled, or all macros displayed — macros selected will be triggered even if they are currently inactive.
+
+You can also choose to have the macros displayed in the Touch Bar.
+
+You can choose any set of macros or macro groups or (v9.0+) smart groups to display in the palette, which behaves similar to the Conflict Palette.
+
+You can set the theme used by the palette by clicking on the palette display (v11.0+).
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Alert|Alert]] action
+* [[action:Prompt_for_User_Input|Prompt for User Input]]
+* [[action:Custom_HTML_Prompt|Custom HTML Prompt]] action
+* [[:Actions|All Actions]]

@@ -1,0 +1,13 @@
+The System Beep action simply beeps once using the default alert sound set in the System Preferences. 
+
+====== System Beep Action ======
+
+The *System Beep* action simply beeps once using the default alert sound set in the System Preferences. 
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Notification|Notification]]
+* [[action:Speak_Text|Speak Text]]
+* [[:Actions|See all Actions]]

@@ -1,0 +1,9 @@
+====== Wishlist ======
+
+* The ability to add a quick macro to the library after recording it
+* <del>Syncing</del> ✔︎ **Done for 6.0**
+* Macro palette divisions - folders, subheaders or a similar way of grouping macros
+* <del>Macro palette that can be triggered within Macro palettes. Useful for grouping of macro palettes c.f. main palette "Writing" has (1) text formation palette, (2) markdown palette, (3) markdown links palette.</del> ✔︎ **Done for 6.0**
+* <del>A second macro palette that can be made to appear at the cursor - useful for quick access to often used macros.</del> ✔︎ **Done**
+* <del>The ability to have  macros appear in the status menu dropdown in submenus, rather than under subheadings</del> ✔︎ **Already done, use the Display Status Menu preference in the General Preferences.**
+* <del>The ability to enable or disable individual actions.</del> ✔︎** Already done, click the ✓ button at the bottom of the macro detail pane.**

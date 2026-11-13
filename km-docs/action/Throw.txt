@@ -1,0 +1,25 @@
+====== Throw Action ======
+
+The *Throw* action (v10.0+) immediately aborts with the specified message.
+
+You can turn off the *Failure Aborts Macro*, but that would largely render the action useless.
+
+If the action is not nested within a [[action:Try_or_Catch|Try/Catch]] action, then the macro will abort.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Try_or_Catch|Try/Catch]] action
+* [[:Actions|Actions]]
+
+=== Tokens ===
+
+* [[token:ActionResult]] token
+* [[:Tokens|Tokens ]]
+
+=== Conditions===
+
+* [[condition:Action_Result|Action Result]] condition
+* [[:Conditions|Conditions]]
+

@@ -1,0 +1,21 @@
+The //Network Location condition// determines if the current network location name:
+
+* is exactly (case insensitively) a specified string.
+* is not exactly (case insensitively) a specified string.
+* contains (case insensitively) a specified string.
+* does not contain (case insensitively) a specified string.
+* matches a specified [[:Regular Expressions|regular expression]].
+* does not match a specified [[:Regular Expressions|regular expression]].
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]

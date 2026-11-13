@@ -1,0 +1,799 @@
+====== Menus ======
+
+Below is a complete list of all menus.  Note that in some cases you must hold down the Option Key <kbd>⌥</kbd> (or <kbd>Alt</kbd> or <kbd>Opt</kbd>) to see the menu item.  For example, the "Expand All Actions" item in the Actions menu.
+
+===== Keyboard Maestro =====
+
+The *Keyboard Maestro* menu contains menu items relating to the Keyboard~~Maestro application as a whole.
+
+==== About Keyboard Maestro ====
+
+The *About Keyboard Maestro* command in the *Keyboard Maestro* menu displays the [[Windows#About_Window_Pane|About Keyboard Maestro window]].
+
+==== Purchase Keyboard Maestro ====
+
+The *Purchase Keyboard Maestro* command in the *Keyboard Maestro* menu lets you purchase Keyboard~~Maestro online.
+
+==== Purchase Keyboard Maestro Upgrade ====
+
+The *Purchase Keyboard Maestro Upgrade* command in the *Keyboard Maestro* menu lets you purchase an upgrade to Keyboard~~Maestro online.
+
+==== Register Keyboard Maestro ====
+
+The *Register Keyboard Maestro* command in the *Keyboard Maestro* menu displays the serial number entry window allowing you to enter your username (email address) and serial number.  Make sure you enter them exactly as sent to you.  If your email address shows up as “Registered to” in the About Keyboard Maestro box, then you are already registered.  If your license does not work, ensure that you are entering the username and serial number exactly as shown, that there are no extra invisible characters included, and that your license matches the major version of Keyboard Maestro that you are using.
+
+==== Deregister or Reregister Keyboard Maestro ====
+
+The *Deregister or Reregister Keyboard Maestro* command in the *Keyboard Maestro* menu lets you remove the registration from Keyboard Maestro and then optionally re-register. You could do this if you are getting rid of the Mac (though you would generally simply erase the Mac in that case). Hold the Option key down to select this menu item.
+
+
+
+==== Check For Update ====
+
+The *Check For Update* command in the *Keyboard Maestro* menu checks to see if there are any updates to Keyboard Maestro and offers to download and install them if there are.
+
+==== Preferences ====
+
+The *Preferences* (or *Settings*) command in the *Keyboard Maestro* menu displays the [[Windows#Preferences_Window|Preferences window]].
+
+==== Services ====
+
+The *Services* command in the *Keyboard Maestro* menu is used to perform Mac~~OS~~X Services which are shared functions available across multiple applications.  You can learn more about Mac~~OS~~X Services from your Mac~~OS~~X documentation, and you can install new services which will work with Keyboard~~Maestro.  Keyboard~~Maestro includes full support for Services, so relevant Services on your system are available in Keyboard~~Maestro. You can also export a macro as a Text Service to have it available here (and for other applications).
+ 
+
+==== Hide Keyboard Maestro ====
+
+The *Hide Keyboard Maestro* command in the *Keyboard Maestro* menu will hide the Keyboard~~Maestro application and all its windows.  Click on Keyboard~~Maestro's Dock icon or choose Show All to show Keyboard~~Maestro again. Note that generally you should just quit the Keyboard Maestro editor when you are not modifying your macros.
+
+==== Hide Others ====
+
+The *Hide Others* command in the *Keyboard Maestro* menu will hide all other applications.  Choose Show All to show them again.
+
+==== Show All ====
+
+The *Show All* command in the *Keyboard Maestro* menu will show all hidden applications.
+
+==== Quit Keyboard Maestro Editor ====
+
+The *Quit Keyboard Maestro Editor* command in the *Keyboard Maestro* menu will Quit Keyboard~~Maestro.  The Keyboard~~Maestro~~Engine will remain running and all enabled Keyboard~~Maestro features will continue to operate (unless you have specifically quit the Keyboard~~Maestro~~Engine).
+
+===== File =====
+
+The *File* menu is where you import or export Macros or launch or quit the Keyboard~~Maestro~~Engine.
+
+==== New Smart Group ====
+
+The *New Smart Group* command in the *File* menu creates and starts editing a new smart group.
+
+==== New Macro Group ====
+
+The *New Macro Group* command in the *File* menu creates and starts editing a new macro group.
+
+==== New Macro ====
+
+The *New Macro* command in the *File* menu creates and starts editing a new macro.
+
+==== New Macro Wizard ====
+
+The *New Macro Wizard* command in the *File* menu lets you quickly outline the macro and then creates and starts editing the new macro.
+
+==== New Editor Window ====
+
+The *New Editor Window* command in the *File* menu creates a new editor window.  Closing the last editor window will quit the Keyboard~~Maestro editor (the Keyboard~~Maestro~~Engine will continue operating as usual).
+
+==== Close ====
+
+The *Close* command in the *File* menu closes the front window.
+
+==== Close All ====
+
+The *Close All* command in the *File* menu closes all the windows and quits the Keyboard~~Maestro editor (the Keyboard~~Maestro~~Engine will continue operating as usual).  Hold the Option key down to select this menu item.
+
+==== Run Macro ====
+
+The *Run Macro* command in the *File* menu runs the currently selected macro.
+
+==== Share ====
+
+The *Share* menu in the *File* menu lets you share the selected macro group, macro or actions with any appropriate sharing service on your Mac, including sharing to the [[https://forum.keyboardmaestro.com|forum]].  If you hold the Shift key down before starting your menu selection you can share just an image of the selection, which will allow you to share to services that only allow selection of images.
+
+==== Export Actions ====
+
+The *Export Actions* command in the *Export* sub-menu in the *File* menu exports the selected actions to a file that you can import later or on another Mac or send to others.
+
+==== Export Macros ====
+
+The *Export Macros* command in the *Export* sub-menu in the *File* menu exports the selected macros to a file you can import on another Mac.  This is one way to transfer macros from one Mac to another or to share macros with friends or colleagues.
+
+If a Macro Group is selected and **no** macros are selected then the entire Macro Group is exported as a single `.kmmacros` file.
+==== Export as Macro Library ====
+
+The *Export as Macro Library* command in the *Export* sub-menu in the *File* menu exports the selected macros to a library file that you can share with others.
+
+See also the [[Macro Library]] section.
+
+Note that you should generally only export as library if you want to import the macros multiple times.  Otherwise just exporting the macros is sufficient.
+
+==== Export as Folder ====
+
+The *Export as Folder* command in the *Export* sub-menu in the *File* menu exports the selected macros to a folder containing macro group folders and individual macro export files. You can use this to preserve your macros in a version history structure or for archiving purposes.
+
+==== Export All Macros as Folder ====
+
+The *Export All Macros as Folder* command in the *Export* sub-menu in the *File* menu exports all of your macros to a folder containing macro group folders and individual macro export files. You can use this to preserve all of your macros in a version history structure or for archiving purposes.
+
+==== Export as Trigger File ====
+
+The *Export as Trigger File* command in the *Export* sub-menu in the *File* menu lets you save a file that will trigger a macro when opened (that is, a file you can open in the Finder to trigger a macro).
+
+==== Export as Text Service ====
+
+The *Export as Text Service* command in the *Export* sub-menu in the *File* menu lets you save a Text Service that will trigger a macro when selected in the Services menu. The incoming text is available in the [[token:TriggerValue|%TriggerValue%]] token.
+
+==== Export as Finder Quick Action ====
+
+The *Export as Finder Quick Action* command in the *Export* sub-menu in the *File* menu lets you save a Finder Quick Action that will trigger a macro when selected in the Quick Action contextual menu. The incoming file path is available in the [[token:TriggerValue|%TriggerValue%]] token.
+
+==== Import Actions ====
+
+The *Import Actions* command in the *Import* sub-menu in the *File* menu lets you select a saved action file and imports the actions it contains into the current macro.
+
+==== Import Macros Safely ====
+
+The *Import Macros Safely* command in the *Import* sub-menu in the *File* menu lets you select a saved macro file and imports the macros it contains, disabling them (either disabling created macro groups, or disabling the contained macros as appropriate).
+
+If you do not completely trust the source of the macros, you should import them this way.
+
+==== Import Macros ====
+
+The *Import Macros* command in the *Import* sub-menu in the *File* menu lets you select a saved macro file and imports the macros it contains.  Hold the Option key down to select this menu item.  Macros imported this way could trigger immediately, so use this command only if you completely trust the source of the macros.
+
+==== Import to Macro Library ====
+
+The *Import to Macro Library* command in the *Import* sub-menu in the *File* menu lets you import a shared macro library file into your macro library.  Macros in your library are not active, but can be added into one or more macro groups to become active.
+
+See also the [[Macro Library]] section.
+
+==== Revert Macros ====
+
+The *Revert Macros* menu in the *File* menu lets you revert to a previous version of your macros.  If you find you have really messed up your macros, you can restore your macros to a backup version of how they were when you first launched Keyboard Maestro, or how they were yesterday or even several days ago.
+
+==== Start Syncing Macros ====
+
+The *Start Syncing Macros* command in the *File* menu lets you start syncing your macros with another Mac.
+
+See also the [[Macro Syncing]] section.
+
+==== Reveal Macro Sync File ====
+
+The *Reveal Macro Sync File* command in the *File* menu lets you see where your macro sync file is.
+
+See also the [[Macro Syncing]] section.
+
+==== Stop Syncing Macros ====
+
+The *Stop Syncing Macros* command in the *File* menu lets you stop syncing your macros.
+
+See also the [[Macro Syncing]] section.
+
+==== Launch Engine ====
+
+The *Launch Engine* command in the *File* menu lets you start the Keyboard~~Maestro~~Engine manually.  The Keyboard~~Maestro~~Engine performs all the Macro, Application~~Switcher, Window~~Switcher and Clipboard~~Switcher functions even while Keyboard~~Maestro itself is not running.  It is launched automatically as a Startup Item when you login (assuming you have enabled that in the [[Windows#Preferences_Window|Preferences window]]) or any time you launch Keyboard~~Maestro.  If it is not running for any reason you can start it manually with this command. This menu item only appears while the Keyboard~~Maestro~~Engine is not running.
+
+==== Quit Engine ====
+
+The *Quit Engine* command in the *File* menu lets you quit the Keyboard~~Maestro~~Engine.  The Keyboard~~Maestro~~Engine performs all the Macro, Application~~Switcher, Window~~Switcher and Clipboard~~Switcher functions even while Keyboard~~Maestro itself is not running.  It is launched automatically as a Startup Item when you login (assuming you have enabled that in the [[Windows#Preferences_Window|Preferences window]]).  If you quit the Keyboard~~Maestro~~Engine these functions will no longer operate.  This menu item only appears while the Keyboard~~Maestro~~Engine is running.
+
+===== Edit =====
+
+The *Edit* menu contains menu items relating to text and selections.
+
+==== Undo ====
+
+The *Undo* command in the *Edit* menu undoes the previous command.
+
+==== Redo ====
+
+The *Redo* command in the *Edit* menu redoes the previous undone command.
+
+==== Cut ====
+
+The *Cut* command in the *Edit* menu copies the current selection to the system clipboard and then deletes the selection.
+
+==== Copy ====
+
+The *Copy* command in the *Edit* menu copies the current selection to the system clipboard.
+
+==== Copy as ====
+
+The *Copy as* sub-menu in the *Edit* menu menu allows you to copy the selection in a variety of formats.
+
+==== Copy as Text ====
+
+The *Copy as Text* command in the *Copy as* sub-menu in the *Edit* menu menu allows you to copy the selected macro or actions as styled text.
+
+==== Copy as Image ====
+
+The *Copy as Image* command in the *Copy as* sub-menu in the *Edit* menu menu allows you to copy the selected macro or actions as an image.
+
+==== Copy as XML ====
+
+The *Copy as XML* command in the *Copy as* sub-menu in the *Edit* menu menu allows you to copy the selected macro or actions as XML.
+
+==== Copy UUID ====
+
+The *Copy UUID* command in the *Copy as* sub-menu in the *Edit* menu menu allows you to copy the selected macro or macro group’s UUID (Universally Unique ID).
+
+==== Copy as Execute a Macro Action ====
+
+The *Copy as Execute a Macro Action* command in the *Copy as* sub-menu in the *Edit* menu menu allows you to copy the selected macro as an [[action:Execute_a_Macro|Execute a Macro]] action.
+
+==== Copy as Execute a Subroutine Action ====
+
+The *Copy as Execute a Subroutine Action* command in the *Copy as* sub-menu in the *Edit* menu menu allows you to copy the selected macro as an [[action:Execute_a_Subroutine |Execute a Subroutine]] action.
+
+
+==== Copy as Mark Macro Action ====
+
+The *Copy as Mark Macro Action* command in the *Copy as* sub-menu in the *Edit* menu menu allows you to copy the selected macro as a [[action:Mark_Macro|Mark Macro]] action.
+
+==== Copy as Set Macro Enabled Action ====
+
+The *Copy as Set Macro Enabled Action* command in the *Copy as* sub-menu in the *Edit* menu menu allows you to copy the selected macro as a [[action:Set_Macro_or_Group_Enable|Set Macro Enable]] action.
+
+==== Copy as Set Macro Group Enabled Action ====
+
+The *Copy as Set Macro Group Enabled Action* command in the *Copy as* sub-menu in the *Edit* menu menu allows you to copy the selected macro as a [[action:Set_Macro_or_Group_Enable|Set Macro Group Enable]] action.
+
+==== Copy as Toggle Macro Group Action ====
+
+The *Copy as Toggle Macro Group Action* command in the *Copy as* sub-menu in the *Edit* menu menu allows you to copy the selected macro as a [[action:Activate_Macro_Group|Toggle Macro Group Activation]] action.
+
+==== Paste ====
+
+The *Paste* command in the *Edit* menu pastes the current system clipboard into the current selection.
+
+==== Delete ====
+
+The *Delete* command in the *Edit* menu deletes the current selection.
+
+==== Select All ====
+
+The *Select All* command in the *Edit* menu selects all text or items.
+
+==== Deselect All ====
+
+The *Deselect All* command in the *Edit* menu deselects all text or items.  Hold the Option key down to select this menu item.
+
+==== Duplicate ====
+
+The *Duplicate* command in the *Edit* menu duplicates the selected items.
+
+==== Make Alias ====
+
+The *Make Alias* command in the *Edit* menu makes an alias to the selected macros.  It creates a new macro that just executes the original macro.
+
+You may also use <key>⌘</key>L or Drag/Drop with <key>⌘⌥</key> to another Macro Group.
+
+==== Insert Action ====
+
+The *Insert Action* command in the *Edit* menu lets you insert any of the many [[Macro Actions|actions]] available in Keyboard~~Maestro.
+
+Hold the Option key down to get help on the action.
+
+Hold the Shift key down to insert the action above the selected action.
+
+
+==== Insert Action by Name ====
+
+The *By Name* command in the *Edit ➤ Insert Action* menu lets you insert any of the many [[Macro Actions|actions]] available in Keyboard~~Maestro by name.
+
+{{ :manual:insert-action-by-name-tool-small.png?nolink |}}
+
+While double clicking or pressing Return, hold the Option key down to get help on the action or hold the Shift key down to insert the action above the selected action.
+
+==== Insert Function ====
+
+The *Insert Function* sub-menu in the *Edit* menu lets you insert any of the many [[Calculations|functions]] available in Keyboard~~Maestro.  The functions will be inserted, together with an example of any parameters it takes.
+
+Most numeric fields in Keyboard Maestro can process an expression containing these functions.  These fields are indicated either by having up/down steppers, or a BUTTON{{{C}}} in the field while editing.
+
+Hold the Option key down to get help on the function.
+
+==== Insert Function by Name ====
+
+The *By Name* command in the *Edit ➤ Insert Function* menu lets you insert any of the many [[Calculations|functions]] available in Keyboard~~Maestro by name.
+
+Hold the Option key down to get help on the function.
+
+==== Insert Token ====
+
+The *Insert Token* sub-menu in the *Edit* menu lets you insert any of the many [[Tokens]] available in Keyboard~~Maestro.  The token will be inserted, together with an example format of any parameters it takes.
+
+Most text fields in Keyboard Maestro can process Tokens.  These fields are indicated by having a BUTTON{{{T}}} in the field while editing.
+
+Hold the Option key down to get help on the token.
+
+Hold the Shift key down to show the raw token.
+
+==== Insert Token by Name ====
+
+The *By Name* command in the *Edit ➤ Insert Token* menu lets you insert any of the many [[Tokens|tokens]] available in Keyboard~~Maestro by name.
+
+Hold the Option key down to get help on the token.
+
+==== Insert Variable ====
+
+The *Insert Variable* command in the *Edit* menu lets you insert any of your variables.
+
+==== Insert Variable by Name ====
+
+The *By Name* command in the *Edit ➤ Insert Variable* menu lets you insert any of your variables by name.
+
+==== Insert ICU Date Field ====
+
+The *Insert ICU Date Field* sub-menu in the *Edit* menu lets you insert any of the many fields available in [[token:ICUDateTime|%ICUDateTime%]] token.
+
+Hold the Shift key down to show the raw field.
+
+==== Insert ICU Date Field by Name ====
+
+The *By Name* command in the *Edit ➤ Insert ICU Date Field* menu lets you insert any of the many fields available in [[token:ICUDateTime|%ICUDateTime%]] token in Keyboard~~Maestro by name.
+
+==== Automatic Completions ====
+
+The *Automatic Completions* command in the *Edit* menu lets you toggle automatic text completion.  When off, you can still complete variables, tokes, and functions by pressing F5.
+
+==== Find ====
+
+The *Find* menu in the *Edit* menu lets find things in Keyboard Maestro.
+
+The *Find…* menu item will select the search field in the Keyboard Maestro editor window.
+
+The *Find in All Macros…* menu item will select the search field in the Keyboard Maestro editor window and select the All Macros Smart Group to search all the macros.
+
+===== View =====
+
+The *View* menu contains menu items relating to display and actions.
+
+==== Sort Macros by Name ====
+
+The *Name* command in the *View ➤ Sort Macros by* menu sorts the macros in the main window by name.
+
+==== Sort Macros by Trigger ====
+
+The *Trigger* command in the *View ➤ Sort Macros by* menu sorts the macros in the main window by trigger.  This is useful to see what hot keys are available, or to group all Typed~~String triggers together.
+
+==== Sort Macros by Date Created ====
+
+The *Date Created* command in the *View ➤ Sort Macros by* menu sorts the macros in the main window by the date created.
+
+==== Sort Macros by Date Modified ====
+
+The *Date Modified* command in the *View ➤ Sort Macros by* menu sorts the macros in the main window by the date modified (most recently modified at the top).  This is useful to see what macros you have recently modified.  You can also use the BUTTON{{{◷}}} button at the top of the macro editor to show the recently modified macros.
+
+==== Sort Macros by Date Used ====
+
+The *Date Used* command in the *View ➤ Sort Macros by* menu sorts the macros in the main window by date used (most recently executed at the top).  This is useful to see what macros you have recently executed, especially if you think one might have been executed inadvertently.  You can also use the BUTTON{{{⌘}}} button at the top of the macro editor to show the recently used macros.
+
+==== Sort Macros by Size ====
+
+The *Size* command in the *View ➤ Sort Macros by* menu sorts the macros in the main window by approximate storage size, with the largest at the top. Typically it is not the number of actions in a macro that makrs a macro large, instead it is usually included images. If your macro file gets very large, this can slow the performance of the Keyboard Maestro editor (though generally it will not affect the performance of the Keyboard Maestro Engine). Sorting the macros by size can find the larger macros.
+
+==== Sort Macros by Use Count ====
+
+The *Use Count* command in the *View ➤ Sort Macros by* menu sorts the macros in the main window by use count (most used macros at the top).
+
+==== Sort Macros by Time Saved ====
+
+The *Time Saved* command in the * View ➤ Sort Macros by* menu sorts the macros in the main window by time saved (most time saved at the top).
+
+==== Disabled to Bottom ====
+
+The *Disabled to Bottom* command in the *View ➤ Sort Macros by* menu sorts the disabled macros to the bottom of the macro list.
+
+==== Select Groups Column ====
+
+The *Select Groups Column* command in the *View* menu focuses on the Macro Groups column.
+
+==== Select Macros Column ====
+
+The *Select Macros Column* command in the *View* menu focuses on the Macros column.
+
+==== Go to Macro ====
+
+The *Go to Macro* menu in the *View* menu lets you select a recently edited or used macro.
+
+==== Go to Macro by Name ====
+
+The *By Name* menu in the *View ➤ Go to Macro* menu lets you select a macro by name.
+
+==== Go to Last Used ====
+
+The *Last Used* menu in the *View ➤ Go to Macro* menu lets you select the most recently triggered macro.
+
+==== Go to Last Edited ====
+
+The *Last Edited* menu in the *View ➤ Go to Macro* menu lets you select the most recently edited macro.
+
+==== Go to Previous Edited ====
+
+The *Previous Edited* menu in the *View ➤ Go to Macro* menu lets you select the previous edited macro (edited macros form a list, and this moves backward along the list).
+
+==== Go to Next Edited ====
+
+The *Next Edited* menu in the *View ➤ Select Macro* menu lets you select the next edited macro (edited macros form a list, and this moves forward along the list).
+
+==== Go to Aborted Action ====
+
+The *Go to Last Aborted Action* menu in the *View* menu selects the macro and the last action that failed and aborted a macro.
+
+==== Reveal Parent Group ====
+
+The *Reveal Parent Group* command in the *View* menu selects the parent macro group of the currently selected macros.  If you are editing a macro and the parent macro group is not the only selected macro group, then the parent macro groups’s name is shown in the top right corner of the window.  Clicking on this name will also reveal the parent macro group.
+
+==== Show Disabled Macro Groups ====
+
+The *Show Disabled Macro Groups* command in the *View* menu shows all macro groups (enabled or disabled) in the Macro Groups column.  You can hide all the disabled Macro Groups with the *Hide Disabled Macro Groups* command.
+
+==== Hide Disabled Macro Groups ====
+
+The *Hide Disabled Macro Groups* command in the *View* menu hides all disabled macro groups in the Macro Groups column.  Instead, a single placeholder group is shown that “contains” all the disabled Macro Groups.  You can double click the Disabled Macro Groups placeholder to temporarily reveal the disabled macro groups.  You can show all the disabled Macro Groups with the *Show Disabled Macro Groups* command.
+
+==== Evaluate Condition Results ====
+
+The *Evaluate Condition Results* command in the *View* menu toggles whether the editor evaluates conditions in macros it is displaying. If it does, macros with conditions will display their current value in real time in the editor (eg “(currently true)”). If not, they will display “(click for result)” and you can click on that to enable the Evaluate Condition Results facility.
+
+Note that evaluating results may have a performance issue if the results are complex to evaluate (eg searching the screen).
+
+This facility is turned off when you import a macro safely to ensure that scripts in conditions do not get to execute before you have a chance to verify their safety.
+
+==== Enable ====
+
+The *Enable* command in the *View* menu enables Macro Groups, Macros or Actions as appropriate.
+
+==== Disable ====
+
+The *Disable* command in the *View* menu disables Macro Groups, Macros or Actions as appropriate.
+
+==== Start Editing Macros ====
+
+The *Start Editing Macros* command in the *View* menu turns on edit mode.  Edit mode allows you to modify macros and macro groups.  You may prefer to leave it on permanently, or you may like to turn it off when you are not making changes to give a more concise and visually appealing view of the macros and macro groups.
+
+==== Stop Editing Macros ====
+
+The *Stop Editing Macros* command in the *View* menu turns off edit mode.
+
+==== Rename ====
+
+The *Rename* command in the *View* menu edits the name of the currently selected Macro Group or Macro.
+
+==== Record ====
+
+The *Record* command in the *View* menu toggles recording on and off.  It is available while editing a macro.  Hold the option key down to record without a delay.
+
+==== Record Without Delay ====
+
+The *Record Without Delay* command in the *View* menu toggles recording on and off immediately (without the normal short countdown).  It is available while editing a macro.  Hold the shift key down to select the menu.
+
+==== Enter Full Screen ====
+
+The *Enter Full Screen* command in the *View* menu will expand the window to full screen.
+
+===== Actions =====
+
+The *Actions* menu contains menu items relating to actions.  These items have analogs in the action gear BUTTON{{{⚙}}} menu and contextual menu for actions, and some menu items appear only in the appropriate menu.
+
+==== Show Actions ====
+
+The *Show Actions* command in the *Actions* menu shows the action list.  It is available while editing a macro.  Double click or drag actions from the action list to add them to your macro.  This menu toggles to Hide~~Actions when the action list is already showing.  Alternatively you can choose *Insert Action by Name* from the *Edit* menu to insert actions by name or use the *Insert Action* menu in the *Edit* to select actions.
+
+==== Try ====
+
+The *Try* command in the *Actions* menu tries the selected actions.  It is available while editing a macro.
+
+==== Enable ====
+
+The *Enable* command in the *Actions* menu enables actions.
+
+==== Disable ====
+
+The *Disable* command in the *Actions* menu disables actions.
+
+==== Rename ====
+
+The *Rename* command in the *Actions* menu renames actions.
+
+==== Set Color ====
+
+The *Set Color* menu in the *Actions* menu sets the color of actions. 
+
+Note: A blue striped color is reserved to mark the action as a match for the current search.
+
+==== Set Note ====
+
+The *Set Note* command in the *Actions* menu sets the notes of actions.
+
+==== Paste Above ====
+
+The *Paste Above* command in the *Actions* menu pastes previously copied actions above the selected actions.
+
+==== Paste Below ====
+
+The *Paste Below* command in the *Actions* menu pastes previously copied actions below the selected actions.
+
+==== Paste Replacing ====
+
+The *Paste Replacing* command in the *Actions* menu pastes previously copied actions, replacing the selected actions.
+
+==== Move Action Up ====
+
+The *Move Action Up* command in the *Actions* moves the selected actions before the action proceeding the first selected action.
+
+==== Move Action Down ====
+
+The *Move Action Down* command in the *Actions* moves the selected action(s) after the action following the last selected action.
+
+==== Add to Favorites ====
+
+The *Add to Favorites* command in the the *Actions* menu adds the currently selected action(s) as a Favorite action which you can insert later. The favorite action saves all the current action configuration.
+
+==== Engroup ====
+
+The *Engroup* menu in the *Actions* lets you enclose the selected actions within a container action such as a *Group*, *Repeat*, *If Then Else* or other control flow action.  You can also turn the selected macros into a sub-macro.
+
+==== Degroup ====
+
+The *Degroup* command in the *Actions* removes the selected actions from their parent container action, and removes the container action if it is now empty.
+
+==== Set Action Timeout ====
+
+The *Set Action Timeout* command in the *Actions* menu sets the timeout for the selected action.
+
+==== Timeout Aborts Macro ====
+
+The *Timeout Aborts Macro* command in the *Actions* menu controls whether the macro is aborted if the action is timed out.
+
+==== Notify on Timeout ====
+
+The *Notify on Timeout* command in the *Actions* menu controls whether you are notified if the action is timed out.
+
+==== Failure Aborts Macro ====
+
+The *Failure Aborts Macro* command in the *Actions* menu controls whether the macro is aborted if the action fails.
+
+==== Notify on Failure ====
+
+The *Notify on Failure* command in the *Actions* menu controls whether you are notified if the action fails.
+
+==== Expand Action ====
+
+The *Expand Action* command in the *View* menu expands (discloses) the selected actions.  Hold the option key down to expand all actions in a given sublist.
+
+==== Expand All Actions ====
+
+The *Expand All Actions* command in the *View* menu expands (discloses) the selected actions and all other actions in the same sublist.  Hold the option key down to select this command.
+
+==== Collapse Action ====
+
+The *Collapse Action* command in the *View* menu collapses the selected actions.  Hold the option key down to collapse all actions in a given sublist.
+
+==== Collapse All Actions ====
+
+The *Collapse All Actions* command in the *View* menu collapses the selected actions and all other actions in the same sublist.  Hold the option key down to select this command.
+
+==== Parent Action ====
+
+The *Parent Action* command in the *View* menu moves the selection to the containing action.
+
+==== Enter Action ====
+
+The *Enter Action* command in the *View* menu moves the selection to the contained action.
+
+==== Help ====
+
+The *Help* command in the *View* menu displays the wiki help for the selected action.
+
+===== Window =====
+
+The *Window* menu contains menu items relating to windows.
+
+==== Minimize ====
+
+The *Minimize* command in the *Window* menu minimizes the front window.
+
+==== Zoom ====
+
+The *Zoom* command in the *Window* menu zooms the front window.
+
+==== Keyboard Maestro Editor ====
+
+The *Keyboard Maestro Editor* command in the *Window* menu brings the frontmost Keyboard Maestro macro editing window to the front.
+
+==== Macro Library ====
+
+The *Macro Library* command in the *Window* menu shows or hides the macro library.
+
+See also the [[Macro Library]] section.
+
+==== Icon Chooser ====
+
+The *Icon Chooser* command in the *Window* menu shows or hides the Icon Chooser.
+
+See also the [[Icon Chooser]] section.
+
+==== Macro Inspector ====
+
+The *Macro Inspector* command in the *Window* menu shows or hides the Macro Inspector.
+
+See also the [[Windows#Macro_Inspector_Window|Macro Inspector Window]] section.
+
+==== Mouse Display ====
+
+The *Mouse Display* command in the *Window* menu shows or hides the Mouse Display, which shows the mouse location in real time.
+
+See also the [[Windows#Mouse_Display_Window|Mouse Display Window]] section.
+
+==== Value Inspector ====
+
+The *Value Inspector* command in the *Window* menu shows or hides the Value Inspector, which shows values of variables, tokens, calculations, or clipboards that you can select.
+
+See also the [[Windows#Value_Inspector_Window| Value Inspector Window]] section.
+
+==== Bring All to Front ====
+
+The *Bring All to Front* command in the *Window* menu brings all Keyboard Maestro windows to the front.
+
+===== Help =====
+
+The *Help* menu contains menu items relating to Help.  
+
+You can use the search field in this menu to find menus or help on any topic in the wiki.
+
+==== Interactive Help ====
+
+The *Interactive Help* command in the *Help* menu starts the in-application assistance system.  If you're having trouble with something not working the way you expect, this system may help you find out where the problem is, or offer suggestions for other sources of assistance.
+
+==== Keyboard Maestro User Manual ====
+
+The *Keyboard Maestro User Manual* command in the *Help* menu displays the Keyboard~~Maestro user manual on the Keyboard Maestro Wiki.
+
+==== Keyboard Maestro Quick Start ====
+
+The *Keyboard Maestro Quick Start* command in the *Help* menu displays the Keyboard~~Maestro quick start help web page, which quickly gets you up to speed in using Keyboard Maestro.
+
+==== Welcome to Keyboard Maestro ====
+
+The *Welcome to Keyboard Maestro* command in the *Help* menu displays the Welcome message, giving you a quick overview of what support resources are available for helping you get started using Keyboard~~Maestro.
+
+==== Keyboard Maestro Web Site ====
+
+The *Keyboard Maestro Web Site* command in the *Help* menu takes you to the Keyboard~~Maestro web site.
+
+==== Keyboard Maestro Wiki ====
+
+The *Keyboard Maestro Wiki* command in the *Help* menu takes you to the Keyboard~~Maestro wiki.
+
+==== Keyboard Maestro Forum ====
+
+The *Keyboard Maestro Forum* command in the *Help* menu takes you to the Keyboard~~Maestro forum.
+
+==== Stairways Software Web Site ====
+
+The *Stairways Software Web Site* command in the *Help* menu takes you to the Stairways~~Software web site.
+
+==== Tutorial ====
+
+The *Tutorial* command in the *Help* menu starts the in-application tutorial.  The tutorial will walk you through creating a simple macro.  By varying the actions slightly, you can create a variety of macros that are triggered by hot keys and that open various documents.
+
+==== Practice Gestures ====
+
+The *Practice Gestures* command in the *Help* menu starts the gesture system and lets you practice gestures, to ensure you can reliably trigger [[trigger:Gesture|Gesture triggered]] macros.
+
+==== Show Active Macro Groups ====
+
+The *Show Active Macro Groups* command in the *Help* menu shows a palette that lists the current active macro groups. You can use this palette to see which macro groups are active (which means the enabled macros they contain are active).
+
+==== ICU Date Format References ====
+
+The *ICU Date Format References* command in the *Help* menu takes you to the ICU Date Format References web site.
+
+==== ICU Regular Expression References ====
+
+The *ICU Regular Expression References* command in the *Help* menu takes you to the ICU Regular Expression References web site.
+
+==== Regular Expression Unicode Properties ====
+
+The *Regular Expression Unicode Properties* command in the *Help* menu takes you to the Regular Expression Unicode Properties web site.
+
+==== MacSparky Field Guide ====
+
+The *MacSparky Field Guide* command in the *Help* menu takes you to the [[https://learn.macsparky.com/p/km|MacSparky Field Guide]], a high quality, tech-savvy, video tutorial on using Keyboard Maestro from David Sparks.
+
+==== Elgato Stream Deck Details ====
+
+The *Elgato Stream Deck Details* command in the *Help* menu takes you to the [[/Stream Deck]] page, which includes details about installing the plugin and working with a Stream Deck from Keyboard Maestro.
+
+==== Third Party Licenses ====
+
+The *Third Party Licenses* command in the *Help* menu displays the licenses folder containing the third party licenses for code used in Keyboard Maestro.
+
+==== Open Logs Folder ====
+
+The *Open Logs Folder* command in the *Help* menu displays the Keyboard~~Maestro~~Logs folder.
+
+==== Open Preferences Folder ====
+
+The *Open Preferences Folder* command in the *Help* menu displays the Keyboard~~Maestro~~Preferences folder.
+
+==== Report Bugs or Feature Requests ====
+
+The *Report Bugs or Feature Requests* command in the *Help* menu allows you to report any bugs you find or and features you would like implemented (hat tip to the wonderful image editor, [[https://www.stairways.com/action/linkthru?acorn|Acorn]]).
+
+==== Service and Support ====
+
+The *Service and Support* command in the *Help* menu displays the service and support details, including how to contact us and where you can get more assistance.
+
+===== Status Menu =====
+
+The *Status Menu* menu appears on the right side of the menu bar showing (by default) the Keyboard Maestro icon (although you can control the icon in the [[Windows#Preferences_General_Pane|General preference pane]]).  It is generally visible any time the Keyboard~~Maestro~~Engine is running (unless you turn it off in the [[Windows#Preferences_General_Pane|General preference pane]]).  You use it to control the Keyboard~~Maestro~~Engine, to execute your Status~~Menu triggered macros, and to switch to applications.
+
+==== Launch Keyboard Maestro Editor ====
+
+The *Launch Keyboard Maestro Editor* command in the *Status Menu* menu launches Keyboard Maestro so you can edit your macros.  You can also edit your macros directly by holding down the option key while choosing them in the *Status Menu* menu or in a palette.
+
+==== Paste ====
+
+The *Paste* menu in the *Status Menu* menu includes the recent text items in the clipboard history so you can easily paste in past items using this menu.
+
+Hold the Shift key down to paste as plain text, and the Option key down to just set the clipboard without pasting.
+
+==== Activate Clipboard History Switcher ====
+
+The *Activate Clipboard History Switcher* command in the *Status Menu ➤ Paste* menu lets you activate the [[manual:Clipboard_History_Switcher|Clipboard History Switcher]].
+
+==== Your Macros ====
+
+Your macros that include the [[trigger:Status_Menu|Status Menu Trigger]] and that are currently active will be listed in this menu.  You can select them to trigger them.
+
+This is great for less frequently used macros that you will not remember a hot key or other trigger, as well as for macros that *feel like* they should be menu commands, such as actions that *perform* a complicated task.
+
+==== Show Applications Palette ====
+
+Toggles the display of the [[Palettes#Applications_Palette | Applications Palette]].
+
+==== Recent ====
+
+The *Recent* menu in the *Status Menu* menu contains a list of all recently quit applications.
+
+==== Running ====
+
+The *Running* menu in the *Status Menu* menu contains a list of all running applications.
+
+==== Applications ====
+
+The *Applications* menu in the *Status Menu* menu contains a list of all applications.
+
+==== Utilities ====
+
+The *Utilities* menu in the *Status Menu* menu contains a list of all utility applications.
+
+==== Cancel ====
+
+The *Cancel* command in the *Status Menu* menu contains a list of all currently running macros and allows you to cancel them.
+
+You can also cancel all currently running macros by holding all the modifiers (Command, Control, Option, Shift) down and clicking on the *Status Menu* menu.
+
+==== Start Debugging ====
+
+The *Start Debugging* command in the *Status Menu* menu opens the [[Windows#Macro_Debugger|macrodebugger window]] and starts debugging.
+
+See also the [[Macro Debugger]] section.
+
+==== Show Active Macro Groups  ====
+
+The *Show Active Macro Groups* command in the *Help* menu shows a palette that lists the current active macro groups. You can use this palette to see which macro groups are active (which means the enabled macros they contain are active).
+
+==== Quit Keyboard Maestro Engine ====
+
+The *Quit Keyboard Maestro Engine* command in the *Status Menu* menu quits the Keyboard~~Maestro~~Engine.

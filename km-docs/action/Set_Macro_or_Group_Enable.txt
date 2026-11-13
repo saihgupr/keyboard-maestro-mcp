@@ -1,0 +1,47 @@
+The Set Macro or Group Enable action allows you to selectively enable, disable or toggle macros or groups of macros.
+
+{{:action:setmacroorgroupenable.png|}}
+
+Select from the pop-up to:
+  *Enable.
+  *Disable.
+  *Toggle.
+
+Select the specific macro or group from the second hierarchical pop-up.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Activate Macro Group|Activate Macro Group]]
+* [[action:Activate Macro Group for One Action|Activate Macro Group for One Action]]
+* [[action:Activate or Deactivate Macro Group|Activate or Deactivate Macro Group]]
+* [[action:Group|Group]]
+* [[action:Hide Global Macro Palette|Hide Global Macro Palette]]
+* [[action:Show Global Macro Palette|Show Global Macro Palette]]
+* [[action:Show Macro Group|Show Macro Group]]
+* [[action:Show Macro Group for One Action|Show Macro Group for One Action]]
+* [[action:Show or Hide Macro Group|Show or Hide Macro Group]]
+* [[action:Show Status Menu|Show Status Menu]]
+* [[action:Toggle Global Macro Palette|Toggle Global Macro Palette]]
+* [[:Actions|See all Actions]]
+
+=== Conditions ===
+
+* [[condition:Macro|Macro]]
+* [[:Conditions|See all Conditions]]
+
+=== Tokens ===
+
+* [[token:ExecutingMacroGroup|%ExecutingMacroGroup%]]
+* [[token:ExecutingMacroUUID|%ExecutingMacroUUID%]]
+* [[token:ExecutingThisMacroGroup|%ExecutingThisMacroGroup%]]
+* [[token:ExecutingThisMacroUUID|%ExecutingThisMacroUUID%]]
+* [[token:MacroNameForUUID|%MacroNameForUUID%]]
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+* [[:Macro Groups|Macro Groups]]
+
+==== Forum ====

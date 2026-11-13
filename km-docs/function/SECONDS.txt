@@ -1,0 +1,16 @@
+====== SECONDS Function ======
+
+The SECONDS() function returns the time in fractional seconds since the Mac started.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MILLISECONDS]]
+* [[MICROSECONDS]]
+* [[UPTIME]]
+* [[:Functions|See all Functions]]
+
+=== Forum ===
+
+- [[https://forum.keyboardmaestro.com/t/macro-timing-a-macro/2952|MACRO: Timing a Macro]]

@@ -1,0 +1,19 @@
+====== Macro Library ======
+
+The macro library is a place where we can provide you with a variety of ready-made macros for optional addition to your macro collection.  
+
+To use the library, choose the [[Menus#Macro_Library|Window ➤ Macro Library menu]] to display the macro library.  You can then look through the available macros and insert any you'd like to use into your macros.  You can then use them as is, or configure the new macros, perhaps changing the hot keys or adjusting the macros to your liking.
+
+Each macro comes with a short description to tell you what it does, so scroll through them to see all the possibilities, and click on them to get more details.
+
+All the default macros that come with Keyboard Maestro are included in the Macro Library, so if you have deleted one and later think it might be useful it will always be available there to re-install it.
+
+You can also download new potential macros from us or from friends or colleagues or the [[https://forum.keyboardmaestro.com|forum]].  You can also share your own macros with other Keyboard Maestro users by exporting your clever macros.
+
+Keep in mind that macros can do practically anything on your Mac, including cause a huge amount of damage, so you should never execute a macro without verifying the source and better yet, checking exactly what it does.
+
+You can export a set of macros to a macro library file, which you can share with others, and you can import .kmlibrary files into your macro library.  Note that currently there is no way to delete imported macro library entries from your Macro Library except by quitting Keyboard Maestro and Keyboard Maestro Engine and removing the files from the FILE{{{~/Library/Application Support/Keyboard Maestro/Keyboard Maestro Libraries}}} folder.
+
+Generally, for macros you want to share, it is better to export them as macros, or use the BUTTON{{{Share}}} button at the top the editor window, or choose from the [[Menus#Share|File ➤ Share menu]].
+
+For some other example macros, you can also look at the [[:Macro_Library|Macro Library]] on the wiki.

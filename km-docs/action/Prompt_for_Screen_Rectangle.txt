@@ -1,0 +1,18 @@
+====== Prompt for Screen Rectangle Action ======
+
+The *Prompt for Screen Rectangle* action allows you select an area (or optionally just a point) on the screen. By default, the area will always be a positive rectangle, but you can preserve negative values (and hence the direction of selection) using action (gear) ⚙ menu.
+
+Returned values are in screen coordinates, relative to the top left corner of the main screen.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Alert|Alert]] action
+* [[action:Prompt_for_User_Input|Prompt for User Input]]
+* [[action:Prompt_for_File|Prompt for File]] action
+* [[action:Prompt_With_List|Prompt With List]] action
+* [[action:Custom_HTML_Prompt|Custom HTML Prompt]] action
+* [[action:Get_Touch_Bar_Selection|Get Touch Bar Selection]] action
+* [[:Actions|All Actions]]
+

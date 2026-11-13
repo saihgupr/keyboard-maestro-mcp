@@ -1,0 +1,65 @@
+====== WINDOW Function ======
+
+The WINDOW() function returns the desired coordinate of the specified window, and can have one or two parameters.
+
+====== Usage ======
+
+  - WINDOW(Coordinate)
+  - WINDOW(Index, Coordinate)
+
+With two parameters, the first parameter specifies which window in the front application to operate on. With only one parameter, the *Index* is assumed to be the window of the Action in which the *WINDOW()* function is used (like the [[action:Manipulate_a_Window|Manipulate a Window]] action), or the frontmost window if the Action does not refer to a window.
+
+====== Parameters ======
+
+The first parameter, *Index*, which is optional, may be:
+
+* 0: the frontmost window of the frontmost app.
+* Positive Number: the indexed window of the frontmost app, from front to back.
+* Negative Number: the indexed window of the frontmost app, from back to front.
+
+The second parameter, `Coordinate`, specifies the desired *coordinate* to be returned, and can be:
+
+* Left
+* Right
+* Top
+* Bottom
+* Width
+* Height
+* MidX
+* MidY
+
+
+====== See Also ======
+
+===== Actions =====
+
+* [[action:Manipulate a Window|Manipulate a Window]] action
+* [[action:Move or Click Mouse|Move or Click Mouse]] action
+* [[action:Custom_HTML_Prompt|Custom HTML Prompt]] action
+* [[:Actions|See all Actions]]
+
+===== Functions =====
+
+* [[MENUBARHEIGHT]]
+* [[MOUSEBUTTON]]
+* [[MOUSEX]]
+* [[MOUSEY]]
+* [[SCREEN]]
+* [[SCREENCOUNT]]
+* [[SCREENVISIBLE]]
+* [[SCREENINDEX]]
+* [[WINDOWCOUNT]]
+* [[:Functions|See all Functions]]
+
+===== Tokens =====
+
+* [[:token:FrontWindowName|%FrontWindowName%]] token
+* [[:token:WindowName|%WindowName%]] token
+* [[token:WindowSize|%WindowSize%]] token
+* [[:Tokens|See all Tokens]]
+
+===== Forum =====
+
+- [[https://forum.keyboardmaestro.com/t/send-the-front-most-window-to-back-bring-the-back-to-front/2226/19|Send the front most window to back? bring the back to front?]]
+- [[https://forum.keyboardmaestro.com/t/i-need-a-conditional-if-there-are-two-monitors/3031/5|I need a conditional if there are two monitors]]
+- [[https://forum.keyboardmaestro.com/search?q=WINDOW|Keyboard Maestro Forum topics about Window function]]

@@ -1,0 +1,35 @@
+====== Set Screen Resolution ======
+
+The _Set Screen Resolution_ action (v11.0+) allows you to set the screen resolution of your displays.
+
+{{ set-screen-resolution-action.png?nolink&674x118 | Set Screen Resolution Action }}
+
+The resolution is in the form:
+
+```
+nominal width, nominal height, pixel width, pixel height, frame rate
+```
+
+Keyboard Maestro lists the available resolutions for the specified display in the popup menu, and only those available resolutions can be used.
+
+
+If there are entries missing, Keyboard Maestro will choose the best available resolution that has those parameters. So if you provide just a single number, it will choose the best DPI, highest frame rate resolution with that width.
+
+Note that despite the system providing the available resolutions, it is always possible one or more of them may not actually work, potentially stopping the display from working, so a wise idea is to create a version of this action with the current resolution selected (it's ticked in the popup menu, or available via the [[token:ScreenResolution|%ScreenResolution%]] token), and create a sequence like:
+
+* Set Screen Resolution to <test values>
+* Pause 5 seconds
+* Set Screen Resolution to <current working value>
+
+===== See Also =====
+
+==== Tokens ====
+
+* [[token:ScreenResolution|ScreenResolution]] token
+* [[token:ScreenResolutions|ScreenResolutions]] token
+* [[:Tokens |See all Tokens ]]
+
+==== Functions ====
+
+* [[function:SCREENINDEX|SCREENINDEX]] function
+* [[:Functions|See all Functions]]

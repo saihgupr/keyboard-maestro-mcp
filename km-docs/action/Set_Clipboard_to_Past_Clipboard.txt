@@ -1,0 +1,3 @@
+The //Set Clipboard to Past Clipboard action// lets you set the system clipboard or a Named Clipboard to a past clipboard from your Clipboard History.
+
+The index can be a simple number, or you can use a variable or other calculation in the field (as with most all numeric fields in Keyboard Maestro, simply start typing and the field will expand to make room for more than a number).

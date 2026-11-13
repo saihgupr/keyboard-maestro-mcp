@@ -1,0 +1,1 @@
+The Open/Close CD Tray action opens the CD tray if it is closed, or closes it if it’s open. This is especially useful for keyboards that do not have an eject key.

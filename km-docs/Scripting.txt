@@ -1,0 +1,59 @@
+{{:scripting-icon.png?nolink|}}
+===== Scripting on OS X Using Keyboard Maestro =====
+
+While the number of, and power of, native Keyboard Maestro Actions is vast, sometimes you may need to do something that Keyboard Maestro is not well suited to do.  But Keyboard Maestro has anticipated, and provided for this, by providing a number of Execute Script Actions, all of these available from the Execute category in the Action List:
+
+==== Execute Script Actions ====
+
+{{:km-7.1-execute-script-actions.png?nolink|}}
+
+For example, the [[action:Execute_an_AppleScript]] Action:\\
+{{:km-7.3-execute-script.png?nolink|}}\\
+Note that the script can be either embedded in the _Action_, or in an external script file, linked using the _Execute Script File_ choice.
+
+The Actions for the other script languages are very similar.
+
+:!:  **For more details about scripting, see the [[manual:Scripting|User Manual Page on Scripting]]**
+
+==== AppleScript ====
+
+* [[AppleScript]] -- Using Keyboard Maestro Variables in AppleScript.
+* [[action:Execute an AppleScript|Execute an AppleScript]] action.
+
+
+==== JavaScript ====
+
+* [[action:Execute a JavaScript For Automation]] action -- shows how to get/set Variables.
+* [[action:Execute a JavaScript in Safari]] action.
+* [[action:Execute a JavaScript in Google Chrome]] action.
+* [[action:Execute a JavaScript in Custom Prompt]] action.
+* [[JavaScript for Automation]] -- Provides an introduction to JXA and comparison with AppleScript.\\
+
+
+==== Shell ====
+
+* [[action:Execute a Shell Script]] action.
+
+
+==== Swift ====
+
+* [[action:Execute a Swift Script]] action.
+
+
+==== Automator ====
+
+* [[action:Execute an Automator Workflow]] action
+
+
+===== See Also =====
+
+* [[Scripting_the_Keyboard_Maestro_editor|Scripting the Keyboard Maestro editor]]
+* [[manual:Scripting|Scripting]] user manual section
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/create-text-expansions-macro/3302|Create Text Expansions Macro]]
+- [[https://forum.keyboardmaestro.com/t/create-text-expansion-from-selection-macro/3329|Create Text Expansion From Selection Macro]]
+- [[https://forum.keyboardmaestro.com/t/add-the-contents-off-the-clipboard-as-a-unicode-expansion-to-typinator/3614/2|Add the contents off the clipboard as a Unicode expansion to Typinator]]
+- [[https://forum.keyboardmaestro.com/search?q=Scripting|Keyboard Maestro Forum topics about Scripting]]
+

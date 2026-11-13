@@ -1,0 +1,1 @@
+The //%CurrentApplication%// token returns the name of the current application (same as [[token:Application_Tokens|%Application%1%]]).

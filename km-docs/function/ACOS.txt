@@ -1,0 +1,11 @@
+====== ACOS Function ======
+
+The ACOS(x) function returns the arccosine of its argument which must be in the range -1 to 1 inclusive.
+
+If ACOS(x)=y, then [COS](COS)(y)=x.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

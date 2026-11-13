@@ -1,0 +1,23 @@
+====== OptionReturn Token ======
+
+The //%OptionReturn%// token (v11.0+) can be used in an [[action:Insert_Text_by_Typing|Insert Text by Typing]] action to type an Option Return character. Anywhere else it will display as a unusual character (䷗) which hopefully no one ever tries to type. 
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Insert_Text_by_Typing|Insert Text by Typing]]
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Return|%Return%]] token
+* [[token:LineFeed|%LineFeed%]]
+* [[token:Space|%Space%]]
+* [[token:Tab|%Tab%]]
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+* [[:Text Fields|Text Fields]]
+* [[:Frequently Asked Questions|FAQ]]

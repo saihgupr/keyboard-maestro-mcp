@@ -1,0 +1,26 @@
+====== Group Status Menu Trigger ======
+
+The *Group Status Menu trigger* lets you include your macro in the parent macro group *Group Status Menu*.
+
+The parent [[manual:Macro_Groups|Macro Group]] must be configured to display in the menu bar, and when it is active, this macro will be included in that group status menu.
+
+When this trigger is included, you can specify the name displayed in the menu, which can include tokens and thus information updated in real time as the menu is displayed.
+
+You can trigger this macro by selecting the menu item in the group status menu, or you can configure the macro to automatically run when the menu is displayed (ie, as soon as you click on the group status menu item in the menu bar).
+
+The group status menu itself can be configured in the parent macro group settings. You can specify the icon, which can come from a [[manual:Named_Clipboard_Switcher|Named Clipboard]], and thus update dynamically. You can also include a title in the status menu, which can be read from a variable, or can be token text that is updated periodically. The group status menu can include all macros, or only macros that contain this Group Status Menu trigger. Even if the group status menu includes all contained macros, this trigger may be useful to override the name or behaviour within the menu.
+
+===== See Also =====
+
+===  Manual===
+
+* [[manual:Macro_Groups|Macro Groups]] user manual section
+
+===  Triggers ===
+
+* [[Status_Menu|Status Menu]] trigger
+* [[:Triggers|See all Triggers]]
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]

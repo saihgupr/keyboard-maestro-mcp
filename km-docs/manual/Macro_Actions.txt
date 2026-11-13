@@ -1,0 +1,41 @@
+====== Macro Actions ======
+
+A Macro executes a sequence of Macro~~Actions in order.  There are [[:Actions|many actions]] to choose from. Some simple actions, such as [[action:Restart_Computer|Restart Computer]], require no other information and simply do their job, while other more complex actions, such as [[action:Select_or_Show_a_Menu_Item|Select a Menu Item]], require you to specify more information, such as a target application or menu name.  You do this by editing the values for the action.
+
+Keyboard Maestro actions have two very distinct types of fields: text token fields and numeric calculation fields. You can learn more on the [[/Text_Fields|wiki Text Fields page]].
+
+There are many powerful Macro~~Actions available for your use, and you can sequence them together to perform complex tasks.
+
+To add an action, edit your macro, click the New Action button, or equivalently the BUTTON{{{+}}} button below the detail view.  This will show the lists of possible actions.
+
+To see all actions, select the CODE{{{All Actions}}} category.  To see plug in actions that you have added to Keyboard Maestro, select the CODE{{{Third Party Plug Ins}}} category.
+
+To select just your favorite actions, select the CODE{{{Favorites}}} category.  You can drag actions from your macro into your Favorites category, or control or right click on an action to add it to your favorites. Favorite actions will retain all the settings of the actions. You can delete favorite action in the action selector, or from the Add Action by Name window.
+
+Double click or drag one or more of the actions to add them to the action list for the currently edited macro.
+
+Alternatively, choose the [[Menus#Insert_Action_by_Name|Edit ➤ Insert Action by Name menu]] and quickly search for and add an action by name, or choose from the [[Menus#Insert_Action |Edit ➤ Insert Action by Name menu]]. These will also include any favorite actions you have configured. If you hold the shift key down the action will be inserted above the currently selected action.
+
+You can drag Macro Groups or Macros into the action list.  With no modifiers, this will create an Execute Macro Action or Show Macro Group action.  With the Option key, this will copy in the macro's actions.  With Command-Shift, this will create an Enable Macro Group or Macro action.  With Option-Shift, this will create a Mark the Macro action.
+
+You can drag a file into the action list.  This will create an Activate Application, Execute Script, or Open File action.
+
+You can use control-up/down arrow to move the selected action up or down in the list, as well as command-control arrows to move the selected action to start or end of the list.
+
+You can use the [[Menus#Engroup|Engroup]] or [[Menus#Degroup|Degroup]] from the [[Menus#Actions|Actions menu]] to enclose actions in other containers (or remove them from containers).
+
+You can enable or disable actions by selecting them and clicking the BUTTON{{{✓}}} button at the bottom of the macro detail view.  You can set the timeout or other options on an action clicking the action (gear) BUTTON{{{⚙}}} menu at the top right of the action and selecting an option.
+
+You can display more or less detail about some actions by clicking the disclosure triangle.  You can disclose all the actions (in a sublist) simultaneously by option clicking on the disclosure triangle.
+
+You can try the action immediately by clicking the action (gear) BUTTON{{{⚙}}} menu at the top right of the action and selecting Try.  Alternatively, you can try the selected actions immediately by clicking the BUTTON{{{Try}}} button at the bottom of the macro detail view. When trying an action, remember that the action will run without any preamble, so if the action expects to operate on a specific application or window, simply “trying” it in the Keyboard Maestro editor will probably not work. You might need to temporarily add an [[action:Activate_a_Specific_Application|Activate a Specific Application]] action above the actions you want to try and selecting it and the actions first.
+
+You can control or right-click on an action to act on it, including pasting other actions above or below it.
+
+You can configure the action using the various menus and text fields, as well as by clicking the BUTTON{{{⚙}}} button and using the action menu.  This allows you to rename actions, color them, add notes, configure their time out and failure behaviour and more.
+
+The action (gear) BUTTON{{{⚙}}} menu also allows you to get help on the specific action.
+
+You can share an action sequence to the Keyboard Maestro Forum, or to a friend via Mail or Messages using the sharing button at the top of the [[Windows#Macros_Window|Macros window]].
+
+You can learn more about the available actions on the [[/Actions|wiki Actions page]].

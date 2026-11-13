@@ -1,0 +1,13 @@
+====== Set Clipboard to File Reference ======
+
+The Set Clipboard to File Reference action allows you to set the System Clipboard, Trigger Clipboard or a reference to a file.
+
+{{ setclipboardtofilereference.png?nolink&504x114 | Set Clipboard to File Reference }}
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Copy Clipboard to Clipboard]] action
+* [[action:Set Clipboard to Image]] action
+* [[:Actions|See all Actions]]

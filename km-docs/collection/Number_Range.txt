@@ -1,0 +1,13 @@
+The //Number Range collection// lists numbers in a range, including the start and end number, counting either upwards or downwards.
+
+As with all [numeric fields](:Text_Fields), the numbers can be calculations including [functions](:Functions), and the fields expand to allow for longer expressions as soon as you type something other than a number.
+
+{{ :collection:number-range.png?nolink |}}
+
+===== See Also =====
+
+----
+
+=== Forum ===
+
+- [Variable Repeat](https://forum.keyboardmaestro.com/t/variable-repeat/225)

@@ -1,0 +1,10 @@
+====== PROCESSORS Function ======
+
+The PROCESSORS() function returns the number of processors in the Mac.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MEMORY]]
+* [[:Functions|See all Functions]]

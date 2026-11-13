@@ -1,0 +1,11 @@
+The *Activate Window Switcher* is essentially a highly specialized macro action that enables you to show, hide, and minimize windows. By triggering the macro, Window Switcher enables you to switch between all open windows in the current application. Once the switching window appears, you may select the window to activate, and Window Switcher will bring it to the front.
+
+While the Window Switcher window is displayed, you can perform various actions:
+
+Press “q” to mark (or unmark) a window to be closed.
+Press “s” to mark (or unmark) a window to be minimized.
+Press left or right arrow keys to scroll through applications.
+
+{{ :action:windowswitcher.png?nolink |}}
+
+By default, Keyboard Maestro creates an Activate Window Switcher macro in the “Switcher Group” Macro Group, triggered by Control-Tab. You can disable this Macro by selecting the Switcher Group, then selecting the Window Switcher macro and and clicking the ✓ button below the Macros list.

@@ -1,0 +1,185 @@
+====== Using AppleScript to Get and Set Keyboard Maestro Variables ======
+
+Keyboard Maestro Version 7.1 introduced a streamlined way to Get and Set Keyboard Maestro Variables from AppleScript.
+
+In AppleScript, you can access Keyboard Maestro variables like this:
+
+```applescript
+tell application "Keyboard Maestro Engine"
+    set v to getvariable "<KM Variable Name>"
+    setvariable "<KM Variable Name>" to "<New Value>"
+end tell
+```
+
+where both the `<KM Variable Name>` and `<New Value>` are text values.
+
+**For more details, see:**
+  - [[manual:Scripting|Scripting article in the Manual Section]].
+  - [[action:Execute_an_AppleScript|Execute AppleScript Action]].
+
+===== Global Variables =====
+
+Global Variables (available in //all// macros) may be got and set like this:
+
+```applescript
+### Requires Keyboard Maestro 7.1+ ###
+
+--- Set AppleScript Variables to KM Variable Name and Value ---
+set myKMVar to "My KM Var Name"
+set myASVar to "TBD" -- default value of KM variable, will be updated
+
+tell application "Keyboard Maestro Engine"
+  
+  ### GET ###
+  -- IF KM Variable does NOT exist, the AS Variable will be set to empty string --
+
+  -- Use Explicit Quoted Text --
+  set myASVar to getvariable "My KM Var Name"
+  -- OR, Use Previously Defined AppleScript Variables --
+  set myASVar to getvariable myKMVar
+  
+  
+  
+  ### SET ###
+  -- IF KM Variable does NOT exist, it will be created --
+
+  -- Use Explicit Quoted Text --
+  setvariable "My KM Var Name" to "A new value"
+  -- OR, Use Previously Defined AppleScript Variables --
+  setvariable myKMVar to myASVar
+  
+end tell
+```
+
+**Real-World Example**
+
+Normally, you would not have both a GET and a SET variable within the same AppleScript tell block.\\
+Here's a real-world example, but with the error checking removed to simplify.
+
+```applescript
+### Requires Keyboard Maestro 7.1+ ###
+
+--- GET REQUIRED KM VARIABLES ---
+
+tell application "Keyboard Maestro Engine"
+  set mainStr to getvariable "SCPT__MainString"
+  set subStr to getvariable "SCPT__StringToFind"
+end tell
+
+--- PROCESS THESE KM VARIABLES ---
+
+--- Get Start of StringToFind ---
+set posSubStr to offset of subStr in mainStr
+
+--- SET OUTPUT KM VARIABLE ---
+
+tell application "Keyboard Maestro Engine" to setvariable "SCPT__PosSubStr" to posSubStr
+```
+
+===== Local & Instance Variables =====
+
+
+To get or set [[manual:Variables#Scope|Local or Instance Variables]], you must pass the macro execution instance to the `getvariable` or `setvariable` command.  The instance is passed in to your script via the KMINSTANCE environment variable (v8.0.3+).
+
+```applescript
+set kmInst to system attribute "KMINSTANCE"
+tell application "Keyboard Maestro Engine"
+	set v to getvariable "Local__SomeLocalVariable" instance kmInst
+	setvariable "Local__FromAS" instance kmInst to "Variable set in AppleScript."
+end tell
+
+log v
+```
+
+
+===== Dictionary Values =====
+
+You can read and write [[manual:Dictionaries|Dictionary]] values from AppleScript.
+
+```applescript
+### Requires Keyboard Maestro 8.0+ ###
+
+tell application "Keyboard Maestro Engine"
+	set kmDictList to name of dictionaries
+	set dictKeyList to dictionary keys of dictionary "First Names"
+
+	set value of dictionary key "P" of dictionary "First Names" to "Fred"
+end tell
+```
+
+===== Prior to Ver 7.1 =====
+
+  * All of the below scripts were designed for use with Keyboard Maestro prior to version 7.1, but they will still work with the latest version.
+  * They present an alternate method.
+
+==== Set Variable ====
+(will be created if necessary)
+
+```applescript
+my setKMVar("MY_KM_Variable", "some new value")
+
+on setKMVar(pKMVarNameStr, pValueStr)
+  
+  --- Compatible with Keyboard Maestro 6+ ---
+  --     • Creates the KM Variable if does not exist (just like KM 7 setvariable)
+  --     • Returns true if new Variable was created
+  
+  set varCreatedBool to false
+  
+  tell application "Keyboard Maestro Engine"
+    try
+      set value of variable pKMVarNameStr to pValueStr
+      
+    on error errMsg number errNum
+      if (errNum = -10006) then --- KM Variable Does NOT Exist ---
+        
+        --- Create & Set KM Variable ---
+        make new variable with properties {name:pKMVarNameStr, value:pValueStr}
+        set varCreatedBool to true
+        
+      else
+        error ("Error " & errNum & ":  " & errMsg)
+      end if
+      -- END on error
+      
+    end try
+  end tell
+  
+  return varCreatedBool
+  
+end setKMVar
+```
+
+
+==== Get Variable ====
+(returns empty string "" if Variable does //not// exist)
+
+```applescript
+
+set myKMVar to my getKMVar("MY_KM_Variable")
+
+on getKMVar(pKMVarNameStr)
+
+  --- Compatible with Keyboard Maestro 6+ ---
+  --     • Returns "" if variable is not found (just like KM 7 getvariable)
+  
+  tell application "Keyboard Maestro Engine"
+    try
+      set kmVar to value of variable pKMVarNameStr
+      
+    on error errMsg number errNum
+      if (errNum = -1728) then
+        --- KM Variable NOT Found ---
+        set kmVar to ""
+      else
+        error errMsg
+      end if
+      -- END on error
+      
+    end try
+  end tell
+  
+  return kmVar
+  
+end getKMVar
+```

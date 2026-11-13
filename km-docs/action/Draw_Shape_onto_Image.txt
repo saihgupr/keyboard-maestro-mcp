@@ -1,0 +1,18 @@
+The Draw Shape onto Image action allows you to draw a line, rectangle or oval onto an image on the system clipboard or a named clipboard.
+
+{{:action:drawshapeontoimage.png|}}
+
+Select the shape from the //Draw a// pop-up. Contextual options appear allowing you to choose parameters such as line color, fill color, thickness, corners, width and height as relevant.
+
+Select the clipboard from the //on image// pop-up.
+
+Enter numbers in pixels or use the stepper arrows to select the starting point from the left, from the top, and the end points for a line or the width and height for ovals and rectangles.
+
+If you selected an oval or rectangle then you can also select the fill color. Select the stroke color for lines, ovals and rectangles.
+
+Select colors by clicking on the color square and choosing a new color from the Colors palette. Close the palette when you’ve finished.
+
+Select stroke thickness in pixels either by entering a number or using the stepper arrows.
+
+For rectangles select the corner radius in pixels. The larger the radius the more rounded the corners.
+

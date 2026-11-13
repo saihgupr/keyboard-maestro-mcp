@@ -1,0 +1,502 @@
+~~INTOC~~
+
+==== How do I get started? ====
+
+* Read the [[manual:Quick_Start|Quick Start]] (Help ➤ Quick Start) which will get you familiar with Keyboard Maestro terminology.
+* Do the Tutorial (Help ➤ Tutorial).  Now you know the basics of creating a macro.
+* When Keyboard Maestro asks, sign up for the Getting Started email series.
+* Watch the [[https://www.youtube.com/channel/UCHazZsl2tCEcSyFu1NbhHoA|Keyboard Maestro Videos]].
+* Follow [@KeyboardMaestro@mastodon.social](https://mastodon.social/@KeyboardMaestro).
+* Join the [Keyboard Maestro Forum](http://forum.keyboardmaestro.com) and ask questions there.
+* Consider enrolling in David Spark’s [[https://learn.macsparky.com/p/km|Keyboard Maestro Field Guide]].
+* Contact [support@stairways.com](mailto:support@stairways.com) if you have any problems using Keyboard Maestro.
+
+
+==== What is the upgrade price? ====
+
+* If you purchased Keyboard Maestro after 1 March 2023 you have received a free upgrade to Keyboard Maestro 11.
+* If you own any previous version of Keyboard Maestro, you can upgrade for $25.
+* Otherwise you can purchase a new version for $36.
+
+Prices are in US$ and applicable taxes will be added to the purchase price.
+
+You can get your license and upgrade details from [the Keyboard Maestro web site](http://www.keyboardmaestro.com/form/enquiry?upgrade=keyboardmaestro).
+
+==== How do I upgrade from the Mac App Store version? ====
+
+To upgrade from the Mac App Store version, you first need to transfer your license to a direct download license.  You do that by launching Keyboard Maestro, opening the About box, and Option-clicking on the "Mac App Store version" text, and then following the instructions.
+
+After that, you will have a direct download version and can upgrade to Keyboard Maestro for $25.
+
+==== Is Keyboard Maestro compatible with Yosemite? ====
+
+No, Keyboard Maestro 11 requires 10.13 High Sierra or later. [[https://download.stairways.com/|Version 8.2.4]] was the last version compatible with Yosemite.
+
+==== Is Keyboard Maestro compatible with El Capitan? ====
+
+No, Keyboard Maestro 11 requires 10.13 High Sierra or later. [[https://download.stairways.com/|Version 9.2]] was the last version compatible with El Capitan.
+
+==== Is Keyboard Maestro compatible with Sierra? ====
+
+No, Keyboard Maestro 11 requires 10.13 High Sierra or later. [[https://download.stairways.com/|Version 9.2]] was the last version compatible with Sierra. Keyboard Maestro versions going back as far as version 2.x still work fine on Yosemite.
+
+==== Is Keyboard Maestro compatible with High Sierra? ====
+
+Yes, Keyboard Maestro version 11 is fully compatible with High Sierra, however for some very small set of people the Keyboard Maestro Engine can sometimes crash after sleep.  This crash is caused by a very low level bug in the system software, resolved in 10.14 Mojave.  Relaunching the Keyboard Maestro Engine (by launching Keyboard Maestro or by selecting File ➤ Launch Engine) will restart the engine and allow the macros to be processed.
+
+==== Is Keyboard Maestro compatible with Mojave? ====
+
+Yes, Keyboard Maestro version 11 is fully compatible with Mojave. In fact, Keyboard Maestro versions going back as far as version 2.x still work fine on Mojave.
+
+Mojave has bugs with its Accessibility System Settings which may require toggling the Accessibility permissions of Keyboard Maestro Engine off and on again.  Generally this is only required once when upgrading to Mojave. See the [[assistance:Accessibility_Permission_Problem|Accessibility Permission Problem assistance]] for more information.
+
+Note that Mojave adds some nagging for security permissions that can be tedious when first using Keyboard Maestro or when first controlling a specific facility or application.
+
+==== Is Keyboard Maestro compatible with Catalina? ====
+
+Yes, Keyboard Maestro version 11 is fully compatible with Catalina. In fact, Keyboard Maestro versions going back as far as version 4.x still work fine on Catalina. Versions of Keyboard Maestro prior to version 4.0 will no longer run on Catalina due to it dropping support for 32-bit applications.
+
+Catalina continues with the bugs with its Accessibility System Settings introduced in Mojave which may require toggling the Accessibility permissions of Keyboard Maestro Engine off and on again, and/or deleting the Keyboard Maestro Engine preference from the Accessibility system and having it re-added.  Generally this is only required once when upgrading to Catalina. See the [[assistance:Accessibility_Permission_Problem|Accessibility Permission Problem assistance]] for more information.
+
+Note that Mojave and later add lots of nagging for security permissions that can be tedious when first using Keyboard Maestro or when first controlling a specific facility or application.
+
+==== Is Keyboard Maestro compatible with Big Sur? ====
+
+Yes, Keyboard Maestro version 11 is fully compatible with Big Sur. In fact, Keyboard Maestro versions going back as far as version 4.x still work fine on Big Sur.
+
+Big Sur continues with the bugs with its Accessibility System Settings introduced in Mojave which may require toggling the Accessibility permissions of Keyboard Maestro Engine off and on again, and/or deleting the Keyboard Maestro Engine preference from the Accessibility system and having it re-added.  Generally this is only required once when upgrading to Catalina. See the [[assistance:Accessibility_Permission_Problem|Accessibility Permission Problem assistance]] for more information.
+
+Note that Mojave and later add lots of nagging for security permissions that can be tedious when first using Keyboard Maestro or when first controlling a specific facility or application.
+
+==== Is Keyboard Maestro compatible with Monterey? ====
+
+Yes, Keyboard Maestro version 11 is fully compatible with Monterey. In fact, Keyboard Maestro versions going back as far as version 4.x still work fine on Monterey.
+
+Monterey continues with the bugs with its Accessibility System Settings introduced in Mojave which may require toggling the Accessibility permissions of Keyboard Maestro Engine off and on again, and/or deleting the Keyboard Maestro Engine preference from the Accessibility system and having it re-added.  Generally this is only required once when upgrading to Catalina. See the [[assistance:Accessibility_Permission_Problem|Accessibility Permission Problem assistance]] for more information.
+
+Note that Mojave and later add lots of nagging for security permissions that can be tedious when first using Keyboard Maestro or when first controlling a specific facility or application.
+
+==== Is Keyboard Maestro compatible with Ventura? ====
+
+Yes, Keyboard Maestro version 11 is fully compatible with Ventura. In fact, Keyboard Maestro versions going back as far as version 4.x still work fine on Ventura.
+
+Ventura continues with the bugs with its Accessibility System Settings introduced in Mojave which may require toggling the Accessibility permissions of Keyboard Maestro Engine off and on again, and/or deleting the Keyboard Maestro Engine preference from the Accessibility system and having it re-added.  Generally this is only required once when upgrading to Catalina. See the [[assistance:Accessibility_Permission_Problem|Accessibility Permission Problem assistance]] for more information.
+
+Note that Mojave and later add lots of nagging for security permissions that can be tedious when first using Keyboard Maestro or when first controlling a specific facility or application.
+
+==== Is Keyboard Maestro compatible with Sonoma? ====
+
+Yes, Keyboard Maestro version 11 is fully compatible with Sonoma. In fact, Keyboard Maestro versions going back as far as version 4.x still work fine on Sonoma.
+
+However the initial version of Sonoma has a bug where the menu selection API succeeds but then reports an error which will result in the [[action:Select_or_Show_a_Menu_Item|Select a Menu Item]] action notifies of the failure and aborting the macro unless you turn off notifying and aborting. Hopefully Apple will resolve this in upcoming versions of Sonoma.
+
+Also, Sonoma restricts access to the wireless information unless you grant the application Location security permissions, but unfortunately Apple do not request those security permissions when the API is used, and there is no way to manually add Location permissions. In Keyboard Maestro version 11 you can poke the system to request this permission by executing the [[action:Get_Location|Get Location]] action once. Hopefully Apple will resolve this in upcoming versions of Sonoma.
+
+Sonoma may continue with the bugs with its Accessibility System Settings introduced in Mojave - we will see as more people use Sonoma.
+
+Note that Mojave and later add lots of nagging for security permissions that can be tedious when first using Keyboard Maestro or when first controlling a specific facility or application.
+
+==== Is Keyboard Maestro compatible with Sequoia? ====
+
+Yes, Keyboard Maestro version 11 is fully compatible with Sequoia. In fact, Keyboard Maestro versions going back as far as version 4.x still work fine on Sequoia.
+
+The Tesseract OCR library that Keyboard Maestro uses frequently fails with a memory corruption in Sequoia. It is unlikely we will be able to fix this, however the Apple Text Recognition supported by recent versions of Keyboard Maestro generally works better in most cases. Note that it currently supports English-only, so if you use OCR on non-English text, this may be a problem for you.
+
+Similar to previous versions there are endless little niggles in the security system which may cause issues when first getting Keyboard Maestro permission.
+
+Also, Sequoia tends to re-request Screen Monitoring permissions periodically which may be a nuisance, and for headless or unattended Macs may be a serious problem.
+
+==== Is Keyboard Maestro compatible with Tahoe? ====
+
+Yes, Keyboard Maestro version 11 is fully compatible with Tahoe. In fact, Keyboard Maestro versions going back as far as version 4.x still work fine on Tahoe.
+
+Tahoe seems to have some sort of bug with where it places status menus, so they may move around or have gaps between them. Hopefully Apple will resolve the issue promptly.
+
+The Tesseract OCR library that Keyboard Maestro uses frequently fails with a memory corruption in Sequoia, and likely in Tahoe too (unverified). It is unlikely we will be able to fix this, however the Apple Text Recognition supported by recent versions of Keyboard Maestro generally works better in most cases. Note that it currently supports English-only, so if you use OCR on non-English text, this may be a problem for you.
+
+Similar to previous versions it is likely there are endless little niggles in the security system which may cause issues when first getting Keyboard Maestro permission.
+
+Also, Tahoe tends to re-request Screen Monitoring permissions periodically which may be a nuisance, and for headless or unattended Macs may be a serious problem.
+
+
+==== Reporting a bug ====
+
+If you think you have found a bug, please [report it](http://www.stairways.com/main/contact), and please include all the pertinent information, such as:
+
+* What you were trying to do.
+* What happened that appears incorrect.
+* How to reproduce the problem.
+* What version of Keyboard Maestro and macOS you are using.
+
+The more explicit you are, the easier it will be to either explain the problem or correct any issue.
+
+==== How do I sync macros between two Macs? ====
+
+Keyboard Maestro (v6+) includes built in support for syncing via Dropbox , iCloud Drive or the like.
+
+See the [[manual:Macro_Syncing|Macro Syncing]] user manual section for more information.
+
+==== How can I transfer my macros to a new Mac? ====
+
+Make sure Keyboard Maestro and Keyboard Maestro Engine are not running on either Mac.
+
+Transfer the ~/Library/Application Support/Keyboard Maestro folder, and optionally the ~/Library/Preferences/com.stairways,keyboardmaestro.* files (the latter include minor settings and preferences, as well as your license details).
+ 
+Note that you can get to the ~/Library folder (which is hidden by default) in the Finder by holding down the Option key and selecting Go ➤ Library.
+
+Make very sure that the resulting files and folders on your new Mac have the correct ownership and permissions.
+
+If you are going to continue using both Macs (a single user license for Keyboard Maestro allows you to use it on up to five Macs), you should use [[manual:Macro_Syncing|Macro Syncing]] instead. Also, if you use this method and continue to use both Macs, you will need to run the Terminal command:
+
+```
+defaults delete com.stairways.keyboardmaestro.engine MacUUID
+defaults delete com.stairways.keyboardmaestro.engine MacRemoteUUID
+```
+
+and then quit and relaunch the Keyboard Maestro Engine and editor. Otherwise the two Macs will be considered the same Mac for several purposes which may cause problems with [[trigger:Remote|Remote]] triggers and [[manual:Macro_Syncing|Macro Syncing]].
+
+==== Does/will Keyboard Maestro support the Touch Bar? ====
+
+The API for the Touch Bar does not appear to allow non-front applications to affect the Touch Bar, except that Apple does this themselves in Xcode and Screen Capture and the like.  So Apple knows and understands the need, but have not made the facility available for Third Party macro trigger style applications.
+
+The Keyboard Maestro (v8+) editor supports the Touch Bar for use within the editor.
+
+Keyboard Maestro (v8+) includes some Touch Bar actions ([[action:Show_Palette_of_Macros|Show Palette of Macros]] action and [[action:Get_Touch_Bar_Selection|Get Touch Bar Selection]] action) and allows you to have Conflict Palettes show up in the Touch Bar (though the limited space may make this impractical in practice).
+
+Because of Apple's restrictions, actions showing in the Touch Bar require that the current application loses keyboard focus, which is not ideal but may not be a problem.
+
+Asking Apple to add Third Party APIs for the "Control Strip" section of the Touch Bar would be a good idea.
+
+==== Why is the clipboard not restored after any clipboard action? ====
+
+Keyboard Maestro does not (automatically) restore the system clipboard after any operation that uses it (Insert Text by Pasting, Copy to or Paste from Named Clipboard, etc) because it cannot be done without incurring a race condition which will sometimes give the wrong results.
+
+The reason is that while the clipboard can be read or set at any time, Copy or Paste can only be done via the Keyboard Maestro event queue (the keyword being "queue").  There is no way to know for sure when the application has processed the Command-V for a Paste operation, and thus no way to know when to restore the clipboard to its original value.  If the system clipboard is restored too early, [the wrong thing will be Pasted](Troubleshooting#Sometimes_the_Wrong_Thing_is_Pasted).  If the system clipboard is restored too late, you may have already copied something else (manually or via another macro).
+
+Instead, Keyboard Maestro provides a clipboard history and gives you control.  Most of the time, you wont be using the clipboard and wont notice that it has been replaced, and if you do need it, you can get the old value back from the clipboard history.  But if a macro is used where you frequently are finding that you need the system clipboard preserved, then Keyboard Maestro provides the tools for this.  After your clipboard mangling action, add an appropriately long Pause followed by a Delete Current Clipboard action.  The length of the Pause will depend on the target application and the speed of your Mac at that moment, and you will have to be aware that there is a period of time where you should not copy something.
+
+See also the [next question](#When_should_I_use_Insert_Text_by_Typing_instead_of_by_Pasting).
+
+==== When should I use Insert Text by Typing instead of by Pasting? ====
+
+There are three ways to type text in Keyboard Maestro: Insert Text by Typing, Insert Text by Pasting, and Type Keystroke.
+
+The Type Keystroke action lets you type a single keystroke, pretty much any kind of keystroke you can type on the keyboard.
+
+The Insert Text by Typing action converts plain (simple) text into keystrokes and then types each of them individually.  It only works with characters that can be typed with one or two keystrokes, so should work on most characters, but some characters are not typable with two keystrokes.
+
+The Insert Text by Pasting action sets the clipboard to the text and then types a Command-V keystroke.
+
+Each action has its advantages and disadvantages:
+
+Type Keystroke. Advantages are it is just like typing yourself, so you can type any keystroke.  Disadvantages are that it is quite tedious to do a sequence of them.
+
+Insert Text by Typing. Advantages are it is just like typing yourself, particularly in relation to characters like tab/return, and to the current style in the text you are typing.  Disadvantages are that it is slow for large amounts of text, and can’t necessarily type unusual characters like emoji.
+
+Insert Text by Pasting. Advantages are it is fast for large text, and can include any kind of characters.  Disadvantages are that it overwrites your clipboard, and how styles are handled may be different to what you expect.
+
+Use Type Keystroke when
+
+* You need more control over the exact keystroke that is typed.
+or
+* The text includes Command (and sometimes Option) keystrokes.
+
+Use Insert Text by Typing whenever:
+
+* The text consists of plain text characters (only characters that can be pressed with a single keystroke can be typed).
+and
+* The text is relatively short (up to say 30 or 40 characters).
+or
+* You want to use characters like Return or Tab to perform actions like moving to the next field.
+
+Use Insert Text by Pasting when:
+
+* You don't mind the clipboard being overwritten.
+and
+* The text is long.
+or
+* The text contains unusual or hard to type characters.
+or
+* The text contains returns or tabs which you don't want to perform actions like moving to the next field.
+
+==== When should I use Typed String triggers? ====
+
+You should use Typed String triggers for macros that will interact with a text field.  You should generally not use Typed String triggers for things that have some sort of global action (like launching an application or opening a URL).
+
+This is because Typed String triggers work by you typing normal characters, and then usually Keyboard Maestro will issue the "Delete" characters to remove them, and then move on to executing the actions in the macro.
+
+This means that you should only be using the Typed String triggers in a case where you are in a field that can accept typing. For example, if instead you typed them in the Finder (when not renaming a file for example), first the characters you type would select a file, and then Keyboard Maestro would simulate a delete and trash the file.
+
+Even if you turn off the “Delete Characters”, the characters you type are still going to be going to the front application, so you still generally want to be in a text typing context, otherwise the typed characters will beep, or perform weird behaviours (like the aforementioned selecting of a file in the Finder).
+
+So, you only want to use Typed String triggers in cases where you know you will be typing anyway. Where as a macro that opens a document, URL, application, whatever, is the sort of action you might want to do from anywhere, from the Finder, or while reading email, or whatever. You might well not be in a text typing context, and as such as Typed String trigger is typically a bad choice for the trigger.
+
+Better is to use a Hot Key trigger (so the key is swallowed), the status menu or a macro palette trigger.
+
+==== When do I need a Pause? ====
+
+The most common places you need a [[action:Pause|Pause]] or [[action:Pause Until|Pause Until]] action are:
+
+* After doing any action that changes the keyboard focus (especially things like opening a new window/dialog or switching applications or the like).
+* After doing any action that causes some sort of animation.
+* Before any action that is going to [[Found Image|find an image]] on the screen (using a [[action:Pause Until|Pause Until]] the image appears on the screen is a good solution here).
+* Periodically if you are going to type lots of text. In particular, at the end of a long loop to ensure the system does not get further and further behind. The event queue is only so big and will eventually fill up and lose events.
+
+==== How do I get more than one macro palette? ====
+
+There are three kinds of palettes in Keyboard Maestro:
+
+* There is one “Global Macro Palette” which includes any active macro that has the [[trigger:Global Macro Palette|Global Macro Palette trigger]].  It appears whenever there is any active macro with the Macro Palette trigger.  It shrinks to the size of an icon until you hover over it and then it expands to display the currently active macros with [[trigger:Global Macro Palette|Global Macro Palette triggers]].
+* Each Macro Group can be displayed as a palette.  The macro group can be global to all applications, or specific to any subset of applications.  It can be toggled on and off with a hot key (or a status menu selection or from the Global Macro Palette) or it can be displayed for a single action.
+* When you use the [[action:Show_Palette_of_Macros|Show Palette of Macros]] action, it will display a palette of macros.
+* When a hot key (or typed string or device key) conflicts (ie, triggers more than one macro), the Conflict Palette appears which lets you select from the conflicting macros.  This can be an easy way to allow a single hot key to offer a multitude of similar actions. You can press the number key representing the desired macro to trigger it.
+
+So to have more than one macro palette, create a macro group for each desired palette and configure it to show a palette as desired. Put your macros in there.  Create as many of these as you like.The macros in such a macro group are only active while the palette is displayed, so if you only display it occasionally, especially only for one action, then they can have very simple hot keys (like plain letters for example).
+
+You can control the order of macros in a macro palette (or the status menu) by prefixing their name with a code like "xx)" (eg "01)").  The macros will be sorted based on the code, but the code will be stripped off before display in the palette (or status menu).
+
+==== How do I use a multiple keystroke trigger? ====
+
+You can assign multiple macros the same hot key, and Keyboard Maestro will display a palette of the conflicting macros when you press that hot key.  You can then use number keys or the mouse, or the first significant letter to select the desired hot key.  This is especially useful when you have a variety of similar or related tasks.  You can also assign a hot key to a macro group which can activate it for one action (with or without a palette), and the contained macros can have whatever ”second” hot key you desire.
+
+A Macro Group can be activated for one action after you press an initial hot key (optionally displaying a palette of its macros), allowing you to specify any second trigger you like.
+
+A macro can use the Activate Macro Group for One Action action to explicitly activate another macro group for one action, allowing any complex chaining of hot keys.
+
+There is a Typed String trigger, which takes a series of typed characters and then optionally deletes them, but this is restricted to typed keystrokes, so no Control or Command modifiers.
+
+And finally, macros can enable and disable other macros or Macro Groups, allowing all sorts of possible control.
+
+But Keyboard Maestro does not directly support assigning a two-keystroke hot key to a trigger. The problem with multiple keystroke triggers like Option-F R is what to do if you type Option-F A?
+
+Logic dictates that the Option-F A should go through to the system unimpeded, but Option-F R should be swallowed entirely.  But this is impossible.  The only way to do it would be to swallow the Option-F key, and then swallow the second key and then resubmit the Option F and the second key unless it matches Option-F R.
+
+However, that is fraught with peril and cannot work robustly in the presence of other applications placing things on the keyboard event queue (or even a sufficiently fast typist).
+
+For example, suppose you quickly typed Option-F A B.  Keyboard Maestro would have swallowed the Option F and then the A, and then resubmitted it to the event queue, resulting in the stream of characters B, Option-F, A.  There is no way to avoid this race condition, and as such Keyboard Maestro does not support any such mechanism.
+
+As described above, Keyboard Maestro has a variety of ways you can use Option-F as a hot key that allows a second key to be used to select a macro.  However in all cases it is clear that the Option-F has been used and there is no concept that the Option-F might come back later to do something else.
+
+==== Can I use the Fn key as a modifier? ====
+
+Basically, no. The Fn key is not a modifier, it is a hardware toggle that toggles whether the physical key behaves as a function key (eg F3) or a hardware key (eg increase brightness).  Its behaviour can be toggle in the System Settings, Keyboard preferences.  You can use a function key as a trigger as long as it is behaving as a function key (that is either with or without the Fn key depending on your system preference setting).  But the Fn key does not affect the hot key per se, it changes whether the key on the keyboard acts as a function key (needful for hot keys) or a hardware key (which cannot be used with a hot key).
+
+Think of your keyboard as have two rows of keys, one row of function keys and one row of hardware keys - the Fn key toggles which row is “visible”.
+
+==== Can I use a second keyboard solely to trigger macros? ====
+
+You cannot really do this with Keyboard Maestro.
+
+Keyboard Maestro has two primary key triggers: hot keys and device keys.
+
+Hot keys intercept and swallow the key press but cannot distinguish between the same key on different keyboards.
+
+Device Keys can distinguish the key on different keyboards, but do not swallow the key so the key continues to perform its normal function.
+
+So you could use all the function keys (with associated modifiers) on both Macs using a device key trigger.  But you could not use, for example, the "a" key on a second keyboard without also typing an "a" (or swallowing both a's if you used a hot key).
+
+An alternative is to use a non-keyboard keyboard, something like an [XK-24](http://xkeys.com/xkeys/xk24.php) or the like, that does not perform any normal function.  You can use device key triggers with that kind of keyboard. Note that the XK devices may need a firmware upgrade to work with Keyboard Maestro in Big Sur or later.
+
+Also, with version 9, Keyboard Maestro adds direct support for the [[Stream Deck]], including the ability to trigger macros as well as control the image and title of the buttons.
+
+==== What is the difference between text token fields and calculation fields? ====
+
+In Keyboard Maestro, there are two kinds of processed fields, text token fields and calculation fields.  Most text fields are the text token fields.  Most numeric fields are calculation fields.
+
+A small indicator appears (v8+) in the field when you are editing to tell you what kind of field it is, Token, Calculation, or Variable.
+
+Text token fields typically (but not always) have an Insert Token pull down menu, and are always quite long.  They are designed to allow you to enter text, rather than a numeric value.
+
+In these fields, you use text tokens, which are marked with percents, like %CurrentClipboard% or %Variable%My Variable%.  You can insert a text token from the Insert Token popup menu, or by selecting from the Edit ➤ Insert Text Token menu.
+
+Calculation fields are usually small to start off with (assuming they contain only a number), and usually have a stepper (double arrows) next to them.  They are designed to allow you to enter a numeric value.
+
+In these fields, you type a raw calculation.  As soon as you type anything other than a digit, they expand to a larger size to allow for a calculation.  Calculation fields never use percent tokens, but they can include variables or functions.  You can insert a function or variable by selecting from the Edit ➤ Insert Function menu.
+
+If desired, you can include a calculation in a text token field by using the %Calculate% token like this: %Calculate%1+2%.  
+
+If desired, you can include a tokens in a calculation field by using the [[function:CALCULATE|CALCULATE]] function.
+
+One more thing to note, variables can contain an array of comma separated numbers, like the image size (123,456) or window frame (100,120,600,550).  In a calculation field, you can refer to these using a normal (1-based) index notation, like Variable[2].  So you can use ClipboardImageSize[1] and ClipboardImageSize[2].  In a text field you can use %Variable%ClipboardImageSize[1]%.
+
+For example, the Display Text action field is a text field, and is parsed for text tokens.  It can optionally uses the %Calculate% text token to evaluate expressions, whereas the Draw a Shape action fields are calculation fields, so no text tokens, just raw calculations.
+
+==== What is the difference between different kinds of hot keys? ====
+
+The system has a variety of things people call hot keys or shortcuts or command keys, but there are actually several different kinds. The main kinds are:
+
+* Menu Command Keys - shown in menus and limited to within the application containing those menus (Services and such are available in all applications).
+* Hot Keys - defined by the system or by applications using the Hot Key API.  They are available system-wide.  The key will be swallowed by the system, and instead the assigned action will be triggered, so they can override menu command keys and any other keys used normally in applications.  If two (or more) applications define the same Hot Key, both applications actions will happen.
+* Wonky Event Tap system "hot keys".  In particular Command-Tab is done this way.  Spaces keys may be done this way.  Command-Option-D might be done this way.
+
+Keyboard Maestro has special code to work around Command-Tab's Event Tap system hot key.
+
+On top of that, when multiple identical Hot Keys defined within Keyboard Maestro are active, when you press that key Keyboard Maestro will activate the Conflict Palette instead and let you select which macro you wish to trigger.
+
+==== How can I select Status Menus? ====
+
+Selecting status menu items (sometimes known as menu bar items) is difficult primarily because there is no easy way of specifying them - they don't have names so it is hard to identify them.
+
+You can use a [[action:Move_or_Click_Mouse|Click at Found Image]], although even that can be difficult as they often animate or change icons based on various states.  If the icon does not animate or change state (or has a known state when you want to select from it), then this can be a good solution, clicking to open the menu and then followed by [[action:Insert_Text_by_Typing|Insert Text by Typing]] "Menu Name%Return%"
+
+To click relative to an image, you use the Mouse Click action, configure it to be relative to a found image, and take a screenshot of the desired area of the screen using Command-Control-Shift-4, and paste it into the image well on the action.  The image has to be unique (which includes not being visible in the action if the image is small enough not to be shrunk in the image well) otherwise Keyboard Maestro will not know where to click.  The Display option in the action will allow you to see where Keyboard Maestro is matching.
+
+You may also be able to use AppleScript to click the menu bar, something like:
+
+```
+tell application "System Events" to tell process "Adguard"
+	click menu bar item 1 of menu bar 2
+end tell
+```
+==== How should I name my variables? ====
+
+Keyboard Maestro 5 introduced [[manual:Variables|Variables]] to its set of features. Variables can be initialised in a wide variety of ways, including by asking you for values using actions like [[action:Prompt_for_User_Input|Prompt for User Input]], [[action:Set_Variable_to_Text|Set Variable to Text]] or [[action:Set_Variable_to_Calculation|Calculation]] and can then be used in other actions, including [[action:Execute_a_Shell_Script|Shell]] and [[action:Execute_an_AppleScript|AppleScript]] scripts.
+
+Almost every field in Keyboard Maestro actions can optionally include a variable. In [[/Text_Fields|Text Fields]], variables can be used with the [[token:Variable|%Variable%]] token, while in [[/Text_Fields|Numeric Fields]], calculations can be used containing variables directly.
+
+[[manual:Variables|Variables]] can also include an array of elements.
+
+Which brings us to the point of this article: *naming best practices*. 
+
+Variables that start with "Local" (v8+) will be local to the macro in question, and that start with "Instance" will be local to the macro instance (ie, that macro and all the macros that it executes).  Consider availing yourself of these local variables when appropriate.
+
+Other variables are global and so can be used between different macros and retain their values over time, thus allowing you to store information for later use.
+
+Keyboard Maestro variables can have whitespace characters in their name. This is good for human readability. It also makes for better user experience in User Input dialogs. Whitespace characters are converted to underscores in scripts.
+
+==== People have suggested I use regular expressions to solve a problem, but how? ====
+
+Regular Expressions are a powerful tool for text processing and are fully supported in Keyboard Maestro.  You can use regular expressions to extract or change parts of text or dates or file names.
+
+You can learn more about regular expressions in various places:
+
+* The BBEdit Help has extensive documentation on regular expressions.
+* gskinner’s [RegExr](http://gskinner.com/RegExr/) provides a live testing field for regular expressions (requires Flash).
+* [Beginning Regular Expressions](http://www.amazon.com/Beginning-Regular-Expressions-Programmer/dp/0764574892/ref=sr_1_1?s=books&ie=UTF8&qid=1339154441&sr=1-1) book.
+* [Mastering Regular Expressions ](http://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/ref=sr_1_2?s=books&ie=UTF8&qid=1339154441&sr=1-2) book.
+* [Regular Expressions Tutorial](http://www.regular-expressions.info/tutorial.html) online resource.
+* [Regular Expression 101](https://regex101.com) online regex tester (but note that it has different settings and different flags so just because a regex works there does not mean it will work the same in Keyboard Maestro).
+
+
+==== How can I close the Keyboard Maestro editor window? ====
+
+You can click the close box on the editor window and it will close the editor window. 
+
+If the last window is closed, the editor will quit. The Keyboard Maestro Engine will continue running and processing your macros after you quit the Keyboard Maestro editor. Read the [Quick Start](http://wiki.keyboardmaestro.com/Quick_Start) for more details about the difference between the editor and the engine.
+
+Note that while you can have more than one editor window open, it can quickly slow down Keyboard Maestro so it is generally best to only have one editor window open unless you need to refer to two macros at the same time. Also, it is generally a good idea to quit the Keyboard Maestro editor when you are not editing your macros and leave just the Keyboard Maestro Engine running.
+
+
+
+==== What does Keyboard Maestro use the Contacts for? ====
+
+The system adds an alert to tell you when an application is accessing the Contacts, but unfortunately, that alert does not distinguish between an application reading your “My Card” email address and an application reading your whole contacts database.
+
+Keyboard Maestro can access your My Card information only, for the purposes of pre-filling your contact information if you wish to subscribe to the Getting Started emails (highly recommended!), and for the use in the [[token:AddressBook|%AddressBook%]] tokens (eg %AddressBook%First%). Keyboard Maestro does not directly access any of the remainder of your contacts database (although you can access them via AppleScript).
+
+==== How can I get the mouse coordinates on the screen or in a window? ====
+
+If possible, you should avoid using mouse click actions.  They tend to be very fragile, easily broken by subtle changes to the system or applications.  And they also require the screen to be in the expected state, so you usually need to add a Pause action before them to ensure the item they are clicking on is where it is expected to be.
+
+That said, there are two easy ways to get the screen coordinates for a mouse click.
+
+The first is to simply record the click.  Turn on recording in Keyboard Maestro, go to where you want to be, wait a could seconds for the screen to be stabilised so the click will be relative to the front window, and click.  Turn off recording, delete any extraneously recorded actions and you have your coordinates.
+
+Alternatively, use the built in Mouse Display (Help ➤ Mouse Display) which will show the screen coordinates relative to any corner of the main screen or front window.
+
+==== How can I turn off the Keyboard Maestro status menu? ====
+
+In Keyboard Maestro, in the General preferences, select Never as the Display Status Menu popup menu.
+
+==== How can I move an application or window to a particular Desktop/Space? ====
+
+Unfortunately, Apple have provided no control or API over the Spaces system, so Keyboard Maestro cannot help you control which Space an application or window is in. The only option is to control the UI to perform the required changes.
+
+==== How can I select from a popup menu? ====
+
+Selecting from a popup menu is difficult, largely because it is difficult to specify which popup menu button you mean.  To select from a popup menu button, there is two parts, first you need to make the menu popup up, and then you need to select the menu item.  To popup the menu of a popup menu button, there are several possible methods:
+
+* Some buttons have names and you can use the Press Button action to make them popup up, but most do not have names (even if they appear to).
+* You can use AppleScript UI scripting, though this is somewhat tricky to do.
+* You can use a click action relative to one of the corners of the window.
+* You can use a click action relative to a found image, based on the label of the menu, or some nearby feature.
+
+Once you have popuped up the menu, selecting it is relatively easy.  Use a combination of arrow keys, text typing (using the Insert Text by Typing action) and the Return key to select the menu.  Usually just Insert Text by Typing "Menu Name%Return%" will work, though sometimes you will need to us e an initial down arrow, and for hierarchical menus, you will need to use right arrows to open each level.
+
+==== What is a Semaphore? ====
+
+Keyboard Maestro executes multiple macros simultaneously.
+
+So say you have a macro that looks like this:
+
+    Trigger: F1
+    Actions:
+    Click Here
+    Pause 1 Second
+    Click There
+    Pause 1 Second
+    Click Elsewhere
+    Pause 1 Second
+
+And that does something and works fine.
+
+But if you press F1 three time quickly the sequence is going to look something like this:
+
+    Click Here
+    Click Here
+    Click Here
+    Click There
+    Click There
+    Click There
+    Click Elsewhere
+    Click Elsewhere
+    Click Elsewhere
+
+If that is what you want, that's fine, but probably you want the clicks to be in the sequence Here,There,Elsewhere, repeated three times.
+
+This is where a Semaphore comes in.  If you don't know what a Semaphore is, you can read about them on [Wikipedia](http://en.wikipedia.org/wiki/Semaphore_%28programming%29) (Keyboard Maestro uses a binary semaphore, either locked or unlocked).
+
+So if you add a Semaphore Lock to the start of the macro and a Semaphore Unlock to the end of the macro (the latter is optional as Keyboard Maestro will automatically release all the semaphores held by a macro execution when it finishes), then the macros would be executed sequentially.
+
+==== How can I cancel a running macro? ====
+
+You can cancel all running macros by holding all the modifiers down (Command, Control, Shift, Option) and clicking in the Keyboard Maestro status menu.
+
+You can cancel specific macros by selecting from the Cancel submenu in the Status Menu, or by selecting Start Debugging in the Status Menu, and clicking the appropriate cancel buttons.
+
+You can also see and cancel macros by choosing the Status Menu ➤ Start Debugging menu.
+
+There are also [actions for Cancelling All, This, or Other Macros](https://wiki.keyboardmaestro.com/action/Cancel_All_Macros), which you can use and trigger in any way you like.
+
+You can quit the Keyboard Maestro Engine from the status menu of the Keyboard Maestro editor File menu, and you can launch the editor while holding all the modifiers down to quit all running engines and not launch the engine.
+
+==== What are the differences between the Mac App Store version and the version purchased directly from Stairways? ====
+
+Keyboard Maestro is no longer available from the Mac App Store.
+
+The Mac App Store had only version 5.  It is an old version and you should not buy Keyboard Maestro from the Mac App Store.
+
+The Mac App Store requires sandboxing for any non-bugfix updates (Apple's requirement). and this excludes workflow applications like Keyboard Maestro, so version 5.3.2 will likely be the last version available on the Mac App Store.
+
+* The MAS version does not support secure https in the web server.  So all web use (including clipboard transfers) are done in clear text (Apple's requirement).
+* The direct download version gets version update announcements from the program, which includes information on what's new.  Apple handles the MAS version updating, so no release notes are provided.
+* The Apple approval process takes some unknown amount of time, so the MAS version releases will tend to be delayed from the direct download releases (typically 3-12 days).
+* The MAS version puts the log files in the ~/Library/Caches folder instead of the ~/Library/Logs folder (Apple's requirement).
+* The MAS engine bundle ID is com.stairways.keyboardmaestro.editor.engine.  The direct download engine bundle ID is com.stairways.keyboardmaestro.engine - this affects how you set hidden preferences and such (Apple's requirement).
+* Purchase from the MAS makes you an Apple customers, direct purchase makes you a Stairways customer.  With the later, Stairways can email you newsletters or upgrades, easily refund purchases, offer discounts for specific reasons, etc.  None of this is possible with MAS purchases (although you can subscribe to newsletters and upgrade emails manually).
+* The direct version is licensed per-user on up to five Macs, and uses a provided serial number.  The MAS version is licensed per-user and uses Apple's Apple ID authentication.
+
+==== What about sandboxing? ====
+
+Keyboard Maestro is no longer available from the Mac App Store.
+
+As of June 2012, Apple requires sandboxing of any application before it can be updated (other than bug fix updates) on the Mac App Store.  Since the Apple entitlements available to a sandboxed application are entirely insufficient to allow Keyboard Maestro to perform many of its operations, Keyboard Maestro cannot be sandboxed.  Everything Keyboard Maestro does is strictly part of the standard system APIs, but Apple simply has not provided the entitlements required to do the things Keyboard Maestro does from within a sandbox.  So as it stands, Keyboard Maestro will not be able to get anything more than minor updates on the Mac App Store, and version 5.3.x will be the last version available through the Mac App Store.
+
+Although it is possible to transition your license from the Mac App Store version to a direct license by contacting Stairways, it will cause some disruption.
+
+==== Should I buy from the Mac App Store or Buy Direct? ====
+
+Keyboard Maestro is no longer available from the Mac App Store, so you cannot buy from the Mac App Store.
+
+You could never buy any version from version 6 onwards from the Mac App Store.
+

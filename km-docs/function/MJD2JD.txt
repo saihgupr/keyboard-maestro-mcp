@@ -1,0 +1,21 @@
+====== MJD2JD Function ======
+
+The MJD2JD(x) function converts a time from [[:MJD]] to [[:JulianDate]].
+
+===== See Also =====
+
+=== Functions ===
+
+* [[function:DAY|DAY]]
+* [[function:DOW|DOW]]
+* [[function:GMTOFFSET|GMTOFFSET]]
+* [[function:NOW|NOW]] (unixtime)
+* [[function:TIME|TIME]] (unixtime)
+* [[function:TIME2JD|TIME2JD]]
+* [[function:TIME2MJD|TIME2MJD]]
+* [[function:JD|JD]]
+* [[function:JD2MJD|JD2MJD]]
+* [[function:JD2TIME|JD2TIME]]
+* [[function:MJD|MJD]]
+* [[function:MJD2TIME|MJD2TIME]]
+* [[:Functions|See all Functions]]

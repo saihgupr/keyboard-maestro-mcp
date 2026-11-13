@@ -1,0 +1,20 @@
+====== AudioOutputDevices Token ======
+
+The //AudioOutputDevices// token (v11.0+) returns a list of available audio output devices.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[AudioInputDevice|%AudioInputDevice%]] token
+* [[AudioInputDeviceUID|%AudioInputDeviceUID%]] token
+* [[AudioOutputDevice|%AudioOutputDevice%]] token
+* [[AudioOutputDeviceUID|%AudioOutputDeviceUID%]] token
+* [[AudioSoundEffectsDevice|%AudioSoundEffectsDevice%]] token
+* [[AudioSoundEffectsDeviceUID|%AudioSoundEffectsDeviceUID%]] token
+* [[AudioInputDevices|%AudioInputDevices%]] token
+* [[:Tokens |See all Tokens]]

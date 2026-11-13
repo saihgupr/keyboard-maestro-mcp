@@ -1,0 +1,35 @@
+Music Control actions allow you to interact with the Music app, playing songs, stopping or pausing, rewinding or fast-forwarding. The actions provide access to many of the controls in the Music app. All actions will launch Music if it is not already running. The actions are:
+
+===== Play a Specific Track ===== 
+Play a specified song.
+
+===== Play a Specific Playlist ===== 
+Play the songs in a specified Playlist.
+
+===== Play a Random Track ===== 
+Play a random song.
+
+===== Play a Random Track from a Specified Playlist ===== 
+Play a random song from a specified Playlist.
+
+===== Play/Pause Current Track ===== 
+Toggle from playing to pausing or vice-versa.
+
+===== Pause Current Track ===== 
+Pause the current song.
+
+===== Stop Current Track ===== 
+Stop playing any song.
+
+===== Fast-Forward Current Track ===== 
+Fast-forward the current song. It will keep fast-forwarding until you do something else or until it reaches the end of the song.
+
+===== Rewind Current Track ===== 
+Rewind the current song. It will keep rewinding until you do something else or until it reaches the beginning of the song.
+
+===== Next Track ===== 
+Play the next song.
+
+===== Previous Track ===== 
+Go to the previous song or the start of the current song if it is already playing.
+

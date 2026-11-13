@@ -1,0 +1,40 @@
+The //Set/Reset Action Delay action// lets you set the various arbitrary delays used in Keyboard Maestro, either for this macro, or (not recommended!) (semi)permanently for all macros.
+
+You can set the following delays:
+
+* Between Actions Delay (0.0 seconds)
+* Copy/Paste Delay (0.2 seconds)
+* Drag Delay (0.1 seconds + double click interval)
+* Large Text Display (5 seconds)
+* Simulate Normal Keystroke Delay (0.001 seconds)
+* Simulate Command Keystroke Delay (0.15 seconds)
+* Simulate Modifiers Delay (0.15 seconds)
+* Simulate Dead Key Delay (0.03 seconds)
+
+(!) It is highly recommended that you only ever use this action to set a delay for the specific macro. Setting a delay across all macros is highly likely to be the wrong solution, and to cause unnecessarily poor performance.
+
+The Between Actions Delay is a really big club, and is generally a bad idea to adjust.  Most actions have no need for a delay between them, and a few actions (typically before clicks for example, or after an action changes window focus or that sort of thing) require very large delays (a significant fraction of a second).  You should add these required large delays using [Pause](Pause) or better yet, [Pause Until](Pause_Until) actions.  If you set the Between Actions Delay to a large value your macro is going to run unnecessarily slowly.
+
+The Copy/Paste Delay allows time for the target application to respond to a Command-C and set the clipboard, or to respond to a Command-V and read the clipboard before continuing on to the next action.  If you frequently encounter issues where an [[:Troubleshooting#Sometimes the Wrong Thing is Pasted|old clipboard is pasted or read]] then you might need to adjust this.
+
+The Drag Delay is used after a click and before dragging, as well as after the dragging and before releasing the mouse button.
+
+The Large Text Display period is the time that a Large Text Display remains on the screen.
+
+The Simulate Keystroke Delays are the time that Keyboard Maestro waits after simulating a keystroke before continuing on to the next action.  If you wanted to make it appear that you were typing slowly, you could use the Simulate Normal Keystroke Delay to set an appreciable delay to occur between each keystroke, and have that applicable for this macro only.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Insert Text|Insert Text]]
+* [[action:Insert Text by Pasting|Insert Text by Pasting]]
+* [[action:Insert Text by Typing|Insert Text by Typing]]
+* [[action:Type a Keystroke|Type a Keystroke]]
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/feature-request-add-a-delay-time-parameter-to-the-type-a-keystroke-action/3399|Feature Request: Add a Delay Time parameter to the "Type a keystroke" action]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Set%20Action%20Delay|Keyboard Maestro Forum topics about Set Action Delay]]

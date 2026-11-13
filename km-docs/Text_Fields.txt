@@ -1,0 +1,76 @@
+====== Text and Numeric Fields ======
+
+Keyboard Maestro has two very distinct types of fields: __text fields__ and __numeric fields__.
+
+- Most text fields allow the use of [[manual:Tokens|tokens]].
+- Most numeric fields allow the use of [[Functions|Functions]].
+
+===== Text Fields =====
+
+Text fields offer an area where the user can enter any text, including [[manual:Tokens|tokens]] . They may be single line, or multi-line, and may expand to more lines to fit (within limits) the content.  They also contain non-printing control backslash characters (meta characters) such as `\r`, `\n`, `\t`, which are replaced by their value when the Macro and Action are executed (except in regular expression fields). Text fields can include the values of variables by using the Variable token, eg:
+
+{{ :action:tokenfield.png?nolink |}}
+
+You can use a calculation in a text field using the Calculate text token, eg *%Calculate%1+2%*.
+
+In most text fields, you can select the Gear BUTTON{{{⚙}}} popup menu to set processing options. 
+
+While editing a text field, a small BUTTON{{{T}}} indicator can be seen in the top right corner of the field.
+
+**For details, see the [[manual:Tokens|Main Tokens page]].**
+
+===== Numeric Fields =====
+
+Numeric fields start out small, and usually have double arrows stepper next to them:
+
+{{ action:numericfieldsmall.png?nolink&587x31 | Small Stepper Numeric Field }}
+
+and then expand to allow more text if you type something other than a simple number:
+
+{{ action:numericexpanded.png?nolink&587x55 | Expanded Numeric Field }}
+
+They are designed to allow you to enter a specific numeric value. In these fields, you can type a raw calculation, which can include variables and functions. Eg "Count + 2 * [[function:DOW|DOW()]]". To use a variable in a numeric field, you use it as is, without any adornment.
+
+As soon as you type anything other than a digit, they expand to a larger size to allow for a calculation. Calculation fields never use percent text tokens.
+
+If the function is invalid, it will highlight in red. Keep in mind that the expression may be invalid simply because a variable it references does not yet have a value. If you have not set the Count variable to a value, then the above action would look like this:
+
+{{ action:numericerror.png?nolink&587x55 | Error Numeric Field }}
+
+This is nothing inherently wrong with the action - the variable Count just does not currently have a numeric value.  Expressions that are invalid only because a variable is not currently valid will show in orange instead of red.
+
+You can insert functions into numeric fields using the *Edit ➤ Insert Function* menu. If you hold the option key down while selecting a function, you will get help on that function (from this wiki).
+
+While editing a text field, a small BUTTON{{{C}}} indicator can be seen in the top right corner of the field.
+
+===== Variable Fields =====
+
+Variable fields are similar to text fields, except they expect the name of a variable.
+
+While editing a text field, a small BUTTON{{{V}}} indicator can be seen in the top right corner of the field.
+
+===== Script Fields =====
+
+Almost every field in Keyboard Maestro actions is either a numeric field or a text token field. The major exceptions are script fields.  Scripts are not processed for text tokens, they must access variables through [other means](http://www.keyboardmaestro.com/documentation/6/scripting.html).
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[token:LineFeed|%Linefeed%]]
+* [[token:Return|%Return%]]
+* [[token:Space|%Space%]]
+* [[token:Tab|%Tab%]]
+* [[:Tokens|See all Tokens]]
+
+==== Topics ====
+
+* [[:Frequently Asked Questions|FAQ]]
+
+==== Forum ====
+
+- [[https://fhttps://forum.keyboardmaestro.com/t/opening-links-in-a-different-browser/206/7|Opening links in a different browser]]
+
+- [[https://forum.keyboardmaestro.com/t/insert-by-typing-inserting-a-r-into-vim-substitution/3945|Insert by typing: Inserting a \r into vim substitution]]
+
+- [[https://forum.keyboardmaestro.com/t/how-to-insert-return-between-appended-clipboard-snippets/5862/2|How to Insert RETURN between appended clipboard snippets]]

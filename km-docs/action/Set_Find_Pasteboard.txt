@@ -1,0 +1,9 @@
+The Set Find Pasteboard action allows you to pre-fill the //Find// function in most apps. 
+
+It sets the global //Find// pasteboard, typically equivalent to selecting text and choosing Use Selection To Find. The Find Pasteboard is used in most applications.
+
+{{:action:setfindpasteboard.png|}}
+
+Enter text in the //Set Find Pasteboard to// text area. Use the arrow at the right of the text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+Tip: leave notes for yourself about what you're doing. Click on the gear icon at top right of the action to select //Set Note…//. A window appears where you can enter text. Click the OK button to save the text of the note for future reference.

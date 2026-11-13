@@ -1,0 +1,91 @@
+====== Set Variable to Calculation Action ======
+
+The Set Variable to Calculation action sets a variable to the result of a calculation with numeric formatting.
+
+{{:action:km7-set-var-name-to-calculation-action.png?nolink|}}
+
+===== Calculations =====
+
+You may use the following in the //to// calculation box:
+
+  * [[token:Variable|Keyboard Maestro Variables]]
+  * [[:Functions|Functions]]
+  * [[/manual/Calculations|Calculation Operators]]
+
+The //to// field is a [[:Text_Fields|numeric field]] so you cannot use any of the [[token:CurrentClipboard|Clipboard tokens]] or indeed any [[:Tokens|text tokens]], except within a [CALCULATE](https://wiki.keyboardmaestro.com/function/CALCULATE) function.
+
+===== Variables =====
+
+The //to// field is a numeric field, so you use variable names unadorned:
+
+  * Do **not** use the text token syntax for a Variable, like `%Variable%My Variable Name%`.
+  * Instead, you just use the Variable name without any `%`, like `My Variable Name`
+
+You can use the //Edit ➤ Insert Function// menu to insert functions.
+
+===== Formatting =====
+
+As can be seen by the blue shade of the action gear menu there is an additional option for the action, specifically you can //Format the Result// using [[https://www.stairways.com/action/linkthru?unicodenumberformat|Unicode Number Format Patterns]] such as //#,##0.##//.
+
+(i) Note that numeric values in Keyboard Maestro allow only “full stop” decimal (.) and no thousand separators (except optional underscores), so the output of this action with formatting will likely not be a valid number for a Keyboard Maestro calculation in many locales. **It should be used only for display purposes.**
+
+
+===== Result =====
+
+At the bottom of the action you can see the current value of the calculation.
+
+If the calculation is invalidly formatted, the invalid part of the calculation will show up in <color #ed1c24>RED</color>.
+
+If the calculation would currently fail because an input variable does not currently have a numeric value, that variable will show up in <color #ff7f27>ORANGE</color>.
+
+===== Examples =====
+
+==== Example 1 ====
+
+The below macro performs a simple calculation of adding 1 to the value currently selected by the user in the user's document, and then pasting the new value back into the user's document.
+
+{{:action:km7-set-var-to-calculation-macro.png?nolink|}}
+
+==== Example 2 ====
+
+{{vars-x-y-width-height.png?597;nolink|}}
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Set Variable to Keychain Password|Set Variable to Keychain Password]]
+* [[action:Set Variable to Text|Set Variable to Text]]
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[function:CEIL|CEIL()]]
+* [[function:FLOOR|FLOOR()]]
+* [[function:ROUND|ROUND()]]
+* [[function:TRUNC|TRUNC()]]
+* [[:Functions|See all Functions]]
+
+==== Tokens ====
+
+* [[token:Calculate|%Calculate%]] token
+* [[token:CalculateFormat|%CalculateFormat%]] token
+* [[:Tokens|See all Tokens]]
+
+==== Topics ====
+
+* [[:Text Fields|Text Fields]]
+* [[:Frequently Asked Questions|FAQ]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/how-to-access-a-text-array-variable/507|How to access a text array variable]]
+- [[https://forum.keyboardmaestro.com/t/need-help-doing-time-based-calculations/2730/2|Need Help Doing time based calculations]]
+- [[https://forum.keyboardmaestro.com/t/round-to-1-decimal-place/3001/2|Round to 1 decimal place]]
+- [[https://forum.keyboardmaestro.com/t/how-to-create-an-if-else-calculation/3047/5|How to create an if else calculation?]]
+- [[https://forum.keyboardmaestro.com/t/km-delete-all-variables-except-those-on-keep-list/3428|[KM] DELETE All Variables Except Those on Keep List]]
+- [[https://forum.keyboardmaestro.com/t/feature-request-finding-macros-that-use-a-variable/3439/2|(Feature Request?) Finding macros that use a variable]]
+- [[https://forum.keyboardmaestro.com/t/variable-naming-conventions/3444/2|Variable Naming Conventions?]]
+- [[https://forum.keyboardmaestro.com/t/can-i-create-a-structure-type-of-variable/3557/6|Can I create a "structure" type of variable?]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Set%20Variable%20Calculation|Keyboard Maestro Forum topics about Set Variable to Calculation]]

@@ -1,0 +1,523 @@
+====== Preferences ======
+
+To configure Keyboard~~Maestro, first launch Keyboard~~Maestro and choose [[Menus#Keyboard_Maestro_Preferences|Preferences]] from the [[Menus#Keyboard_Maestro|Keyboard Maestro menu]].
+
+{{ preferencesgeneral.png?nolink&582x641 | Preferences General Pane }}
+
+The preferences are divided into sections.
+
+===== General Preferences =====
+
+In the [[Windows#Preferences_General_Pane|General preference pane]] you can:
+
+* enable or disable launching the Keyboard~~Maestro~~Engine at Login.
+* enable or disable macro syncing.
+* Show or hide the [[Applications_Palette|Applications Palette]].
+* configure whether to detect clipboards that resemble passwords and obscure them.
+* configure the light/dark appearance (macOS 10.14+).
+* configure the default text size used in various places.
+* configure whether and how to show the status menu.
+* configure the style of the status menu.
+* configure whether to include macro icons in the status menu.
+* configure whether to include pasting clipboards in the status menu.
+* configure whether to include applications in the status menu.
+* configure whether to save the recent applications between logins.
+* configure whether to save the clipboard history between logins.
+* configure whether to only notify about updates when the editor launches.
+* configure whether to send diagnostics (crash reports).
+
+===== Palettes Preferences =====
+
+In the [[Windows#Preferences_Palettes_Pane|Palettes preference pane]] you can adjust the style of the default palette, the Global Macro Palette, the [[Applications_Palette|Applications Palette]], and the Conflict Palette.
+
+You can configure the Conflict Palette to be placed under the mouse or to have it remain where you place it.
+
+You can configure the Conflict Palette to include entries in the Touch Bar.
+
+===== Web Server Preferences =====
+
+In the [[Windows#Preferences_Web_Server_Pane|Web Server preference pane]] you can:
+
+* enable or disable the web server.
+* configure the username, password and port of the web server.
+* enable or disable web browser access.
+* enable or disable iPhone access.
+* enable or disable receiving clipboard entries.
+* enable or disable replacing the current clipboard.
+* access the web server in your default browser by clicking on Connect.
+
+The web server is disabled by default.
+
+If the web server and web browsing are enabled, then anyone who can connect to your Mac can execute any macro that has a Public~~Web trigger.
+
+If the web server and web browsing are enabled, and if you have configured a username and password, then anyone who can connect to your Mac and login with the specified username and password can execute any of your macros.
+
+If the web server and iPhone access are enabled, and if you have configured a username and password, then anyone who can connect to your Mac from an iPhone and login with the specified username and password can execute any of your macros.
+
+If the web server and receiving clipboard are enabled, then anyone can send you clipboards which will appear in your clipboard history.  By default they do not overwrite the current clipboard, but you can enable that to allow the current clipboard to be directly written remotely.
+
+Macros are still only available when they are enabled and their containing macro group is enabled and active.
+
+You can configure custom styles using the defaults write command to add a custom style, for example:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.editor WebServerCustomStyles -string 'body { background: green; }'
+</code>
+
+This might be useful if you are controlling multiple Macs and want to differentiate them more clearly.
+
+===== Clipboards Preferences =====
+
+In the [[Windows#Preferences_Clipboards_Pane|Clipboards preference pane]] you can add, remove and rename Named~~Clipboards and see and change their values.
+
+Named~~Clipboards store snippets or text or images (or anything the clipboard can hold) and you can copy or paste from them using the Clipboard~~Switcher or using appropriate macro actions.
+
+You can paste an image into a Named~~Clipboard by selecting it in the list and pasting an image (if you select part of the text, it will paste the image into the styled text, which works but is probably not what you want).
+
+===== Variables Preferences =====
+
+In the [[Windows#Preferences_Variables_Pane|Variables preference pane]] you can add and remove variables and see and change their values.
+
+You do not need to create variables, just using them and giving them a value is all that is required for them to spring into existence.
+
+You can also inspect variables and other values in the [[Windows#Value_Inspector_Window |Value Inspector]].
+
+===== Excluded Preferences =====
+
+In the [[Windows#Preferences_Exclude_Pane|Excluded preference pane]] you can add and remove applications from the global excluded applications list.  Excluded applications will not be shown in the Application~~Switcher, and are (optionally) not hidden or quit by the Hide All Applications or Quit All Applications actions.
+
+You can add and remove applications from the [[Applications_Palette|Applications Palette]] exclusion list.  Excluded applications will not appear in the Applications Palette.  You can also exclude applications by control or right clicking on them in the Applications Palette and selecting *Exclude from Applications Palette*.
+
+You can also add and remove applications from the clipboard history exclusion list.  When an excluded application is at the front, Keyboard Maestro will not automatically record the clipboard history each time it changes.  It will still read the current System Clipboard if you explicitly ask for it in a macro or open the Clipboard History Switcher.
+
+===== Security Preferences =====
+
+Keyboard Maestro is designed to act on your behalf and to do many things for you - essentially acting as you in performing tasks. As such, it needs a wide variety of security permissions to perform these tasks.
+
+This preference panel aims to summarise the important preferences and allow you to explicitly request them as needed.
+
+===== Preferences Set by Command Line =====
+
+You can configure various preferences using defaults write from the Mac OS X Terminal.  Some preferences will take effect immediately, but others may require the editor or engine to be relaunched. These preferences are documented here only to provide utility. Their behaviour may change in the future, or have unexpected consequences.
+
+==== Editor ====
+
+You can adjust the get mouse location delay with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.editor MouseGetCountdown -int 5
+</code>
+
+You can adjust the spelling of Favorites with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.editor FavoritesDisplayName -string "Favourites"
+</code>
+
+You can turn off automatic completion (autocomplete) with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.editor AutomaticCompletion -bool NO
+</code>
+
+You can limit the maximum undo stack size in the editor with (default 200MB):
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.editor MaximumUndoSize -int 200000000
+</code>
+
+You can add some custom styling to the detail view displays with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.editor DetailDisplayExtraStyle -string 'div.ActionComment div.UserText { font-family:"Monaco"; }'
+</code>
+
+You can set your preferred first day of the week (1=Sunday, 7=Saturday):
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.editor FirstDayOfWeek -int 2
+</code>
+
+You can disable all animation in the editor with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.editor DisableAnimation -bool YES
+</code>
+
+You can configure the fonts used for the various action text views with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.editor Font-Normal -string "Monaco"
+defaults write com.stairways.keyboardmaestro.editor Font-Fixed -string "Monaco"
+defaults write com.stairways.keyboardmaestro.editor Font-Shell -string "USER"
+defaults write com.stairways.keyboardmaestro.editor Font-AppleScript -string "FIXED"
+defaults write com.stairways.keyboardmaestro.editor Font-JavaScript -string "SYSTEM"
+defaults write com.stairways.keyboardmaestro.editor Font-Swift -string "Times"
+defaults write com.stairways.keyboardmaestro.editor Font-HTML -string "Courier:25"
+defaults write com.stairways.keyboardmaestro.editor Font-JSON -string "Marker Felt:10"
+defaults write com.stairways.keyboardmaestro.editor Font-Comment -string "Palatino:20"
+</code>
+
+The value of this field can be one of “USER”, “FIXED” or “SYSTEM” (for the default user, fixed and system fonts), or a font name.  This can optionally be followed by a colon and the point size.  The default point size is 13.  The font size is scaled based on the Large Text setting, and this size is used for the //Normal// setting.
+
+
+==== Clipboard ====
+
+If you wish to effectively disable the Keyboard Maestro Clipboard History, you can do so by setting the history size to zero, and then Keyboard Maestro will only read the clipboard when you explicitly ask it to use the clipboard.
+
+You can set the following preferences for the Clipboard History
+
+**Maximum Number of Items** (default 200)
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine MaxClipboardHistory -int 200
+</code>
+
+If you set the max number of items to zero, then the Copy action will fail.
+
+**Maximum Clipboard Flavor Size** (default 100MB)
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine ClipboardFlavorMaximumSize -int 100000000
+</code>
+
+**Multiple Clipboard Separator** (default Return)
+
+The separator added if you paste multiple items from the Clipboard Switcher can be configured in the gear menu or set to something else with the command:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine MultipleClipboardSeparator " and "
+</code>
+
+**Ignored Clipboard Flavors**
+
+You can add additional clipboard flavors to be ignored using:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine ExtraIgnoredClipboardFlavors "com.whatever.badflavor"
+</code>
+
+The string should be a bar (`|`) separated list of flavors (technically a regular expression). These flavors will be excluded from the clipboard when Keyboard Maestro reads the clipboard.
+
+You can also write to `IgnoredClipboardFlavors`, which will set the entire list of ignored clipboard flavors, but that is a bad idea since the flavors that are ignored, are ignored for a reason, and overwriting the list will produce negative results.
+
+**Maximum Position of Concealed (Password) Items** (default 10)
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine MaxConcealedPosition -int 10
+</code>
+
+**Regular Expression Which Matches Text You Think Should or Should Not Be Concealed as Passwords**
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine LooksLikePassword -string "^[a-zA-Z0-9]+$"
+defaults write com.stairways.keyboardmaestro.engine LooksLikeNotPassword -string "^[a-zA-Z0-9]+$"
+</code>
+
+**Include Microsoft PDFs in Clipboards**
+
+Microsoft applications include a PDF flavor with every copy, and starting up the PDF rendering engine is slow, making the first copy after launching a Microsoft application.  Keyboard Maestro excludes PDF flavors from clipboards copied in Microsoft applications by default, but you can turn this off with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine ExcludeMicrosoftPDFFlavor -bool NO
+</code>
+
+**Include Microsoft Image Formats**
+
+Microsoft applications also include flavors for every possible image format with every copy.  Keyboard Maestro excludes secondary image flavors like BMP when there is a PNG or TIFF flavor available.  You can turn this off with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine ExcludeMultipleImageFlavors -bool NO
+</code>
+
+==== AppleScript OSA Command ====
+
+You can set the command line tool that is used to execute AppleScripts
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine OSAScriptCommand -string "/usr/bin/arch -i386 /usr/bin/osascript"
+</code>
+
+==== Browser Used in Actions & Tokens ====
+
+**Change which Safari-based Browser will be targeted by the "Safari" Actions, Tokens, and Functions.**
+
+These preferences change the AppleScript Application name that is used to control the respective browser in the form of CODE{{{tell application "<browser name>"}}}.  Note that the Safari browser must still behave like Safari, and the Chrome browser must behave like Chrome, or the actions will not work.  Do not bother trying to set them to Firefox or something like that as it will not work.  All this allows you to do is select a specific version of Safari or Chrome respectively.
+
+You can configure which Safari-based Browser is targeted in Safari Actions, as well as the name of the Safari browser shown in the actions:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine AppleScriptSafariBundleID -string "com.apple.SafariTechnologyPreview"
+defaults write com.stairways.keyboardmaestro.engine BrowserSafariName -string "Safari Tech"
+</code>
+
+**Change which Chrome-based Browser will be targeted by the various Keyboard Maestro "[[token:ChromeTitle|Chrome Related]]" Actions, Tokens, and Functions.**
+
+:!: Note:  By using the [[token:FrontBrowserTitle|FrontBrowser Related]] Tokens, Actions, and Functions, you may not need to change the below.  Just use these _FrontBrowser_ entities and whatever Browser is currently (or most recently) frontmost will be targeted.  This includes all Safari-based Browsers and Chrome-based Browsers.
+
+<code bash>
+# ~~~ For Brave Browser ~~~
+defaults write com.stairways.keyboardmaestro.engine AppleScriptGoogleChromeBundleID -string "com.brave.Browser"
+defaults write com.stairways.keyboardmaestro.engine BrowserGoogleChromeName -string "Brave Browser"
+
+# ~~~For Chrome Canary ~~~
+defaults write com.stairways.keyboardmaestro.engine AppleScriptGoogleChromeBundleID -string "com.google.Chrome.canary"
+defaults write com.stairways.keyboardmaestro.engine BrowserGoogleChromeName -string "Chrome Canary"
+</code>
+
+**To restore the defaults** back to use Google Chrome, just delete the preferences:
+
+<code bash>
+# ~~~ Restore to Google Chrome ~~~
+defaults delete com.stairways.keyboardmaestro.engine AppleScriptGoogleChromeBundleID
+defaults delete com.stairways.keyboardmaestro.engine BrowserGoogleChromeName
+</code>
+
+**Add additional Browsers to the Front Browser Actions, Tokens, and Functions.**
+
+The current list of browsers supported in Keyboard Maestro as a potential front browser include:
+
+* com.apple.Safari
+* com.apple.SafariTechnologyPreview
+* com.google.Chrome
+* com.google.Chrome.canary
+* com.brave.Browser
+* com.brave.Browser.beta
+* com.vivaldi.Vivaldi
+* com.vivaldi.Vivaldi.snapshot
+* com.microsoft.edgemac
+
+Plus whatever browser is specified as the Safari or GoogleChrome above.
+
+You can add additional browsers supported as the Front Browser by including their bundle IDs in the `AdditionalWebBrowserBundleIDs` preference. You can list as many as you like, separated by spaces or commas.
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine AdditionalWebBrowserBundleIDs -string "com.example.Safari,com.example.Chrome"
+</code>
+
+:!: Note:  if the bundle ID includes “safari”, it is considered a Safari browser, otherwise it is considered a Chrome-based browser.
+
+==== Tokens ====
+
+Tokens are limited to 0.9 seconds in execution time, and are executed somewhat asynchronously in Ventura and later. You can control this with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine TokenTimeout -float 0.9
+defaults write com.stairways.keyboardmaestro.engine ForceSynchronousTokens -bool YES
+</code>
+
+==== Engine Animation ====
+
+You can disable all animation in the engine with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine DisableAnimation -bool YES
+</code>
+
+==== Typed String ====
+
+You can disable Shift-Space from clearing the Typed String buffer with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine TypedStringClearWithShiftSpace -bool NO
+</code>
+
+and you can disable clicks from clearing the Typed String buffer with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine TypedStringClearWithMouse -bool NO
+</code>
+
+and you can set the idle time for clearing the Typed String buffer (default 5 seconds) with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine TypedStringClearTime -float 5.0
+</code>
+
+You can disable modifiers taps in the Typed String buffer with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine AllowModifiersInTypedStrings -bool NO
+</code>
+
+
+==== Use Unicode for Keystrokes ====
+
+You can force Keyboard Maestro to simulate keystrokes only as Unicode characters, rather than typing them as you would on the keyboard
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine ForceInsertTextByTypingToUseUnicode -bool YES
+</code>
+
+==== Hot Key Triggers ====
+
+You can set the maximum key down trigger time for Hot Key triggers (default 10 seconds)
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine MaxKeyRepeatTime -float 10.0
+</code>
+
+You can configure the timing of a "tap" (Hot Key and USB Device Key triggers) with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine MaxTapDownTime -float 1.0
+defaults write com.stairways.keyboardmaestro.engine MaxTapUpTime -float 1.0
+</code>
+
+The default allowable down time is the double click interval, and the default allowable up time is twice the double click interval.
+
+==== Sounds ====
+
+You can silence the clipboard transfer sounds with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine SilenceClipboardSounds -bool YES
+</code>
+
+And you can silence the recording sounds with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine SilenceRecordingSounds -bool YES
+</code>
+
+==== Recordings ====
+
+You can adjust the recording delay with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine RecordingCountDown -int 5
+</code>
+
+Note: you can option click the Record button to avoid the delay.
+
+You can have all recorded clicks recorded in absolute coordinates by default with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine AlwaysRecordAbsoluteClicks -bool YEA
+</code>
+
+By default, clicks are recorded relative to the front window, if that window has remained the front window and retained its size and position for some time.  Note that for a short time after recording, you can change the relative field in the action, and the values will update to appropriate values.
+
+==== Conflict Palette ====
+
+You can have the conflict palette use sequential hot keys from the first letter with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine SequentialConflictPalette -bool YES
+</code>
+
+==== Status Menu ====
+
+You can set configure whether the Status Menu includes the Paste submenu and how many items it includes with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine StatusMenuIncludePaste -bool NO
+defaults write com.stairways.keyboardmaestro.engine StatusMenuPasteCount -int 30
+</code>
+
+==== Display Large Text ====
+
+You can set configure Display Large Text color and display period with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine DisplayLargeTextColor -string "502033"
+defaults write com.stairways.keyboardmaestro.engine DisplayLargeTextDisplayPeriod -float 5.0
+</code>
+
+By default recorded clicks do not restore the mouse location, but you can change that with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine RecordedClickRestoresMouseLocation -bool NO
+</code>
+
+==== Notifications ====
+
+You can control which notifications are displayed with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine "Notification-Information" -bool NO
+defaults write com.stairways.keyboardmaestro.engine "Notification-MacroExecution" -bool NO
+defaults write com.stairways.keyboardmaestro.engine "Notification-MacroCancelled" -bool YES
+defaults write com.stairways.keyboardmaestro.engine "Notification-ActionFailed" -bool YES
+defaults write com.stairways.keyboardmaestro.engine "Notification-ReceivedClipboard" -bool YES
+</code>
+
+==== Software Updates ====
+
+You can have new versions reported only when the editor activates with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine ReportUpdatesWhenEditorActivates -bool YES
+</code>
+
+==== Prompt With List Show All Limit ====
+
+
+You can set the limit for the maximum number of items shown by default in the [[action:Prompt_With_List|Prompt With List]] action with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine PromptWithListShowAllLimit -int 100
+</code>
+
+When there is more items than this in the list, by default the action will not show the items as the list may be too long to be practical.
+
+==== WebKit Inspector for HTML Prompt ====
+
+You can enable the WebKit inspector with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine WebKitDeveloperExtras -bool YES
+</code>
+
+Then you can control-click on elements and use Inspect Element and get an inspector window, including a Console tab.
+
+==== Custom Palette Theme ====
+
+You can configure a custom palette theme color style with:
+
+<code bash>
+defaults write com.stairways.keyboardmaestro.engine CustomPaletteTheme -string "0,90,74, 110,90,74, 256,90,74"
+</code>
+
+The style includes 3 or 6 HSB colors (being background, text, highlighted letter, selected background, selected text, selected highlight letter) each specified as hue,saturation,brightness.  The background brightness is dropped by 33%, but if there are only three colors, then the selected background color is the background without the 33% drop.  You can select the Custom style in the Theme Editor.
+
+Alternatively, you can specify the theme using JSON and including all the details for the theme including optional gradients.  The format is:
+
+    { 
+        "IncludeTexture":<BOOLEAN>,
+        "TitleBackground":<COLORorGRADIENT>,
+        "TitleBorder":<COLORorGRADIENT>,
+        "BodyBackground":<COLORorGRADIENT>,
+        "BodyBackgroundSelected":<COLORorGRADIENT>,
+        "Frame":<COLOR>,
+        "TitleText":<COLOR>,
+        "Text":<COLOR>,
+        "TextHighlighted":<COLOR>,
+        "TextSelected":<COLOR>,
+        "TextSelectedHighlighted":<COLOR>,
+    }
+
+^ Type ^ Value ^
+| <BOOLEAN> | “true” or “false” |
+| <COLOR> | an array of three numbers, being hue (0-360), saturation (0-100), and brightness (0-100) |
+| <COLORorGRADIENT> | either a <COLOR> or a dictionary {"c1":<COLOR>, "c2":<COLOR>, "angle":<0-360>} |
+
+IncludeTexture specifies whether Keyboard Maestro includes the subtle mottling texture on the main background.
+
+For example:
+
+	defaults write com.stairways.keyboardmaestro.engine CustomPaletteTheme -string '{ 
+	"IncludeTexture":false,
+	"TitleBackground":{"c1" : [180,30,53], "c2" : [180,30,40], "angle":270},
+	"TitleBorder":[180,30,40],
+	"BodyBackground":{"c1" : [180,30,50], "c2" : [180,30,38], "angle":270},
+	"BodyBackgroundSelected":[180,30,60],
+	"Frame":[180,30,40],
+	"TitleText":[180,40,92],
+	"Text":[180,40,92],
+	"TextHighlighted":[180,40,70],
+	"TextSelected":[180,40,98],
+	"TextSelectedHighlighted":[180,40,75],
+	}'
+
+Note that the “-string” is important - otherwise the `defaults` command will interpret the JSON itself and that will not work.

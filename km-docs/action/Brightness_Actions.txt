@@ -1,0 +1,19 @@
+====== Screen Brightness Actions ======
+
+The //Increase Screen Brightness// and //Decrease Screen Brightness// actions increase or decrease the screen brightness by one unit (one unit is 1/16th of the total range). 
+
+The //Small Increase Screen Brightness// and //Small Decrease Screen Brightness// actions (v9.0+) increase or decrease the screen brightness by one quarter of a unit.
+
+When you use these actions the system brightness overlay briefly appears on the screen.
+
+These actions are the same as pressing the hardware brightness buttons, with or without the option&shift key.  They typically affect the primary screen only.
+
+===== See Also =====
+
+==== Actions ====
+
+* Small Decrease Screen Brightness
+* Small Increase Screen Brightness
+* Decrease Screen Brightness
+* Increase Screen Brightness
+* [[:Actions|See all Actions]]

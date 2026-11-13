@@ -1,0 +1,84 @@
+====== Dictionaries ======
+
+Keyboard Maestro includes permanently stored dictionaries that you can use or set.
+
+A dictionary is a named set of mappings from a key name to a value.  You can have multiple dictionaries, each with their own name (so really, it is a set of mappings from a dictionary name and a key name to a value).
+
+Dictionary names start with a alphabetic character, followed by any number of alphanumeric, space or underscores.  Dictionary names are case insensitive.
+
+Key names can be anything, although leading and trailing white space is stripped off.  Key names are case insensitive.
+
+Dictionary values are plain text and can include leading or trailing white space.
+
+For example, you might have a dictionary named "Shop Prices", with keys being the item names and values being the cost of the item.
+
+^Dictionary^Key^Value^
+| Shop Prices \\ Shop Prices \\ Shop Prices| Coffee \\ Cake \\ Drink| 3.45 \\ 5.35 \\ 2.50|
+
+===== Setting Dictionary Values =====
+
+Use the [[action:Set_Dictionary_Value#See_Also|Set Dictionary Value]] action to set a dictionary value.
+
+{{:manual:set_dictionary_key_example_01.png|}}
+
+{{:manual:set_dictionary_key_example_02.png|}}
+
+{{:manual:set_dictionary_key_example_03.png|}}
+===== Accessing Dictionary Values =====
+
+You can use the [[token:Dictionary|%Dictionary%]] token to access Dictionary values.
+
+{{:manual:dictionary_01.png}}
+
+
+''%Dictionary[Shop Prices,Cake]%''
+
+{{:manual:dictionary_02.png}}
+
+''%Dictionary[Shop Prices,%Variable%local_KeyName%]%''
+
+{{:manual:dictionary_03.png}}
+
+''%Dictionary[%Variable%local‗DictName%,%Variable%local‗KeyName%]%''
+
+You can list the dictionaries with the [[collection:Dictionaries|Dictionaries]] collection, and you can list all the keys within a dictionary with the [[collection:Dictionary_Keys|Dictionary Keys]] collection.
+
+
+===== AppleScript =====
+
+You can read and write dictionary values from AppleScript.
+
+```applescript
+tell application "Keyboard Maestro Engine"
+	set dictionaryNameList to name of dictionaries
+end tell
+```
+
+```applescript
+tell application "Keyboard Maestro Engine"
+
+   set newDict to make new dictionary with properties {name:"Shop Prices"}
+   
+   # If you don't set a key/value pair the newly created dictionary above goes up in smoke.
+   tell newDict
+      make new dictionary key with properties {name:"Coffee", value:"3.50"}
+   end tell
+   
+end tell
+```
+
+```applescript
+tell application "Keyboard Maestro Engine"
+	set dictKeyList to dictionary keys of dictionary "Shop Prices"
+end tell
+```
+
+```applescript
+tell application "Keyboard Maestro Engine"
+	set value of dictionary key "Coffee" of dictionary "Shop Prices" to "4.50"
+end tell
+```
+
+===== See Also =====
+
+See also the [[action:Set_Dictionary_Value|Set Dictionary Value]] action, the [[token:Dictionary|%Dictionary%]] token and the [[collection:Dictionaries|Dictionaries]] and [[collection:Dictionary_Keys|Dictionary Keys]] collections.

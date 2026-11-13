@@ -1,0 +1,30 @@
+====== PIXEL Function ======
+
+The PIXEL(component,x,y) function returns the color component at a given location on the screen (absolute coordinates relative to the top left corner of the main screen).
+
+The component parameter can be any of:
+
+* Red
+* Green
+* Blue
+* Hue
+* Saturation
+* Brightness
+* White
+* Cyan
+* Magenta
+* Yellow
+* Black
+
+The return value is always in the range 0-1.
+
+===== See Also =====
+
+==== Functions ====
+
+* [[MOUSEX]] function
+* [[MOUSEY]] function
+* [[SCREEN]] function
+* [[SCREENVISIBLE]] function
+* [[WINDOW]] function
+* [[:Functions|See all Functions]]

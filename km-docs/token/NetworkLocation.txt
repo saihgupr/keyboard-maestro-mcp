@@ -1,0 +1,1 @@
+The //%NetworkLocation%// token returns the current network location name.

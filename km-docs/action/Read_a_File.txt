@@ -1,0 +1,29 @@
+The Read a File action allows you to take the contents of a text or image file and put them on the system clipboard, a named clipboard or in a variable.
+
+Click the File Chooser button to the right of the action to select an existing file on disk. Option-click on the File Chooser button to show the currently selected file in the Finder (assuming it exists already).
+
+Select the destination from the pop-up:
+  *to clipboard
+  *to named clipboard
+  *to variable 
+
+If you select //named clipboard// then a pop-up allows you to choose which clipboard to write to.
+
+Specify the variable to save the data to in the //to variable// text area, either by entering a variable name or choosing one from the arrow at the right-hand end of the text area.
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Append Text to a File|Append Text to a File]]
+* [[action:Delete a File|Delete a File]]
+* [[action:Write to a File|Write to a File]]
+* [[:Actions|See all Actions]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/search?q=Read%20File|Keyboard Maestro Forum topics about Read a File action]]

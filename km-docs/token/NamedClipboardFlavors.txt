@@ -1,0 +1,18 @@
+===== NamedClipboardFlavorsToken =====
+
+The //%NamedClipboardFlavors%// token (v11.0+) returns the flavors of a specified named clipboard. It has the form %NamedClipboardFlavors%<Name>% where <Name> specifies which past clipboard to use.
+
+===== See Also =====
+
+* [[/Clipboards|Clipboards]]
+
+=== Tokens ===
+
+* [[SystemClipboard|%SystemClipboard%]] token
+* [[PastClipboard|%PastClipboard%]] token
+* [[NamedClipboard|%NamedClipboard%]] token
+* [[TriggerClipboard|%TriggerClipboard%]] token
+* [[SystemClipboardFlavors|%SystemClipboardFlavors%]] token
+* [[PastClipboardFlavors|%PastClipboardFlavors%]] token
+* [[TriggerClipboardFlavors|%TriggerClipboardFlavors%]] token
+* [[/Tokens|All Tokens]]

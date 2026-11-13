@@ -1,0 +1,30 @@
+====== Hide/Show Global Macro Palette Actions ======
+
+The //Show Global Macro Palette// action shows the [[manual:Palettes#Global_Macro_Palette|Global Macro Palette]].
+
+The //Hide Global Macro Palette// action hides it.
+
+The //Toggle Global Macro Palette// action shows it if it is hidden and hides it if it is visible.
+
+=== Actions ===
+
+* [[action:Activate Macro Group|Activate Macro Group]]
+* [[action:Activate Macro Group for One Action|Activate Macro Group for One Action]]
+* [[action:Activate or Deactivate Macro Group|Activate or Deactivate Macro Group]]
+* [[action:Group|Group]]
+* [[action:Hide Global Macro Palette|Hide Global Macro Palette]]
+* [[action:Set Macro or Group Enable|Set Macro or Group Enable]]
+* [[action:Show Global Macro Palette|Show Global Macro Palette]]
+* [[action:Show Macro Group|Show Macro Group]]
+* [[action:Show Macro Group for One Action|Show Macro Group for One Action]]
+* [[action:Show or Hide Macro Group|Show or Hide Macro Group]]
+* [[action:Show Status Menu|Show Status Menu]]
+* [[:Actions|See all Actions]]
+
+=== Topics ===
+
+* [[:Macro Groups|Macro Groups]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/search?q=Toggle%20Global%20Macro%20Palette|Keyboard Maestro Forum topics about Hide/Show/Toggle Global Macro Palette]]

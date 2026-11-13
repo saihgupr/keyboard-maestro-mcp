@@ -1,0 +1,68 @@
+{{:action:apple-mail-icond.png?nolink|}}
+====== Send Apple Mail Message ======
+
+The Send Mail Message action allows you to create a message and send immediately or leave it open for further editing. Use the //Create new message// pop-up to choose between //and send now// and //and leave open//.
+
+:!: Note that this works _only_ with the Apple Mail app.
+
+{{ apple-mail-send-mail-action.png?nolink&575x317 | Send Apple Mail Message }}
+
+===== Action Form Fields =====
+
+Enter one or more email addresses in the //To// text area and optionally add email addresses to the //Cc// and //Bcc// text areas.
+
+
+Enter a subject in the //Subject// text area.
+
+
+Select the sending address from the //From// pop-up. Keyboard Maestro reads the available addresses and lists them for you.
+
+===== Email Body =====
+
+Enter the body of the email in the empty text area. The text area expands to accommodate your text.
+
+:!: Note that this Keyboard Maestro form field supports _only_ plain-text.  If you want to enter rich-text, you will need to do so _after_ you run this action.
+
+===== Attaching Files =====
+
+To attach a file click the File Chooser button to the right of the action to select an existing file on disk. Option-click on the File Chooser button to show the currently selected file in the Finder (assuming it exists already).  You can only attach a single file (if you need more than one file, it can be done with AppleScript).
+
+===== Signatures =====
+
+Setting the signature is no longer supported (v9.0+) as it has been broken in OS X 10.12 Sierra and presumably Apple has no intention of fixing it.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Set Mail Status ]] action
+* [[action:Send iMessage]] action
+* [[action:Send SMS]] action
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[function:MAILDATERECEIVED]]
+* [[function:MAILDATESENT]]
+* [[function:MAILFLAG]]
+* [[function:MAILFLAGGED]]
+* [[function:MAILREADSTATUS]]
+* [[function:MAILJUNKSTATUS]]
+* [[function:MAILWASFORWARDED]]
+* [[function:MAILWASREDIRECTED]]
+* [[function:MAILWASREPLIEDTO]]
+* [[:Functions|See all Functions]]
+
+==== Tokens ====
+
+* [[token:MailRecipients |%MailRecipients%]]
+* [[token:MailRecipients |%MailRecipients%]]
+* [[token:MailToRecipients |%MailToRecipients%]]
+* [[token:MailCCRecipients |%MailCCRecipients%]]
+* [[token:MailBCCRecipients |%MailBCCRecipients%]]
+* [[token:MailSender |%MailSender%]]
+* [[token:MailReplyTo |%MailReplyTo%]]
+* [[token:MailSubject |%MailSubject%]]
+* [[token:MailContents |%MailContents%]]
+* [[token:MailRawSource |%MailRawSource%]]
+* [[:Tokens|See all Tokens]]

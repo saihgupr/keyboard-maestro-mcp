@@ -1,0 +1,44 @@
+====== Official Keyboard Maestro Wiki ======
+
+**Welcome to the Keyboard Maestro Wiki**, a wiki designed for Keyboard Maestro users of all levels of expertise and experience.  Keyboard Maestro is a powerful automation tool for macOS which uses [[manual:Macros|Macros]] to automate your workflow. **If you are relatively new to Keyboard Maestro, and need help**, then you may want to just jump to the [[manual:Quick_Start|Quick Start]] or you may want to read the [[/User_Manual|User Manual]].
+
+**Key Terms**:
+  * “_**[[manual:Macros|Macro]]**_” -- Define an automation or workflow.
+  * “_**[[manual:Macro_Groups|Macro Groups]]**_” -- Contain Macros and control when they are available.
+  * “_**[[manual:Macro_Triggers|Triggers]]**_” -- Describe the event that causes a macro to be executed (eg, a hot key).
+  * “_**[[manual:Macro_Actions|Actions]]**_” -- Describe what the macro does at each step.
+  * “Keyboard Maestro Engine” -- the engine that runs all the time and executes your macros.
+  * “Keyboard Maestro” -- the application as a whole, and the editor for your Macros.
+  * For a complete list, see [[manual:Glossary]]
+
+===== Purpose =====
+
+This wiki aims to help new users get started, and then provide wider and deeper understanding of Keyboard Maestro by explaining how to create and use //Macros// and //Actions// in detail, with references and  examples. We want to help you get started quickly, and then learn how to take full advantage of Keyboard Maestro.  Note that the [[User Manual]] is actually part of this Wiki so a search of this Wiki will include the [[User Manual]]. Also note that in the editor you can search in the Help menu and it will include references to this wiki, and you can select Help from the gear ⚙ menu in each action and it will take you directly to the wiki reference for that action. When adding Triggers (or Tokens or other things), holding the option key down while selecting the item will similarly take you directly to the help on that thing.
+
+This Wiki mostly provides information about using the **Keyboard Maestro** editor.  This is the application that you use to create and manage your Keyboard Maestro [[manual:Macros|Macros]], and [[Macro_Groups|Macro Groups]].  Separate from the Keyboard Maestro app, is the **Keyboard Maestro Engine**, which is normally always running in the background.  The Engine detects and processes your Macro triggers, whether or not the Keyboard Maestro editor itself is running.
+
+===== Topics =====
+
+The wiki reflects the most recent version of Keyboard Maestro, usually with notes to indicate when something applies only to recent versions.  The official Keyboard Maestro [[User Manual]] for the current version is also on the wiki.  If you do not immediately see the appropriate topic, try [[#Using_Search|searching the wiki]].
+
+^Special Topics^Standard Topics^
+| • [[About Keyboard Maestro]] \\ • [[Applications]] \\ • [[External Links]] \\ • [[Forum]] \\ • [[Frequently Asked Questions|Frequently Asked Questions  (FAQ)]] \\ • [[Fundamental Concepts]] \\ • [[Getting Started]] \\ • [[manual:Glossary]] \\ • [[Ideas]] \\ • [[manual:Quick Start]] \\ • [[Scripting the Keyboard Maestro editor]] \\  • [[Search|Searching the Wiki]] \\ • [[Syncing Macros Between Macs]] \\ • [[Transition]] from other programs or versions  \\ • [[Transition From QuicKeys]] \\ • [[Troubleshooting]] \\ • [[User Manual]] \\ • [[Videos]] \\ • [[Wishlist]] \\ • [[WhatsNew]]| • [[Actions]] \\  • [[manual:Calculations|Calculations & Operators]] \\  • [[Clipboards]] \\  • [[Collections]] \\  • [[Conditions]] \\  • [[Dates and Times]] \\  • [[manual:Dictionaries]] \\  • [[Functions]] \\  • [[manual:Macros]] \\  • [[Macro Groups]] \\  • [[Macro Library]] (example macros) \\  • [[Regular Expressions]] \\  • [[Scripting]] \\  • [[Shortcut Actions]] \\  • [[Status Menu]]\\  • [[Subroutines]] \\  • [[Text Fields]] \\  • [[Tokens]] \\  • [[Triggers]] \\  • [[manual:Variables]]|
+===== Using Search =====
+
+   * Search is a powerful tool to find the topic/subject of interest.
+   * **Please use the [[Search]] box at the top right of every page to find topics (and sub-topics) not listed here.**
+   * **Tip:**  Add an asterisk (\*) to the end of a keyword to find both singular and plural forms of the word.
+     * For example, `operator*` will find both `operator` and `operators` (without this, the wiki search will not find both unless you search for either `operator*` or `operator|operators`).
+   * For more details, see [[Search|Searching the Wiki]].
+
+
+===== Wiki Editing =====
+
+You do not need any account to view this wiki. However to edit it, you do need an account, which are manually created as needed. If you spot a typo, just [[mailto:support@stairways.com|email us]] with the details and we will get it fixed.
+
+If you are interested in doing more on the wiki, we would love to have real users editing these wiki pages, so if you would like an account to help add to the documentation about Keyboard Maestro, please [email us](mailto:support@stairways.com)!
+
+For details on how to format a wiki page and on keyboard shortcuts, see [[wiki:syntax|Markdown Syntax for Wiki]].
+
+In order to ensure consistent styling/formatting throughout the wiki, we have established these guidelines on styling, see: [[Style_Guide|Style Guide]].
+x

@@ -1,0 +1,39 @@
+====== Send Pushover Notification ======
+
+The _Send Pushover Notification_ action (v11.0+) allows you to send a [[https://pushover.net|Pushover]] notification.
+
+{{ send-pushover-notification.png?nolink&674x394 | Send Pushover Notification }}
+
+You need to include your Pushover API token, and the ID of the user to send it to (which will likely be your own).
+
+You can optionally specify a list of devices to send it to, and a title for the message.
+
+You can set a normal text message, a Monospaced text message, or an HTML text message.
+
+You can set the priority to Lowest, Low, Normal, High or Emergency.
+
+You can optionally include a URL and URL title as well as a sound to play.
+
+For more details about this you can read the documentation on the [[https://pushover.net/api||Pushover API]].
+
+===== Getting a Token =====
+
+To use the action you will need an API token which you get by creating an account at [[https://pushover.net|Pushover]] and then using the link:
+
+[[https://pushover.net/apps/clone/keyboard_maestro]]
+
+This will clone the information about Keyboard Maestro into your account. 
+
+You only need to do this once, after that you can go to your profile page and click on the Keyboard Maestro application entry to get the API Token/Key.
+
+You might like to configure the action with your API token and your user ID and then save it as a favorite Action for future use.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Notification|Notification]] action
+* [[action:Send_iMessage|Send iMessage]] action
+* [[action:Send_Mail_Message|Send Mail Message]] action
+* [[:Actions|See all Actions]]
+

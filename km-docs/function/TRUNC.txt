@@ -1,0 +1,20 @@
+====== TRUNC Function ======
+
+The TRUNC() function takes a number and returns the first integer that is equal to or closer to zero than the argument:
+
+    TRUNC(5.5) === TRUNC(5.1) === TRUNC(5) === 5
+    TRUNC(-5.5) === TRUNC(-5.1) === TRUNC(-5) === -5
+
+The TRUNC() function (v11.0+) takes a second optional parameter to indicate the number of digits to truncate to.
+
+    TRUNC(5.6789,2) === 5.67
+    TRUNC(-5.6789,2) === -5.67
+
+===== See Also =====
+
+=== Functions ===
+
+* [[CEIL]]
+* [[FLOOR]]
+* [[ROUND]]
+* [[:Functions|See all Functions]]

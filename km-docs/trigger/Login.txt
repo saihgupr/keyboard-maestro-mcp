@@ -1,0 +1,7 @@
+The *Login trigger* executes the macro when the Keyboard Maestro Engine launches as part of the Mac login sequence.  Typically this is because you have enabled the *Launch Engine at Login* preference in Keyboard Maestro which adds the Keyboard Maestro Engine to the Login Items list.
+
+You can use this trigger to set up your Mac in a standard configuration.
+
+You can also use this to set up Keyboard Maestro variables or enable or disable macros or otherwise configure your Keyboard Maestro state.
+
+See also the [[trigger:Engine_Launch| Engine Launch trigger]].

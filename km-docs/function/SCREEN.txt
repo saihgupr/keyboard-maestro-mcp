@@ -1,0 +1,87 @@
+====== SCREEN Functions ======
+
+The SCREEN() and SCREENVISIBLE() functions return the position or size of a screen.  SCREENVISIBLE() refers to the visible section of the screen, excluding the menu bar and the dock.
+
+The SCREENINDEX() function (v10.0+) returns the actual index of the specified screen, counting from left to right.
+
+```
+SCREEN( index [number OR name], coordinate )
+SCREEN( index [number OR name], coordinate, percentage )
+```
+
+The SCREEN //index// can be referenced by either a //number// or a //name//.  The //Index Number// can be 0 for the main screen, and then 1 through SCREENCOUNT() are the screens in orientation order from left to right (and top down for screens at the same position).  //Index Names// are shown below.
+
+The //Main// screen is set by your macOS System Preferences.
+
+The other screens (monitors) are referenced positionally from the left most screen, which may or may not, be the //Main// screen.
+
+^ Index Name ^ Description ^
+| Main or 0 | the screen with the primary menu bar (as configured in the Displays preferences).|
+| Second |the first from the left which is not the _Main_ screen.|
+| Third | the second from the left which is not the _Main_ screen.|
+| Internal | the internal screen of the Mac.|
+| External | the first from the left which is not an internal screen.|
+| Mouse | the screen containing the mouse.|
+| Front | the screen containing (the most of) the front window.|
+| Back | the first from the left not containing (the most of) the front window.|
+| Back2 | the second left most screen not containing (the most of) the front window.|
+| Positive Calculation | the indexed screen from left to right. |
+| Negative Calculation | the indexed screen from right to left. |
+| Variable Name | the index value based on the value of the variable (v9.0+). |
+
+:!: Note: Since the //Main// screen can be in any position:
+  * SCREEN(0) is always the //Main// screen.
+  * SCREEN(1) may or may not be the //Main// screen.
+  * SCREEN(2+) may or may not be the //Main// screen.
+
+The SCREEN //coordinate// can be:
+
+* Left
+* Right
+* Top
+* Bottom
+* Width
+* Height
+* MidX
+* MidY
+* Index (v9.0+)
+
+The optional SCREEN //percentage// parameter specifies a percentage of the width or height to offset by. Offsets are always to the right and down, but negative offsets are allowed.
+
+For example SCREEN(Internal,Left,10%) would be the coordinate of left edge of the internal screen plus 10% of the width of the internal screen. SCREEN(Front,Right,-10%) would be the coordinate of the right edge of the front screen minus 10% of the width of the front screen.
+
+SCREEN sizes and positions are in //nominal resolution pixels// (so a retina screen will typically have half as many nominal resolution pixels as raw pixels).
+
+Coordinates are in absolute nominal resolution pixels relative to the top left corner of the main screen.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Manipulate a Window|Manipulate a Window]] action
+* [[action:Move or Click Mouse|Move or Click Mouse]] action
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[MENUBARHEIGHT]]
+* [[MOUSEBUTTON]]
+* [[MOUSEX]]
+* [[MOUSEY]]
+* [[SCREENCOUNT]]
+* [[WINDOW]]
+* [[WINDOWCOUNT]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:Screen|%Screen%]] token
+* [[token:ScreenVisible|%ScreenVisible%]] token
+* [[:Tokens|See all Tokens]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/i-need-a-conditional-if-there-are-two-monitors/3031/|I need a conditional if there are two monitors]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Screen|Keyboard Maestro Forum topics about Screen]]
+x

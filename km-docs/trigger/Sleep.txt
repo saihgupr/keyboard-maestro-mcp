@@ -1,0 +1,12 @@
+====== Sleep  Trigger ======
+
+The //Sleep trigger// executes the macro when your Mac goes to sleep (v7.0+).
+
+Sleep may be deferred up to 30 seconds and Keyboard Maestro will endeavour to do this as long as this particular macro is running.
+
+===== See Also =====
+
+=== Triggers===
+
+* [[trigger:Wake| Wake trigger]]
+* [[:Triggers|See all Triggers]]

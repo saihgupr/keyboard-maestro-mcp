@@ -1,0 +1,63 @@
+====== ActionResult Token ======
+
+The **%ActionResult%** token returns text indicating the success or failure of the immediate past action.
+
+If the immediately past action was successful, then “OK” is returned, otherwise, a message describing the reason for failure is returned.
+
+===== How To Use =====
+
+Note that this value is reset at the end of every action, so immediately after the Action, you must save the //[[token:ActionResult|%ActionResult%]]// token [[action:Set_Variable_to_Text|into a variable]], or use it in a control flow action, like a [[action:If_Then_Else|If/Then Action]].
+
+You can use this token for error handling, much like a traditional try/catch/on error construct.  But you have to build your own test immediately after the action.  Keyboard Maestro will **not** throw an error in most cases.
+
+===== Examples =====
+
+**Example #1**
+
+* Action that Might Fail
+  * You may need to disable (uncheck) the Action Option for "Timeout Aborts Macro"
+  * You may want to change the timeout interval in the Option for "Set Action Timeout..."
+* Set Variable “Reason” to text %ActionResult%
+
+**Example #2**
+
+* Action that Might Fail
+* If Text %ActionResult% is “Whatever”
+
+**Example #3**
+
+Test if the [[action:Copy|Copy Action]] failed due to timeout (likely due to no selection)
+
+{{:token:km-7.1-copy-options.png?nolink|}}
+
+{{:token:km-7.1-test-action-result.png?nolink|}}
+
+===== See Also =====
+
+----
+
+==== Actions ====
+
+* [[action:Copy|Copy]]
+* [[action:If Then Else|If Then Else]]
+* [[action:Set Variable to Text|Set Variable to Text]]
+* [[:Actions|See all Actions]]
+
+==== Tokens ====
+
+* [[:Tokens|See all Tokens]]
+
+----
+
+==== Manual ====
+
+* [[:manual:Tips#Pay Attention to the Gear Icon|Pay Attention to the Gear Icon]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/search?q=ActionResult|Keyboard Maestro Forum topics about %ActionResult% token]]
+==== Keywords ====
+
+Action Result, Action Results, Action Failure, Action Success

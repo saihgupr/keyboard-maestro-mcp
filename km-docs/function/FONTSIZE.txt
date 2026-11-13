@@ -1,0 +1,9 @@
+====== FONTSIZE Function ======
+
+The FONTSIZE() function returns the font size of the text that the action is operating on in actions like [the Apply Style to Clipboard action](action:Apply_Style_to_Clipboard).
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

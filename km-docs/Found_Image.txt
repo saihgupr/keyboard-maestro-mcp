@@ -1,0 +1,66 @@
+====== Found Image ======
+
+Although it is generally better to use high level actions like [[action:Press_a_Button|Press Button]] or [[action:Resize_a_Window|Resize Window]] action, it is sometimes necessary to resort to looking at the screen for a specific image and responding appropriately (behaving differently if it exists, clicking on it, moving things to it, etc).
+
+There are various actions ([[action:Move or Click Mouse|Move or Click Mouse]], [[action:Find Image on Screen|Find Image on Screen]], [[condition:Found Image|conditions]] and [[collection:Found Images|collections]] that search the screen for a matching image.
+
+===== Example Click on Found Image =====
+
+This is how the Action appears when first inserted into your macro.
+
+{{ action:clickatfoundimagedescription.png?nolink&611x290 | Click at Found Image Description }}
+
+===== How To Use =====
+
+==== Specifying Fields in Found Image Actions ====
+
+
+- **Specify the image to match** 
+      * Paste an image into the image well\\ (Use <key>⌘</key><key>⌃</key><key>⇧</key><key>4</key> [[https://support.apple.com/en-us/HT201361|to Take a screenshot of part of your screen]]).
+      * To view the image in the image well, click on it and press <key>SPACE</key>.
+      * You can copy the image from the Image Well.
+      * Alternatively, you can get the image to search from the System Clipboard, Trigger Clipboard, a Named Clipboard, an Icon, a file, or from an image elsewhere on the screen.
+
+- **Specify the amount of fuzziness allowed**
+        * Because of transparency and anti-aliasing almost all screen matches are fuzzy to some degree.
+        * But usually about 20% is a good place to start.
+- **//Unique// Menu**
+        * By default, the image must be unique on the screen so that Keyboard Maestro knows where to click, otherwise the action will fail.
+        * Alternatively, you can have Keyboard Maestro click based on the best match, or (v9.0+) click on the topmost, leftmost, bottommost, or rightmost match.
+- **//Display// Checkbox -- If //checked//, it will highlight on the screen all found matches**
+        * This can be helpful in debugging, like determining the right amount of fuzz to use.
+        * It will also show when an image is being found in more than one location.
+- **Choose Where to Search for Image**
+  * You can search in all screens, or on a specific screen.
+  * Alternatively, you can search within a specific window.
+    * However, the window must be in the frontmost, active, application, in order for it to be seen by this Action.
+  * Or you can search within a specific area on the screen.
+    * For instructions on how to get data for area, see [Determine Location of Area to Search for Found Image](https://forum.keyboardmaestro.com/t/using-mouse-display-window-to-get-window-specific-locations/7112/9)
+
+==== Search in Specified Area ====
+
+
+Remember when specifying the area, as with all [numeric fields](:Text_Fields), the numbers can be calculations including [functions](:Functions), and the fields expand to allow for longer expressions as soon as you type something other than a number, so this allows very precise control of where you can match.
+
+
+{{ action:click-found-image-action-example.png?nolink&503x407 | Click at Found Image Example }}
+
+Note that in the above screen shot, the `WINDOW(0,Left)` function is referring to the frontmost window in the frontmost app.  To refer to other windows in the frontmost app, you need to change the `index` parameter of the [[function:WINDOW|WINDOW function]].
+
+===== Search Speed and Accuracy =====
+
+Keyboard Maestro uses a relatively fast search to make the action perform in a reasonable amount of time, but it can result in not finding some images.  
+  * Images Difficult to Match
+      * The most difficult images to match are small grey images (like grey icons or text).
+      * Since the screen tends to be filled with small grey areas, it is hard for Keyboard Maestro to find the best locations to look.
+  * Increasing Search Accuracy
+      * Set Search Area to less than a quarter of the whole desktop.
+      * This will improve ability to find smaller images that have low contrast.
+
+===== Testing =====
+
+When testing found image macros:
+
+* Hide the action or the Keyboard Maestro editor as the image within the action may be found.
+* Turn on the “Display” checkmark, so you get visual confirmation an image has been found.
+* If the image is not found, play with the fuzz slider.

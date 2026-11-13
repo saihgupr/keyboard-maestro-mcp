@@ -1,0 +1,17 @@
+===== Variable Token =====
+
+The //%Variable%//`<VariableName>`% token allows you to include a [[manual:Variables|variable]] in a [[:Text Fields |token text field]], where `<VariableName>` is the name of the variable.
+
+For Example, using the [[action:Insert_Text|Insert Text]] Action:
+
+{{ :token:km-wiki-insert-text-action.png?nolink |}}
+
+You can (v7.2+) access a variable as if it is a comma separated array of text using the notation //%Variable%//`<VariableName>[3]`% where 3 can be any [[manual:Calculations|Calculation]].  You can use a different item separator by putting the text between the ] and % characters, eg //%Variable%//`<VariableName>[3]:`%. In v11+, the separator is processed for backslashes, so you can use //%Variable%//`<VariableName>[3]\n`% to get the 3rd line.  Arrays are indexed starting from 1, and index 0 will give the count of the number of items, negative indices will index from the end of the array.
+
+You can also use a short form of just //%Variable Name%// to include variables as long as the variable exists and has a value and there is no corresponding text token, although generally it is better and clearer to use the longer form //%Variable%Variable Name%//.
+
+===== See Also =====
+
+- [[:Text Fields]]
+- [[:Tokens]]
+- [[manual:Variables]]

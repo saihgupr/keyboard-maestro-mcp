@@ -1,0 +1,64 @@
+====== JSONValue ======
+
+The //%JSONValue%jsonpath%// token returns the JSON value from the specified [[:manual:JSON#JSON_Paths|JSON path]]).
+
+The token has Pretty and Compact variants (by appending either to the token name), as well as a Strict variant (appending Strict) (for example `%JSONValueStrictCompact%jsonpath%`).  The order of the variants does not matter, but you cannot have both Compact and Pretty (See the [[manual:JSON]] user manual section).
+
+* JSONValue (equivalent to JSONValueCompact)
+* JSONValueCompact
+* JSONValuePretty
+* JSONValueStrictCompact
+* JSONValueStrictPretty
+
+Strict mode affects how the result will be returned.  In Strict mode, the result will be a strict JSON objects - strings will be double quoted and appropriately escaped.  In Non-Strict mode, string results will be returned as the decoded and de-quoted string. Other types of results will be the same regardless of the Strict mode (containers are always be strictly JSON objects) (See the [[manual:JSON]] user manual section).
+
+===== Examples =====
+
+If a Keyboard Maestro variable `J` contains the JSON object:
+
+    {"a":9, "b":"bravo", "c":null, "d":[11,"two",33]}
+
+Then these would be the results:
+
+^ Token ^ Result ^ Comment ^
+| `%JSONValue%J.a%` | `9` | (Variants have no effect) |
+| `%JSONValue%J.b%` | `bravo` | (Compact/Pretty variant has no effect) |
+| `%JSONValueStrict%J.b%` | `"bravo"` | (Compact/Pretty variant has no effect) |
+| `%JSONValue%J.c%` | `null` | (Variants have no effect) |
+| `%JSONValue%J.d%` | `[11,"two",33]` | (Same as JSONValueCompact, Strict variant has no effect) |
+| `%JSONValuePretty%J.d%` | `[\n\t11,\n\t"two",\n\t33\n]` | (\t is some form of indenting) |
+| `%JSONValue%J.d[2]%` | `two` | (Compact/Pretty variant has no effect) |
+| `%JSONValueStrict%J.d[2]%` | `"two"` | (Compact/Pretty variant has no effect) |
+| `%JSONValue%J.d[0]%` | `3` | (Variants have no effect) |
+| `%JSONValue%J.d[-2]%` | `two` | (the second last entry) |
+| `%JSONValue%J.d[COUNT()]%` | `3` | (the last entry) |
+
+The exact format of the white space in the Pretty format should not be assumed, it might be any number of spaces or tabs.
+
+===== See Also =====
+
+See the [[manual:JSON]] user manual section for more details on JSON.
+
+=== Actions ===
+
+* [[action:Set_JSON_Value | Set JSON Value]]
+* [[action:Set_Variables_to_JSON | Set Variables to JSON]]
+* [[action:Set_Dictionary_to_JSON | Set Dictionary to JSON]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:JSONVALUE | JSONVALUE(jsonpath)]]
+* [[function:COUNT | COUNT()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:JSONFromDictionary | JSONFromDictionary]]
+* [[token:JSONFromVariables | JSONFromVariables]]
+* [[:Tokens|See all Tokens]]
+
+=== Collections ===
+
+* [[collection:JSON_Keys | JSON Keys]]
+* [[:Collections |See all Tokens]]

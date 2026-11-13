@@ -1,0 +1,40 @@
+====== Found Image Condition ======
+
+The //Found Image [[:Conditions|condition]]// tests for a matching image on your screen(s) or windows.
+
+===== Example =====
+
+{{ :condition:pause-until-screen-contains.png?nolink&668 |}}
+
+After an Action like this is executed, and an image was found, then the [[token:FoundImage|%FoundImage%]] token (v8+) will return the coordinates, size, and fuzz of the image.
+
+===== How To Use =====
+
+{{page>::Found_Image#How To Use&noheader&nofooter}}
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Find Image on Screen|Find Image on Screen]]
+* [[action:Move or Click Mouse|Move or Click Mouse]]
+* [[:Actions|See all Actions]]
+
+==== Collections ====
+
+* [[collection:Found Images|Found Images]]
+* [[:Collections |See all Collections]]
+
+====  Conditions ====
+
+* [[:Conditions|See all Conditions]]
+
+==== Tokens ====
+
+* [[token:FoundImage|FoundImage]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/how-to-search-for-multiple-found-image-actions/3093|How To Search For Multiple "Found Image" Actions]]
+
+- [[https://forum.keyboardmaestro.com/search?q=%22Found%20Images%22|Keyboard Maestro Forum topics about Found Images]]

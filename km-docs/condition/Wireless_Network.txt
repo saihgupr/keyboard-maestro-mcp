@@ -1,0 +1,29 @@
+The //Wireless Network condition// looks for a wireless network with:
+
+* a name that is exactly (case insensitively) a specified string.
+* a name that contains (case insensitively) a specified string.
+* a name that matches a specified [[:Regular Expressions|regular expression]].
+* a BSSID that exactly matches a specified string.
+* or any wireless network.
+
+and then checks whether it:
+
+* is connected.
+* is not connected.
+
+You can use the popup menu on the right to select the desired wireless network.
+
+(!) Note that wireless information requires Location system security permissions in macOS Sonoma, so ensure the Keyboard Maestro Engine has Locations permissions if you are using Sonoma or later.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]

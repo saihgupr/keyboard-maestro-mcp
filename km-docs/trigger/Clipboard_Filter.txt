@@ -1,0 +1,33 @@
+====== Clipboard Filter Trigger ======
+
+The *Clipboard Filter trigger* (v8+) lets you add your macro to the action menu in the [[manual:Clipboard_History_Switcher|Clipboard History Switcher]] user manual section.
+
+For example:
+
+{{:trigger:capitalize.png?nolink&550|}}
+
+The macro will appear in the action menu in the Clipboard Switcher, and can reference the [[/Clipboards#Trigger_Clipboard|Trigger Clipboard]] to operate on the selected clipboard.
+
+{{:trigger:filter-clipboard-menu.png?nolink&972|}}
+
+You can control the sorting order of macros by adding two characters and a closing bracket (eg “01)My Macro”).  The prefix will be removed before displaying in the status menu, but will be used to control the order of the macros shown.
+
+You can edit a macro by holding down the option key and selecting it from the action menu menu.
+
+===== See Also =====
+
+=== Actions ===
+
+ * [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]
+

@@ -1,0 +1,34 @@
+====== Set Desktop Image ======
+
+The //Set Desktop Image// action (v9.0+) allows you to set the desktop to a specified image file.  
+
+{{ set-desktop-image.png?nolink&503x140 | Set Desktop Image }}
+
+The image must remain in the file at that path since the system will potentially reload it (eg after a restart).
+
+You can have the image:
+
+* Fill the screen, scaled large enough to fill the entire screen and crop in one dimension.
+* Fit to screen, scaled large enough to fit in the screen, leaving part of the screen as a background colo of your choice.
+* Stretch to fill the screen exactly.
+* Center unscaled on the screen, possibly leaving part of the screen as a background colo of your choice.
+
+You can set all the screens, or a specific screen.  Choices include:
+
+* All screens.
+* Main screen.
+* Second screen (leftmost non-Main screen).
+* External screen.
+* Internal screen.
+* Front window’s screen.
+* Back screen (leftmost non-Front window’s screen).
+* Screen with mouse.
+* Screen with a specific index (from left to right).
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Copy Clipboard to Clipboard |Copy Clipboard to Clipboard]] action
+* [[action:Set Clipboard to File Reference]] action
+* [[:Actions|See all Actions]]

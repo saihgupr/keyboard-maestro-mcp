@@ -1,0 +1,11 @@
+====== MILLISECONDS Function ======
+
+The MILLISECONDS function returns the time in fractional milliseconds since the Mac started.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MICROSECONDS]]
+* [[SECONDS]]
+* [[:Functions|See all Functions]]

@@ -1,0 +1,1 @@
+The //%MacName%// token returns the current Mac name.

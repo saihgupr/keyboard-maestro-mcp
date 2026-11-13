@@ -1,0 +1,11 @@
+The //Variables collection// (v8+) lists all the Keyboard Maestro variables by name.
+
+The list will include any instance variables defined in the same macro execution, and any local variables defined in the same macro.
+
+If you want to get the value of the variables, you can use the [[action:Filter|Filter]] action to get the value of a the named variable.
+
+For example, to list all the variables and their values, you can do this:
+
+{{:action:variables-collection.png?540;nolink|}}
+
+Note that VarName, VarValue and Result will all be in this display, making it slightly more interesting to read.

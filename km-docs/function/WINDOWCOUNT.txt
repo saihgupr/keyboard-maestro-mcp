@@ -1,0 +1,39 @@
+====== WINDOWCOUNT Function ======
+
+The WINDOWCOUNT() function returns the number of windows in the front application.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Manipulate a Window|Manipulate a Window]] action
+* [[action:Move or Click Mouse|Move or Click Mouse]] action
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:MENUBARHEIGHT|MENUBARHEIGHT()]] function
+* [[function:MOUSEBUTTON|MOUSEBUTTON()]] function
+* [[function:MOUSEX|MOUSEX()]] function
+* [[function:MOUSEY|MOUSEY()]] function
+* [[function:SCREEN|SCREEN()]] function
+* [[function:SCREENCOUNT|SCREENCOUNT()] function]
+* [[function:SCREENVISIBLE|SCREENVISIBLE()]] function
+* [[function:SCREENINDEX|SCREENINDEX()]] function
+* [[function:WINDOW|WINDOW()]] function
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:FrontWindowName|%FrontWindowName%]] token
+* [[token:WindowName|%WindowName%]] token
+* [[token:WindowSize|%WindowSize%]] token
+* [[:Tokens|See all Tokens]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/send-the-front-most-window-to-back-bring-the-back-to-front/2226/19|Send the front most window to back? bring the back to front?]]
+- [[https://forum.keyboardmaestro.com/t/i-need-a-conditional-if-there-are-two-monitors/3031/5|I need a conditional if there are two monitors]]
+- [[https://forum.keyboardmaestro.com/t/trapping-dialogs-in-pause-condition/3046/4|Trapping dialogs in Pause condition]]
+
+- [[https://forum.keyboardmaestro.com/search?q=WINDOWCOUNT|Keyboard Maestro Forum topics about WINDOWCOUNT]]

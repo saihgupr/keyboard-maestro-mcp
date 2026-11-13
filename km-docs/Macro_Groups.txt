@@ -1,0 +1,194 @@
+====== Macro Groups ======
+
+Keyboard Maestro organizes your [[manual:Macros|Macros]] into //Macro Groups// which are like folders of macros. Each Macro Group can contain zero or more [[manual:Macros|Macros]].  Subfolders are not allowed.
+
+===== Purpose =====
+
+* Provide a folder-like container for related Macros.
+* Control when those Macros are active, and available to be triggered.
+* Provide for displaying a [[manual:Palettes|Palette]] of Macros that can like a custom toolbar for your apps, or even across all or multiple apps.
+
+===== Controlling When Macros are Active =====
+
+The **most important function** of Macro Groups is to **control when the contained macros are active.**
+
+In order to run (execute) a macro:
+  * One of its [[Triggers|Triggers]] must be invoked
+  * It can only be triggered if it is active
+  * It can only be active if it meets all of the activation criteria, including being enabled
+
+Macro activation can be a challenging subject to master.  For a full discussion, please see [[Macro_Activation|Macro Activation]].
+
+===== Displaying a Palette =====
+
+* Each Macro Group can be displayed as a palette. The macro group can be global to all applications, or specific to any subset of applications. It can be toggled on and off with a hot key (or a status menu selection or from the Global Macro Palette) or it can be displayed for a single action. Actions can hide or show the macro group palettes.
+* For details on setup of Palettes, see **[[manual:Palettes|Palettes]]**.
+
+===== Macro Group UI =====
+
+You create, edit, and manage //Macro Groups// in the Keyboard Maestro Editor.
+
+Controls are available at the bottom of the //Macro Groups// Panel, in the //File// menu, and via keyboard shortcuts.
+
+{{:macro-group-ui-km9.png?nolink|}}
+
+---
+
+===== Setup Criteria (Basic) =====
+
+When you create a new //Macro Group//, the setup for it will appear in the far right panel that normally contains the Macro Action List.  It looks like the below screenshot, with the popup options shown to the right.  There are many setup options, some representing combinations of options, so if you are not familiar with these, you may want to experiment with each setting to see the details for that option.
+
+{{:macro-group-setup-km8-2.png?nolink|}}
+
+==== Active When Applications Are Active ====
+
+* A Macro Group can target or exclude specific applications, which means the macros it contains will only be active in those desired applications ((For example, you can have macros which are active only in Mail.app)).
+* By default, Macro Groups and their Macros are active in all applications, that is they are always ready to be triggered.
+* To have macros only active in specific applications, place the macros in a Macro Group, set it to be active in only specific applications and specify the desired applications.
+
+**By choosing the applications for which a macro is active**, you can control more applications with fewer conflicts.
+
+* For global macros that are always active, use **Available in all applications**.
+* For application-specific macros, use **Available in these applications**.
+* To exclude certain applications, use **Available except in these applications**.
+* For Macros triggered by one of the [[trigger:Application|Application Triggers]]:
+  * Use **Available in all applications** to be available to an app Launches trigger.
+  * Use **Available in these applications** to be available to Activates or Quits triggers.
+  * The [[trigger:Application|App Activates Trigger]] will fire for //both// //Available in **all** applications// and //Available in **these** applications//
+* For Login or Public Web triggered macros, use **Available in all applications**.
+
+==== Method of Activating ====
+
+**By choosing how you activate the Macro Group**, you can create sets of Macros for many different purposes.
+
+* If you want to use the macro globally, configure the Macro Group to be **Always activated**.
+* If you want to occasionally use a single macro, configure the Macro Group to be **Activated for one action** or to **Show a palette for one action**.
+* If you want to use several macros in succession, configure the Macro Group to be **Activated/deactivated** or to **Show/hide a palette**.
+* If you want to have a global palette of related macros, configure the Macro Group to **Show a palette**.
+* If you want the macros to be always active, but to show a palette only some of the time, choose one of the **Always activated and shows…** variants.
+
+For more details see the [[#Setup_Criteria_Advanced|Advanced Setup]] at the bottom of this page.
+
+---
+
+===== Examples =====
+
+==== 1. Single App Macro Group ====
+
+The most common use case is to have one //Macro Group// that is active //only when// one specific app is frontmost.  An example of this is the "Safari" (name that you choose) Macro Group which is active //only when// the Safari app is front most.  It would look like this:
+
+{{:macro-group-1app-km8.png?nolink|}}
+
+---
+
+==== 2. Multi-App Macro Group ====
+
+Another common use case is when you a have a group of like apps, like web browsers, for which you have a number of Macros to be used with any/all of those apps.  An example of this is the "Browsers" (again, a name you choose) Macro Group which is active when any of these apps is frontmost:  Google Chome, Firefox, or Safari.  It might look like this:
+
+{{:macro-group-example-km8.png?nolink|}}
+
+NOTES
+  - _Available_ when any of 3 apps are frontmost.
+    * In this case the "Browsers" Macro Group is set for use with Chrome, Firefox, and Safari.
+    * You could easily remove and add other apps.
+    * You could also chose to make _Available_ in _All_ apps _except_ for a specified list.
+  - It is always activated when condition #1 is met, meaning that you can trigger any of its Macros (by Hot Key or any trigger).
+  - You can also optionally show a palette of all of its macros by using the indicated Hot Key.
+
+
+There a number of other options, and many combinations you can use.
+
+---
+
+==== 3. Other Examples ====
+
+You could have specialized //Macro Groups// like the following:
+
+* Mail.app that inserts common text messages.
+* [Macro Group Active Only for Mail.app Compose Window](https://forum.keyboardmaestro.com/t/app-and-window-specific-macro-groups/16869/2)
+* BBEdit and Xcode that inserts code chunks or duplicate lines or add #include headers.
+* Safari that configure windows or enter information.
+* Photoshop or Acorn that arrange items or script guides.
+
+===== Setup Criteria (Advanced) =====
+
+==== Active Everywhere Except ====
+
+Alternatively, to have macros active everywhere except specific applications, place them in a Macro Group, set it to be active in all except specific applications and add the desired applications to the list ((For example, you could exclude macros from triggering in certain games. Also, if you have an application that uses lots of function keys for crucial tasks, you could exclude that application to allow you to use the functions keys for macros elsewhere without conflicting with that application.)).
+
+==== Active When Hot Key Pressed ====
+
+A Macro Group can also act as a container for specific-use macros which are enabled only after a Hot Key press or which are displayed as a palette of the macros ((For example, you could create a Macro Group containing macros that resized or repositioned windows using the arrow keys, but those macros would only be active after the Hot Key was pressed so that the arrow keys could be used normally at other times.)).
+
+==== Display a Palette ====
+
+Macro Groups can be displayed as a palette giving you a way to build custom toolbars.
+
+To have the Macros in a Macro Group always ready to be triggered, set the Macro Group to be activated **Always activated**. This is the default and you only need to change it if you want to set a group of Macros to be available in a macro palette or after you specifically activate them.
+
+==== Active For One Action ====
+
+
+To have Macros that are active once only when you specifically activate them, set the Macro Group to be **Activated for one action**. The Macros in the Macro Group will be activated when you press the Macro Group Hot Key and will remain active only until either any macro in the same group is triggered or anything changes in your Mac (changing the application, changes to macros or macro group activations, pressing a key) ((You could use this to create a set of related actions with easily remembered trigger keys that will not conflict with normal use because they are not activated until you press the group Hot Key. For example, you could have a group of macros to launch various applications and so that Command-Control-L activated the group, and then a single letter press launched the application (eg M for Mail, S for Safari, F for Finder).)).
+
+==== Active Until Deactivated ====
+
+To have Macros that are active after you specifically activate them, set the Macro Group to be **Activated/deactivated**. The Macros in the Macro Group will be enabled when you press the Macro Group Hot Key and will remain enabled until you press the Macro Group Hot Key again ((You could use this to create a set of related actions with easily remembered hot keys that will not conflict with normal use because they are not activated until you press the group Hot Key. For example, you could have a group of macros to move and resize windows and have Command-Control-W activate the group. Then a single arrow key press moves the front window. When the window is positioned, press Command-Control-W a second time to disable the macros.)).
+
+==== Show Palette for One Action ====
+
+To have Macros that are active and displayed only after you specifically activate them, set the Macro Group to **Show a palette for one action**. The Macros in the Macro Group will be displayed in a floating Macro Palette and enabled when you press the Macro Group Hot Key and will remain displayed until either  any macro in the same group is triggered or anything changes in your Mac (changing the application, changes to macros or macro group activations, pressing a key) ((You could use this to create a set of related actions that do not even need a Hot Key. For example, you could have a group of macros to launch various applications like Mail, Safari and the Finder so when you press Command-Control-L, a palette of these macros is displayed and a single click will launch the application. The macros can still have Hot Key triggers which will be available only while the palette is displayed.)).
+
+To have Macros that are active and displayed after you specifically activate them, set the Macro Group to **Show/hide a palette**. The Macros in the Macro Group will be displayed in a floating Macro Palette and enabled when you press the Macro Group Hot Key and will remain displayed until you press the Macro Group Hot Key again. You could use this to create a set of related actions that do not even need a Hot Key ((For example, you could have a group of macros to align objects in a CAD program, so when you press Command-Control-A, a palette of these macros is displayed and you can click various alignment options (distribute left-right, alight top edges) and then close the palette by pressing Command-Control-A a second time. The macros can still have Hot Key triggers which will be available only while the palette is displayed.)).
+
+==== Active Only when Palette is Shown ====
+
+To have Macros that are always active and displayed in a palette, set the Macro Group to **Show a palette**. The Macros in the Macro Group will be displayed in a floating Macro Palette and enabled. The palette will close when you press the Macro Group Hot Key and will remain closed (and the macros disabled) until you press the Macro Group Hot Key again ((You could use this to create a set of related actions that are available in a Macro Palette and displayed by default.)).
+
+==== Disable for This Mac ====
+
+If you are syncing your macros with another Mac, Macro Groups can be disabled specifically on this Mac.
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Activate Macro Group|Activate Macro Group]]
+* [[action:Activate Macro Group for One Action|Activate Macro Group for One Action]]
+* [[action:Activate or Deactivate Macro Group|Activate or Deactivate Macro Group]]
+* [[action:Group|Group]]
+* [[action:Hide Global Macro Palette|Hide Global Macro Palette]]
+* [[action:Set Macro or Group Enable|Set Macro or Group Enable]]
+* [[action:Show Global Macro Palette|Show Global Macro Palette]]
+* [[action:Show Macro Group|Show Macro Group]]
+* [[action:Show Macro Group for One Action|Show Macro Group for One Action]]
+* [[action:Show or Hide Macro Group|Show or Hide Macro Group]]
+* [[action:Show Status Menu|Show Status Menu]]
+* [[action:Toggle Global Macro Palette|Toggle Global Macro Palette]]
+* [[:Actions|See all Actions]]
+
+=== Conditions ===
+
+* [[condition:Macro|Macro]]
+* [[:Conditions|See all Conditions]]
+
+=== Tokens ===
+
+* [[token:ExecutingMacroGroup|%ExecutingMacroGroup%]]
+* [[token:ExecutingMacroUUID|%ExecutingMacroUUID%]]
+* [[token:ExecutingThisMacroGroup|%ExecutingThisMacroGroup%]]
+* [[token:ExecutingThisMacroUUID|%ExecutingThisMacroUUID%]]
+* [[token:MacroNameForUUID|%MacroNameForUUID%]]
+* [[:Tokens|See all Tokens]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/get-the-current-position-of-a-keyboard-maestro-palette/1483/3|Get the current position of a Keyboard Maestro palette]]
+- [[https://forum.keyboardmaestro.com/t/macro-group-activated-vs-palette/2579|Macro group - Activated vs Palette]]
+- [[https://forum.keyboardmaestro.com/t/activate-vs-show-deactivate-vs-hide-a-palette/2840|Activate vs Show (Deactivate vs Hide) a palette]]
+- [[https://forum.keyboardmaestro.com/t/macro-group-activation-simply-produces-enabled/2977/2|Macro Group activation simply produces "Enabled"]]
+- [[https://forum.keyboardmaestro.com/t/apply-changes-to-default-palette-style-to-finders-palette/3722/2|Apply changes to default palette style to Finder's palette?]]

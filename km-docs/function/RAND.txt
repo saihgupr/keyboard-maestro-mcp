@@ -1,0 +1,19 @@
+====== RAND Function ======
+
+The RAND() functions return a random integer number.
+
+* RAND(N) returns a random integer from 0 to, but not including, N.
+* RAND(A,B) returns (v9.0+) a random integer number from A to, including, B.
+
+In the one parameter version, N must be greater than or equal to 1.
+
+In the two parameter version, if B is less than A, they are implicitly swapped. If A and B are the same, then that is the number that will always be returned.
+
+Note: Unlike the other variants of RAND() and [[RANDOM|RANDOM()]], RAND(A,B) may return the larger number.  This makes RAND(1,6) return the same as a regular dice for example, a number from 1-6 inclusive, which matches what you would normally want.
+
+===== See Also =====
+
+==== Functions ====
+
+* [[RANDOM]]
+* [[:Functions|See all Functions]]

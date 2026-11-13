@@ -1,0 +1,133 @@
+====== Set Variable to Text Action ======
+
+The Set Variable to Text action allows you to set a selected variable to plain text, by either typing in the text box, or selecting a [[:Tokens|Token]].
+
+Alternatively (v9.0+), you can Prepend the text to the variable, or Append the text to the variable by selecting from the action (gear) ⚙ menu.
+
+{{:action:set-variable-text-token-popup.png?nolink|}}
+
+You can (v11.0+) set a specific array entry within the action. You can delete the entry by setting it to `%Delete%`.
+
+===== Examples =====
+
+==== Set To Text You Type ====
+
+{{:action:set-variable-text-to-text.png?nolink|}}
+
+==== Set to The Clipboard ====
+
+{{:action:set-variable-text-to-clipboard.png?nolink|}}
+
+==== Set To Another Variable ====
+
+{{:action:set-variable-text-to-variable.png?nolink|}}
+
+See below for how to use dynamic variable names.
+
+==== Combine Multiple Variables and Text ====
+
+There is no need to use any operators when combining text with multiple variables or other tokens.  Just enter the text and variables/tokens as you would like them to appear in the Variable being set by this Action.
+
+{{:action:set-variable-text-combine-var.png?nolink|}}
+
+==== Append to Variable ====
+
+You can append directly to a variable with the //Append// variant of the action:
+
+{{append-variable-with-text.png?nolink&512x157| Append to Variable }}
+
+or equivalently using text tokens to expand the variable:
+
+{{set-append-variable-with-text.png?nolink&512x157| Set Append to Variable }}
+
+==== Set Second Line of Variable ====
+
+You can specify an array entry of the variable to set. By default, entries are comma separated, but you can specify an specific separator after the closing square bracket (`]`),
+
+{{ set-second-line-of-variable-example.png?nolink&512x310 | Set Second Line of Variable Example }}
+
+===== Setup =====
+
+Configure the Action as Needed
+
+ - Select the variable to set from the //Set variable// pop-up or enter a variable name.
+ - In the text area, Enter the text and/or [[:Tokens|Tokens]] (which include Variables).
+    - You may intermix text and tokens as much as you like
+    - You can type the Token, in the format of `%TokenName%`, or select it from the popup list under //Insert Token//.
+    - [[:Tokens|Tokens]] include variables, calculations, clipboards and more.
+    - You can create a dynamic variable name using this format: `%Variable%%%Variable%myVar%%%`
+
+Unlike most places you specify a variable, the variable name itself is a text token field, so you can set a variable whose name changes.
+
+The Set Variable to Text action allows you to control what text processing happens in the gear menu (7+) :
+
+* Process Text Normally (process text tokens and backslash characters)
+* Process Text Tokens Only (process text tokens but not backslash characters)
+* Process Nothing (process neither text tokens nor backslash characters)
+
+Most other [Text Fields](https://wiki.keyboardmaestro.com/Text_Fields) in Keyboard Maestro process both text tokens and (except for regular expression fields) backslash characters. 
+
+Tip: leave notes for yourself about what you're doing. Click on the gear icon at top right of the action to select //Set Note…//. A window appears where you can enter text. Click the OK button to save the text of the note for future reference.
+
+===== How To Use Dynamic Variable Names =====
+
+In some languages, this is known as //indirection//, where one variable is really referring to another variable.  This is a bit complicated, and you may not often need it, but it is very useful when you do need it.
+
+==== Dynamic Determination of Variable Name in Text Area Block ====
+
+**This requires two steps (two Actions):**
+
+{{:action:set-variable-text-dynamic-var.png?nolink|}}
+
+**The Steps Are**
+  * **STEP 1.**\\  //Set Variable to Text Action// (this action) to dynamically determine a standard variable token based on one or more variables, which optional text.
+    * In the text area of the Action, enter a special form of the Token entity, where you will embed another Variable token, and optionally text.
+    * For example: `%%Variable%%myVar%Variable%myVarNum%%%`
+      * Note the use of two percent symbols (`%%`) in places where you want the result to be one `%`.
+      * Here is how this text will be processed when the Action executes:\\  .<code>
+%%Variable%%myVar%Variable%myVarNum%%%
+
+TEXT                  BECOMES
+%%                    %
+Variable              Variable
+%%                    %
+myVar                 myVar
+%Variable%myVarNum%   2
+%%                    %
+
+RESULT WHEN EXECUTED
+%Variable%myVar2%
+</code>
+    * This is the variable we want to get the results of, so we will need another Action to get it.\\    
+  * **STEP 2.**\\  [[action:Filter|Filter Action]] using the //Process Tokens// option.
+
+==== Dynamic Determination in Variable Name Block ====
+
+Since the Variable Name block of the //Set Variable to Text// Action accepts tokens, we can just use it directly if we just need to concatenate two more more Variables, with optional text.
+  * For example: `%Variable%myPrefix%%Variable%myFieldName%`
+  * When this action executes, it will first evaluate these tokens to produce something like: `myAddress`, and then set that Variable to the results in the Text Area block.
+
+
+{{:action:set-variable-text-dynamic-var-name.png?nolink|}}
+
+===== See Also =====
+
+==== Actions ====
+
+* Prepend Text to Variable
+* Set Variable to Text
+* Append Variable with Text
+* [[action:Set Variable to Calculation|Set Variable to Calculation]]
+* [[action:Set Variable to Keychain Password|Set Variable to Keychain Password]]
+* [[action:Substring of Variable or Clipboard|Substring of Variable or Clipboard]]
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/generate-mulitiple-variables-from-clipboard/2296|Generate mulitiple variables from clipboard]]
+- [[https://forum.keyboardmaestro.com/t/can-i-pick-a-variable-dynamically-using-a-variable/3036/4|Can I pick a variable dynamically, using a variable?]]
+- [[https://forum.keyboardmaestro.com/t/km-delete-all-variables-except-those-on-keep-list/3428|[KM] DELETE All Variables Except Those on Keep List]]
+- [[https://forum.keyboardmaestro.com/t/feature-request-finding-macros-that-use-a-variable/3439/2|(Feature Request?) Finding macros that use a variable]]
+- [[https://forum.keyboardmaestro.com/t/variable-naming-conventions/3444/2|Variable Naming Conventions?]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Set%20Variable%20Text|Keyboard Maestro Forum topics about Set Variable to Text]]

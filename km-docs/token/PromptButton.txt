@@ -1,0 +1,16 @@
+The //%PromptButton%// token (v8+) returns the name of the last selected [[action:Prompt_for_User_Input|Prompt for User Input]] button in this execution instance.
+
+This deprecates the //Result Button// special variable.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Alert|Alert]] action
+* [[action:Prompt_for_User_Input|Prompt for User Input]] action
+* [[action:Custom_HTML_Prompt|Custom HTML Prompt]] action
+
+=== Tokens ===
+
+* [[token:AlertButton|%AlertButton%]] token
+* [[token:HTMLResult|%HTMLResult%]] token

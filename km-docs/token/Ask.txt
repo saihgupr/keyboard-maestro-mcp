@@ -1,0 +1,32 @@
+===== Ask Token =====
+
+The `%Ask%` tokens is a placeholder used in the [[action:Prompt_for_Snippet|Prompt for Snippet]] action to indicate locations where user input for the snippet is required. It takes the form:
+
+    %Ask<Size><=Variable Name> or <:Default Value>%
+
+Where `Size` is the rough size in characters or the number of lines.
+
+For example, if used inline in text:
+
+^Token^Meaning^
+| %Ask% | 20 character wide text field |
+| %Ask12% | 12 character wide text field |
+| %Ask12:Default% | 12 character wide text field with initial value “Default” |
+| %Ask40=VarName% | 40 character wide text field with initial value from variable VarName |
+
+If the token is used on a line by itself, then a full width multi-line text field is used for input, and the token means:
+
+^Token^Meaning^
+| %Ask% | 5 line text field |
+| %Ask8% | 8 line text field |
+| %Ask12:Default% | 12 line text field with initial value “Default” |
+| %Ask3=VarName% | 3 line text field with initial value from variable VarName |
+
+Note that after the : or = character, the remainder of the token, up to the percentage character is used, so it can include further : or = characters without any problem, for example `%Ask5:7:50%` would be a 5 character wide field with initial value `7:50`.
+
+===== See Also =====
+
+- [[action:Prompt_for_Snippet|Prompt for Snippet]] action
+- [[:Text Fields]]
+- [[:Tokens]]
+- [[manual:Variables]]

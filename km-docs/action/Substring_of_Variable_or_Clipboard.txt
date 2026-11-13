@@ -1,0 +1,34 @@
+The Substring of Variable or Clipboard action allows you to select a portion of a variable or clipboard for later use.
+
+{{:action:substringofvariableorclipboard.png?maxwidth=550}}
+
+Select from the //Get substring of// pop-up what to use as the source of the substring:
+  *System Clipboard.
+  *Named Clipboard.
+  *Variable.
+  *Text.
+
+If you choose Named Clipboard, Variable or Text then you have the opportunity to select the clipboard or variable or to enter text.
+
+From the pop-up select the nature of the substring. As you select an option, further details may be required. For example, if you select //range// you need to enter a starting point and then how many characters to include in the substring. The choices are:
+  *to.
+  *from.
+  *last.
+  *range.
+  *from to.
+  *delete to.
+  *delete from.
+  *delete last.
+  *delete range.
+  *delete to from.
+
+Select from the //To// pop-up the destination for the substring:
+  *Source.
+  *System Clipboard.
+  *Named Clipboard.
+  *Variable.
+
+If the source was text then the Source destination will not be available.
+
+
+Tip: leave notes for yourself about what you're doing. Click on the gear icon at top right of the action to select //Set Note…//. A window appears where you can enter text. Click the OK button to save the text of the note for future reference.

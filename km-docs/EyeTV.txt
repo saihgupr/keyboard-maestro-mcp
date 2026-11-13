@@ -1,0 +1,26 @@
+Macros for working with EyeTV
+
+==== Playback controls ====
+
+I've created some macros to control playback in Elgato EyeTV. The default keyboard shortcuts in EyeTV are cumbersome, so I've replaced them with more convenient shortcuts:
+
+* Skip forward/reverse (r/t)
+* Mute (m)
+
+These macros should only be active when the EyeTV playback window is the frontmost window. To achieve this, I've put the macros in a group, and set a keyboard shortcut for activating/deactivating the group. 
+
+
+==== Updating the EPG ====
+
+I'm using the DVB program guide, and this sometimes isn't updated automatically. So I've created a macro that will update the DVB EPG every day.
+
+There are 2 macros: 
+
+* Update DVB EPG works when you have some channels assigned to the DVB EPG, and others to an internet guide provider. 
+* Update DVB EPG alleen DVB works when you use only the DVB EPG. 
+
+
+These macros depend on mouse positions for opening the Update menu. The mouse positions are relative to the EyeTV window.  The macros write to a file named Keyboard Maestro log.rtf which is expected to be on the Desktop.
+
+
+Download: {{:macros:eyetv.kmmacros|}}

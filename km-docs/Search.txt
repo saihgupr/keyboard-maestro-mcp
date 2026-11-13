@@ -1,0 +1,82 @@
+====== Searching in Keyboard Maestro ======
+
+**There are several different types of searches in Keyboard Maestro**
+  * [[manual:Search_Strings|Searching for Macros in the Keyboard Maestro Editor]]
+  * [[Actions|Macro Actions]] that Search the [[action:Search_Clipboard|Clipboard]] and [[action:Search_Variable|Variables]]
+  * Searching this Wiki (see below)
+
+====== Searching the Wiki ======
+
+Search is done through the Search box in top row (Shortcut Key <key>⌃</key><key>⌥</key><key>F</key>).
+
+While the Keyboard Maestro Wiki home page provides a list of major topics, a good way to find information about Keyboard Maestro is via the wiki search.  The Keyboard Maestro Wiki is powered by the DokuWiki platform, so you will see references to "DokuWiki" below that apply to the Keyboard Maestro Wiki.
+
+===== Syntax =====
+
+By default, DokuWiki performs logical AND search. That means all the words you put in the query will be used. Search is always case insensitive.
+
+DokuWiki's advanced search query syntaxes are described below. All of the syntaxes can be combined together. In this section, we'll use square brackets `[ ... ]` to represent characters entered in the Search Box.
+
+==== Partial matching ====
+
+* You can perform a partial matching by prefixing and/or suffixing an asterisk `*` to a keyword. 
+
+=== Any Characters As a Prefix ===
+
+If you enter an asterisk before the keyword, then it will match text in topics that begin with anything (or nothing) plus the keyword
+  * For example, searching for `[ wiki ]` will only find "wiki", but searching for `[ *wiki ]` will also find "DokuWiki". 
+
+=== Any Characters as a Suffix ===
+
+You can also perform `[ doku* ]`
+
+=== Using a Wildcard as both the Prefix and Suffix ===
+
+and `[ *okuwik* ]` (partial matching).
+
+However, the asterisk cannot be used within a keyword.
+For example, searching `[ doku*iki ]` will not find anything for you.  
+
+==== Terms you want to exclude (-) ====
+
+You can attach a minus sign `-` immediately before a keyword to exclude pages that contain this keyword from your search results. For example, the query `[ dokuwiki -plugin ]` will find pages which contain "DokuWiki" but do not contain "plugin".
+
+You can use this syntax `-` not just for a keyword, but also for a partial matching, a phrase search, a namespace search and a grouping search described below. For example, you can use the query `[ -"phrase you want to exclude" ]` to exclude exact phrase. 
+
+==== Phrase search ("") ====
+
+You can search for exact phrases by putting double quotes around a set of words, e.g. `[ "installing dokuwiki" ]`.
+
+==== Search within a namespace (@) ====
+
+You can restrict the search to namespaces. To search pages within a namespace, prefix `@` or `ns:` to the namespace. To not search pages within a namespace, prefix `^` or `-ns:` to the namespace.
+
+For example, the query `[ dokuwiki @wiki ^wiki:docs ]` will find pages which contain a word "dokuwiki" and are within "wiki" namespace but not within "wiki:docs" namespace. The query `[ dokuwiki ns:wiki -ns:wiki:docs ]` will do the same thing.
+
+==== The OR operator (|) ====
+
+By default DokuWiki performs a logical AND search, but you can also use a logical OR search by using `|` or `or` as a separator of your search terms. For example, the query `[ plugin | template ]` will find pages which contain either "plugin" or "template" or both. The query `[ plugin or template ]` will do the same thing. You may use OR as a simple alternative to [[#Partial matching (*)]], e.g. in finding pages about people with spelling variations as `[ Frank | Fränk ]`.
+
+The OR operator has a lower precedence than the default AND operator. That is, the query `[ dokuwiki plugin | template ]` can be represented as `[ (dokuwiki plugin) | template ]`, not as `[ dokuwiki (plugin | template) ]`. Instead, use a grouping syntax as described below.
+
+If you want to [[#Search within a namespace (@) |restrict your search on a namespace]], you **have** to group your search with "()", otherwise a search `[ plugin | template @plugin]` will behave as `[ (plugin) | (template @plugin) ]`, i.e. searching for "plugin" OR "template @plugin" over //all// namespaces, but not as you may intend searching "plugin" OR "template" over the //plugin// namespace, the latter being correctly expressed as `[ (plugin | template) @plugin ]`.
+==== Grouping search ====
+
+You can group search terms by enclosing terms with parentheses `( ... )`. Having the highest precedence, parentheses may be used to force precedence.
+
+For example, the query `[ dokuwiki -(plugin | @plugin) ]` will find pages which contain a word "DokuWiki" but not contain a word "plugin" and also are not within a namespace "plugin".
+
+===== Quicksearch =====
+
+You can enter the beginning of a //pagename// (eg "Sear") into the search box and wait half a second. In most modern browsers you will automatically get a popup with matching pagenames.
+
+===== OpenSearch =====
+
+[[http://www.opensearch.org/|OpenSearch]] is a standard to make it easy to integrate a website's search into your browser. It is supported by all modern browsers. DokuWiki is OpenSearch enabled.
+
+Here is how to add your Wiki's search to Firefox (other browsers probably handle it in a similar way):
+
+  - open your wiki in the browser
+  - click the little arrow on the left of your search field
+  - choose "Add Keyboard Maestro Forum"
+

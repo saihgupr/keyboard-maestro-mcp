@@ -1,0 +1,16 @@
+====== FrontDocumentPath Token ======
+
+The //%FrontDocumentPath %// token returns (v11.0+) the path of the document associated with the front window if the Application supports this property.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:FinderSelection|%FinderSelection%]] token
+* [[token:FinderSelections|%FinderSelections%]] token
+* [[token:FinderInsertionLocation|%FinderInsertionLocation%]] token
+* [[:Tokens |See all Tokens]]

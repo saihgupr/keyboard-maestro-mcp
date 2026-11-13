@@ -1,0 +1,5 @@
+The Apply a BBEdit Text Factory action applies any saved BBEdit Text Factory to the system clipboard or a Named Clipboard.
+
+Select the text factory by specifying its path. Click the File Chooser button on the right to select an existing file on disk. Option-click on the File Chooser button to show the currently selected file in the Finder (assuming it exists already).
+
+Choose from the pop-up whether to apply the text factory to the system clipboard or a named clipboard.

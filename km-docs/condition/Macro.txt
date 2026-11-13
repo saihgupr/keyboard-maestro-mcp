@@ -1,0 +1,51 @@
+====== Macro or Macro Group Condition ======
+
+===== Condition Values =====
+
+The //[[condition:Macro|Macro or Macro Group]]// [[:Conditions|Condition]] determines if a specified macro or macro group is:
+
+* enabled
+* disabled
+* active
+* inactive
+* is executing (v11.0+)
+* is not executing (v11.0+)
+
+===== Definitions =====
+
+For a macro group to be active, it must be enabled, and the requirements of the macro group configuration must be met.  Macro Groups can also be activated and deactivated manually.
+
+For a macro to be active, it must be enabled, and the containing macro group must be enabled and active.
+
+A macro can be enabled even if the containing macro group is disabled (though that macro will never be active in that case).
+
+For the purposes of determining if the macro is executing, the macro’s UUID is used, so renaming it or otherwise editing it will not change whether it is executing. The macro could be executed executed by any means (such as a trigger, AppleScript, or the [[action:Execute_a_Macro|Execute a Macro]] or [[action:Execute_a_Subroutine|Execute a Subroutine]] actions).
+
+For more info, see [[:Macro_Activation|Macro Activation]]
+
+===== Examples =====
+
+Using the _Macro Condition_ in the [[action:If_Then_Else|If/Then/Else]] Action:
+
+{{:condition:km-7.1-macro-contition.png?nolink|}}
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]
+
+=== Topics ===
+
+* [[:Macro Groups|Macro Groups]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/search?q=Macro%20condition|Keyboard Maestro Forum topics about Macro/Group condition]]

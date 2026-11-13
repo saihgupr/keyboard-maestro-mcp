@@ -1,0 +1,54 @@
+====== Macro Triggers ======
+
+
+Keyboard Maestro has a variety of triggers.  A trigger defines what event causes a macro to be executed, provided that the conditions set by the [[Macro_Groups|Macro Group]] it is in are met.  Note that a macro may have multiple triggers.
+
+===== Available Triggers =====
+
+
+~~NOCACHE~~
+<nspages trigger -textPages="">
+
+===== How to Assign a Trigger =====
+
+1.	After Creating the Macro, CLICK on the GREEN PLUS button
+2.	A Popup Menu will appear
+3.	Click on the Trigger type you want
+4.	In the case of a HotKey Trigger, a field will be selected (highlighted)
+5.	Just PRESS THE KEYSTROKE (including any modifer keys) that you want for the HotKey Trigger
+6.	That's it!
+
+{{:assign-trigger-to-macro-km9.png?nolink|}}
+
+
+===== See Also =====
+
+=== Topics ===
+
+* [[:Macro Groups|Macro Groups]]
+* [[:Text Fields|Text Fields]]
+* [[:Frequently Asked Questions|FAQ]]
+* [[:Fundamental Concepts]]
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Conditions ===
+
+* [[:Conditions|See all Conditions]]
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[:Tokens|See all Tokens]]
+
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/conflict-between-conflict-palette-and-periodic-trigger/4879/2|Conflict between conflict palette and periodic trigger?]]
+
+- [[https://forum.keyboardmaestro.com/tags/triggers|Keyboard Maestro Forum topics about triggers]]

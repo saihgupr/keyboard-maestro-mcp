@@ -1,0 +1,37 @@
+The //Mounted Volume condition// looks for a mounted volume with name that:
+
+* exactly matches a specified string.
+* contains (case insensitively) a specified string.
+* matches a specified [[:Regular Expressions|regular expression]].
+
+and then checks whether it:
+
+* is mounted.
+* is not mounted.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]
+
+=== Triggers ===
+
+* [[trigger:Mounted Volume|Mounted Volume]]
+* [[trigger:Periodic|Periodic]]
+* [[:Triggers|See all Triggers]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/start-time-machine-backup-when-attaching-a-hd/319/9|Start time machine backup when attaching a HD]]
+- [[https://forum.keyboardmaestro.com/t/how-to-unmount-an-exernal-drive-using-km/2099/2|How to Unmount an Exernal Drive using KM]]
+- [[https://forum.keyboardmaestro.com/t/macro-all-trashes/3090|MACRO: All Trashes]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Mounted%20Volume|Keyboard Maestro Forum topics about Mounted Volume]]

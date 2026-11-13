@@ -1,0 +1,27 @@
+====== Speak Text Action ======
+
+The *Speak Text* action speaks text entered in the text area of the action. Use the arrow at the right of the text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+There are options for the speed of speech:
+  * At default rate
+  * Slowly
+  * Moderately
+  * Normally
+  * Quickly
+  * Fast
+
+The //with// pop-up allows you to choose the voice, including the default voice.
+
+You can also specify the volume (v10.0+).
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:System_Beep|System Beep]]
+* [[action:Notification|Notification]]
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens |See all Tokens]]

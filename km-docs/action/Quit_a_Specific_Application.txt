@@ -1,0 +1,17 @@
+===== Quit a Specific Application ===== 
+Quits the application selected from the application pop-up.
+
+Available options are:
+  *Quit
+  *Quit & Relaunch
+  *Force Quit
+  *Force Quit & Relaunch
+
+{{:action:quitapplications.png|}}
+
+
+===== Quit All Applications ===== 
+Quits all foreground applications, optionally honoring the excluded application list.
+
+===== Quit Other Applications ===== 
+Quits all foreground applications except the current one, optionally honoring the [[manual::Preferences#Excluded_Preferences|excluded applications list]].

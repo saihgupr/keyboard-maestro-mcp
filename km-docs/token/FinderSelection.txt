@@ -1,0 +1,19 @@
+====== FinderSelection(s) Token ======
+
+
+The //%FinderSelection%// token returns (v10.0+) the path of the currently selected file in the Finder. If there is none or more than one file selected, then it returns the empty string.
+
+The //%FinderSelections%// token returns (v10.0+) the paths of the currently selected files in the Finder, one per line.
+
+Prior to v11, if the selection was an alias/link, this token would return the target of the link. As of v11.0+, the token returns the alias/link.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:FinderInsertionLocation|%FinderInsertionLocation%]] token
+* [[:Tokens |See all Tokens]]

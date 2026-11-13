@@ -1,0 +1,45 @@
+====== Global Macro Palette Trigger ======
+
+The //Global Macro Palette trigger// lets you add your macro to a floating palette, so you can trigger it by clicking on the macro name in the palette.
+
+{{:undefined:macropalet.gif}}
+
+//Keyboard Maestro// will only display the palette when there are active Macros, so if your Macros are restricted to particular applications, then the //Global Macro Palette// will only appear in those applications. This is particularly useful for less frequently used macros whose //Hot Key// you might forget.
+
+You can control the sorting order of macros by adding two characters and a closing parenthesis (eg “01)My Macro”). The prefix will be removed before displaying in the macro palette, but will be used to control the order of the macros shown.
+
+You can edit a macro by holding down the option key and clicking on it in the macro palette.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Hide Global Macro Palette|Hide Global Macro Palette]]
+* [[action:Show Global Macro Palette|Show Global Macro Palette]]
+* [[action:Toggle Global Macro Palette|Toggle Global Macro Palette]]
+* [[:Actions|See all Actions]]
+
+==== Topics ====
+
+* [[:Macro Groups]]
+* [[:Triggers]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/launch-macro-with-fuzzy-search-box/2893/9|Launch Macro with fuzzy search box]]
+- [[https://forum.keyboardmaestro.com/t/macro-group-activation-simply-produces-enabled/2977/4|Macro Group activation simply produces "Enabled"]]
+- [[https://forum.keyboardmaestro.com/t/custom-palette-style-colors/3516/2|Custom Palette Style Colors?]]
+- [[https://forum.keyboardmaestro.com/t/palettes-how-do-i-show-hide-palette-by-clicking-the-macro-palette-entry/3740/2|Palettes: How Do I Show/HIde Palette by Clicking the "Macro Palette Entry?]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Palette|Keyboard Maestro Forum topics about Macro Palette]]

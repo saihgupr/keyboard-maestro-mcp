@@ -1,0 +1,62 @@
+====== Transition from QuicKeys ======
+
+A lot of users are moving from QuicKeys to Keyboard Maestro as the last several major Mac OS X upgrades have left many QuicKeys users stranded without a macro solution.
+
+Keyboard Maestro strives to ensure it always uses legitimate Mac OS X APIs so that old versions typically work with little or no disruption on newer versions of Mac OS X.  Versions of Keyboard Maestro back to version 4 continue to run in the current Mac OS X.
+
+This page aims to ease the transition for people converting from QuicKeys.  Unfortunately, there is no way to automatically convert your macros from QuicKeys to Keyboard Maestro, so it is going to be a fairly manual process of recreating your macros.
+
+==== Overview ====
+
+Most QuicKeys refugees quickly learn to love Keyboard Maestro and wonder why they had not moved earlier.  But the initial change can be somewhat jarring as Keyboard Maestro does things in very different ways to QuicKeys.  Keyboard Maestro strives to be very orthogonal in its features, so that each feature set (eg triggers or actions or calculations or text tokens) operate independently from the other features, allowing you to quickly gain access to more power without significant increases in complexity.  So as a previous QuicKeys user, take a bit of time to learn Keyboard Maestro's terminology and Keyboard Maestro's way of doing things and you will soon find your way.  And if you have any problems, you can [contact us](mailto:support@stairways.com) or read the [[Frequently Asked Questions]] or [[Troubleshooting]] pages.
+
+==== Differences ====
+
+Without having much knowledge of QuicKeys it is hard to know how it compares, but there are a couple of obvious points:
+
+* Keyboard Maestro is still in active development.
+* Keyboard Maestro follows the rules, so sometimes Quickeys can do things that I wont do in Keyboard Maestro, but on the other hand, Keyboard Maestro version 4 released in 2009 still runs in the current macOS (and older ones probably would too if Apple had not dropped support for 32-bit Intel in Catalina).
+* Keyboard Maestro has a very orthogonal approach, so each action tends to be independent to other actions.  There is an action to iterate through the Finder's selection, and there is an action to move a file, and you put the two of them together to move the Finder's selection, but the Move action does not itself have an option to move the Finder's selection.
+* Keyboard Maestro has no concept of macros being global or not global, so no concept of *global* hot keys being overridden by *scoped* hot keys.  Keyboard Maestro does have application-specific macro groups and a variety of other ways of *scoping* macros though, but if two hot key triggered macros are active at the same time then you will be asked which one you mean - this in turn can be a powerful feature, allowing you to use a single hot key to trigger any of a number of different macros.
+* What Quickeys calls Toolbars is called Palettes in Keyboard Maestro.
+
+==== Quick Start ====
+
+Like all new users to Keyboard Maestro, you should have a look at the [[manual:Quick_Start|Quick Start]] which explains how the components of Keyboard Maestro (the editor and engine, macro groups and macros, triggers and actions) work together. 
+
+==== Importing Manually ====
+
+Unfortunately, it's not possible to import the Quickeys macros directly into Keyboard Maestro.  The only way is to manually recreate each macro.
+
+However, if you have multiple macros that are similar, you can create the first macro and then duplicate it multiple times, changing only the parts that are different in each macro.
+
+==== Toolbars ====
+
+One thing QuicKeys users often ask is how to get Toolbars in Keyboard Maestro.  Keyboard Maestro allows you to configure any Macro Group to appear as a palette.  The palette can be available in all applications, or restricted to certain applications, and the palette can be displayed always, or you can toggle it open and closed using a hot key. See [How do I get more than one macro palette?](Frequently_Asked_Questions#How_do_I_get_more_than_one_macro_palette) for more information about macro palettes.
+
+==== Groups ====
+
+In QuicKeys, macros are grouped automatically by the application they are assigned to/active in. 
+
+In Keyboard Maestro, macro groups are more flexible and less automatic. 
+
+* macro groups are created manually.
+* macros are added to a group manually.
+* you can set conditions for a macro group: a group can be active in one or more applications, and it can be activated/deactivated by a hotkey or other trigger.
+* a group can be activated/deactivated by another macro.
+
+==== Macro Availability ====
+
+A common question for QuickKeys users trying out Keyboard Maestro is "How do I control which applications a macro is available it?".  In Keyboard Maestro, Macro Groups control when a macro is active, so typically you create a macro group named after the application, configured to be active in just that application, and then place your application-specific macros in that macro group.
+
+==== Multiple Key Triggers ====
+
+QuicKeys users are often used to the way it supports multiple key triggers.  Keyboard Maestro does it quite differently, see [How do I use a multiple keystroke trigger?](Frequently_Asked_Questions#How_do_I_use_a_multiple_keystroke_trigger) for more information on how to do this.
+
+==== Prompting for User Input ====
+
+Quickeys includes an option in some macros to ask for user input to the action (eg the Repeat Count).  In Keyboard Maestro, you ask for user input using the [[action:Prompt_for_User_Input|Prompt for User Input]] action, and then use the resulting variables in any further actions.  Remember that almost any numeric field can take [[manual:Variables|variables]], [[/Functions|functions]] or [[manual:Calculations|calculations]], and almost any text field can take [[manual:Tokens|text tokens]], which includes [[token:Variable|variables ]].  See the forum post titled [Variable Repeat](http://forum.keyboardmaestro.com/t/variable-repeat/225).
+
+==== Working with the Finder Selection ====
+
+Quickeys includes an option in some file actions to work on the Finder Selection. In Keyboard Maestro, you work with the Finder Selection by using the For Each action to iterate over the selected files. From there, you can do whatever you would like with the files using the various file actions, or by processing with a script or other means. There is a pre-configured action in the acton selector for `For Each Path in the Finder Selection`, which is simply a [[action:For_Each|For Each]] action, preset to iterate through the [[collection:Finders_Selection|Finders Selection]] collection. You can put whatever actions you like within that action. See the forum post titled [Working with the Finder Selection](http://forum.keyboardmaestro.com/t/working-with-the-finder-selection/278).

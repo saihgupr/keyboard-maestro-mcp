@@ -1,0 +1,17 @@
+====== FinderInsertionLocation Token ======
+
+
+The //%FinderInsertionLocation%// token returns insertion location in the Finder, which is usually the path of the front window.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:FinderSelection|%FinderSelection%]] token
+* [[token:FinderSelections|%FinderSelections%]] token
+* [[:Tokens |See all Tokens]]
+

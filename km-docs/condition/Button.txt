@@ -1,0 +1,29 @@
+The //Button condition// looks for a standard Mac button in the front window.
+
+It can find a button with a name that is exactly a specified string, containing a specified string, or matching a specified [[:Regular Expressions|regular expression]].
+
+The condition can return true if:
+
+* a matching button exists.
+* a matching button does not exists.
+* a matching button is enabled.
+* no matching button is enabled.
+* a matching button exists but is disabled.
+* a button (usually a checkbox) exists and is off.
+* a button (usually a checkbox) exists and is on.
+* a button (usually a checkbox) exists and is mixed.
+
+Note that you can generally only detect standard Mac buttons, not custom buttons, nor buttons in web windows.  For other kinds of buttons, you may need to use the [[condition:Found_Image|Found Image condition]].
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]

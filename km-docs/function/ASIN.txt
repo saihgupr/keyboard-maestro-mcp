@@ -1,0 +1,11 @@
+====== ASIN  Function ======
+
+The ASIN(x) function returns the arcsine of its argument which must be int he range -1 to 1 inclusive.
+
+If ASIN(x)=y, then [SIN](SIN)(y)=x.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

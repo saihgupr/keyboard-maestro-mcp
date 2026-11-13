@@ -1,0 +1,41 @@
+====== DOW Function ======
+
+The DOW([unixtime]) function returns the day of the week (1=Sunday, 7=Saturday) component from the current time or an optional [[:unixtime]].
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Filter|Filter]] (Process Text Tokens)
+* [[:Actions|See all Actions]]
+
+=== Functions === 
+
+* [[YEAR]]
+* [[MONTH]]
+* [[DAY]]
+* [[DOW]]
+* [[HOUR]]
+* [[MINUTE]]
+* [[SECOND]]
+* [[TIME]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:ICUDateTime|%ICUDateTime%]] (local)
+* [[token:ICUDateTimeFor|%ICUDateTimeFor%]] (local)
+* [[token:ICUDateTimeMinus|%ICUDateTimeMinus%]] (local)
+* [[token:ICUDateTimePlus|%ICUDateTimePlus%]] (local)
+* [[token:LongDate|%LongDate%]] (local)
+* [[token:LongTime|%LongTime%]] (local)
+* [[token:NumberDate|%NumberDate%]] (local)
+* [[token:ShortDate|%ShortDate%]] (local)
+* [[token:ShortTime|%ShortTime%]] (local)
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+- [[:Dates_and_Times|Dates and Times]]
+- [[:JulianDate|JulianDate]]
+- [[:unixtime]] in GMT

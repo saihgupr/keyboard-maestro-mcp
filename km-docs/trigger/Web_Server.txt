@@ -1,0 +1,80 @@
+{{:trigger:web-server-icon.png?nolink|}}
+
+====== Web Server ======
+
+===== Overview =====
+
+If the Keyboard Maestro web server is enabled, then you can connect to it using your web browser.
+
+:!: Note: A HTTP Port of 4490 or 4491 is used in all examples on this page.  But it can be set to any port you prefer.
+
+**To Display the Web Server User Interface**\\
+(you can use either `127.0.0.1` or `localhost`.  They are equivalent.)
+```
+http://127.0.0.1:4490    <!- for normal connection ->
+http://localhost:4490    <!- for normal connection ->
+https://localhost:4491   <!- for secure connection ->
+```
+
+If you have configured a username and password for the web server, then you can log in and execute any active macro.  You do not need to explicitly set a trigger; if you enable the web server, and configure a username and password, then all active macros can be executed via the web browser using the username and password.
+
+Any macro with the [[Public Web]] trigger can be triggered by anyone without the username or password as long as they can connect to your Mac.
+
+For most home users, only computers on your local network can connect, although it depends on your network setup.  Potentially anyone on the Internet can connect to the server.
+
+**To Execute a Specific Macro**
+```html
+https://localhost:4491/action.html?macro=<YourMacroUUID>&value=<TheTriggerValueToPass>
+```
+
+
+===== Enable and Setup Web Server =====
+
+Keyboard Maestro has a built-in web server.  You can enable it in the Keyboard Maestro Web Server preferences, and provide the following data.
+
+{{:trigger:km-web-server-pref.png?nolink|}}
+
+^ Field ^ Default ^ Description ^
+|**Web Server Enabled** | _unchecked_ | Must be _checked_ in order to use the Keyboard Maestro Web Server.\\ If _checked_, then the below fields need to be completed. |
+| HTTP Port  | 4490 | _Required_. The Port used in the `URL` to access the Server.  HTTPS port is `<HTTP Port> + 1`.\\ Normally you leave this at default value, unless you already have that Port assigned to something else in your router. |
+| Username | `<NONE>` | _Required for authenticated access_. Enter any name you prefer, but pick one that you will remember. |
+| Password | `<NONE>` | _Required for authenticated access_. Although there are no specific requirements for the password, you should pick a strong one that you will remember, or better, use a Password Manager. |
+| Web Browser Access Enabled | _checked_ | This must be checked in order to use Keyboard Maestro Control on an iOS device. |
+| Receive Clipboards into Clipboard History | _unchecked_ | If checked, you can send your clipboard from one Mac to another using the Clipboard History Switcher. |
+| Replacing Current Clipboard | _unchecked_ | If checked, received clipboards will replace your current system clipboard, otherwise they will be added to the clipboard history as the immediate past clipboard.   |
+
+
+
+===== How To Use =====
+(after _Web Server_ has been _enabled_)
+
+If you configure a username and password, you can:
+  - Connect to your Keyboard Maestro’s web server and login
+  - Then execute any macro you have defined
+  - If you have configured any macro with a Public Web trigger
+    - Then anyone on the Internet (with access to your local area network) can trigger _only_ those macros that have set the [[Public Web]] trigger.  Of course, if you properly setup your Internet router, unauthorized access from the Internet should be very unlikely.
+
+If you have not entered a username or password, then you will not be able to login, but any Public Web triggered macros will still be available (as long as the web server is enabled).
+
+**Connecting to Keyboard Maestro Web Server in Safari**
+
+```
+URL:  https://localhost:4491
+```
+
+{{:trigger:km-server-in-safari.png?nolink|}}
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[Remote|Remote]] trigger
+* [[Public Web]] trigger
+* [[trigger:URL|URL Theme Trigger]]
+* [[/Triggers|All Triggers]]
+
+=== Forum Topics ===
+
+* [Issue Using Public Web Trigger ](https://forum.keyboardmaestro.com/t/issue-using-public-web-trigger/5302)
+* [MACRO:   @Web Open URL Passed from KM Public Web Server](https://forum.keyboardmaestro.com/t/open-url-passed-from-km-public-web-server/7019)
+* [Triggering Keyboard Maestro macros remotely, KM8, Peter Lewis](https://forum.keyboardmaestro.com/t/triggering-keyboard-maestro-macros-remotely/8277)

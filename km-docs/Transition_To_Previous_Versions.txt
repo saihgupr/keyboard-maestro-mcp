@@ -1,0 +1,28 @@
+====== Transition To Previous Versions ======
+
+Keyboard Maestro provides a simple mechanism for upgrading to new versions, and the upgrade messages make it clear whether the new version might be a paid upgrade, but sometimes people prefer to stick with the old version for some reason.  It is usually relatively straight forward to revert to a previous version, although due to changes required by Apple in where to store files, reverting to Keyboard Maestro 4 is somewhat trickier.
+
+To revert Keyboard Maestro versions 5 or later from later versions, follow these instructions:
+
+* Quit Keyboard Maestro Engine and Keyboard Maestro.
+* Optionally, you can also revert to the macros as they were when you first launched the new major version of Keyboard Maestro, which may be necessary if any of the features or actions have been changed in ways that make them no longer work in the previous version.  In `~/Library/Preferences/Keyboard Maestro`, trash the `Keyboard Maestro Macros.plist` file.  Duplicate the `Keyboard Maestro Macros Saved Version 5.plist` (or … Version 6 …) and rename the copy to Keyboard Maestro Macros.plist
+* [Download the older version](https://download.stairways.com/).
+* Using the Finder, drag the downloaded application to the applications folder, replacing the newer version.
+* Launch the older version of Keyboard Maestro.
+* Open the About box and ensure it shows the correct version, and is registered to you. You can retrieve your license details from the [[https://enquiry.stairways.com/|What’s My License?]] link on the Stairways web site.
+* In Keyboard Maestro’s preferences, check that Launch Engine at Login is enabled (if desired).
+
+To revert Keyboard Maestro version 4, follow these instructions:
+
+* Launch Keyboard Maestro and ensure the “Launch Engine at Login” preference in the General preference pane is turned off.
+* Choose Quit Engine from the File menu to quit the engine.
+* Quit Keyboard Maestro.
+* In the Finder, hold down the option key and choose Library from the Go menu.
+* Open both the Preferences folder and the Application Support subfolders.
+* There should be a link/alias at `Preferences/Keyboard Maestro` - remove it.
+* Move the Keyboard Maestro folder from the Application Support folder to the Preferences folder.
+* Optionally, you can also revert to the macros as they were when you first launched the new version of Keyboard Maestro, which may be necessary if any of the features or actions have be changed in ways that make them no longer work in version 4. In the `Keyboard Maestro` preferences folder trash the `Keyboard Maestro Macros.plist` file.  Duplicate the `Keyboard Maestro Macros Saved Version 4 (or 5).plist` and rename the copy to `Keyboard Maestro Macros.plist`.
+* Trash any other copies of Keyboard Maestro
+* Download [Keyboard Maestro 4](http://files.stairways.com/keyboardmaestro-432.zip).
+* Use the Finder to move it to your Applications folder and launch it.
+* Enable the “Launch Engine at Login” preference (if desired).

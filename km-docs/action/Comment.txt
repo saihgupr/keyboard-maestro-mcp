@@ -1,0 +1,5 @@
+====== Comment Action ======
+
+The //Comment// action does not affect the macro. It simply allows you to add styled comments.
+
+Note that the Comment action is still an action, so if you place it between an action that might fail and an action that checks the previous actions’s status (eg with the [[token:ActionResult|%ActionResult%]] token or the [[condition:Action_Result|Action Result]] condition), then the test will always say the Comment action was successful, regardless of any previous failure.

@@ -1,0 +1,25 @@
+====== Web Browser Automation ======
+
+Keyboard Maestro can control Safari (or Safari-like browsers like Safari Technology Preview) or Google Chrome (or Chrome-like browsers like Chrome Canary) using [[actions:Browser_Window_Actions|Browser Window Actions]] or [[actions:Browser_Form_Actions|Browser Form Actions]].
+
+In order to control the browser, Keyboard Maestro needs Automation permission for the browser, and the browser needs to be configured to Allow JavaScript From Apple Events.
+
+===== Automation =====
+
+Automation control is configured in the System Preferences, Security & Privacy, Automation settings. The browser should be listed with Keyboard Maestro Engine able to control it (checked).
+
+{{ safari-automation.png?nolink |}}
+
+The system should ask to allow Automation control the first time you execute an action to control the browser. At that point, it should also add Keyboard Maestro Engine.app to the preference settings, so you can enable it late.
+
+===== Allow JavaScript From Apple Events =====
+
+==== Safari ====
+
+In Safari, you must first enable the Develop menu by choosing *Preferences* from the *Safari* menu, changing to the Developer panel and enabling *Allow JavaScript from Apple Events* (or for older versions of Safari, change to the Advanced panel, and enable “Show Develop menu in menu bar”, and then choose *Allow JavaScript from Apple Events* from the *Develop* menu - you can then turn off the Develop menu if desired).
+
+==== Google Chrome ====
+
+In Chrome, you must choose *Allow JavaScript from Apple Events* from the *Developer* sub-menu in the *View* menu.
+
+{{ chrome-dev-allow-javascript.png?nolink |}}

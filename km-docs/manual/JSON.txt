@@ -1,0 +1,91 @@
+====== JSON ======
+
+Keyboard Maestro includes comprehensive support for [[https://json.org|JSON]] (JavaScript Object Notation), which is a formalized lightweight data-interchange format.
+
+JSON objects consist of one of:
+
+* An array, surrounded by square brackets and with comma-separated values, eg `[ 1, "2", 3, "4" ]`.
+* A dictionary (aka, object), surrounded by curly brackets with comma-separated key-value pairs, eg `{ "one" : 1, "two" : "2" }`.  The Key must be a properly formatted, double quoted, string.
+* A double quoted string, eg `"hello"`.  Strings can contain various backslash-escaped characters, including `"`, `/`, `\`, `b` (backspace), `f` (form feed), `n` (linefeed), `r` (carriage return), `t` (tab), and `u` followed by four hex digits to make a unicode character.
+* A number.
+* `true` - boolean true
+* `false` - boolean false
+* `null` - null (missing or absent value)
+
+JSON terminology refers to dictionaries as “objects”, but also the whole thing as a JSON object, so generally within Keyboard Maestro it will be referred to as a JSON //dictionary// when talking about a specific dictionary formatted part of a JSON object, and //object// when it could be any of the various forms. A JSON //container// would be an array or a dictionary.
+
+===== JSON Paths =====
+
+Keyboard Maestro introduces the concept of a JSON Path.  This is similar to the concept of an XPath, and there are other similar but unrelated JSON path concepts around, and they have similar intentions, but none of these are the same, or have the same syntax.
+
+In Keyboard Maestro, for a variable named `J`, a JSON Path might look like:
+
+    J[2+3].fieldname{%Variable%FieldName%}
+
+This would assume that variable J holds a JSON array, and would extract the fifth element.  Then it would assume that contains a dictionary and look for the field named “fieldname”.  Within that, it would assume that contains a dictionary and look for a field named by the variable FieldName.
+
+After the variable name, the format of the path is any of:
+
+* “[” followed by a numeric calculation, followed by “]”. The result of the calculation will be used to look for an indexed element in the array, or for a matching named element in a dictionary.
+* “{” followed by token text, followed by “}”.  The result of the text will be used to look for a matching named element in a dictionary, or for an indexed element in an array.
+* “.” followed by the field name.  Field names are trimmed of leading or trailing whitespace - if your object field names can start or end with white space, you need to use the `{ field name }` notation.
+
+Array indices are 1-based.  Negative indices count from the end of the array.  The 0 index of an array access will return the count of the number of entries in the array.  When evaluating the index, the context sensitive [[function:COUNT|COUNT()]] function will return the number of elements in the array.
+
+Keyboard Maestro will use arrays and dictionaries more or less interchangeably, so:
+
+* J[3]
+* J.3
+* J{3}
+
+will all return the third element of an array, or the dictionary value for key “3”.  An important distinction is that the first one is a numeric calculation, the second one is plain text, and the third one is token text.
+
+===== Pretty, Compact and Strict Flags =====
+
+Many of Keyboard Maestro’s operations that produce a result from JSON have two flags associated with them: Compact or Pretty; Strict or Not-Strict.
+
+* Compact means all extraneous white space is omitted from JSON results.
+* Pretty means JSON results will include white space to format the JSON in a relatively readable manner.
+
+For example, if the variable J contains the text `{ "a" : 3, "b" : null }`, then the result of `%JSONValueCompact%J%` will be:
+
+    {"a":3,"b":null}
+
+whereas the result of `%JSONValuePretty%J%` will be:
+
+    {
+      "a" : 3,
+      "b" : null
+    }
+
+The exact indentation should not be assumed, it might be any number of spaces or tabs.
+
+The Strict flag relates only to JSON results that are trivial JSON strings, eg JSON `"result"`.
+
+* Strict means even for trivial JSON strings, the result will be a properly double quoted string (eg `"result"`).
+* Non-Strict means that for trivial JSON string results, the result will return just the resulting string without any double quotes and with any escaping removed/evaluated.  This will be more useful in some situations, but will lose the ability to distinguish between strings, numbers and `null`.
+
+For example, if the variable J contains the text `{ "a" : 3, "b" : "hello\n\"there\"\n" }`, then the result of `%JSONValueStrict%J.b%` will be:
+
+    "hello\n\"there\"\n"
+
+whereas the result of `%JSONValue%J.b%` will be:
+
+    hello
+    "there"
+    
+The Strict/Non-Strict flag will have no effect unless the result is a trivial JSON string - if the result is a JSON object or array, or a number or `true`, `false,` or `null`, the result will be the same either way - objects and arrays will be inherently strict, and numbers and true/false/null will be unadorned.
+
+The default result format is Compact, Non-Strict.
+
+===== Use =====
+
+There are [[:Actions|actions]] to set dictionaries or variables from JSON containers, as well as an [[:action: Set_JSON_Value|action]] to set a field within a JSON object to a specified value.
+
+===== Notes =====
+
+JSON objects must be properly legal to be processed.  In particular keys to objects must be strings, which means strings must be quoted with double quotes. `{ a : 3 }` is not valid, it must be `{ "a" : 3 }`.
+
+Decimal numbers may be processed by the system JSON APIs, which will store them as floating point, and floating point cannot store all decimal numbers with full fidelity. For example, if variable `J` contains `[{ "a" : 3.45 }]`, then `%JSONValue%J[1]%` may result in `{"a":3.4500000000000002}`. If you need precision when dealing with JSON values, avoid decimal numbers.
+
+Although `3` and `"a"` are technically legal JSON, in Non-Strict mode with cases of ambiguity, Keyboard Maestro will not consider a value or variable to contain JSON unless it is a container, ie an array or dictionary, which starts (without any leading white space) with a `{` or `[`, and ends with a matching bracket followed by optional white space.

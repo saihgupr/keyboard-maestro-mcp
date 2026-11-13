@@ -1,0 +1,53 @@
+====== Set JSON Value ======
+
+The //Set JSON Value// (v9.0+) action lets you update a Keyboard Maestro variable containing a JSON container with a new value.
+
+{{ set-json-value.png?nolink&591x294 | Set JSON Value }}
+
+The action will take a specified [[:manual:JSON#JSON_Paths|JSON path]], referencing a location within a variable which contains a JSON object, and set the value.
+
+For example, with variable “J” containing `{ "first" : "John", "last" : "Smith" }`, the action can set the fist name field `J.first` (or `J{first}`) to a new name.
+
+The value will be considered a JSON object if it starts with a `[` or `{` and ends with the matching closing bracket and optional white space.  Otherwise, the value will be considered a string (Non-Strict mode), or must be a valid JSON value (Strict Mode).
+
+If the value is `%Delete%`, then the JSON key or array entry will be deleted (v11.0+).
+
+===== Action Options (Gear ⚙ Menu) =====
+
+You can control what text processing happens in the JSON field by selecting one of these options from the Gear Menu:
+
+* Process Text Normally (process text tokens and backslash characters)
+* Process Text Tokens Only (process text tokens but not backslash characters)
+* Process Nothing (process neither text tokens nor backslash characters)
+
+You can select Pretty JSON result mode, which affects the format of the entire resulting variable value (See the [[manual:JSON]] user manual section).
+
+You can select Strict JSON result mode, which affects how the value field is interpreted - in Strict mode, strings will need to be quoted with double quotes and appropriately escaped, but you can also then set numeric values and tru/false/null values.  In Non-Strict mode, the value is treated as a string and quoted and escaped as necessary (See the [[manual:JSON]] user manual section).
+
+===== See Also =====
+
+See the [[manual:JSON]] user manual section for more details on JSON.
+
+=== Actions ===
+
+* [[action:Set_Variables_to_JSON | Set Variables to JSON]]
+* [[action:Set_Dictionary_to_JSON | Set Dictionary to JSON]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:JSONVALUE | JSONVALUE(jsonpath)]]
+* [[function:COUNT | COUNT()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:JSONFromDictionary | JSONFromDictionary]]
+* [[token:JSONFromVariables | JSONFromVariables]]
+* [[token:JSONValue | JSONValue]]
+* [[:Tokens|See all Tokens]]
+
+=== Collections ===
+
+* [[collection:JSON_Keys | JSON Keys]]
+* [[:Collections |See all Tokens]]

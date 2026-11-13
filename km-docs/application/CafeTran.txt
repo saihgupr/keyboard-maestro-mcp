@@ -1,0 +1,19 @@
+====== Using Keyboard Maestro macros in CafeTran ======
+
+Although [[http://www.cafetran.com|CafeTran]] already offers a lot of automation features that can be triggered manually via keyboard shortcuts, icons or menus–or that are executed automatically–, as in any other app: there's always room for improvement.
+
+I invest highly in my glossaries, since its entries are the bricks of my translations. So with the great help of Christopher Stone I've created some macros that I use hundreds of time during my working days as a technical translator. Just image how many keyboard strokes I've saved by using these great macros LOL
+
+My configuration:
+
+  * Mac OS X El Capitan (currently: 10.11.2)
+  * Java (currently: Java 8 Update 66)
+  * CafeTran 2016 (currently: Harbinger, version 2015-12-20-02)
+
+Please note that I cannot guarantee that the macros provided here, work in any other software configuration.
+
+There are [some macros on the forum](https://forum.keyboardmaestro.com/search?q=tag%3Acafetran%20category%3Amacro).
+
+Here are my macros:
+
+To be uploaded as soon as possible

@@ -1,0 +1,106 @@
+====== Administrative Details ======
+
+===== Requirements =====
+
+Keyboard~~Maestro~~11 requires macOS 10.13 or later.
+
+===== Distribution =====
+
+You may distribute this application in any way you wish as long as you only distribute the unmodified Keyboard~~Maestro package, as downloaded from www.stairways.com. You may not break Keyboard~~Maestro up into its component files and distribute parts of it separately.
+
+===== History =====
+
+Following on the success of Application~~Switcher for Classic~~Mac~~OS, Michael~~Kamprath wrote Keyboard~~Maestro for Mac~~OS~~X and released it in early 2002.  Incorporating an impressively powerful hot key macro facility, as well as Application and Clipboard Switching facilities, it rapidly became an indispensable tool for many Mac~~OS~~X users, including us here at Stairways~~Software.
+
+Development continued on version 1 through the end of 2002, and then work began on version 2.  The first beta of 2.0 was released in early 2003 and development continued until the 2.0b6 beta released in May 2003.  After that, life and work got in the way.  Keyboard~~Maestro languished for over a year as Michael found that he did not have the time or energy to continue development.
+
+Around May 2004, we contacted Michael as a concerned user to query the long delay in the eagerly awaited 2.0 release.  When we learned that Michael was considering abandoning the application we offered to purchase it from him to ensure that we would not lose this valuable tool, as well as to continue the fine tradition that he had started.
+
+On June 30, 2004 the deal was struck and Stairways~~Software acquired all the rights to Keyboard~~Maestro.  Our aim was to resolve the outstanding issues with Keyboard~~Maestro and release 2.0 as soon as possible, which we did in September 2004.  Keyboard~~Maestro 2 introduced many new Macro~~Triggers (such as Application, Time of Day, and so on), Macro~~Groups to allow easy control over when macros are active, and many new actions.
+
+Development of Keyboard~~Maestro competed for resources with development of Interarchy until the latter was sold to lead developer Matthew Drayton in early 2007.  After a short break, development on Keyboard~~Maestro~~3 started in earnest and resulted in many new features, including improved and streamlined user interface, recording, new triggers, built-in web server, new actions, and numerous minor enhancements.  Keyboard~~Maestro~~3 was released in April 2008 followed by a succession of releases over the rest of 2008.
+
+Development of Keyboard~~Maestro~~4 began in late 2008 and was released in late 2009.  Version 4 was a complete rewrite of the user interface, bringing with it a modern look and feel reminiscent of various modern Apple applications.  Further minor releases were made through 2010, followed by the initial release of Keyboard Maestro’s baby brother Switcher Maestro and the Mac App Store version in January 2011.
+
+By that point, development of Keyboard Maestro 5 was well under way and was released in July 2011.  Keyboard Maestro 5 built on the solid user interface of version 4, but added depth and breadth of power with almost no addition of complexity.  Keyboard Maestro added such powerful features as control flow, conditions, variables, and calculations as well as many new actions, and enhancements to the application and clipboard history switchers. Further minor releases were made over the next year, adding things like a For Each action, File actions and Image actions.
+
+Development of Keyboard~~Maestro~~6 began in mid 2012 and was released in May 2013.  Version 6 kept the user interface largely unchanged, while adding significant new features, including macro syncing, macro debugging, plug in actions, full support for styled text, support for controlling Safari and Google Chrome web browsers, trigger by name facility.   Keyboard~~Maestro~~6 also sported a stylish new icon from [[https://www.stairways.com/action/linkthru?iconaholic|Iconaholic]] as well as customizable status menu icons and full Retina graphic support. It was followed by a succession of releases throughout 2013 and 2014.
+
+Development of Keyboard~~Maestro~~7 began in late 2014 was was released in July 2015.  Version 7 concentrated on streamlining the editor, adding things like Smart Groups, auto-completion, Insert Action by name and menu, disclosure folding for sub-action lists, renaming, coloring, and adding notes to actions and more.  Version 7 also added themed palettes, and the usual plethora of new actions and triggers. Macro Groups could now be targeted at specific windows, and macros could be triggered by window, folder or clipboard changes.  It was followed by a succession of releases throughout 2016.
+
+Development of Keyboard~~Maestro~~8 began in late 2016.  Version 8 concentrated on further refinements to the editor, including AppleScript support, in-built assistance, variable text sizes, machine learning, dragging, Touch Bar support, expansion of various action menus and more.  Also new is enhanced MIDI support, Local/Instance variables, Dictionaries, Gesture, Cron and Remote triggers, and a bunch of new actions, conditions, collections and tokens.
+
+Development of Keyboard~~Maestro~~9 began in mid 2018.  Version 9 concentrated on adding Dark Mode support across all of Keyboard Maestro, multiple editor windows to the editor, OCR support, wide ranging JSON support, and extending support for regular expressions.  Version 9 also brings support for Stream Deck, and has a hardened runtime and is notorized for additional security.  There is also a plethora of new actions and lots of other refinements.
+
+Development of Keyboard~~Maestro~~10 began in early 2021.  Version 10 added further refinements to the editor, including saved Favorite actions and lots of extensions to contextual menus. The Engine also received some new facilities like displaying macro groups in the menu bar and more control over engine windows. There were a variety of new triggers and actions, including the “long press” option for Hot Key triggers and Paste by Name, Prompt for Screen Location, displaying progress, Try/Catch/Throw actions, and more.
+
+Development of Keyboard~~Maestro~~11 began in late 2022.  Version 11 added new features to the editor, including the New Macro Wizard and Security preference pane, new search strings, enhanced AppleScript support and additions to many actions. The Engine added a new `keyboardmaestro` command line tool, modern JavaScript syntax, control over variables sent to scripts, support for Apple Text Recognition, and more. There were new triggers, and many new actions including Prompt for Snippet, Create Calendar Entry, Send Pushover Notification, Set Screen Resolution, Get Location and more.
+
+Going forward, we plan to continue developing Keyboard~~Maestro, bringing it to new levels of both power and ease of use in the long tradition of both macOS and Stairways~~Software.
+
+===== Credits =====
+
+Thanks to Michael~~Kamprath for all his work producing Keyboard~~Maestro.
+
+Thanks to Alan Gentle for many example Macro ideas.
+
+Thanks to Philippe Martin for some great beta testing.
+
+Thanks to Dan Benjamin for doing the voice overs on the tutorial videos.
+
+Thanks to [[https://www.callboxlive.com/|Noah Kadner]] for the voice overs on the intro video.
+
+Thanks to Rakesh Kumar for the set of Switcher Macros.
+
+Thanks to Sam Stephenson and the Prototype Core Team for the Prototype JavaScript Framework.
+
+Thanks to Jono Hunt for the brilliant [[https://www.stairways.com/action/linkthru?iconaholic|Iconaholic]] icon and other help.
+
+Thanks also:
+
+* to [[https://www.sheepsystems.com/|Jerry Krinock]] for NS(Attributed)String+Geometrics.
+* to [[https://daringfireball.net/|John Gruber]], [[http://plasmasturm.org/|Aristotle Pagaltzis]] for Title Case.
+* to [[http://kelan.io/|Kelan Champagne]] for the [[http://kelan.io/2009/yrkspinningprogressindicators/|YRKSpinningProgressIndicator]].
+* to [[https://mattgemmell.com/|Matt Gemmell]] – Magic Aubergine for MGAnimatedView and MGTemplateEngine.
+* to [[https://www.mikeash.com/|Michael Ash]] for MAKVONotificationCenter.
+* to Matthew Ball for [[https://github.com/mattball/MBCoverFlowView|MBCoverFlow]].
+* to [[https://www.brockerhoff.net/|Rainer Brockerhoff]] for [[https://brockerhoff.net/src/rbs.html|RBSplitView]].
+* to [[https://www.literatureandlatte.com/freestuff.php|Keith Blount]] for KBWebArchiver.
+* to Brian D K Jones for VDKQueue.
+* to James Berry for Tag.
+* to [[https://flyingmeat.com|Flying Meat]] for FMDB.
+* to Random Ideas for NSTimer+Blocks.
+* for [[https://opencv.org/|OpenCV]].
+* for [[https://github.com/douglascrockford/JSON-c|JSON_Checker]].
+* for [[http://leptonica.org/|Leptonica]]
+* for SocketRocket.
+* for Tesseract.
+
+Thanks to Ken, Corentin, Stephen, Brad and others for their great assistance with beta testing.
+
+Thanks to Jim Underwood for outstanding assistance on the forum and wiki. Jim passed away in 2021 and he has been be sorely missed.
+
+Thanks to Christopher Stone and ComplexPoint and many others for their great help on the forum.
+
+Thanks to Andy for great help editing this documentation.
+
+Thanks also to the many others who have provided input and support over the past decade.
+===== Warranty =====
+
+This application should do what we have described in this document. If it does not, you can simply stop using it. If you purchase it, and within 30 days find that it does not do what we have described here, then you can request a refund and your money will be refunded and we will cancel your license.
+
+===== Licenses =====
+
+Keyboard~~Maestro is copyright Stairways Software Pty Ltd.  All Rights Reserved.  You may use this application for a short trial period and then you must purchase the application or stop using it.
+
+Keyboard~~Maestro is licensed on a per user basis and individual users may use it on up to five Macs.  You must purchase a license for each user using Keyboard Maestro. A license is for the current major version and generally includes minor updates to it. There will likely be an upgrade fee for any future major versions.
+
+Trademarks owned by Third Parties such as Mac, macOS, Mac OS X, OS X, and BBEdit, are owned by their respective owners and no license is granted for their use.
+
+===== Fine Print =====
+
+Keyboard~~Maestro, keyboardmaestro.com  and stairways.com are the property of Stairways Software Pty Ltd. Macros can be dangerous if misused, either accidentally or maliciously, especially if you install a third-party macro.  You are entirely responsible for the consequences of any macro execution, no matter what its source, even if it was included with Keyboard Maestro or comes from any Stairways Software web site including the wiki and forum.  Stairways Software Pty Ltd hereby disclaims all warranties relating to this software, whether express or implied, including without limitation any implied warranties of merchantability or fitness for a particular purpose. Stairways Software Pty Ltd will not be liable for any special, incidental, consequential, indirect or similar damages due to loss of data or any other reason, even if Stairways Software Pty Ltd or an agent of theirs has been advised of the possibility of such damages. In no event shall Stairways Software Pty Ltd be liable for any damages, regardless of the form of the claim. The person using the software bears all risk as to the quality and performance of the software.
+
+To be entirely clear, this software is provided "AS IS". You waive the implied warranty of infringement. Stairways Software's liability to you for costs, damages, or other losses arising from your use of the software - including third-party claims against you - is limited to a refund of your license fee. Stairways Software may not be held liable for any consequential damages related to your use of the software.
+
+Stairways Software can terminate your license by refunding your license fee.

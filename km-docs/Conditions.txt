@@ -1,0 +1,39 @@
+Keyboard Maestro includes a variety of control flow actions which perform actions depending on a set of conditions.
+
+The condition clause of the flow control actions can be any of:
+
+* Any of the following are true – at least one condition must be true.
+* All of the following are true – every condition must be true.
+* None of the following are true – no condition is true.
+* Not all of the following are true – at least one condition must be false.
+
+Caution: **If there are no conditions in the set at all, the action will typically not execute anything** except the Until action which will execute the actions once.  **Neither** side of the *If Then Else* will execute.
+
+Generally, a screen image and pixel conditions should be considered a last resort, but there are certain cases where it may be useful – keep in mind that you can use expressions for calculating the location of the pixel too.
+
+When talking about matches, note that “is” refers to equality, “contains” looks for a substring, “matches” uses regular_expression matching, and “conforms” refers to Universal Type Identifier matching (eg public.text).
+
+The available conditions include:
+
+~~NOCACHE~~
+<nspages condition -textPages="">
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Switch or Case|Switch or Case]]
+* [[action:For_Each|For Each]] action
+* [[action:Repeat|Repeat]] action
+* [[action:Until|Until]] action
+* [[action:While|While]] action
+* [[actions:Redirect_Control_Flow|Redirect Control Flow]] actions
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/compare-strings/3198/10|Compare strings?]]
+- [[https://forum.keyboardmaestro.com/t/need-window-condition-front-window-changes/3619/8|Need Window Condition: Front Window Changes]]
+

@@ -1,0 +1,9 @@
+====== SCREENSAVER Function ======
+
+The SCREENSAVER() function returns whether the Mac is currently displaying the screen saver (or the display is off).  It returns 1 if the screen saver is running, or the display is sleeping or locked.  Generally, if it returns 1 it is probably not safe to perform UI.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

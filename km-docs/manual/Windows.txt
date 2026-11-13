@@ -1,0 +1,331 @@
+====== Windows ======
+
+===== Welcome Window =====
+
+This window welcomes new users and gives you some options for learning about Keyboard Maestro.
+
+{{ welcome.png?nolink&1062x720 | Welcome Window }}
+
+If you are new to Keyboard Maestro, start the tutorial and Keyboard Maestro will walk you through creating a simple macro.
+
+===== Macros Window =====
+
+This window lets you manipulate Macros and Macro~~Groups, creating new ones, deleting old ones, enabling and disabling them, editing them and so on.
+
+You get this window pane by launching Keyboard~~Maestro.
+
+{{ macros.png?nolink&937x532 | Macros Window }}
+
+The window contains a list of Macro~~Groups and their associated Macros.
+
+You can create a new Macro~~Group by clicking the BUTTON{{{+}}} button below the Groups list.
+
+You can create a new Macro by selecting a macro group and then clicking the BUTTON{{{+}}} button below the Macros list.
+
+You can see the selected Macro~~Group or Macro in the right hand column, and edit it by clicking the Edit button.
+
+You can select the All Macros meta-Group to show all Macros, and you can use the search field to filter down the list of macros.
+
+You can rename a Macro~~Group or Macro by double clicking it and changing the title.
+
+You can delete a Macro~~Group by selecting it and clicking the BUTTON{{{-}}} button below the Groups list.
+
+You can delete a Macro by selecting it and clicking the BUTTON{{{-}}} button below the Macros list.
+
+Similarly, you can enable or disable Macro~~Groups or Macros by clicking their respective BUTTON{{{✓}}} button.
+
+You cannot delete, rename or modify the Global Macro Group.
+
+See also the [[Macro Groups]], [[Macros]] and [[Windows#Macro_Editor_Window|Macro Editor Window]] sections.
+
+===== Tutorial =====
+
+If you are new to Keyboard Maestro, start the tutorial by clicking the BUTTON{{{Start Tutorial}}} button in the [[Windows#Welcome_Window|Welcome window]] or by choosing the [[Menus#Tutorial|Help ➤ Tutorial menu]] and Keyboard Maestro will walk you through creating a simple macro.
+
+{{ tutorial.png?nolink&937x532 | Tutorial }}
+
+Follow the instructions.  Keyboard Maestro will hilight the location of the various buttons to help you quickly create a macro.  You can even use the tutorial as a wizard to create a hot key triggered macro to perform any of Keyboard Maestro’s many actions.
+
+===== Macro Group Editor =====
+
+To edit a Macro~~Group, select it and click the Edit button.  Its details will be shown in the right hand column.  You can edit its name, control which applications it is available in, and how it will be activated.
+
+{{ macrogroupeditor.png?nolink&937x624| Macro Group Editor }}
+
+Typically a group’s macros would be available everywhere (available in all applications), or it might be specific to a particular application (available in the following applications) in which case you might name the Macro~~Group after the application.
+
+You can also configure the macro group to be activated only after a Hot Key press (either for a single use or toggled on and off), and whether to display the macros in a floating palette.
+
+See also the [[Macros]] section.
+
+===== Macro Editor Window =====
+
+To edit a Macro, select it and click the Edit button.  Its details will be shown in the right hand column.  You can edit its name, add or remove triggers, and configure its action list.
+
+{{ macroeditor.png?nolink&937x589 | Macro Editor Window }}
+
+To add a trigger, click the green BUTTON{{{+}}} button and select the type of trigger.  To remove a trigger, click the red BUTTON{{{⊖}}} button.
+
+To see how to execute this macro via a script, select from the “Or by script”’ menu.  How you can execute the macro remotely is also displayed.
+
+To add an action, click the New Action button, or equivalently the BUTTON{{{+}}} button below the detail view.  This will show the lists of possible actions.  Double click one or more of them to add actions to the action list for this macro.
+
+You can also Copy and Paste actions, as well as drag them around to rearrange them.  Use the BUTTON{{{-}}} button and BUTTON{{{✓}}} button to delete or enable/disable the selected actions.
+
+You can try the selected actions by clicking the BUTTON{{{Try}}} button.
+
+You can click the BUTTON{{{Record}}} button to record your actions.
+
+To learn more about creating or editing Macros, see the [[Macros]] section.
+
+===== Macro Library Window =====
+
+This window contains example and template macros you can add to your macro collection.  You can use the macros as is, or edit them to customize them for your particular needs.
+
+You get this window by choosing the [[Menus#Macro_Library|Window ➤ Macro Library menu]].
+
+{{ macrolibrary.png?465x664 |Macro Library Window }}
+
+Each entry represents one or more macros, usually in a single macro group, but occasionally in more than one macro group.  You can learn about them by selecting them, and then you can insert them into your macros by clicking the BUTTON{{{Insert}}} button or by dragging them to a particular macro group (dragging is not available if the library entry represents more than one macro group as you can't drag to two macro groups).
+
+You can add macros to your library by choosing the [[Menus#Export_as_Macro_Library|File ➤ Export as Macro Library menu]] and selecting the Add to My Macro Library checkbox.  You can get Macro Library entries from us or from other Keyboard Maestro users and add them to you library by double clicking them or by choosing the [[Menus#Import_to_Macro_Library|File ➤ Import to Macro Library menu]].
+
+Remember to use caution when installing a macro or macro library from anyone – macros can potentially do a lot of damage and compromise the security of your Mac, so only install macros from trusted sources.  When importing macros from a file they will be imported disabled (either the parent macro group will be disabled, or if it exists already, the macros themselves will be disabled) unless you hold the Option key down.
+
+===== Icon Chooser Window =====
+
+This window contains icons you can use to customize your macro and macro groups.  You can click on an icon well in the macro or macro group editor and then show this window and select or create an icon for it.
+
+You get this window by choosing the [[Menus#Icon_Chooser|Window ➤ Icon Chooser menu]].
+
+There are three types of icons available.  Internal Keyboard Maestro icons:
+
+{{ iconchooserinternal.png?nolink&425x468 |Icon Chooser Window }}
+
+application icons available on your Mac:
+
+{{ iconchooserapplications.png?nolink&425x468 | Icon Chooser Window }}
+
+and icons you create by choosing a shape, color and optional character:
+
+{{ iconchoosercharacter.png?425x638 |Icon Chooser Window }}
+
+When creating icons, you can reference lots of characters, including SF Symbols in macOS 11+.
+
+Alternatively, you can copy an image from anywhere and paste it in to the icon well (although Keyboard Maestro stores a small reference to the Icon Chooser icons, so that is much more efficient that storing the image in your macros as copy & paste will).
+
+===== Macro Inspector Window =====
+
+This window shows you information about the selected macro or macro group.
+
+You get this window by choosing the [[Menus#Macro_Inspector|Window ➤ Macro Inspector menu]].
+
+{{ macroinspector.png?430x409 |Macro Inspector Window }}
+
+===== Mouse Display Window =====
+
+This window shows you the mouse location relative to any corner of the main screen or front window.
+
+You get this window by choosing the [[Menus#Mouse_Display|Window ➤ Mouse Display menu]].
+
+{{ mousedisplay.png?378x143 |Mouse Display Window }}
+
+You can click the BUTTON{{{🔒}}} button and then five seconds later Keyboard Maestro will lock the coordinates.  You can click the BUTTON{{{📋}}} button to copy the values, and you can change the relative corner even while the display is locked.
+
+===== Value Inspector Window =====
+
+This window shows you the value of the specified variables, clipboards, calculations or tokens.
+
+You get this window by choosing the [[Menus#Value_Inspector |Window ➤ Value Inspector menu]].
+
+{{ valueinspector.png?nolink&546x424 | Value Inspector }}
+
+The contextual menu (control or right click in the window) will allow you to toggle whether the window is displayed only while the Keyboard Maestro editor is at the front, or whether the window floats above all applications.
+
+===== Palette Theme Editor =====
+
+This window allows you to configure the appearance of the various macro palette.
+
+You can choose a style, the opacity of the palette, the size of the entries, the number of columns, whether the entries include the icon, the text and/or the trigger, and whether the palette shrinks when the mouse is not over it.
+
+{{ palettethemeeditor.png?nolink&479x481 | Palette Theme Editor }}
+
+===== Recording Window =====
+
+This window shows you when Keyboard~~Maestro is recording your actions.
+
+You get this window by clicking the BUTTON{{{Record}}} button in the [[Windows#Macro_Editor_Window|Macro Editor window]] or by triggering a Record~~Quick~~Macro action.
+
+{{ recording.png?86x125 |Recording Window }}
+
+Clicking on this window will stop all recording, or you can pause recording, or add a 0.25 second Pause action to the current recording. Option-clicking the BUTTON{{{Clock}}} button will turn on “real time” recording and Keyboard Maestro will record a pause between each action to simulate playback at approximately the same speed as the recording.
+
+To learn more about recording, see the [[Recording]] section.
+
+===== Macro Debugger =====
+
+You get this window by choosing the [[Menus#Start_Debugging|Status Menu ➤ Start Debugging menu]] by triggering a Debugger Start action.
+
+{{ macrodebugger.png?nolink&683 |Macro Debugger}}
+
+To learn more about debugging, see the [[Macro Debugger]] section.
+
+===== Conflict Palette =====
+
+You get a conflict palette when a Hot~~Key would trigger two or more actions.
+
+{{ conflictpalette.png?296x292 |Conflict Palette }}
+
+Note how the distinguisihing characters are highlighted – pressing those keys will select the desired trigger, or filter the list so that only those macros remain:
+
+{{ conflictpalette2.png?296x178 |Conflict Palette }}
+
+this continues until only one macro remains which is immediately executed.
+
+===== Trigger Macro by Name =====
+
+You get this window by executing the Trigger Macro by Name action.
+
+{{ triggermacrobyname.png?824x464 |Trigger Macro by Name }}
+
+Type a string to filter the macros.
+
+Note that the filtering is not just by macro name.
+
+===== Application Launcher Window =====
+
+This window lets you launch applications.
+
+You get this window by triggering the Activate~~Application~~Launcher macro.
+
+{{ applicationlauncher.png?900x227 |Application Launcher Window }}
+
+To learn more about the Application~~Launcher, see the [[Application Launcher]] section.
+
+===== Application Switcher Window =====
+
+This window lets you switch between active applications, as well as quit or hide applications or quickly launch frequently used applications.
+
+You get this window by triggering the Activate~~Application~~Switcher macro.
+
+{{ applicationswitcher.png?632x229 |Application Switcher Window }}
+
+To learn more about the Application~~Switcher, see the [[Application Switcher]] section.
+
+===== Window Switcher Window =====
+
+This window lets you switch between windows in the current application, as well as close or minimize windows.
+
+You get this window by triggering the Activate~~Window~~Switcher macro.
+
+{{ windowswitcher.png?468x493 |Window Switcher Window }}
+
+To learn more about the Window Switcher, see the [[Window Switcher]] section.
+
+===== Named Clipboard Switcher Window =====
+
+This window lets you select between named clipboards to Cut, Copy or Paste to/from.
+
+You get this window by triggering one of the Activate~~Clipboard~~Switcher macros.
+
+{{ namedclipboardswitcher.png?nolink&676x648 | Named Clipboard Switcher Window }}
+
+Select something and select a named clipboard and click the BUTTON{{{Cut}}} button or BUTTON{{{Copy}}} button to cut/copy to a named clipboard.  Select a named clipboard and click the BUTTON{{{Paste}}} button button to paste a named clipboard.  Click the BUTTON{{{+}}} button to create a new named clipboard.  Select a named clipboard and click the BUTTON{{{Quick Look}}} button to view it.  Select a named clipboard and click the BUTTON{{{-}}} button to delete it.
+
+Click the BUTTON{{{x}}} button to toggle whether the window should close after an action.
+
+Use the search field to filter the named clipboards.
+
+To learn more about the Clipboard Switcher, see the [[Named Clipboard Switcher]] section.
+
+===== Clipboard History Switcher Window =====
+
+This window lets you paste from your clipboard history of items that you have previously cut or copied.
+
+You get this window by triggering the Clipboard~~History~~Switcher macro.
+
+{{ manual:clipboardhistoryswitcher.png?nolink&674x718 | Clipboard History Switcher Window }}
+
+Cut or copy something and it will appear in this list.  Select an item and click the BUTTON{{{Paste}}} button button to paste a named clipboard.  Select an item and click the BUTTON{{{★}}} button (or press Command-L) to mark it as a favorite, or click the BUTTON{{{✉}}} button (or press Command-S) to send it to another Mac.  Select an item and click the BUTTON{{{-}}} button to delete it (this is useful if you want to delete a password or other sensitive information).
+
+To view an item more fully, select it and click the BUTTON{{{Quick Look}}} button (or press Space) to display the [[Windows#Clipboard_History_Switcher_Window|Quick Look window]].
+
+{{ quicklook.png?nolink&634x394 |Clipboard History Switcher Window }}
+
+To send a clipboard to another Mac running Keyboard Maestro, click the BUTTON{{{✉}}} button to display the sending window.
+
+{{ clipboardhistorysend.png?olink&672x663 |Clipboard History Switcher Window }}
+
+Select the desired local destination, or type a host:port destination to send it to a remote Mac, and click the send button.  Keyboard Maestro will keep trying to send to the Mac even if it can't connect right now, so as long as both Macs are connected to the Internet eventually, the clipboard should get through.  While a clipboard is being sent, it is marked with a progress icon.  If a clipboard is marked to be sent in the future, it is marked with a CODE{{{➹}}}.  Once it has been successfully sent, it is marked with a CODE{{{➚}}}.  If it fails to be sent, and Keyboard Maestro has given up, it is marked with a CODE{{{!}}}.  Clipboards that have been received are marked with a CODE{{{✉}}}.
+
+Click the BUTTON{{{x}}} button to toggle whether the window should close after an action.
+
+Use the search field to filter the named clipboards.
+
+To learn more about the Clipboard History Switcher, see the [[Clipboard History Switcher]] section.
+
+===== Preferences Window =====
+
+This window lets you configure Keyboard~~Maestro.
+
+You get this window by launching Keyboard~~Maestro and choosing the [[Menus#Preferences|Keyboard Maestro ➤ Preferences menu]].
+
+To learn more about the Preferences, see the [[Preferences]] section.
+
+===== Preferences General Pane =====
+
+This window pane lets you configure general preferences.
+
+{{ preferencesgeneral.png?nolink&582x641 | Preferences General Pane }}
+
+===== Preferences Palettes Pane =====
+
+This window pane lets you configure the default palettes style, as well as the global and conflict palette styles.
+
+You can also configure whether the conflict palette appears under the mouse.
+
+{{ preferencespalettes.png?nolink&582x527 | Preferences Palettes Pane }}
+
+===== Preferences Web Server Pane =====
+
+This window pane lets you configure the built-in web server which enables remote execution of macros.
+
+{{ preferenceswebserver.png?nolink&633x464 | Preferences Web Server Pane }}
+
+===== Preferences Clipboards Pane =====
+
+This window pane lets you add, remove and rename Named~~Clipboards and see and change their values.
+
+{{ preferencesclipboards.png?nolink&727x618 | Preferences Clipboards Pane }}
+
+===== Preferences Variables Pane =====
+
+This window pane lets you add and remove variables, and see and change their values.
+
+{{ preferencesvariables.png?nolink&727x618 | Preferences Variables Pane }}
+
+Variables listed in the Variables Panel include:
+
+  * Variables with values.
+  * All variables referenced directly in any action (although not as tokens).
+  * Minus all variables whose value has been set to "%Delete%" (this is provided for people who prefer not to see certain variable names in the pane or in variable insertion menus).
+
+===== Preferences Excluded Pane =====
+
+This window pane lets you add and remove applications from the global Excluded~~Applications list.
+
+{{ preferencesexcluded.png?nolink&582x560 | Preferences Excluded Pane }}
+
+===== Preferences Security Pane =====
+
+This window pane lets you see what system Security restrictions might limit your macros.
+
+{{ preferencessecurity.png?nolink&727x618 | Preferences Security Pane }}
+
+===== About Window Pane =====
+
+This window shows you the version of this copy of Keyboard~~Maestro, to whom it is registered, and allows you to visit the web site.
+
+You get this window by launching Keyboard~~Maestro and choosing the [[Menus#About_Keyboard_Maestro|Keyboard Maestro ➤ About Keyboard Maestro menu]].
+
+{{ about.png?nolink&428x503 | About Window }}

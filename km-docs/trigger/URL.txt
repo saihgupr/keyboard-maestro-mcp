@@ -1,0 +1,57 @@
+====== URL Trigger ======
+
+Any active macro can be triggered using the kmtrigger: scheme with a URL like this:
+
+    kmtrigger://macro=<MacroNameOrUUID>[&value=<TriggerValue>]
+    
+where
+
+    "<MacroNameOrUUID>" is either the URL encoded Macro Name, or the Macro UUID
+    "[&value=<TriggerValue>]" is the option to pass "<TriggerValue>" as the Macro %TriggerValue%
+       • Do not include the square brackets [ ] in the actual URL.
+       • Do not include the "&value=" without a value.
+ 
+You can pass a trigger value to the macro by adding the "value" query parameter to the URL.  The parameter is available to the macro as the [[token:TriggerValue|%TriggerValue% text token]] (v7.0+).
+
+Note that the URL must be validly encoded. The UUID is always validly encoded, but if you use the Name or a Value, ensure they are correctly encoded URL fields.
+
+For other ways to use a `URL` to trigger a macro, see:\\
+[Macro Triggers that Use a URL](https://forum.keyboardmaestro.com/t/request-for-a-working-example-of-remote-trigger/10844/10?u=jmichaeltx), 2018-07-15, peternlewis
+   
+===== Examples =====
+
+    kmtrigger://macro=Prompt%20With%20List%20%40TEST
+    kmtrigger://macro=984A3DBF-5B70-4031-979F-5AD44E3B24A5
+    kmtrigger://macro=Prompt%20With%20List%20%40TEST&value=MyTriggerValue
+    kmtrigger://macro=984A3DBF-5B70-4031-979F-5AD44E3B24A5&value=MyTriggerValue
+
+Note that a macro must be active (that is, it must be enabled, and the macro group that contains it must be enabled and active) in order for the macro to be triggered by any means including via URL.
+
+You can get the `kmtrigger` for a macro by clicking on the "or by URL:" popup in the Trigger section of the macro.
+
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Execute a Macro|Execute a Macro]]
+* [[:Actions|See all Actions]]
+
+==== Tokens ====
+
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+==== Triggers ====
+
+* [[Script|Script]] trigger
+* [[URL|URL]] trigger
+* [[keyboardmaestro|keyboardmaestro CLI Tool]]
+* [[Trigger File|Trigger File]]
+* [[/Triggers|All Triggers]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/what-exactly-are-those-keyboardmaestro-url-scheme-actions-and-how-do-i-use-them/2668|What exactly are those "keyboardmaestro URL Scheme" actions and how do I use them?]]
+
+- [[https://forum.keyboardmaestro.com/search?q=kmtrigger|Keyboard Maestro Forum topics about kmtrigger: scheme]]

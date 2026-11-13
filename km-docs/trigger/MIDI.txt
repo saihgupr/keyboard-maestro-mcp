@@ -1,0 +1,68 @@
+====== MIDI Trigger ======
+
+The *MIDI trigger* lets you execute a macro when a MIDI packet is received.
+
+You can trigger on specific notes, specific controller changes (v8+), or on any raw MIDI packet (v8+).
+
+If the *Allow Recording* (*MIDI Learn*) checkbox is on, and the note field has the text focus, and you press a MIDI note, then Keyboard Maestro will set the fields to the correct value for you; similarly for the controller field or the raw packet fields.
+
+====== Notes =======
+
+The macro can execute when the MIDI note is pressed (note on), released (note off) or continuously while it is held down.  This allows you to do things like have a macro execute when the key is pressed, and then a second macro execute when the key is released, for example to toggle a setting on and then off again.
+
+You can configure the trigger to execute the macro when the note is received from a particular device, from a particular channel or from any device or channel.
+
+The [[token:TriggerValue|%TriggerValue%]] token will hold `channel,note,velocity,device` for press and release (8.0.4+) (just the velocity was included prior to version 8.0).  You can easily access the individual parts using the token array notation:
+
+^ Token      ^ Value ^
+| %TriggerValue[1]%    | Channel         |
+| %TriggerValue[2]%    | Note            |
+| %TriggerValue[3]%    | Velocity        |
+| %TriggerValue[4]%    | Device          |
+
+
+====== Controller Change =======
+
+The macro can execute when the MIDI controller value changes (v8+).  Options include:
+
+* changes — every time it changes.
+* changes < — every time it changes and is less than the specified value.
+* changes <= — every time it changes and is less than or equal to the specified value.
+* changes to — every time it changes and is the specified value.
+* changes >= — every time it changes and is greater than or equal to the specified value.
+* changes > — every time it changes and is greater than the specified value.
+* changed — every time it changes to a different value.
+* changed < — every time it changes and is less than the specified value and was not previously.
+* changed <= — every time it changes and is less than or equal to the specified value and was not previously.
+* changed to — every time it changes and is the specified value and was not previously.
+* changed >= — every time it changes and is greater than or equal to the specified value and was not previously.
+* changed > — every time it changes and is greater than the specified value and was not previously.
+* decreases — every time it changes and is less than the previous value. (v8.0.4+)
+* increases — every time it changes and is greater than the previous value. (v8.0.4+)
+
+For the *changed* variants, the first controller change Keyboard Maestro sees is assumed to have changed if it matches the conditions.  After that, only changes from the previous state are considered.
+
+You can configure the trigger to execute the macro when the controller change is received from a particular device, from a particular channel or from any device or channel.
+
+The [[token:TriggerValue|%TriggerValue%]] token will hold `channel,controller,value,device` (8.0.4+).  You can easily access the individual parts using the token array notation:
+
+^ Token      ^ Value ^
+| %TriggerValue[1]%    | Channel         |
+| %TriggerValue[2]%    | Controller      |
+| %TriggerValue[3]%    | Value           |
+| %TriggerValue[4]%    | Device          |
+
+
+====== Packet =======
+
+This is a rather advanced trigger that requires some knowledge of the MIDI protocol (v8+).  You can configure the minimum and maximum size of the packet, as well as the range of the first two bytes, and a regex that matches the specified packet (the format will be a sequence of space-separated hex values).
+
+This should allow you to capture things like SysEx and HUI protocol packets and the like.
+
+The [[token:TriggerValue|%TriggerValue%]] token will the space-separated hex values representing the packet, followed by a comma, followed by the source device. You can get the two parts with.
+
+^ Token      ^ Value ^
+| %TriggerValue[1]%    | Data            |
+| %TriggerValue[2]%    | Device          |
+
+If you extract just the bytes (ie, everything up until the first comma), then you can then easily access the individual parts using the token array notation, eg `%DataVar[3] %` will be the third value (8.0.4+) — note the `{space}` in `]{space}%`, the space is the separator for the array, instead of the default comma.

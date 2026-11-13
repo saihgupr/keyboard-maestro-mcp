@@ -1,0 +1,28 @@
+====== Set Dictionary Value ======
+
+The Set Dictionary Value action (v8+) takes dictionary name and a key name and allows you to set the specified plain text value, by either typing in the text field, or selecting a [[:Tokens|Token]].
+
+The Dictionary name, Key name, and value can all contain text tokens, allowing a wide variety of uses.  You can turn off token processing for the value field to make it easier to include backslash or percent characters.
+
+Setting the value to the empty string deletes the key and value from the dictionary.  Setting all the values to the empty string deletes the dictionary.
+
+===== See Also =====
+
+* [[manual:Dictionaries|Dictionaries]] User Manual section
+
+=== Actions ===
+
+* [[action:Set_Dictionary_Value|Set Dictionary Value]] action
+
+=== Tokens ===
+
+* [[token:Dictionary|%Dictionary%]] token
+
+=== Collections ===
+
+* [[collection:Dictionaries|Dictionaries]] collection
+* [[collection:Dictionary_Keys|Dictionary Keys]] collection
+
+=== Forum ===
+
+- [[https://forum.keyboardmaestro.com/search?q=Dictionary|Keyboard Maestro Forum topics about Dictionaries]]

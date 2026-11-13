@@ -1,0 +1,27 @@
+The Set Mail Status action works on a selected message in Apple Mail. 
+
+Note that the currently selected mail message is not necessarily the front window, it may be a message selected in the viewer behind the front window, especially if the front window is a reply or new message.
+
+Select which status to set using the //Set Mail// pop-up:
+  *flag index.
+  *flagged status.
+  *read status.
+  *junk status.
+
+Set the status using the //to// pop-up:
+  *off — represented by the value 0.
+  *on — represented by the value 1.
+  *value.
+
+Note: if you select //value// then //off// and //on// will no longer be available.
+
+If you choose //value// then you must enter a number or choose one from the stepper control.
+
+Note that in Apple Mail flags may be:
+  *Red.
+  *Orange.
+  *Yellow.
+  *Green.
+  *Blue.
+  *Purple.
+  *Gray.

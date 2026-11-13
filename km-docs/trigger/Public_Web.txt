@@ -1,0 +1,59 @@
+{{:trigger:web-server-icon.png?nolink|}}
+
+====== Public Web Trigger ======
+
+
+The *Public Web trigger* makes a macro available without further authentication via the Keyboard Maestro web server.  See [[trigger:Web_Server|Set Setup and Use of Web Server]].
+
+The _Public Web Trigger_ is one of several triggers that use a `URL`.  See\\
+[Macro Triggers that Use a URL](https://forum.keyboardmaestro.com/t/request-for-a-working-example-of-remote-trigger/10844/10?u=jmichaeltx), 2018-07-15, peternlewis
+
+Any macro with the [[Public Web]] trigger can be triggered by anyone without the username or password, 
+assuming the Keyboard Maestro web server is enabled, and assuming they can connect to your Mac 
+(which is usually anyone on your local network, but depends entirely on how your network is configured).
+
+**Public Web Trigger on a Macro**
+
+{{:trigger:public-web-trigger-on-macro.png?nolink|}}
+
+**To Execute a Specific Macro**
+```html
+https://localhost:<Port+1>/action.html?macro=<YourMacroUUID>&value=<TheTriggerValueToPass>
+or
+http://localhost:<Port>/action.html?macro=<YourMacroUUID>&value=<TheTriggerValueToPass>
+(by default, the <Port> is 4490, <Port+1> is 4491)
+```
+
+===== Security Caution =====
+
+  * (!) Note that this means anyone with Internet access to your Mac (which could be anyone, although it does depend on firewalls and NAT settings) can potentially trigger this macro.
+  * So it should generally only be a safe macro, such as:
+    * Restarting a service that is always supposed to be running, or 
+    * Launching iTunes or 
+    * Reporting or alerting you to something.
+    * Some other fairly innocuous activity.
+  * Clearly there are some serious security issues with this, **so you should use a lot of caution when you allow any macro to be executed with a Public Web trigger**.
+
+As with all triggers, macros are only available if they are currently active, that is if they are enabled and in a Macro Group that is enabled and active.
+
+===== Examples =====
+
+For example, if you are running some sort of process on your Mac that occasionally fails, you could write a script to restart it and make it available as a Public Web triggered Macro, which you (or anyone else) could then execute to restart the process.
+
+For a complete example with a macro, see [MACRO:   @Web Open URL Passed from KM Public Web Server](https://forum.keyboardmaestro.com/t/open-url-passed-from-km-public-web-server/7019).
+
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[trigger:Web_Server|Web Server]]
+* [[Remote|Remote]] trigger
+* [[trigger:URL|URL Theme Trigger]]
+* [[/Triggers|All Triggers]]
+
+=== Forum Topics ===
+
+* [Issue Using Public Web Trigger ](https://forum.keyboardmaestro.com/t/issue-using-public-web-trigger/5302)
+* [MACRO:   @Web Open URL Passed from KM Public Web Server](https://forum.keyboardmaestro.com/t/open-url-passed-from-km-public-web-server/7019)
+* [Triggering Keyboard Maestro macros remotely, KM8, Peter Lewis](https://forum.keyboardmaestro.com/t/triggering-keyboard-maestro-macros-remotely/8277)

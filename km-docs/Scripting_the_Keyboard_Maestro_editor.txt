@@ -1,0 +1,172 @@
+====== Scripting the Keyboard Maestro editor ======
+
+As of v8.0, the Keyboard Maestro editor is fully OSA (Open Scripting Architecture) compatible.  This means you can edit your Keyboard Maestro macros from AppleScript in a variety of powerful ways.
+
+The Keyboard Maestro Scripting Definition (sdef) describes all the support, and you can open in in the Script Editor to see more details.  Here are some examples of what you can do:
+
+FIXME  Just adding this until I can provide a more complete script.
+
+===== 1. Selecting Lists of Objects in KM8 =====
+
+The `selection` property will return whatever is selected, and has focus, in the Keyboard Maestro editor.  So this could be any of these:  action, macro, macro group.  Here is how to get the selection, and determine the type (class) of the object that is selected:
+
+```applescript
+tell application "Keyboard Maestro"
+  
+  --- First Select an Action, Macro, or Macro Group
+  --    in the KM Editor, then run this script
+  
+  set kmList to selection
+  set kmClass to class of item 1 of kmList
+  
+  -->Based on selection, will return one of these:
+  -->action, macro, macro group
+  
+end tell
+
+```
+
+
+```applescript
+tell application "Keyboard Maestro"
+  set selList to selection
+  set macroList to selected macros
+  set grpList to selected macro groups
+end tell
+```
+
+
+===== 2. Get Current Macro Object =====
+
+```applescript
+
+tell application "Keyboard Maestro"
+  #    Ver 1.1    2017-09-20
+  
+  set macroList to every macro whose selected is true
+  
+  --- Make Sure Only ONE Macro is Selected ---
+  
+  if ((count of macroList) = 1) then
+    set oMacro to item 1 of macroList
+  else
+    error "Multiple Macros are selected.  Select only ONE and re-execute this script."
+  end if
+  
+  --- Now We can Get/Set Macro Properties ---
+  
+  set macroName to name of oMacro
+  
+  return macroName
+  
+end tell
+```
+
+===== 3. Macro Groups =====
+
+**Disable a Macro Group**
+
+<code applescript>
+tell application "Keyboard Maestro"
+   set enabled of macro group "Macro Group Name" to false
+end tell
+</code>
+
+**Edit a Macro Group**
+
+<code applescript>
+tell application "Keyboard Maestro"
+  editMacro "Macro Group Name or UID"
+end tell
+</code>
+
+**Get the list of currently selected macro groups**
+
+<code applescript>
+tell application "Keyboard Maestro"
+   set groupList to selected macro groups
+end tell
+</code>
+
+===== 4. Get and Create Variety of Editor Objects =====
+
+FIXME [JMichaelTX:  This script removed pending review & update].
+
+
+===== 5. Create Macro Group and Macros =====
+
+Before you use a macro group you probably want to check if it exists. The following example tests for the macro group's existence, based on a Keyboard Maestro input variable containing the macro group name -`macroGroup`.
+
+(This test is case-insensitive. For example macro group "Firefox" could also be specified as "firefox".)
+
+```applescript
+tell application "Keyboard Maestro Engine"
+  set macroGroup to getvariable "macroGroup"
+  if (macroGroup = "") then error "[ERROR]" & linefeed & "Invalid Macro Group Name. KM Variable \"" & "macroGroup" & "\" was empty or undefined."
+end tell
+
+tell application "Keyboard Maestro" -- Editor
+  if exists macro group macroGroup then
+    return true
+  else
+    return false
+  end if
+end tell
+```
+
+
+Here is a full example that creates a macro group called "Multiple Clipboards" and then creates 9 macros with hot Control-C and action to copy the clipboard to a named clipboard with name "Clipboard N" (where N is 1-9) and another set of 9 macros with hot key Control-V and action to paste from the named clipboard "Clipboard N"
+
+```applescript
+tell application id "com.stairways.keyboardmaestro.editor"
+	set mg to make new macro group with properties {name:"Multiple Clipboards"}
+	tell mg
+		repeat with i from 1 to 9
+			set m to make new macro with properties {name:"Copy " & i}
+			tell m
+				make new trigger with properties {xml:"<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>8</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>4096</integer>
+					</dict>"}
+				make new action with properties {xml:"<dict>
+						<key>Action</key>
+						<string>Copy</string>
+						<key>MacroActionType</key>
+						<string>ClipboardSwitcherMacroAction</string>
+						<key>RedundandDisplayName</key>
+						<string>Clipboard " & i & "</string>
+					</dict>"}
+			end tell
+			set m to make new macro with properties {name:"Paste " & i}
+			tell m
+				make new trigger with properties {xml:"<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>9</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>4096</integer>
+					</dict>"}
+				make new action with properties {xml:"<dict>
+						<key>Action</key>
+						<string>Paste</string>
+						<key>MacroActionType</key>
+						<string>ClipboardSwitcherMacroAction</string>
+						<key>RedundandDisplayName</key>
+						<string>Clipboard " & i & "</string>
+					</dict>"}
+			end tell
+		end repeat
+	end tell
+end tell
+```
+
+You can get XML by creating sample macros and then using the Copy as XML in the Edit menu.

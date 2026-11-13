@@ -1,0 +1,9 @@
+====== SIN Function ======
+
+The SIN(x) function returns the sine of its argument which is an angle in radians from the x-axis.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

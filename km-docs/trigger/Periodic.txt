@@ -1,0 +1,25 @@
+====== Periodic Trigger ======
+
+The *Periodic trigger* lets you execute a macro at specified intervals while you are logged in.
+
+
+{{:trigger:km-periodic-trigger.png?nolink&369|}}
+
+The //Period// of the trigger can be set as follows:
+  * Interval of seconds, minutes or hours.
+  * Limit to a certain portion of the day, or on particular days of the week.
+
+:!: **Caution:**  Generally it is recommended to //not// use very frequent intervals (like //seconds//), except as a last resort. Both because this will potentially use a lot of CPU and any macro triggering will cancel any “once” or conflict palette choices or the like, and so frequent timed trigger macros will cancel such things and may be unexpected.
+
+Note that periods that cross midnight will stop at midnight. Use two triggers if you want to trigger continuously before and after midnight.
+
+You could use a trigger like this to run periodic maintenance or track changes.
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[Cron]] trigger
+* [[Time of Day]] trigger
+* [[Idle]] trigger
+* [[/Triggers|All Triggers]]

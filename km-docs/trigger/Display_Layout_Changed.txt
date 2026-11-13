@@ -1,0 +1,43 @@
+====== Display Layout Changed Trigger ======
+
+The *Display Layout Changed trigger* (v9.0+) executes when the display layout changes, for example when you rearrange your monitors, add or remove a monitor, or change screen resolutions.
+
+The [[token:TriggerValue|TriggerValue token]] will contain a comma separated lists of the kinds of changes made:
+
+* Added
+* Removed
+* Enabled
+* Disabled
+* Mirrored
+* Unmirrored
+* Shape
+* Moved
+* Main
+* Mode
+
+You could use this trigger to perform actions when changes are made to the display layout. 
+
+===== See Also =====
+
+=== Functions ===
+
+* [[function:SCREEN|SCREEN]] function.
+* [[function:SCREENVISIBLE| SCREENVISIBLE]] function.
+* [[function:SCREENCOUNT| SCREENCOUNT]] function.
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* ===== See Also =====
+
+=== Triggers ===
+
+* [[trigger:Space_Changed|Space Changed]]
+* [[:Triggers|See all Triggers]]

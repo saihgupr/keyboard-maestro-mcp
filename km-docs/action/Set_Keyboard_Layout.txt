@@ -1,0 +1,1 @@
+The Set Keyboard Layout action allows you to choose a specific installed keyboard layout. See the System Preferences Keyboard pane to install additional keyboard layouts.

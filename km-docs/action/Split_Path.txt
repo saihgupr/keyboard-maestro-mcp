@@ -1,0 +1,26 @@
+====== Split Path ======
+
+The //Split Path// action (v8+) action splits a specified path into its component parts.
+
+{{:action:split-path.png?nolink&516|}}
+
+It is basically just a simplified version of the [[action:Search_using_Regular_Expression|Search using Regular Expression]] action specifically to split the path into the component parts.
+
+The path is split in to:
+
+* Parent path
+* File name
+* Base name — file name without the extension
+* Extension
+
+Each part can be saved into a different variable.
+
+If the path is not absolute, the parent path will be set to /Nowhere (v8.0.3+).
+
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Search_using_Regular_Expression|Search using Regular Expression]]
+

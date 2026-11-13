@@ -1,0 +1,17 @@
+====== Links ======
+
+Download Keyboard~~Maestro from [[https://download.stairways.com/]].
+
+Purchase Keyboard~~Maestro at [[https://purchase.stairways.com/]].
+
+Look up your current or previous license status and serial numbers, and get information about discounted upgrades from [[https://enquiry.stairways.com/]].
+
+Join the [[https://forum.keyboardmaestro.com/|Keyboard Maestro Forum]] online community consisting of the developers and Keyboard~~Maestro users at [[https://forum.keyboardmaestro.com/]].
+
+Documentation describing Keyboard~~Maestro is available at [[https://documentation.keyboardmaestro.com/]].
+
+A wiki containing additional information, macros and other resources for Keyboard Maestro is available at [[/|https://wiki.keyboardmaestro.com/]].
+
+For sales enquires, customer service, technical support, or to contact project management, our current contact information is listed at [[https://contact.stairways.com/]].
+
+For more information about anything to do with Keyboard~~Maestro visit [[https://www.keyboardmaestro.com/]].

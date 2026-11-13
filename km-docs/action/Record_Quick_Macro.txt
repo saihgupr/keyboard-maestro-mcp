@@ -1,0 +1,70 @@
+{{:action:record-button.png?nolink|}}
+====== Record Quick Macro ======
+
+[Recording](/manual/Recording) allows Keyboard Maestro to watch you as you perform a task and create the actions to produce a similar result.  For details, see the [Recording](/manual/Recording) page in the User Manual.
+
+The //Record Quick Macro// action is a variant of this which you can activate at any time //without launching Keyboard Maestro//.  It, like all Macros, can be triggered by a hotkey.  You can quickly trigger the start of recording, perform a series of actions, then stop (which saves) recording. When you're ready to apply the same actions again, just press the associated hot key (**[OPT] + [F1]** by default) to execute the recorded actions.
+
+----
+
+===== How to Create a Quick Recording =====
+(Note:  text in brackets **`[ ]`** denote keys on your keyboard)
+
+  -Activate the app and document you want to process, and place the cursor where you wish to start the steps to be recorded
+  -Press **[CTRL] + [F1]**  to **start** the recording
+  -Use your keyboard (avoid using your mouse) as you normally would to achieve the process of interest
+  -Press **[CTRL] + [F1]** again to **stop** the recording
+
+
+Press **[OPT] + [F1]** when you are ready to execute the macro.  Be sure your cursor is located at the starting point first.
+
+So for example, to make a Quick Recording, you press **[CTRL] + [F1]** to start quick recording, type “hello” and then press **[CTRL] + [F1]** again to stop recording.
+
+Then Keyboard Maestro will type “hello” each time you press **[OPT] + [F1]**.
+
+==== Cautions ====
+
+  -Because you cannot see or edit the recorded actions, it is best to keep them very simple.
+  -A good rule of thumb would be not to touch the mouse, just use the keyboard.
+  -Quick Recording stops if you change your macros. So if you try to use Quick Recording while editing a macro, as soon as you change your macro (and a short time later when it is saved) the quick recording will be terminated.
+
+----
+
+===== Examples =====
+
+
+For example, say you wanted to add quote marks around a dozen different words in a paragraph, you could
+
+  -Click in the middle of the first word
+  -Press **[CTRL] + [F1]** //to start quick recording//
+  -Press **[OPT] + [◀]** //to go to the start of the word//
+  -Type **["]**  //add a quote mark at start of word//
+  -Press **[OPT] + [▶]**  //go to end of word//
+  -Type **["]**  //add a quote mark at end of word//
+  -Press **[CTRL] + [F1]** //stop recording//
+
+Now click in the middle of each remaining word and press **[OPT] + [F1]**.
+
+{{:action:recordquickmacro.png?512|}}
+
+Enabling key repeat will repeat the playback of the recorded macro while you hold the hot key down.
+
+You can also trigger the macro from the Global Macro Platte or the Status Menu if desired.
+
+Keyboard Maestro automatically includes an implicit Semaphore at the start of the recorded macro so that you can trigger the resulting macro quickly multiple times and it will execute sequentially.
+
+----
+===== Downloads ====
+  - None
+
+----
+===== See Also =====
+==== Documentation ====
+
+  * [Recording a Macro](/manual/Recording)
+
+==== Forum ====
+  * 
+
+==== External References ====
+  * 

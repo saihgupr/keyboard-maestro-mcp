@@ -1,0 +1,12 @@
+====== MAX Function ======
+
+The MAX(x,y) function returns the maximum of its parameters.
+
+    MAX(96,12) === 96
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MIN]]
+* [[:Functions|See all Functions]]

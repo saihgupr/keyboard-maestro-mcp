@@ -1,0 +1,41 @@
+====== If Then Else Action ======
+
+The *If Then Else* action allows you to choose which of two sets of actions should execute. If certain conditions are met then execute one list of actions. If not, execute another. If there are no conditions set then no actions will execute.
+
+{{:action:ifthenelse.png?500|}}
+
+Drag one or more actions into the //No Action// areas.
+
+Select a way to meet the conditions:
+  *Any of the following are true — at least one condition must be true.
+  *All of the following are true — every condition must be true.
+  *None of the following are true — no condition is true.
+  *Not all of the following are true — at least one condition must be false.
+
+Add a new condition by clicking the green + button beside //New Condition// to select from a list of available conditions.
+
+Conditions are grouped by category. See the [[:Conditions|Conditions]] section for further details.
+
+~~NOCACHE~~
+<nspages condition -textPages="">
+
+After selecting a condition category you can make further choices. For example, if you choose the //Application Condition// you can choose a specific application to be running, or at the front, and so on.
+
+Add further conditions by clicking the green + button again.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Pause_Until|Pause Until]] action
+* [[action:For_Each|For Each]] action
+* [[action:Repeat|Repeat]] action
+* [[action:Until|Until]] action
+* [[action:While|While]] action
+* [[action:Assert|Assert]] action
+* [[actions:Redirect_Control_Flow|Redirect Control Flow]] actions
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/my-variable-thats-set-to-2-is-not-same-as-number-2/3004/2|My Variable that's set to 2 is not same as number 2]]

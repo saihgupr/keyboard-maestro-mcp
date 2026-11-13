@@ -1,0 +1,21 @@
+The //%ExecutingInstanceName%instance%// token returns (v9.0+) the name of an execution instance.  Generally this will be the name of the parent macro that was triggered (or “Trying” if the actions are “Tried” from the editor).
+
+{{ executinginstancename.png?nolink&527x411 | ExecutingInstanceName }}
+
+===== See Also =====
+
+==== Tokens ====
+
+* [[token:ExecutingMacro|%ExecutingMacro%]]
+* [[token:ExecutingMacroUUID|%ExecutingMacroUUID%]]
+* [[token:ExecutingMacroGroup|%ExecutingMacroGroup%]]
+* [[token:ExecutingMacroGroupUUID|%ExecutingMacroGroupUUID%]]
+* [[token:ExecutingThisMacro|%ExecutingThisMacro%]]
+* [[token:ExecutingThisMacroUUID|%ExecutingThisMacroUUID%]]
+* [[token:ExecutingThisMacroGroup|%ExecutingThisMacroGroup%]]
+* [[token:ExecutingThisMacroGroupUUID|%ExecutingThisMacroGroupUUID%]]
+* [[token:ExecutingInstance|%ExecutingInstance%]]
+* [[token:ExecutingInstances|%ExecutingInstances%]]
+* [[token:ExecutingInstanceName|%ExecutingInstanceName%]]
+* [[token:MacroNameForUUID|%MacroNameForUUID%]]
+* [[:Tokens|See all Tokens]]

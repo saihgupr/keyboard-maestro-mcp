@@ -1,0 +1,20 @@
+====== LENGTH Function ======
+
+The LENGTH() function returns the length of text that the action is operating on.
+
+The LENGTH() function is a special context sensitive function that only works in a few actions, like the [[action:Substring_of_Variable_or_Clipboard|Substring]] or [[action:Apply_Style_to_Clipboard|Apply Style]] actions, returning the length of the processed text (so, for example, you could have the text size be dependent on the length of the text).
+
+LENGTH() will not give you the character count of a simple string – for that you can use the [[CHARACTERS]] function or the Character Count [[action:Filter]].
+
+===== See Also =====
+
+=== Functions ===
+
+* [[function:CHARACTERS|CHARACTERS]]
+* [[:Functions|See all Functions]]
+
+=== Actions ===
+
+* [[action:Substring_of_Variable_or_Clipboard|Substring]]
+* [[action:Apply_Style_to_Clipboard|Apply Style]]
+* [[:Actions|See all Actions]]

@@ -1,0 +1,36 @@
+====== Translocation Problem ======
+
+In macOS Sierra, Apple added a strange security feature called App Translocation (sometimes known as Gatekeeper Path Randomization) which means that after downloading an application, if you do not move the resulting application somewhere (anywhere!), with the Finder (you must use the Finder!), the application will be run as if it is located at a randomly chosen path by the system. The consequence of this is that Launch Engine at Login will not work (because the Keyboard Maestro Engine will have a random, different, path each time), and version updates will fail (because Keyboard Maestro cannot replace itself).
+
+To resolve this:
+
+* Quit Keyboard Maestro and Keyboard Maestro Engine.
+* If Keyboard Maestro.app is already in the Applications folder, using the Finder move it somewhere else.
+* **Using the Finder** move the Keyboard Maestro.app to the Applications folder.
+* Launch Keyboard Maestro
+* Turn on Launch Engine at Login Keyboard Maestro preference (if desired).
+
+Manually moving the application in the Finder will turn off App Translocation. Moving it by other means (eg, PathFinder, Hazel, Keyboard Maestro, whatever) will not remove translocation.
+
+If even this process fails, then you can try:
+
+* Turn off Keyboard Maestro’s Launch Engine at Login.
+* Quit Keyboard Maestro Engine and Keyboard Maestro.
+* Delete Keyboard Maestro.app (either use the Finder “Delete Immediately” or trash it and empty the trash).
+* Verify there are no other copies of Keyboard Maestro on your Mac.
+* Download a fresh copy from [[https://download.keyboardmaestro.com]].
+* **Using the Finder** move the Keyboard Maestro.app to the Applications folder.
+* Launch Keyboard Maestro.
+* Turn on Launch Engine at Login Keyboard Maestro preference (if desired).
+
+You can determine if an application is running Translocated by looking at it with the Activity Monitor. Double click on the process in the listing to inspect it, and then look at its Open Files and Ports. One of the first entries will be the application executable, and if it is being Translocated it will have a long path, something like this:
+
+/private/var/folders/9t/ld0kwsdn/T/AppTranslocation/A5CA1CC2/d/Keyboard Maestro.app/Contents/MacOS/Keyboard Maestro
+
+If you still cannot get the flag removed, you can use the Terminal command:
+
+    xattr -dr com.apple.quarantine "/Applications/Keyboard Maestro.app"
+
+assuming that Keyboard Maestro.app is in the Applications folder.
+
+If you continue to have problems, [[https://support.keyboardmaestro.com/|contact support]].

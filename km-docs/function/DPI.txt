@@ -1,0 +1,15 @@
+====== DPI Functions ======
+
+The DPI(X|Y) and SOURCEDPI(X|Y) functions return the horizontal or vertical DPI of the images that the action is operating on in actions like the [Resize Image](action:Resize_Image) or the [Composite onto Image](action: Composite_onto_Image) actions.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]
+
+=== Actions ===
+
+* [Resize Image](action:Resize_Image)
+* [Composite onto Image](action: Composite_onto_Image)
+* [[:Actions|See all Actions]]

@@ -1,0 +1,108 @@
+====== Execute AppleScript Action ======
+
+The Execute an AppleScript action executes a specified AppleScript, either from a file or text.
+
+===== Setup =====
+
+When you insert an //Execute AppleScript// Action, it will appear as shown below.\\ 
+
+{{:action:execute-applescript-km8.png?nolink|}}
+
+**There are two setup options:**
+^ Setup Option ^ Choices\\ (Default shown first) ^
+| Script location | Execute text script (type or paste script into Action text field)\\ Execute script file (This may be faster if it is a compiled script file `.scpt`) |
+| Script Results | Ignored.\\ Displayed in a floating window.\\ Displayed briefly in a Notification.\\ Typed in the current text field that has focus.\\ Pasted in text field that has focus.\\ Saved to a Keyboard Maestro Variable.\\ Saved to the System or Named Clipboard.\\ Ignore Results and run //Asynchronously// (the script runs while the macro immediately continues on to the next //Action//.) |
+
+
+Here is a typical example with these options:
+  - **Script location**: //Execute text script//
+  - **Script Results**: //save results to variable//
+    * This causes the //Save to variable// field to appear at the bottom
+    * Since this variable is not needed after the macro finishes, a //Local// variable is used.
+    * While the script can set Keyboard Maestro Variables, it is generally better to just return the result from the script, then allow the user to choose the Variable.
+
+{{:action:execute-applescript-example-km8.png?nolink|}}
+
+When editing the script, you can press <key>Enter</key> to compile and format the script, and you can press <key>Option-Return</key> (v11.0+) to insert a line break (“¬”) character.
+
+If the script fails, the action will fail (v9.0+), potentially aborting the macro.
+
+===== Scripting =====
+
+For the latest update on this topic, see the User Manual article: [[manual:Scripting|Scripting]]. 
+This provides the latest method to get and set Keyboard Maestro variables via AppleScript.
+
+
+AppleScripts are executed in the background via osascript. This means they are not allowed to do user interaction. You can work around this by asking the current application to do the user interaction for you, for example:
+
+```applescript
+tell application "System Events"
+  set currentAppName to name of first application process whose frontmost is true
+end tell
+
+tell application currentAppName
+  display dialog "Your message here" with title "Your Title here"
+end tell
+
+```
+
+===== Using Keyboard Maestro Variables =====
+
+Keyboard Maestro sets the environment variables for the script to include all (by default) your variables, using a prefix of `KMVAR_` and your variable name with spaces changed in to underscores (‗). For example, your Keyboard Maestro “File Name” variable will be available as the environment variable `KMVAR_File_Name`. By default, all variables are included, but you can limit which variables are included by using the popup menu next to the script (v11.0+). Note that these provide a readonly copy of the value of the variables when the script starts.
+
+Also, you can (7.1+) access Keyboard Maestro variables directly like this:
+
+```applescript
+tell application "Keyboard Maestro Engine"
+    set v to getvariable "<KM Variable Name>"
+    setvariable "<KM Variable Name>" to "<New Value>"
+end tell
+```
+
+where both the `<KM Variable Name>` and `<New Value>` are text values.
+
+===== Local & Instance Variables =====
+
+To get or set [[manual:Variables#Scope|Local or Instance Variables]], you must pass the macro execution instance to the `getvariable` or `setvariable` command.  The instance is passed in to your script via the `KMINSTANCE` environment variable (v8.0.3+).
+
+```applescript
+set kmInst to system attribute "KMINSTANCE"
+tell application "Keyboard Maestro Engine"
+	set v to getvariable "Local__SomeLocalVariable" instance kmInst
+	setvariable "Local__FromAS" instance kmInst to "Variable set in AppleScript."
+end tell
+
+log v
+```
+
+===== Error Handling =====
+
+If the Applescript contains errors, a system notification will be displayed when the action is run (unless you have disabled them in System Preferences).
+
+If a Notifications is displayed, it can happen the error message gets cut off.
+
+To see the entire message, view the Keyboard Maestro Engine Log, which can be found using the Keyboard Maestro.app Editor menu _Help > Open Logs Folder_, or just open this file:
+`~/Library/Logs/Keyboard Maestro/Engine.log` and searching for "AppleScript".
+
+You should find a log entry like this:\\
+  2021-07-21 16:43:53 Execute an AppleScript failed with script error:
+  [path to file]/TEST Handle Script Error in KM.scpt: 
+  execution error: [ERROR]:  Can’t divide 5.0 by zero.
+  
+Unfortunately the Keyboard Maestro Engine log file is very verbose, and it can be very hard to find the actual error.  So, you may find this custom macro useful:\\
+[MACRO:   Display Last KM Macro Error Ver 4 [Pub]](https://forum.keyboardmaestro.com/t/display-last-km-macro-error/5340).
+
+Also, if you are writing a lot of AppleScripts, then you will find it very beneficial to always include a custom error handler in your script, and then use a custom Action after the _Execute AppleScript_ Action to check for an error and provide much better reporting.\\
+Here is an example of such an Action/Macro to handle errors:  [[KM] Script Error Handler [Sub-Macro] ](https://forum.keyboardmaestro.com/t/km-script-error-handler-sub-macro/4641).
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Execute_a_Shell_Script|Execute a Shell Script]]
+* [[action:Execute an Automator Workflow|Execute an Automator Workflow]]
+* [[action:Execute a JavaScript For Automation|Execute a JavaScript For Automation]]
+* [[action:Filter|Filter Variable with Expand Tilde In Path]]
+* [[:Actions|See all Actions]]
+
+

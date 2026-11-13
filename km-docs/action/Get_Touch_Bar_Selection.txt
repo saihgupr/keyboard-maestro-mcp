@@ -1,0 +1,32 @@
+====== Get Touch Bar Selection Action ======
+
+The //Get Touch Bar Selection// action (v8+) lets you display a set of buttons in the Touch Bar and process the result.
+
+The buttons are separated by vertical bars (|) just like the [[action:Prompt_for_User_Input#Popup_Field|Prompt for User Input]] Popup fields.  So, for example `F__Fail|C__OK|B__Good|A__Excellent` would display the four buttons Fail, OK, Good, Excellent and return a value of F, C, B or A.
+
+Note that unlike the [[action:Prompt_for_User_Input#Popup_Field|Prompt for User Input]] Popup fields, there are no separators and no concept of the initially selected field.
+
+==== Output of Results ====
+
+The resulting button can be:
+
+  * Ignored.
+  * Displayed in a floating window.
+  * Displayed briefly in a Notification.
+  * Displayed large across the screen.
+  * Typed in to the current selection.
+  * Pasted in to the current selection.
+  * Saved to a variable.
+  * Saved to the system or a Named Clipboard.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Alert|Alert]] action
+* [[action:Prompt_for_User_Input|Prompt for User Input]]
+* [[action:Prompt_With_List|Prompt With List]] action
+* [[action:Prompt_for_File|Prompt for File]] action
+* [[action:Prompt_for_Screen_Rectangle|Prompt for Screen Rectangle]] action
+* [[action:Custom_HTML_Prompt|Custom HTML Prompt]] action
+* [[:Actions|All Actions]]

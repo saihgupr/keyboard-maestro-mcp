@@ -1,0 +1,47 @@
+The Filter action is extremely powerful for editing the contents of a variable, clipboard or file.
+
+{{:action:filter.png?nolink&424|}}
+
+Select the source for the filter, which can be the [[:Clipboards|System Clipboard]], a [[:Clipboards|Named Clipboard]], the [[:Clipboards|Trigger Clipboard]] (v8+), a variable, some tokenised text (v8+), or a file (v8+).
+
+Prior to v8.0 there were separate Variable and Clipboard Filter actions.
+
+Select the filter to use from the //with// pop-up.
+
+The __available filters__ are described in the [[manual:Filters|Filters]] user manual section.
+
+Select where the result should go - back to the source or to a clipboard, variable or file. Prior to v8.0 the result was always saved back to the source.
+
+The list of possible filters will likely expand, so if you have specific filtering needs that you think might be of general interest, please let us know. In the mean time, remember that you can apply scripted filters using an AppleScript or shell script.
+
+For example the Execute Shell Script action:
+
+{{:action:filter-shell.png?nolink&424|}}
+
+is roughly equivalent to the Uppercase filter, for the System Clipboard, except that it only works with ASCII characters.
+
+Note that the definition of what a character, word, or line is is more than a little ambiguous, so if you have strict requirements for your definition you will need to calculate it yourself to ensure you get the answer you require.  For example, the line count will return the number of lines, with a minimum of one, which will not necessarily be the same as the number of end-of-line characters, and the number of characters may or may not count multi-plane unicode characters as one character, and we wont even attempt to define what is and isn’t a single word.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[Get File Attribute]]
+* [[Set File Attribute]]
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/potential-bug-with-titlecase-or-new-user-error/2235/3|Potential bug with Titlecase (or new user error)]]
+- [[https://forum.keyboardmaestro.com/t/search-and-replace-paragraph-mark-in-clipboard-text/2310|Search and replace paragraph mark in clipboard text?]]
+- [[https://forum.keyboardmaestro.com/t/filter-action-line-count-behaviour-is-odd/11679/11|Filter Action (Line Count) behaviour is odd]]
+- [[https://forum.keyboardmaestro.com/t/create-a-macro-to-strip-html-tags-from-text/2918/5|Create a macro to strip HTML tags from text]]
+- [[https://forum.keyboardmaestro.com/t/replace-special-characters-with-html-entities/3378/9|Replace special characters with HTML Entities?]]
+- [[https://forum.keyboardmaestro.com/t/what-does-filter-variable-variable-with-value-of-named-variable-do/3875/3|What does "Filter Variable ‘Variable’ with Value of Named Variable" do?]]
+
+
+- [[https://forum.keyboardmaestro.com/search?q=Filter|Keyboard Maestro Forum topics about Filter clipboard / Variable]]
+
+==== Keywords ====
+
+Change Case, Expand Path, Full Path

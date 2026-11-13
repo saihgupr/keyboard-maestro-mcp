@@ -1,0 +1,21 @@
+====== MusicPlayerState Token ======
+
+The //MusicPlayerState// token (v11.0+) returns the current player state of the Music application. The possible result values are:
+
+* stopped
+* ‌playing
+* ‌paused
+* ‌fast forwarding
+* ‌rewinding
+* not running
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:CurrentTrack|%CurrentTrack%]] token
+* [[:Tokens |See all Tokens]]

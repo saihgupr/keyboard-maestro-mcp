@@ -1,0 +1,24 @@
+The //Modifiers condition// determines if the specified modifiers are pressed or not.
+
+You can check for whether any of the modifiers (Control, Option, Shift, Command or Caps Lock) are pressed, or are released.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[action:Type Modifiers|Type Modifiers]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/keystroke-option-key-only/912/7|Keystroke: Option Key Only]]
+- [[https://forum.keyboardmaestro.com/t/modifier-keys-are-not-holding-but-instead-repeating/3098/2|Modifier keys are not holding but instead repeating]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Modifiers|Keyboard Maestro Forum topics about Modifiers]]

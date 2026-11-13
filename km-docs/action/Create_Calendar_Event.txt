@@ -1,0 +1,43 @@
+====== Create Calendar Event ======
+
+The _Create Calendar Event_ action (v11.0+) allows you to create a calendar event.
+
+{{ create-calendar-event-action.png?nolink&674x417 | Create Calendar Event Action }}
+
+Choose a name for the entry and the calendar to add it to.
+
+(i) If you see not calendars, then you probably have not enabled the Keyboard Maestro Engine in the Calendars system security permission. If you see one calendar, then (in Sonoma and later) you probably need to enable Full Calendar Permission Option in the system security permissions.
+
+Choose the starting time, which is a function calculation. The default entry gives you an easy to use calculation:
+
+```
+TIME(YEAR(),MONTH(),DAY()+1,9,0,0)-GMTOFFSET()
+```
+
+Which would be 9am tomorrow local time.
+
+Then choose the duration or ending time. Duration can be a time in Minutes, Hours, or Days. Ending time is  a calculation like the starting time.
+
+The event can be configured to be All Day.
+
+You can add an alarm for a specified number of Minutes, Hours, or Days before the event.
+
+The event can optionally repeat daily, weekly, fortnightly, monthly or yearly.
+
+You can include an optional location or URL or description.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[function:TIME|TIME]]
+* [[function:GMTOFFSET|GMTOFFSET]]
+* [[:Functions|See all Functions]]
+
+==== Tokens ====
+
+* [[:Tokens|See all Tokens]]

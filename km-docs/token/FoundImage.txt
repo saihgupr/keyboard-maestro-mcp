@@ -1,0 +1,48 @@
+{{:condition:image-icon.png?nolink|}}
+====== FoundImage Token ======
+
+The //%FoundImage%// [[:Tokens|Token]] (v8+) returns the details of the last found image in this execution instance. The last found image could have been found by a number of //Actions// or [[:Conditions|Conditions]], like [[action:Find_Image_on_Screen|Find Image on Screen Action]].
+
+The token returns the same data about the last found image as the [[action:Find_Image_on_Screen|Find Image on Screen Action]]:
+  * left
+  * top
+  * width
+  * height
+  * fuzz
+
+For example, after finding an image on the second monitor, this token would return:\\
+`2060,136,60,56,0`
+
+If you set a Variable (say `ImageLoc`) to this token, then you may reference individual properties using this notation:
+
+* ImageLoc.x — Horizontal position of upper left corner.
+* ImageLoc.y — Vertical position of upper left corner.
+* ImageLoc.width — the Width of the match (same as the source image).
+* ImageLoc.height — the Height of the match (same as the source image).
+* ImageLoc.fuzz — the Fuzz of the match.
+* ImageLoc.Midx — Horizontal position of center.
+* ImageLoc.Midy — Vertical position of center.
+
+The following result in this token being set to the last found image:
+
+* [[action:Find_Image_on_Screen|Find Image on Screen]] action
+* [[action:Move_or_Click_Mouse|Move or Click Mouse]] action
+* Any [[:Actions|Action]], like the [[action:Pause_Until|Pause Until Action]], which uses the [[condition:Found_Image|Found Image Condition]]
+* FIXME:  Others??
+
+
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|All Actions]]
+
+=== Conditions ===
+
+* [[condition:Found_Image|Found Image]] condition
+
+=== Collections ===
+
+* [[collection:Found_Images|Found Images]] collection
+

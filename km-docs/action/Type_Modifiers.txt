@@ -1,0 +1,20 @@
+The Type Modifiers action allows you to type the Control, Option, Shift and Command keys.
+
+Select the modifiers to type from the panel of icons on the action.
+
+{{:action:typemodifiers.png|}}
+
+Use the gear icon at right of the action to select the specific typing action:
+
+* Press and Release
+* Press and Hold
+* Release
+
+Notes:
+
+* Keys that are pressed stay pressed only as long as the macro continues to run.
+* If a [[action:Insert_Text_by_Typing|Insert Text by Typing]] Action follows a _Press and Hold_ of a modifier key, the text is typed without the modifier key.  For more information, see [[https://forum.keyboardmaestro.com/t/macro-select-or-show-a-menu-item-key-pressed/703/18?u=jmichaeltx | this Forum post]].
+
+---
+
+**Keywords:** Press and Hold, Modifier, Key, Press Key

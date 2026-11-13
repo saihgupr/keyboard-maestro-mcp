@@ -1,0 +1,20 @@
+====== FLOOR Function ======
+
+The FLOOR(x) function takes a number and returns the first integer that is less than or equal to the argument:
+
+    FLOOR(5.5) === FLOOR(5.1) === FLOOR(5) === 5
+    FLOOR(-5.5) === FLOOR(-5.1) === FLOOR(-6) === -6
+
+The FLOOR() function (v11.0+) takes a second optional parameter to indicate the number of decimal digits to operate to:
+
+    FLOOR(5.6789,2) === 5.67
+    FLOOR(-5.6789,2) === -5.68
+
+===== See Also =====
+
+=== Functions ===
+
+* [[CEIL]]
+* [[TRUNC]]
+* [[ROUND]]
+* [[:Functions|See all Functions]]

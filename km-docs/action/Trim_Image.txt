@@ -1,0 +1,1 @@
+The Trim Image action trims transparent areas from the edge of an image on the system clipboard or a named clipboard.

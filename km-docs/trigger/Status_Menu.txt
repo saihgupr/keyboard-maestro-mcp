@@ -1,0 +1,24 @@
+====== Status Menu Trigger ======
+
+The *Status Menu trigger* lets you add your macro to the Keyboard Maestro status menu so you can trigger it by selecting the macro name from the status menu.
+
+Keyboard Maestro displays a status menu in the right hand side of the menu bar, and it includes any active macros with the Status Menu trigger.  Keyboard_Maestro will only display the Status Menu triggered macros that are active, so if your Macro is restricted to particular applications, then it will only appear in in the Status Menu while those applications are active.
+
+The Status Menu is particularly useful for less frequently used macros whose Hot_Key you might forget or for macros that *feel* like menu actions like opening or processing files, or arranging windows.  You could use a trigger like this to add custom facilities to applications.
+
+You can control the sorting order of macro groups and macros by adding two characters and a closing bracket (eg “01)My Macro”).  The prefix will be removed before displaying in the status menu, but will be used to control the order of the macros shown.
+
+If the macro name is just “-” (after the sorting characters are removed) then the a divider will be shown in the menu instead.
+
+You can edit a macro by holding down the option key and selecting it from the status menu.
+
+===== See Also =====
+
+===  Triggers ===
+
+* [[Group_Status_Menu|Group Status Menu]] trigger
+* [[:Triggers|See all Triggers]]
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]

@@ -1,0 +1,35 @@
+{{:action:screen_capture.png?425|}}
+
+The Screen Capture action captures a specified object or area of the screen to the system clipboard or a named clipboard.
+
+Select the object or area to capture from the //Capture// pop-up:
+  *all screens
+  *main screen
+  *screen with index
+  *the front window
+  *window with title
+  *window with title containing
+  *window with title matching
+  *window with index
+  *area
+
+Select which clipboard to write to from the //to// pop-up.
+
+Two options for the action are available from the gear icon in the top right corner of the action:
+  *Include Shadows
+  *Always Nominal Resolution
+
+Nominal resolution means the images will be captured at 72dpi despite a possibly higher dpi used by the monitor (for example, if you have a retina monitor, without this option the screen capture would be at 144dpi).
+
+Keyboard Maestro does NOT replicate OSX's interactive capture area functionality – e.g. <key>⌘</key><key>⇧</key><key>4</key>.
+
+Unfortunately Apple has not provided an API for that.
+
+Therefore to use it in a script you need to use an **Execute a Shell Script** action:
+
+```
+screencapture -ic
+```
+This will capture interactively to the clipboard.
+
+Enter “man screencapture” in the Terminal.app for more information.

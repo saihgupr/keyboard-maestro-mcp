@@ -1,0 +1,29 @@
+====== Subroutines ======
+
+A subroutine is a sequence of actions that perform some sort of sub-task, and that can be executed from multiple different macros that each require the facility. For example, in Keyboard Maestro you might want a subroutine that saves a web page to a PDF.
+
+Subroutines might take parameters to affect their behaviour, such as the URL of the web page, or the path to the file to save, or they might return values, such as success or failure, or the result of calculation.
+
+In Keyboard Maestro, traditionally subroutines were implemented with the [[action:Execute_a_Macro|Execute a Macro]] action, passing a single parameter to the [[token:TriggerValue|%TriggerValue%]] token, and returning results in instance or global variables.
+
+In version 10.0, Keyboard Maestro adds an explicit [[trigger:Subroutine|Subroutine]] trigger which lets you specify the parameters by name, and whether the macro returns a value via the [[action:Return_from_Subroutine|Return from Subroutine]] action. Such subroutines are called with the [[action:Execute_a_Subroutine|Execute a Subroutine]] action.
+
+Note that parameters are internally passed by index, so if you later change the Subroutine trigger, and add or remove parameters, or change the meaning of parameters, you will need to adjust the various Execute a Subroutine actions as well - you can get to them directly using the Callers menu in the trigger.
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[trigger:Subroutine|Subroutine]] trigger
+* [[:Triggers|See all Triggers]]
+
+=== Actions ===
+
+* [[action:Return_from_Subroutine|Return from Subroutine]] action
+* [[action:Execute_a_Subroutine|Execute a Subroutine]] action
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:TriggerValue|%TriggerValue%]] token
+* [[:Tokens |See all Tokens]]

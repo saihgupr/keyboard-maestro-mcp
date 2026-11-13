@@ -1,0 +1,129 @@
+====== Editor Window ======
+
+To edit your macros, launch the Keyboard Maestro application.  It will display one or more Editor Windows.  If you close the last editor window, the Keyboard Maestro application will quit, but the Keyboard Maestro Engine will continue running to perform your macros.  Normally you only launch the Keyboard Maestro editor application when you want to change your macros, and leave only the Keyboard Maestro Engine running normally.
+
+You can create a new editor window by choosing the [[Menus#New_Editor_Window|File ➤ New Editor Window menu]].
+
+===== Window Elements =====
+
+{{ editor-window-marked.png?nolink&937x589 | Editor Window }}
+
+==== Main Elements ====
+
+  - **//Groups Column//** 1️⃣ (on the left)
+    * List of all of the [[Smart_Groups|Smart Groups]] (top) and [[Macro_Groups|Macro Groups]] in your account.
+    * Smart Groups are saved searches of macros.
+  - **//Macros Column//** 2️⃣ (in the middle)
+    * List All of the [[Macros]] in the selected groups.
+    * Macros are the primary way you describe what you want Keyboard Maestro to do.
+    * You can filter the list to find specific macros by using the Search Field 7️⃣ (upper right corner).
+  - **_Details Column_** 3️⃣ (on the right)
+    * Display or Edit the details of the selected Macro, Macro Group, or Smart Group.
+      * This is where you enter the actual details of the selected Macro.
+      * The layout changes depending on which type is selected. For [[Macros|macros]], it includes the name, the enabled state, the [[Macro_Triggers|triggers]] and the [[Macro_Actions|actions]]. For [[Macro_Groups| macro groups]], it includes the name and enable state, as well as details about when and how it is activated or displayed. For [[Smart_Groups|smart groups]], it includes the name and what macros to show.
+  - You can resize the columns with the dividers 4️⃣, and double click on them to auto-resize the columns.
+  - **//The Toolbar at Top//** 5️⃣ shows the tools that apply to all macros. See below for details.
+  - **//The Toolbar at Bottom//** 6️⃣ includes tools below each of the columns that apply to each column (so Groups, Macros or the specific Macro). See below for details.
+
+===== Toolbar at Top =====
+
+{{ editor-top-toolbar.png?nolink&937x85 | Editor Top Toolbar }}
+
+Along the top of the window is the toolbar.  From left to right the buttons let you:
+  - **//Share//** 1️⃣ Share your Macros or Actions, including directly to the [[https://forum.keyboardmaestro.com/|Keyboard Maestro Forum]].
+  - **//Used//** 2️⃣ Select the most recently used (triggered) macros.
+  - **//History//** 3️⃣ Select from the recently edited macro history.
+  - **//Modified//** 4️⃣ Select the most recently edited macro.
+  - **//Run//** 5️⃣ Run the selected macro.
+  - **//Search//** 6️⃣ Search for Macros and Actions.
+    * Press <kbd>⌘F</kbd> to search Macros only in the selected Macro Group.
+    * Press <kbd>⌘⌥F</kbd> (or <kbd>⌘F</kbd> a second time) to search all Macros.
+    * If you enter simple text, it will search for any text in any Action, or Macro Name, that contains that text.
+    * To better restrict the Search, use [[:manual/Search_Strings|Search Strings]].
+    * Tap a modifiers key to enter the corresponding modifier symbol.
+    * The _Macros Column_ will be filtered to only matching macros.
+    * Any parts of the macro that match will be highlighted in striped blue in the _Details Column_.
+    * If any macros are filtered out, an entry will show at the bottom of the macro column list representing all the hidden macros.
+
+===== Toolbar at Bottom =====
+
+{{ editor-bottom-toolbar.png?nolink&937x38 | Editor Bottom Toolbar }}
+
+Each column has three common buttons (underlined in the image). These are:
+
+  * Create (BUTTON{{{+}}})
+  * Delete (BUTTON{{{-}}})
+  * Enable/disable (BUTTON{{{✓}}})
+
+Use them to create or delete or enable/disable Macro Groups, Macros, or Actions respectively.
+
+The remainder of the toolbar includes:
+  - **Groups Column Buttons** 1️⃣ including the Create Smart Group button and the common buttons for creating or deleting or enable/disabling macro groups.
+  - **Macro Column Buttons** 2️⃣ including the New Macro Wizard button and the common buttons for creating or deleting or enable/disabling macros.
+  - **Details Column Buttons** including the common buttons for creating or deleting or enable/disabling actions and:
+    - Set Action Timeout 3️⃣ for selected action.
+    - Toggle BUTTON{{{Edit}}} Mode 4️⃣
+    - BUTTON{{{Try}}} the selected actions 5️⃣. \\ This is for testing _Actions_, **not** running the entire Macro. \\ To test the entire Macro, click the Run BUTTON{{{▶︎}}} Button in the Top Toolbar.
+    - BUTTON{{{Record}}} button to start [[Recording| Macro Recording]] 6️⃣
+
+===== Editing =====
+
+Edit mode may be toggled on/off by clicking the BUTTON{{{Edit}}} button on the Bottom Toolbar, or by selecting the menu  _View > Stop/Start Editing Macros_. Note that macros are saved immediately after every change (there is a small “dirty” marker in the bottom right corner of the editor window that shows when the save occurs). There is no need to ever turn off Edit mode, or do anything else to have your macro changes be recognised by the Keyboard Maestro Engine.
+
+==== Actions ====
+
+**You can add a new action by any of the following:**
+  - Click the BUTTON{{{New Action}}} button.
+  - Click the BUTTON{{{+}}} button at the bottom of the _Details Column_ to display the list of actions.
+  - Choose the [[Menus#Insert_Action_by_Name|Edit ➤ Insert Action By Name menu]].
+  - Press <kbd>⌘⌃A</kbd> to show a Insert Action By Name Popup.
+  - Choose from the [[Menus#Insert_Action|Edit ➤ Insert Action menu]].
+
+==== Macros ====
+
+When you are in Edit Mode and you select a Macro, you can edit its behaviour.
+
+{{ macro-editor-marked.png?nolink&937x737 | Macro Editor }}
+
+  - **//Icon and Name//** 1️⃣ You can adjust the icon by double clicking the icon and selecting an image in the [[Icon Chooser]] and you can change the name of the Macro.
+  - **//Enabled//** 2️⃣ You can enable or disable the macro with this checkbox. \\ A macro must be enabled for it to be available to be triggered (executed) - its parent macro group must also be enabled and active.
+  - **//Triggers//** 3️⃣ You can add [[Macro Triggers]] to the macro which control when the macro will run.
+  - **//More Triggers//** 4️⃣ You can add more than one trigger to define different ways that you can start the macro.
+  - **//Actions//** 5️⃣ You then add one or more [[Macro Actions]] which definite when the macro does when it runs.
+  - **//New Action//** 6️⃣ Click the New Action button to add additional actions.
+
+==== Triggers ====
+
+A macro consists of a set of triggers 3️⃣.  When it is active (ie, when it is enabled, and its parent Macro Group is enabled and active), if any of these [[Macro_Triggers|triggers]] happen, then the macro executes the [[Macro_Actions|actions]].
+
+You can add a trigger by clicking and holding on the green BUTTON{{{+}}} button and selecting the kind of trigger you would like to use.
+
+Some triggers, like the [[trigger:Status_Menu|Status Menu]] trigger 3️⃣, do not have any additional configuration. Simply adding them to the macro will have macro triggered when the event happens (in this case, the macro will be listed in the Keyboard Maestro status menu, and will be triggered if you choose it from that menu).
+
+Other triggers, like the [[trigger:Typed_String|Typed String]] trigger 4️⃣, require you to configure more details about when the trigger should happen, such as the specific string you have to type to trigger the macro.  For the macro shown, the macro will be triggered when you type the string “=-=”.
+
+When a macro is triggered, it will execute the actions 5️⃣.
+
+==== Macro Groups ====
+
+You can select a Macro Group to edit it (turn on Edit Mode if necessary by clicking the BUTTON{{{EDIT}}} button).
+
+{{ macro-group-marked.png?nolink&937x731 | Macro Group Editor }}
+
+You can adjust the icon by double clicking the icon 1️⃣ and selecting an image in the Icon Chooser and you can change the name of the Macro Group.
+
+For a Macro to be available to trigger, it must be enabled and its parent Macro Group must be enabled 2️⃣, and active.  The configuration for the Macro Group controls when it will be active, and thus when the macros it contains will be active (available to be triggered and executed).
+
+You can adjust whether the macro group is enabled 2️⃣, whether it is only active in some specific applications 3️⃣ (ie, when they are at the front, and their menu bar is showing), whether it is only active in specific windows 4️⃣, whether it is only active when you explicitly toggle it on or off, and whether and how it shows a palette containing its macros 5️⃣ and whether and how the macro group displays in the menu bar 6️⃣.
+
+==== Smart Groups ====
+
+You can select a Smart Group to edit its search settings (turn on Edit Mode if necessary by clicking the BUTTON{{{Edit}}} button).
+
+{{ smart-group-marked.png?nolink&937x396 | Smart Group Editor }}
+
+You can adjust the name of the Smart Group 1️⃣, and adjust its [[Search_Strings|Search Strings]] 2️⃣.
+
+You can add another Search String by clicking the green BUTTON{{{+}}} button. Any macro that matches any of the search strings will be listed in the Macros column.
+
+

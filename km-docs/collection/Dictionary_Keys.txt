@@ -1,0 +1,21 @@
+The //Dictionaries Keys collection// (v8+) lists all the keys from a specified dictionary.
+
+===== See Also =====
+
+* [[manual:Dictionaries|Dictionaries]] User Manual section
+
+=== Actions ===
+
+* [[action:Set_Dictionary_Value|Set Dictionary Value]] action
+
+=== Tokens ===
+
+* [[token:Dictionary|%Dictionary%]] token
+
+=== Collections ===
+
+* [[collection:Dictionaries|Dictionaries]] collection
+
+=== Forum ===
+
+- [[https://forum.keyboardmaestro.com/search?q=Dictionary|Keyboard Maestro Forum topics about Dictionaries]]

@@ -1,0 +1,13 @@
+====== Overview ======
+
+Keyboard~~Maestro will take your Macintosh experience to a new level. Keyboard Maestro enables you to create or record custom macro shortcuts that you can activate at any time. For example, your macros could help you navigate running applications or work with an unlimited number of clipboards. Best of all, every macro you create is available using simple keystrokes you choose or a variety of other triggers. The only limit to Keyboard Maestro is your imagination!
+
+Using Keyboard~~Maestro’s powerful [[Macros]], you can make your Mac behave the way you want it to behave – open documents when and where you want them, type sentences with the press of a key, expand abbreviations into entire paragraphs, control web applications, and much more. You simply define what you want your Mac to do and when you want it done.
+
+Keyboard~~Maestro comes complete with a [[Clipboard History Switcher|clipboard history]], saving everything you copy for later use so you’ll never lose something on your clipboard again, as well as [[Named Clipboard Switcher|named clipboards]] where you can store commonly used images or text.
+
+Keyboard~~Maestro also includes a powerful [[Application Switcher]] and [[Window Switcher]] so you can cycle through applications or windows, closing, hiding, launching, and more as well as an [[Application Launcher]] that lets you quickly launch applications.
+
+Keyboard~~Maestro requires a Mac running macOS 10.13 High Sierra or later.
+
+Keyboard~~Maestro is free to try with no limitations. Once the trial period ends, a [[Purchase|license must be purchased]] to continue using it.

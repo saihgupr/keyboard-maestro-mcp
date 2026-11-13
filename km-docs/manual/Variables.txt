@@ -1,0 +1,169 @@
+====== Variables ======
+
+Like most programming languages, Keyboard Maestro allows you to create Variables to store data for use later on in the same Macro, or in other Macros.
+
+Variables can be set from many actions.  You can set variables to specific [[manual:Tokens| tokenised]] text, to the result of a [[manual:Calculations| calculations]], from user input, from the Keychain, by searching other variables, from the [[token:CurrentClipboard| clipboard]] or [[token:NamedClipboard|Named Clipboards]], as the result of [[:Scripting|scripts]], and from many other sources.
+
+===== Variable Naming Rules =====
+
+Anywhere an [[:Actions|Action]] requires a Variable, you can enter any name you like (even though often  a default name is provided), as long as it conforms to these rules:
+  - Variable names must start with a letter, and then can contain letters, numbers, spaces, or underscores.
+  - Some Variable kinds require a specific prefix (see _Scope_ below).
+  - Variable names are case insensitive, but their case is remembered.
+  - Variable names should not include a function or operator name with spaces around it.
+     *(eg “ MOD ” , so “A MOD B” would not be a valid variable, although “MODULE” would be fine).
+
+
+===== Scope =====
+
+
+Keyboard Maestro includes variables with different breadth or scopes, in order of scope, with broadest scope first:
+
+^ Scope ^ Availability ^
+| **Global**, permanent variables | • Accessible basically everywhere, including Scripts.\\ • Permanently stored on your Mac drive. \\ • Available for read/write in any Macro or Action, not just the Macro where the Variable was created. \\ * Persist between logins and restarts of your Mac. \\ • You can also see and edit variables in the Preferences.\\ • You can see global variables in the [[Windows#Value_Inspector_Window |Value Inspector]]. |
+| **Password**, semi-permanent variables | • Name must begin or end with “PW” or “password” (case insensitive).\\ • Stored only in memory. \\ • Available to macros but not displayed.\\ • Not directly accessible via AppleScript. \\ • Concealed in password fields in Prompt For User Input actions.\\ • Not saved to disk. |
+| **Instance Variables**, local to a specific macro execution instance | • Name must begin with “instance” (case insensitive).\\ • Restricted  to a specific execution sequence.\\ • Available to the Macro where it was created and Sub-Macros of that Macro, for a given execution instance of the main macro.\\ • These variables are private to each execution of the same Macro, even when running simultaneously.\\ • Accessible by [[action:Prompt_for_User_Input|Prompt For User Input]]\\ • Accessible by scripts (when used in an Execute Script Action).\\ • Accessible by [[action:Custom_HTML_Prompt|Custom HTML Prompt]].\\ • Accessible by AppleScript with the `instance` specifier. |
+| **Local Variables**, local to a specific macro | • Name must begin with "local" (case insensitive)\\ • Restricted to the specific Macro it is in.\\ • //Not// available to any of its Sub-Macros\\ • Same accessibility as Instance Variables. |
+
+Macros can create or read existing variables, which persist and are permanently stored (except Local and Instance variables which are transient, and Password variables which are never saved to disk).
+
+Variables contain only plain, un-styled, text and may be used in any token text field in an action, as well as in [[Calculations]] in a numerical field if they contain a valid number or expression.
+
+Since multiple instances of a macro could be running at the same time, using Local or Instance variables should generally be preferred so that each execution instance has its own independent variables.
+
+(i) Note that Local and Instance Variables are available in scripts only when the script is called in an Execute Script action, unless you specify the execution instance explicitly.
+
+(!) Note that while Password variables are not directly available to scripts, their contents can easily be extracted, eg with the Set Clipboard to Text action, so you should clear them as soon as they have served their purpose.
+
+===== Setting Variables =====
+
+Variables are usually created and set by [[:Actions|Macro Actions]], but can also be set by [[#Using_Variables_in_Scripts|scripts]].  The Action that sets a variable will create it if need be.  Variables do not need to be declared in any way.
+
+The most direct action to set a variable is the [[action:Set_Variable_to_Text|Set Variable to Text]] action.
+
+{{ :token:km-wiki-set-variable-action.png?nolink |}}
+
+This action processes the tokens and backslashed characters in the text and sets the variable.  As will all [[:Text_Fields|text fields]], if you wish to use another variable in the text you must use the [[token:Variable|%Variable%]] token, eg `The value is %Variable%VarName%`. 
+
+You can also use the [[action:Set_Variable_to_Calculation|Set Variable to Calculation]] action.  This action evaluates the numeric expression and then sets the variable to the result.  As with all numeric fields, if you wish to use another variable in the calculation, you use the variable unadorned, eg `VarName * 3`.
+
+There are many other [[:Actions|actions]] that set variables.
+
+===== Using Variables =====
+
+There are many Macro Actions that can use variables.  Some of these explicitly provide for entry of the variable name, but most provide for a more general text entry that accepts either token text or a numeric expression.
+
+When editing a field:
+
+* Fields that expect text tokens show a small BUTTON{{{T}}}.
+* Fields that expect calculations show a small BUTTON{{{C}}}.
+* Fields that expect just a variable name show a small BUTTON{{{V}}}.
+
+==== Variables in Text Fields ====
+
+Variables can be used in text fields using the [[token:Variable|%Variable%]] token, for example the //%Variable%//`VariableName`% token includes the value of the `VariableName` variable in the text.
+
+For Example, using the [[action:Insert_Text|Insert Text]] Action:
+
+{{ :token:km-wiki-insert-text-action.png?nolink |}}
+
+You can also use a short form of just //%Variable Name%// to include variables as long as the variable exists and has a value and there is no corresponding text token, although generally it is better and clearer to use the longer form //%Variable%Variable Name%//.
+
+==== Variable Arrays ====
+
+
+While technically all Variables are just strings, you can access a variable as if it were an array by setting the Variable to a delimited list of text, and then using the following notation:
+
+`%Variable%<VariableName>[<IndexNumber>]%`
+
+where 
+  * "`<VariableName>`" is any valid Keyboard Maestro Variable with a delimited set of values.
+    * By default the comma `,` is the delimiter (see below for setting a custom delimiter).
+  * "`<IndexNumber>`" is an integer indicating the index (starting with 1) of the array value within the Variable Array.
+    * Negative indices start from the end of the array.
+    * Zero index returns the count.
+    * This index can be determined using any [[manual:Calculations|Calculation]], including simply a Variable Name, like `i`.
+    * Examples: 
+      * `%Variable%myList[i]%`
+      * `%Variable%myList[3 * i + 2]%`
+
+**How to Use Custom Array Delimiter**
+
+Place the //custom// delimiter //after// the //closing// bracket `]`. 
+  * For Example:  `%Variable%myList1[i]:%`, where the colon `:` is the delimiter used in the Variable Array.
+  * Of course, the Variable Array, //myList1// in this case, //must// use the same custom delimiter.
+  * The delimiter can be any sequence of characters excluding the percent (%) character, eg `%Variable%myList1[i]---%` or `%Variable%myList1[i]-KMSPLIT-%` or `%Variable%myList1[i]\n%` as long as the array variable uses the same delimiter.
+
+**Simple Example of Variable Array**
+
+{{:manual:variable-array-simple-example.png?nolink|}}
+
+**Example of Variable Array Using a Variable for the Index**
+
+{{:manual:variable-array-example-for-each.png?nolink|}}
+
+==== Variables in Calculation Fields ====
+
+Variables can be used in calculations if their value holds a number or a numeric expression that can be evaluated.  Variables are used *unadorned* in calculations, for example `My Variable * 7`.
+
+You can also access variables in a token field numerically using the [[token:Calculate|%Calculate%]] token.  **It is important to note that calculations can contain only numeric values**.  When you use the [[token:Calculate|%Calculate%]] token to reference a variable or variable array element, it will convert the element to a number.
+
+=== Variable Dot Notation ===
+
+In a Calculation field you can reference the numbers in a variable which contains a coordinate or rectangle (which is always a string, eg "100,100,200,200") using dot notation:
+
+| Variable.x | x coordinate |
+| Variable.y | y coordinate |
+| Variable.left | the left coordinate of a rectangle |
+| Variable.top | the top coordinate of a rectangle |
+| Variable.right | the right coordinate of a rectangle |
+| Variable.bottom | the right coordinate of a rectangle |
+| Variable.width | the width of a rectangle or size |
+| Variable.height | the height of a rectangle or size |
+| Variable.fuzz | the fuzz of an image match (rectangle,fuzz) |
+| Variable.MidX | the horizontal middle of a rectangle |
+| Variable.MidY | the vertical middle of a rectangle |
+
+The Variable Name and Dot reference are case insensitive.
+
+==== Using Variables in Scripts ====
+
+Variable values can be accessed from scripts you execute with Keyboard Maestro via environment variables, and from AppleScript using AppleScript commands to the Keyboard Maestro Engine, and from web browser JavaScript you execute with Keyboard Maestro via the `kmvar` dictionary, see the [[Scripting]] section for more details.
+
+You can get and set Keyboard Maestro Variables (Global, Local, and Instance) in these types of scripts:
+  * [[:AppleScript|AppleScripts]]
+  * [[action:Execute_a_JavaScript_For_Automation#GetSet_Keyboard_Maestro_Variables|JavaScript for Automation (JXA)]]
+  * [[action:Execute_a_JavaScript_in_Google_Chrome|JavaScript in Safari or Google Chrome]] (**Get only**)\\ 
+  * [[action:Custom_HTML_Prompt#Using_JavaScript|JavaScript in Custom HTML Prompts]] 
+  * [[action:Execute_a_Shell_Script|Shell Scripts]] (**Get only**)
+  * [[action:Execute_a_Swift_Script|Swift Scripts]]
+
+And you can generally access Keyboard Maestro variables anywhere else via [[:AppleScript|AppleScript]] from whatever language you want to use.
+
+===== Deleting Variables =====
+
+* //Global// Variables continue to exist (remained stored) until their value is set to the empty string, even when the Keyboard Maestro Engine is quit and relaunched.
+* //Password// Variables, continue to exist (remained stored) until their value is set to the empty string, or until you quit the Keyboard Maestro Engine.
+* Setting a Variable to `%Delete%` does //not// technically delete it.  It continues to exist.  It is just //hidden// from view in all of the Variable lists and in the //Preferences//.
+* However, a Variable set to `%Delete%` will behave as if it does //not// exist in most Actions, like a [[action:If_Then_Else|If Then Else]] Action using a //Variable Condition// comparing to //exists//.
+
+
+It may be a good idea to set a Variable to the empty string if you no longer need it, or if it contains sensitive information (like a password) or a large value (like a file or web page contents).
+
+Perhaps the best way to avoid variable clutter and eliminate sensitive and/or large values is to use either //Local// or //Instance// Variables when you do not need the Variable after completion of the Macro in which the Variable is used.
+
+===== Inserting In Actions =====
+
+You can add a variable to an action using the [[Menus#Insert_Variable|Edit ➤ Insert Variable menu]] or [[Menus#Insert_Function|Edit ➤ Insert Function ➤ Variable menu]] or [[Menus#Insert_Token|Edit ➤ Insert Token ➤ Variable menu]], or by selecting from the popup menu next to some variable fields.
+
+Fields that expect just a variable show a small BUTTON{{{V}}} in the field while editing it, and you can use Type Completion to complete variable names in such fields.
+
+===== View Your Entire List of Variables =====
+
+You can add, delete, see or change global variables in the [[Windows#Preferences_Variables_Pane|Variables preference pane]] that have been created by your macros and scripts.
+
+Local and Instance Variables are _not_ accessible from the Preferences Window.
+
+===== Watching a Variable’s Value =====
+
+You can use the [[Windows#Value_Inspector_Window |Value Inspector]] to watch the value of a global variable.

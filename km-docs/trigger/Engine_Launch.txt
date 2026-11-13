@@ -1,0 +1,25 @@
+====== Engine Launch Trigger ======
+
+The *Engine Launch* trigger executes the macro when the Keyboard Maestro Engine launches.  
+
+You can use this to set up Keyboard Maestro variables or enable or disable macros or otherwise configure your Keyboard Maestro state.
+
+You can also use this similarly to the [[trigger:Login| Login trigger]] to setup Keyboard Maestro or your Mac in a standard configuration.
+
+===== See Also =====
+
+=== Actions ===
+
+ * [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]
+

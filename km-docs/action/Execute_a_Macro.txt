@@ -1,0 +1,28 @@
+====== Execute a Macro Action ======
+
+
+The *Execute Macro* action allows you to execute another macro like a subroutine, though without any ability to pass parameters or receive a result other than through variables (if you want to pass parameters in to a sub-macro or receive a result from it, consider making it a subroutine by adding the [[trigger:Subroutine|Subroutine]] trigger to it and using the [[action:Execute_a_Subroutine|Execute a Subroutine]] action instead).  The sub-macro will be executed, and when it is finished, execution will continue on from after this action.
+
+You can optionally configure the action to be *Asynchronous*, which means the sub-macro will be executed as a new execution instance, and the current macro will continue on without waiting so that both macros will be executing at the same time.
+
+You can optionally configure a parameter for the executed macro which will be available via the [[token:TriggerValue|%TriggerValue%]] token.
+
+{{ :action:wiki-macro-minimal-160125.jpg?600 |}}
+
+{{ :action:wiki-macro-with-parameter-160124.jpg?600 |}}
+
+{{ :action:wiki-macro-minimal-result-160125.jpg?450 |}}
+
+ExtraSearchTags: *Run Macro*, *Run a Macro*, *Call Macro*, *Sub Macro*
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[trigger:URL|URL]]
+* [[:Triggers|See all Triggers]]
+
+=== Actions ===
+
+* [[action:Execute_a_Subroutine|Execute a Subroutine]] action
+* [[/Actions|Actions]]

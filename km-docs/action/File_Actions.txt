@@ -1,0 +1,74 @@
+====== File Actions ======
+
+This Action is actually a multipurpose Action that provides the following Options:
+(Most Options can be used with either a File or Folder, except as indicated.)
+  * Reveal in Finder
+  * Create Unique File (v10.0+)
+  * Move (v11.0+)
+  * Rename (v11.0+)
+  * Move or Rename
+  * Copy
+  * Duplicate
+  * Move to Trash
+  * Delete File (permanently)
+  * Delete Directory (permanently)
+
+Delete is obviously dangerous, and Delete Directory is extremely dangerous. Ensure you have full system backups before using this action.
+
+===== How To Use =====
+
+Select the action you wish to perform.
+
+Click the File Chooser button on the right of an action to select an existing file or folder on disk. Option-click on the File Chooser button to show the currently selected file or folder in the Finder (assuming it exists already).
+
+The Action Options (as shown in the popup above) are:
+
+^ Option ^ Description ^
+^ Reveal | brings the Finder to the front with the file or folder selected. |
+^ Create Unique File (v10.0+) | create a new unique file based on the path you supply, adjusting the base name to something unique, and returning the new file path in the specified variable. |
+^ Move (v11.0+) | moves a file or folder. |
+^ Rename (v11.0+) | renames a file or folder. |
+^ Move or Rename | moves and/or renames a file or folder. |
+^ Copy | copies a file or folder. You must specify a name and location for the copy.\\ Since this requires a destination for the copy, if you want to just copy the file to the Clipboard, see [MACRO:   Choose File and Copy It [Example]](https://forum.keyboardmaestro.com/t/choose-file-and-copy-it-example-macro-v9-0-2/15581) |
+^ Duplicate | duplicates a file within the same folder and adds // copy// to the filename. |
+^ Trash | moves a file or folder to the Trash (on remote volumes, the system may immediately delete the file) |
+^ Delete File | deletes a file (but not a folder) with no warnings or confirmation messages. The file is deleted and not moved to the Trash. Be careful with this action. |
+^ Delete Directory | Be **extremely careful** with this action as it deletes the folder and all its contents with no warnings or confirmation messages. |
+
+==== Move and/or Rename ====
+
+The option _Move_or_Rename_ allows you to do three different things, based on the data you supply in the _to_ field.  In all cases, the _Source Item Path_ field must be the _full path_ to the source Finder item (file or folder) that is being acted upon.
+
+If you specify a folder in the _to_ field (eg `~/Documents/SomeFolder`), the file will be moved to the specified folder.
+
+If you specify a file name (without any slash `/`) (eg `NewName.jpg`), then the file will be renamed.
+
+If you specify a full path to a new location with a new name (optionally the same name) (eg `~/Documents/SomeFolder/SomeName.jpg`), then the file will be moved and renamed.
+
+The _Move_ option requires the _to_ field to specify an existing folder and moves the specified source file or folder to the new location.
+
+The _Rename_ option requites the _to_ field to specify only a file name (without any slash `/`) and renames the file or folder without moving it.
+
+=== Overwrite Existing File(s) ===
+
+You will get an error/failure if the destination file already exists.  So, if you want to overwrite the destination file, you will need to first move the destination file to macOS Trash.  For an example of this, see [How to move all files in a specific folder and replace](https://forum.keyboardmaestro.com/t/how-to-move-all-files-in-a-specific-folder-and-replace/9601)
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Append Text to a File|Append Text to a File]]
+* [[action:Read a File|Read a File]]
+* [[action:Write to a File|Write to a File]]
+* [[action:New Folder|New Folder]]
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+* [[https://forum.keyboardmaestro.com/t/backup-to-usb/3132/7|Backup to usb]]
+* [[https://forum.keyboardmaestro.com/t/move-or-rename/4518/3|Move or Rename]]
+* [How to move all files in a specific folder and replace](https://forum.keyboardmaestro.com/t/how-to-move-all-files-in-a-specific-folder-and-replace/9601)
+* [[https://forum.keyboardmaestro.com/search?q=Rename%20File|Topics about Rename a File action]]
+* [[https://forum.keyboardmaestro.com/search?q=Trash%20File|Topics about Trash File action]]
+
+**Keywords: ** Create Folder, Move to Trash, Copy File, Copy Folder, Duplicate File, Reveal File, Reveal Folder, Move File, Move Folder

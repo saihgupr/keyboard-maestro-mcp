@@ -1,0 +1,30 @@
+====== HEX Function ======
+
+The HEX(t) function takes an arbitrary [[:Tokens|token text]] string, processes the text tokens, and then evaluates the result as a hex number.
+
+    HEX(0A)
+    HEX(0x12AB)
+
+{{ hexfunction.png?nolink&424x140 | HEX function }}
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Set Variable to Calculation|Set Variable to Calculation Action]]
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[BIN]]
+* [[OCT]]
+* [[CALCULATE]]
+* [[:Functions|See all Functions]]
+
+==== Tokens ====
+
+* [[token:Bin|%Bin%]]
+* [[token:Oct|%Oct%]]
+* [[token:Hex|%Hex%]]
+* [[token:Calculate|%Calculate%]]
+* [[:Tokens|See all Tokens]]

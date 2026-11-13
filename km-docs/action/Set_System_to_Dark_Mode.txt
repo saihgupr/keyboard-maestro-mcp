@@ -1,0 +1,25 @@
+====== Set System Dark Mode ======
+
+The //Set System to Dark Mode//, //Set System to Light Mode//, and //Toggle System Dark Mode// actions (v9.0+, OS X 10.14+) allows you to set the system into Light or Dark appearance.
+
+The actions will have no effect in systems before OS X 10.14 Mojave.
+
+{{ set-system-dark-mode.png?nolink&587x85 | Set System Dark Mode }}
+
+Select from the pop-up to:
+  * Set System to Dark Mode
+  * Set System to Light Mode
+  * Toggle System Dark Mode
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Set_Keyboard_Maestro_to_Dark_Mode | Set Keyboard Maestro Dark Mode]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:DARKMODE]]
+* [[function:KMDARKMODE]]
+* [[:Functions|See all Functions]]

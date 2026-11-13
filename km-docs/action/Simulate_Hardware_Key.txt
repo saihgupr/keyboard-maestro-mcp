@@ -1,0 +1,36 @@
+The //Simulate Hardware Key action// lets you simulate a hardware key, such as Play or Mute.
+
+{{ simulate-hardware-key.png?nolink&503x139 | Simulate Hardware Key }}
+
+You can optionally include any desired modifiers with the keystroke.
+
+The available keys include:
+
+* Brightness Up
+* Brightness Down
+* Caps Lock
+* Contrast Down
+* Contrast Up
+* Eject
+* Fast
+* Help
+* Illumination Down
+* Illumination Toggle
+* Illumination Up
+* Launch Panel
+* Mute
+* Next
+* Num Lock
+* Play
+* Power Key
+* Previous
+* Rewind
+* Sound Up
+* Sound Down
+* Video Mirror
+
+In the above list, "Brightness" refers to the screen while "Illumination" refers to the keyboard backlight.
+
+You can optionally have the key pressed and held, or pressed and repeated, or released if you previously pressed it by selecting from the action (gear) ⚙ menu.
+
+Note: Keys that are pressed and held stay pressed only as long as the macro continues to run.

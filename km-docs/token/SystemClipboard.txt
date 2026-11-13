@@ -1,0 +1,18 @@
+====== SystemClipboard Token ======
+
+The //%SystemClipboard%// token (prior to v8, called the //%CurrentClipboard%// token) returns the text of the current system clipboard.
+
+===== See Also =====
+
+* [[/Clipboards|Clipboards]]
+
+=== Tokens ===
+
+* [[PastClipboard|%PastClipboard%]] token
+* [[NamedClipboard|%NamedClipboard%]] token
+* [[TriggerClipboard|%TriggerClipboard%]] token
+* [[SystemClipboardFlavors|%SystemClipboardFlavors%]] token
+* [[PastClipboardFlavors|%PastClipboardFlavors%]] token
+* [[NamedClipboardFlavors|%NamedClipboardFlavors%]] token
+* [[TriggerClipboardFlavors|%TriggerClipboardFlavors%]] token
+* [[/Tokens|All Tokens]]

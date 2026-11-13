@@ -1,0 +1,25 @@
+The //%FrontBrowser%// token (v9+) returns the name of the front browser (the most recently front web browser of Safari or Google Chrome).
+
+===== See Also =====
+
+==== Tokens ====
+
+* [[token:SafariField|%SafariField%]]
+* [[token:SafariJavaScript|%SafariJavaScript%]]
+* [[token:SafariReadyState|%SafariReadyState%]]
+* [[token:SafariTitle|%SafariTitle%]]
+* [[token:SafariURL|%SafariURL%]]
+* [[token:ChromeField|%ChromeField%]]
+* [[token:ChromeJavaScript|%ChromeJavaScript%]]
+* [[token:ChromeReadyState|%ChromeReadyState%]]
+* [[token:ChromeTitle|%ChromeTitle%]]
+* [[token:ChromeURL|%ChromeURL%]]
+* [[token:FrontBrowserField|%FrontBrowserField%]]
+* [[token:FrontBrowserJavaScript|%FrontBrowserJavaScript%]]
+* [[token:FrontBrowserReadyState|%FrontBrowserReadyState%]]
+* [[token:FrontBrowserTitle|%FrontBrowserTitle%]]
+* [[token:FrontBrowserURL|%FrontBrowserURL%]]
+* [[token:FrontBrowser|%FrontBrowser%]]
+* [[token:FrontBrowserBundleID|%FrontBrowserBundleID%]]
+* [[token:FrontBrowserPath|%FrontBrowserPath%]]
+* [[:Tokens|See all Tokens]]

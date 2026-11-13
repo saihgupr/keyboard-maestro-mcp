@@ -1,0 +1,1 @@
+The //%RandomUUID%// token (v8+) returns a new random universally unique ID.

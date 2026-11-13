@@ -1,0 +1,28 @@
+====== CHARACTERS Function ======
+
+The CHARACTERS(t) function takes an arbitrary [[:Tokens|token text]] string, processes the text tokens, and then returns the number of characters in the string.
+
+    CHARACTERS(%CurrentClipboard%)
+    CHARACTERS(%Variable%MyVar%)
+
+===== Example =====
+
+{{function:function-characters-example.jpg?nolink|}}
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Set_Variable_to_Calculation|Set Variable to Calculation]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:CALCULATE|CALCULATE]]
+* [[function:LINES|LINES]]
+* [[function:WORDS|WORDS]]
+* [[:Functions|See all Functions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/search?q= CHARACTERS|Keyboard Maestro Forum topics about CHARACTERS() function]]

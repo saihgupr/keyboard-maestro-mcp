@@ -1,0 +1,28 @@
+====== Assert Action ======
+
+The //Assert// action (v8+) asserts that the criteria for the conditions are met and aborts the macro if not. If there are no conditions, then the assertion will always fire and will terminate the macro (v10.0+).
+
+===== Conditions =====
+
+See the [[:Conditions|Conditions]] section for further details.
+
+~~NOCACHE~~
+<nspages condition -textPages="">
+
+After selecting a condition category you can make further choices. For example, if you choose the //Application Condition// you can choose a specific application to be running, or at the front, and so on.
+
+Add further conditions by clicking the green + button again.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]] action
+* [[action:Pause_Until|Pause Until]] action
+* [[action:For_Each|For Each]] action
+* [[action:Repeat|Repeat]] action
+* [[action:Until|Until]] action
+* [[actions:Redirect_Control_Flow|Redirect Control Flow]] actions
+* [[:Actions|See all Actions]]
+
+==== Forum ====

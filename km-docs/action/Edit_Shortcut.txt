@@ -1,0 +1,16 @@
+====== Edit Shortcut ======
+
+The //Edit Shortcut// (v10.1+) action edits the specified Shortcut in macOS Shortcuts (macOS 12.0+).
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Execute Shortcut|Execute Shortcut]]
+* [[action:Execute or Edit Shortcut|Execute or Edit Shortcut]]
+* [[action:Execute a Shell Script|Execute an Shell Script]]
+* [[action:Execute an AppleScript|Execute an AppleScript]]
+* [[action:Execute an Automator Workflow|Execute an Automator Workflow]]
+* [[action:Execute a JavaScript For Automation|Execute a JavaScript For Automation]]
+* [[action:Filter|Filter Variable with Expand Tilde In Path]]
+* [[:Actions|See all Actions]]

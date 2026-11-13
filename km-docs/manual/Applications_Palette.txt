@@ -1,0 +1,27 @@
+====== Applications Palette ======
+
+The Applications Palette displays the currently running applications in a palette.
+
+{{ :manual:applicationspalette.png?78;nolink |Applications Palette }}
+
+You can turn off the palette by clicking the close box, or you can turn it on or off in the Keyboard Maestro General preferences, or in the Keyboard Maestro status menu.
+
+You can adjust the appearance of the palette in the Keyboard Maestro Palettes preferences, and you can exclude specific applications in the Keyboard Maestro Excluded preferences.
+
+You can drag files or folders to the palette icons to open the file in the specific application, and you can control or right click on the applications in the palette to perform various actions on them, including:
+
+* Activate (optionally without creating a new document)
+* Activate and Hide Others (optionally without creating a new document)
+* Hide
+* Get Info in the Finder
+* Reveal in the Finder
+* Quit
+* Exclude the application from the palette (by adding it to the [[manual:Preferences#Excluded_Preferences|Excluded preferences]]).
+* Restore Executed Applications (v10.0+) (takes you to the [[manual:Preferences#Excluded_Preferences|Excluded preferences]]).
+* Sort by Launch Date or Alphabetically.
+* Hide Others When Switching (v11.0+).
+
+If you hold down the appropriate modifiers (as shown in the contextual menu), you can perform these actions by just clicking (for example, hold shift and command down while clicking to quit the application).
+
+For macros you create in your own macro palettes, you can use the [[trigger:Dragged_File|Dragged File]] trigger to allow files or folders to be dragged on to the macro, and you can use the [[action:Apply_Modifiers_to_a_Specific_Application|Apply Modifiers to a Specific Application]] action to handle modifiers or dragged files in the same way as the Applications Palette.  There is an Application Palette entry in the [[manual:Macro_Library|Macro Library]] which shows how you can use these two facilities to create a palette with a fixed set of applications and similar behaviour.
+ 

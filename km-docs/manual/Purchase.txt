@@ -1,0 +1,21 @@
+====== Purchase ======
+
+Keyboard~~Maestro is engineered by Stairways Software Pty Ltd and distributed by [[https://www.stairways.com/action/linkthru?fastspring|FastSpring]]. Keyboard~~Maestro is licensed on a per-user basis and individual users may use it on up to five Macs.
+
+New customers can purchase Keyboard~~Maestro for US$36 by choosing the [[Menus#Purchase_Keyboard_Maestro|Keyboard Maestro ➤ Purchase Keyboard Maestro menu]].  Customers with ten or more users should [[mailto:support@stairways.com|contact us]] for a volume discount quote.
+
+Keyboard~~Maestro~~11 is a paid upgrade for most users of previous versions. Existing users are eligible for a discount and can purchase an upgrade by choosing the [[Menus#Purchase_Keyboard_Maestro_Upgrade|Keyboard Maestro ➤ Purchase Keyboard Maestro Upgrade menu]].
+
+Customers who purchased Keyboard~~Maestro after 1 March 2023 have been issued a free upgrade to Keyboard~~Maestro~~11.  If you have not received your free license, you can find your free license upgrade at [[https://enquiry.stairways.com/]].
+
+Customers who purchased Keyboard~~Maestro~~10 prior to March 2023 can upgrade to Keyboard~~Maestro~~11 for US$18 until 15 December 2023.  After that date, or customers who purchased older versions of Keyboard~~Maestro can upgrade to Keyboard~~Maestro~~11 for US$25.  If you have not received your instructions on how to upgrade, you can find details by looking up your Keyboard~~Maestro license at [[https://enquiry.stairways.com/]].
+
+Customers who have not disabled upgrade emails have been emailed with new license or upgrade instructions as appropriate.  If you have not received this email, please [[mailto:support@stairways.com|contact us]] so we can resolve this promptly.
+
+It is our informal policy to have a paid major upgrade roughly once  every 12 to 36 months.  This allows us to have a reasonably consistent revenue stream with which to fund development of Keyboard~~Maestro, and ensures we are working as much for existing customers as to expand the customer base.  It means you can keep what you have purchased and not have to pay a subscription, but also that we will still be around working on improving Keyboard Maestro and adding features for when you choose to upgrade.
+
+A fully-functional trial version of Keyboard~~Maestro is available for download from [[https://download.stairways.com/]].
+
+For sales enquires, customer service, technical support, or to contact project management, our current contact information is listed at [[https://contact.stairways.com/]].
+
+For more information about anything to do with Keyboard~~Maestro, visit [[https://www.keyboardmaestro.com/]].

@@ -1,0 +1,46 @@
+====== TriggerBase Token ======
+
+The //%TriggerBase%// token returns the trigger type.
+
+The token will return one of these, which corresponds exactly to the name of each trigger as shown when clicking the New Trigger button:
+
+```
+Hot Key Trigger 
+Global Macro Palette Trigger
+ Status Menu Trigger
+ Typed String Trigger
+Application Trigger
+Audio Output Changed Trigger
+Clipboard Changed Trigger
+Clipboard Filter Trigger
+Cron Trigger
+Dragged File Trigger
+Engine Launch Trigger
+Focused Window Trigger
+Folder Trigger
+Gesture Trigger
+Idle Trigger
+Login Trigger
+MIDI Trigger
+Mounted Volume Trigger
+Periodic Trigger
+Public Web Trigger
+Remote Trigger
+Sleep Trigger
+Space Changed Trigger
+Time of Day Trigger
+USB Device Key Trigger
+USB Device Trigger
+Wake Trigger
+Wireless Network Trigger
+```
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[Trigger|%Trigger%]] token
+* [[TriggerValue|%TriggerValue%]] token
+* [[TriggerClipboard|%TriggerClipboard%]] token
+* [[/Tokens|All Tokens]]
+

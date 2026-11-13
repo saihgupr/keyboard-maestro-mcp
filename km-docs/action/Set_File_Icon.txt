@@ -1,0 +1,15 @@
+The //Set File Icon// action sets the icon of the specified file. 
+
+You can set the icon from a specific image, from a custom icon (v10.0+), from a clipboard, from an image in a file, or from a screen capture area.
+
+Click the File Chooser button to the right of the action to select an existing file on disk. Option-click on the File Chooser button to show the currently selected file in the Finder (assuming it exists already).
+
+Note that the action can only set the icon of the file if the current user has permission to set it - in particular applications from the Mac App Store typically require authenticated permission to change the icon and so this action cannot affect such files.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Set File Attribute|Set File Attribute]]
+* [[action:Get File Attribute|Get File Attribute]]
+* [[:Actions|See all Actions]]

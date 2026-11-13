@@ -1,0 +1,13 @@
+====== LastAbortedActionIDToken ======
+
+The //%LastAbortedActionID%// token returns (v11.0+) the ID of the most recently aborted action.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens |See all Tokens]]

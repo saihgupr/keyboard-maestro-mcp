@@ -1,0 +1,22 @@
+====== Activate Named Clipboard Switcher ======
+
+The [[manual:Named Clipboard Switcher]] enables you to define any number of named clipboards which can be use to Cut or Copy into and Paste from in any application. To use Clipboard Switcher you simply trigger the Clipboard Switcher macro. Clipboard Switcher will present you with a window allowing you to select the named clipboard to use.
+
+{{ manual:namedclipboardswitcher.png?nolink&673x647 | Named Clipboard Switcher Window }}
+
+By default, Keyboard Maestro creates three an Activate Named Clipboard Switcher macro in the “Switcher Group” Macro Group, triggered by Command-Shift-V. You can disable the Macro by selecting the Switcher Group, then selecting the macros and and clicking the ✓ button below the Macros list.
+
+You can add or delete named clipboards in the Clipboards preference pane.
+
+===== See Also =====
+
+=== User Manual ===
+
+* [[manual:Clipboard History Switcher]]
+* [[manual:Named Clipboard Switcher]]
+* [[/User_Manual| User Manual]]
+
+=== Actions ===
+
+* [[action:Activate Clipboard History Switcher]] action
+* [[:Actions|See all Actions]]

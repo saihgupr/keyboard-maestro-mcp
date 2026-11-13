@@ -1,0 +1,61 @@
+The Insert Text actions can be very useful to insert standard text templates, such as your signature, address, copyright or other boilerplate text. 
+
+There are three ways to type text in Keyboard Maestro: 
+  *[[action:Insert_Text_by_Typing|Insert Text by Typing]] — type the plain text as a sequence of keystrokes.
+  *[[action:Insert_Text_by_Pasting|Insert Text by Pasting]] — set the system clipboard to plain or styled text and paste.
+  *[[action:Type_a_Keystroke|Type Keystroke]] — type any keystroke and any number of them.
+
+The Insert Text action allows you to control what text processing happens in the gear menu (7.2+) :
+
+* Process Text Normally (process text tokens and backslash characters)
+* Process Text Tokens Only (process text tokens but not backslash characters)
+* Process Nothing (process neither text tokens nor backslash characters)
+
+Most other [Text Fields](https://wiki.keyboardmaestro.com/Text_Fields) in Keyboard Maestro process both text tokens and (except for regular expression fields) backslash characters. 
+
+Insert Text can also expand various tokens, including dates in any ICU date format. For example you can use an Insert Text action to insert the copyright message at the top of code files:
+
+  ⁄∗
+    ∗  Created by %UserName% on %ICUDateTime%EEE d MMM yyyy%.
+    ∗  Copyright (c) %ICUDateTime%yyyy% Stairways Software. All rights reserved.
+  ∗⁄
+
+The [[action:Display_Text|Display Text]] action allows you to display the resulting text in a floating window or Notification.
+
+A common question is when should you use each? Each action has its advantages and disadvantages:
+  *The Type Keystroke action is just like typing yourself, so you can type any keystroke and any number of them, but it can be tedious to create a sequence of keystrokes in a macro.
+  *The Insert Text by Typing action is also just like typing yourself, similarly permitting characters like tab/return and maintaining the current style in the program into which you are typing, but it is slow for large amounts of text and can't type exotic characters like Emoji.
+  *The Insert Text by Pasting action is fast for large text and can include any kind of characters, as well as styles like bold and italic, but it overwrites your clipboard and its handling of styles may occasionally not conform to your expectation.
+
+So you should use Type Keystroke when:
+  *You are entering a single keystroke and perhaps need particular control over the exact keystroke typed, or
+  *The keystroke includes Command or Control (and sometimes Option).
+
+Use Insert Text by Typing whenever:
+  *The text consists of plain text characters that can be typed on the keyboard, and
+  *The text is relatively short (up to say 30 or 40 characters), or
+  *You want to use characters like Return or Tab to perform actions like moving to the next field.
+
+Use Insert Text by Pasting when:
+  *You don't mind the clipboard being overwritten, and
+  *The text is long, or
+  *The text contains exotic untypable characters, or
+  *The text contains returns or tabs which you don't want to perform actions like moving to the next field.
+
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Set Action Delay|Set Action Delay]]
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:ICUDateTime|%ICUDateTime%]]
+* [[token:VBAR|%VBAR%]]
+* [[:Tokens|See all Tokens]]
+
+----

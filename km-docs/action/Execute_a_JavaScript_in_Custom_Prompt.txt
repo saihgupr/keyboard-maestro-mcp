@@ -1,0 +1,47 @@
+====== Execute JavaScript in Custom HTML Prompt ======
+
+The //Execute JavaScript in Custom HTML Prompt// action let you execute JavaScript in a [[action:Custom_HTML_Prompt|Custom HTML Prompt]] window.
+
+{{ execute-javascript-in-custom-html-prompt-action.png?nolink&674x161 | Execute JavaScript in Custom HTML Prompt Action }}
+
+This action allows you to execute a specified JavaScript, either from a file or text entered in the Action itself, and return the results.
+
+===== Specify the Custom HTML Prompt =====
+
+You can specify a [[action:Custom_HTML_Prompt]] with a matching [[action:Custom_HTML_Prompt#HTML_Window_Design|data-kmwindowid]] to apply the JavaScript to, otherwise it will be applied to all open Custom HTML Prompt windows.
+
+===== Options for Returning Results =====
+
+  * ignore results.
+  * display results in a window.
+  * display results briefly.
+  * display results large.
+  * type results.
+  * paste results.
+  * save results to variable.
+  * append results to variable.
+  * save results to the system clipboard or a named clipboard.
+  * save results to a file.
+  * asynchronously  — the script runs while the macro continues on, no results are returned.
+
+If the results are to be saved to a variable or a clipboard then further text areas appear in the action allowing you to specify the variable or specific clipboard.
+
+===== Using Keyboard Maestro Variables =====
+
+You can use the window.KeyboardMaestro facilities of the [[action:Custom_HTML_Prompt|Custom HTML Prompt]] to read and write Keyboard Maestro variables.
+
+===== See Also =====
+
+* [[actions:Browser_Actions|Browser Actions]]
+* [[actions:Browser_Window_Actions|Browser Window Actions]]
+* [[actions:Browser_Form_Actions|Browser Form Actions]]
+* [[actions:Wait_For_Browser_to_Finish_Loading| Wait For Browser to Finish Loading actions]]
+
+=== Actions ===
+
+* [[action:Execute_a_JavaScript_in_Front_Browser|Execute a JavaScript in Front Browser]]
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/execute-javascript-in-custom-prompt-question/4491|Execute JavaScript in Custom Prompt Question]]

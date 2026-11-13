@@ -1,0 +1,19 @@
+====== Command Line Tool ======
+
+Keyboard Maestro includes a command line tool to let you execute macros from the shell command line. The tool is named `keyboardmaestro` and is located within the `Keyboard Maestro.app` application. Assuming the application is installed in the Applications folder, the command line tool will reside at:
+
+<code>
+/Applications/Keyboard Maestro.app/Contents/MacOS/keyboardmaestro
+</code>
+
+You may want to create a shell alias for it, or add `/Applications/Keyboard Maestro.app/Contents/MacOS` to your PATH, or you can link to it from `/usr/local/bin` with the command:
+
+<code bash>
+sudo ln -s '/Applications/Keyboard Maestro.app/Contents/MacOS/keyboardmaestro' /usr/local/bin/keyboardmaestro
+</code>
+
+Use `--help` to list the argument options.
+
+The command can pass a value to the macro (available via the [[token:TriggerValue|%TriggerValue%]] token), and execute the macro asynchronously, or wait for the macro to finish, receiving a result (returned via the [[action:Return_Result|Return Result]] action) which is output to stdout.
+
+Alternatively, the command can ask to edit the specified macro in the Keyboard Maestro editor.

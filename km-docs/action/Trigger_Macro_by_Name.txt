@@ -1,0 +1,70 @@
+====== Trigger Macro by Name Action ======
+
+The //Trigger Macro by Name// action displays a Spotlight-like window, where you trigger execution of a Macro by searching for it, and then selecting it.
+
+{{ action:km-7.2-trigger-macro-by-name-window.png?nolink |}}
+
+Like the Mac Spotlight, it will search all of your active, enabled Macros whose name or contents contain what you type.  It is a character search, so it will also find Macro names and words that contain what you type.
+
+{{ trigger-macro-by-name.png?nolink&575x141 | File Name }}
+
+===== How To Use for Triggering Macros =====
+
+  - Create the Trigger by Name Macro
+    - Create a new macro, in the Global Macro Group (so it will be available in all apps)
+    - Assign it a trigger (one suggestion is <kbd>⌘</kbd><kbd>⌥</kbd><kbd>⌃</kbd><kbd>T</kbd>)
+    - Insert the //Trigger Macro by Name// action.
+    - Optionally configure the initial search.
+    - Optionally allow inactive or disabled macros.
+    - Optionally restrict it to specified macros or macro groups.
+  - When you are ready to Trigger a Macro
+    - Like using any Macro, make sure you have any required app frontmost.
+    - Then, trigger the Trigger by Name Macro (the one you made in Step #1)
+    - The //**Trigger Macro by Name**// window will appear
+    - Type the search criteria
+      - As you type, the macro list will be filtered
+      - Continue to type until you see the macro of interest
+    - If the Macro you want is not highlighted, move to it with the arrow keys, or double-click on it.
+
+The initial search can (v9.0+) include tokens.
+
+==== To edit the selected macro ====
+
+If you wish to open Keyboard Maestro directly to the selected macro rather than triggering it, use <kbd>⌥</kbd><kbd>return</kbd> or <kbd>⌥</kbd>+click.
+
+===== How To Filter the Search =====
+
+If you would like to further restrict, or filter, the search, you can use qualifiers, or prefixes, to what you type, using these [[manual:Search_Strings|Search Strings]].
+
+For example:
+
+    a:safari n:copy
+    
+would filter the list of Macros to those whose:
+
+  * Active application is "Safari"
+  * Macro name contains "copy"
+
+{{:action:km-7.2-trigger-macro-by-name-example.png?nolink|}}
+
+For the complete list of available filters, see [[manual:Search_Strings|Search Strings]]
+
+===== Passing Parameters =====
+
+You can pass parameters (v8+) to the macro via the [[token:TriggerValue|%TriggerValue%]] token by adding `//` and then the parameter to your search string.  The `//` and anything after that will be ignored in the search.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+==== Topics ====
+
+* [[:manual:Search Strings|Search Strings]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/limit-the-results-of-trigger-macro-by-name/4369/9|Limit the results of Trigger Macro by Name]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Trigger%20Macro%20by%20Name%20Action|Keyboard Maestro Forum topics about Trigger Macro by Name Action]]

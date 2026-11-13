@@ -1,0 +1,358 @@
+====== JavaScript for Automation (JXA) Discussion ======
+
+===== Scope and Summary =====
+
+This Wiki article is a broad topic, which covers these major areas:
+
+  - Introduction to JXA
+  - Using JXA with Keyboard Maestro
+  - JXA Background
+  - Comparison with AppleScript
+
+
+===== Introduction =====
+
+Keyboard Maestro supports use of JavaScript in two basic ways:
+
+  - Execute JavaScript in a Browser
+  - Execute JavaScript for Automation (JXA)
+
+This article deals only with the latter, JavaScript for Automation (JXA).
+
+JavaScript, once a language which ran only in web browsers, can now be used in a variety of environments. From Keyboard Maestro you can:
+
+1. Run it in Chrome or Safari web pages ('browser JavaScript'), or
+2. Run it in Apple's osascript environment, for automating applications. ('JavaScript for Automation', or JXA, sometimes JSA in Apple's documentation), or
+3. Run it in Custom HTML Prompt windows.
+
+=====Using JXA with Keyboard Maestro=====
+
+==== JXA Scripts ====
+
+You can run a JXA script from Keyboard Maestro by either of these _Execute Script_ Actions:
+
+  * [[action:Execute_a_JavaScript_For_Automation]]
+    * The JXA script may be accessed as text in the Action, or from a file.
+  * [[action:Execute_a_Shell_Script|Execute a Shell Script]]
+    * The JXA script can be embedded in a Shell Script
+
+
+==== Accessing Keyboard Maestro Variables ====
+
+You can access Keyboard Maestro variables (7.1+) from JXA scripts using the Keyboard Maestro Engine application.
+
+<code javascript>
+//--- GET A REFERENCE TO THE KM ENGINE ---
+var kme = Application("Keyboard Maestro Engine");
+
+//--- GET A KM VARIABLE ---
+var myVar = kme.getvariable('My KM Var');
+
+//--- SET A KM VARIABLE ---
+//    - Using explicit text
+kme.setvariable('My Other KM Var', { to: "Set by JXA" });
+
+//    - Using a JavaScript Variable
+var scriptResults = "Text Determined by the script"
+kme.setvariable('My Other KM Var', { to: scriptResults });
+</code>
+
+Also see **[[action:Execute_a_JavaScript_For_Automation#Local_Instance_Variables|How To Get/Set Keyboard Maestro Local & Instance Variables using JXA]]**
+
+JXA can get a list of all variables as described on the [forum](https://forum.keyboardmaestro.com/t/using-km-variables-in-yosemite-javascript-for-applications-jxa/889) and those methods also provide more convoluted ways to access variables for versions prior to 7.1.
+
+
+**For more info on using JXA with Keyboard Maestro, see:**
+
+  * [[manual:Scripting|Scripting]]
+
+===== JXA Background =====
+
+[[https://developer.apple.com/library/mac/releasenotes/InterapplicationCommunication/RN-JavaScriptForAutomation/Articles/Introduction.html|JavaScript for Automation]] (JXA) and AppleScript are the two primary languages Apple has provided for application automation.  While they both can generally achieve the same results, each language offers advantages and disadvantages.  JXA is very flexible providing a rich set of default libraries for some basics like character, date, and URL handling.  It also offers a very powerful Regular Expression engine built-in.  JXA is the same fast JavaScript Core language that Safari uses, but it is running in an osascript context:
+
+1. With access to the functions and constants of an Automation object, and
+2. with additional access to a lot of low-level Apple system functions through the Objective-C object.
+
+You can view the built-in, default function provided by JXA by running this simple, one-word script:
+
+`this`
+
+the result will be a listing of all the pre-defined names in JXA's osascript environment.
+
+We can either run this directly from from one of Keyboard Maestro's 'Execute a JavaScript for Automation' actions, or use an osascript command in an Execute Shell Script action.
+
+{{:undefined:jxaactionthis.png?400|}}{{:undefined:jxashellactionthis.png?400|}}
+
+Later on, you may find it interesting to scan this output list for useful functions, but for the moment, it's enough to simply notice that the JXA JavaScript environment is very different from the set of web page (window and document) references that you find in the Browser JavaScript environments of Chrome and Safari. 
+
+{{:chromwinkeys.png?400|}}{{:undefined:jssafariactiondocument.png?400|}}
+
+Keyboard Maestro’s [[action:Execute a JavaScript in Safari|Execute a JavaScript in Safari]] and [[action:Execute a JavaScript in Google Chrome|Execute a JavaScript in Google Chrome]] actions are for interacting with web pages, the [[action:Execute a JavaScript in Custom Prompt|Execute a JavaScript in Custom Prompt]] action is for interacting with Custom HTML Prompts, whereas JXA is for automating OS X and OS X Applications via the [[action:Execute a JavaScript For Automation|Execute a JavaScript For Automation]] action.
+
+
+=====Comparing JXA with AppleScript=====
+
+====Evaluating simple expressions====
+
+The simplest scripts evaluate an expression and return its value. 
+
+**NB** Keyboard Maestro can only make use of values returned as (or converted to) a string – a Keyboard Maestro variable is always a string of some kind. This means that:
+
+- If the result of an evaluation is not a string (or something simple like a number, that can automatically be converted to a string), the action may puzzle you by appearing to produce no result.
+- It's a good idea to test your action code first in (El Capitan or Yosemite) Script Editor, which shows all results, whatever their type, including error messages.
+
+The following all return the same number to Keyboard Maestro (in string format, and at a slightly higher level of precision – more decimal points – from JavaScript).
+
+^ AppleScript    ^ JXA  ^
+| <code applescript>((sqrt 5) + 1) / 2    </code> | <code javascript>(Math.sqrt(5) + 1) / 2    </code> |
+{{:mathexpressionas.png|}}{{:mathexpressionjs.png|}}
+
+==Differences to notice: sqrt 5 vs Math.sqrt(5)==
+
+JavaScript's [[https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Math|Math object]] provides a number of numeric functions and constants, in the format **Math.***functionName*(''[argument, …]'').
+
+In the common JavaScript patterns:
+
+- **ObjectName**.*functionName*(''[argument, …]'')
+- **ObjectName**.*propertyName* 
+
+
+The dot corresponds to Applescript's ''of'', reversing the sequence of object name and property name.
+
+^ AppleScript    ^ JXA  ^
+| <code applescript>count of documents of application "TextEdit"    </code> | <code javascript>Application("TextEdit").documents.length    </code> |
+
+====Assigning names to functions and procedures:====
+
+If we often need to calculate the [[https://en.wikipedia.org/wiki/Golden_ratio|Golden Ratio]], we can attach a name to its computation, and reuse it by that name. Nameable computations are called 'handlers' in AppleScript, and 'functions' in JavaScript.
+
+===Named AS 'handlers' and JS functions===
+
+^ AppleScript    ^ JXA  ^
+| <code applescript>on goldenRatio()
+    return ((5 ^ 0.5) + 1) / 2
+end goldenRatio
+
+class of goldenRatio        </code> | <code javascript>function goldenRatio () {
+    return (Math.sqrt(5) + 1) / 2;
+}
+
+typeof goldenRatio        </code> |
+{{::ashandlerclass.png|}}{{::jxafunction.png|}}
+
+In both languages, we can call/run/apply a handler/function (that is, get an evaluation of it), by adding a pair of parentheses to its name. (If the function has an input argument, the argument goes between the parentheses).
+
+^ AppleScript    ^ JXA  ^
+| <code applescript>on goldenRatio()
+    return ((5 ^ 0.5) + 1) / 2
+end goldenRatio
+
+goldenRatio()    </code> | <code javascript>function goldenRatio () {
+    return (Math.sqrt(5) + 1) / 2;
+}
+
+goldenRatio()</code>|
+{{::ascallsyntaxcoded.png|}}{{::calljxa.png|}}
+
+==Differences to notice: 1. Separating expressions – AppleScript newline vs JavaScript semicolon==
+
+JavaScript is more flexible with white space than AppleScript – a JS expression can be broken up over several lines, if that makes its structure clearer, while a new line is interpreted as the **end** of an AppleScript expression.
+
+In JavaScript, a semicolon means 'end of expression'.
+
+==Differences to notice: 2. Returning a value from a handler / function==
+
+In AppleScript, the word **return** in the handler is optional – if you omit it, the value of the last expression to be evaluated inside the handler will still be returned.
+
+In JavaScript, however, a function only returns what you ask it to. If you don't use the **return** keyword, the function evaluates to the special value ''undefined'', and your Keyboard Maestro action will just get an empty string. Always include a **return** line.
+
+===Parameters / arguments for name functions===
+
+If you are building a well-proportioned temple or table, you will probably want to multiply the Golden Ratio by something else, so a named computation with a variable 'parameter' or 'argument' might make sense.
+
+^ AppleScript    ^ JXA  ^
+| <code applescript>on goldenRatio(n)
+
+    return (((5 ^ 0.5) + 1) / 2) * n
+    
+end goldenRatio
+
+
+-- For a square of side 8
+goldenRatio(8)
+
+-- --> 12.944271909999</code> | <code javascript>function goldenRatio (n) {
+    // n is optional here – defaults to 1
+    n = n || 1;
+    
+    return ((Math.sqrt(5) + 1) / 2) * n;
+}
+
+// For a square of side 8
+goldenRatio(8);
+
+// --> 12.94427190999916</code>|
+
+==Differences to notice: 1. Comments==
+
+Both languages allow us to include explanatory comments. AS prefixes comments with two dashes, JS with two forward slashes.
+
+==Differences to notice: 2. Arguments can be optional in JavaScript==
+
+JavaScript is relaxed about whether we supply an argument or not. If we don't, the name ''n'' will have the special value ''undefined'', which takes on the value ''false'' in a logical expression. Above we are using the [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators|JavaScript logical operator OR ( || )]] to attach the name n to the value 1 if no argument has been supplied.
+
+===Named results – 'variables' which hold values===
+
+In addition to reusable names for particular computations and their arguments, we can also give names to the results of computations. Once a result is stored in a named variable, we can reuse it without having to recalculate it.
+
+^ AppleScript    ^ JXA  ^
+| <code applescript>on run {}
+    set phi to (((5 ^ 0.5) + 1) / 2)
+    set phi18 to phi * 18
+    set phi7 to phi * 7
+
+    return phi18 + phi7
+end run
+
+--> 40.450849718747</code> | <code javascript>function run() {
+    var phi = (Math.sqrt(5) + 1) / 2,
+        phi18 = phi * 18,
+        phi7 = phi * 7;
+
+    return phi18 + phi7;
+}
+
+// --> 40.45084971874737</code>|
+
+
+==Things to notice – 1. We gave the name 'run' to a computation, and it 'ran' without being called …==
+
+In osascript (AppleScript or JXA), **run** is a special name. A handler or function with that name is called automatically – you don't have to append parentheses to call it, like we did with the **goldenRatio** computation.
+
+In fact, when we don't assign any names to computations (don't create any AS handlers or JS functions), osascript automatically wraps our our script in a computation which it names **run**, and immediately calls it.
+
+==Things to notice - 2. We are attach names here to some results of computations==
+
+The following names are all given to the result of a computation, rather than to a computation or argument:
+
+- phi
+- phi18
+- phi7
+
+==Differences to notice: AS and JS use different patterns for naming results==
+
+Where AS uses the pattern:    **set** *name* **to** *resultingValue* (and reserves **=** for testing equality),
+
+JS uses one or more [[https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/var|variable declaration statements]] (and [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness|tests equality]] with **===**)
+
+In JS we can either:
+
+- group several variable declarations together (separated by commas, finishing with a semicolon – example above), 
+- use a separate variable declaration statement for each variable, or
+- make our lives more complex by using the names without a var declaration
+
+^ Good and simple JXA – temporary local names ^  Messy and complex JXA – persistent global names ^
+|<code applescript>    var phi = (Math.sqrt(5) + 1) / 2,
+        phi18 = phi * 18,
+        phi7 = phi * 7;
+// or
+    var phi = (Math.sqrt(5) + 1) / 2;
+    var phi18 = phi * 18;
+    var phi7 = phi * 7;</code>|<code javascript>    phi = (Math.sqrt(5) + 1) / 2;
+    phi18 = phi * 18;
+    phi7 = phi * 7;</code>|
+    
+
+JavaScript gives us a lot of freedom, [[http://shop.oreilly.com/product/9780596517748.do|sometimes more than is helpful]]. Misspelled variable names, and accidental uses of the same globally visible name in different parts of a script are rich sources of puzzling bugs and wasted time. To use a less liberal but more helpful set of JavaScript rules, we can add the line **'use strict';**
+at the start of a function. When we do this, JavaScript checks that all of our variables are declared (and therefore 'local' – visible only to their containing functions, and also temporary – vanishing when the evaluation of a function is completed). If an undeclared variable name is detected when the **'use strict';** statement has been added, we are given a helpful warning:
+
+{{::use-strictpng.png|}}
+====Indexing by number: AS lists ⇄ JS arrays===
+
+^ Length of AppleScript 'list' ^ JavaScript 'array' length  ^
+|<code applescript>length of ¬
+	{"alpha", "beta", "gamma"}
+-- 3</code>|<code javascript>['alpha', 'beta', 'gamma'].length
+
+// 3</code>| 
+^ Nested AppleScript list  ^ Nested JS array  ^
+|<code applescript>length of ¬
+	{{"alpha", "beta"}, {"gamma", "delta"}}
+-- 2</code>|<code javascript>[['alpha', 'beta'], ["gamma", "delta"]]
+.length
+// 2  (JS ignores white space and new lines)</code>| 
+^ AppleScript lists are 1-based  ^ JavaScript arrays are 0-based  ^
+|<code applescript>items 1 thru 3 of ¬
+	{"alpha", "beta", "gamma", "delta"}
+-- {"alpha", "beta", "gamma"}</code>|<code javascript>["alpha", "beta", "gamma", "delta"]
+.slice(0, 3)
+// ["alpha", "beta", "gamma"]</code>| 
+^ -1 is the index of the last item in both AS and JS  ^^
+|<code applescript>items -3 thru -1 of ¬
+	{"alpha", "beta", "gamma", "delta"}
+-- {"beta", "gamma", "delta"}</code>|<code javascript>["alpha", "beta", "gamma", "delta"]
+.slice(-3)
+// ["beta", "gamma", "delta"]</code>| 
+^ AppleScript concatenation  ^ JavaScript concatenation ^
+|<code applescript>{"alpha", "beta"} & {"gamma", "delta"}
+
+-- {"alpha", "beta", "gamma", "delta"}</code>|<code javascript>["alpha", "beta"]
+.concat(["gamma", "delta"])
+// ["alpha", "beta", "gamma", "delta"]</code>| 
+^ AppleScript join() (user-defined)  ^ JavaScript join() (built in) ^
+|<code applescript>join(" -> ", {"Sun", "Mon", "Tue"})
+
+-- "Sun -> Mon -> Tue"  
+
+-- Text -> [Text] -> Text 
+on join(strText, lstText)
+    set {dlm, my text item delimiters} to ¬
+        {my text item delimiters, strText}
+    set strJoined to lstText as text
+    set my text item delimiters to dlm
+    return strJoined
+end join</code>|<code javascript>['Sun', 'Mon', 'Tue'].join(' -> ')   
+
+// "Sun -> Mon -> Tue
+
+
+
+// .join() is a built-in method
+//  of JavaScript arrays
+</code>| 
+
+====Indexing by name – AS records and JS objects====
+
+to follow ...
+
+====Structuring scripts – branching, nesting, mapping, filtering and reducing====
+
+to follow ...
+
+====JSON for persistence – saving things between macro runs, and reading them straight back in====
+
+to follow ...
+
+
+
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Execute a JavaScript For Automation|Execute a JavaScript For Automation]]
+* [[action:Execute a JavaScript in Custom Prompt|Execute a JavaScript in Custom Prompt]]
+* [[action:Execute a JavaScript in Google Chrome|Execute a JavaScript in Google Chrome]]
+* [[action:Execute a JavaScript in Safari|Execute a JavaScript in Safari]]
+* [[:Actions|See all Actions]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/using-km-variables-in-yosemite-javascript-for-applications-jxa/889|Using KM variables in Yosemite Javascript for Applications (JXA)]]
+- [[https://forum.keyboardmaestro.com/t/how-to-change-safari-web-inspector-font/3655|How to Change Safari Web Inspector Font]]
+
+- [[https://forum.keyboardmaestro.com/tags/jxa|Keyboard Maestro Forum topics about JavaScript for Automation]]

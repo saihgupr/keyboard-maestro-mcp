@@ -1,0 +1,19 @@
+====== CurrentTrack Token ======
+
+The //CurrentTrack// token returns information about the current iTunes name.  You can ask for the:
+
+* //%CurrentTrack%name%// - the current iTunes track name.
+* //%CurrentTrack%artist%// - the current iTunes track artist.
+* //%CurrentTrack%album%// - the current iTunes track album.
+* //%CurrentTrack%ratingstars%// - the current iTunes song rating.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:MusicPlayerState|%MusicPlayerState%]] token
+* [[:Tokens |See all Tokens]]

@@ -1,0 +1,19 @@
+====== Pause ======
+
+The //Pause// action pauses for a number of seconds. You may enter a calculation for the number of seconds. Enter the number or calculation in the //Pause for// text area. 
+
+{{ pause-action.png?nolink&424x178 | Pause Action }}
+
+You can pause for a number of hundredths of a second, seconds, minutes or hours (seconds only prior to v9.0).
+
+Note that it is generally not a great idea to pause for a long period of time - the macro might be interrupted, the situation on the Mac might change, the Mac might go to sleep, and also Keyboard Maestro Engine will be wasting CPU doing nothing while the macro runs.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Pause Until|Pause Until]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[action:While|Execute While Conditions Met]]
+* [[:Actions|See all Actions]]
+

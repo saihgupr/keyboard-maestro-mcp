@@ -1,0 +1,138 @@
+====== Getting Started ======
+
+The first things to do are:
+
+* Read the [[Quick Start|Quick Start]] (Help ➤ Quick Start) which will get you familiar with Keyboard Maestro terminology.
+* Do the Tutorial (Help ➤ Tutorial).  Now you know the basics of creating a macro.
+* When Keyboard Maestro asks, sign up for the Getting Started email series.
+* Follow [@KeyboardMaestro@mastodon.social](https://mastodon.social/@KeyboardMaestro).
+* Join the [Keyboard Maestro Forum](http://forum.keyboardmaestro.com) and ask questions there.
+* Consider enrolling in David Spark’s [[https://learn.macsparky.com/p/km|Keyboard Maestro Field Guide]].
+* Contact [support@stairways.com](mailto:support@stairways.com) if you have any problems.
+
+The next thing is to watch what you do on your computer and note things that you do repetitively, or that often annoy you, and see if you can make a macro to improve or streamline the process.
+
+==== Getting Further ====
+
+Once you have read the Quick Start and done the Tutorial, these are some things to look at:
+
+* Look at the [Simple Text Expansion macro](https://forum.keyboardmaestro.com/t/simple-text-expansion-macro/3305) forum post.
+* Change the [[action:Display_Text|Insert Text]] action to Display Text to show the information on the screen.
+* Look at the [[manual:Tokens|Tokens]] wiki page to see all the kinds of information you can type or display.
+* Look at the [[manual:Variables|Variables]] wiki page to learn about variables.
+* Look at the [Variable Repeat](https://forum.keyboardmaestro.com/t/variable-repeat/225) forum post to see how to use variables in a macro action.
+
+==== Use the Inbuilt Macro Library ====
+
+Keyboard Maestro includes a macro library with a bunch of useful macros.  Choose Window ➤ Macro Library do display the macro library and take a look through there.
+
+==== From Miraz ====
+
+* Capture the Command-N keystroke in Safari and use it to make the window the size I like and to put it in the position I prefer.
+* Capture the Resize Image keystroke in Acorn and prefill the dimensions I use most often before pressing Return.
+* Enter an email address and add a standard Subject line when I forward certain emails.
+* Call up and run Applescripts in various apps.
+* Make selected text upper or lowercase in BBEdit via a keyboard command.
+* All kinds of clipboard operations, expecially pasting as plain text.
+* Keep items from a series of copy commands in a received email and then paste them, with some added standard items into my spreadsheet.
+* Call up a specific URL and ask me for some text then incorporate that into the URL. This allow me to quickly find the New Zealand dollar amount for a particular US dollar amount via finance.yahoo.com.
+
+==== From Philippe ====
+
+See my [tips and tricks here](http://flipmartin.net/software/tips-and-tricks-for-keyboard-maestro).
+
+==== From the Keyboard Maestro Documentation ====
+
+=== Launch Your Most Used Applications ===
+
+Use function keys to launch or switch to your most used applications. For example, you probably often switch to the Finder, your Email client, your Web Browser, your Word Processor. Consider putting these and other frequently used applications on function keys.
+
+=== Open Your Most Used Documents ===
+
+Use Control-Function Keys to open your most used documents. For example, you might have a documentation file or financial details file that you access frequently, consider putting these on Control-Function Keys.
+
+=== Insert Text Templates ===
+
+Use Control-Letter and the Insert Text action to type in text for you, such as your name, address, phone number, and so on. Consider restricting these to just the appropriate applications like your Email client or Word Processor by creating a Macro Group for them. Also consider using Typed String triggers for these sorts of macros, for example “=em=” for email address and “=addr=” for address.
+
+=== Use Hot Keys to Open Financial Accounts ===
+
+If you keep your finances on your computer, then you probably need to open a document every time you enter a bill or receive a statement. By creating a Hot Key to open the document for you, you can save a few seconds every time - at least it might make receiving a bill slightly less unpleasant! If you have multiple accounts (eg personal, business, association) then this can be even more useful.
+
+=== Use Hot Keys to connect to SSH or FTP sites. ===
+
+You could use Hot Keys to connect to your common servers. You might need to create a Bookmark file for the site and use the Open File Macro Action.
+
+=== Simulate Bookmarks ===
+
+You could Use Hot Keys to Insert Text, Simulate Tab Press, Insert Text, Simulate Return Press to make effective bookmarks for applications that do not have an in-built bookmark system or to enter form data. While you could use this to enter usernames and passwords I would advise you use a tool like Web Confidential for such things as it will provide secure storage for your password.
+
+=== Remap Command Keys ===
+
+If you find yourself pressing a command key in an application and expecting it to do something but it does not work (for example, Command-T for “Replace and Find Again”), use a Macro to make the command key “do the right thing” in that application. Similarly, if you use a function in an application frequently, but it has a convoluted command key or no command key at all, define your own command key by using a Hot Key to select the menu item. Keep in mind that you can do some menu key remapping in the System Preferences Keyboard preference.
+
+=== Simulate Missing Features ===
+
+If you find yourself missing a feature in one application that you are used to in another application (perhaps you switched email clients and a feature is missing), see if you can simulate the feature with a sequence of commands and then use a Hot Key for that. For example, Close Window, Down Arrow, Return to move to next email message, or Command-Left Arrow, Shift-Down Arrow, Command-C, Down Arrow, Command-V to duplicate a line.
+
+=== Swap Characters ===
+
+If you often type characters out of order, use a Hot Key to swap them by first placing the cursor between them and then executing:
+
+* Simulate Keystroke Shift-Right Arrow
+* Cut to Named Clipboard “Temp”
+* Simulate Keystroke Left Arrow
+* Paste from Named Clipboard “Temp”
+* Save a Text Clipping
+
+If you often want to save snippets of text, you could create a Hot Key to save a clipping:
+
+* Copy
+* Open File “Clippings.rtf”
+* Simulate Keystroke Command-Down Arrow
+* Insert Text “== %LongDate% %ShortTime% ==<return>” by Typing
+* Paste
+* Simulate Keystroke Return
+* Simulate Keystroke Return
+* Select Menu Item File » Save
+* Manipulate Window Close Front Window
+* Switch to Last Application (or Quit Specific Application or Command-Q)
+* Delayed Click
+
+Setup a macro which simply pauses for twenty seconds and then clicks the mouse. Then when you need to print on to an envelope, go all the way through the process, position the mouse over the Print button, execute the Macro, walk over to the printer, insert an envelope and then take the printed envelope back with you.
+
+=== Insert Boilerplate Text ===
+
+If you regularly need to insert boilerplate text (eg copyright or file creation text), use an Insert Text macro to insert the text quickly and easily. It can even expand tokens to insert the date or other information.
+
+=== Apply Text Conversions ===
+
+If you are regularly translating text from one format to another in an automatic process, perhaps you can automate the whole thing with a Keyboard Maestro macro. For example, converting header functions into function entries. Using a shell script with pbcopy and pbpaste may also be useful for this purpose.
+
+=== Simulate Workspaces ===
+
+Create a macro to setup an application to your liking. For example, create multiple tabs in Terminal, each in its own directory, or open multiple documents in TextEdit, each positioned and sized appropriately.
+
+=== Setup an Application When Launched ===
+
+If you always do a set of things every time you launch an application (eg arrange the windows in a particular way), use an application Macro Trigger to execute a Macro when you launch the application, then have the Macro do the work for you.
+
+=== Clean Up After Using an Application ===
+
+If you always do something after quitting an application (eg unmount a server or disconnect from the Internet), use an application Macro Trigger to execute a Macro when you quit the application. You might need to do a little AppleScripting to perform the action and then use the [[action:Execute an AppleScript|Execute an AppleScript]] action.
+
+=== Feedback During Macro Execution ===
+
+A Macro can play a System Beep, but an alternative is to use an AppleScript or shell script to speak text (AppleScript say "hello").
+
+You can also use the Alert action to display a window with specified text. This also allows you to stop the macro if you decide not to proceed.
+
+=== Rakesh Kumar’s PC Switcher’s Pack ===
+
+Rakesh Kumar has created a pack to make life easier for Windows to Mac Switchers. It includes a set of macros for Mail, Microsoft Word and Microsoft PowerPoint as well as macros to map control keys to command keys for various common actions like Cut/Copy/Paste. It also includes a DefaultKeyBinding.dict for Mail to make it work more like Windows users expect.
+
+Download Rakesh Kumar’s [PC Switcher Pack](http://files.stairways.com/switcher-pack.zip) and follow the instructions.
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/duh-an-actions-gear-icons-help-takes-you-to-the-wiki/3652/2|DUH! An Action's Gear Icon's "Help" takes you to the Wiki]]

@@ -1,0 +1,12 @@
+====== External Links ======
+
+This page is intended to have a list of interesting third party links about Keyboard Maestro in no particular order.
+
+This page needs a lot of additions.
+
+* [Philippe Martin’s Tips and Tricks](http://flipmartin.net/software/tips-and-tricks-for-keyboard-maestro)
+* [The Brooks Review Keyboard Maestro Series](https://brooksreview.net/?s=Keyboard+Maestro)
+* [Smile Software’s article on the Secure Input issue](http://smilesoftware.com/textexpander/secureinput.html)
+* [Patrick Welker’s article on how to set up automatic syncing of macros](http://rocketink.net/2013/01/keyboard-maestro-sync.html)
+* [Dan Thomas’ Keyboard Maestro and scripting repository](https://github.com/dagware/DanThomas)
+* [David Spark’s Keyboard Maestro Field Guide](https://learn.macsparky.com/p/km).

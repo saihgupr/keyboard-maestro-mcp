@@ -1,0 +1,39 @@
+Keyboard Maestro provides a large set of web browser actions that work with Safari and Google Chrome, but require each browser to be set to accept their input as described below.
+
+* [[Browser_Window_Actions|Browser Window Actions]] (like New Tab, Set URL, etc).
+* [[Browser_Form_Actions|Browser Form Actions]] (like Set Field, Set Checkbox).
+* [[Click_Browser_Link|Click Browser Link]] action.
+* [[Wait_For_Browser_to_Finish_Loading|Wait For Browser to Finish Loading]] action.
+* [[Execute_a_JavaScript_in_Browser|Execute a JavaScript in Browser]] action.
+
+These actions work only with those two browsers (and optionally, their developer versions, Safari Technology Preview and Chrome Canary) because they are the only two web browsers that have comprehensive AppleScript support.
+
+The actions can work with the *Front Browser*, which really means the most recently front web browser of Safari or Google Chrome.
+
+You can change the targeted browser in the gear BUTTON{{{⚙}}} menu.
+
+===== Safari Allow JavaScript =====
+
+For the Safari actions to work, you must enable Allow JavaScript for Apple Events.  To do so, first enable the Develop menu in the Safari preferences, and then ensure the *Allow JavaScript for Apple Events* option is ticked in the Develop menu.
+
+{{:actions:safari-develop-menu.png?nolink&323|}}
+
+===== Chrome Allow JavaScript =====
+
+For the Chrome actions to work, you must enable Allow JavaScript from Apple Events.  To do so, click on View, and then ensure that in the Developer sub-menu the *Allow JavaScript from Apple Events* option is ticked.
+
+{{:actions:chrome-develop-menu.png?nolink&600|}}
+
+===== See Also =====
+
+* [[Browser_Form_Actions|Browser Form Actions]]
+* [[Browser_Window_Actions|Browser Window Actions]]
+* [[Wait_For_Browser_to_Finish_Loading| Wait For Browser to Finish Loading actions]]
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/search?q=Safari%20Chrome|Keyboard Maestro Forum topics about Safari and Chrome]]

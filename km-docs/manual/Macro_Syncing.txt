@@ -1,0 +1,43 @@
+====== Macro Syncing ======
+
+Keyboard Maestro is licensed on a per user basis on up to five Macs, so if you use it on two or more Macs you may want to transfer some of your macros from one to the other.  You can do this by selecting the desired macros and choosing the [[Menus#Export_Macros|File ➤ Export Macros menu]] to export your macros, and then importing them on the target Mac.
+
+Alternatively, you may want (almost) all your macros on both Macs, in which case you can set up your macros to sync between them.  This means any change you make on one Mac will be mirrored on the other and vice versa, although you generally should not edit your macros simultaneously on both Macs.
+
+(i) **NOTE: You can only sync between identical versions of Keyboard Maestro.  If the sync file is newer than the current version, you will be warned to upgrade, turn off syncing, or live dangerously (which temporarily disables syncing and allows you to make changes that will likely cause trouble later).**
+
+To do this, you need a file location that is mirrored on both Macs.  Dropbox or a similar service is good for this, or you can use a shared file server, although you must ensure it is available at all times to both Macs. Note that iCloud Drive can frequently take a long time to sync between Macs which can lead to lost changes.
+
+You are then ready to start syncing your macros.
+
+(!) **WARNING: Syncing macros is an all or nothing affair, so any macros on the target Mac before you start syncing will be lost.**
+
+(!) **WARNING: If you make changes on one Mac, and then make changes on the other Mac before syncing has taken place, you may lose one or other changes.**  Be especially careful if you are working with your Mac when offline.
+
+(i) NOTE: Keyboard Maestro references to files or applications that exist on one Mac and not the other will likely cause problems, so you should ensure any application you reference on one Mac is available at the same path on both Macs.
+
+On the Mac that currently has your macros, choose the [[Menus#Start_Syncing_Macros|File ➤ Start Syncing Macros menu]].  **Read the text carefully**, and then click the BUTTON{{{Create~~New}}} button.  Save your existing macros in the macro sync file in your shared location.  From now on, Keyboard Maestro will sync any changes to/from that file.
+
+Wait for the file to be mirrored to the second/target Mac.  On that second Mac, choose the [[Menus#Start_Syncing_Macros|File ➤ Start Syncing Macros menu]]. Again, **read the text carefully**, and then click the BUTTON{{{Open~~Existing}}} button.
+
+(!) **WARNING: All of the existing macros on this second Mac will be destroyed when you click the BUTTON{{{Open~~Existing}}} button.**  If you have any macros on the second Mac that you wish to preserve, export them first, and then after syncing is enabled, import them (and they will then be synced to your other Macs).
+
+Select the mirrored sync file.  **Your existing macros will be replaced with the macros from your first Mac.**
+
+Repeat the process for any other Macs.
+
+If there are some macros you do not want active on a Mac, you can configure any given Macro Group to be disabled on that particular Mac by turning on the BUTTON{{{Disabled on this Mac}}} setting in that Macro Group. Alternatively, you can click the BUTTON{{{Disable On All Macs}}} button and then turn off the BUTTON{{{Disabled on this Mac}}} setting on the desired Macs. Once you click the BUTTON{{{Disable On All Macs}}} button, the macro group will default to being disabled on any new Macs you sync with.
+
+Dropbox may keep backup versions, and Keyboard Maestro keeps backup revisions (in the [[Menus#Revert_Macros|File ➤ Revert Macros menu]]), so you should be able to recover from any conflicts that happen.  Dropbox may notice a conflict if you edit your macros on both Macs simultaneously.  As a general rule this should not be an issue, though you may lose a change if you make changes on both Macs quickly (and note that quitting the Keyboard Maestro editor is considered a change).
+
+Since your two Macs will likely not be identical, you may have to adjust your macros to work properly on both Macs.  Using the various [[Tokens]] and [[Calculations|Functions]] can help.  For example the [[token:MacUUID|%MacUUID%]] token is a unique ID for each Mac, and can be used to test which Mac the macro is running on.  Other functions, like the [[function:SCREEN|SCREEN]] function can be used to ensure your macro behaves appropriately regardless of the details of the Mac.
+
+If you use Migration Assistant or otherwise clone your Mac harddisk to a new Mac, and intend to continue using Keyboard Maestro on both Macs, then you will need to reset the MacUUID on one of the Macs so that Keyboard Maestro can tell the difference between them. To do this, run the Terminal commands:
+
+```
+defaults delete com.stairways.keyboardmaestro.engine MacUUID
+defaults delete com.stairways.keyboardmaestro.engine MacRemoteUUID
+```
+
+(i) NOTE: Only your macros are synced.  None of your preferences, clipboards or variables are synced.
+

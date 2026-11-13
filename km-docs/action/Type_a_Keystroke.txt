@@ -1,0 +1,47 @@
+====== Type Keystroke Action ======
+
+
+The //Type Keystroke action// lets you type a single keystroke, pretty much any kind of keystroke you can type on the keyboard.
+
+The Type Keystroke action is just like typing yourself, so you can type any keystroke and any number of them, but it can be tedious to create a sequence of keystrokes in a macro.
+
+===== How To Use =====
+
+
+Use Type Keystroke when:
+
+  *You are entering a single keystroke and perhaps need particular control over the exact keystroke typed, or
+  *The keystroke includes Command or Control (and sometimes Option).
+
+You can optionally have the key pressed and held, or pressed and repeated, or released if you previously pressed it.
+
+Note: keys that are pressed stay pressed only as long as the macro continues to run.
+
+==== Do Not Use for the Keystroke of an Active Hot Key Trigger ====
+
+You should not use this action to simulate a keystroke that is the same as an active [[trigger:Hot_Key|Hot Key Trigger]]. Typing a keystroke that is the hot key trigger for an active macro has unpredictable behaviour, it may type the keystroke or trigger the macro, and which will vary depending on unpredictable factors including the load on the Mac, the version of OS X or Keyboard Maestro and other factors.  
+
+Instead use the [[action:Trigger_Macros_by_Hot_Key|Trigger Macros by Hot Key]] action if triggering the macro is desired, or alternatively, find another way to cause the desired action (eg use the [[action:Select_or_Show_a_Menu_Item|Select or Show a Menu Item]] action to select a menu instead of simulating a menu command key).
+
+If you really need to simulate the keystroke, then you will need to deactivate or disable any macros with the matching hot key trigger, type the keystroke, pause for it to be completed, and then re-activate/enable the macro.
+
+
+
+===== Send to Background App (v8+) =====
+
+
+You can also optionally choose (v8+) which application to send the keystrokes to.  This allows you to send keystrokes to an application in the background.  Note that the system and many applications do not expect to see keystrokes in the background, so how well this solves any given problem will vary depending on the exact circumstances.
+
+{{:action:type-keystroke-send-to-km8.png?nolink|}}
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/modifier-keys-are-not-holding-but-instead-repeating/3098/7|Modifier keys are not holding but instead repeating]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Type%20Keystroke|Keyboard Maestro Forum topics about Type Keystroke action]]

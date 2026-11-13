@@ -1,0 +1,14 @@
+====== Hide Front Application Action ======
+
+The Hide Front Application action hides the current application. 
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Hide_a_Specific_Application|Hide a Specific Application]] action
+* [[action:Hide_All_Applications|Hide All Applications]] action
+* [[action:Hide_Other_Applications|Hide Other Applications]] action
+* [[action:Show_a_Specific_Application|Show a Specific Application]] action
+* [[action:Show_All_Applications|Show All Applications]] action
+* [[:Actions|See all Actions]]

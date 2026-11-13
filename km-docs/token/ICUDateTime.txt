@@ -1,0 +1,146 @@
+====== ICU Date/Time Tokens ======
+
+The //%ICUDateTime%//, //%ICUDateTimePlus%//, //%ICUDateTimeMinus%// and //%ICUDateTimeFor%// tokens return the a date formatted in a specific format.  More details are provided in the [[:Dates_and_Times|Dates and Times]] article.
+
+===== Required Parameters for ICUDateTime Tokens =====
+
+The parameters are specified between `%` signs after the main ICDDateTime token.
+
+* %**ICUDateTime**%*[output date format]*%
+  * Returns the current date and time in the specified format.
+  * Example: ''%ICUDateTime%EEE, MMM d, yyyy h:mm%'' ⇢ //Mon, Jan 2, 2023 11:17//
+
+* %**ICUDateTimeFor**%*[unixtime]*%*[output date format]*%
+  * Returns Date/Time specified by the [[:unixtime]], in the user's local time zone.
+* %**ICUDateTimePlus**%*[amount of time]*%*[unit of time]*%*[output date format]*%
+  * Returns Date/Time calculated by the Current Date/Time **plus** the *[amount of time]*.
+* %**ICUDateTimeMinus**%*[amount of time]*%*[unit of time]*%*[output date format]*%
+  * Returns Date/Time calculated by the Current Date/Time **minus** the *[amount of time]*.
+
+where:
+  * *[output date format]* must conform to the [ICU Date/Time codes](https://www.keyboardmaestro.com/action/linkthru?icudatetimereference).
+  * *[unixtime]* is the total number of seconds since the start of 1970, GMT (see [[:unixtime]]).
+  * *[unit of time]* is a unit as described below.
+  * *[amount of time]* is a calculation, being the number of *[unit of time]* units to add or subtract.
+
+
+===== Unit of Time =====
+
+The available time units that can be added or subtracted with //%ICUDateTimePlus%// and //%ICUDateTimeMinus%// are:
+
+* Seconds
+* Minutes
+* Hours
+* Days
+* Weeks
+* Months
+* Years
+* Sundays
+* Mondays
+* Tuesdays
+* Wednesdays
+* Thursdays
+* Fridays
+* Saturdays
+
+==== Using Plus 0 or 1 With Day of Week (v8+) ====
+
+*  If the //Time Unit// is a day of the week (//Sundays// thru //Saturdays//)
+  * **If you use a Plus 0** (//%ICUDateTimePlus%**0**%//), \\
+it will return the next appropriate day for that day of week, possibly returning today if it is the same day of week as entered;
+    * So if Today is //Tuesday//, and you use //%ICUDateTimePlus%0%Tuesdays%//, then it will return Today's date.
+    * Whereas, if you use //%ICUDateTimePlus%0%Wednesdays%//, it will return tomorrow's date.
+  * **If you use Plus 1** (//%ICUDateTimePlus%**1**%//), \\
+it will return the next appropriate day, strictly after Today. 
+
+=== Examples ===
+
+
+For example, if today is Tuesday, September 5, 2017, you would get these results:
+
+^Token^Result^
+| %ICUDateTimePlus%0%Tuesdays%EEE, MMM d, yyyy% \\ %ICUDateTimePlus%1%Tuesdays%EEE, MMM d, yyyy% \\ %ICUDateTimePlus%2%Tuesdays%EEE, MMM d, yyyy% \\ %ICUDateTimePlus%0%Wednesdays%EEE, MMM d, yyyy% \\ %ICUDateTimePlus%1%Wednesdays%EEE, MMM d, yyyy% \\ %ICUDateTimePlus%2%Wednesdays%EEE, MMM d, yyyy% \\ %ICUDateTimePlus%0%Mondays%EEE, MMM d, yyyy% \\ %ICUDateTimePlus%1%Mondays%EEE, MMM d, yyyy% \\ %ICUDateTimePlus%2%Mondays%EEE, MMM d, yyyy% \\ %ICUDateTimeMinus%0%Tuesdays%EEE, MMM d, yyyy% \\ %ICUDateTimeMinus%1%Tuesdays%EEE, MMM d, yyyy% \\ %ICUDateTimeMinus%2%Tuesdays%EEE, MMM d, yyyy% \\ %ICUDateTimeMinus%0%Wednesdays%EEE, MMM d, yyyy% \\ %ICUDateTimeMinus%1%Wednesdays%EEE, MMM d, yyyy% \\ %ICUDateTimeMinus%2%Wednesdays%EEE, MMM d, yyyy% \\ %ICUDateTimeMinus%0%Mondays%EEE, MMM d, yyyy% \\ %ICUDateTimeMinus%1%Mondays%EEE, MMM d, yyyy% \\ %ICUDateTimeMinus%2%Mondays%EEE, MMM d, yyyy% | Tue, Sep 5, 2017 \\ Tue, Sep 12, 2017 \\ Tue, Sep 19, 2017 \\ Wed, Sep 6, 2017 \\ Wed, Sep 6, 2017 \\ Wed, Sep 13, 2017 \\ Mon, Sep 11, 2017 \\ Mon, Sep 11, 2017 \\ Mon, Sep 18, 2017 \\ Tue, Sep 5, 2017 \\ Tue, Aug 29, 2017 \\ Tue, Aug 22, 2017 \\ Wed, Aug 30, 2017 \\ Wed, Aug 30, 2017 \\ Wed, Aug 23, 2017 \\ Mon, Sep 4, 2017 \\ Mon, Sep 4, 2017 \\ Mon, Aug 28, 2017 |
+
+Note how Plus 0 and Plus 1 //weekday// are the same unless today is the same as the //weekday//.  Also note that Plus 0 and Minus 0 //weekday// is not the same (except when today is the same as the //weekday//).
+
+===== Format Specification =====
+
+The **format** is a specified with an [ICU Date Time Format Specifier](http://www.stairways.com/action/linkthru?icudatetimereference) which allows you to produce the date in almost any format you desire.
+
+You can use the *Insert ICU Date Field* menu in the *Edit* menu to insert various ICU Date Field format tokens. The *Insert ICU Date Field by Name…* menu item may be particularly helpful to quickly insert field components.
+
+Keep in mind that [[:unixtime]] is in GMT and the output of ICUDateTimeFor is in local time, so when doing this sort of thing it is best to use midday instead of midnight:
+
+```
+%ICUDateTimeFor% TIME(2015, 8, 23,12,0,0) %EEE, MMM d, yyyy%
+```
+
+which will generally work anywhere since at midday GMT, the entire world (almost) is on the same date. Otherwise, folks with negative GMT offsets (which includes all of the Americas for example) will get the wrong result.
+
+===== Using Variables with These Date/Time Tokens =====
+
+You can use any [[manual:Calculations|calculation]] in the _numeric_ parameters, like the *[amount of time]* and *[unit of time]* fields.
+
+The _text-only_ parameters must be plain text, and be a valid choice for that parameter.
+
+**Examples**
+
+```
+%ICUDateTimePlus%3%Days%MM/dd/yyyy%
+%ICUDateTimePlus%myAmountOfTime%Days%yyyyMMdd%
+%ICUDateTimePlus%myBaseNumber + 3%Months%yyyy-MM-dd%
+```
+
+Also See
+
+* [[https://forum.keyboardmaestro.com/t/icu-time-multiple-variables/18181/2?u=jmichaeltx|Discussion of Using Variables With ICUDateTime]]
+* [Generate File Named Based on Day of Week [Example]](https://forum.keyboardmaestro.com/t/dates-generate-file-named-based-on-day-of-week-example/4562)
+
+===== Localization =====
+
+Prior to Mojave, and after Keyboard Maestro 9.0, dates should be in your chosen language.  Unfortunately Apple changed Mojave and later to make the system return dates only in the Keyboard Maestro localized language (ie, English), regardless of your chosen locale.  Keyboard Maestro 9.0 works around this by claiming to be in all locales, even though it is really only localized for English itself.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Set Variable to Text|Set Variable to Text]]
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[function:DAY|DAY()]]
+* [[function:DOW|DOW()]]
+* [[function:GMTOFFSET|GMTOFFSET()]]
+* [[function:JD2TIME|JD2TIME()]]
+* [[function:MJD2TIME|MJD2TIME()]]
+* [[function:NOW|NOW()]] (unixtime)
+* [[function:TIME|TIME()]] (unixtime)
+* [[function:TIME2JD|TIME2JD()]]
+* [[function:TIME2MJD|TIME2MJD()]]
+* [[:Functions|See all Functions]]
+
+==== Tokens ====
+
+* [[token:ICUDateTimeFor|%ICUDateTimeFor%]]
+* [[token:ICUDateTimeMinus|%ICUDateTimeMinus%]]
+* [[token:ICUDateTimePlus|%ICUDateTimePlus%]]
+* [[token:LongDate|%LongDate%]] (local time)
+* [[token:LongTime|%LongTime%]] (local time)
+* [[token:NumberDate|%NumberDate%]] (local time)
+* [[token:ShortDate|%ShortDate%]] (local time)
+* [[token:ShortTime|%ShortTime%]] (local time)
+* [[:Tokens|See all Tokens]]
+
+==== Topics ====
+
+* [[:Dates and Times|Dates and Times]]
+* [[:JulianDate|JulianDate]]
+* [[:unixtime]] in GMT
+
+===== Forum =====
+
+- [[https://forum.keyboardmaestro.com/t/adding-minutes-to-current-time/3002/2|Adding minutes to current time]]
+- [[https://forum.keyboardmaestro.com/t/if-then-condition-to-run-only-during-date-range/4485/3|If...then...condition to run only during date range]]
+
+- [[https://forum.keyboardmaestro.com/search?q=ICUDateTime|Keyboard Maestro Forum topics about %ICUDateTime% token]]

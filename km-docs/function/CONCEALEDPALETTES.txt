@@ -1,0 +1,9 @@
+====== CONCEALEDPALETTES Function ======
+
+The CONCEALEDPALETTES() function returns whether the Keyboard Maestro palettes are currently concealed. It returns 1 if the palettes are concealed, or 0 if they are being displayed normally (v7.0+).
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

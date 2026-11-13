@@ -1,0 +1,63 @@
+====== Fundamental Concepts ======
+
+First, if you have not done so already, please read the [[Quick Start]]. That tells you all the things you need to know to get started using Keyboard Maestro, as well as getting a grounding the terminology used in Keyboard Maestro.
+
+This page is designed to document some of the fundamental concepts that are important for a deeper understanding of how things work in Keyboard Maestro, but which are so fundamental that there is not necessarily a specific place to document them elsewhere.
+
+If you are new to Keyboard Maestro, this may not be the place to start - this is describing things that while fundamental, probably will never affect most people.
+
+==== Getting Help ====
+
+All through Keyboard Maestro you can use the Option key to get direct links to the wiki reference.
+
+* Hold the Option key while selecting from the New Trigger menu to get help on the various triggers.
+* Hold the Option key while selecting a new Action to get help on the specific actions.
+* Hold the Option key when selecting from the Edit Insert menus to get help on Actions, Functions, or Tokens.
+
+You can also use the search in the Help menu to search the wiki for topics, as well as getting Help on Regular Expressions and ICU Date Formats.
+
+If a macro ever “does nothing”, the Interactive Help can explain why the macro is not triggering, or ensure that it is triggering so you know to look at the actions instead.
+
+And of course you can [[https://www.stairways.com/main/contact|Contact Us]] (for questions about using Keyboard Maestro) or  [[assistance:Post_to_Forum|ask on the forum]] (for questions about creating specific macros).
+
+==== Where Are Macros Stored? ====
+
+Macros are stored locally on your Mac within your user account. They are not tied to your license, nor are they synced to “the cloud”. You can have multiple Macs (or multiple user accounts) and each will have their own macros, completely independent of each other, regardless of whether you use the same license (which you can, because Keyboard Maestro is licensed on a per-user basis on up to five Macs) or different licenses.
+
+Specifically, your macros and most other information are stored in the ~/Library/Application Support/Keyboard Maestro folder.
+
+Related topics:
+
+* [[/Syncing_Macros_Between_Macs|Syncing Macros Between Macs]]
+* [[/manual/How_do_I#How_do_I_backupmigratetransfer_my_installation_to_another_Mac|How do I backup / migrate / transfer my installation to another Mac?]]
+
+==== Macros Are Run Asynchronously ====
+
+When a macro is triggered, it starts running (executing its actions in sequence one after another). While that happens, other macros can be triggered. Each of these macro instances will run in parallel. This includes the original macro. 
+
+So for example if you have a macro that is triggered by Control-X, and it takes some time to execute, and you press Control-X twice, two instances of the macro will be running simultaneously. 
+
+There is no way to know how fast the two macros will execute, or if they both are triggered by the same event, action will start first. Even if Macro A started first, the first action of Macro B might be the next action to start, and while it was executing the first and second action of Macro A might execute.
+
+Each macro runs independently, accessing the same shared set of Global [[manual:Variables|Variables]], but with its own unique set of Local and Instance Variables.
+
+Within an executing macro instance, the actions execute in sequential order.
+
+There are some actions whose behaviour is simply to start something happening (eg the [[action:Activate_Application_Switcher|Activate Application Switcher]] action activates the switcher but does not wait further, and the [[action:Type_a_Keystroke|Type a Keystroke]] action adds the key to the system event queue after which the system deals with the key), but most actions try to wait for their action to complete before progressing.
+
+You can use the [[action:Semaphore_Lock|Semaphore Lock]] action to enforce synchronous execution between macros.
+
+==== The System Event Queue ====
+
+When UI events happen (press key, move or click mouse, etc), including when Keyboard Maestro simulates them, they are placed in the event queue which is a system wide queue. A big part of what an application does is run a loop that extracts the next event from that queue and handles it.
+
+So the application asks the system for the next event, and the system looks at the event and decides what to do - maybe the event is a keystrokes and so the system checks if it is a registered hot key, and if so that is handled in one way, or it is a key press so the system goes through a complicated process checking whether the key is a menu shortcut matching an enabled menu, or something that the window can handle, which in turn looks at something the focused item or its parents can handle.
+
+If nothing can be found to handle the key, then the system might decide to make a beep alert noise and drop the event.
+
+This is also why it's impossible to safely do things like capture a key and then decide to allow it to be handled as a normal key, because the only way to do that would be to put it in the event back in the queue. Since you can only add events to the end of the queue and read events from the start of the queue, taking an event out, looking at it and putting it back means it is placed out of order. You cannot shove the event back in at the start of the queue, only add it to the end.
+
+It's also a typical source of issues needing a Pause because the event queue means that events that are simulated will be handled when the application is ready to handle them, but if you change the focus (activate an application, close or open a window, etc), then the event might go to the new focus when you are expecting it to go to the old focus location.
+
+
+

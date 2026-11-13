@@ -1,0 +1,19 @@
+The //[[token:ExecutingMacroUUID|%ExecutingMacroUUID%]]// token returns the unique ID of the currently executing macro.
+
+===== See Also =====
+
+==== Tokens ====
+
+* [[token:ExecutingMacro|%ExecutingMacro%]]
+* [[token:ExecutingMacroUUID|%ExecutingMacroUUID%]]
+* [[token:ExecutingMacroGroup|%ExecutingMacroGroup%]]
+* [[token:ExecutingMacroGroupUUID|%ExecutingMacroGroupUUID%]]
+* [[token:ExecutingThisMacro|%ExecutingThisMacro%]]
+* [[token:ExecutingThisMacroUUID|%ExecutingThisMacroUUID%]]
+* [[token:ExecutingThisMacroGroup|%ExecutingThisMacroGroup%]]
+* [[token:ExecutingThisMacroGroupUUID|%ExecutingThisMacroGroupUUID%]]
+* [[token:ExecutingInstance|%ExecutingInstance%]]
+* [[token:ExecutingInstances|%ExecutingInstances%]]
+* [[token:ExecutingInstanceName|%ExecutingInstanceName%]]
+* [[token:MacroNameForUUID|%MacroNameForUUID%]]
+* [[:Tokens|See all Tokens]]

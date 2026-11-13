@@ -1,0 +1,7 @@
+====== Collections ======
+
+Keyboard Maestro includes a [[/action/For_Each|For Each action]] which perform a sequence of actions repeatedly, once for each element of a collection.
+
+Any time you have to deal with a set of things (lines, files, numbers, etc), you are probably thinking of a collection for which the For Each action is the answer.
+
+The available collections are listed on the [[/Collections|wiki Collections page]].

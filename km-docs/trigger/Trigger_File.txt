@@ -1,0 +1,16 @@
+====== Trigger File ======
+
+Any active macro can be triggered by opening a Trigger File (v8+) which you can create by choosing [[manual:Menus#Export_as_Trigger_File|Export as Trigger File]] from the [[manual:Menus#File|File menu]].
+
+Note that a macro must be active (that is, it must be enabled, and the macro group that contains it must be enabled and active) in order for the macro to be triggered by any means including via a Trigger File.
+
+The [[token:TriggerValue|%TriggerValue%]] token will hold the path of the Trigger File.
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[Script|Script]] trigger
+* [[URL|URL]] trigger
+* [[keyboardmaestro|keyboardmaestro CLI Tool]]
+* [[/Triggers|All Triggers]]

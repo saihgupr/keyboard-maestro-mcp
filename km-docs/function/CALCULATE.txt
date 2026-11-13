@@ -1,0 +1,35 @@
+====== CALCULATE Function ======
+
+The CALCULATE(t) function takes an arbitrary [[:Tokens|token text]] string, processes the text tokens, and then calculates value of the resulting numeric expression.
+
+    CALCULATE(%ICUDateTime%yyyyMMdd%/10000)
+    CALCULATE(%CurrentClipboard%)
+
+{{function:set-var-to-calculation-calculate.jpg?nolink|}}
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Set Variable to Calculation|Set Variable to Calculation Action]]
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[BIN]]
+* [[OCT]]
+* [[HEX]]
+* [[CALCULATE]]
+* [[:Functions|See all Functions]]
+
+==== Tokens ====
+
+* [[token:Bin|%Bin%]]
+* [[token:Oct|%Oct%]]
+* [[token:Hex|%Hex%]]
+* [[token:Calculate|%Calculate%]]
+* [[:Tokens|See all Tokens]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/search?q=CALCULATE|Keyboard Maestro Forum topics about CALCULATE() function]]
