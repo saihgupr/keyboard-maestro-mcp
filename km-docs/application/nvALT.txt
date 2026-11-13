@@ -1,0 +1,5 @@
+====== Using Keyboard Maestro macros in nvALT ======
+
+[nvALT](http://brettterpstra.com/projects/nvalt/) is a way to take notes quickly and effortlessly using just your keyboard.  It is a fork of [Notational Velocity](http://notational.net/) including MultiMarkdown.
+
+There are [some macros on the forum](https://forum.keyboardmaestro.com/search?q=tag%3Anvalt%20category%3Amacro).

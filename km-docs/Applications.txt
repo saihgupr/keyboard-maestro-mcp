@@ -1,0 +1,10 @@
+====== Applications ======
+
+Keyboard Maestro works across all applications.  Many macros are general purpose (eg "Type my Email Address").  But also many are specific to a specific application (eg "Mark as Read" in Mail).
+
+Typically you will create a [[Macro Groups|Macro Group]] for an application, configure it to be active only when that application is at the front, and then place application-specific macros in that group.  You can have more than one Macro Group targeting a specific application, and Macro Groups can target (or exclude) multiple applications (eg a Macro Group for Editors that includes macros like "Duplicate Line" that work in a variety of editors).
+
+You can find some application specific macros in the [[Macro Library]] or on the [[Forum]], as well as some applications listed below.
+
+~~NOCACHE~~
+<nspages application -textPages="">

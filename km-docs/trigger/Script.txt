@@ -1,0 +1,27 @@
+Any active macro can be triggered via AppleScript request to the Keyboard Maestro Engine.  Keyboard Maestro includes a menu at the bottom of the trigger section showing example code to execute the macro by script in a variety of languages (although all variations break down to AppleScript requests, however that is done within the language, usually by using the *osascript* tool).  For example:
+
+    -- ignoring application responses
+    tell application "Keyboard Maestro Engine"
+    	do script "AD723329-6468-45C3-8125-DDCAC055E3ED"
+    	-- or: do script "My Example Macro"
+    end tell
+    -- end ignoring
+
+or
+
+    osascript -e 'tell app "Keyboard Maestro Engine" to do script "My Example Macro"'
+
+As can be seen, you can execute the macro by name, or more specifically based on the UID of the macro.
+
+Note that a macro must be active (that is, it must be enabled, and the macro group that contains it must be enabled and active) in order for the macro to be triggered by any means including via script.
+
+You can pass a parameter to the macro by adding *with parameter "Whatever"* to the *do script* command.  The parameter is available to the macro as the [[token:TriggerValue|%TriggerValue% text token]] (v7.0+).
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[URL|URL]] trigger
+* [[keyboardmaestro|keyboardmaestro CLI Tool]]
+* [[Trigger File|Trigger File]]
+* [[/Triggers|All Triggers]]

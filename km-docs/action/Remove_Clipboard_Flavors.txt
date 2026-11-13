@@ -1,0 +1,20 @@
+====== Remove Clipboard Flavors ======
+
+The //Remove Clipboard Flavors// action (v11.0+) lets you remove (or remove all except) specified clipboard flavors.  The list of flavors can be separated by commas or newline characters.
+
+{{ remove-clipboard-flavors-action.png?nolink&674x161 | Remove Clipboard Flavors Action }}
+
+You can remove flavors from the System Clipboard, the Trigger Clipboard, or any Named Clipboard.
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[token:TriggerClipboard|%TriggerClipboard%]] token
+* [[token:SystemClipboard|%SystemClipboard%]] token
+* [[token:NamedClipboard|%NamedClipboard%]] token
+* [[:Tokens|All Tokens]]
+
+=== Actions ===
+
+* [[:Actions|All Actions]]

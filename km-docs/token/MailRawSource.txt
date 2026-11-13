@@ -1,0 +1,1 @@
+The //%MailRawSource%// token returns the raw source of the currently selected mail message.

@@ -1,0 +1,18 @@
+====== Third Party Plug In ======
+
+A Third Party Plug In action allows users to write and [contribute](https://forum.keyboardmaestro.com/c/plugin) custom actions based on scripts.
+
+See the [documentation](/manual/Plug_In_Actions) for more information on writing plug in actions.
+ 
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Execute_Shortcut|Execute Shortcut]]
+* [[action:Execute_a_Shell_Script|Execute a Shell Script]]
+* [[action:Execute_a_Swift_Script|Execute a Swift Script]]
+* [[action:Execute an AppleScript|Execute an AppleScript]]
+* [[action:Execute an Automator Workflow|Execute an Automator Workflow]]
+* [[action:Execute a JavaScript For Automation|Execute a JavaScript For Automation]]
+* [[action:Filter|Filter Variable with Expand Tilde In Path]]
+* [[:Actions|See all Actions]]

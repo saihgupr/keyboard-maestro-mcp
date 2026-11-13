@@ -1,0 +1,10 @@
+====== UPTIME Function ======
+
+The UPTIME() function returns the time in fractional seconds since the Mac booted.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[SECONDS]]
+* [[:Functions|See all Functions]]

@@ -1,0 +1,27 @@
+The //[[token:Screen|%Screen%]]// tokens returns the frame of the specified screen.
+
+The //[[token:ScreenVisible|%ScreenVisible%]]// tokens returns the visible frame of the specified screen, excluding the menu bar and the dock.
+
+Both take a parameter indicating which screen to use which may be:
+
+{{page>include:ScreenIndex#}}
+
+So for example, //%ScreenVisible%Main%// gives the visible frame of the main screen.
+
+Like all frames in Keyboard Maestro, they are of the form left, top, width, and height, and are from the top left corner of the main screen.
+
+===== See Also =====
+
+==== Functions ====
+
+* [[function:SCREEN|SCREEN()]]
+* [[function:SCREENVISIBLE|SCREENVISIBLE()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[:Tokens|See all Tokens]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/search?q=Screen|Keyboard Maestro Forum topics about Screen]]

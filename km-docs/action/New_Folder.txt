@@ -1,0 +1,18 @@
+====== New Folder Action ======
+
+This action creates a new folder at a specified location.
+
+Note: The path must be an absolute path (or a path relative to home ~).
+
+You can optionally turn on *Create Intermediate* (v8+) in the gear BUTTON{{{⚙}}} menu to create parent directories as necessary.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Append Text to a File|Append Text to a File]]
+* [[action:Read a File|Read a File]]
+* [[action:Write to a File|Write to a File]]
+* [[action:Move or Rename a File|Move or Rename a File]]
+* [[:Actions|See all Actions]]
+

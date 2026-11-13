@@ -1,0 +1,60 @@
+This page describes and provides a group of macros for positioning the mouse to corners, edges, and center of the internal or external display. It demonstrates some useful features of Keyboard Maestro so it might be worth a look even if you don't think you'd use it. Written by user Mitchell Model on the original wiki, 26 December 2013.
+
+These macros move the mouse to a side, corner, or center of the internal or, if available, external screen.
+
+==== Macro Features Demonstrated ====
+
+The macros illustrate several things that might be worth looking at even if you don't use them:
+* Using a macro that runs when the computer starts up
+* Using a macro as a subroutine for other macros so that the same steps don't have to be repeated (and edited!) in each one
+* Saving the position of the mouse in a variable and using the variable to restore that position
+* Moving the mouse to positions relative to the corners, sides, and center of a display
+* Distinguishing between the internal and external display
+* A spatial organization of keybindings
+
+Download: {{:macros:mouse_positioner.kmmacros|}}
+
+==== What the Macros Do ====
+
+The macros save the position of the mouse before moving, and the group includes one to return the mouse to its previous location. Keyboard number pad keys are bound to the corresponding position on the screen, with **⌃⊞N** used for the internal display and **⌃⇧⊞N** for the external one. For example, **⌃⊞8** (Mouse to Internal Top Middle) moves the mouse to the top of the internal display, half way from the left. A startup macro is provided for setting margins to use when positioning the mouse, as described below. A special macro clicks the  menu.
+
+There are 20 macros with keybindings:
+
+* **⌃⊞1…⌃⊞9** — move the mouse to the corresponding location on the internal display, e.g. Mouse to Internal Bottom Right
+* **⌃⇧⊞1…⌃⇧⊞9** — move the mouse to the corresponding location on the external display, e.g. Mouse to External Middle Middle (Center)
+* **⌃⇧⊞0** — click the  menu (handy for running the mouse over the menubar menus and items)
+* **⌃⊞0** — return the mouse to where it was before the execution of the most recent of the above macros
+
+Margins are defined, separately for the internal and external displays, that specify how far from each edge to target the moves. The margins are represented as a list in the order left, top, right, bottom. (They are all positive because they represent an amount of space, not an x or y position.)
+
+(A note on the macro names: although mouse positions are expressed in x, y coordinates, the macro names place the vertical dimension first. "Top Left" seemed more natural than "Left Top", and in general vertical location is usually primary, as shown by the placement of menubars, toolbars, statusbars, docks, etc.)
+
+==== How the Macros Work ====
+
+=== Margins ===
+
+The margins are set by the macro Set Mouse Margin for Moves, which is executed on startup. Edit the values according to your preferences. You can change these at any time, then re-execute the macro by clicking the macro's "Try" button. As you edit, KM does a very cool thing -- it shows in light gray at the bottom of the macro's editing area the current values, an arrow, and the new values that would be saved the next time the macro is executed.
+
+=== Mouse Positioning ===
+
+Except for the macro that restores the mouse position, the positioning macros all work the same way:
+
+* Set Variable 'Mouse Destination' to Calculation
+* Execute Macro 'Save and Move Mouse'
+
+The calculation sets Mouse Destination to an x, y pair based on the intended location taking into account the relevant margin(s). For example, to move to the middle left of the external display (Move to External Middle Left) ⌃⇧⊞4), the calculation is:
+
+    SCREEN(External, Left) + Mouse Margins External[1] , SCREEN(External, MidY)
+
+The macro to click the  menu adds a click to the mouse movement.
+
+=== Restoring the Mouse Position ===
+
+The (unbound) macro Save and Move Mouse performs the following steps:
+
+* Set Variable ‘Mouse Position’ To Calculation MOUSEX(), MOUSEY()
+* Use Variable Mouse Destination to Set the Mouse Location
+
+The macro Restore Mouse Position simply does:
+
+* Use Variable ‘Mouse Position’ to Set the Mouse Location

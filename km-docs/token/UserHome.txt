@@ -1,0 +1,15 @@
+====== UserHome Token ======
+
+
+The //%UserHome%// token returns (v10.0+) the user home directory.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Execute_a_Shell_Script|Execute a Shell Script]] action
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens |See all Tokens]]

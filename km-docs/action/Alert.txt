@@ -1,0 +1,35 @@
+====== Alert Action ======
+
+The //Alert// action displays an alert in a separate window. The alert may contain static text which you enter in the Comment field. The comment field can also contain Text Tokens such as the name of the macro, a variable, a date, the clipboard or numerous other tokens.
+
+You may also change the title for the alert.
+
+You can optionally set a sound (v8+) to be played when the alert is displayed.
+
+The alert provides two buttons:
+  - Stop — stops the macro from continuing so following actions will not be carried out 
+  - Continue — allows the macro to continue and execute following actions.
+
+If the macro continues, the [[token:AlertButton|%AlertButton%]] token (v8+) is set to the name of the resulting button (Continue).
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Custom_HTML_Prompt|Custom HTML Prompt]] action
+* [[action:Get_Touch_Bar_Selection|Get Touch Bar Selection]] action
+* [[action:Prompt_for_User_Input|Prompt for User Input]] action
+* [[action:Prompt_for_Screen_Rectangle|Prompt for Screen Rectangle]] action
+* [[action:Prompt_With_List|Prompt With List]] action
+* [[action:Show_Palette_of_Macros|Show Palette of Macros]] action
+* [[:Actions|See all Actions]]
+
+==== Tokens ====
+
+* [[token:AlertButton|%AlertButton%]] token
+* [[token:PromptButton|%PromptButton%]] token
+* [[token:HTMLResult|%HTMLResult%]] token
+
+==== Forum ====
+
+* [[https://forum.keyboardmaestro.com/t/feature-request-play-sound-set-to-asynchronous/7354|[Feature Request] Play Sound: Set to Asynchronous]]

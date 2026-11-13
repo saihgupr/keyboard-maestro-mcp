@@ -1,0 +1,42 @@
+===== Keyboard Maestro Status Menu =====
+This is the menu you see when you click on the Keyboard Maestro icon in the Menu Bar. There is also an Action for it, called [[action:Show Status Menu|Show Status Menu]].
+
+### Here is an example Status Menu
+It will show macros for which you have added the [[trigger:Status_Menu|Status Menu Trigger]] as one of the things that will trigger the execution of the macro.
+
+The Status Menu shows only macros that are active and have the Status Menu trigger. The word "active" is Keyboard Maestro terminology for macros or groups that are both enabled and active in the current context, so it should be preferred to "allowed".  At the same time it should be made clear that the macros in the Status menu are not "active" in the same sense that applications are active.  In other words, these macros are not running, but are available to run in the current context when any one of the macro's triggers is engaged, or by clicking on the macro in the Status menu.
+
+{{:km7-status-menu.png|}}
+
+The Paste menu includes the 30 most recent text entries on the clipboard.  Hold the Shift key down to paste as plain text, and the Option key down to just set the clipboard without pasting.
+
+more to come . . .
+
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Show Status Menu|Show Status Menu]]
+* [[:Actions|See all Actions]]
+
+=== Triggers ===
+
+* [[trigger:Status Menu|Status Menu]]
+* [[:Triggers|See all Triggers]]
+
+----
+
+==== Topics ====
+
+* [[:Frequently Asked Questions|FAQ]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/howto-get-macros-into-keyboard-maestro-status-menu/4471|HowTo: Get Macros into Keyboard Maestro Status Menu]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Status%20Menu|Keyboard Maestro Forum topics about Status Menu]]

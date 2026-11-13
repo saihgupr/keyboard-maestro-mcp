@@ -1,0 +1,11 @@
+====== ATAN Function ======
+
+The ATAN(x) function returns the arctangent of its argument.
+
+If ATAN(x)=y, then [TAN](TAN)(y)=x.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

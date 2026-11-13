@@ -1,0 +1,339 @@
+====== Execute a Shell Script ======
+
+The //Execute a Shell Script// action executes a specified shell script using `/bin/sh`, either from a file or from the script embedded in the action.
+
+**Important:**
+
+* It is best to always specify the language using the `#!` at the front of the script.
+* The script is executed with the `sh` shell, so if you want to use another language, or use any special kinds of shell-specific syntax, then you should specify the language.
+* The shell is a non-login shell, so configuration files (like .bashrc) will not be run - in particular, this means you will not have much in the PATH (see [[#Path_in_Shell_Scripts|below]] for more information).
+* For more details and examples, see [[https://forum.keyboardmaestro.com/t/impact-of-macos-catalina-defaulting-to-unix-shell-using-zsh/15503/12?u=jmichaeltx|How to Use Shebang at Top of Shell Script]]
+
+To execute the script from an external file, choose the "Execute Script File" in the choices for script location.
+
+You can choose what input (stdin) to send to the script (v8+) as well as where the output should go.
+
+{{:action:execute-shell-script.png?nolink&693|}}
+
+If the script fails, the action will fail (v9.0+), potentially aborting the macro.
+
+Keyboard Maestro sets the environment variables for the script to include all your variables, using a prefix of `KMVAR_` and your variable name with spaces changed in to underscores (‗). For example, your Keyboard Maestro “File Name” variable will be available as the environment variable `KMVAR_File_Name`.
+
+Keyboard Maestro also provides (v10.0+) a number of environment variables that contain information about the executing macro. These include:
+
+^environment variable^meaning^
+|`KMINFO_MacroName`|The name of the parent executing macro|
+|`KMINFO_MacroUUID`|The UUID of the parent executing macro|
+|`KMINFO_MacroGroupName`|The name of the macro group containing the parent executing macro|
+|`KMINFO_MacroGroupUUID`|The UUID of the macro group containing the parent executing macro|
+|`KMINFO_ThisMacroName`|The name of the executing macro|
+|`KMINFO_ThisMacroUUID`|The UUID of the executing macro|
+|`KMINFO_ThisMacroGroupName`|The name of the macro group containing the executing macro|
+|`KMINFO_ThisMacroGroupUUID`|The UUID of the macro group containing the executing macro|
+|`KMINFO_TriggerTime`|The [[/unixtime|unixtime]] the parent macro started executing|
+|`KMINFO_TriggerBase`|The type of the trigger that started the parent macro|
+|`KMINFO_Trigger`|The trigger description of the trigger that started the parent macro|
+|`KMINFO_TriggerValue`|the value associated with how the parent macro was triggered|
+|`KMINFO_ActionResult`|The success or failure of the immediate past action|
+|`KMINFO_LastWindowID`|The window ID of the most recently displayed Keyboard Maestro Engine window|
+|`KMINFO_PromptWithListText`|The text typed in the most recently executed [[action:Prompt_With_List|Prompt With List]] action|
+|`KMINFO_PasteByNameText`|The text typed in the most recently executed [[action:Paste_by_Name|Paste by Name]] action|
+
+==== Using Keyboard Maestro Variables ====
+
+Keyboard Maestro variables are included in the environment of the script, with the prefix `KMVAR_` and spaces in the name replaced with underscores (‗),
+
+By default, all variables are included, but you can select No Variables, or specific variables as desired using the popup menu next to the script (v11.0+).
+
+=== Most Shell Languages like bash ===
+
+In your script, use this format $KMVAR‗*VARIABLE‗NAME* where *VARIABLE‗NAME* is the name of your Keyboard Maestro Variable, but with spaces in the name replaced with underscores (‗).
+
+For example:  `File Name` would be formatted as $KMVAR‗File‗Name.
+
+If your variable already has underscores, you can use it as is.
+
+{{:action:km7-shell-script.png?nolink|}}
+
+Keep in mind that $KMVAR‗*VARIABLE‗NAME* is a shell environment variable, and this format is directly accessible to `bash`, `sh`, `zsh`, etc. Other languages may need a different method to read the shell environment variables.
+
+Note that you can only read these environment variables.  You cannot write to them (or more accurately, you can write to them but that will not change the Keyboard Maestro variables that they were created from).
+
+==== Perl====
+
+```perl
+my $fileName = $ENV{KMVAR_File_Name};
+```
+
+==== Python ====
+
+```python
+#!/usr/bin/env python
+
+import os
+print os.environ['KMVAR_File_Name']
+```
+
+See the [[#Forum|Forum]] section below for more Python examples.
+
+==== awk ====
+
+[Using shell variables in awk](https://stackoverflow.com/a/15787068/915019) is also different than in most other shell languages.  You need to pass the shell variable as parameter to the -v flag.
+
+Some examples:
+
+```bash
+awk -v awkVariable="$KMVAR_File_Name" 'BEGIN {print "The value of VAR is: " awkVariable}'
+```
+==== Passing Paths in Variables ====
+
+If you are passing a file/folder path in a Keyboard Maestro Variable, then it is best to put the Variable reference in double quotes so that spaces in the path will work, like this:
+
+```bash
+cat "$KMVAR_File_Path"
+```
+
+**Consider These Guidelines**
+
+  * This must be a full path.  **If the path starts with a tilde (~)**, then you must first convert it to a full path using the [[action:Filter | Filter, Expand tilde (~) paths]] action **before** the Execute Shell Script action.
+  * Like all Bash variables, the Keyboard Maestro Variable must _not_ be between single quotes (`'`) in order for the variable to be expanded to / replaced by its value.  So, for example, **this will _not_ work**:
+
+```bash
+# 🚫 Does NOT Work
+echo 'The variable is "$KMVAR_File_Name"'
+```
+
+because although the Variable is between double-quotes, it is in a string that is between single-quotes.
+
+  * So, to handle this case, you can use something like this:
+
+```bash
+# ✅ This WORKS
+echo 'The variable is "'"$KMVAR_File_Name"'"'
+```
+
+One key Bash feature that makes this work is that when two quoted strings are adjacent, they will be concatenated.  So after the Variable is expanded, the command string might look like this:
+
+```bash
+echo 'The variable is "Test.txt"'
+```
+
+==== UTF-8 and Non-ASCII Characters ====
+
+If you are dealing with non-ASCII characters, you probably want to set the `LC_ALL` environment variable to UTF8, which you can do by setting the Keyboard Maestro variable `ENV_LC_ALL` to “en_US.UTF-8”.
+
+By default (v9.0+), if you have not set these environment variables they will be set to UTF-8 for you.
+
+==== Action Gear ====
+
+The action (gear) ⚙ menu includes the following options:
+
+* Trim Results — removes white space from the start and end of the scripts results.
+* Include Errors — include stdout and stderr results from the script.
+
+==== Output of Results ====
+
+The results of a shell script can be:
+
+{{page>include:ScriptOutput#}}
+
+If the output is going to a clipboard or a file, the downloaded data can be an image (v11.0+).
+
+If you want to return multiple values from a script, then you can use AppleScript (via `osascript`) to [[manual:Scripting#AppleScript|set Keyboard Maestro variables]].
+
+===== Examples =====
+
+For example, you could have a shell script date display briefly in the Notification Center every hour, or use a hot key to type the results directly into your text editor. 
+
+You can also use the clipboard by piping from *pbpaste* and to *pbcopy*.
+
+===== Quoting Strings =====
+
+Proper quoting of strings in a Shell Script is often a challenge.  In order to understand it, you have to understand what happens at each level of the processing.
+
+Thankfully, in an Execute Script action, Keyboard Maestro itself does not do any processing, so that is one less place for confusion.
+
+With shell commands, the important thing to understand is that, with only a few exceptional programs, it is not the command that does the processing, it is the shell (bash usually, although there are many shells).
+
+So for example with Keyboard Maestro variable set to `"Selection Style" -int 0` and en Execute Shell Script command of:
+
+```bash
+defaults write /Users/me/Library/Application\ Support/Witch/Settings $KMVAR_witchPref
+```
+
+It is the *bash* tool that sees the string and it processes it in to an array of strings which it passes to the *defaults* tool.  This is important - the defaults command receives not a single string, but an array of strings, in this case the array will be:
+
+* `defaults`
+* `write`
+*  `/Users/me/Library/Application Support/Witch/Settings`
+* `"Selection`
+* `Style"`
+* `-int`
+* `0`
+
+It is bash that has processed the variable substitution for $KMVAR_witchPref, split the line in to seven parts, processed the backslash in "Application\ Support" and then executed the defaults tool with the seven parts as arguments (the command itself is the 0th argument, normally mostly ignored by tools).
+
+So the problem is that the word-breaking, variable substitution, de-quoting and de-backslash is all happening as the line is processed by bash, after which you are left with quotes from within variable substitution, but they no longer have any meaning, they are just characters.
+
+So variables that are meant to be a single parameter should be surrounded by double quotes in the line, but not contain quotes in the variable, and generally you do not want to pass multiple parameters within a single parameter.  So instead, perhaps set one variable to the setting name, and one variable to the type and one variable to the value, and then use a command like this:
+
+```bash
+defaults write "/Users/me/Library/Application Support/Witch/Settings" "$KMVAR_Setting" -"$KMVAR_Type" "$KMVAR_Value"
+```
+
+Now a further complication happens when you want to send a string containing double quotes and variables to a parameter.  For example, perhaps you want a command like this:
+
+```bash
+emacsclient -e '(w3m-browse-url "$KMVAR_SafariURL")'
+```
+
+This will not work because bash only expands variables within double-quoted strings.  Within single quoted strings, they remain as the text `$KMVAR_SafariURL` (unchanged).  And so emactsclient will receive the array:
+
+* `emacsclient`
+* `-e`
+* `(w3m-browse-url "$KMVAR_SafariURL")`
+
+But it will not expand the variable (that is the shell’s job).
+
+To work around this you need to use either all double quotes (and backslash any double quotes within them) such as:
+
+```bash
+emacsclient -e "(w3m-browse-url \"$KMVAR_SafariURL\")"
+```
+
+or use a combination of strings, some double quoted and some single quoted:
+
+```bash
+emacsclient -e '(w3m-browse-url "'"$KMVAR_SafariURL"'")'
+```
+
+Note that that parameter is now made up of three strings combined into one parameter: 
+
+* `(w3m-browse-url "` - single quoted string
+* the value of $KMVAR_SafariURL - double quoted string
+* `")` - single quoted string
+
+For the reverse problem, where you have a variable that contains multiple parameters, note that you cannot use quotes within a variable - by the time the shell is expanding variables, it has already processed quotes and will not do so again so quotes will just be regular characters passed to the target command and almost certainly result in errors. If possible, use seperate variables for seperate parameters, but if you cannot do that (for example you have a list of paths), store them as seperate lines in a variable (without any quoting or backslashes) and use a command like:
+
+```bash
+echo "$KMVAR_files" | tr '\r\n' '\0' | xargs -0 ls -l
+```
+
+The tr command will replace `\r` or `\n` line endings with a nul character, and the `xargs -0` command will read that, split the arguments at the nul character, and pass them to the specified command (in this case `ls -l`. Note that xargs has a limit to the number of arguments it will pass, so for large numbers of arguments it may run the command multiple times with subsets of the arguments - read the `xargs` man page for more details.
+
+Also note that shell globing happens after variable expansion, and so if the variable contains `*` characters they will be expanded by the shell by matching file names in the current directory. To avoid this, you can turn off globing by using the -f option when executing bash - that is, start your script with `#!/bin/bash -f`.
+
+===== Path in Shell Scripts =====
+
+In essence, the _default_ path in a Keyboard Maestro Execute Shell Script is the base path for the system:
+
+    /usr/bin:/bin:/usr/sbin:/sbin
+
+That is the script will search for tools in the `/usr/bin` directory, then in the `/bin` directory, then `/usr/sbin` and finally `/sbin`.  Only tools installed by the system will be in these directories - any tools you have installed will almost certainly be elsewhere and so not found by default because:
+
+  * Shell scripts are executed in non-interactive mode (see the INVOCATION section of the sh man page), the **only** path preset by default is the system path.
+  * Thus, your tools or files may not be automatically accessible.
+  * The `$PATH` environment variable you may have set in Terminal is **not** used.
+  * None of your profile scripts (like `~/.profile`) will be executed.
+  * Custom environment variable settings will not be applied, including any settings for tool-specific environment variables like PERL5LIB.
+
+Generally, the best thing to do is to use full paths when referring to tools, such as `/usr/local/bin/perl`, however some tools may access sub-tools that they cannot find without the PATH (or other environment variables) being set.
+
+If you need access to tools (executables) or files that you installed (not part of the system installation), **you will need to do one of the following:**
+    * Use an explicit, full path to the tool or file. See [[#Passing_Paths_in_Variables|Passing Paths in Variables]] in the above section. **or**
+    * Set the `$PATH` environment variable within each Execute Shell Script action. **or**
+    * Set `ENV_PATH` Keyboard Maestro variable prior to the Execute Shell Script Action.
+
+Any Keyboard Maestro variable that starts with `ENV_` will automatically be set as the as the corresponding environment variable (without the usual `KMVAR_` prefix). So if you set your path in the `ENV_PATH` Keyboard Maestro variable, the `PATH` environment variable will be set from it.
+
+You can set this Variable manually in the [[manual:Preferences#Variables_Preferences|Variable Preferences Panel]] in Keyboard Maestro. Once the `ENV_PATH` variable is set, it will remain in your Keyboard Maestro variable until/unless you delete it, and remain available to every Execute a Shell Script action that you might use in the future.  So you don’t need to set it in every Macro.
+
+If your tool requires other environment variables to be set you can set them as well by creating an appropriate Keyboard Maestro variable with `ENV_` at the front.
+
+For example, if you want to use [[https://www.perl.org/ | Perl]] with a custom library search path in the Execute a Shell Script action, you can also create a Keyboard Maestro variable `ENV_PERL5LIB` that will set the [[http://perldoc.perl.org/perlrun.html#ENVIRONMENT|PERL5LIB environment variable]].
+
+(!) Note that if in the action you exclude the ENV_ variables (including potentially the ENV_PATH) from being included in the environment (eg by selecting //Include No Variables//), this will result it them not being included and thus not setting the corresponding environment variables.
+
+===== Working Directory =====
+
+The working directory for any executed scripts will be set from the Keyboard Maestro `ENV_PWD` directory (v10.0+), or default to the root directory (`/`).
+
+
+===== Execute Script From Other Apps =====
+
+When you execute a shell script from other apps, like Terminal.app, the shell does **not** have access to the Keyboard Maestro Engine environment, and thus it does **not** know anything about Keyboard Maestro Variables.
+
+In order to access Keyboard Maestro Variables in these scripts, you must use a tool like [[https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/osascript.1.html|osascript]].
+
+Here is a simple example to **get** a variable:
+<code>
+osascript -e 'tell application "Keyboard Maestro Engine" to getvariable "My KM Var"'
+</code>
+
+(!)  Note that you do **not** replace spaces with underscores in your variable name in this case, since you are ultimately using AppleScript in the Shell Script.
+
+To **set** a variable (and create if needed) you can use this:
+<code>
+osascript -e 'tell application "Keyboard Maestro Engine" to setvariable "My KM Var" to "Some new value"'
+</code>
+
+
+Here is a more comprehensive example, providing error handling:
+<code>
+read -r -d '' theAppleScript <<'EOF'
+   tell application "Keyboard Maestro Engine"
+      set kmVarName to "My KM Var"
+      tell variable kmVarName
+         if it exists then
+            return its value
+         else
+            return "Error → Keyboard Maestro variable '" & kmVarName & "' does not exist!"
+         end if
+      end tell
+   end tell
+EOF
+
+osascript -e "$theAppleScript";
+</code>
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Execute_a_Swift_Script|Execute a Swift Script]]
+* [[action:Execute an AppleScript|Execute an AppleScript]]
+* [[action:Execute an Automator Workflow|Execute an Automator Workflow]]
+* [[action:Execute a JavaScript For Automation|Execute a JavaScript For Automation]]
+* [[action:Filter|Filter Variable with Expand Tilde In Path]]
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/impact-of-macos-catalina-defaulting-to-unix-shell-using-zsh/15503/12?u=jmichaeltx|How to Use Shebang at Top of Shell Script]]
+- [[https://forum.keyboardmaestro.com/t/png-metadata-comment/6375/29|PNG Metadata "Comment"]]
+- [[https://forum.keyboardmaestro.com/t/having-trouble-with-quotes-and-shell-variables/6236/9|Having trouble with quotes and shell variables]]
+- [[https://forum.keyboardmaestro.com/t/km-cant-find-shell-commands/5430|KM can't find shell commands]]
+- [[https://forum.keyboardmaestro.com/t/tag-selected-files/220/11|Tag Selected Files]]
+- [[https://forum.keyboardmaestro.com/t/processing-selected-files-in-a-python-script/275|Processing selected files in a python script]]
+- [[https://forum.keyboardmaestro.com/t/running-shell-script-inside-km-does-not-work/1993/9|Running Shell script inside KM does not work]]
+- [[https://forum.keyboardmaestro.com/t/km-removes-tab-from-beginning-of-shell-output/2813/5|KM removes tab from beginning of shell output]]
+- [[https://forum.keyboardmaestro.com/t/cannot-import-certain-python-modules/2877/10|Cannot import certain Python modules]]
+- [[https://forum.keyboardmaestro.com/t/create-new-folders-in-the-current-directory/2888/4|Create new folders in the current directory]]
+- [[https://forum.keyboardmaestro.com/t/split-rows-of-text-into-batches/2919/22|Split rows of text into batches]]
+- [[https://forum.keyboardmaestro.com/t/cycle-through-files-in-a-folder-to-clipboard/2948/7|Cycle through files in a folder to Clipboard]]
+- [[https://forum.keyboardmaestro.com/t/finding-docx-files-inside-a-multiple-level-folder-hierarchy/3038/3|Finding DOCX files inside a multiple-level folder hierarchy]]
+- [[https://forum.keyboardmaestro.com/t/how-do-i-execute-shell-script-that-requires-arguments/3145/3|How do I Execute Shell Script that Requires Arguments?]]
+- [[https://forum.keyboardmaestro.com/t/req-shell-script-exit-status/3494/2|REQ: Shell script exit status]]
+- [[https://forum.keyboardmaestro.com/t/getting-km-to-use-a-specific-shell-containing-the-right-ruby-gems/3645/2|Getting KM to use a specific shell containing the right ruby / gems]]
+- [[https://forum.keyboardmaestro.com/t/possible-bug-in-execute-shell-script-action/4070/2|Possible bug in Execute Shell Script Action]]
+- [[https://forum.keyboardmaestro.com/t/using-installed-shell-tools-from-km/4341/10|Using installed shell tools from KM]]
+- [[https://forum.keyboardmaestro.com/t/feature-request-execute-python-script/4927/6|[feature request] execute python script]]
+For more info, see these discussions in the Keyboard Maestro Forum:
+- [[https://forum.keyboardmaestro.com/t/png-metadata-comment/6375/29| How To Quote Paths by @ccstone]].
+- [[https://forum.keyboardmaestro.com/t/trouble-expanding-variable-in-shell-script/13664/2?u=jmichaeltx | Trouble Expanding Variable in Shell Script by @PeterNLewis]]
+- [[https://forum.keyboardmaestro.com/t/km-cant-find-shell-commands/5430| KM can’t find shell commands]]
+- [[https://forum.keyboardmaestro.com/t/png-metadata-comment/6375/16| Post by @ccstone]]
+
+- [[https://forum.keyboardmaestro.com/tags/shellscript|Keyboard Maestro Forum topics about Shell Script]]
+
+**Keywords:** Quote String, Bash, Shell Scripting

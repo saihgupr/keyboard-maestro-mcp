@@ -1,0 +1,201 @@
+====== Custom HTML Prompt Action ======
+
+The //Custom HTML Prompt action// allows you to display an entirely customized window to gather or display information in any way desired (v7.0+).
+
+This is quite an advanced action, and requires designing the window in HTML (including CSS and JavaScript), so its not as simple as most actions in Keyboard Maestro.  To get started, see these examples:
+  - The //**Custom HTML Prompt Example**// macro from the Keyboard Maestro [[:Macro_Library|Macro Library]]
+  - [Demo Using KM Custom HTML Prompt with AppleScript & JXA](https://forum.keyboardmaestro.com/t/demo-using-km-custom-html-prompt-with-applescript/2670) in the Forum.
+
+===== How To Use =====
+
+  - Create a standard HTML page with a form that uses [[token:Variable|Keyboard Maestro Variables]] in the Form Field //Name// attribute
+    * If the Variable contains spaces, you must replace them with underscores (`_`) in the HTML code
+  - If you want default values in the form, set these //Variables// in a [[action:Set_Variable_to_Text|Set Variable to Text]] Action
+  - Execute the //Custom HTML Prompt// Action
+    * The HTML code can be in a ''.html'' file, or as text (html code) in the Action
+  - When the User clicks on the OK button, the //Keyboard Maestro Variables// will be updated
+  - Use these //Variables// in any other Actions you need
+
+The action will wait for the window to complete before continuing unless you turn on *Asynchronously* (v8+) in the gear BUTTON{{{⚙}}} menu.
+
+By default, the window floats above all others, but you can optionally turn off *Floating* (v8+) in the gear BUTTON{{{⚙}}} menu.
+
+You can optionally turn on *Resizable* (v8+), make the window *Transparent* (v10.0+), or turn off the *Window Title Bar* (v10.0+) in the gear BUTTON{{{⚙}}} menu.
+
+You design the HTML form using standard HTML code, which can be stored in either a file or as text in the Action.  You can, of course, use any Web/HTML editor you like.  If you'd like some suggestions, see the [[Custom_HTML_Prompt#WebHTML_Editors|Web/HTML Editors]] section at the bottom of this page for editors that others have found useful.
+
+===== HTML Window Design =====
+
+You can define the size and position of the window using any of the following attributes to the [[http://www.w3schools.com/tags/tag_body.asp|HTML body element]]:
+^ HTML Body Attribute ^  Definition/Use  ^
+| data-kmwindow | May be either:\\ a size (width, height)\\ a rectangle (left, top, width, height) |
+| data-kmwidth | width |
+| data-kmheight | height |
+| data-kmleft | position of left side|
+| data-kmtop | position of top |
+| data-kmwindowid | an ID that can be used with the [Execute a JavaScript in Custom Prompt](https://wiki.keyboardmaestro.com/action/Execute_a_JavaScript_in_Custom_Prompt) action |
+
+For example:
+```html
+<body data-kmwindow="SCREEN(Main,Left,20%),SCREEN(Main,Top,20%),420,560">
+```
+
+You will probably also need to specify the `body` width in the `body` CSS in order to ensure proper HTML display:
+
+```css
+body {width: 420px;}
+```
+
+
+Alternatively you can implement the JavaScript function KMWindow() which returns either a window size (width,height) or window rectangle (left,top,width,height) as a string.  Keyboard Maestro will evaluate any calculations you include.
+
+If you want to be able to inspect your HTML live, you can use the Terminal command:
+
+```sh
+defaults write com.stairways.keyboardmaestro.engine WebKitDeveloperExtras -bool YES
+```
+
+Then you can control-click on elements and use Inspect Element and get an inspector window, including a Console tab.
+
+===== Using Keyboard Maestro Variables in the HTML Form =====
+
+Keyboard Maestro ensures sync between *Keyboard Maestro Variables* and the HTML form field values.  The **[[http://www.w3schools.com/Tags/att_input_name.asp|HTML name attribute]]** is used to identify the *Keyboard Maestro Variable*.  For example, **''Web Name''** is the *Keyboard Maestro Variable* shown below in the HTML **[[http://www.w3schools.com/Tags/tag_input.asp|<input>]]** tag.  You must replace spaces in the *Keyboard Maestro Variable* name with underscores when used on the HTML form.
+
+(!) Be aware that you cannot use a *Keyboard Maestro Variable* which itself contains an "**`_`**" , because Keyboard Maestro will replace the "**`_`**" in the HTML name attribute with a space before it tries to sync with the *Keyboard Maestro Variable*. 
+
+Here is an example:
+
+```html
+<div class="row">
+   <label class="col1">Name:</label> 
+   <span class="col2">
+      <input name="Web_Name" class="input" type="text" id="name" autofocus />
+   </span> 
+</div>
+```
+
+When the HTML prompt/form is initialized, Keyboard Maestro will set all of the HTML form fields to the value of the *Keyboard Maestro Variable* prior to display.  If the user closes the prompt/form by clicking the **''OK''** button or otherwise submitting the form, then the data on the form is saved back to the corresponding *Keyboard Maestro Variable*.  If the user clicks **''Cancel''**, or presses the **''ESC''** key, or otherwise not submitting the form, the prompt/form is closed without saving any data.
+
+Note: Prior to 7.1 autofocus did not work for textarea types.
+
+The [[token:HTMLResult|%HTMLResult%]] token (v8+) is set to the the parameter in the `Submit()` function, and can be used in actions later in this instance like any other text token.  The deprecated _HTML Result Button_ variable is also set to the parameter.
+
+For example:
+
+```html
+<button name="OK" type="button" 
+   onclick="window.KeyboardMaestro.Submit('OK')">OK
+</button>
+```
+
+Prior to version 7.1, the *Keyboard Maestro Variables* //**HTML Result Button**// was not changed when the window was closed by other than a Submit call - as of 7.1+ the variable is cleared when the window first appears.
+
+==== Excluding Set and/or Saving of Form Fields ====
+
+You can add one of these HTML attributes to the Form Field:
+^Attribute ^ Action ^
+|*data-kmignoreinit* | avoid having the field set initially| 
+|*data-kmignoresubmit* |avoid saving form field back to the *Keyboard Maestro Variable*|
+|*data-kmignore* | avoid setting and saving the form field|
+
+==== Handling HTTP links ====
+
+By default, http: and other links (everything except file: links) are passed to the  to open as normal.
+
+You can elect (v8+) to handle schemes yourself by including a `data-kmhandleschemes` attribute in the body element, or by implementing the `KMHandleSchemes()` function.
+
+Either can return the schemes you want to handle (most likely only http) as a comma or space separated list.
+
+===== Using JavaScript =====
+
+You may use any JavaScript that you normally could in an HTML page.
+
+Keyboard Maestro calls the following JavaScript functions:
+
+^ Function ^ Called ^
+| `KMInit()` | to initialize fields or other features|
+| `KMWindow()` | to return the desired size or frame of the window as a string|
+| `KMWillShowWindow()` | when the window will be shown|
+| `KMDidShowWindow()` | when the window was just shown (v7.1+) |
+| `KMHandleSchemes()` | to return the schemes you wish to handle within the web page (v8+) |
+| `KMWillCloseWindow()` | called when the window is about to be closed (v8.0.3+) |
+
+From within the window, you can call the following functions:
+
+^ Function ^ Purpose ^
+| `window.KeyboardMaestro.Submit( buttonName )` | submit the form and write the *Keyboard Maestro Variables* |
+| `window.KeyboardMaestro.Cancel( buttonName )` | close the window, do not write the *Keyboard Maestro Variables* |
+| `window.KeyboardMaestro.ResizeWindow( "1,2,3,4" )` | resize the window to the specified size or frame as a string with commas ("width,height" or "left,top,width,height")\\ Also see [Resizing Window Using Current Position](https://forum.keyboardmaestro.com/t/resizing-html-window-with-javascript-keyboardmaestro-resizewindow-moves-it/21579/7) |
+| `window.KeyboardMaestro.GetVariable( 'KMVariableName' )` | returns the value of a variable |
+| `window.KeyboardMaestro.SetVariable( 'KMVariableName', 'value' )` | sets the value of a variable |
+| `window.KeyboardMaestro.GetDictionary( 'Dictionary', 'Key' )` | returns the value of a dictionary entry |
+| `window.KeyboardMaestro.SetDictionary( 'Dictionary', 'Key', 'value' )` | sets the value of a dictionary entry |
+| `window.KeyboardMaestro.ProcessTokens( '%ShortDate%' )` | returns the text token expansion |
+| `window.KeyboardMaestro.ProcessAppleScript( 'tell app "Finder" to activate' )` | executes the AppleScript and returns the result (v10.0+) |
+| `window.KeyboardMaestro.Calculate( '10 + 32' )` | returns the result of the calculation |
+| `window.KeyboardMaestro.Trigger( macro, value )` | triggers the specified macro (7.1+) |
+| `window.KeyboardMaestro.Log( 'Message' )` | log a message in the Engine.log file (10.0.2+) |
+
+Prior to version 7.1, using SetVariable to set a value to something other than a string can [corrupt the variable](https://forum.keyboardmaestro.com/t/corrupted-variables-after-custom-html-setvariable-update-i-fixed-it-please-read/2881).
+==== Form Validation ====
+
+You can use HTML5’s form validation to automatically validate the fields.  Specify their input types (eg "email" or "url" instead of "text"), as well as other properties like minimum/maximum numbers and so on, and then instead of simply:
+
+    onclick="window.KeyboardMaestro.Submit('OK')"
+
+do something like:
+
+    onclick="if ( document.getElementById('myform').checkValidity() ) { window.KeyboardMaestro.Submit('OK') } else { document.getElementById('myform').reportValidity() }"
+
+==== Debugging JavaScript in the Form ====
+
+
+Please see this forum post [How to Enable JavaScript Console for KM Custom HTML Prompt](https://forum.keyboardmaestro.com/t/javascript-console-in-custom-html-prompt/2589/8).
+
+(!) Be aware that the system will not allow Keyboard Maestro Engine to see keys typed in its own windows so the [[trigger:Typed String | Typed String triggers]] will not work within Keyboard Maestro Engine windows.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Alert|Alert]] action
+* [[action:Prompt_for_User_Input|Prompt for User Input]]
+* [[action:Prompt_With_List|Prompt With List]] action
+* [[action:Prompt_for_Screen_Rectangle|Prompt for Screen Rectangle]] action
+* [[action:Prompt_for_File|Prompt for File]] action
+* [[action:Get_Touch_Bar_Selection|Get Touch Bar Selection]] action
+* [[action:Show_Palette_of_Macros|Show Palette of Macros]] action
+* [[action:Display_Progress|Display Progress]] action
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:AlertButton|%AlertButton%]] token
+* [[token:PromptButton|%PromptButton%]] token
+* [[token:HTMLResult|%HTMLResult%]] token
+* [[:Tokens|All Tokens]]
+
+=== Forum ===
+
+- [[https://forum.keyboardmaestro.com/t/hashtag-macro-km-7-0/1600/29|HashTag Macro KM 7.0]]
+- [[https://forum.keyboardmaestro.com/t/javascript-console-in-custom-html-prompt/2589/8|How to Show JavaScript Console in Custom HTML Prompt]]
+- [[https://forum.keyboardmaestro.com/t/demo-using-km-custom-html-prompt-with-applescript/2670|Demo Using KM Custom HTML Prompt with AppleScript & JXA]]
+- [[https://forum.keyboardmaestro.com/t/corrupted-variables-after-custom-html-setvariable-update-i-fixed-it-please-read/2881|Corrupted Variables after Custom HTML SetVariable (Update: I fixed it)]]
+- [[https://forum.keyboardmaestro.com/t/custom-html-result-button-value-when-prompt-is-closed/3213/2|Custom HTML Result Button value when prompt is closed]]
+- [Resizing Window Using Current Position](https://forum.keyboardmaestro.com/t/resizing-html-window-with-javascript-keyboardmaestro-resizewindow-moves-it/21579/7)
+- [[https://forum.keyboardmaestro.com/t/png-optimizer/3282|PNG Optimizer]]
+- [[https://forum.keyboardmaestro.com/search?q=Custom%20HTML%20Prompt%20action|Keyboard Maestro Forum topics about Custom HTML Prompt action]]
+
+==== External References ====
+
+=== Web/HTML Editors ===
+
+There are a wide variety of Web/HTML editors available.  You may use any editor you prefer, as long as it will produce HTML code that you can use in the Keyboard Maestro *Custom HTML Prompt*.  These range from very simple, plain-text editors, to very sophisticated web content editors.  Below are a few editors that Keyboard Maestro users have found useful.  These are presented in no particular order.
+  * [BBEdit](http://www.barebones.com/products/bbedit/) -- A powerful plain text editor, including RegEx (Grep). Available as a free version and a paid version with more features.  See [BBEdit Free vs Paid Comparison Chart](http://www.barebones.com/products/bbedit/comparison.html).
+  * [Atom](https://atom.io/) -- A hackable text editor for the 21st Century.  It is a free and open-source text and source code editor for macOS, Linux, and Microsoft Windows with support for plug-ins written in JavaScript, and embedded Git Control, developed by GitHub.
+  * [Visual Studio Code](https://code.visualstudio.com/) -- a freeware source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality
+
+
+  * If your favorite Web/HTML editor is not listed here, and you would like to include it, post a request in the [[https://forum.keyboardmaestro.com/c/wiki|Keyboard Maestro Forum, Wiki section]].
+
+**Keywords:*  Custom HTML Prompt, User Prompt, HTML, Dialog

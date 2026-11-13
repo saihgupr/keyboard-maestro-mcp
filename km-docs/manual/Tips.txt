@@ -1,0 +1,53 @@
+====== Tips ======
+
+===== Remembering Macro Hot Keys =====
+
+[[trigger:Hot_Key|Hot Key triggers]] are only useful if you can remember which key does what.
+
+Consider using mnemonic keys.  For example, in your email client, you might define a set of Macros to [[action:Insert_Text|Insert Text action]], so use Control-A for your Address, Control-S for your Signature, Control-N for your Name, and so on.
+
+Be consistent in your choice of Hot~~Keys.  For example, use function keys to [[action:Activate_a_Specific_Application|launch applications]], Control-Function Keys to [[action:Open_a_File_Folder_or_Application|open documents]], Control-Letter to [[action:Insert_Text|insert text]], and so on.
+
+Consider using a single hot key for a set of related functionality.  Keyboard~~Maestro will display a conflict palette and let you select from the choices.
+
+Keyboard~~Maestro also interoperates with KeyCue – if you use both applications and hold the control key down KeyCue will display all your active Hot~~Keys.
+
+===== Use the Conflict Palette =====
+
+If you have two or more macros with the same Hot~~Key, pressing that key will display the conflict palette, listing all the conflicting macros.  You can then press further keys to filter the list until one remains which is then immediately executed.
+
+===== Use the Trigger Macro by Name Action =====
+
+Another way to reduce having to remember Hot~~Keys is to use the Trigger Macro by Name action to trigger macros based on their name.
+
+===== Use the Insert Menus =====
+
+In the editor, there are menus in the [[Menus#Edit|Edit menu]] to inserting [[:Actions|actions]], [[:Functions|functions]]  and [[:Tokens|text tokens]] and variables.  These can be very useful for both learning about what is available and quickly inserting elements.  You can also use text completions to insert functions in numeric fields and tokens and text token fields.
+
+If you hold down the Option key while selecting from these menus you can get help on any of the actions, functions or tokens.
+
+There are also *By Name* versions to quickly insert actions, functions, tokens or variables by name.
+
+===== Use the Insert Action by Name =====
+
+Once you are confident using Keyboard Maestro, consider using the Insert Action by Name instead of the Action Selector. When you know the generally available actions, this is usually more efficient.
+
+===== Pay Attention to the Gear Icon =====
+
+The gear BUTTON{{{⚙}}} menu in the top right of the menu shows you a variety of different things depending on exactly how it looks.
+
+If the action has a timeout, then a clock face will appear in the middle of the gear.  If the timeout has been left as the default, the time will be three o'clock, otherwise the time will be an impossible 4.5 o'clock.
+
+If the action has extra configuration options, or a custom note, the gear menu will have a blue center.
+
+The gear menu itself also shows you whether the item has notes, and whether it will abort or notify you if the action fails.
+
+And finally, the gear menu includes a Help command which will take you to the wiki help on the action.
+
+===== Use Function Keys for Global Hot Keys =====
+
+It is quite hard to come up with global Hot~~Keys that will not conflict with those keys used by any application (a conflict is not really a problem, the Macro Hot~~Key will simply override the application, but this is not always desirable).  It is best to use function keys, especially in conjunction with modifiers, as global Hot~~Keys since they tend not to be used by most applications.
+
+===== Use the Number Pad =====
+
+Remember that the number pad is available (and distinct from the numbers on the main keyboard) to use as hot keys.

@@ -1,0 +1,18 @@
+====== Activate Last Application ======
+
+The *Activate Last Application* action switches back to the application you were in previously.
+
+You can configure whether it activates all windows or opens the initial new document in the action (gear) ⚙ menu (v11.0+).
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Activate Next Application|Activate Next Application]]
+* [[action:Activate a Specific Application|Activate a Specific Application]]
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/specify-midi-or-keystorke/4521/4|Specify MIDI or Keystroke]]
+- [[https://forum.keyboardmaestro.com/search?q=Activate%20Last%20Application|Keyboard Maestro Forum topics about Activate Last Application]]

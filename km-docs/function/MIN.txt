@@ -1,0 +1,12 @@
+====== MIN Function ======
+
+The MIN(x,y) function returns the minimum of its parameters.
+
+    MIN(96,12) === 12
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MAX]]
+* [[:Functions|See all Functions]]

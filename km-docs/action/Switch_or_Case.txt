@@ -1,0 +1,81 @@
+====== Switch/Case Action ======
+
+The //Switch/Case action// is used to perform different actions based on different values of a common _parameter_.  It is very similar to the [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch|JavaScript Switch]] statement.
+
+The _Switch_ Action is a good alternative to using multiple, nested, [[action:If_Then_Else|If/Then]] Actions.
+
+The actions in the first section that matches will be executed. If no section matches, then no actions will be executed and the execution will continue after the Switch/Case action. Under no circumstances will actions from more than one section be executed - that is, execution does not “fall through” to following sections as happens in some languages.
+
+===== Parameters =====
+
+The Switch _parameter_ may be any of the following:
+  * [[:Clipboards|System Clipboard]]
+  * [[:Clipboards#Named_Clipboards|Named Clipboard]]
+  * [[token:TriggerClipboard|Trigger Clipboard]]
+  * [[manual:Variables|Keyboard Maestro Variable]]
+  * Text (which can use [[:Tokens|Tokens]])
+  * [[manual:Calculations|Calculation]]
+  * File
+
+===== Default Configuration =====
+
+When you insert the _Switch_ Action, it is configured to switch based on the _System Clipboard_, but can be easily changed to other parameters.  It initially looks like this:
+
+{{:action:switch-case.png?nolink|}}
+
+For each _Condition_ that you add, you can enter zero or more _Actions_ that will be executed when that _Condition_ is met.  After those _Action(s)_ are executed, or if no _Conditions_ are met, the _Switch_ Action is exited.
+
+===== Conditions =====
+
+The _Conditions_ available depend on the _Parameter_ that is chosen (for example, you cannot use *has an image* with a calculation).
+
+The _Conditions_ are defined as follows:
+
+^Condition^Definition^
+|is empty|The text is contains no characters.|
+|is not empty|The text is contains some characters.|
+|has text |Clipboard has at least one item containing text of some sort.|
+|does not have text |Clipboard does not have any text items.|
+|has image |Clipboard has one or more images.|
+|does not have image |Clipboard does not have any images.|
+|is |is exactly (case insensitive) the specified string.|
+|is not |is not exactly (case insensitive) the specified string.|
+|contains |contains (case insensitive) the specified string.|
+|does not contain |does not contain (case insensitive) the specified string.|
+|starts with |starts with the specified string.|
+|ends with |ends with the specified string.|
+|is before |is alphabetically before the specified string. (v7.2+)|
+|is after |is alphabetically after the specified string. (v7.2+)|
+|matches |matches the specified regular expression.|
+|does not match |does not match the specified regular expression.|
+|is <|is numerically less than.|
+|is <=|is numerically less than or equal.|
+|is =|is numerically equal.|
+|is >=|is numerically greater than or equal.|
+|is >|is numerically greater than.|
+|is !=|is numerically not equal.|
+|conforms to |Clipboard has an item with the UTI class that conforms to the specified [Uniform Type Identifier](https://en.wikipedia.org/wiki/Uniform_Type_Identifier).|
+|does not conform to |Clipboard does not have an item with the UTI class that conforms to the specified Uniform Type Identifier.|
+|otherwise |will execute if none of the Conditions in the Switch, that are entered above _otherwise_, are met.|
+
+
+The _Otherwise_ _Condition_ will execute if none of the previous _Conditions_ are met.  The _Switch_ Action will then exit.  So, the _Otherwise_ _Condition_ should always be placed as the last _Condition_ in the _Switch_ Action.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[action:While|Execute Action While Conditions Met]]
+* [[:Actions|See all Actions]]
+
+=== Conditions ===
+
+* [[:Conditions|See all Conditions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/action-switch-case-based-on-frontmost-app/7294|ACTION: Switch Case Based on FrontMost App]]
+- [[https://forum.keyboardmaestro.com/search?q=Switch%20action|Keyboard Maestro Forum topics about Switch or Case action]]

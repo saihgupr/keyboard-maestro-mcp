@@ -1,0 +1,9 @@
+====== ONLINE Function ======
+
+The ONLINE() function returns whether the Mac is currently connected to the Internet.  It returns 1 if the Mac is connected to the Internet or 0 otherwise.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

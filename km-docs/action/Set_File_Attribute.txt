@@ -1,0 +1,52 @@
+====== Set File Attribute Action ======
+
+The Set File Attribute action sets one of various attributes for the specified file. 
+
+Select the attribute to set from the //Set// pop-up.
+
+File attributes available to set are:
+
+  *creation date.
+  *modification date.
+  *group name.
+  *group id.
+  *POSIX permissions.
+  *extension hidden.
+  *invisible.
+  *HFS creator code.
+  *HFS type code.
+  *tags. [Delete any existing tags and add the designated new ones.]
+  *tags (add).
+  *tags (toggle).
+  *tags (remove).
+  *comment.
+
+Click the File Chooser button to the right of the action to select an existing file on disk. Option-click on the File Chooser button to show the currently selected file in the Finder (assuming it exists already).
+
+Enter text or a text token in the //to// text area. Text tokens can be selected from the pop-up at the right-hand end of the text area.
+
+The result of the action is displayed at the bottom of the action.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Get File Attribute|Get File Attribute]]
+* [[:Actions|See all Actions]]
+
+=== Conditions ===
+
+* [[condition:File_Attribute|File Attribute]]
+* [[condition:Path|Path]]
+* [[:Conditions|See all Conditions]]
+
+==== Topics ====
+
+* [[:Dates and Times]]
+* [[:Frequently Asked Questions|FAQ]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/tag-selected-files/220|Tag Selected Files]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Set%20File%20Attribute|Keyboard Maestro Forum topics about Set File Attribute]]

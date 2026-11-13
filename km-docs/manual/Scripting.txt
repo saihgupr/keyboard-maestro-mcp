@@ -1,0 +1,227 @@
+====== Scripting ======
+
+===== Executing Scripts =====
+
+The following _Execute Script_ Actions are provided to execute a variety of script languages:
+
+  * [[action:Execute_an_AppleScript|Execute an AppleScript]]
+  * [[action:Execute_an_Automator_Workflow|Execute an Automator Workflow]]
+  * [[action:Execute_a_JavaScript_For_Automation|Execute a JavaScript For Automation]]
+  * [[action:Execute_a_JavaScript_in_Custom_Prompt|Execute JavaScript in Custom HTML Prompt]]
+  * [[actions:Execute_a_JavaScript_in_Browser|Execute a JavaScript in Browser]]
+  * [[action:Execute_a_Shell_Script|Execute a Shell Script]]
+  * [[action:Execute_Shortcut|Execute Shortcut]]
+  * [[action:Execute_a_Swift_Script|Execute a Swift Script]]
+  * [[action:Apply_a_BBEdit_Text_Factory|Apply a BBEdit Text Factory to the Clipboard]]
+
+You can specify the script to be executed either by reference to a file or as text entered directly in the _Execute Action_.  After pasting or typing script text into the Execute Script Action, press the <key>Enter</key> key to compile and format the script.
+
+For example, the [[action:Execute_an_AppleScript|Execute an AppleScript]] action:
+
+{{ execute-script-example.png?nolink&424x400 | Execute AppleScript Example }}
+
+**There are two setup options:**
+^ Setup Option ^ Choices\\ (Default shown first) ^
+| Script location | Execute text script (type or paste script into Action text field)\\ Execute script file (This may be faster if it is a compiled script file `.scpt`) |
+| Script Results | Ignored.\\ Displayed in a floating window.\\ Displayed briefly in a Notification.\\ Displayed large across the screen.\\ Typed in the current text field that has focus.\\ Pasted in text field that has focus.\\ Saved to a Keyboard Maestro Variable.\\ Appended to a Keyboard Maestro Variable.\\ Saved to the System or a Named Clipboard.\\ Saved to a file.\\ Ignore the results and run //Asynchronously// (the script runs while the macro continues on to the next //Action//). |
+
+==== Using the Clipboard ====
+
+You can also read and set the clipboard in a script, although the easiest way to set the clipboard to the results of a script is to select the Execute Script Action option to "save results to clipboard".  This works for plain text and some images returned by the script.  For more complex formats, you will need to set the Clipboard directly in the script.
+
+For more information about using the Clipboard in scripts, see:
+  * [AppleScript Clipboard Commands suite](https://developer.apple.com/library/mac/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_cmds.html)
+  * The unix man pages for pbcopy, pbpaste.
+
+==== Automating Applications and Adding Functionality to Keyboard Maestro ====
+
+AppleScripts, JavaScript for Automation scripts, Shell scripts, and Swift scripts, give you a powerful way of adding new facilities we have not specifically provided for, as well as controlling other applications.  
+
+==== Web Page Interactions ====
+
+The [[actions:Execute_a_JavaScript_in_Browser|Execute a JavaScript in Browser]] actions enable deep control over a web page, as well as extracting specific data from both the page contents and HTML.
+
+==== Shell Scripts ====
+
+Shell scripts can execute any installed scripting language, such as perl, python, ruby or whatever.  Be aware that because shell scripts are executed in a non-interactive shell, typically none of the shell configuration files (like CODE{{{.login}}} or CODE{{{.profile}}}) will be executed, which may change the way the shell script behaves.
+
+Variables can be accessed from shell scripts via the environment variables in the form $KMVAR‗Variable‗Name where KMVAR‗ is prefixed, and spaces are converted to underscores.  AppleScripts can also access the environment variables using the CODE{{{system attribute}}} command, but note that CODE{{{system attribute}}} is not safe for international characters.
+
+Note that the total size of the variables stored in the environment is limited by the system to 100K, so larger variables may be excluded to ensure the variables do not take up excessive amounts of environment space.
+
+Variables whose names start with "ENV‗" override regular environment variables (eg "ENV‗PATH" overrides the regular "PATH" environment variable).
+
+==== AppleScript ====
+
+AppleScripts  can perform many tasks on the Mac and control many applications.
+
+You can read and write [[Variables|variables]], [[Dictionaries|dictionaries]] and control the Keyboard Maestro engine with AppleScript:
+
+<code applescript>
+tell application "Keyboard Maestro Engine"
+  set calcResult to getvariable "Calculation Result"
+  -- If the Keyboard Maestro Variable does not exist, the AppleScript Variable will be set to empty string
+  
+  setvariable "Calculation Result" to (calcResult + 10)
+  -- If the Keyboard Maestro Variable does not exist, it will be created
+end tell
+</code>
+
+==== JavaScript for Automation ====
+
+JavaScript for Automation (JXA) can access Variables with:
+
+<code javascript>
+var kme = Application("Keyboard Maestro Engine");
+var oldValue = kme.getvariable('Calculation Result');
+kme.setvariable('Calculation Result', { to: 10 });
+</code>
+
+For details on JXA, see [[:JavaScript for Automation]]. This provides an introduction to JXA and comparison with AppleScript.
+
+==== JavaScript ====
+
+JavaScript in web browsers can access the variable values by using the kmvar dictionary, like kmvar.Variable‗Name (spaces are converted to underscores), but they have no way to write values back to variables, except by returning a result from the script.
+
+===== User Interaction =====
+
+AppleScripts and JavaScript For Automation scripts are executed in the background via CODE{{{osascript}}}.  This means they are not allowed to do user interaction.  You can work around this by asking an application like System Events to do the user interaction for you, for example:
+
+<code applescript>
+tell application "System Events"
+  activate
+  display dialog "Hello"
+end tell
+</code>
+
+See also the [[Variables]] section.
+
+===== Controlling Keyboard Maestro Engine via Scripting =====
+
+The primary scripting interface to Keyboard Maestro Engine is the Keyboard Maestro Engine’s CODE{{{do script}}} support.  You can ask Keyboard Maestro Engine to:
+
+* execute a macro by name
+* execute a macro by unique ID
+* execute an action given its XML code
+
+Note in most cases you must tell “Keyboard Maestro Engine”, not “Keyboard Maestro”.
+
+The easiest way is to use the name, for example:
+
+<code applescript>
+tell application "Keyboard Maestro Engine"
+  do script "[Name of Your Macro]"
+end tell
+</code>
+
+The macro must be defined and enabled, and the macro group must be enabled and currently active.
+
+If there is more than one macro with the same name, you will get an error, so you can use a UID instead of a name.
+
+<code applescript>
+tell application "Keyboard Maestro Engine"
+  do script "D0C150C7-8A0C-4837-918A-427E2BCFB6B9"
+end tell
+</code>
+
+The CODE{{{do script}}} will not return until the macro is finished executing. The [[action:Return_Result|Return Result]] action can be used to return a result to the AppleScipt.
+
+You can pass an optional parameter using the CODE{{{with parameter}}} clause, which you can read in the macro as the [[token:TriggerValue|%TriggerValue% token]].
+
+You can determine a macro’s UID by selecting it and choosing [[Menus#Edit_Copy_as_Copy_UID|Copy UID command]] in the [[Menus#Edit_Copy_as|Copy as sub-menu]] in the [[Menus#Edit|Edit menu]].
+
+An even more powerful way to script Keyboard Maestro is to execute specific actions based on their XML code.  This allows you to construct any action, including changing the action on the fly, without having to create a macro first.  A simple example would be:
+
+<code applescript>
+tell application "Keyboard Maestro Engine"
+  do script "<dict><key>MacroActionType</key><string>SwitchToLastApplication</string></dict>"
+end tell
+</code>
+
+The easiest way to determine the appropriate XML is to create an example action in an example macro and then choose [[Menus#Edit_Copy_as_XML|Copy as XML]] in the [[Menus#Edit_Copy_as|Copy as sub-menu]] in the [[Menus#Edit|Edit menu]].
+
+You can read information about the existing macros using the CODE{{{gethotkeys}}} and CODE{{{getmacros}}} commands.  See the Keyboard Maestro Engine AppleScript dictionary for more information.
+
+
+===== Using Keyboard Maestro Facilities from AppleScript =====
+
+Keyboard Maestro Engine makes several of its facilities available to AppleScript.
+
+You can ask it to play a sound with:
+
+<code applescript>
+tell application "Keyboard Maestro Engine"
+  play sound alias "Harddisk:System:Library:Sounds:Glass.aiff"
+end tell
+</code>
+
+You can ask Keyboard Maestro Engine to perform a calculation for you with:
+
+<code applescript>
+tell application "Keyboard Maestro Engine"
+  set n to calculate "JULIANDATE()"
+end tell
+</code>
+
+or process tokens with:
+
+<code applescript>
+tell application "Keyboard Maestro Engine"
+  process tokens "%LongDate%"
+end tell
+</code>
+
+The `calculate` and `process tokens` commands can also take an `instance` parameter (v10.0+) to specify the instance for local variable access.
+
+You can ask Keyboard Maestro Engine to find strings in other scripts:
+
+<code applescript>
+tell application "Keyboard Maestro Engine"
+   count found in "The Source" for ".e" with regex
+end tell
+</code>
+
+And you can search and replace with:
+
+<code applescript>
+tell application "Keyboard Maestro Engine"
+	search "3+4" for "(\\d+)" replace "%CalculateFormat%CALCULATE(\\1)%Currency%" with regex and process tokens
+end tell
+</code>
+
+===== Controlling Keyboard Maestro via Scripting =====
+
+Macro Groups, Smart Groups, Macros, Triggers, Actions are all available via AppleScript.  So you have deep control over controlling the Keyboard Maestro editor itself, allowing you to automate creating macros in a variety of different ways.
+
+You can disable or enable a Macro Group (or similarly Macro) from AppleScript with:
+
+<code applescript>
+tell application "Keyboard Maestro"
+  set enabled of macro group "Macro Group Group Name or UID" to true/false
+end tell
+</code>
+
+Alternatively you can use the [[action:Set_Macro_or_Group_Enable|Set Macro Enable action]].
+
+You can rename, create, delete, duplicate macro groups and macros.  You can add and remove actions.  You can get or set the selection.
+
+You can start editing a Macro or Macro Group from AppleScript with:
+
+<code applescript>
+tell application "Keyboard Maestro"
+  editMacro "Macro/Macro Group Name or UID"
+end tell
+</code>
+
+See the Keyboard Maestro AppleScript dictionary for more information.
+
+===== Controlling Keyboard Maestro Engine via Scripting =====
+
+You can adjust Keyboard Maestro Engine windows with:
+
+<code applescript>
+tell application "Keyboard Maestro Engine"
+    set bounds of window "Clipboard History Switcher" to {1000, 50, 2000, 1200}
+end tell
+</code>
+

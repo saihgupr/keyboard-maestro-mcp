@@ -1,0 +1,104 @@
+====== Keyboard Maestro 11 User Manual ======
+
+* [[/User_Manual|Multi-Page Version]]
+* [[https://files.stairways.com/manual/11/keyboardmaestro.pdf|PDF Version]]
+* 
+* [[#Overview]]
+* [[#What_s_New|What’s New]]
+* [[#Features]]
+* [[#Purchase]]
+* [[#Screenshots]]
+* [[#Tour]]
+* [[#Links]]
+* [[#Quick_Start|Quick Start]]
+* [[#Assistance]]
+* [[#How_do_I|How do I?]]
+* [[#Editor_Window|Editor Window]]
+* [[#Macro_Groups|Macro Groups]]
+* [[#Smart_Groups|Smart Groups]]
+* [[#Macros]]
+* [[#Macro_Triggers|Macro Triggers]]
+* [[#Macro_Actions|Macro Actions]]
+* [[#Macro_Syncing|Macro Syncing]]
+* [[#Macro_Debugger|Macro Debugger]]
+* [[#Variables]]
+* [[#Tokens]]
+* [[#Calculations]]
+* [[#Conditions]]
+* [[#Collections]]
+* [[#Filters]]
+* [[#Dictionaries]]
+* [[#JSON]]
+* [[#Search_Strings|Search Strings]]
+* [[#Palettes]]
+* [[#Recording]]
+* [[#Macro_Library|Macro Library]]
+* [[#Macro_Examples|Macro Examples]]
+* [[#Icon_Chooser|Icon Chooser]]
+* [[#Application_Launcher|Application Launcher]]
+* [[#Application_Switcher|Application Switcher]]
+* [[#Window_Switcher|Window Switcher]]
+* [[#Named_Clipboard_Switcher|Named Clipboard Switcher]]
+* [[#Clipboard_History_Switcher|Clipboard History Switcher]]
+* [[#Preferences]]
+* [[#Scripting]]
+* [[#URL_Schemes |URL Schemes]]
+* [[#Status_Menu_Icons|Status Menu Icons]]
+* [[#Plug_In_Actions|Plug In Actions]]
+* [[#Windows]]
+* [[#Menus]]
+* [[#Tips]]
+* [[#Troubleshooting]]
+* [[#Support]]
+* [[#Glossary]]
+* [[#Administrative_Details|Administrative Details]]
+
+{{page>manual:Overview&nofooter}}
+{{page>manual:Whats_New&nofooter}}
+{{page>manual:Features&nofooter}}
+{{page>manual:Purchase&nofooter}}
+{{page>manual:Screenshots&nofooter}}
+{{page>manual:Tour&nofooter}}
+{{page>manual:Links&nofooter}}
+{{page>manual:Quick_Start&nofooter}}
+{{page>manual:Assistance&nofooter}}
+{{page>manual:How_do_I&nofooter}}
+{{page>manual:Editor_Window&nofooter}}
+{{page>manual:Macro_Groups&nofooter}}
+{{page>manual:Smart_Groups&nofooter}}
+{{page>manual:Macros&nofooter}}
+{{page>manual:Macro_Triggers&nofooter}}
+{{page>manual:Macro_Actions&nofooter}}
+{{page>manual:Macro_Syncing&nofooter}}
+{{page>manual:Macro_Debugger&nofooter}}
+{{page>manual:Variables&nofooter}}
+{{page>manual:Tokens&nofooter}}
+{{page>manual:Calculations&nofooter}}
+{{page>manual:Conditions&nofooter}}
+{{page>manual:Collections&nofooter}}
+{{page>manual:Filters&nofooter}}
+{{page>manual:Dictionaries&nofooter}}
+{{page>manual:JSON&nofooter}}
+{{page>manual:Search_Strings&nofooter}}
+{{page>manual:Palettes&nofooter}}
+{{page>manual:Recording&nofooter}}
+{{page>manual:Macro_Library&nofooter}}
+{{page>manual:Macro_Examples&nofooter}}
+{{page>manual:Icon_Chooser&nofooter}}
+{{page>manual:Application_Launcher&nofooter}}
+{{page>manual:Application_Switcher&nofooter}}
+{{page>manual:Window_Switcher&nofooter}}
+{{page>manual:Clipboard_History_Switcher&nofooter}}
+{{page>manual:Named_Clipboard_Switcher&nofooter}}
+{{page>manual:Preferences&nofooter}}
+{{page>manual:Scripting&nofooter}}
+{{page>manual:URL_Schemes&nofooter}}
+{{page>manual:Status_Menu_Icons&nofooter}}
+{{page>manual:Plug_In_Actions&nofooter}}
+{{page>manual:Windows&nofooter}}
+{{page>manual:Menus&nofooter}}
+{{page>manual:Tips&nofooter}}
+{{page>manual:Troubleshooting&nofooter}}
+{{page>manual:Support&nofooter}}
+{{page>manual:Glossary&nofooter}}
+{{page>manual:Administrative_Details&nofooter}}

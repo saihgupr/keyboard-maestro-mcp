@@ -1,0 +1,17 @@
+====== Set Clipboard to Image ======
+
+The Set Clipboard to Image action allows you to set the System Clipboard, Trigger Clipboard or a Named Clipboard to a specified image.
+
+{{ setclipboardtoimage.png?nolink&504x135 | Set Clipboard to Image }}
+
+You can set the image in the action, from a custom icon (v10.0+), or read the image from the System Clipboard, Trigger Clipboard, a Named Clipboard, or a file, or you can get the image from the screen (which would be the same as the [[action:Screen Capture]] action).
+
+Note that including large images in your actions can bloat your macro file which can lead to performance issues, so saving large images in a file or named clipboard should generally be preferred.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Copy Clipboard to Clipboard |Copy Clipboard to Clipboard]] action
+* [[action:Set Clipboard to File Reference]] action
+* [[:Actions|See all Actions]]

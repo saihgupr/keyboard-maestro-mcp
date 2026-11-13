@@ -1,0 +1,53 @@
+====== Clipboard Condition ======
+
+The //Clipboard condition// looks at the current system clipboard, or in v8+, the [[:Clipboards#Trigger_Clipboard|Trigger Clipboard]] or a [[:Clipboards#Named_Clipboards|Named Clipboard]], and determines if it currently meets any one of several criteria.
+
+You select the _comparison criteria_ in the PopUp list.
+
+For more information about _Clipboards_ in general, see:  [[:Clipboards|Clipboards]]
+
+===== Example of Use in If/Then Action =====
+
+
+{{:condition:clipboard-condition-km8.png?nolink|}}
+
+===== Comparison Criteria =====
+
+
+^ PopUp Item ^ Description ^
+^ has text | contains text of some sort. |
+^ does not have text | does not contain text. |
+^ has an image | contains an image of some sort. |
+^ does not have image | does not contain an image. |
+^ is | has text that exactly matches a specified string. |
+^ is not | does not have text that exactly matches a specified string. |
+^ contains | has text that contains (case insensitively) a specified string. |
+^ does not contain | does not have text that contains (case insensitively) a specified string. |
+^ starts with | has text that starts with (case insensitively) a specified string. (v8+) |
+^ ends with | has text that ends with (case insensitively) a specified string. (v8+) |
+^ is before | has text that is alphabetically before a specified string. (v7.2+) |
+^ is after | has text that is alphabetically after a specified string. (v7.2+) |
+^ matches | has text that matches a specified regular expression. |
+^ does not match | does not have text that matches a specified regular expression. |
+^ is < | has text that is numerically less than a specified calculation. (v8+) |
+^ is `<=` | has text that is numerically less than or equal to a specified calculation. (v8+) |
+^ is = | has text that is numerically equal to a specified calculation. (v8+) |
+^ is `>=` | has text that is numerically greater than or equal to a specified calculation. (v8+) |
+^ is > | has text that is numerically greater than a specified calculation. (v8+) |
+^ is != | has text that is numerically not equal to a specified calculation. (v8+) |
+^ conforms to | has some flavor that conforms to the specified [Uniform Type Identifier](https://en.wikipedia.org/wiki/Uniform_Type_Identifier). |
+^ does not conform to | does not have a flavor that conforms to the specified Uniform Type Identifier. |
+
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]

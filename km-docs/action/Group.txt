@@ -1,0 +1,9 @@
+The Group action allows you to create sets of actions which can be enabled, disabled and tried as a group.
+
+Drag individual actions into the //Execute the following actions// area.
+
+There is an option in the action (gear) ⚙ menu to display the progress as the macro executes the actions within the group (v11.0+).
+
+Tip: Use the action (gear) ⚙ menu to //Rename// the group with an indication of the overall purpose or function of that group.
+
+{{:action:group.png|}}

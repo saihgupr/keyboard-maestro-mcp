@@ -1,0 +1,10 @@
+====== Space Changed Trigger ======
+
+The *Space Changed trigger* (v11.0+) executes when you change Space.
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[trigger:Display_Layout_Changed|Display Layout Changed]]
+* [[:Triggers|See all Triggers]]

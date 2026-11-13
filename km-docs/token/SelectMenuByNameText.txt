@@ -1,0 +1,15 @@
+====== SelectMenuByNameText Token ======
+
+
+The //%SelectMenuByNameText%// token returns (v11.0.3+) the text entered in the last [[action:Select_Menu_by_Name|Select Menu by Name]] action.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Select_Menu_by_Name|Select Menu by Name]] action
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens |See all Tokens]]

@@ -1,0 +1,28 @@
+====== Repeat Action ======
+
+
+The **Repeat [[:Actions|Action]]** allows you to repeat a sequence of sub-actions as many times as you like.
+
+It is one of several Actions that _loop_ through a set of other Actions until some criteria is met.
+
+The repeat count can be a simple number, or you can use a variable or other calculation in the field (as with most all numeric fields in Keyboard Maestro, simply start typing and the field will expand to make room for more than a number).
+
+You can break out of the loop, retry this iteration, or skip to the next iteration with the [[actions:Redirect_Control_Flow|Redirect Control Flow]] actions.
+
+There is an option in the action (gear) ⚙ menu to display the progress as the action executes (v11.0+).
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Pause_Until|Pause Until]] action
+* [[action:For_Each|For Each]] action
+* [[action:Until|Until]] action
+* [[action:While|While]] action
+* [[action:Assert|Assert]] action
+* [[actions:Redirect_Control_Flow|Redirect Control Flow]] actions
+* [[:Actions|See all actions]]
+
+=== Forum ===
+
+- The [Variable Repeat](https://forum.keyboardmaestro.com/t/variable-repeat/225) topic on the forum shows how to ask for a repeat count and then repeat a set of actions that many times.

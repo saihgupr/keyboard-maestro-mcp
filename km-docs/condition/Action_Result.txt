@@ -1,0 +1,35 @@
+The //Action Result condition// (v8+) tests the [[token:ActionResult|%ActionResult%]] token containing the results of the last action to complete.  This token contains either //OK// for a successful completion of the action, or an error message of some sort.
+
+Keep in mind the Action Result will be cleared at the end of any successful action, so if you want to know why the actions failed you will need to handle the Action Result immediately, or alternatively save the %ActionResult% in a variable and use the [[condition:Variable|Variable]] condition.
+
+The condition tests the result to determine if:
+
+* it completed OK.
+* it did not complete OK.
+* is exactly (case insensitively) a specified string.
+* is not exactly (case insensitively) a specified string.
+* contains (case insensitively) a specified string.
+* does not contain (case insensitively) a specified string.
+* starts with (case insensitively) a specified string.
+* ends with (case insensitively) a specified string.
+* is alphabetically before a specified string.
+* is alphabetically after a specified string.
+* matches a specified [[:Regular Expressions|regular expression]].
+* does not match a specified [[:Regular Expressions|regular expression]].
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Tokens ===
+
+* [[token:ActionResult|%ActionResult%]] token
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]

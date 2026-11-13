@@ -1,0 +1,1 @@
+The //%UserName%// token returns the current user name.

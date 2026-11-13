@@ -1,0 +1,37 @@
+The //Environment Variable condition// looks at the system environment variables that make up Keyboard Maestro Engine's environment and determines if the specified environment variable:
+
+* exists.
+* does not exist.
+* is empty.
+* is not empty.
+* is exactly (case insensitively) a specified string.
+* is not exactly (case insensitively) a specified string.
+* contains (case insensitively) a specified string.
+* does not contain (case insensitively) a specified string.
+* starts with (case insensitively) a specified string. (v8+)
+* ends with (case insensitively) a specified string. (v8+)
+* is alphabetically before a specified string. (v7.2+)
+* is alphabetically after a specified string. (v7.2+)
+* matches a specified [[:Regular Expressions|regular expression]].
+* does not match a specified [[:Regular Expressions|regular expression]].
+* is numerically less than a specified calculation. (v8+)
+* is numerically less than or equal to a specified calculation. (v8+)
+* is numerically equal to a specified calculation. (v8+)
+* is numerically greater than or equal to a specified calculation. (v8+)
+* is numerically greater than a specified calculation. (v8+)
+* is numerically not equal to a specified calculation. (v8+)
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]
+
+==== Forum ====

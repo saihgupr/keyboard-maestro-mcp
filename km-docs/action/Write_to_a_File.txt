@@ -1,0 +1,62 @@
+====== Write To File Action ======
+
+
+The Write to a File and [[action:Append Text to a File|Append Text to a File]] actions allow you to write data from a variety of sources to a file on disk.
+
+
+
+Write or append the current system clipboard, a named clipboard, a variable, some text or some styled text (you can write but cannot append styled text).
+
+===== Warnings =====
+
+** 1. Will Overwrite Existing File**
+
+While the [[action:Copy_a_File|Copy a File]] action will NOT overwrite an existing file, and will cause the Macro to abort/cancel IF the "Failure Aborts Macro" option is checked, this //Write to a File// action //will// overwrite  an existing file without warning or failure.  The "Failure Aborts Macro" option has no effect on this.
+
+**2. Inadvertent Destruction of Folder (pre v8.1)**
+
+Ensure you specify a file path, not a path to a directory - this action uses an Apple API that can overwrite directories, destroying them completely (pre-v8.1).**  As of v8.1+, this action will trash (if possible) (in to the trash folder) any existing file or directory you are about to overwrite.
+
+===== How To Use =====
+
+Select the file to write to by specifying its path. Click the File Chooser button on the right to select an existing file on disk. Option-click on the File Chooser button to show the currently selected file in the Finder (assuming it exists already).
+
+You can write the file in a variety of formats, including plain text, RTF or RTFD, SimpleText, as an HTML folder or web archive, or a Word Doc, Word XML, Open Office XML, or Open Document. You can only append to plain text formats though.
+
+[[:Clipboards|Clipboards]] which contain images can be written in various formats: PNG, TIFF, JPEG, BMP, GIF. Plain text formats can have a specified character encoding: MacRoman, ISO-8859 Latin 1, UTF-8, UTF-16.
+
+If you change the format or extension of the file in the ‘//to file//’ field, the ‘//with format//’ selector changes to match. If you hold the Option key down and change the format selector, the extension in the ‘//to file//’ field will be left unchanged (7.0+).
+
+Note the difference between the Write and Append actions:  Write changes the entire contents of the file on disk while Append adds the new content at the end of the file.
+
+For text, the action allows you to control what text processing happens in the gear menu (7.2+) :
+
+* Process Text Normally (process text tokens and backslash characters)
+* Process Text Tokens Only (process text tokens but not backslash characters)
+* Process Nothing (process neither text tokens nor backslash characters)
+
+Most other [Text Fields](https://wiki.keyboardmaestro.com/Text_Fields) in Keyboard Maestro process both text tokens and (except for regular expression fields) backslash characters. 
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Delete a File|Delete a File]]
+* [[action:Read a File|Read a File]]
+* [[action:Set Variable to Text|Set Variable to Text]]
+* [[:Actions|See all Actions]]
+
+==== Topics ====
+
+* [[:Clipboards|Clipboards]]
+* [[:Frequently Asked Questions|FAQ]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/can-i-trigger-a-macro-if-an-image-made-by-screenshot-utility-was-added-to-clipboard/3612/2|Can I trigger a macro if an image made by screenshot utility was added to clipboard?]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Write%20File|Keyboard Maestro Forum topics about Write to a File action]]

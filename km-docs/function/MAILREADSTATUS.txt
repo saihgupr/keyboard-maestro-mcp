@@ -1,0 +1,17 @@
+====== MAILREADSTATUS Function ======
+
+The MAILREADSTATUS() function returns the read status of the currently selected mail message.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MAILDATERECEIVED]]
+* [[MAILDATESENT]]
+* [[MAILFLAG]]
+* [[MAILFLAGGED]]
+* [[MAILJUNKSTATUS]]
+* [[MAILWASFORWARDED]]
+* [[MAILWASREDIRECTED]]
+* [[MAILWASREPLIEDTO]]
+* [[:Functions|See all Functions]]

@@ -1,0 +1,58 @@
+{{:action:pause-icon.png?nolink|}}
+====== Pause Until Action ======
+
+The //Pause Until// action pauses until criteria for conditions are met.
+
+{{:action:km-7.3-pause-until-default-screen.png?nolink|}}
+
+By default (v11.0+) Keyboard Maestro will start to conserve CPU usage of this action if it runs for a long time (after 10 seconds it will conserve a little, after 60 seconds it will conserve a lot) by only checking the condition periodically. You can turn off this feature in the action (gear) ⚙ menu.
+
+===== Fields on the Pause Until Action =====
+
+
+**Criteria for condition(s)**
+  *Any of the following are true — at least one condition must be true.
+  *All of the following are true — every condition must be true.
+  *None of the following are true — no condition is true.
+  *Not all of the following are true — at least one condition must be false.
+
+
+**Conditions**
+  * Add one or more new conditions by clicking the green + button beside //New Condition// to select from a list of available conditions.
+  * Conditions are grouped by the following categories. See the [[:Conditions|Conditions]] section for further details.
+  * After selecting a condition category you can make further choices. For example, if you choose the //Application Condition// you can choose a specific application to be running, or at the front, and so on.
+  * Add further conditions by clicking the green + button again.
+
+**List of Available Conditions**
+
+~~NOCACHE~~
+<nspages condition -textPages="">
+
+===== Examples =====
+
+**1. Pause Until the "Finder" app is at front, and the <kbd>⌘</kbd> key is pressed.**
+
+{{:action:pauseuntil.png|}}
+
+**2. Pause Until the Mouse Is Clicked**
+
+{{:action:km-7.3-pause-until-mouse-click.png?nolink|}}
+
+For a discussion or other approaches, see this [[https://forum.keyboardmaestro.com/t/feature-request-pause-until-mouse-click/3960/2?u=jmichaeltx|Forum Post]].
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]] action
+* [[action:For_Each|For Each]] action
+* [[action:Repeat|Repeat]] action
+* [[action:Until|Until]] action
+* [[action:While|While]] action
+* [[action:Assert|Assert]] action
+* [[actions:Redirect_Control_Flow|Redirect Control Flow]] actions
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/issue-pause-until-action-fails-with-no-windows/3022/7|ISSUE: PAUSE UNTIL Action Fails with No Windows]]

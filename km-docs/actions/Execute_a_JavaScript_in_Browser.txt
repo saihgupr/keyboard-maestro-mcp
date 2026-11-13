@@ -1,0 +1,110 @@
+====== Execute JavaScript in Browser Actions ======
+
+There are several *Execute a JavaScript in Browser* actions that let you execute a JavaScript in a web browser page:
+
+*  _Execute a JavaScript in **Front Browser**_
+  * The "Front Browser" is whichever of the following is currently frontmost, or was the last web browser that was frontmost:
+    * Google Chrome or Chrome-based Browsers like Brave Browser
+    * Safari or Safari-like Browsers like Safari Technology Preview
+*  _Execute a JavaScript in **Google Chrome**_
+*  _Execute a JavaScript in **Safari**_
+
+**Front Browser** supports these bundle IDs:
+
+* com.apple.Safari
+* com.apple.SafariTechnologyPreview
+* com.google.Chrome
+* com.google.Chrome.canary
+* com.brave.Browser
+* com.brave.Browser.beta
+* com.vivaldi.Vivaldi
+* com.vivaldi.Vivaldi.snapshot
+* com.microsoft.edgemac
+
+All of these actions work the same.  The difference is in which Web Browser the JavaScript will be executed.
+
+This action allows you to execute a specified JavaScript, either from a file or text entered in the Action itself, and return the results. 
+
+In order to control Safari or Chrome you will need to [[assistance:Allow_JavaScript_From_Apple_Events|Allow JavaScript from Apple Events]].
+
+You can control which browser is targeted, whether to trim white space at the start and end of the result, and whether to include any errors in the action (gear) ⚙ menu.
+
+===== Options for Returning Results =====
+
+  * ignore results.
+  * display results in a window.
+  * display results briefly.
+  * display results large.
+  * type results.
+  * paste results.
+  * save results to variable.
+  * save results to the system clipboard or a named clipboard.
+  * asynchronously  — the script runs while the macro continues on, no results are returned.
+
+If the results are to be saved to a variable or a clipboard then further text areas appear in the action allowing you to specify the variable or specific clipboard.
+
+===== Modern Syntax =====
+
+In version 11.0, scripts default to Modern Syntax, which essentially wraps the script in:
+
+```javascript
+(function () {
+…
+})()
+```
+
+This helps keep your script from interacting with the web page in unexpected ways. A result of this is that you need to return values to the action using the `return` syntax. So a trivial action would be:
+
+```javascript
+return "Hello";
+```
+
+You can turn Modern Syntax on or off in the popup menu next to the script.
+
+===== Using Keyboard Maestro Variables =====
+
+JavaScript in browsers cannot interact with the outside world, but they can receive the variables from Keyboard Maestro in the script. The variable values can be read, but writing to them will not alter the corresponding Keyboard Maestro variables.
+
+In Modern Syntax, reference the variable like this:
+
+```javascript
+var v = kmvar.My_KM_Data
+```
+
+In the old syntax, reference the variables like this:
+
+```javascript
+var v = document.kmvar.My_KM_Data
+```
+
+When accessing a variable, if its name has a space in it, replace it with an underscore.
+
+Local and Instance variables are available, but Password variables are not.
+
+By default, all variables are included, but you can select No Variables, or specific variables as desired using the popup menu next to the script.
+
+(!) Note that in the the old syntax, because your variables are passed to the web page, any other scripts running on that web page will have access them, and this could be a privacy issue if the information is misused by the web page.
+
+===== Saving Results to Keyboard Maestro Variables =====
+  
+If you need to set a Keyboard Maestro Variable from the JavaScript in a browser, then use the JavaScript return value to return the data to the Keyboard Maestro Action, which can be set to save the results as a Keyboard Maestro Variable.
+
+If you need to set more than one Keyboard Maestro Variable, one approach is to return the data for each variable on a separate line (or with delimiters of your choice), and then parse in a following [[action: Search_using_Regular_Expression|Search using Regular Expression]].
+
+For example:
+
+{{:action:km-browser-javascript-output.png?nolink|}}
+
+Another approach would be to use `JSON.stringify()` to return a JSON structure, and then use [[token:JSONValue|%JSONValue%]] token or other JSON facilities to extract the data.
+
+===== See Also =====
+
+* [[Browser_Actions|Browser Actions]]
+* [[Browser_Window_Actions|Browser Window Actions]]
+* [[Browser_Form_Actions|Browser Form Actions]]
+* [[Wait_For_Browser_to_Finish_Loading| Wait For Browser to Finish Loading actions]]
+
+=== Actions ===
+
+* [[action:Execute_a_JavaScript_in_Custom_Prompt|Execute a JavaScript in Custom Prompt]] action
+* [[:Actions|See all Actions]]

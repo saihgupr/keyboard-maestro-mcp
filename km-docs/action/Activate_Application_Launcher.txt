@@ -1,0 +1,5 @@
+The *Activate Application Launcher* action is essentially a highly specialized macro action that enables you to launch applications. By triggering the macro, the Application Launcher enables you to launch any applications in your Applications or Utilities folder, as well as any recently running applications. Once the launching window appears, you may select the application to launch, and Application Launcher will launch it for you.
+
+The applications are also listed in the Status Menu, so you can launch applications that way if you prefer.
+
+By default, Keyboard Maestro creates an Activate Application Launcher macro in the “Switcher Group” Macro Group, triggered by Command-Control-Tab. You can disable this Macro by selecting the Switcher Group, then selecting the Activate Application Switcher macro and clicking the ✓ button below the Macros list. You can edit this macro to change the trigger to any other desired [[trigger:Hot_Key|Hot Key]].

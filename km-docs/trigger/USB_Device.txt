@@ -1,0 +1,7 @@
+The *USB Device trigger* executes a macro when a USB Device is attached or detached.
+
+Since USB Device names may be quite arbitrary, and may not match your expectations for the name of the device, if your text insertion point is in the name field of this trigger and you connect (or turn on) the device, Keyboard Maestro will fill the name in for you.
+
+The [[token:TriggerValue|%TriggerValue%]] token will contain the name of the device when your macro is triggered.
+
+A great use for this trigger is to launch your scanner software when you turn on your scanner, and quit it when you turn off your scanner.

@@ -1,0 +1,57 @@
+Various actions can stop or redirect control flow in the macro. They allow you to cancel this or other macros, or redirect control flow in or out of loops.
+
+Available options are:
+
+  * Cancel All Macros — Cancel all macros that Keyboard Maestro Engine is currently executing.
+  * Cancel All Other Macros — Cancel all macros except this macro instance.
+  * Cancel This Macro — Cancel this macro and any macros that executed this macro.
+  * Cancel Just This Macro — Cancel just this macro, continue executing the macro that [[action:Execute_a_Macro|executed]] this macro (use [[action:Return_from_Subroutine|Return from Subroutine]] for macros executed by [[action:Execute_a_Subroutine|Execute a Subroutine]]).
+  * Cancel a Specific Macro (v9.0+) — Cancels a specific macro instance (from the [[token:ExecutingInstance|%ExecutingInstance%]] or [[token:ExecutingInstances|%ExecutingInstances%]] tokens).
+    * Forum example: [How To Stop a Specific Instance of a Running Macro](https://forum.keyboardmaestro.com/t/how-to-stop-only-this-macro-not-all/17263)
+    * [[https://forum.keyboardmaestro.com/t/cancel-a-specific-macro-action/15003/5?u=jmichaeltx|See another example here]].
+    * Note that the empty string, or the string “THIS” will cancel the currently executing macro.
+  * Retry This Loop — Skip to the start of this loop and continue executing.
+  * Continue Loop — Skip to the end of this loop and continue executing, possibly looping.
+  * Break From Loop — Cancel execution of the current loop, continue executing after the loop
+
+Whichever action you choose you can still select one of the others from the pop-up menu.
+
+For these purposes, any of the loop actions (For Each, Repeat, Until, While) are considered to be loops. Group is not considered to be a loop (use a `Repeat 1 Time` if you want to be able to Continue or Retry or Break from a single list of actions that is otherwise executed once).
+
+The behaviour of the Retry, Continue, or Break From Loop actions is undefined if they are not within a loop and is subject to change. Currently the surrounding macro itself is considered a loop.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until]]
+* [[action:For_Each|For Each]]
+* [[action:Repeat|Repeat]]
+* [[action:Until|Until]]
+* [[action:While|While]] action
+* [[action:Assert|Assert]]
+* [[:Actions|See all Actions]]
+
+==== Tokens ====
+
+* [[token:ExecutingMacro|%ExecutingMacro%]]
+* [[token:ExecutingMacroGroup|%ExecutingMacroGroup%]]
+* [[token:ExecutingMacroUUID|%ExecutingMacroUUID%]]
+* [[token:ExecutingThisMacro|%ExecutingThisMacro%]]
+* [[token:ExecutingThisMacroUUID|%ExecutingThisMacroUUID%]]
+* [[token:ExecutingInstance|%ExecutingInstance%]]
+* [[token:ExecutingInstances|%ExecutingInstances%]]
+* [[:Tokens|See all Tokens]]
+
+==== Topics ====
+
+* [[manual:How do I#How do I cancel a running Macro|How do I cancel a running Macro]]
+* [[:Frequently Asked Questions|FAQ]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/kill-switch/2798/4|Kill Switch]]
+- [[https://forum.keyboardmaestro.com/t/detect-all-running-macros/3559/2|Detect all running macros]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Break From Loop|Keyboard Maestro Forum topics about Break From Loop]]

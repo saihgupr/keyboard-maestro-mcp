@@ -1,0 +1,19 @@
+====== Stream Deck Show OK ======
+
+The //Stream Deck Show OK// action (v9.0+) briefly shows a tick mark on a [[/Stream Deck]] button.
+
+{{ stream-deck-show-ok.png?nolink&503x88 | Stream Deck Show OK }}
+
+You specify the Button ID of the button to display the OK marker on.  If two buttons have the same ID, both will show the marker.
+
+The Button ID field is a token [[/Text_Fields|Text Fields]].
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Stream Deck Set Title]]
+* [[action:Stream Deck Set Image]]
+* [[action:Stream Deck Show OK]]
+* [[action:Stream Deck Show Alert]]
+* [[:Actions|See all Actions]]

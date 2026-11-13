@@ -1,0 +1,13 @@
+====== IDLE Function ======
+
+The IDLE() function returns the number of (fractional) seconds the Mac has been idle.  The IDLE time is based on the Human Interface (HID) system, and so it notices only HID device activity like mouse movement or keyboard presses, not things like disk access or movies playing or network activity.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]
+
+=== Forum ===
+
+- [[https://forum.keyboardmaestro.com/t/pause-macro-until-done-typing/2967/3|Pause macro until done typing]]

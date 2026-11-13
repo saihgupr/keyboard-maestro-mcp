@@ -1,0 +1,11 @@
+====== MICROSECONDS Function ======
+
+The MICROSECONDS() function returns the time in microseconds since the Mac started.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MILLISECONDS]]
+* [[SECONDS]]
+* [[:Functions|See all Functions]]

@@ -1,0 +1,49 @@
+====== HOUR Function ======
+
+The HOUR([unixtime]) function returns the hour (0-23) in the local time zone, either the current hour, or the hour of the specified [[:unixtime]].
+
+    HOUR() === the current hour
+    HOUR( unixtime ) === the hour of the unix time
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Filter|Filter]] (Process Text Tokens)
+* [[:Actions|See all Actions]]
+
+=== Functions === 
+
+* [[YEAR]]
+* [[MONTH]]
+* [[DAY]]
+* [[DOW]]
+* [[HOUR]]
+* [[MINUTE]]
+* [[SECOND]]
+* [[TIME]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:ICUDateTime|%ICUDateTime%]] (local)
+* [[token:ICUDateTimeFor|%ICUDateTimeFor%]] (local)
+* [[token:ICUDateTimeMinus|%ICUDateTimeMinus%]] (local)
+* [[token:ICUDateTimePlus|%ICUDateTimePlus%]] (local)
+* [[token:LongDate|%LongDate%]] (local)
+* [[token:LongTime|%LongTime%]] (local)
+* [[token:NumberDate|%NumberDate%]] (local)
+* [[token:ShortDate|%ShortDate%]] (local)
+* [[token:ShortTime|%ShortTime%]] (local)
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+- [[:Dates_and_Times|Dates and Times]]
+- [[:JulianDate|JulianDate]]
+- [[:unixtime]] in GMT
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/time-based-if-then/3405/2|Time-based If/Then]]
+- [[https://forum.keyboardmaestro.com/search?q=HOUR|Keyboard Maestro Forum topics about HOUR function]]

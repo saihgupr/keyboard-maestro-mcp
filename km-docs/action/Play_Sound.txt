@@ -1,0 +1,23 @@
+The Play Sound action plays a selected sound through a specified output device at a selected volume.
+
+{{:action:playsound.png|}}
+
+The //Play sound// pop-up lists all the installed system sounds, but the //other// choice allows you to choose any other saved sound.
+
+The //out device// pop-up lets you choose from any connected output device.
+
+Use the //with volume// slider to select the sound level.
+
+The action will wait for the sound to complete before continuing unless you turn on *Asynchronously* (v8+) in the gear BUTTON{{{⚙}}} menu (or unless it is the system beep which always plays asynchronously).
+
+Note that the `System Beep` sound has not controls, so it always plays through the default sound effects output device at the default volume asynchronously.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:For_Each|For Each]]
+
+==== Forum ====
+
+* [[https://forum.keyboardmaestro.com/t/feature-request-play-sound-set-to-asynchronous/7354|[Feature Request] Play Sound: Set to Asynchronous]]

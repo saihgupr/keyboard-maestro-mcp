@@ -1,0 +1,16 @@
+====== Display Clipboard Action ======
+
+The Display (Named) Clipboard action displays the system clipboard or a Named Clipboard in a window. Select which clipboard to display from the //Display// pop-up.
+
+This can display an image.
+
+You can also display a file by reading the file in to the system clipboard, or in to a named clipboard.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Custom HTML Prompt|Custom HTML Prompt]]
+* [[action:Display_Text|Display Text]]
+* [[:Actions|See all Actions]]
+

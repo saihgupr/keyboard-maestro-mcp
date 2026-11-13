@@ -1,0 +1,64 @@
+====== For Each Action ======
+
+
+The *For Each* action loops over a set of [collections](:Collections) of items, setting a variable to each value and executing the contained actions.
+
+It is one of several Actions that _loop_ through a set of other Actions until some criteria is met.
+
+Whenever you need to deal with a list of things (lines, files, volumes, numbers, etc), the For Each action is a good place to start. 
+
+===== How To Use =====
+
+  - Add the //For Each// Action, from the //Control Flow// Category, to your macro
+    - {{:action:km-editor-for-each-action.png?nolink|}}
+    - {{:action:km-for-each-action-2.png?nolink|}}
+  - Enter a variable or select from the pop-up at the end of the //For each// text area.
+    * This variable will contain each item in the Collection list as the For Each Action loops
+    * This can be a new or existing variable, as your needs dictate
+    * You can then use or process this item as needed 
+  - Add a collection by clicking the green + button beside //New Collection// to select from a list of available collections. You can learn more about the available collections on the [[:Collections]] page.
+  - When you choose a specific collection, further options may become available.
+  - Add one or more actions into the //No Action// (which means no actions have been added yet) area.
+    * These actions will operate on each item in the Collection that is stored in the Variable from Step #2
+
+You can break out of the loop, retry this iteration, or skip to the next iteration with the [[actions:Redirect_Control_Flow|actions:Redirect Control Flow]] actions.
+
+There is an option in the action (gear) ⚙ menu to display the progress of the For Each action (v10.0+).
+
+===== Examples =====
+
+**Example #1:  Split text into lines or substrings**
+
+{{:action:km-for-each-lines-example.png?nolink|}}
+
+For a complete macro using this Action, see [[https://forum.keyboardmaestro.com/t/macro-file-process-lines-in-text-file/2936|MACRO: [FILE] Process Lines in Text File]]
+
+**Example #2:  Get Capture Group for Multiple Matches**
+
+See [[:Regular Expressions#Examples|Regular Expressions (RegEx) Examples]]
+
+
+===== See also =====
+
+=== Actions ===
+
+* [[action:Pause_Until|Pause Until]] action
+* [[action:Repeat|Repeat]] action
+* [[action:Until|Until]] action
+* [[action:While|While]] action
+* [[action:Assert|Assert]] action
+* [[actions:Redirect_Control_Flow|Redirect Control Flow]] actions
+* [[:Actions|See all actions]]
+
+
+=== Triggers ===
+
+* [[trigger:Typed String|trigger:Typed String]]
+* [[:Triggers|See all triggers]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/text-filtering/2763/14|Text filtering]]
+- [[https://forum.keyboardmaestro.com/t/microsoft-word-make-numbers-in-selectd-text-superscript-without-affecting-the-words/2895/4|Microsoft Word: Make numbers in selected text superscript without affecting the words]]
+- [[https://forum.keyboardmaestro.com/t/macro-file-process-lines-in-text-file/2936|MACRO: [FILE] Process Lines in Text File]]
+- [[https://forum.keyboardmaestro.com/t/for-each-item-difficulty-understanding-action/3162/2|For Each Item]]

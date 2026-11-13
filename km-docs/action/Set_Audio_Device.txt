@@ -1,0 +1,17 @@
+====== Set Audio Device ======
+
+The //Set Audio Device// actions (v11.0+) let you set the audio device for sound input, sound output or sound effects.
+
+{{ set-audio-device-action.png?nolink&674x88 | Set Audio Device Action }}
+
+You can select from available devices in the popup menu on the right of the field.
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[:Tokens|All Tokens]]
+
+=== Actions ===
+
+* [[:Actions|All Actions]]

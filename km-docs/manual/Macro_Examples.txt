@@ -1,0 +1,109 @@
+====== Macro Examples ======
+
+A typical simple Macro consists of a single [[trigger:Hot_Key|Hot Key trigger]], such as Control-A, together with a single action, such as the [[action:Insert_Text_by_Typing|Insert Text by Typing Action]] that will “type my address” .
+
+For some real examples, see the forum topics:
+  * [List of Example Macros](https://forum.keyboardmaestro.com/tags/example)
+  * [Best Macro List](https://forum.keyboardmaestro.com/t/best-macro-list)
+  * [Best Examples of Keyboard Maestro Macros](https://forum.keyboardmaestro.com/t/best-examples-of-keyboard-maestro-macros)
+
+You can also use the [[Macro Library]] by choosing the [[Menus#Window_Macro_Library|Window ➤ Macro Library menu]] to see some built in examples.
+
+Here are a number of example and suggestions for Macros to give you some ideas of how you can get the most out of Keyboard Maestro and your Mac.  For tips on how to remember which Hot~~Key executes which action, see the [[Tips#Remembering_Macro_Hot_Keys|Remembering Macro Hot Keys]] section.
+
+===== Launch Your Most Used Applications =====
+
+Use function keys to launch or switch to your most used applications.  For example, you probably often switch to the Finder, your Email client, your Web Browser, your Word Processor.  Consider putting these and other frequently used applications on function keys.
+
+===== Open Your Most Used Documents =====
+
+Use Control-Function Keys to open your most used documents.  For example, you might have a documentation file or financial details file that you access frequently, consider putting these on Control-Function Keys.
+
+===== Insert Text Templates =====
+
+Use Control-Letter and the [[/action/Insert_Text|Insert Text action]] to type in text for you, such as your name, address, phone number, and so on.  Consider restricting these to just the appropriate applications like your Email client or Word Processor by creating a Macro~~Group for them.  Also consider using Typed String triggers for these sorts of macros, for example “=em=” for email address and “=addr=” for address.  The text you insert can be typed, pasted as plain text, or can be fully styled text.
+
+===== Use Hot Keys to Open Financial Accounts =====
+
+If you keep your finances on your computer, then you probably need to open a document every time you enter a bill or receive a statement.  By creating a Hot~~Key to open the document for you, you can save a few seconds every time – at least it might make receiving a bill slightly less unpleasant!  If you have multiple accounts (eg personal, business, association) then this can be even more useful.
+
+===== Use Hot Keys to Connect to SSH or Web Sites =====
+
+You could use Hot~~Keys to connect to your common servers. You might use the [[action:Open_a_URL|Open a URL]] action, or you could create a Bookmark file for the site and use the [[action:Open_a_File_Folder_or_Application|Open a File]] action.
+===== Simulate Bookmarks =====
+
+Use the [[actions:Click_Browser_Link|Click Browser Link]] and [[actions:Browser_Form_Actions|Browser Form Actions]] to open web pages, fill in fields, submit forms, follow links.  For example, you could use this to log in to the city library for all the members of your family, one in each tab, to easily check what books are due back.
+
+If you are going to use this to enter passwords, use the [[action:Set_Variable_to_Keychain_Password|Set Variable to Keychain Password]] action to retrieve the password so that it is not stored in plain text in the macros.
+
+===== Remap Command Keys =====
+
+If you find yourself pressing a command key in an application and expecting it to do something but it does not work (for example, Command-T for “Replace and Find Again”), use a Macro to make the command key “do the right thing” in that application.  Similarly, if you use a function in an application frequently, but it has a convoluted command key or no command key at all, define your own command key by using a Hot~~Key to select the menu item.
+
+Keep in mind that you can do some menu key remapping in the System Preferences Keyboard preference.
+
+===== Simulate Missing Features =====
+
+If you find yourself missing a feature in one application that you are used to in another application (perhaps you switched email clients and a feature is missing), see if you can simulate the feature with a sequence of commands and then use a Hot~~Key for that.  For example, Close Window, Down Arrow, Return to move to next email message, or Command-Left Arrow, Shift-Down Arrow, Command-C, Down Arrow, Command-V to duplicate a line.
+
+===== Swap Characters =====
+
+If you often type characters out of order, use a Hot~~Key to swap them by first placing the cursor between them and then executing:
+
+* Simulate Keystroke Shift-Right Arrow
+* Cut to Named Clipboard “Temp”
+* Simulate Keystroke Left Arrow
+* Paste from Named Clipboard “Temp”
+
+===== Save a Text Clipping =====
+
+If you often want to save snippets of text, you could create a Hot~~Key to save a clipping:
+
+* Copy
+* Open File “Clippings.rtf”
+* Simulate Keystroke Command-Down Arrow
+* Insert Text “== %LongDate% %ShortTime% ==<return>” by Typing
+* Paste
+* Simulate Keystroke Return
+* Simulate Keystroke Return
+* Select Menu Item File » Save
+* Manipulate Window Close Front Window
+* Switch to Last Application (or Quit Specific Application or Command-Q)
+
+===== Delayed Click =====
+
+Setup a macro which simply pauses for twenty seconds and then clicks the mouse.  Then when you need to print on to an envelope, go all the way through the process, position the mouse over the Print button, execute the Macro, walk over to the printer, insert an envelope and then take the printed envelope back with you.
+
+===== Insert Boilerplate Text =====
+
+If you regularly need to insert boilerplate text (eg copyright or file creation text), use an Insert Text macro to insert the text quickly and easily.  It can even expand tokens to insert the date or other information.
+
+===== Apply Text Conversions =====
+
+If you are regularly translating text from one format to another in an automatic process, perhaps you can automate the whole thing with a macro.  For example, converting function declaration in a header file into function definition.
+
+===== Simulate Workspaces =====
+
+Create a macro to setup an application to your liking.  For example, create multiple tabs in Terminal, each in its own directory, or open multiple documents in TextEdit, each positioned and sized appropriately.
+
+===== Setup an Application When Launched =====
+
+If you always do a set of things every time you launch an application (eg arrange the windows in a particular way), use an application [[Macro Triggers|Macro Trigger]] to execute a Macro when you launch the application, then have the Macro do the work for you.
+
+===== Clean Up After Using an Application =====
+
+If you always do something after quitting an application (eg unmount a server or disconnect from the Internet), use an application [[Macro Triggers|Macro Trigger]] to execute a Macro when you quit the application.  You might need to do a little AppleScripting to perform the action and then use the [[/action/Execute_an_AppleScript|Execute an AppleScript action]].
+
+===== Launch Scanner Application When Scanner is Connected =====
+
+Set up a macro that automatically launches your scanner application when your scanner is connected, and quits it again when the scanner is disconnected.  This works brilliantly with the ScanSnap scanners – open the lid and the scanner software launches, close it and the scanner software disappears.
+
+===== Switch Network Location When You Connect =====
+
+Set up a macro that automatically changes your Network Location when you connect to your home or work wireless network.
+
+===== Feedback During Macro Execution =====
+
+A Macro can play a System Beep or use the [[action:Speak_Text|Speak Text]] action to speak directly.
+
+You can also use the Alert action to display a window with specified text.  This also allows you to stop the macro if you decide not to proceed.

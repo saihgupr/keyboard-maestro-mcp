@@ -1,0 +1,49 @@
+====== JSONVALUE Function ======
+
+The //JSONVALUE(t)// function takes a [[:manual:JSON#JSON_Paths|JSON path]] and returns the numeric result.
+
+`JSONVALUE(jsonpath)` is more or less equivalent to `CALCULATE(%JSONValue%jsonpath%)`.
+
+===== Examples =====
+
+If a Keyboard Maestro variable `J` contains the JSON object:
+
+    {"a":9, "b":"bravo", "c":null, "d":[11,"two",33]}
+
+Then these would be the results:
+
+^ Token ^ Result ^ Comment ^
+| `JSONVALUE(J.a)` | `9` | |
+| `JSONVALUE(J.d[1])` | `11` | |
+| `JSONVALUE(J.d[3])` | `33` | |
+| `JSONVALUE(J.d[1+2])` | `33` | entry 3 |
+| `JSONVALUE(J.d[0])` | `3` | the number of entries in the array |
+| `JSONVALUE(J.d[-1])` | `33` | the last entry |
+| `JSONVALUE(J.d[COUNT()])` | `33` | the last entry |
+
+===== See Also =====
+
+See the [[manual:JSON]] user manual section for more details on JSON.
+
+=== Actions ===
+
+* [[action:Set_JSON_Value | Set JSON Value]]
+* [[action:Set_Variables_to_JSON | Set Variables to JSON]]
+* [[action:Set_Dictionary_to_JSON | Set Dictionary to JSON]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:JSONFromDictionary | JSONFromDictionary]]
+* [[token:JSONFromVariables | JSONFromVariables]]
+* [[token:JSONValue | JSONValue]]
+* [[:Tokens|See all Tokens]]
+
+=== Collections ===
+
+* [[collection:JSON_Keys | JSON Keys]]
+* [[:Collections |See all Tokens]]

@@ -1,0 +1,1 @@
+The //Mounted Volumes collection// contains the names (or optionally the paths) of each of the mounted volumes.

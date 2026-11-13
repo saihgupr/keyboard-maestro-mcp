@@ -1,0 +1,82 @@
+====== Cron Trigger ======
+
+The *Cron* trigger (v8+) lets you execute a macro periodically while you are logged in.
+
+The Cron format lets you specify when a trigger will fire based on the time of day and and day of month and week.
+
+The times are set using 5 (or 6) space separated fields, representing the 
+
+* minute (0-59)
+* hour (0-23)
+* day of month (1-31)
+* month (1-12)
+* day of week (0-6) (Sunday to Saturday)
+* Optional year (2000-2099)
+
+Each field can be a single number, or it can be a range (eg "3-7") or a set of numbers or ranges separated by commas (eg "3,5-7,9").  Alternatively, the field can be `*` which matches all values.  You can also add `/` and a number after a range to match every N'th value (eg "0-25/5" will match every five minutes in the first half of the each hour).
+
+For the Day of Week and Month fields, you can use the first three letters of the English name (eg "Jan" for January (1), or "Sun" for Sunday (0)).
+
+If the field starts with a minus sign (-), it matches from the end of the range (eg -1 in day of the month means the last day of the month).
+
+The trigger will match when all fields match the current time (as each minute ticks over).  Exception: if either day of month or day of week is `*` and the other isn't, then the trigger will match only the non-`*` field, otherwise the trigger will match when **either** field matches.
+
+If you start the day of the month field with a "+", then the trigger will match only if both the day of the week and day of the month field matches.  This allows you to match the last Friday of the month using "-1-7" for the day of the month, and "+Fri" for the day of the week.
+
+Alternatively, the entire field can be one of:
+
+* `@yearly` or `annually` — same as `0 0 1 1 *` (midnight at the start of January 1st each year).
+* `@monthly ` — same as `0 0 1 * *` (midnight at the start of the 1st of each month).
+* `@weekly ` — same as `0 0 * * 0` (midnight at the start of the each Sunday).
+* `@daily ` or `@midnight` — same as `0 0 * * *` (midnight at the start of the each day).
+* `@noon ` — same as `0 12 * * *` (noon in the middle of the each day).
+* `@hourly ` — same as `0 * * * *` (at the start of each hour).
+
+The [[token:TriggerValue|%TriggerValue%]] token will hold the current time and date (`yyyy-mm-dd hh:mm`).
+
+Remember that your Mac **must** be awake for any trigger to run, and that if the screen is sleeping, locked, or screen saving, then UI actions generally will not work.
+
+===== Examples =====
+
+^ Cron Setting ^ When Macro Triggers ^
+| `1 0 * * *` | AT one minute past midnight each day |
+| `45 23 * * 6` | AT 23:45 (15 minutes before midnight) near the end of each Saturday |
+| `0 12 * * Mon` | AT noon each Monday |
+| `0 18 * * Fri` | AT 6pm each Friday |
+| `0 9,12,18 * * *` | AT 9am, noon, and 3pm each day |
+| `* * * * 1-5` | AT EVERY minute on workdays |
+| `*/15 * * * *` | AT EVERY quarter hour |
+| `0 18-23,0-8 * * *` | AT EVERY hour outside office hours |
+| `0 12 1 Apr *` | AT noon on April 1st |
+| `30 8 17 Apr * 2019` | AT 8:30am on 17 April, 2019 |
+| `0 12 15 * *` | AT noon the 15th of each month |
+| `0 12 15 * Mon` | AT noon each Monday and the 15th of each month |
+| `0 12 15 * +Mon` | AT noon each 15th of each month if it is a Monday |
+| `0-59/5 * * * *` | EVERY five minutes (AT :00, :05, :10, etc) |
+| `3-59/5 * * * *` | EVERY five minutes (AT :03, :08, :13, etc) |
+| `30 8 1-7 * +Sat` | AT 8:30 am on the first Saturday of each of month |
+
+===== See Also =====
+
+=== Actions ===
+
+ * [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[Periodic|Periodic]] trigger
+* [[Time of Day]] trigger
+* [[Idle]] trigger
+* [[/Triggers|All Triggers]]
+
+===== Forum =====
+
+* [[https://en.wikipedia.org/wiki/Cron|Cron]] format.  None of the Non-standard characters are supported except the slash (/).
+* [[https://healthchecks.io/docs/cron/|HealthChecks.io examples]].

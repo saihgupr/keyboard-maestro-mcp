@@ -1,0 +1,23 @@
+====== Display Progress Action ======
+
+The *Display Progress* action (v10.0+) displays a progress window with the specified progress. You can include some text to display in the progress window, as well as the value of the progress bar, from 0 to 100.
+
+{{:action:diplay-progress.png?nolink|}}
+
+{{:action:progress-display.png?451&nolink|}}
+
+If the value is less than 0, the progress will display an indeterminate value.
+
+If the value is 100 or more, the progress window will be removed.
+
+There is only one progress display window.
+
+As with most [[manual:Calculations|Calculations]] fields, you can enter an expression in the field and it will expand to allow room for editing.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Notification|Notification]]
+* [[action:Speak_Text|Speak Text]]
+* [[:Actions|See all Actions]]

@@ -1,0 +1,1 @@
+The Fast User Switch action quickly switches to the user selected in the action. 

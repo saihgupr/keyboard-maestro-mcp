@@ -1,0 +1,43 @@
+====== JSONFromDictionary ======
+
+The //%JSONFromDictionary%dictionary%// token returns the JSON object constructed from the specified dictionary.
+
+The dictionary keys are used as field names for the resulting JSON object, and the dictionary values are the corresponding values.
+
+The token has Pretty and Compact variants (by appending either to the token name), as well as a Strict variant (appending Strict) (for example `%JSONFromDictionaryStrictCompact%dictionary%`).  The order of the variants does not matter, but you cannot have both Compact and Pretty (See the [[manual:JSON]] user manual section).
+
+* JSONFromDictionary (equivalent to JSONFromDictionaryCompact)
+* JSONFromDictionaryCompact
+* JSONFromDictionaryPretty
+* JSONFromDictionaryStrictCompact
+* JSONFromDictionaryStrictPretty
+
+Strict mode affects how the dictionary values will be interpreted.  In Strict mode, the dictionary values must be strict JSON objects - strings need to be double quoted and appropriately escaped.  In Non-Strict mode, values are assumed to be strings unless they look like JSON containers (containers must always be strictly JSON objects as always) (See the [[manual:JSON]] user manual section).
+
+===== See Also =====
+
+See the [[manual:JSON]] user manual section for more details on JSON.
+
+=== Actions ===
+
+* [[action:Set_JSON_Value | Set JSON Value]]
+* [[action:Set_Variables_to_JSON | Set Variables to JSON]]
+* [[action:Set_Dictionary_to_JSON | Set Dictionary to JSON]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:JSONVALUE | JSONVALUE(jsonpath)]]
+* [[function:COUNT | COUNT()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:JSONFromVariables | JSONFromVariables]]
+* [[token:JSONValue | JSONValue]]
+* [[:Tokens|See all Tokens]]
+
+=== Collections ===
+
+* [[collection:JSON_Keys | JSON Keys]]
+* [[:Collections |See all Tokens]]

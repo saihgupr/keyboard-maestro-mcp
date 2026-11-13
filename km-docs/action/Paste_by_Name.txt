@@ -1,0 +1,13 @@
+====== Paste by Name Action ======
+
+The *Paste by Name Action* action (v10.0+) allows you to quickly paste text from the clipboard history using a search field.
+
+You can set an initial search value, and optionally sort or allow multiple selections.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Activate_Clipboard_History_Switcher|Activate Clipboard History Switcher]] action
+* [[/Actions|See all Actions]]
+

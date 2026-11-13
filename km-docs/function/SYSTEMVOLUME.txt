@@ -1,0 +1,11 @@
+====== SYSTEMVOLUME Function ======
+
+The SYSTEMVOLUME() function returns the current system volume from 0-100.
+
+(i) Note that it does not reflect the Mute state.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

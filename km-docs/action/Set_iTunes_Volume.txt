@@ -1,0 +1,11 @@
+
+===== Set iTunes Volume ===== 
+Set iTunes volume to a specific level by using the slider. The action tells you the specific value you have set.
+
+{{:action:setitunesvolume.png|}}
+
+===== Decrease iTunes Volume by 10% ===== 
+Decrease iTunes volume in 10% increments. For example, it would decrease from 100% to 90%, or from 90% to 80%.
+
+===== Increase iTunes Volume by 10% ===== 
+Increase iTunes volume in 10% increments. For example, it would increase from 80% to 90%, or from 90% to 100%.

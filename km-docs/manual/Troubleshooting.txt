@@ -1,0 +1,55 @@
+====== Troubleshooting ======
+
+See the [[:Troubleshooting|wiki Troubleshooting page]] for how to resolve any problems we have anticipated.
+
+Around 80% of all support emails we receive are related to Apple’s security permissions, including:
+
+* [[assistance:Translocation_Problem|Translocation]]
+* [[assistance:Accessibility_Permission_Problem|Accessibility]]
+* [[assistance:Screen_Recording_Permission|Screen Recording]]
+* [[assistance:Secure_Input_Problem|Secure Input Problem]]
+
+Keyboard Maestro includes a Security preference pane in its [[manual:Preferences|Preferences]] window which summarises some of the important security settings and whether they are enabled. Ensuring that everything is enabled will resolve a lot of troubleshooting issues.
+
+Unfortunately Apple’s permission system has been filled with bugs since Mojave, including things like:
+
+* Checkboxes not showing up in the permission system.
+* Checkboxes not being able to be ticked.
+* Checkboxes showing as ticked, but not actually granting the permissions.
+* The system telling Keyboard Maestro it has permission, when it really does not.
+
+Remember to unlock the System Preferences which is required for changing some (but not all) permissions.
+
+Thankfully, you can pretty much always resolve these by sufficient bashing on the permission system:
+
+* Restart.
+* Use `tccutil` to reset the permission system.
+* Quit and relaunch Keyboard Maestro or the Keyboard Maestro Engine.
+* Ensure you move the Keyboard Maestro.app to the Applications folder **using the Finder**.
+
+Occasionally you can resolve the issues by re-installing the Keyboard Maestro.app:
+
+* Quit Keyboard Maestro Engine
+* Quit Keyboard Maestro (editor)
+* Delete the Keyboard Maestro.app
+* [[https://download.keyboardmaestro.com|Download]] a fresh copy of Keyboard Maestro.
+* **Using the Finder**, move the Keyboard Maestro.app to the Applications folder.
+* Launch Keyboard Maestro.app
+
+This will not affect any existing macros.
+
+===== In-built Assistance =====
+
+The next most common issue is a macro doing nothing, or something weird is happening when you don't expect it to. In both these cases, choose [[Menus#Interactive_Help|Help ➤ Interactive Help menu]]) to bring up an interactive assistance system which might help you narrow down the problem.
+
+Keyboard Maestro can detect some of the System Permission problems described above, when the system is not lying to it.
+
+===== How do I get more help? =====
+
+For more information about a specific Keyboard~~Maestro feature consult the [[/User_Manual|Keyboard Maestro User Manual]], post a question to the [[/Forum|Keyboard Maestro Forum]], visit the [[https://www.keyboardmaestro.com/|Keyboard Maestro]] web site or the [[/|Keyboard Maestro Wiki]] or [[https://contact.stairways.com/|contact us]].
+
+Generally the best place to ask about specific macros is the [[/Forum|forum]] since there are many helpful people there and so you will get more varied and quicker answers.
+
+While we are happy to help you learn how to use Keyboard Maestro, we cannot generally help with writing specific macros - use the forum for that.
+
+We always respond to email, however email is no longer a guaranteed medium and spam filters can delete your message to us or our message to you.  Messages sent using the feedback form will always get to us, emails sent to us will pretty much always get to us, but if you do not receive a response within one business day check your spam filters to see if they have trapped our reply.  If you use the feedback form and want a reply, make sure you enter your email address!

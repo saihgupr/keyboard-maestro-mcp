@@ -1,0 +1,11 @@
+====== DOUBLECLICKINTERVAL Function======
+
+The *DOUBLECLICKINTERVAL()* function returns (v10.0+) the system double click period. This is the time between clicks that the system switches from being a double-click, to two successive clicks.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[function:KEYREPEATDELAY|KEYREPEATDELAY]] function
+* [[function:KEYREPEATINTERVAL|KEYREPEATINTERVAL]] function
+* [[:Functions|See all Functions ]]

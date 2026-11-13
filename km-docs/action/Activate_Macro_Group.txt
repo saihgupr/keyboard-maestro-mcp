@@ -1,0 +1,62 @@
+====== Macro Group Activation Actions ======
+
+Macro Groups can be configured to be activated in various ways (such as from the Status Menu or a hot key).  The *Activate Macro Group* action lets you control the activation explicitly (such as from another Macro Group palette).
+
+You can configure the action in similar ways to the Macro Group configuration, specifically:
+
+* Activate for one action.
+* Activate.
+* Deactivate.
+* Activate/Deactivate (toggle).
+* Show palette for one action.
+* Show palette.
+* Hide palette.
+* Show/Hide palette (toggle).
+
+If you are not showing/hiding a palette, you can optionally have a visual indication of the activation.
+
+Remember that all macros within a Macro Group that is not active will not be available for use.  Also, remember that if you hide a palette, that is also deactivating the macro group.
+
+(i) Note that activation state is a transient state, and is not the same as enabled state (which is semi-permanent and displays in the editor).  This action will not change the display in the editor even when it activates or deactivates the macro group.  See [[:Macro Activation]] for more information.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Activate Macro Group for One Action|Activate Macro Group for One Action]]
+* [[action:Activate or Deactivate Macro Group|Activate or Deactivate Macro Group]]
+* [[action:Group|Group]]
+* [[action:Hide Global Macro Palette|Hide Global Macro Palette]]
+* [[action:Set Macro or Group Enable|Set Macro or Group Enable]]
+* [[action:Show Global Macro Palette|Show Global Macro Palette]]
+* [[action:Show Macro Group|Show Macro Group]]
+* [[action:Show Macro Group for One Action|Show Macro Group for One Action]]
+* [[action:Show or Hide Macro Group|Show or Hide Macro Group]]
+* [[action:Show Status Menu|Show Status Menu]]
+* [[action:Toggle Global Macro Palette|Toggle Global Macro Palette]]
+* [[:Actions|See all Actions]]
+
+==== Conditions ====
+
+* [[condition:Macro|Macro]]
+* [[:Conditions|See all Conditions]]
+
+==== Tokens ====
+
+* [[token:ExecutingMacroGroup|%ExecutingMacroGroup%]]
+* [[token:ExecutingMacroUUID|%ExecutingMacroUUID%]]
+* [[token:ExecutingThisMacroGroup|%ExecutingThisMacroGroup%]]
+* [[token:ExecutingThisMacroUUID|%ExecutingThisMacroUUID%]]
+* [[token:MacroNameForUUID|%MacroNameForUUID%]]
+* [[:Tokens|See all Tokens]]
+
+==== Topics ====
+
+* [[:Macro Groups]]
+* [[:Macro Activation]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/show-palette-for-one-action-but-dont-disable-group-after-selecting-an-action/3411/2|Show palette for one action, but don't disable group after selecting an action]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Activate%20Macro%20Group|Keyboard Maestro Forum topics about Activate Macro Group]]

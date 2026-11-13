@@ -1,0 +1,1 @@
+The //%SystemVolume%// token returns the current system volume.

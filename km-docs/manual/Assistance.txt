@@ -1,0 +1,21 @@
+====== Assistance ======
+
+If you have any problems writing macros, you can get help from a number of places.
+
+* This [[:User_Manual|User Manual]] describes the basics of using the Keyboard Maestro editor.
+* The Tutorial will show you how to create a simple macros.  You can start the Tutorial by choosing the [[Menus#Tutorial|Help ➤ Tutorial menu]].
+* The [[Quick_Start|Quick Start]] describes the components of Keyboard Maestro and how they work together, and it is important to understand these basics to get the most out of Keyboard Maestro.
+* The [[:Home_Page|Wiki]] includes lots of information on all aspects of Keyboard Maestro.
+* The [[:Forum|Forum]] is a great place to ask for help with macros.
+* Each action in Keyboard Maestro includes a Help option in the BUTTON{{{⚙}}} menu at the top right of the action.
+* Holding down the option key while choosing from any of the Insert menus in the [[Menus#Edit|Edit menu]] will get you help on [[Macro_Actions|actions]], [[Calculations#Functions |functions]], or [[Tokens|tokens]].
+* Holding down the option key while choosing from the new trigger menu will get you help on the [[Macro_Triggers|triggers]].
+* Holding down the option key while choosing from the new condition menu will get you help on the [[Conditions|conditions]].
+* Holding down the option key while choosing from the new collection menu will get you help on the [[Collections |collections]].
+
+And last but not least, you can ask Keyboard Maestro itself for assistance by choosing [[Menus#Interactive_Help|Help ➤  Interactive Help menu]].
+
+In particular, the Interactive Help window can help you:
+
+* if something is happening that you do not expect — Keyboard Maestro can show you what it is doing.
+* if a macro is not doing anything — Keyboard Maestro can help you to learn why.

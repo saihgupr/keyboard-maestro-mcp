@@ -1,0 +1,23 @@
+====== Notification Action ======
+
+The *Notification* action displays a message in the Notification Center, showing alerts in the upper-right corner of your screen without interrupting what you're doing.
+
+You can provide a Title, a Subtitle, a message, including text tokens, and optionally play a sound. 
+
+{{:action:notification.png|}}
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Display Text|Display Text]] action
+* [[action:Play Sound|Play Sound]] action
+* [[action:Log|Log]] action
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/create-menu-bar-status-icons-using-bitbar/3658|Create menu bar status icons using BitBar]]
+- [[https://forum.keyboardmaestro.com/t/put-an-icon-menu-on-your-mac-os-x-menu-bar/3677|Put an Icon & Menu on your Mac OS/X Menu Bar]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Notification|Keyboard Maestro Forum topics about Notification]]

@@ -1,0 +1,27 @@
+The *Mounted Volume trigger* executes when a volume (disk) is mounted or unmounted.
+
+It can be a specific volume or any volume.  To specify the volume, you can choose to do it with the exact name of the volume, or a value with a name containing a specific string or a name matching (regular expression) a specific string.
+
+When the macro executes, its [[token:TriggerValue|%TriggerValue%]] token will hold the name of the volume (technically, the last path component, which will sometimes be slightly different to ensure uniqueness by the system).
+
+You could use this trigger to perform actions when you connect a backup disk, or automatically sync files with a disk when it is mounted.
+
+===== See Also =====
+
+===  Conditions ===
+
+* [[condition:Mounted Volume|Mounted Volume]]
+* [[:Conditions|See all Conditions]]
+
+=== Triggers ===
+
+* [[trigger:Periodic|Periodic]]
+* [[:Triggers|See all Triggers]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/start-time-machine-backup-when-attaching-a-hd/319/9|Start time machine backup when attaching a HD]]
+- [[https://forum.keyboardmaestro.com/t/how-to-unmount-an-exernal-drive-using-km/2099/2|How to Unmount an Exernal Drive using KM]]
+- [[https://forum.keyboardmaestro.com/t/macro-all-trashes/3090|MACRO: All Trashes]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Mounted%20Volume|Keyboard Maestro Forum topics about Mounted Volume]]

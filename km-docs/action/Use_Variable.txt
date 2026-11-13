@@ -1,0 +1,41 @@
+The Use Variable action allows you to use a variable to set the:
+
+  *mouse location.
+  *front window location.
+  *front window size.
+  *front window frame.
+  *front window by name.
+  *front window by name containing.
+  *front window by name matching.
+  *front application by name.
+  *front application by name containing.
+  *front application by name matching.
+  *the system volume.
+
+The various size and location fields can be [[manual:Calculations|Calculations]].
+
+{{:action:usevariable.png|}}
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Set Variable to Calculation|Set Variable to Calculation]]
+* [[action:Set Variable to Text|Set Variable to Text]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]
+
+==== Topics ====
+
+* [[manual:Calculations|Calculations]]
+* [[:Frequently Asked Questions|FAQ]]
+
+----
+
+==== Forum ====
+

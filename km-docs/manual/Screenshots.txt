@@ -1,0 +1,52 @@
+====== Screenshots ======
+
+Here is a quick taste of what Keyboard Maestro offers.
+
+===== Macros Window =====
+
+{{ macros.png?nolink&937x532 | Macros Window }}
+
+===== Macro Editor =====
+
+{{ tutorial.png?937 | Editor Window }}
+
+===== Dark Mode =====
+
+{{ dark-editor.png?nolink&937x609 | Dark Editor }}
+
+===== Interactive Help =====
+
+{{ assistance.png?nolink&1062x714 | Interactive Help }}
+
+===== Macro Library =====
+
+{{ macrolibrary.png?465x664 |Macro Library Window }}
+
+===== Icon Chooser =====
+
+{{ iconchooserinternal.png?393x442 |Icon Chooser Window }}
+
+===== Palette Theme Editor =====
+
+{{ palettethemeeditor.png?405x480 |Palette Theme Editor }}
+
+===== Macro Debugger =====
+
+{{ macrodebugger.png?nolink&683 |Macro Debugger}}
+
+
+===== Application Switcher Window =====
+
+{{ applicationswitcher.png?nolink&760x260 | Application Switcher Window }}
+
+===== Trigger Macro by Name =====
+
+{{ triggermacrobyname.png?824x464 |Trigger Macro by Name }}
+
+===== Clipboard History Switcher Window =====
+
+
+{{ clipboardhistoryswitcher.png?nolink&674 | Clipboard History Switcher Window }}
+===== Conflict Palette =====
+
+{{ conflictpalette.png?296x292 |Conflict Palette }}

@@ -1,0 +1,40 @@
+====== UnixTime ======
+
+[[https://en.wikipedia.org/wiki/Unix_time|UnixTime]] (also known as POSIX time or Epoch time) is a system for describing instants in time, defined as the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.  It is used or returned by a number of [[Functions]].
+
+Example: 1451492206 – the corresponding ISO 8601 formatted date is 2015-12-30T16:16:46Z
+
+===== See Also =====
+
+=== Functions ===
+
+* [[function:YEAR|YEAR]]
+* [[function:MONTH|MONTH]]
+* [[function:DAY|DAY]]
+* [[function:DOW|DOW]]
+* [[function:HOUR|HOUR]]
+* [[function:MINUTE|MINUTE]]
+* [[function:SECOND|SECOND]]
+* [[function:TIME|TIME]]
+* [[function:MAILDATERECEIVED|MAILDATERECEIVED]]
+* [[function:MAILDATESENT|MAILDATESENT]]
+* [[function:GMTOFFSET|GMTOFFSET]]
+* [[function:JD2TIME|JD2TIME]]
+* [[function:MJD2TIME|MJD2TIME]]
+* [[function:NOW|NOW]]
+* [[function:TIME|TIME]]
+* [[function:TIME2JD|TIME2JD]]
+* [[function:TIME2MJD|TIME2MJD]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:ICUDateTimeFor|%ICUDateTimeFor%]]
+* [[token:ICUDateTimeMinus|%ICUDateTimeMinus%]]
+* [[token:ICUDateTimePlus|%ICUDateTimePlus%]]
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+* [[:Dates and Times|Dates and Times]]
+* [[:JulianDate|JulianDate]]

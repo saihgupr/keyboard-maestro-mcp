@@ -1,0 +1,43 @@
+
+====== Start and Stop Screen Saver ======
+
+The //Start and Stop Screen Saver// actions immediately start or stop the screensaver selected in System Preferences.
+
+Note that there is a bug in macOS such that, depending on your system preferences, Keyboard Maestro may not be able to determine the currently selected screen saver. The action is in fact a simple AppleScript:
+
+```
+delay 1
+tell application "System Events" to start current screen saver
+```
+
+You can display what the system thinks the current screen server is with the AppleScript:
+
+```
+tell application "System Events" to current screen saver
+```
+
+To resolve this issue, you can change your screen server settings until the system figures it out and the above command returns something valid, or you can use the AppleScript and select a screen saver explicitly like this:
+
+```
+delay 1
+tell application "System Events" to start screen saver "Flurry"
+```
+
+You can get a list of the options with:
+
+```
+tell application "System Events" to name of screen savers
+```
+
+===== See Also =====
+
+==== Actions ====
+
+* [[Execute an AppleScript]]
+* [[:Actions|See all Actions]]
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|All Actions]]

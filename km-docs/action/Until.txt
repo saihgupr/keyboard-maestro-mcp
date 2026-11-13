@@ -1,0 +1,66 @@
+====== Until Action ======
+
+===== Definition =====
+
+The Until action executes a list of actions until conditions are met.  The Until action condition is not evaluated UNTIL the end of the Until Loop, so it will always execute all Actions in the _Until_ block at least once.
+
+It is one of several Actions that _loop_ through a set of other Actions until some criteria is met.
+
+
+===== How To Use =====
+
+{{:action:until_action_image_--_km_8.2.png?nolink|}}
+
+Drag one or more actions into the //No Action// area.
+
+Select a way to meet the conditions:
+  * Any of the following are true — at least one condition must be true.
+  * All of the following are true — every condition must be true.
+  * None of the following are true — no condition is true.
+  * Not all of the following are true — at least one condition must be false.
+
+Add a new condition by clicking the green + button beside //New Condition// to select from a list of available conditions.
+
+Conditions are grouped by category. See the [[:Conditions|Conditions]] section for further details.
+
+~~NOCACHE~~
+<nspages condition -textPages="">
+
+After selecting a condition category you can make further choices. For example, if you choose the //Application Condition// you can choose a specific application to be running, or at the front, and so on.
+
+Add further conditions by clicking the green + button again.
+
+You can break out of the loop, retry this iteration, or skip to the next iteration with the [[actions:Redirect_Control_Flow|actions:Redirect Control Flow]] actions.
+
+===== Examples =====
+
+**Example 1**
+
+{{:action:until.png?511|}}
+
+**Example 2**
+
+See this Keyboard Maestro Forum post:  [About the "Until" action functioning](https://forum.keyboardmaestro.com/t/about-the-until-action-functioning/12812/2)
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until]]
+* [[action:For_Each|For Each]] action
+* [[action:Repeat|Repeat]] action
+* [[action:While|While]] action
+* [[action:Assert|Assert]] action
+* [[actions:Redirect_Control_Flow|Redirect Control Flow]] actions
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/issue-pause-until-action-fails-with-no-windows/3022/7|ISSUE: PAUSE UNTIL Action Fails with No Windows]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Until|Keyboard Maestro Forum topics about Until action]]

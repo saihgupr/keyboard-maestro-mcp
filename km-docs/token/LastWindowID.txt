@@ -1,0 +1,14 @@
+====== LastWindowID Token ======
+
+The //%LastWindowID%// token returns (v10.0+) the window ID of the last Keyboard Maestro Engine window opened by this macro.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Manipulate_a_Window|Manipulate a Window]] action
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens |See all Tokens]]

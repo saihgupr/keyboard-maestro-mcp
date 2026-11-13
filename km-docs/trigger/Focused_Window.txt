@@ -1,0 +1,41 @@
+====== Focused Window Trigger ======
+
+The //Focused Window trigger// (v7.0+) executes the macro when the selected option occurs.
+
+{{:trigger:km-focused-window-trigger.png?nolink|}}
+
+**The Options are:**
+  - The focused window changes.
+  - The focused window title changes.
+    * Occurs when **either**:
+      * The front window **changes** (to a window with a different title)\\  **or**
+      * The **title** of the front window changes.
+  - The focused window’s title changes.
+    * Occurs **only** when the **title** of the Front Window changes.
+  - The focused window’s frame changes.
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[token:FrontWindowFrame|%FrontWindowFrame%]]
+* [[token:FrontWindowName|%FrontWindowName%]]
+* [[token:SafariTitle|%SafariTitle%]]
+* [[token:WindowFrame|%WindowFrame%]]
+* [[token:WindowName|%WindowName%]]
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/auto-close-a-window/2879/9|Auto-close a window]]
+- [[https://forum.keyboardmaestro.com/t/activate-focus-the-first-window-of-any-app-that-contains-name/3058/7|Activate (focus) the first window (of any app) that contains "Name"]]
+- [[https://forum.keyboardmaestro.com/search?q=%22Focused%20Window%20Changes%22|Keyboard Maestro Forum topics about Focused Window Changes]]
+
+Keywords/Synonyms:  Focussed Window

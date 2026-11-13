@@ -1,0 +1,21 @@
+====== Post to Forum ======
+
+If you are having a problem with creating or using a macro, the best place to get an answer is the [[https://forum.keyboardmaestro.com/|Keyboard Maestro Forum]].
+
+For the best change to get a positive result, please post as much details as you can, including:
+
+   * A good descriptive subject (eg “How to get Preview to Print?”, not “<del>I am new and have a problem</del>”).
+   * What you have tried.
+   * What is not working.
+   * What applications you are working with.
+   * What versions of Keyboard Maestro, OS X, and the applications you are using.
+   * If it involves processing data, provide real world examples of the source input data and the result you want.  If you need to anonymise the data, converting all the name/date/place characters to “A” will probably be sufficient without changing the structure of the data.
+   * If it involves a web page, include a link, or failing that the HTML of the section of the web page you are interacting with.
+
+If you have created a macro, post it as well. It is very easy to post a macro to the forum by selecting the macro and then choosing //Keyboard Maestro Forum// from the //Share// menu at the top of the editor window.
+
+If possible, include as simple a macro as you can construct that demonstrates the problem you are having.
+
+For more information on using the Forum, see the [[:Forum|Forum]] wiki page, and for more tips on getting the answers in the shortest time, see [[https://forum.keyboardmaestro.com/t/tip-how-do-i-get-the-best-answer-in-the-shortest-time/10797|this forum article]].
+
+If your problem is about **using** Keyboard Maestro (as opposed to creating a macro to do something specific), [[https://support.keyboardmaestro.com/|contact support]].

@@ -1,0 +1,9 @@
+There are 3 actions to change ratings of the current iTunes track:
+  *Increase Rating by Half a Star.
+  *Decrease Rating by Half a Star.
+  *Set Rating.
+
+The Set Rating action provides a slider to adjust the rating level between zero and 5 stars.
+
+
+{{:action:setrating.png|}}

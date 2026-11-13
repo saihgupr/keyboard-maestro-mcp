@@ -1,0 +1,69 @@
+{{:markdown-icon.png?nolink|}}
+====== Using Markdown in the Keyboard Maestro Forum ======
+
+When you create a new topic or post a reply, the Forum Editor will provide a Toolbar with buttons.  These buttons are shortcuts to inserting Markdown code.  You can use the buttons or type the Markdown directly.  The markdown used by the forum is very similar to "standard" Markdown, but there are some differences.  See [[https://meta.discourse.org/t/post-format-reference-documentation/19197|Discourse Markdown Documentation]] for details.
+
+===== The Editor Toolbar =====
+
+{{:km-forum-edit-toolbar.png?nolink|}}\\
+(Mouse-over a button to see a tooltip.)
+
+From left to right the toolbar buttons are:
+
+ 1. Quote Whole Post
+ 2. Bold
+ 3. Italic
+ 4. Hyperlink
+ 5. Blockquote
+ 6. Preformatted text (code block)
+ 7. Upload
+ 8. Numbered List
+ 9. Bulleted List
+ 10. Heading
+ 11. Horizontal Rule
+ 12. Emoji
+
+---
+
+===== Formatting Code/Script Snippets =====
+
+Place the code block between two lines of three backquotes: <key>%%```%%</key>
+
+<file>
+```applescript
+tell application "Finder"
+	set selectedItemList to selection as alias list
+end tell
+```
+</file>
+
+The result looks like this:
+
+```applescript
+tell application "Finder"
+	set selectedItemList to selection as alias list
+end tell
+```
+The forum software expands <key>TAB</key> into a large number of spaces.  So you may want to convert leading <key>TAB</key>s to 3 spaces before posting.  Tools like BBEdit and TextWrangler make this easy with their built in RegEx (Grep) Find & Replace.
+
+Find: all <key>TAB</key> characters:
+```regex
+\t
+```
+Replace:  with three <key>SPACE</key> characters 
+```
+⋅⋅⋅
+```
+
+The reduced indentation makes larger scripts significantly easier to read:
+
+```applescript
+tell application "Finder"
+   set selectedItemList to selection as alias list
+end tell
+```
+---
+
+===== See Also =====
+
+For more information, see:  [[https://meta.discourse.org/t/post-format-reference-documentation/19197|Discourse Markdown Documentation]]

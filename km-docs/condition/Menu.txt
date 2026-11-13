@@ -1,0 +1,37 @@
+The //Menu condition// looks for a matching menu in the system menu bar and tests its state.
+
+You can look for a menu with a name that:
+
+* exactly matches a specified string.
+* contains (case insensitively) a specified string.
+* matches a specified [[:Regular Expressions|regular expression]].
+
+Alternatively, you can look for a menu based on its shortcut (eg Command-C), or you can look for a specific menu based on its path.  A menu path looks like this:
+
+    Edit ➤ Speech ➤ Start Speaking
+
+You can use any of these separators in the path:>, ->, =>, or ➤, with spaces around them as desired.
+
+You can then test if:
+
+* the menu exists.
+* the menu does not exist.
+* the menu is enabled.
+* the menu is not enabled.
+* the menu exists but is not enabled.
+* the menu is marked (eg with a checkmark).
+* the menu is not marked.
+* the menu exists but is not marked.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]

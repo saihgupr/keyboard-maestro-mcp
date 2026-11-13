@@ -1,0 +1,23 @@
+====== Audio Output Changed ======
+
+The *Audio Output Changed trigger* (v8+) lets you execute a macro whenever the audio output device changes, typically when you plug headphones in.
+
+The [[token:TriggerValue|%TriggerValue%]] token will hold the name of the selected audio output device.
+
+===== See Also =====
+
+=== Actions ===
+
+ * [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]
+

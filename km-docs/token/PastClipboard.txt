@@ -1,0 +1,26 @@
+====== PastClipboard Token======
+
+The //%PastClipboard%// token returns the text of a specified past clipboard. It has the form //%PastClipboard%<Index>%// where `<Index>` is a calculation which specifies which past clipboard to use.
+
+The indices start at 0 for the current system clipboard, 1 for the previous clipboard, and then onwards for as many clipboards as Keyboard Maestro has in its history (the default maximum is 200).
+
+For example, say you copy the name and then the email address of a client, you can then set the system clipboard to a message you can send to your boss like this:
+
+{{ :token:set-clipboard-to-past-clipboard.png?nolink |}}
+
+(i) Note that `%PastClipboard%0%` is equivalent to `%SystemClipboard%`.
+
+===== See Also =====
+
+* [[/Clipboards|Clipboards]]
+
+=== Tokens ===
+
+* [[SystemClipboard|%SystemClipboard%]] token
+* [[NamedClipboard|%NamedClipboard%]] token
+* [[TriggerClipboard|%TriggerClipboard%]] token
+* [[PastClipboardFlavors|%PastClipboardFlavors%]] token
+* [[SystemClipboardFlavors|%SystemClipboardFlavors%]] token
+* [[NamedClipboardFlavors|%NamedClipboardFlavors%]] token
+* [[TriggerClipboardFlavors|%TriggerClipboardFlavors%]] token
+* [[/Tokens|All Tokens]]

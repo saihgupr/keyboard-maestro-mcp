@@ -1,0 +1,130 @@
+====== Macro Actions ======
+
+===== Definition =====
+
+**An **//Action//** in Keyboard Maestro is a specific process step (usually of limited scope) to be taken in a Keyboard Maestro [[manual:Macros|Macro]].**  If a process consists of a series of steps, then an **//Action//** would be one step.  A Macro may contain one or more **//Actions//**.
+
+===== Actions Listed by Category =====
+
+==== Looping Actions ====
+Actions that _loop_ through a set of other Actions until some criteria is met.
+
+* [[action:For_Each|For Each]]
+* [[action:Repeat|Repeat]]
+* [[action:Until|Until]]
+* [[action:While|While]]
+
+==== User Interface (UI) Actions ====
+
+App UI Elements
+
+* Insert Text by Typing
+* Manipulate a Window
+* Move a Window
+* Move and Resize a Window
+* Move or Click Mouse
+* Press a Button
+* Select or Show a Menu Item
+* Type a Keystroke
+
+Web Browser UI Elements\\
+(Offered for "Front Browser", "Safari", and "Chrome")
+
+* Click Front Browser Link
+* Find Image on Screen
+* Focus Front Browser Field
+* Previous Front Browser Tab
+* Select Front Browser Field
+* Select Front Browser Tab
+* Set Front Browser Checkbox
+* Set Front Browser Field to Text
+* Set Front Browser Radio Button
+
+System UI Elements
+
+* Set Keyboard Layout
+
+
+
+
+===== Actions Listed Alphabetically =====
+
+
+~~NOCACHE~~
+<nspages action -textPages="">
+
+===== How To Use =====
+
+Keyboard Maestro has a very large number of actions, some very specific, others more general.  The most general **//Actions//** are those which [[Scripting|Execute a Script]], which, of course, can be as specific or general as you like.
+
+See the [List of Actions](#List_of_Available_Actions) below, or the [Keyboard Maestro Documentation](/manual/Macro_Actions) for more information on actions and how to use them.
+
+===== How To Add an Action to a Macro =====
+
+**There are a number of ways to add an **//Action//** to a Macro.**\\
+Some of these are:
+  * Choose Action from the Action List (Actions ➤ Show Actions menu)
+    * Drag and Drop from Action List to Macro
+    * Double-click on Action in Action List
+  * Insert Action using the Keyboard Maestro Edit ➤ Insert Action menu
+  * Insert Action by Name 
+    * Show using the Editor shortcut key <key>⌘</key><key>⌃</key>**A** 
+    * Or from the menu Edit ➤ Insert Action by Name
+  * Paste in actions copied from elsewhere
+  * Import an exported list of actions (perhaps downloaded from the forum).
+
+**Here is a demo showing the first two methods:**
+
+{{:km-7.1-add-action-to-macro.an.gif?nolink|}}
+
+===== Testing for Success or Failure of an Action =====
+
+**You can use the [[token:ActionResult|ActionResult token]] to test for success or failure of the immediate past action.**
+  * **If Successful**, Then "**//OK//**" is returned.
+  * Otherwise, a message describing the reason for failure is returned.
+
+See the [[token:ActionResult|ActionResult token]] for details.
+
+===== Export/Import Actions =====
+
+You may also export/import Actions to/from files.  This may be useful when you have a complex Action that you have configured in a special way, that you wish to share with others, or save as a reference for yourself.
+
+ - The Export Actions command in the File menu exports the selected actions to a file that you can import later or on another Mac. You can also post the action export file on the forum or elsewhere to share it with others.
+ - The Import Actions command in the File menu lets you select a saved action file and **imports the actions it contains into the current macro**.
+ - Note that unlike import of Macros, import of Actions inserts the Actions in the currently selected Macro.  It does NOT put these Actions into the Action List.
+
+===== Plugin Actions =====
+
+Keyboard Maestro also supports user-defined Actions, which are called **//Plug In Actions//**.\\
+For details on creating, installing, and using, see 
+  * [Keyboard Maestro Documentation for Plug In Actions](/manual/Plug_In_Actions).
+  * [Plug In Actions: How to Create, Post, Install ](https://forum.keyboardmaestro.com/t/plug-in-actions-how-to-create-post-install/80) in the Keyboard Maestro Forum.
+
+===== See Also =====
+
+=== Topics ===
+
+* [[:Macro Groups|Macro Groups]]
+* [[:Text Fields|Text Fields]]
+* [[:Frequently Asked Questions|FAQ]]
+* [[:Fundamental Concepts]]
+
+=== Triggers ===
+
+* [[:Triggers|Triggers]]
+
+=== Conditions ===
+
+* [[:Conditions|See all Conditions]]
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[:Tokens|See all Tokens]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/feature-request-find-all-uses-of-an-action/3626/2|[Feature Request?] Find all uses of an action]]

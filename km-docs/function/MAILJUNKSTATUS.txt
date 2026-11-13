@@ -1,0 +1,17 @@
+====== MAILJUNKSTATUS Function ======
+
+The MAILJUNKSTATUS() function returns the junk status of the currently selected mail message.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MAILDATERECEIVED]]
+* [[MAILDATESENT]]
+* [[MAILFLAG]]
+* [[MAILFLAGGED]]
+* [[MAILREADSTATUS]]
+* [[MAILWASFORWARDED]]
+* [[MAILWASREDIRECTED]]
+* [[MAILWASREPLIEDTO]]
+* [[:Functions|See all Functions]]

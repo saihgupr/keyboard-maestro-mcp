@@ -1,0 +1,11 @@
+====== Unlock Trigger ======
+
+The //Unlock trigger// (v10.0+) executes the macro when your Mac unlocks the screen.
+
+===== See Also =====
+
+=== Triggers===
+
+* [[trigger:Sleep|Sleep trigger]]
+* [[trigger:Wake|Wake trigger]]
+* [[:Triggers|See all Triggers]]

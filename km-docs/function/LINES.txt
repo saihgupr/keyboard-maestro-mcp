@@ -1,0 +1,28 @@
+====== LINES Function ======
+
+The LINES(t) function takes an arbitrary [[:Tokens|token text]] string, processes the text tokens, and then returns the number of lines in the string.
+
+    LINES(%CurrentClipboard%)
+    LINES(%Variable%MyVar%)
+
+===== Example =====
+
+{{function:function-lines-example.jpg?nolink|}}
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Set Variable to Calculation|Set Variable to Calculation Action]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:CALCULATE|CALCULATE]]
+* [[function:CHARACTERS|CHARACTERS]]
+* [[function:WORDS|WORDS]]
+* [[:Functions|See all Functions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/search?q=LINES|Keyboard Maestro Forum topics about LINES() function]]

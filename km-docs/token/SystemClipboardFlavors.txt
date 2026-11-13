@@ -1,0 +1,18 @@
+====== SystemClipboardFlavors Token ======
+
+The //%SystemClipboardFlavors%// token (v11.0+) returns the flavors of the current system clipboard.
+
+===== See Also =====
+
+* [[/Clipboards|Clipboards]]
+
+=== Tokens ===
+
+* [[SystemClipboard|%SystemClipboard%]] token
+* [[PastClipboard|%PastClipboard%]] token
+* [[NamedClipboard|%NamedClipboard%]] token
+* [[TriggerClipboard|%TriggerClipboard%]] token
+* [[PastClipboardFlavors|%PastClipboardFlavors%]] token
+* [[NamedClipboardFlavors|%NamedClipboardFlavors%]] token
+* [[TriggerClipboardFlavors|%TriggerClipboardFlavors%]] token
+* [[/Tokens|All Tokens]]

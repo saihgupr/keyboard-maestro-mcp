@@ -1,0 +1,24 @@
+The //Typed String condition// checks if the macro was triggered with a Typed String trigger that allowed case to affect actions, and then case was either:
+
+* uppercase
+* title case
+* otherwise
+
+For a typed string trigger to be //uppercase//, all the "letters" (any character that has different uppercase and lowercase letters) must be typed in uppercase.
+
+For a typed string trigger to be //title case//, it must not be all uppercase (as above), but the first "letter" must be uppercase.
+
+Otherwise, and including any trigger other than a Typed String trigger that allowed the case to affect the actions, the case will be considered to be //otherwise//.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]

@@ -1,0 +1,15 @@
+====== PasteByNameText Token ======
+
+
+The //%PasteByNameText%// token returns (v10.0+) the text entered in the last [[action:Paste_by_Name|Paste by Name]] action.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Paste_by_Name|Paste by Name]] action
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens |See all Tokens]]

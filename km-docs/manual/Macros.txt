@@ -1,0 +1,120 @@
+====== Macros ======
+
+_**Macros**_ are used to automate your workflow, procedure, or process on your Mac. Macros are a way of improving your productivity by allowing you to perform repetitive or frequently required actions more quickly and accurately, tailoring your Mac to your usage patterns.
+
+Macros are sometimes known as Workflows or Shortcuts, but for Keyboard Maestro we will stick to the terminology of using “Macro” to refer to a Keyboard Maestro macro, and use Shortcuts and Workflows only to refer to Apple’s Shortcuts and Automator Workflows.
+
+A _**Macro**_ consists of:
+  * One or more [[Macro Triggers]] which define when the macro will be executed, if it is [[:Macro_Activation|Active]].
+  * A series of steps to execute called [[Macro Actions]].
+
+Macros are contained in [[Macro Groups]], much like files are contained in folders. The Macro Group determines when the Macro is [[:Macro_Activation|Active]] (available to be triggered).  Macro Groups control such things as which applications the Macro will be active in.
+
+A simple example of a Macro is one which has:
+  * A Single [[trigger:Hot_Key|Hot Key trigger]], such as <key>⌃</key><key>E</key>
+  * A single action like [[action:Insert_Text_by_Pasting|Insert Text by Pasting]] the text “YourName@YourDomain.com”
+  * Is in the "Global Macro Group", making it available to all applications.
+
+Macros can do almost anything you can do manually on your Mac, and much that you can't, like running scripts.
+
+
+===== How To Create a Macro =====
+
+To create a Macro, first launch Keyboard~~Maestro, select the desired Macro Group to contain it, and then click the BUTTON{{{+}}} button below the Macros list.  Enter the name of your new Macro (you can skip this and it will be named for you based on the action you select).
+
+Alternatively, you can use the New Macro Wizard by clicking the BUTTON{{{⊕}}} button.
+
+{{ new-macro-wizard.png?nolink&937x546 | New Macro Wizard }}
+
+Enter the name of your new Macro (you can skip this and it will be named for you based on the action you select), the macro group to place the macro in, and optionally select one of the basic triggers or actions. You can fill in the details of the triggers and actions, or add more triggers and actions later.
+
+When you create the macro, the [[Windows#Macro_Editor_Window|Macro Editor window]] will be displayed. If you later want to edit the Mac, double click it, or select it and ensure the BUTTON{{{Edit}}} button is pressed.
+
+{{ macroeditor.png?nolink&937x589 | Macro Editor Window }}
+
+You can create a new trigger by clicking on the green BUTTON{{{+}}} button.  There are several [[Macro Triggers]] to choose from, the most common being the [[trigger:Hot_Key|Hot Key trigger]] which allows you to execute the Macro at the press of a key.  You can define several different triggers, and any of the triggers will execute the Macro~~Actions.  You can delete a trigger by clicking the red BUTTON{{{⊖}}} button.
+
+You can add a new action by clicking the BUTTON{{{New Action}}} button or the BUTTON{{{+}}} button at the bottom of the macro detail view to display the list of actions or by choosing the [[Menus#Insert_Action_by_Name|Edit ➤ Insert Action By Name menu]] or choosing from the [[Menus#Insert_Action|Edit ➤ Insert Action menu]].  There are many [[Macro Actions]] to choose from.  The actions you include will be executed in order.  You can reorder the actions by dragging them around.  You can copy actions by Option-Dragging or by using Copy and Paste.  You can delete an action by selecting it and  pressing the Delete key.  You can enable or disable actions by selecting them and clicking the BUTTON{{{✓}}} button at the bottom of the macro detail view.
+
+You can control or right click on a macro group to Disable, Enable, Rename, Duplicate, or Export it.
+
+An easy way to generate macro actions is to turn on recording by clicking the BUTTON{{{Record}}} button at the bottom of the macro detail view and proceeding to show Keyboard~~Maestro what you want to do.  Then turn recording back off and look through the actions.  Chances are you will need to delete or adjust some of the recorded actions to make a robust macro, but this will be quicker than creating each action manually.
+
+Macros are continuously saved, so the macro is live as soon as it is created.  It will be available immediately (subject to the restrictions of the Macro~~Group it is contained in).  There is no need to turn off editing, switch to a different macro, or quit the editor (although quitting the editor after you have finished editing all your macros is a good idea).
+
+You can select a recently triggered macro by clicking on the BUTTON{{{⌘}}} toolbar button to select it or select from recently modified macros by clicking the BUTTON{{{◷}}} toolbar button.
+
+You can share a macro to the Keyboard Maestro Forum, or to a friend via Mail or Messages using the sharing button at the top of the [[Windows#Macros_Window|Macros window]].
+
+You can delete a macro by selecting it and clicking the BUTTON{{{-}}} button at the bottom of the Macros list.
+
+You can disable or enable a macro by selecting it and clicking the BUTTON{{{✓}}} button at the bottom of the Macros list.  You can also disable or enable a Macro using the [[action:Set_Macro_or_Group_Enable|Set Macro Enable]] action, or from AppleScript with:
+
+<code applescript>
+tell application "Keyboard Maestro"
+	set enabled of macro group "Macro Name" to true
+end tell
+</code>
+
+You can start editing a Macro from AppleScript with:
+
+<code applescript>
+tell application "Keyboard Maestro"
+  editMacro "Macro Name or UID"
+end tell
+</code>
+
+The Keyboard Maestro editor has full AppleScript support so you can manipulate macros in many ways via AppleScript.
+===== How to Edit a Macro =====
+
+You edit a macro by selecting it and ensure you are in Edit mode.  Double clicking on the macro will turn on Edit mode.
+
+You can select a macro by name by choosing the [[Menus#Select_Macro_by_Name|View ➤ Select Macro By Name menu]]. 
+
+===== How to Run a Macro =====
+
+In order to run (execute or trigger) a macro it must be active, that is:
+  * It is enabled
+  * It’s containing Macro Group is enabled
+  * It’s containing Macro Group meets all its activation criteria.
+
+Activation/Deactivation or a Macro Group is a dynamic process, automatically set by the Keyboard Maestro Engine as your Mac's environment changes in real time.  For details, see [[:Macro Activation]]
+
+You can try out a macro from the Keyboard Maestro by clicking the BUTTON{{{▶︎}}} Run button at the top of the editor window.  Of course, macros are often sensitive to the context, so it may not be appropriate to run them directly from the editor.
+
+Generally, you run a macro by invoking any one of its triggers.
+
+You execute a macro’s action sequence by invoking one of its Macro~~Triggers that you have defined (such as pressing a hot key if you have configured a hot key trigger).  For some triggers, no action is required on your part.  For example, the macro could be triggered at a specific time, or when a specific USB device is attached.
+
+You can also trigger macros by name using the [[/action/Trigger_Macro_by_Name|Trigger Macro by Name]] action, which in turn can be in a macro and triggered any way you desire.
+
+You can trigger a macro using the kmtrigger: scheme with a URL like `kmtrigger://macro=MacroName&value=Value` (the value is accessible via the CODE{{{%TriggerValue%}}} Text~~Token).
+
+You can also trigger a macro from a shell script using the [[trigger:keyboardmaestro|keyboardmaestro]] CLI tool.
+
+If the web server is enabled for remote access, you can trigger a macro remotely after logging in using a web browser.  Alternatively, you can use the [[trigger:Remote|Remote]] trigger and trigger your macro using a URL from remotely via our trigger server.
+
+You can also trigger a macro using AppleScript or another scripting language (select the “Or by script” entry to display script code in various languages such as AppleScript or Perl).
+
+Note that the web server needs to be separately enabled in the [[Windows#Preferences_Web_Server_Pane|Web Server preference pane]], and all macros are subject to the restrictions of the Macro~~Group they are contained in.  If the Macro~~Group is not enabled and active, the macro will not be available.
+
+===== Where are the Macros Stored =====
+
+The macros are stored in on your local Mac in the Applications Support folder. So it is important to ensure you have good backups to ensure your macros are safe in the event of a harddisk problem or other loss of data on your Mac.
+
+===== How to Import Macros =====
+
+You may want to import Macro(s) you have downloaded from other sources, like the [Keyboard Maestro Forum](https://forum.keyboardmaestro.com/).
+
+You may use any of the following to import the macro file (`.kmmacros`):
+  * Double-click on the macro file in the Mac Finder.
+  * In the Keyboard Maestro app, goto _File > Import Macros Safely..._ and select the macro file.
+  * In some browsers, click on the downloaded file icon at the bottom of the browser window.
+
+Note that the macro file (`.kmmacros`) may contain one or more macros, and will also create the Macro Group if it does _not_ exist in your configuration.  Otherwise, it will put the Macro in your existing Macro Group.
+
+==== Import Macros Safely ====
+
+(!) You should be aware that the macros will be imported in the same state, triggers, and macro group that they were saved in.  By default, macros are imported disabled unless you hold the Option key down.  Importing them disabled is important, because otherwise **this could result in the imported Macro being triggered (executed) as soon as it is imported.**  If you are at all uncertain about the source of the macros, ensure you import the macros disabled or choose the [[Menus#Import_Macros_Safely|File ➤ Import Macros Safely menu]], and then closely examine the macro and what it does before enabling it.
+
+See also the [[Macro Groups]], [[Macro Actions]], [[Macro Triggers]], [[:Macro_Activation]], [[Macro Examples]], [[Macro Library]] and [[Recording]] sections.

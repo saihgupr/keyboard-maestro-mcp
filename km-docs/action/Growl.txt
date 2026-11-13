@@ -1,0 +1,1 @@
+The Growl action (no longer supported in v8+) displays a message via [[http://growl.info/|Growl]] (or in a popup HUD window if Growl is not installed).

@@ -1,0 +1,11 @@
+===== Delete Token =====
+
+The `%Delete%` tokens is not a real token. It returns nothing (the empty string) but if used by itself in some places it is used to signify that the recipient should be deleted rather than set to the empty string.
+
+For example, if you use it with the [[action:Set_Variable_to_Text|Set Variable to Text]] action to set a variable to `%Delete%`, the variable will be deleted and not shown in lists like the Variables [[manual:Preferences|Preference Pane]].
+
+===== See Also =====
+
+- [[:Text Fields]]
+- [[:Tokens]]
+- [[manual:Variables]]

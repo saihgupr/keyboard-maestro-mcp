@@ -1,0 +1,40 @@
+====== ScreenResolution(s) Token ======
+
+The %ScreenResolution% token (v11.0+) returns the resolution of the specified screen.
+
+The %ScreenResolutions% token (v11.0+) returns the available resolutions of the specified screen.
+
+They both takes a parameter indicating which screen to use.
+
+The parameter may be:
+
+{{page>include:ScreenIndex#}}
+
+So for example, //%ScreenResolution%Main%// gives the resolution of the main screen.
+
+The resolution is in the form:
+
+```
+nominal width, nominal height, pixel width, pixel height, frame rate
+```
+
+The ScreenResolutions themselves are also separated by a comma with an additional space.
+
+===== See Also =====
+
+==== Functions ====
+
+* [[function:SCREEN|SCREEN()]]
+* [[function:SCREENVISIBLE|SCREENVISIBLE()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:Screen|%Screen%]] token
+* [[token:ScreenVisible|%ScreenVisible%]] token
+* [[:Tokens|See all Tokens]]
+
+=== Actions ===
+
+* [[action:Set_Screen_Resolution|Set Screen Resolution]] action
+* [[:Actions|See all Actions]]

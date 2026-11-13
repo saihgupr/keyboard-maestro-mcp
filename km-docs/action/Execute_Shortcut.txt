@@ -1,0 +1,24 @@
+====== Execute Shortcut ======
+
+The //Execute Shortcut// (v10.1+) action executes a specified macOS Shortcut (macOS 12.0+).
+
+The Shortcut can optionally receive text input from the System or a Named Clipboard, 
+the Trigger Clipboard, a Variable, Text, Calculation or a File.
+
+The results can be:
+
+{{page>include:ScriptOutput#}}
+
+If the output is going to a clipboard or a file, the results can be an image. (v11.0+)
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Execute_a_Shell_Script|Execute a Shell Script]]
+* [[action:Execute_a_Swift_Script|Execute a Swift Script]]
+* [[action:Execute an AppleScript|Execute an AppleScript]]
+* [[action:Execute an Automator Workflow|Execute an Automator Workflow]]
+* [[action:Execute a JavaScript For Automation|Execute a JavaScript For Automation]]
+* [[action:Filter|Filter Variable with Expand Tilde In Path]]
+* [[:Actions|See all Actions]]

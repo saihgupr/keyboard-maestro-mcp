@@ -1,0 +1,31 @@
+====== Found Images Collection ======
+
+The //Found Images [[:Collections|collection]]// lists all the locations that the image matches on the screen (v7.0+).
+
+You can order the matches by best matches first, top to bottom or left to right.
+
+The result, stored in the [[action:For_Each| For Each action ]] variable is the rectangle containing the match followed by the fuzz of the match (0-100), ie, (left,top,width,height,fuzz).
+
+===== How To Use =====
+
+{{page>::Found_Image#How To Use&noheader&nofooter}}
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Find Image on Screen|Find Image on Screen]]
+* [[action:Move or Click Mouse|Move or Click Mouse]]
+* [[:Actions|See all Actions]]
+
+====  Collections ====
+
+* [[:Collections|See all Collections]]
+
+====  Conditions ====
+
+* [[condition:Found Image|Found Image]]
+* [[:Conditions|See all Conditions]]
+
+
+

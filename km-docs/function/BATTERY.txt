@@ -1,0 +1,9 @@
+====== BATTERY Function ======
+
+The BATTERY() function returns whether the Mac is currently running off battery power. It returns 0 if the Mac is connected to a power source or 1 if it is running off the battery.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

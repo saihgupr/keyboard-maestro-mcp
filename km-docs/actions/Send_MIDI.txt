@@ -1,0 +1,23 @@
+Keyboard Maestro can send MIDI messages, which effectively come from a device named “Keyboard Maestro”.  The device will be created as soon as you add any MIDI action.
+
+You can send different kinds of MIDI packets
+
+* Send MIDI Note On — sends a MIDI Note On message, specifying the note, velocity and channel.
+* Send MIDI Note Off — sends a MIDI Note Off message, specifying the note and channel (velocity is 0).
+* Send MIDI Control Change — sends a MIDI Control Change message, specifying the control, value and channel.
+* Send raw MIDI packet — send a packet made up of hex bytes.
+
+The fields for the note, velocity or controller care calculations, so you can use whatever [[manual:Variables|Variables]] or [[/Functions|Functions]] are helpful.
+
+The raw MIDI packet must be a valid MIDI packet, and you can use text tokens to create some of the packet to allow arbitrary data to be sent.  The [[token:Hex|Hex2]] token may be helpful for formatting the data.
+
+===== See Also =====
+
+* [[/Functions|Functions]]
+* [[manual:Variables|Variables]]
+
+==== Tokens ====
+
+* [[token:Hex|Hex2]]
+
+==== Forum ====

@@ -1,0 +1,29 @@
+====== OCT Function ======
+
+The OCT(t) function takes an arbitrary [[:Tokens|token text]] string, processes the text tokens, and then evaluates the result as an octal number.
+
+    OCT(045)
+    OCT(177)
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Set Variable to Calculation|Set Variable to Calculation Action]]
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[BIN]]
+* [[OCT]]
+* [[HEX]]
+* [[CALCULATE]]
+* [[:Functions|See all Functions]]
+
+==== Tokens ====
+
+* [[token:Bin|%Bin%]]
+* [[token:Oct|%Oct%]]
+* [[token:Hex|%Hex%]]
+* [[token:Calculate|%Calculate%]]
+* [[:Tokens|See all Tokens]]

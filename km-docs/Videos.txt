@@ -1,0 +1,41 @@
+====== Video Tutorials ======
+
+This page will link to a variety of tutorial videos.
+
+===== David “MacSparky” Sparks Keyboard Maestro Field Guide =====
+
+David Sparks has released his much anticipated [[https://learn.macsparky.com/p/km|Keyboard Maestro Field Guide]] with over four hours of video separated into 76 videos in 8 sections covering a broad range of Keyboard Maestro facilities, full of “heaps of dangerous knowledge, tricks, and hacks to make your Mac dance”.
+
+===== CK Barlow’s Keyboard Maestro Automation Class for creatives =====
+
+Easy, Powerful Mac Automation for Creative Pros using Keyboard Maestro. [[https://skl.sh/3L3SFMz|15 lessons over an hour and a half]].
+
+===== Macs Productivity =====
+
+Macs Productivity [[https://www.youtube.com/watch?v=3c_OPP0Vn_Q&list=PL9xvlAPWcGuEdBCho5OeNkt1YK4IT4I14|Keyboard Maestro for Beginners]] video series covering starting with Keyboard Maestro, text expansion, triggers and actions, groups and palettes, and variables and tokens.
+
+
+===== Paul Minors Getting Started with Keyboard Maestro Video =====
+
+Paul Minors has done a very nice [[https://paulminors.com/blog/getting-started-with-keyboard-maestro/|overview video]] of getting started with Keyboard Maestro.
+
+===== my apfelworld =====
+
+//my apfelworld// has an extensive [[https://www.youtube.com/c/myapfelworld|YouTube]] and [[https://twitter.com/myapfelworld|Twitter]] presence covering Keyboard Maestro and other automation topics (it is often in German, but there is so many good ideas it is worth looking at even if that presents a language barrier).
+
+===== Clipboards =====
+
+* [Customized Actions and Named Clipboards](https://www.youtube.com/watch?v=WKsXpIdxpCs)
+
+===== Safari =====
+
+* [Using Safari Web Inspector to Configure Action to Set Safari Field](https://www.youtube.com/watch?v=Jar6JYG6JAc) by @ccstone\\ See also [[action:Set_Safari_Field_to_Text]]
+
+===== Palettes =====
+
+* [German video on setting up palettes](https://www.youtube.com/watch?v=QA56xMRCl4s)
+
+===== See Also =====
+
+* [Videos on the Keyboard Maestro Forum](https://forum.keyboardmaestro.com/tags/video)
+* [Videos on YouTube](https://www.youtube.com/results?search_query=Keyboard+Maestro)

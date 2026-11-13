@@ -1,0 +1,18 @@
+====== CHROMEISCOMPLETE Function ======
+
+The CHROMEISCOMPLETE() function returns whether Google Chrome has currenlty finished loading the current tab.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[actions:Click_Browser_Link|actions:Click Browser Link]]
+* [[actions:Browser_Form_Actions|actions:Browser Form Actions]]
+* [[actions:Browser_Window_Actions|actions:Browser Window Actions]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:CHROMETABCOUNT|CHROMETABCOUNT()]]
+* [[function:CHROMETABINDEX|CHROMETABINDEX()]]
+* [[:Functions|See all Functions]]

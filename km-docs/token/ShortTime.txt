@@ -1,0 +1,49 @@
+====== ShortTime ======
+
+The //%ShortTime%// token returns the current time without seconds in a localized format.
+
+===== Localization =====
+
+Prior to Mojave, and after Keyboard Maestro 9.0, dates should be in your chosen language.  Unfortunately Apple changed Mojave and later to make the system return dates only in the Keyboard Maestro localized language (ie, English), regardless of your chosen locale.  Keyboard Maestro 9.0 works around this by claiming to be in all locales, even though it is really only localized for English itself.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[function:DAY|DAY()]]
+* [[function:DOW|DOW()]]
+* [[function:GMTOFFSET|GMTOFFSET()]]
+* [[function:JD2TIME|JD2TIME()]]
+* [[function:MJD2TIME|MJD2TIME()]]
+* [[function:NOW|NOW()]] (unixtime)
+* [[function:TIME|TIME()]] (unixtime)
+* [[function:TIME2JD|TIME2JD()]]
+* [[function:TIME2MJD|TIME2MJD()]]
+* [[:Functions|See all Functions]]
+
+==== Tokens ====
+
+* [[token:ICUDateTime|%ICUDateTime%]]
+* [[token:ICUDateTimeFor|%ICUDateTimeFor%]]
+* [[token:ICUDateTimeMinus|%ICUDateTimeMinus%]]
+* [[token:ICUDateTimePlus|%ICUDateTimePlus%]]
+* [[token:LongDate|%LongDate%]] (local time)
+* [[token:LongTime|%LongTime%]] (local time)
+* [[token:NumberDate|%NumberDate%]] (local time)
+* [[token:ShortDate|%ShortDate%]] (local time)
+* [[token:ShortTime|%ShortTime%]] (local time)
+* [[:Tokens|See all Tokens]]
+
+==== Topics ====
+
+* [[:Dates and Times|Dates and Times]]
+* [[:JulianDate|JulianDate]]
+* [[:unixtime]] in GMT
+
+===== Forum =====
+
+- [[https://forum.keyboardmaestro.com/search?q=ICUDateTime|Keyboard Maestro Forum topics about %ICUDateTime% token]]

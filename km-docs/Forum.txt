@@ -1,0 +1,117 @@
+====== Using the Keyboard Maestro Forum ======
+
+The [[https://forum.keyboardmaestro.com/|Keyboard Maestro forum]] is a very helpful place to ask about creating Keyboard Maestro macros. While Stairways can answer support questions related to using Keyboard Maestro and creating macros in general, questions about creating specific macros or controlling specific applications are better asked on the forum.
+
+===== Creating an Account on the Forum =====
+
+To create an account on the forum, [[https://www.stairways.com/form/foruminvite|request an invite]].
+
+===== Where To Post =====
+
+  * To get help, post in the [[https://forum.keyboardmaestro.com/c/general|Forum Questions & Suggestions Section]]
+  * To share your completed, working, macro, post in the [[https://forum.keyboardmaestro.com/c/macro|Forum Macro Section]]
+  * **Do not** use the Macro category for posting questions, even about macros. Use the Questions & Suggestions category.
+
+===== Before Asking =====
+
+Before you post a question to the [[https://forum.keyboardmaestro.com/|Keyboard Maestro Forum]] please:
+
+  * Spend a little time looking through the [[/User_Manual|Keyboard Maestro User Manual]].
+  * Use search within the Keyboard Maestro editor Help menu to try to find related actions.
+  * Spend at least 5-10 minutes searching within the forum itself and with Google.
+
+Even if you don't find what you're looking for you'll improve your knowledge of how to use Keyboard Maestro, and there's a good chance you'll ask better questions on the forum because of it.
+
+===== How To Get Help =====
+
+If you can't find the answers you need in the Keyboard Maestro Wiki or ([[/User_Manual|User Manual]]), then the [[https://forum.keyboardmaestro.com/|Keyboard Maestro Forum]]  is a great resource to 
+  * Search for Q&A and Other Macros/Solutions Related to Your Issue
+  * Post your questions and issues, and get help from fellow users as well as from the Keyboard Maestro owner himself.
+  * Share your completed, working, macro to help others like you.
+
+==== Searching the Forum for Answers ====
+
+There are two ways to search the Forum:
+  - Using the Forum Search Tool by clicking on the magnifying glass (🔍) at the top right of the Forum window
+  - Using the Google site search
+    - Just like a normal Google Search, except include `site:forum.keyboardmaestro.com` along with your keywords:\\  [[https://www.google.com/search?q=site%3Aforum.keyboardmaestro.com%20YourKeywords|site:forum.keyboardmaestro.com YourKeyWords]]
+  - Using the Duck Duck Go Keyboard Maestro forum search `!kmf`
+    - [[https://duckduckgo.com/?q=!kmf+YourKeyWords|Duck Duck Go search for `!kmf YourKeyWords`]]
+
+==== Posting Your Question or Issue to the Forum ====
+
+Avoid the [[http://​xyproblem.info|XY Problem]] of asking about your attempted //​solution//​ rather than your //actual problem//:​
+  * When you are asking a question, ensure you are clear what you are actually trying to accomplish, not just the difficulty you are having in a specific attempt at solving the problem. ​ There may be a much better way to solve the actual problem rather than resolving the difficulty with your specific attempt.
+  * Always include information about a broader picture along with any attempted solution.
+  * If someone asks for more information,​ do provide details.
+  * If there are other solutions you have already ruled out, share why you’ve ruled them out. This gives more information about your requirements.
+
+If you are having trouble with a macro and want help, then please post:
+  * Your question with as much detail as you can
+  * If it involves processing data, provide real world (not madeup) examples of:
+    * Your source input data
+    * How you want the data to appear after processing by your macro
+  * Upload both your macro image and code (export of macro)
+    * This is now very easy using the Share button in the Keyboard Maestro editor.
+    * See [[Forum#How_to_PostUpload_Your_Macro_to_the_Forum|below for instructions]]
+
+**For help on using the Forum Editor**, see [[Using Markdown in the Keyboard Maestro Forum]]
+
+This will help others to understand your issue, and to test the macro if need be.\\
+To get the best, fastest answer to your question, provide us with the best info you can.
+
+===== How to Post/Upload Your Macro to the Forum =====
+
+From the Keyboard Maestro editor
+  - Use the Share button (v7.0+) (see [[Forum#Upload_Using_Share_Button|#1 below]])
+  - Save to files, then import (see [[Forum#Manual_Upload|#2, Manual Upload, below]])
+
+==== 1. Upload Using Share Button ====
+
+This will create a **new topic** in the forum category you select.
+    - Select the Macro you wish to share in the Editor.
+    - Adjust the width of the Macro Detail column to a sensible size for display in the forum.
+    - Click on the Share button.
+    - Leave the *Category* on *Questions & Suggestions* if you are asking a question related to the macro.
+    - Change the *Category* to *Macro Library* if you are sharing a working macro for others to use.
+    - By default, both the macro and an image of the macro will be included.
+    - Click on the “New Topic” button (or before version 10.0, click the “Both” button).
+
+{{::share-button.png?214&nolink|}}
+
+and then this popup will appear
+
+{{::share-macro-to-forum.png?450&nolink|share-macro-to-forum}}
+
+==== 2. To include the macro in an Existing Topic ====
+
+After the new topic is created by the *Share to Forum*:
+
+  - Select **all** in the new topic.
+  - **Cut** the selection.
+  - **Cancel/Abort** the new topic in the forum.
+  - Goto the existing topic, and edit your message or create a reply.
+  - **Paste** into the forum editor in the topic you're working in.
+
+See this video:  [How To Upload Macro to Existing Post in Keyboard Maestro Forum](https://www.youtube.com/watch?v=0kkNXZBpWtM)
+
+==== 3.  Manual Upload ====
+
+Follow these steps to manually export your macro to files, then upload:
+  - Click on the macro name in the Keyboard Maestro editor
+  - Goto //File > Export Macro//, and save wherever you'd like
+  - Goto //Edit > Copy as > Copy as Image//
+  - Open Mac Preview app, and goto //File > New from Clipboard//, and save.
+  - Go to the Keyboard Maestro forum thread, and click on reply
+  - Enter some descriptive text,
+  - Use the file upload button  in the Keyboard Maestro Forum Editor to upload both files.
+    - **or** drag and drop files from the Finder into the Keyboard Maestro Forum Editor.
+    - **or** using most web browsers other than Safari you can copy and paste into the Keyboard Maestro Forum Editor.
+      - Images in the Clipboard or files copied from the Finder can be pasted.
+  - The [Select Clipboard Image File](https://forum.keyboardmaestro.com/t/select-clipboard-image-file/204) macro may also be useful for posting images.
+
+The items uploaded (shared) will be those items which are **selected** in the editor:
+  * If you have selected a macro in the macro list, then it will be uploaded
+  * If you have selected one or more Actions in a Macro, then only the Action(s) will be uploaded.
+
+ --- //Original article posted by:  [[kmforum@thestoneforge.com|Christopher Stone]] 2015/11/12 20:19//

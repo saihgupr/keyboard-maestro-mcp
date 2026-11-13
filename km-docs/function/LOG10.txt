@@ -1,0 +1,13 @@
+====== LOG10 Function ======
+
+The LOG10(x) function returns logarithm with base ten.
+
+    LOG10(1000) === 3
+
+===== See Also =====
+
+=== Functions ===
+
+* [[function:LOG|LOG]]
+* [[function:LOG2|LOG2]]
+* [[:Functions|See all Functions]]

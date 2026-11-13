@@ -1,0 +1,52 @@
+====== Cut, Copy and Paste Actions ======
+
+The *Cut, Copy and Paste* actions carry out the usual cut, copy and paste actions involving the system clipboard.
+
+{{:action:cutcopypaste.png?529|}}
+
+They operate primarily by simulating the appropriate command key (Command-X, Command-C, Command-V) with small pauses to allow the application to process the clipboard.  The Cut and Copy actions wait until the clipboard changes before proceeding.
+
+===== See Also =====
+
+
+=== Actions ===
+
+* [[action:Activate Clipboard History Switcher|Activate Clipboard History Switcher]]
+* [[action:Activate Clipboard Copy Switcher|Activate Clipboard Copy Switcher]]
+* [[action:Activate Clipboard Cut Switcher|Activate Clipboard Cut Switcher]]
+* [[action:Activate Clipboard Paste Switcher|Activate Clipboard Paste Switcher]]
+* [[action:Activate Named Clipboard Switcher|Activate Named Clipboard Switcher]]
+* [[action:Copy to Named Clipboard|Copy to Named Clipboard]]
+* [[action:Apply Style to Clipboard|Apply Style to Clipboard]]
+* [[action:Copy Clipboard to Clipboard|Copy Clipboard to Clipboard]]
+* [[action:Delete Past Clipboard|Delete Past Clipboard]]
+* [[action:Display Clipboard|Display Clipboard]]
+* [[action:Filter|Filter]]
+* [[action:Search Clipboard|Search Clipboard]]
+* [[action:Search and Replace Clipboard|Search and Replace Clipboard]]
+* [[action:Set Clipboard to Past Clipboard|Set Clipboard to Past Clipboard]]
+* [[action:Set Clipboard to Text|Set Clipboard to Text]]
+* [[action:Substring of Variable or Clipboard|Substring of Variable or Clipboard]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:CLIPBOARDSEED|CLIPBOARDSEED()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:CurrentClipboard|%CurrentClipboard%]]
+* [[token:NamedClipboard|%NamedClipboard%]]
+* [[token:PastClipboard|%PastClipboard%]]
+* [[:Tokens|See all Tokens]]
+
+==== Topics ====
+
+* [[:Clipboards|Clipboards]]
+* [[:Frequently Asked Questions|FAQ]]
+
+=== Triggers ===
+
+* [[trigger:Clipboard_Changed|Clipboard Changed]]
+* [[:Triggers|See all Triggers]]

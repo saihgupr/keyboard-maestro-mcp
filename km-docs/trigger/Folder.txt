@@ -1,0 +1,37 @@
+====== Folder Trigger ======
+
+The //Folder trigger// (v7.0+) executes the macro when a specified folder on your Mac:
+
+* adds an item.
+* removes an item.
+* adds or removes an item.
+
+The item must be directly in the folder - changes in a subfolder will not be noticed.
+
+You can have the trigger ignore partial or changing files, so for example if a file is being downloaded or copied in to the folder, the trigger will wait until the download/copy has completed and can ignore partial files (files with extensions that are known to be "in progress" files).
+
+Note that waiting for the file to stop changing adds a necessary delay to the trigger as Keyboard Maestro cannot tell in advance that the file has stopped changing.
+
+The //%TriggerValue%// text token contains the path of the file that was added or removed (prior to 7.1 this was only the file name, not the full path).
+
+===== See Also =====
+
+=== Actions ===
+
+ * [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]
+
+=== Forum===
+
+- [[https://forum.keyboardmaestro.com/t/wtch-downloads-folder-for-pdfs-and-open-with-preview/2837|Watch downloads folder for PDF’s and open with preview]]
+- [[https://forum.keyboardmaestro.com/search?q=%22Folder%20trigger%22|Keyboard Maestro Forum topics about Folder trigger]]

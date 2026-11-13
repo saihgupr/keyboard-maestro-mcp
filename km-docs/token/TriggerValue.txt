@@ -1,0 +1,45 @@
+The //%TriggerValue%// token returns the value associated with how the macro was triggered.
+
+Different ways of triggering the macro will set this field differently.
+
+* You can pass an explicit value in using the "with parameter" option when executing a script from AppleScript.
+* You can pass an explicit value in when using the [Execute a Macro action](action:Execute_a_Macro).
+* You can pass an explicit value in when executing the macro via the web server.
+* You can pass an explicit value in when executing the macro via the [kmtrigger URL](trigger:URL).
+
+**When a Macro is triggered, the The //%TriggerValue%// token value will be based on the trigger:**
+
+^ Trigger Type ^ `%TriggerValue%` token ^
+| [[trigger:Application|Application]] trigger | The Path to the application that was triggered. |
+| [[trigger:Audio_Output_Changed|Audio Output Changed]] trigger | The name of the selected audio output device. |
+| [[trigger:Cron|Cron]] trigger | The current time and date (`yyyy-mm-dd hh:mm`). |
+| [[trigger:Display_Layout_Changed|Display Layout Changed]] trigger | A comma separated list of the kinds of changes made. |
+| [[trigger:Dragged_File|Dragged File]] trigger | The path of the dragged file. |
+| [[action:Execute_a_Macro|Execute a Macro]] action | Although _Execute a Macro_ is _not_ technically a trigger, when a Macro is executed by this method (the "Sub-Macro"), the //%TriggerValue%// token (as evaluated in the "Sub-Macro") will be either of two values:\\ 1. The //%TriggerValue%// of the calling ("Main") Macro\\ OR \\ 2. The value of the Parameter of the _Execute a Macro_, **if** a Parameter is provided. |
+| [[trigger:Folder|Folder Trigger]] | Path of the file that was added or removed. |
+| [[trigger:Hot_Key|Hot Key Trigger]] | The key that was pressed. |
+| [[trigger:Idle|Idle]] trigger | The number of minutes the Mac has been idle. |
+| [[trigger:MIDI|MIDI]] trigger | Data related to the specific MIDI trigger information (see [[trigger:MIDI|MIDI]] trigger). |
+| [[trigger:Mounted_Volume|Mounted Volume]] trigger | The name of the volume. |
+| [[trigger:Remote|Remote]] trigger | The TriggerValue used in the Remote Trigger URL. |
+| [[trigger:Script|Script]] trigger | Although _not_ technically a trigger, when a Macro is executed via AppleScript the //%TriggerValue%// token will contain the passed parameter. |
+| [[trigger:Status_Menu|Status Menu]] or [[manual:Palettes|Palette]] | The current modifiers (Note that Option means "edit this macro instead of triggering it"). |
+| [[trigger:Trigger_File|Trigger File]] trigger | The path of the Trigger File. |
+| [[trigger:Typed_String|Typed String]] trigger | The exact text you typed to trigger. |
+| [[trigger:URL|URL]] trigger | The TriggerValue used in the URL. |
+| [[trigger:USB_Device|USB Device]] trigger | The name of the device. |
+| [[trigger:USB_Device_Key|USB Device Key]] | The key that was pressed. |
+
+To use the %TriggerValue% token in a numeric field, use the [CALCULATE](https://wiki.keyboardmaestro.com/function/CALCULATE) function: CALCULATE(%TriggerValue%).
+
+You can easily access the individual parts using the token array notation, eg `%TriggerValue[3]%` will be the third comma-separated value, and `%TriggerValue[3];%` will be the third semicolon-separated value, and `%TriggerValue[3] %` (note the space between the `]` and the `%`) will be the third space-separated value (8.0.4+).
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[Trigger|%Trigger%]] token
+* [[TriggerBase|%TriggerBase%]] token
+* [[TriggerClipboard|%TriggerClipboard%]] token
+* [[/Tokens|All Tokens]]
+

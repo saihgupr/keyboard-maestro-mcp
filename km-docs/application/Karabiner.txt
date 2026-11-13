@@ -1,0 +1,7 @@
+====== Karabiner ======
+
+[[https://pqrs.org/osx/karabiner/|Karabiner]] (previously called KeyRemap4MacBook) is a low level tool for remapping keyboard keys.  It works below the level that Keyboard Maestro does, and can be used to remap keys on the keyboard is interesting ways.
+
+However: **Karabiner does not work on macOS Sierra at the moment**.
+
+A subset of the functionality is available in Karabiner-Elements.

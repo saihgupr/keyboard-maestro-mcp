@@ -1,0 +1,192 @@
+====== Regular Expressions (RegEx) ======
+
+Keyboard Maestro uses [[https://www.keyboardmaestro.com/action/linkthru?regularexpressionreferenceoverview|ICU Regular Expressions]] (aka RegEx or RegExp) which is very similar to PCRE (Perl Compatible Regular Expressions), and you can read their [documentation](https://www.keyboardmaestro.com/action/linkthru?regularexpressionreference) by choosing ICU Regular Expression Reference from the Help menu in Keyboard Maestro.  
+
+
+In any [[Actions|Action]] where the term "matches" is used, you may (optionally) use a regular expression.
+
+
+**The two most commonly used RegEx Actions are:**
+  * [[action:Search_using_Regular_Expression|Search using Regular Expression ]] to extract [[https://www.regular-expressions.info/brackets.html | Capture Groups]].
+  * [[action:Search_and_Replace|Search and Replace]]
+
+In all of the RegEx searches, you can choose to search in any one of the following: System Clipboard, Variable, File, Text entered into the Action, and Named Clipboard.
+
+There are many Actions in Keyboard Maestro where you can use a regular expression, which may not be obvious.  For more info see [Places where Regular Expressions can be used](https://forum.keyboardmaestro.com/t/places-where-regular-expressions-can-be-used/4392).
+
+===== Search Modifiers =====
+
+The ICU calls these modifiers [[https://www.keyboardmaestro.com/action/linkthru?regularexpressionreferenceflags|flag options]].
+
+
+^Purpose^Pattern to Use^Description^
+|Global|NONE|The [[action:Search_using_Regular_Expression|Search using Regular Expression Action]] will return the _first_ match it finds in the source string.\\  In order to make it be a "global" search, you need to put this Action in a [[action:For_Each|For Each Action]] that uses the [ [[collection:Substrings_In|Substrings Matching in]] ] [[:Collections|Collection]].  This will loop through all matches found in the source string.\\ This is often indicated in other tools by the `/g` modifier.|
+|Case Insensitive|`(?i)`|Matching will be in a case-insensitive manner.\\  In some Actions this is NOT necessary since the Action already provides an "ignoring case" option.|
+|Dot includes EOL|`(?s)`|A "`.`" in a pattern will match a line terminator in the input text. Note that a CR LF pair in text behave as a single line terminator, and will match a single "." in a RE pattern.|
+|Multi-Line|`(?m)`|Controls the behavior of "`^`" and "`$`" in a pattern.\\ If used, "`^`" and "`$`" will also match at the start and end of each line within the input text.|
+|Word Boundaries|`(?w)`|Controls the behavior of \b in a pattern.\\ If used, word boundaries are found according to the definitions of word found in [[http://unicode.org/reports/tr29/#Word_Boundaries|Unicode UAX 29, Text Boundaries]].|
+|Comments|`(?x)`|Ignores white space and allows #comments.\\ If used, white space within regular expressions is ignored and you can use #line-comments.|
+
+Note that matches are **case sensitive** by default (unless the action offers an //ignores case// option), so you can use (?i) to make the regular expression case insensitive.
+
+The search modifier can apply to a section of the regular expression by using the form:
+
+```
+Case Sensitive (?i:case insensitive) Case Sensitive
+```
+
+of the search modifier can apply for the remainder of the pattern (unless changed later) like this:
+
+```
+Case Sensitive (?i)case insensitive case insensitive
+```
+
+or
+
+```
+Case Sensitive (?i)case insensitive (?-i) Case Sensitive
+```
+
+For example to search for the start of a line anywhere within the pattern, for the text "Hello THERE" where THERE is case insensitive you could use:
+
+```
+(?m)^Hello(?i:there)
+```
+
+Note that `(?…)` is not a Capture Group.
+
+
+===== Capture Groups =====
+
+  * Use the form of `$<CG#>`, or `\<CG#>` (in ver 8+) in the Action Replace box, where `<CG#>` is the number for the capture group. 
+  * Examples: 
+    * `$1`, `$2`, `$23`
+    * `${1}`, ${2}`, ${23}`, 
+    * `${name}` - named capture group (v9.2+, 10.13+)
+    * `\1`, `\2`, `\3` - single digit only (v8.0+)
+  * This is the same as `\<CG#>` used in other apps/languages, like BBEdit.
+  * The zeroth capture group (eg `$0`) is the entire match.
+
+For more information, see [[https://www.regular-expressions.info/brackets.html | Capture Groups]].
+
+
+===== Use of Text Tokens =====
+
+You can use Keyboard Maestro [[Tokens|Text Tokens]] anywhere appropriate in both the Search pattern and the Replace pattern.
+
+
+===== ICU 55+ Metacharacters =====
+
+For the currently complete list, see [ICU Regular Expression Metacharacters](https://www.keyboardmaestro.com/action/linkthru?regularexpressionreference).
+
+[ICU 55](http://site.icu-project.org/download/55) was released on 2015-04-01, and is available in the follow software versions:
+  * macOS 10.11+ (El Capitan) except for JavaScript
+  * Keyboard Maestro Native Actions
+
+These Metacharacters offer some powerful solutions to long-standing RegEx problems. These can replace complicated RegEx patterns previously required, and are recommended for use if you are running the required versions.  For example, `\h` and `\R`.  ICU 55 is _not_ available in all RegEx engines.  A notable exception is JavaScript (and JXA), even in High Sierra.  So if you are using the native Keyboard Maestro Actions that use RegEx, it would be available, but not necessarily in Actions that use Execute Script in another language.  It is available in Execute AppleScript Actions that use ASObjC RegEx.
+
+^   New Metacharacters in ICU 55+(([ICU Regular Expression Metacharacters](https://www.keyboardmaestro.com/action/linkthru?regularexpressionreference)))   ^^^
+^ Character ^ Alternate Expression\\ (Pre ICU 55) ^ Description ^
+| `\h` | `[^\S\r\n\f]` | Match a Horizontal White Space character.\\ They are characters with Unicode General Category of Space_Separator plus the ASCII tab (\u0009). |
+| `\H` | `[\S\r\n\f]` | Match a non-Horizontal White Space character. |
+| `\k<name>` | //No Alternative// | Named Capture Back Reference. |
+| `\R` | `(?:\r?\n|\r)` | Match a new line character, or the sequence CR LF.\\ The new line characters are \u000a, \u000b, \u000c, \u000d, \u0085, \u2028, \u2029 |
+| `\v` | `[\n\r]` | Match a new line character.\\ The new line characters are \u000a, \u000b, \u000c, \u000d, \u0085, \u2028, \u2029.\\ Does not match the new line sequence CR LF. |
+| `\V` | `[^\n\r]` | Match a non-new line character. |
+For an in-depth discussion, see this Forum topic: [RegEx for Horizontal Whitespace](https://forum.keyboardmaestro.com/t/wiki-update-regex-icu-55-metacharacters/10788).
+===== Examples =====
+
+**Example #1:  Remove all line numbers from a string with multiple lines**
+
+{{:km-action-regex-search-replace.png|}}
+
+**Example #2:  Extract Capture Group for Multiple Matches to Multiple Lines in a Variable**
+
+Sometimes you may need to extract a RegEx Capture Group after a match is made, and do this for multiple lines (matches) in the entire source string.  To achieve this, you need to:
+
+1. Use the [[action:For_Each|For Each Action]] with the [[collection:Substrings_In|Substrings In]] collection to get each match into a variable (Local MatchString).
+2. Then use a [[action:Search_using_Regular_Expression|Search using Regular Expression]] action to get the Capture Group for that match.
+
+Both Actions can use the same RegEx pattern.
+
+
+{{:km-for-each-regex-example.png?nolink|}}
+
+For a complete macro using this method, see: [MACRO: Get List of RegEx Capture Group of Multiple Matches](https://forum.keyboardmaestro.com/t/macro-get-list-of-regex-capture-group-of-multiple-matches/2975)
+
+
+===== See also: =====
+
+=== Actions ===
+
+* [[action:For Each|For Each]]
+* [[action:Search Clipboard|Search Clipboard]]
+* [[action:Search Variable|Search Variable]]
+* [[action:Search and Replace Clipboard|Search and Replace Clipboard]]
+* [[action:Search and Replace Variable|Search and Replace Variable]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[condition:Variable|Variable]]
+* [[:Conditions|See all Conditions]]
+
+=== Triggers ===
+
+* [[trigger:Typed String|Typed String]]
+* [[:Triggers|See all Triggers]]
+
+
+==== Macros That Use RegEx ====
+
+  - [MACRO: Get List of RegEx Capture Group of Multiple Matches](https://forum.keyboardmaestro.com/t/macro-get-list-of-regex-capture-group-of-multiple-matches/2975)
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/change-case-in-regular-expression-search-replacement-text/660/5|Change Case in Regular Expression Search Replacement Text]]
+- [[https://forum.keyboardmaestro.com/t/regex-add-html-div-tag-to-each-line/2829|[RegEx] Add HTML Div tag to Each Line]]
+- [[https://forum.keyboardmaestro.com/t/how-to-search-and-replace-for-characters-in-variables/3078/11|How to search and replace for characters in variables]]
+- [[https://forum.keyboardmaestro.com/t/cleaning-up-variables-at-the-end-of-sub-macros/4561/38|Cleaning Up Variables at the end of sub-macros]]
+- [[https://forum.keyboardmaestro.com/t/example-switch-action-with-or-conditions-copy-and-paste-regular-expressions/4595|EXAMPLE: SWITCH action with "OR" conditions (copy-and-paste regular expressions)]]
+
+
+- [[https://forum.keyboardmaestro.com/tags/regex|Keyboard Maestro Forum topics about Regular Expressions (RegEx)]]
+
+==== General ====
+
+  - [[https://www.keyboardmaestro.com/action/linkthru?regularexpressionreferenceoverview|ICU Regular Expressions]]
+  - [ICU Unicode Properties for Regular Expressions](http://unicode.keyboardmaestro.com)
+  - [[https://en.wikipedia.org/wiki/Regular_expression|Wikpedia Regular Expression article]]
+
+==== Software ====
+
+  * [[http://www.barebones.com/products/bbedit/|BBEdit]] -- A Programming Editor with PCRE regular expression support.     
+    * The commercial demo expires in 30 days and reverts to the still //very// powerful BBEdit-Lite (freeware).
+''''
+
+  * [[http://itunes.apple.com/us/app/patterns-the-regex-app/id429449079?mt=12|Patterns]] -- A regular expression analyzer available on the app-store.
+  * [[https://itunes.apple.com/us/app/regexrx/id498370702?mt=12|RegExRX]] -- A regular expression analyzer available on the app-store.
+
+  ''''
+
+  * [[https://regex101.com|RegEx101.com]] -- An Outstanding and Comprehensive Online RegEx Analyzer.
+  * [[http://regexr.com/|Regexr]] -- Regex testing and explaining, examples and references.
+
+==== Books ====
+
+  - [[http://www.amazon.com/Teach-Yourself-Regular-Expressions-Minutes/dp/0672325667/ref=la_B001H6INFU_1_7?s=books&ie=UTF8&qid=1441555034&sr=1-7|"Sams Teach Yourself Regular Expressions in 10 Minutes" by Ben Forta (Book)]]
+  - [[http://shop.oreilly.com/product/0636920023630.do|"Regular Expressions Cookbook" by Goyvaerts & Levithan (Book)]]
+  - [[http://www.amazon.com/Beginning-Regular-Expressions-Andrew-Watt/dp/0764574892/ref=sr_1_1?ie=UTF8&qid=1441553812&sr=8-1&keywords=Beginning+Regular+Expressions|"Beginning Regular Expressions" by Watt (Book)]]
+  - [[http://shop.oreilly.com/product/9780596528126.do|"Mastering Regular Expressions" by Jeffrey Friedl (Book)]]
+
+==== Online References ====
+
+  - [[http://www.regular-expressions.info|Regular-Expressions-Info Site published by Jan Goyvaerts]]
+  - [[https://gist.github.com/ccstone/5385334|BBEdit/TextWrangler RegEx Cheatsheet by Christopher Stone]]
+
+==== Online Primers & Tutorials ====
+
+  - [Regular Expressions Quick Start](http://www.regular-expressions.info/quickstart.html)
+  - [[http://www.codeproject.com/KB/dotnet/regextutorial.aspx|CodeProject.com RegExTutorial]]
+
+Keywords:  //Regular Expression, RegEx, RegExp, Find, Replace, Match//

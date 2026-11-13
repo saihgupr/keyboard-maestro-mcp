@@ -1,0 +1,24 @@
+====== Pause Until Change ======
+
+The *Pause Until Change* action (v10.0+) pauses until some aspect of the system changes.
+
+You can pause until:
+
+* the System Clipboard changes
+* the Front Application changes to a different application.
+* the Pressed Keys change (eg press or release the “A” key)
+* the Modifiers change (eg press or release the Shift key)
+* the Mouse moves
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]
+
+=== Actions ===
+
+* [[action:Pause|Pause]] action
+* [[action:Pause_Until|Pause Until]] action
+* [[/Actions|See all Actions]]
+

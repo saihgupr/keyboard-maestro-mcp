@@ -1,0 +1,9 @@
+====== ATAN2Function ======
+
+The ATAN2(y,x) function returns the arctangent of its two arguments.  The purpose of using two arguments instead of one is to to return the appropriate quadrant of the resulting angle, which is not possible for the single argument [[ATAN]] function.  For arguments y,x, not both zero, this function returns the angle in radians between the x-axis and the point (x,y).  Note that the arguments to ATAN2 are y,x, not the usual x,y order.  Also note that y is in the mathematical direction, positive upwards, unlike screen coordinates which are usually positive downwards.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

@@ -1,0 +1,43 @@
+====== URL Schemes ======
+
+===== Editor =====
+
+Another way you can control Keyboard Maestro editor is using the "`keyboardmaestro`" URL scheme, which supports the following formats:
+
+^ Example Editor URL Command ^ Description ^
+| `keyboardmaestro://u=support%40stairways.com/s=ABCDEFGH0123456789` | Enter your username/serial number. |
+| `keyboardmaestro://m=Activate%20Application%20Switcher`\\ `keyboardmaestro://m=D2F427A1-51E3-4719-820B-4C25B6FF7329` | Edit a specific macro or macro group.\\ You may used either the Macro Name, or UUID. |
+| `keyboardmaestro://q=Activate` | Filter macros with this keyword. |
+| `keyboardmaestro://g=All%20Macros/q=Activate` | Select a macro group and filter macros with this keyword. |
+| `keyboardmaestro://a=Execute` | Filter actions with this keyword. |
+| `keyboardmaestro://c=All%20Actions/a=Execute` | Select action category and filter actions with this keyword. |
+
+---
+
+===== Triggers =====
+
+You can trigger a macro (that is Active and Enabled) using the "`kmtrigger`" URL scheme.  The URL uses this format:
+
+`kmtrigger://macro=<Macro Name or UUID>[&<Trigger Value>]`
+
+where
+  * `<Macro Name or UUID>` is either the Macro Name, OR, its UUID
+  * `<Trigger Value>` is the _optional_ Trigger Value
+  * `[ ]` are _not_ included.  Used only to show _optional_ parameters
+  * `&` must precede the Trigger Value, if it is provided.
+
+Note both Macro Name and Trigger Value must be URL encoded.
+
+You can easily get the Trigger URL by clicking on the "Or by Script" Trigger option, and selecting "Or by URL".
+
+{{:manual:km-7.3-macro-trigger-url-setup.png?nolink|}}
+
+{{:manual:km-7.3-macro-trigger-url-results.png?nolink|}}
+
+^ Example Trigger URL Command ^ Description ^
+| `kmtrigger://macro=Your%20Macro%20Name` | Using the Macro Name |
+| `kmtrigger://macro=224AA8CB-07EB-4C92-8201-68FED82B6E9F` | Using the Macro UUID |
+| `kmtrigger://macro=Your%20Macro%20Name&value=Your%20Trigger%20Value` | Using Macro Name with Trigger Value |
+| `kmtrigger://macro=224AA8CB-07EB-4C92-8201-68FED82B6E9F&value=Your%20Trigger%20Value` | Using Macro UUID with Trigger Value  |
+
+The `kmtrigger` URL will only work on the local Mac, but you can use the [[trigger:Remote|Remote]] trigger to trigger macros with a URL even from remote locations via the Keyboard Maestro trigger server.

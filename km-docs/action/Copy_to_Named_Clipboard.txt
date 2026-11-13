@@ -1,0 +1,55 @@
+[[/Clipboards#Named_Clipboards|Named Clipboards]] allow you to permanently store clipboard contents (like images or styled text) that can later be used to place on the System Clipboard.
+
+The Cut, Copy, and Paste to/from Named Clipboard actions let you store or retrieve clipboard data via the System Clipboard.
+
+{{:action:cutcopypastenamedclipboard.png?529|}}
+
+For each of the named clipboard versions you can choose which named clipboard to act on.
+
+Note that the data always passes through the system clipboard (which is the only way to get the data in to or out of applications).  So for example "Cut to Named Clipboard “Icon Stamp”" is a shorter way of doing “Cut to system clipboard; Copy system clipboard to Named Clipboard “Icon Stamp”".  So at the end of all versions of these actions the system clipboard also holds the contents you are operating on.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Activate Clipboard Copy Switcher|Activate Clipboard Copy Switcher]]
+* [[action:Activate Clipboard Cut Switcher|Activate Clipboard Cut Switcher]]
+* [[action:Activate Clipboard Paste Switcher|Activate Clipboard Paste Switcher]]
+* [[action:Activate Clipboard History Switcher|Activate Clipboard History Switcher]]
+* [[action:Activate Named Clipboard Switcher|Activate Named Clipboard Switcher]]
+* [[action:Apply Style to Clipboard|Apply Style to Clipboard]]
+* [[action:Copy|Copy]]
+* [[action:Copy Clipboard to Clipboard|Copy Clipboard to Clipboard]]
+* [[action:Cut|Cut]]
+* [[action:Delete Past Clipboard|Delete Past Clipboard]]
+* [[action:Display Clipboard|Display Clipboard]]
+* [[action:Filter|Filter]]
+* [[action:Paste|Paste]]
+* [[action:Search Clipboard|Search Clipboard]]
+* [[action:Search and Replace Clipboard|Search and Replace Clipboard]]
+* [[action:Set Clipboard to Past Clipboard|Set Clipboard to Past Clipboard]]
+* [[action:Set Clipboard to Text|Set Clipboard to Text]]
+* [[action:Substring of Variable or Clipboard|Substring of Variable or Clipboard]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:CLIPBOARDSEED|CLIPBOARDSEED()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:CurrentClipboard|%CurrentClipboard%]]
+* [[token:NamedClipboard|%NamedClipboard%]]
+* [[token:PastClipboard|%PastClipboard%]]
+* [[:Tokens|See all Tokens]]
+
+==== Topics ====
+
+* [[:Clipboards|Clipboards]]
+* [[:Frequently Asked Questions|FAQ]]
+
+=== Triggers ===
+
+* [[trigger:Clipboard_Changed|Clipboard Changed]]
+* [[:Triggers|See all Triggers]]

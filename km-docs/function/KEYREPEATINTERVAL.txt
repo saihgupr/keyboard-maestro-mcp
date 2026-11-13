@@ -1,0 +1,11 @@
+====== KEYREPEATINTERVAL Function======
+
+The *KEYREPEATINTERVAL()* function returns (v10.0+) the system key repeat interval. This is the time between repeating keys when the the system is repeating a key. Modern macOS typically do not repeat keys when held down, instead it displays a popup for some keys (eg `e`) offering options for the key.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[function:KEYREPEATDELAY|KEYREPEATDELAY]] function
+* [[function:DOUBLECLICKINTERVAL|DOUBLECLICKINTERVAL]] function
+* [[:Functions|See all Functions ]]

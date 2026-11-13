@@ -1,0 +1,13 @@
+===== Dictionary Token =====
+
+The `%Dictionary[<Dict>,<Key>]%` token (v8+) allows you to access [[manual:Dictionaries|dictionary]] values in a [[:Text Fields |token text field]], where `<Dict>` is the name of the dictionary and `<Key>` is the key.
+
+For Example, using the [[action:Insert_Text|Insert Text]] Action:
+
+{{:token:dictionary-example.png?nolink&568|}}
+
+===== See Also =====
+
+- [[:Text Fields]]
+- [[:Tokens]]
+- [[manual:Variables]]

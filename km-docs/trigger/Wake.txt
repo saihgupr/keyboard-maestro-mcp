@@ -1,0 +1,12 @@
+====== Wake Trigger ======
+
+The //Wake trigger// executes the macro when your Mac wakes from sleep.
+
+You could use a trigger like this to set up your Mac environment, first determining your location and then taking appropriate action.
+
+===== See Also =====
+
+=== Triggers===
+
+* [[trigger:Sleep|Sleep trigger]]
+* [[:Triggers|See all Triggers]]

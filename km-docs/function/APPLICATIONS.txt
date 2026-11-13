@@ -1,0 +1,9 @@
+====== APPLICATIONS Function ======
+
+The APPLICATIONS() function returns the number of running applications.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

@@ -1,0 +1,18 @@
+The Flip Image and Rotate Image actions allow you to flip or rotate an image on the system clipboard or a named clipboard.
+
+{{:action:rotateimage.png|}}
+
+Select from the pop-up to:
+
+  *Flip horizontally.
+  *Flip vertically.
+  *Rotate 90° clockwise .
+  *Rotate 180°.
+  *Rotate 90° counter-clockwise (270°).
+  *Rotate by arbitrary angle.
+
+If you select //Rotate by arbitrary angle// then a text area appears for you to enter the angle. You don’t need to enter a degrees symbol.
+
+Select which clipboard to use from the //image// pop-up.
+
+

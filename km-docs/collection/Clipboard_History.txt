@@ -1,0 +1,11 @@
+The //Clipboard History collection// contains the contents of each item in the clipboard history.
+
+===== See Also =====
+
+----
+
+===  Collections ===
+
+* [[:Collections|See all Collections]]
+
+----

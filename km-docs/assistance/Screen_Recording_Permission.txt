@@ -1,0 +1,14 @@
+====== Screen Recording Permission ======
+
+Screen Recording permission allows Keyboard Maestro to capture the image on your screen or in windows. This is used for actions like [[action:Find_Image_on_Screen|Find Image on Screen]] or [[action:Screen_Capture|Screen Capture]].
+
+If you wish to use these actions in macOS Catalina or later you will need to enable the permission for Keyboard Maestro Engine in the System Preferences, Security & Privacy, Privacy, Screen Recording permissions.
+
+If you try to use these actions without giving Keyboard Maestro Engine the Screen Recording permission, the action may fail, and in some circumstances the system will prompt you to allow permission. 
+
+(!) If Keyboard Maestro Engine does not appear in the permissions, create a [[action:Screen_Capture|Screen Capture]] action and capture all screens, and “Try” the action or run the macro. This should force the system to notice and prompt you for permission.
+
+In Big Sur and later, you can actively add the Keyboard Maestro Engine to the Screen Recording permission in the System Preferences, Security & Privacy, Privacy, Screen Recording settings by unlocking the System Preferences, and then finding Keyboard Maestro.app in the Finder, control or right click on it, select Show Package Contents, drill down in to Contents, and then MacOS to find the Keyboard Maestro Engine.app, and then drag that in to the Screen Recording settings.
+
+You will need to quit Keyboard Maestro Engine and Keyboard Maestro and relaunch them for any Screen Recording permission changes to take effect.
+

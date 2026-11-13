@@ -1,0 +1,15 @@
+====== Copy Clipboard to Clipboard ======
+
+The Copy Clipboard to Clipboard action allows you to copy items from one clipboard to another.
+
+Select the source and destination clipboards from the //Copy// and //to// pop-ups respectively.
+
+{{ copyclipboardtoclipboard.png?nolink&504x110 | Copy Clipboard to Clipboard }}
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action: Set Clipboard to File Reference]] action
+* [[action:Set Clipboard to Image]] action
+* [[:Actions|See all Actions]]

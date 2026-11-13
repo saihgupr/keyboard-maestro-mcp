@@ -1,0 +1,9 @@
+====== SECUREINPUT Function======
+
+The *SECUREINPUT()* function returns whether the Mac is currently in [Secure Input Mode](:Troubleshooting#Secure_Input_Mode).  It returns 1 if the Mac is in Secure Input Mode or 0 otherwise.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions ]]

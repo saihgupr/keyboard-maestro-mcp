@@ -1,0 +1,41 @@
+===== CalculateFormat Token =====
+
+The //%CalculateFormat%//**<formula>**//%//**<format>**//%// token (v8+) returns the **numeric** result of performing a calculation.  The formula is the same as for the [[Calculate]] token.
+
+The **<format>** is either one of these specific localized formats:
+
+* Decimal
+* Currency
+* Percent
+* Scientific
+* Ordinal
+* CurrencyISOCode
+* CurrencyPlural
+* CurrencyAccounting
+
+or a format pattern according to [[https://www.unicode.org/reports/tr35/tr35-31/tr35-numbers.html#Number_Format_Patterns|Unicode Technical Standard #35]].
+
+Example patterns and results for the number 1234.567 in French locale are:
+
+^Format^Australia^ France ^
+| #,##0.## \\ #,##0.### \\ ###0.##### \\ ###0.0000# \\ 00000.0000 | 1,234.57 \\ 1,234.567 \\ 1234.567 \\ 1234.5670 \\ 01234.5670 | 1 234,57 \\ 1 234,567 \\ 1234,567 \\ 1234,5670 \\ 01234,5670 |
+
+(i) Note that numeric values in Keyboard Maestro allow only “full stop” decimal (.) and no thousand separators (except optional underscores), so the output of this token will likely not be a valid number for a Keyboard Maestro calculation. It should be used only for display purposes.
+
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Set_Variable_to_Calculation|Set Variable to Calculation]] action
+* [[:Actions|See all Actions]]
+
+==== Tokens ====
+
+* [[Calculate|%Calculate%]] token
+* [[/Tokens|All Tokens]]
+
+==== Topics ====
+
+
+* [[https://www.unicode.org/reports/tr35/tr35-31/tr35-numbers.html#Number_Format_Patterns|Unicode Technical Standard #35]]

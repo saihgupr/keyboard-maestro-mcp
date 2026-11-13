@@ -1,0 +1,37 @@
+====== Macro Debugger ======
+
+
+Keyboard Maestro includes a built-in macro debugger which you can turn on by choosing Start Debugging from the Status Menu, or by using one of the various Debugger actions.
+
+{{ manual:macrodebugger.png?nolink&683 |Macro Debugger}}
+
+===== Debugger Actions =====
+
+
+* Debugger Start.
+* Debugger Finish.
+* Debugger Toggle.
+* Debugger New Macros Paused.
+* Debugger New Macros Run.
+* Debugger Breakpoint This Macro.
+* Debugger Breakpoint All Other Macros.
+* Debugger Breakpoint All Macros.
+* Debugger Step Over Other Macros.
+* Debugger Step Into Other Macros.
+* Debugger Step Out Other Macros.
+* Debugger Continue This Macros.
+* Debugger Continue All Macros.
+
+===== Using the Debugger =====
+
+If a macro is paused by the debugger, or if a macro starts paused, but the next action is a Debugger action, it will run anyway.  This allows you to to create macros with hot keys and Debugger actions to breakpoint, step through, continue, etc other macros without themselves being debugged.
+
+Keep in mind that once a macro has started executing, the engine has taken a copy of the macro to execute, so any changes you make in the editor will not affect the execution of the macro (although any changes you make to a sub macro that has not yet started executing would apply).
+
+Also keep in mind that macros can often be time sensitive, so if you find your macro runs fine when stepped through in the debugger, but not when run normally, the issue is probably that the macro is executing actions like click actions before the system has caught up and the screen is stable.  Add an appropriate [[action:Pause|Pause]] action if that is the case.
+
+If you close the debugger window, the paused macros will resume their normal operation.
+
+===== See Also =====
+
+  * [[manual:Macro_Debugger|Macro Debugger]] user manual section

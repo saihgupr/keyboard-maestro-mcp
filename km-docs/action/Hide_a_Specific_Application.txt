@@ -1,0 +1,14 @@
+====== Hide a Specific Application Action ======
+
+The Hide a Specific Application action hides the specified application. 
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Hide_All_Applications|Hide All Applications]] action
+* [[action:Hide_Front_Application|Hide Front Application]] action
+* [[action:Hide_Other_Applications|Hide Other Applications]] action
+* [[action:Show_a_Specific_Application|Show a Specific Application]] action
+* [[action:Show_All_Applications|Show All Applications]] action
+* [[:Actions|See all Actions]]

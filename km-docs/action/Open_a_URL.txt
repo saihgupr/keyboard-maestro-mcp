@@ -1,0 +1,35 @@
+====== Open a URL ======
+
+The Open a URL action allows you to open a specified URL with a selected application.
+
+===== How to Use =====
+
+Enter the full URL in the //Open URL// text area.
+
+Select the application to open the URL from the //with// pop-up.
+
+:!:  Keep in mind that the URL **must** be properly formatted.  It cannot contain spaces or other invalid characters (the [Percent Encode for URL](/action/Filter) filter may be useful for this purpose).
+
+{{ open-url.png?nolink&575x112 | Open URL Action }}
+
+===== Action Options =====
+
+The action (gear) ⚙ menu provides options to control the action.
+
+{{ open-url-gear-menu.png?nolink&252x537 | Open URL Gear Menu }}
+
+You can(v7.3+) control the text processing is applied in the URL block before it is send to the application :
+
+* Process Text Normally (process text tokens and backslash characters)
+* Process Text Tokens Only (process text tokens but not backslash characters)
+* Process Nothing (process neither text tokens nor backslash characters)
+
+You can also (v9.0+) whether the URL is opened in the background or the browser application is brought to the front.
+
+If the action fails (because the URL is invalid), you will be notified but the macro will continue on.  You can adjust these in the gear menu.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Open a File Folder or Application|action:Open a File Folder or Application]]

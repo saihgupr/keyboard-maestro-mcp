@@ -1,0 +1,104 @@
+====== Web Browser Tokens ======
+
+Keyboard Maestro can provide a wealth of information from compatible web browsers.
+
+It does this by communicating with the browsers via AppleScript, so only browsers that support a compatible AppleScript can be used, which is currently restricted to browsers that support the Safari or Chrome AppleScripts, which includes Safari, Chrome, Brave, Vivaldi, Edge and their developmental versions.
+
+The tokens come in three forms, for example `%SafariTitle%`,  `%ChromeTitle%`,  `%FrontBrowserTitle%`. They will access the front (or most recently front) Safari-like, Chrome-like, or either web browser respectively.
+
+Keyboard Maestro and Keyboard Maestro Engine must have Automation security permission to control the browser, and for most of the tokens, the browser must have [[assistance:Allow_JavaScript_From_Apple_Events#Allow_JavaScript_From_Apple_Events|Allow JavaScript From Apple Events enabled]].
+
+The information is gotten from the specified web browser’s front window, or front window’s tab. You can retrieve includes:
+
+^Token Suffix^Meaning^
+| Title | The document title |
+| WindowName (v11.0+) | The window title |
+| URL | The document URL |
+| ReadyState | The document readystate |
+| Field | The value of a specified field |
+| JavaScript | The result of the specified JavaScript |
+| Name (v11.0+) | The name of the specified browser |
+| BundleID (v11.0+) | The Bundle ID of the specified browser |
+| Path (v11.0+) | The path of the specified browser |
+| Version (v11.0+) | The version of the specified browser |
+| LongVersion (v11.0+) | The long version of the specified browser |
+
+===== Field =====
+
+The //%FrontBrowserField%document.forms[0][0]%// token (and Safari and Chrome variants) returns the value of a field in the active tab of the specified browser.
+
+The parameter can be an [[:XPath]] or a JavaScript expression denoting  a specific form field.
+
+===== JavaScript =====
+
+The //%FrontBrowserJavaScript%document.forms[0].innerHTML%// token (and Safari and Chrome variants) returns the result of executing the specified JavaScript in the active tab of the specified browser.
+
+The execution time is limited (v11.0+) to half a second, so for longer or more complex JavaScript code, use the [[actions:Execute_a_JavaScript_in_Browser|Execute JavaScript in Front Browser]] action instead.
+
+The front browser will be the most recently front Safari-like or Chrome-like web browser.
+
+==== Examples ====
+
+==== 1. Get All Text on Web Page ====
+
+`%FrontBrowserJavaScript%document.body.innerText%`
+
+==== 2. Get Full Page HTML ====
+
+`%FrontBrowserJavaScript%document.getElementsByTagName("html")[0].outerHTML%`
+
+==== 3. Get Text Identified by HTML tag and class ====
+
+`%FrontBrowserJavaScript%document.querySelector('div.someclassname').innerText%`
+
+===== Full List =====
+
+The full list of web browser tokens is:
+
+* SafariTitle
+* SafariWindowName
+* SafariURL
+* SafariReadyState
+* SafariField
+* SafariJavaScript
+* SafariName
+* SafariBundleID
+* SafariPath
+* SafariVersion
+* SafariLongVersion
+* ChromeTitle
+* ChromeWindowName
+* ChromeURL
+* ChromeReadyState
+* ChromeField
+* ChromeJavaScript
+* ChromeName
+* ChromeBundleID
+* ChromePath
+* ChromeVersion
+* ChromeLongVersion
+* FrontBrowserTitle
+* FrontBrowserWindowName
+* FrontBrowserURL
+* FrontBrowserReadyState
+* FrontBrowserField
+* FrontBrowserJavaScript
+* FrontBrowserName
+* FrontBrowserBundleID
+* FrontBrowserPath
+* FrontBrowserVersion
+* FrontBrowserLongVersion
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[token:Application|%Application%]] token
+* [[token:WindowName|%WindowName%]] token
+* [[:Tokens|See all Tokens]]
+
+=== Actions ===
+
+* [[action:Set_Variable_to_Text|Set Variable to Text]] action
+* [[action:Execute_a_JavaScript_in_Front_Browser|Execute a JavaScript in Front Browser]] action
+* [[:Actions |See all Actions ]]

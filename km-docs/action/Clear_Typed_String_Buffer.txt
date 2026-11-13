@@ -1,0 +1,1 @@
+The //Clear Typed String Buffer action// simply resets the Typed String buffer - the same thing that happens if you change applications, type Shift-Space, or simply do not press a key for a period of time.  This action lets you clear the buffer explicitly if it is necessary for any reason.

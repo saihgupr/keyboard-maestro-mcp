@@ -1,0 +1,24 @@
+====== Return Token ======
+
+The //%Return%// token returns the carriage return (0x0D) character.
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[token:LineFeed|%LineFeed%]]
+* [[token:Space|%Space%]]
+* [[token:Tab|%Tab%]]
+* [[token:OptionReturn|%OptionReturn%]]
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+* [[:Text Fields|Text Fields]]
+* [[:Frequently Asked Questions|FAQ]]
+
+=== Forum ===
+
+- [[https://forum.keyboardmaestro.com/t/opening-links-in-a-different-browser/206/7|Opening links in a different browser]]
+- [[https://forum.keyboardmaestro.com/t/insert-by-typing-inserting-a-r-into-vim-substitution/3945|Insert by typing: Inserting a \r into vim substitution]]
+- [[https://forum.keyboardmaestro.com/t/how-to-insert-return-between-appended-clipboard-snippets/5862/2|How to Insert RETURN between appended clipboard snippets]]

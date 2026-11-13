@@ -1,0 +1,23 @@
+====== SAFARITABCOUNT Function ======
+
+The SAFARITABCOUNT() function returns the number of tabs in the front Safari window.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[actions:Click_Browser_Link|actions:Click Browser Link]]
+* [[actions:Browser_Form_Actions|actions:Browser Form Actions]]
+* [[actions:Browser_Window_Actions|actions:Browser Window Actions]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:SAFARIISCOMPLETE|SAFARIISCOMPLETE()]]
+* [[function:SAFARITABINDEX|SAFARITABINDEX()]]
+* [[:Functions|See all Functions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/macro-select-previously-used-safari-tab-not-previous-tab/3252|MACRO: Select Previously USED Safari Tab (not previous tab)]]
+- [[https://forum.keyboardmaestro.com/search?q=SAFARITABCOUNT|Keyboard Maestro Forum topics about SAFARITABCOUNT() function]]

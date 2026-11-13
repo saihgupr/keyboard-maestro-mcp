@@ -1,0 +1,11 @@
+The //%Trigger%// token returns the trigger description of the trigger that fired this macro.
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[TriggerBase|%TriggerBase%]] token
+* [[TriggerValue|%TriggerValue%]] token
+* [[TriggerClipboard|%TriggerClipboard%]] token
+* [[/Tokens|All Tokens]]
+

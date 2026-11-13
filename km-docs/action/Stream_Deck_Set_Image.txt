@@ -1,0 +1,28 @@
+====== Stream Deck Set Image ======
+
+The //Stream Deck Set Image// action (v9.0+) allows you to set a [[/Stream Deck]] button to a specified image.
+
+{{ stream-deck-set-image.png?nolink&503x144 | Stream Deck Set Image }}
+
+You specify the Button ID of the button to change.  If two buttons have the same ID, both will change.
+
+You can set the button image to:
+
+* The default image (a Keyboard Maestro icon)
+* This macro’s icon
+* A specific macro’s icon
+* An image in the System Clipboard, Trigger Clipboard, or a Named Clipboard.
+* A specific icon, which can be configured with the [[manual:Icon_Chooser|Icon Chooser]].
+* An image from a file (v11.0+).
+
+The Button ID field is a token [[/Text_Fields|Text Fields]].
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Stream Deck Set Title]]
+* [[action:Stream Deck Set Image]]
+* [[action:Stream Deck Show OK]]
+* [[action:Stream Deck Show Alert]]
+* [[:Actions|See all Actions]]

@@ -1,0 +1,7 @@
+====== Transition From Previous Versions ======
+
+Keyboard Maestro includes an automatic upgrade mechanism, so to upgrade Keyboard Maestro once you are running version 3.0 or later, simply click the Install Update button when prompted.  You will always need to click the Install Upgrade button, Keyboard Maestro will never upgrade itself without your consent.  The upgrade includes information about the changes and whether the upgrade might require a new purchase, so **please do read it before upgrading**.
+
+Keyboard Maestro will automatically upgrade your preferences when you upgrade to a new version, but often only from the previous version.  So to upgrade from multiple major versions, it is better to run the last version of each interim major version in turn.  So, for example, to upgrade from Keyboard Maestro 2.0 to the version of 7.x, you would run Keyboard Maestro 2.1.3, then 3.5, then 4.3.2, 5.3.2, 6.4.8, and finally the 7.3.1. You can get old versions from the [Stairways archive site](https://download.stairways.com/).
+
+Keyboard Maestro saves the macros from the previous version in a file the first time you run the new major version, so you can always safely revert to that state, though you will lose any changes you make in the later version after upgrading.

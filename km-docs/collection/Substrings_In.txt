@@ -1,0 +1,26 @@
+====== For Each Substrings In RegEx Match ======
+
+The //Substrings In collection// contains the matches in the specified source.
+
+You can look for matches in the System Clipboard, in a Named Clipboard, in a variable, or in a file.
+
+You can scan for exact string matches, case insensitive string matches, or regular expression matches, or (v10.0+) for strings separated by exact string matches, case insensitive string matches, or regular expression matches.
+
+The result, stored in the [[action:For_Each| For Each action ]] variable, can be either:
+
+* the matched string: the For Each variable is set to the value of the matched string.
+* the position of the match: the For Each variable is set to the position of the match (starting at 1).
+* the range of the match: the For Each variable is set to the range (position,length) of the match.
+
+For the range option, the variable contains the position and length with a comma between them, so you can use the normal variable array indexing to access the two numbers, eg if the For Each variable is theRange, then theRange[1] would be the position, and theRange[2] would be the length of the match.
+
+Here's a practical example which superscripts all the numbers in the clipboard.
+
+{{ :collection:for_each_apply_style_to_clipboard.png?nolink&510 | Apply Superscript to Numbers in Clipboard }}
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:For_Each|For Each]]
+* [[:Actions|See all Actions]]

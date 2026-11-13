@@ -1,0 +1,16 @@
+====== PromptWithListText Token ======
+
+
+The //%PromptWithListText%// token returns (v10.0+) the text entered in the last [[action:Prompt_With_List|Prompt With List]] action.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Prompt_With_List|Prompt With List]] action
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:PromptWithListModifiers|PromptWithListModifiers]] token
+* [[:Tokens |See all Tokens]]

@@ -1,0 +1,47 @@
+====== Tokens ======
+
+===== Definition =====
+
+**Tokens in Keyboard Maestro represent placeholders, that you enter during design time, for information that will be replaced in the text at run time.** For example, you could enter the [[token:SafariTitle|%SafariTitle% token]] in a [[action:Set_Variable_to_Text|Set Variable to Text Action]], and when you trigger the macro it will be replaced with the title of the current Safari tab.  So the value of the Token will be determined at execution time.  All tokens return a text value, even if the source data was some other data type.
+
+Tokens allow you to add textual information to [[/Text_Fields|token text fields]].  You can insert tokens into a field using the Insert Token popup near the field or by choosing [[manual:Menus#Edit_Insert_Token|Insert Token]] from the [[manual:Menus#Edit|Edit menu]].  You can also start typing a token and use text completion to complete the token.
+
+===== Text Processing =====
+
+You can use the following special formats to process text or to return non-printing characters:
+  * **Convert Case of Text**
+    * Use these special characters:  `\U  \L  \E  \u  \l` (for details, see [[manual:Tokens#Text_Case_Conversions|Text Case Conversions]]).
+  * **Return Non-Printing Characters**
+    * **Convert**: `\a \b \e \f \t \r \n`
+    * **To**: `bell, backspace, escape, form feed, tab, return, line feed`.
+  * **Convert Hex Code to Unicode Characters**
+    * Use Hex Codes in this format: `%NN%` or `%NNNN%`
+  * **Escape Special Characters**
+    * Use `%%` or `\%` to return a single `%` as plain text.
+    * Use `\\` to return a single `\` as plain text.
+    * Use `\$` to return a single `$` as plain text.
+  * **Access replacement strings**
+    * Replacement strings can also have addition meanings (such as `\1` or `${3}`)
+
+
+
+===== List of Tokens =====
+
+
+~~NOCACHE~~
+<nspages token -textPages="">
+
+===== How To Use =====
+
+Keyboard Maestro has a wide variety of tokens. Tokens allow you to add information to text fields in an [[Actions|Action]]. You can insert tokens into a field using the **//Insert Token//** popup near the field.  
+
+
+{{:km-7.1-insert-token-demo-an.gif?nolink|}}
+
+
+Most fields that contain text (ie, not just numbers) can include tokens.
+
+Action fields that accept tokens also process %NN% or %NNNN% as arbitrary hex unicode characters (eg %41% is an A), and (except for regular expression fields) process backslashed characters \a,\b,\e,\f,\t,\r,\n (bell,backspace,escape,form feed,tab,return,line feed).
+
+To include a percent (`%`) in your text, simply double the percent (`%%`). To include a backslash (`\`) in your text, double the backslash (`\\`).
+

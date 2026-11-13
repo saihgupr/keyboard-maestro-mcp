@@ -1,0 +1,30 @@
+====== Try/Catch Action ======
+
+The *Try/Catch* action (v10.0+) allows you to execute a sequence of actions and catch any failure. If any action in the *Try* sequence would abort the macro, the macro instead continues executing the *Catch* section, setting the Action Result, available in the [[token:ActionResult|%ActionResult%]] token or [[condition:Action_Result|Action Result]] condition. 
+
+Keep in mind the Action Result will be cleared at the end of any successful action, so if you want to know why the actions failed you will need to handle the Action Result in the first action of the *Catch* sequence, perhaps by saving the *%ActionResult%* in a variable.
+
+If the actions in the *Try* sequence execute to completion, the *Catch* sequence is not executed.
+
+If an action in the *Catch* sequence aborts, the macro aborts as usual.
+
+You can explicitly throw an error using the [[action:Throw]] action.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Throw]] action
+* [[:Actions|Actions]]
+
+=== Tokens ===
+
+* [[token:ActionResult]] token
+* [[:Tokens|Tokens ]]
+
+=== Conditions===
+
+* [[condition:Action_Result]] action
+* [[:Conditions|Conditions]]
+
+

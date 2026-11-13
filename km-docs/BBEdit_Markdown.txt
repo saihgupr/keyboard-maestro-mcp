@@ -1,0 +1,15 @@
+This library includes three macros for styling Bold or Italic text and for pasting links in Markdown style in BBEdit.
+
+Download: {{:macros:bbedit_markdown.kmlibrary|}}
+
+Default Trigger: Hot Key ⌘B
+
+Action: If no text is selected, ''\*\*\*\*'' is added and move the insertion point to the middle of the bold section.  If text is selected that is surrounded by ''\*\*'' on both sides (the ''\*\*'' must also be selected), the bold marks are removed.  Otherwise, ''\*\*'' bold marks are added on each side of the selection.
+
+Default Trigger: Hot Key ⌘I
+
+Action: If no text is selected, ''\*\*'' is added and move the insertion point to the middle of the italic section.  If text is selected that is surrounded by ''\*'' on both sides (the ''\*'' must also be selected), the italic marks are removed.  Otherwise, ''\*'' italic marks are added on each side of the selection.
+
+Default Trigger: Hot Key ⌘K
+
+Action: Start with the link in the clipboard.  If no text is selected, ''\[\]\(CLIPBOARD LINK\)'' is added, and the insertion point is placed between the ''\[\]'' (using BBEdit's Balance menu).  If text is selected, the text is placed between the ''\[\]'' and the insertion point is left at the end of the entire link.

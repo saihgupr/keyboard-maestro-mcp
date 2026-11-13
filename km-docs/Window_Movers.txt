@@ -1,0 +1,153 @@
+These macros can be used to control the size and position of the front window, moving and resetting its size to take up half, one third, two thirds, a quarter or all of its current monitor. Window Left and Right can be used to move the window from one monitor to another, avoiding the need to reach for the mouse.
+
+
+==== Setup Frames ====
+
+This macro forms the basis of the library. It is called by the other macros and runs a ruby script to setup a variable holding the potential frame sizes and coordinates. The other macros then pick the frame they want and pass it to Keyboard Maestro, which then sets the window.
+
+Default Trigger: None
+
+Actions:
+
+* Set Variable ‘FB\_Monitor0Frame’ to Text ‘%Screen%1%’
+* Set Variable ‘FB\_Monitor1Frame’ to Text ‘%Screen%2%’
+* Execute shell script
+
+This collection is used to manipulate the front window of the front application. The macros work with all applications I have tested, with the exception of Adobe Photoshop and InDesign.
+The macros make it easy to move and re-size windows with the keyboard to aid activities such as researching, programming or watching TV whilst researching or programming…
+
+There are some decisions made within a shell / AppleScript for each macro to allow for more complicated behaviour, such as multiple monitor support (2 maximum) and movement from one monitor to the next.
+
+Download: {{:macros:windowmovers.kmlibrary|}}
+
+The included macros are detailed below.
+
+==== Window Maximise ====
+
+Make the window take up as much of its current monitor as possible.
+
+Default Trigger: Hot Key ⌃⌥A
+
+Actions:
+
+* Set Variable ‘FB\_FrontWindowFrame’ to Text ‘%FrontWindowFrame%’
+* Execute AppleScript
+* Use ‘FB\_FrontWindowFrame’ to Set the Front Window Frame
+
+==== Window Right ====
+
+Make the window take up the right-hand half of its current monitor, or, if the window is already in this position, move to the closest half of the next monitor. This functionality also causes the window to "wrap around" once it has reached a monitor edge without an adjacent monitor.
+
+Default Trigger: Hot Key ⌃⌥→
+
+Actions:
+
+* Set Variable ‘FB_Monitor0Frame’ to Text ‘%Screen%1%’
+* Set Variable ‘FB_Monitor1Frame’ to Text ‘%Screen%2%’
+* Set Variable ‘FB_FrontWindowFrame’ to Text ‘%FrontWindowFrame%’
+* Execute shell script
+* Resize front window to 600 pixels horizontally, 600 pixels vertically
+* Use ‘FB_FrontWindowFrame’ to Set the Front Window Frame
+
+==== Window Left ====
+
+Same as Window Right, above, but moves leftwards.
+
+Default Trigger: Hot Key ⌃⌥←
+
+Actions:
+
+* Set Variable ‘FB_Monitor0Frame’ to Text ‘%Screen%1%’
+* Set Variable ‘FB_Monitor1Frame’ to Text ‘%Screen%2%’
+* Set Variable ‘FB_FrontWindowFrame’ to Text ‘%FrontWindowFrame%’
+* Execute shell script
+* Use ‘FB_FrontWindowFrame’ to Set the Front Window Frame
+
+==== Split Window Up ====
+
+Similar to Window Right/Left, but resizes the window to take up the area covered by its current top half.
+
+Default Trigger: Hot Key ⌃⌥↑
+
+Actions:
+
+* Set Variable ‘FFB_rontWindowFrame’ to Text ‘%FrontWindowFrame%’
+* Execute AppleScript
+* Use ‘FB_FrontWindowFrame’ to Set the Front Window Frame
+
+==== Split Window Down ====
+
+The same as Split Window Up, but resizes the window to take up the area covered by its current bottom half.
+
+Default Trigger: Hot Key ⌃⌥↓
+
+Actions:
+
+* Set Variable ‘FB\_FrontWindowFrame’ to Text ‘%FrontWindowFrame%’
+* Execute AppleScript
+* Use ‘FB\_FrontWindowFrame’ to Set the Front Window Frame
+
+==== Left 33% ====
+
+This macro causes the front window to take up the left-hand third of its current screen.
+
+Default Trigger: Hot Key ⌃⌥⌘←
+
+Actions:
+
+* Set Variable ‘FB\_FrontWindowFrame’ to Text ‘%FrontWindowFrame%’
+* Execute Macro ‘Setup Frames’
+* Execute shell script
+* Use ‘FB\_FrontWindowFrame’ to Set the Front Window Frame
+
+==== Right 33% ====
+
+This macro causes the front window to take up the right-hand third of its current screen.
+
+Default Trigger: Hot Key ⌃⌥⌘→
+
+Actions:
+
+* Set Variable ‘FB\_FrontWindowFrame’ to Text ‘%FrontWindowFrame%’
+* Execute Macro ‘Setup Frames’
+* Execute shell script
+* Use ‘FB\_FrontWindowFrame’ to Set the Front Window Frame
+
+==== Left 66% ====
+
+This macro causes the front window to take up the left-hand two thirds of its current screen.
+
+Default Trigger: Hot Key ⌃⌥⇧←
+
+Actions:
+
+* Set Variable ‘FB\_FrontWindowFrame’ to Text ‘%FrontWindowFrame%’
+* Execute Macro ‘Setup Frames’
+* Execute shell script
+* Use ‘FB_FrontWindowFrame’ to Set the Front Window Frame
+
+==== Right 66% ====
+
+This macro causes the front window to take up the right-hand two thirds of its current screen.
+
+Default Trigger: Hot Key ⌃⌥⇧→
+
+Actions:
+
+* Set Variable ‘FB\_FrontWindowFrame’ to Text ‘%FrontWindowFrame%’
+* Execute Macro ‘Setup Frames’
+* Execute shell script
+* Use ‘FB\_FrontWindowFrame’ to Set the Front Window Frame
+
+==== Front Two Windows 2:1 ====
+
+This is an example of using the macros together to setup a standard workspace. It sets the front application's window to 66% Right, and the window of the next application in the stack to 33% Left.
+
+Default Trigger: Status Menu
+
+Actions:
+
+* Execute Macro ‘Right 66%’
+* Type the ⌘Tab Keystroke
+* Execute Macro ‘Left 33%’
+* Type the ⌘Tab Keystroke

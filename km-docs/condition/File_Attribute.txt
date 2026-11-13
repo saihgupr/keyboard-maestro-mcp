@@ -1,0 +1,42 @@
+====== File Attribute condition ======
+
+The //File Attribute condition// (v11.0+) checks a file attribute to see if it has a specified value.
+
+===== File Attributes Available =====
+
+{{page>include:GettableFileAttributes#}}
+
+===== Conditions =====
+
+* is empty.
+* is not empty.
+* is (case insensitively) a specified string.
+* is not (case insensitively) a specified string.
+* contains (case insensitively) a specified string.
+* does not contain (case insensitively) a specified string.
+* starts with (case insensitively) a specified string.
+* ends with (case insensitively) a specified string.
+* is alphabetically before a specified string.
+* is alphabetically after a specified string.
+* matches a specified [[:Regular Expressions|regular expression]].
+* does not match a specified [[:Regular Expressions|regular expression]].
+* is numerically less than a specified calculation.
+* is numerically less than or equal to a specified calculation.
+* is numerically equal to a specified calculation.
+* is numerically greater than or equal to a specified calculation.
+* is numerically greater than a specified calculation.
+* is numerically not equal to a specified calculation.
+
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Get_File_Attribute|Get File Attribute]]
+* [[action:Set_File_Attribute|Set File Attribute]]
+* [[:Actions|See all Actions]]
+
+=== Conditions ===
+
+* [[condition:Path|Path]]
+* [[:Conditions|See all Conditions]]

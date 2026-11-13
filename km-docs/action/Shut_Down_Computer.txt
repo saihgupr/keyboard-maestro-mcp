@@ -1,0 +1,6 @@
+Actions are available to:
+  * Put Computer to Sleep
+  * Restart Computer
+  * Shut Down Computer
+
+Each takes effect immediately on your Mac.

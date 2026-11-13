@@ -1,0 +1,25 @@
+==== Lines In collection ====
+
+//Lines In collection// is contained in the [[action:For_Each|For Each]] action.
+
+//Lines In collection// allows each line from a specified source to be processed.
+
+Lines may be read from the System Clipboard, from a Named Clipboard, from a variable, or from a file.
+
+It is also possible to include or exclude blank lines.
+
+A basic example:
+
+{{ :collection:process_lines_in_a_collection.png?nolink |}}
+
+For a more complex example (and downloadable macro) see [Process Lines in Text File](https://forum.keyboardmaestro.com/t/macro-file-process-lines-in-text-file/2936) on the Keyboard Maestro forum.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:For_Each|For Each]]
+
+==== Forum ====
+
+* [[https://forum.keyboardmaestro.com/t/file-process-lines-in-text-file/2936|[FILE] Process Lines in Text File]]

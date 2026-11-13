@@ -1,0 +1,51 @@
+====== Set Dictionary to JSON ======
+
+The //Set Dictionary to JSON// (v9.0+) action lets you set a Keyboard Maestro dictionary from a [[manual:JSON]] dictionary.
+
+{{ set-dictionary-to-json.png?nolink&591x157 | Set Dictionary to JSON }}
+
+The action will take a specified dictionary name and a JSON container (dictionary or array) and will set the dictionary based on the field names or array indices to the corresponding values.
+
+For example, with JSON dictionary `{ "first" : "John", "last" : "Smith" }`, the action will set the dictionary key `first` to `John` and key `last` to Smith.
+
+===== Action Options (Gear ⚙ Menu) =====
+
+You can control what text processing happens in the JSON field by selecting one of these options from the Gear Menu:
+
+* Process Text Normally (process text tokens and backslash characters)
+* Process Text Tokens Only (process text tokens but not backslash characters)
+* Process Nothing (process neither text tokens nor backslash characters)
+
+You can select Pretty JSON result mode, which affects the dictionary values for entries that are themselves JSON containers (See the [[manual:JSON]] user manual section).
+
+You can select Strict JSON result mode, which affects the dictionary values for entries that are plain strings (See the [[manual:JSON]] user manual section).
+
+And you can optionally have all the non-matching keys removed.
+
+===== See Also =====
+
+See the [[manual:JSON]] user manual section for more details on JSON.
+
+=== Actions ===
+
+* [[action:Set_JSON_Value | Set JSON Value]]
+* [[action:Set_Variables_to_JSON | Set Variables to JSON]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:JSONVALUE | JSONVALUE(jsonpath)]]
+* [[function:COUNT | COUNT()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:JSONFromDictionary | JSONFromDictionary]]
+* [[token:JSONFromVariables | JSONFromVariables]]
+* [[token:JSONValue | JSONValue]]
+* [[:Tokens|See all Tokens]]
+
+=== Collections ===
+
+* [[collection:JSON_Keys | JSON Keys]]
+* [[:Collections |See all Tokens]]

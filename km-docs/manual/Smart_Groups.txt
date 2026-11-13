@@ -1,0 +1,9 @@
+====== Smart Groups ======
+
+You can create Smart~~Groups which let you see macros matching certain criteria by clicking the BUTTON{{{⊕}}} button at the bottom of the Groups column, and you can edit a smart group selecting it in the Groups list and clicking the BUTTON{{{Edit}}} button, or by double clicking the Smart Group.
+
+{{ smart-group.png?nolink&937x396 | Smart Group Editor }}
+
+A Smart Group consists of a set of [[Search Strings]], and any macro that matches any of the search strings will be listed in the Smart Group.
+
+You can control or right click on a smart group to Rename or Duplicate it.

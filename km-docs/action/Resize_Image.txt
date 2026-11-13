@@ -1,0 +1,19 @@
+====== Modify an Image Action ======
+(Options in _Resize an Image_ Action)
+
+There are a variety of actions to modify an image either in the [[:Clipboards#System_Clipboard| System Clipboard]], or in a [[:Clipboards|Named Clipboard]].
+
+{{:action:resize-image-action.png?nolink|}}
+
+** Choose One of the Following Actions from the "Resize" Popup Menu:**
+
+^ Action Option ^ Description ^
+| Resize an Image | Scale it to specified dimensions (width and height), which may distort image. |
+| Resize an Image to Fit | Scale it to fit within specified dimensions (width and height), maintaining original relative proportion. |
+| Resize the Canvas | **Change Size of Canvas with the image left in the center of the new canvas.**\\    • Image will be cropped if Canvas size is smaller than Image size.\\   • Transparent Margin will be added if Canvas size is larger than Image size. |
+| Add/Remove Margins to an Image | Change the margin on each edge of an image. |
+| Crop an Image | Crop to Dimensions set by Left, Top position and Width and Height. |
+| Set Image DPI | Set the effective DPI of the image (the pixels are unchanged). |
+
+
+Note that the actions refer to image pixels, irrespective of the DPI of the image.

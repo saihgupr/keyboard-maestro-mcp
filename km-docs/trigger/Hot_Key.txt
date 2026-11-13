@@ -1,0 +1,96 @@
+====== Hot Key Trigger ======
+
+The *Hot Key trigger* is perhaps the most common and most basic of all triggers.  When you press the configured keyboard key, the system swallows the keystroke, and Keyboard Maestro executes the macro.
+
+===== The Key =====
+
+The key can be a letter, number, symbol or function key, often in combination with one or more modifiers (Shift, Control, Option and/or Command).  Almost any key can be a trigger, and keep in mind the number pad counts as different keys to the numeric keys on the main keyboard.  
+
+You can type the desired key or key combination in the hot key box, or select a predefined key (holding down any desired modifiers) from the popup menu to its right.
+
+The keystroke may include zero or more of the normal modifiers (Command, Option, Shift, Control), together with another key (such as a letter, number, function key or other keys).  
+
+===== When =====
+
+You can configure the hot key trigger to execute the macro when the key is pressed, when it is long pressed (v10.0+), when it is released, or repeatedly while the key is held down.  This allows you to do things like have a macro execute when the key is pressed, and then a second macro execute when the key is released, for example to toggle a setting on and then off again.
+
+You can configure the hot key trigger to execute when the key is tapped (press and released quickly) each time, the first tap, double tapped, triple tapped, or quadruple tapped (v7.0+).
+
+You can configure the hot key trigger to execute when the key is tapped (press and released quickly) only on the first tap, or the second tap, or the third tap, or the fourth tap (v11.0+).  Keep in mind that Keyboard Maestro cannot see the future, so to determine that this is explicitly the second tap, the macro will not fire when the key is released, but must wait a short period of time to see that it is not pressed a third time. As such there will be a short delay before the macro is executed when using the “only once” style options.
+
+(!) Keep in mind that regardless of whether you trigger the macro on hot key pressed, down, released or tapped, the key is swallowed by the system and cannot be used for its normal purposes.  You can use the [[trigger:USB_Device_Key]] trigger if you you want to trigger the macro without the system swallowing the key.
+
+(!) Note that whether or not a key typed by Keyboard Maestro itself will trigger a hot key (and thus be swallowed and execute a macro) or not (and thus go through to the application) is not defined - either behaviour may happen and which behaviour happens will vary depending on many unpredictable factors though Keyboard Maestro will try to ensure no macro is triggered in response to its own typing. If you wish to trigger a macro based on a keystroke, you can use the [[action:Trigger_Macros_by_Hot_Key|Trigger Macros by Hot Key]] action.
+
+^ Selection      ^ Behaviour       ^
+| is pressed    | when the key is pressed   |
+| is long pressed    | when the key is released if it was down for a long time   |
+| is down     | when the key is pressed and periodically while it remains down   |
+| is released    | when the key is released   |
+| is tapped    | when the key is released if it was down for a short time   |
+| is tapped once    | when the key is tapped and has not been tapped recently   |
+| is tapped only once    | a short while after the key has been tapped if it has not been pressed again  |
+| is tapped twice    | when the key is tapped twice and has not been tapped three or more times |
+| is tapped only twice    | a short while after the key has been tapped twice if it has not been pressed again  |
+| is tapped 3 times    | as twice, but 3 times   |
+| is tapped only 3 times    | as only twice, but 3 times   |
+| is tapped 4 times    | as twice, but 4 times    |
+| is tapped only 4 times        | as only twice, but 4 times    |
+
+So for example if you tap the key three times in quick succession, these triggers would happen:
+
+* is pressed
+* is released, is tapped, and is tapped once.
+* is pressed
+* is released, is tapped, and is tapped twice.
+* is pressed
+* is released, is tapped, and is tapped 3 times.
+
+Modifiers alone (eg just Control) cannot be used as a hot key, although you can use the [[trigger:USB_Device_Key]] trigger to detect modifier key presses as well as other button presses like the mouse buttons or keys on non-standard keyboards like the XK-24.
+
+===== Knowing Which Key Is Pressed =====
+
+You can use the [[token:TriggerValue|%TriggerValue% Text Token]] to determine the hot key that was typed, so you can have a macro with multiple hot keys that behaves differently deppending on which key was pressed.
+
+===== Complexity =====
+
+Hot Keys suffer from the drawback that you need to remember a cryptic keystroke.  This can be mitigated by selecting consistent keystrokes (such as Control-Letter to mean insert text and Control-Option-Letter to mean launch an application).  You can also use a tool like [KeyCue](http://www.stairways.com/action/linkthru?keycue) to display command keys and macro hot keys.
+
+To further help with this, if multiple macros are executed with the same hot key, the conflicting macros are displayed in a [[/Conflict_Palette|Conflict Palette]] allowing you to select the desired macro.  You can select a macro from the palette using either number keys, or by typing the first distinct character to filter the macros down until only one is left. You could use this feature to allow a single hot key to do one of multiple possible actions.
+
+===== The Fn Key =====
+
+The Fn key is not a modifier and cannot be used as such.  It retains its normal purpose in toggling the function keys role, and so it might be part of a hot key, but only if the function keys normally have their hardware (eg brightness up) role and then Fn key makes them into a function key suitable for use in a hot key trigger. Hardware keys (like brightness up) cannot be used as a hot key, but functions keys can).
+
+===== Terminology =====
+
+* Hot Key - system wide hot key API (swallows keys and overrides other behaviours, fires in every application that registers it).
+* Command Key (or Menu Command Keys or sometimes Menu Shortcut) - menu keys for selecting a menu, usually but not always with the Command key modifier, generally application specific (except for the shared menus like the Services, but they are still application specific, but the menu is duplicated in each application like the Edit menu typically is).
+* Keyboard Shortcut - could be either (hence the use in the System Preferences, Keyboard preferences).
+
+Hot Keys will override application menu Command Keys or any other keys typically used in applications,  but if any other application registers the same hot key, then both your macro and the other application’s action will happen.
+
+===== See Also =====
+
+=== Triggers ===
+
+* [USB Device Key](https://wiki.keyboardmaestro.com/trigger/USB_Device_Key) trigger
+* [Typed String](https://wiki.keyboardmaestro.com/trigger/Typed_String) trigger
+* [[:Triggers|See all Triggers]]
+
+=== Actions ===
+
+* [Type a Keystroke](https://wiki.keyboardmaestro.com/action/Type_a_Keystroke) action
+* [Insert Text by Typing](https://wiki.keyboardmaestro.com/action/Insert_Text_by_Typing) action
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Forum ===
+
+* [A Type a Key action can trigger another macro](https://forum.keyboardmaestro.com/t/tip-a-type-a-key-action-can-trigger-another-macro/3633/2)

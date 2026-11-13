@@ -1,0 +1,61 @@
+====== TIME Function ======
+
+The TIME() function returns the time in [[:unixtime]], being seconds since the start of 1970 GMT.
+
+    TIME() === NOW() === the current unix time (GMT).
+    TIME( year, month, day ) === the unix time of the start of the year/month/day (GMT).
+    TIME( year, month, day, hour, minute, second ) === the unix time of the specified moment (GMT).
+
+Keep in mind that TIME is in GMT and the output of [[token:ICUDateTimeFor|%ICUDateTimeFor%]] is in local time, so when doing this sort of thing it is best to use midday instead of midnight:
+
+%ICUDateTimeFor% TIME(2015, 8, 23,12,0,0) %EEE, MMM d, yyyy%
+
+which will generally work anywhere since at midday GMT, the entire world (almost) is on the same date. Otherwise, folks with negative GMT offsets (which includes all of the Americas for example) will get the wrong result.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Functions === 
+
+* [[YEAR]]
+* [[MONTH]]
+* [[DAY]]
+* [[DOW]]
+* [[HOUR]]
+* [[MINUTE]]
+* [[SECOND]]
+* [[TIME]]
+* [[GMTOFFSET]]
+* [[NOW]]
+* [[TIME]]
+* [[TIME2MJD]]
+* [[JD]]
+* [[JD2MJD]]
+* [[JD2TIME]]
+* [[MJD]]
+* [[MJD2JD]]
+* [[MJD2TIME]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:ICUDateTime|%ICUDateTime%]] (local)
+* [[token:ICUDateTimeFor|%ICUDateTimeFor%]] (local)
+* [[token:ICUDateTimeMinus|%ICUDateTimeMinus%]] (local)
+* [[token:ICUDateTimePlus|%ICUDateTimePlus%]] (local)
+* [[token:LongDate|%LongDate%]] (local)
+* [[token:LongTime|%LongTime%]] (local)
+* [[token:NumberDate|%NumberDate%]] (local)
+* [[token:ShortDate|%ShortDate%]] (local)
+* [[token:ShortTime|%ShortTime%]] (local)
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+- [[:Dates_and_Times|Dates and Times]]
+- [[:JulianDate|JulianDate]]
+- [[:unixtime]] in GMT
+

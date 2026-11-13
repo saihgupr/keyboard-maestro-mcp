@@ -1,0 +1,7 @@
+====== Macros for use with OmniFocus ======
+
+[OmniFocus](https://www.omnigroup.com/omnifocus/) provides task management.
+
+The Learn OmniFocus folks have a[page](https://learnomnifocus.com/apps/keyboard-maestro/) on Keyboard Maestro which may have useful macros.
+
+There are [some macros on the forum](https://forum.keyboardmaestro.com/search?q=tag%3Aomnifocus%20category%3Amacro).

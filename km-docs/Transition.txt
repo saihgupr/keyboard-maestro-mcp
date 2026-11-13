@@ -1,0 +1,7 @@
+====== Transition ======
+
+Converting from other macro programs can be quite a challenge, so this section aims to help ease the transition.
+
+* [[Transition From Previous Versions]] of Keyboard Maestro
+* [[Transition To Previous Versions]] of Keyboard Maestro
+* [[Transition From QuicKeys]]

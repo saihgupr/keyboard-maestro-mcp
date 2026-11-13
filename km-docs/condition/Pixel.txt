@@ -1,0 +1,24 @@
+The //Pixel condition// checks the color of a specified pixel on the screen.  The location is defined by the X and Y coordinate relative to the top left corner of the main screen.
+
+As with all [numeric fields](:Text_Fields), the numbers can be calculations including [functions](:Functions), and the fields expand to allow for longer expressions as soon as you type something other than a number.
+
+You can test if a pixel:
+
+* is or is not a specified color (within 10% of red, green and blue).
+* is brighter or darker than a specified color.
+* is more or less red than a specified color.
+* is more or less green than a specified color.
+* is more or less blue than a specified color.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]

@@ -1,0 +1,73 @@
+====== Execute Swift Script ======
+
+The //Execute a Swift Script action// executes a specified Swift script, either from a file or text.
+
+===== Using the Results =====
+
+The results of the script can be:
+
+  *Ignored.
+  *Displayed in a floating window.
+  *Displayed briefly in a Notification.
+  *Typed in to the current selection.
+  *Pasted in to the current selection.
+  *Saved to a variable.
+  *Saved to the system or a Named Clipboard.
+  *Asynchronously ignored — the action runs while the macro continues on.
+
+===== How to Get Keyboard Maestro Variables =====
+
+Keyboard Maestro sets the environment variables for the script to include all your variables, using a prefix of `KMVAR_` and your variable name with spaces changed in to underscores (‗). For example, your Keyboard Maestro “File Name” variable will be available as the environment variable `KMVAR_File_Name`.
+
+By default, all variables are included, but you can select No Variables, or specific variables as desired using the popup menu next to the script (v11.0+).
+
+Swift scripts can get (but not set) Keyboard Maestro Variables by using environment variables, for example:
+
+**Swift 2 (Xcode 7 and 8)**
+
+<code swift>
+import Foundation
+print(NSProcessInfo.processInfo().environment["KMVAR_Variable_Name"]!)
+</code>
+
+**Swift 3 (Xcode 8)**
+
+<code swift>
+import Foundation
+print(ProcessInfo.processInfo.environment["KMVAR_Variable_Name"]!)
+</code>
+
+Swift scripts can get or set Keyboard Maestro Variables by using AppleScript, for example:
+
+<code swift>
+import Foundation
+
+let myString = "the Value"
+NSAppleScript(source: "tell application \"Keyboard Maestro Engine\" to setvariable \"fromSwift\" to \"\(myString)\"")?.executeAndReturnError(nil)
+</code>
+
+Note that if the value might contain backslashes or quotes, you will need to deal with quoting them, replacing every backslash with backslash-backslash, and every double quote with backslash-double quote.
+
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Execute_a_Shell_Script|Execute a Shell Script]]
+* [[action:Execute an AppleScript|Execute an AppleScript]]
+* [[action:Execute an Automator Workflow|Execute an Automator Workflow]]
+* [[action:Execute a JavaScript For Automation|Execute a JavaScript For Automation]]
+* [[action:Filter|Filter Variable with Expand Tilde In Path]]
+* [[:Actions|See all Actions]]
+
+==== Related Wiki Articles ====
+
+* [[:Scripting|Scripting on OS X Using Keyboard Maestro]]
+
+==== Forum Topics ====
+
+* [MACRO Example: Swift Script returning list of variable names from KME](https://forum.keyboardmaestro.com/t/macro-example-swift-script-returning-list-of-variable-names-from-kme/4052)
+* [Swift example script: Get macros and uuids from clipboard](https://forum.keyboardmaestro.com/t/swift-example-script-get-macros-and-uuids-from-clipboard/4037)
+* [Keyboard Maestro supports Swift](https://forum.keyboardmaestro.com/t/keyboard-maestro-supports-swift/4015)
+
+

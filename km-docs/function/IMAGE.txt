@@ -1,0 +1,15 @@
+====== IMAGE Functions ======
+
+The IMAGE(Width|Height) and SOURCEIMAGE(Width|Height) functions return the width or height of the images that the action is operating on in actions like the [Resize Image](action:Resize_Image) or the [Composite onto Image](action: Composite_onto_Image) actions.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]
+
+=== Actions ===
+
+* [Resize Image](action:Resize_Image)
+* [Composite onto Image](action: Composite_onto_Image)
+* [[:Actions|See all Actions]]

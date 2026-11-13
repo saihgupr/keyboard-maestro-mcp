@@ -1,0 +1,9 @@
+====== SINH Function ======
+
+The SINH(x) function returns the hyperbolic sine of its argument which is a hyperbolic angle.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

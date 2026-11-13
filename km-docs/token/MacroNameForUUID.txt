@@ -1,0 +1,53 @@
+====== MacroNameForUUID Token ======
+
+This [[:Tokens|token]] returns the name of the macro or macro group with the specified **UUID**.  If the macro does not exist, then this will return "Not Found" so you can use it as a simple test for the existence of a particular macro.
+
+===== How To Use =====
+
+==== General Form ====
+
+**The general form of this token is**:\\
+`%MacroNameForUUID%<UUID>%`\\
+where `<UUID>` is the explicit Macro Universal ID, like "4ADD4CEB-D07C-4095-B06B-D01C48E3D82C"
+
+You can put this token in any [[:Actions|Action]] that has a text field, like a [[action:Display_Text|Display Text Action]] or a [[action:Set_Variable_to_Text|Set Variable To Text Action]], like this:
+
+{{:token:km-7.2-macronameforuuid-action.png?nolink|}}
+
+==== Using with a Variable ====
+
+**However, if you want to use the UUID that is in a Keyboard Maestro Variable**, then it will require two Actions, because this token does not directly support the use of Variables:
+  - Set a Variable to the MacroNameForUUID token with a Variable token for the UUID, as text, so that the MacroNameForUUID token is not evaluated, but the Variable token is evaluated
+      * For example:\\  `%%MacroNameForUUID%%%Variable%myUUID%%%`
+      * When the Action is executed, the Variable will be:\\  `%MacroNameForUUID%4ADD4CEB-D07C-4095-B06B-D01C48E3D82C%`
+  - Filter that Variable to process the token, now that the Variable has been evaluated.
+
+{{:token:km-7.2-macronameforuuid-with-var.png?nolink|}}
+
+The result of these Actions is:
+
+{{:token:km-7.2-macronameforuuid-results.png?nolink|}}
+
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Filter|Filter]] (Process Text Tokens)
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:ExecutingMacro|%ExecutingMacro%]]
+* [[token:ExecutingMacroGroup|%ExecutingMacroGroup%]]
+* [[token:ExecutingMacroUUID|%ExecutingMacroUUID%]]
+* [[token:ExecutingThisMacro|%ExecutingThisMacro%]]
+* [[token:ExecutingThisMacroGroup|%ExecutingThisMacroGroup%]]
+* [[token:ExecutingThisMacroUUID|%ExecutingThisMacroUUID%]]
+* [[:Tokens|See all Tokens]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/macro-get-selected-macro-uuid-and-name-without-the-clipboard/4330|MACRO: Get Selected Macro UUID (and name) (without the clipboard)]]
+
+- [[https://forum.keyboardmaestro.com/search?q=MacroNameForUUID|Keyboard Maestro Forum topics about MacroNameForUUID]]

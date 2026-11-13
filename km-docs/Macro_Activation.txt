@@ -1,0 +1,49 @@
+====== Macro Activation ======
+
+===== Overview =====
+
+In order to run (execute) a macro:
+  * One of its [[Triggers|Triggers]] must be invoked
+  * It can only be triggered if it is active
+  * It can only be active if it meets all of the activation criteria, including being enabled
+
+Activation/Deactivation is a dynamic process, automatically set by the Keyboard Maestro Engine as your Mac's environment changes in real time.  The criteria for activation is set by the user in the [[Macro_Groups|Macro Group]] setup.
+
+===== Definitions =====
+
+
+ * **Active/Inactive**
+   * Active means that the macro can be triggered for execution when any of the trigger conditions are met
+   * Macros are Active **only** if all of the following conditions are met:
+     * Both the Macro and Macro Group are enabled
+     * The activation criteria (set by the user) for the [[Macro_Groups|Macro Group]] are met
+
+ * **Enabled/Disabled**
+   * By default, all macros and groups are _Enabled_.
+   * _Enabled_ means a macro is available to be triggered, if, and only if, other criteria are also met.
+   * If a macro is disabled, or is in a disabled Macro Group, it cannot be triggered under any circumstances
+   * You can toggle enable/disable by:
+     * Click on the ✔ or ✖ in the upper right corner of the macro or group
+     * View menu > Toggle Enable
+     * Run another macro with _[[action:Set_Macro_or_Group_Enable|Set Macro or Group Enable]]_ Action
+
+===== Macro Group Activation =====
+
+{{:km-7-macro-activation.png?nolink|}}
+
+
+----
+
+===== Examples =====
+
+If you are having trouble understanding Macro and Macro Group Activation, or trouble controlling when [[Conflict_Palette|Conflict Palettes]] appear, then take a look at these Keyboard Maestro Forum posts.
+
+  - [Example Using Multiple Macro Groups To Use Same HotKey for Different Macros in Different Apps](https://forum.keyboardmaestro.com/t/how-can-i-use-the-same-hotkey-in-different-apps-but-with-no-conflict-palette-appearing/16427/6)
+  - [Example for Using Multiple Macro Groups that Exclude Applications](https://forum.keyboardmaestro.com/t/how-can-i-use-the-same-hotkey-in-different-apps-but-with-no-conflict-palette-appearing/16427/7)
+
+
+===== See Also =====
+
+==== Related Forum Topics ====
+
+  * [[https://forum.keyboardmaestro.com/t/how-to-package-a-palette-group-and-sub-macros-it-uses/3853/20|Discussion about Macro Activation]]

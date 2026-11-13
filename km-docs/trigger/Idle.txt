@@ -1,0 +1,17 @@
+The *Idle trigger* (v8+) lets you execute a macro while you are logged in after the Mac has been idle (no user action like typing or trackpad or mouse) for a specified amount of time.
+
+You can configure the period in minutes, and the trigger can then optionally fire every minute thereafter if the Mac remains idle.
+
+(!) Note that most User Interface (UI) actions (such as typing or selecting a menu) will not function if the screen is screen saving, screen locked, or asleep, and no macros will operate if the Mac itself is asleep.
+
+The [[token:TriggerValue|%TriggerValue%]] token will hold the number of minutes the Mac has been idle.
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[Cron]] trigger
+* [[Time of Day]] trigger
+* [[Wake|Wake]] trigger
+* [[Sleep|Sleep]] trigger
+* [[/Triggers|All Triggers]]

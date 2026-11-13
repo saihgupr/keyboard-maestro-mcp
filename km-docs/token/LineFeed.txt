@@ -1,0 +1,18 @@
+====== LineFeed Token ======
+
+The //%LineFeed%// token returns the linefeed (0x0A) character.
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[token:Return|%Return%]]
+* [[token:Space|%Space%]]
+* [[token:Tab|%Tab%]]
+* [[token:OptionReturn|%OptionReturn%]]
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+* [[:Text Fields|Text Fields]]
+* [[:Frequently Asked Questions|FAQ]]

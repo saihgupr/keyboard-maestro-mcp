@@ -1,0 +1,26 @@
+====== Wait For Browser to Finish Loading ======
+
+The *Wait For Browser to Finish Loading* action waits for a web page to finish loading before executing further actions.
+
+Like other [[Browser_Actions|browser actions]], this action works with Safari or Google Chrome (or whichever of the two was last at the front).
+
+Since web pages can be dynamic, "finished loading" is an uncertain state.  Complex web sites often report that they have finished loading and then start loading again, which is why the action to wait for the browser to finish allows you to specify a required minimum time.
+
+The action waits until the web page is not loading for at least that amount of time.  So the action will wait at least the amount of time you specify after the page stops loading before completing.
+
+(!) Note that a change in Safari 12.1 broke this action.  See the [[https://forum.keyboardmaestro.com/t/safari-12-1-broke-the-wait-for-safari-to-finish-loading-action/13330|forum]] for details and some possible solutions.  This is worked around in 9.0+.
+
+===== See Also =====
+
+* [[Browser_Actions|browser actions]]
+
+==== Actions ====
+
+* [[:Actions|See all Actions]]
+
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/waiting-for-webpage-to-finish-loading-not-so-easy/2914|Wait For Google Chrome to Finish Loading]]
+- [[https://forum.keyboardmaestro.com/t/wait-only-until-the-very-moment-that-chrome-finishes-loading/4004|Wait only until the very moment that Chrome finishes loading?]]
+- [[https://forum.keyboardmaestro.com/search?q=%22Finish%20Loading%22|Keyboard Maestro Forum topics about Finish Loading]]

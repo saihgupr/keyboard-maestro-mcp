@@ -1,0 +1,49 @@
+====== MINUTE Function ======
+
+The MINUTE([unixtime]) function returns the minutes (0-59) in the local time zone, either the current minutes, or the minutes of the specified [[:unixtime]].
+
+    MINUTE() === the current minutes
+    MINUTE( unixtime ) === the minutes of the unix time
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Filter|Filter]] (Process Text Tokens)
+* [[:Actions|See all Actions]]
+
+=== Functions === 
+
+* [[YEAR]]
+* [[MONTH]]
+* [[DAY]]
+* [[DOW]]
+* [[HOUR]]
+* [[MINUTE]]
+* [[SECOND]]
+* [[TIME]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:ICUDateTime|%ICUDateTime%]] (local)
+* [[token:ICUDateTimeFor|%ICUDateTimeFor%]] (local)
+* [[token:ICUDateTimeMinus|%ICUDateTimeMinus%]] (local)
+* [[token:ICUDateTimePlus|%ICUDateTimePlus%]] (local)
+* [[token:LongDate|%LongDate%]] (local)
+* [[token:LongTime|%LongTime%]] (local)
+* [[token:NumberDate|%NumberDate%]] (local)
+* [[token:ShortDate|%ShortDate%]] (local)
+* [[token:ShortTime|%ShortTime%]] (local)
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+- [[:Dates_and_Times|Dates and Times]]
+- [[:JulianDate|JulianDate]]
+- [[:unixtime]] in GMT
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/time-based-if-then/3405/2|Time-based If/Then]]
+- [[https://forum.keyboardmaestro.com/search?q=MINUTE|Keyboard Maestro Forum topics about MINUTE function]]

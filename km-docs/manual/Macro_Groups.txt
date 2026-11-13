@@ -1,0 +1,92 @@
+====== Macro Groups ======
+
+Keyboard~~Maestro organizes your macros into Macro~~Groups which are like folders of macros.  Each Macro~~Group contains a number of macros and controls when those macros are active.
+
+A Macro~~Group can target or exclude specific applications, which means the macros it contains will only be active in those desired applications or when those applications are running.  For example, you can have macros which are active only in Mail.app.  It can also be active only in specific windows.  So for example, you can have macros which are active only in Mail.app, or only in Mail.app when a compose window is open.
+
+A Macro~~Group can also act as a container for specific-use macros which are enabled only when you specifically activate them.  For example, you could create a Macro~~Group containing macros that resized or repositioned windows using the arrow keys, but those macros would only be active after the Hot~~Key was pressed so that the arrow keys could be used normally at other times.
+
+Macro~~Groups can be displayed as palettes, allowing you to create your own custom toolbars which can be configured with a variety of themes and to appear under the mouse.
+
+Macro~~Groups can also be displayed in the menu bar, including information that is displayed and dynamically updated, as well as offering another way to trigger macros.
+
+If you are syncing your macros with another Mac, Macro~~Groups can be disabled specifically on this Mac.
+
+To create a new Macro~~Group, first launch Keyboard~~Maestro.
+
+{{ macros.png?nolink&937 |Macros Window }}
+
+Now click the BUTTON{{{+}}} button at the bottom of the Macro~~Groups list.
+
+{{ macrogroupeditor.png?nolink&937x624 | Macro Group Editor }}
+
+Enter the name of your new Macro~~Group.
+
+You can choose to target the macros in your Macro~~Group at specific applications.
+
+By default, Macro Groups and their Macros are available in all applications, that is they are always ready to be triggered.  These are especially useful for Macros that give you instant access to applications or documents, or type in globally applicable text.  For example you might have a Macro to launch your email client or word processor, a Macro to open your financial accounts, and a macro to type your name or email address.
+
+To have macros only active in specific applications, set the Macro Group to be “Available in the following applications” and add the desired applications to the list.
+
+For example, you could have macros targeted at:
+
+* Mail.app that insert common text messages.
+* BBEdit and Xcode that insert code chunks or duplicate lines or add #include headers.
+* Safari that configure windows or enter information.
+* Photoshop or Acorn that arrange items or script guides.
+
+To have macros active everywhere **except** specific applications, set the Macro Group to be “Available except in the following applications” and add the desired applications to the list. For example, you could exclude macros from triggering in games. Also, if you have an application that uses lots of function keys for crucial tasks, you could exclude that application to allow you to use the function keys for macros elsewhere without conflicting with that application.
+
+You can restrict a macro to be active only in certain windows based on the window title.
+
+You can also choose to activate the macros manually or display the macros in a floating macro palette.  The options are:
+
+* Always activated.
+* Activated for one action when:
+* Activated/deactivated when:
+* Shows a palette for one action when:
+* Shows/hides a palette when:
+* Shows a palette until:
+* Always activated and shows a palette for one action when:
+* Always activated and shows/hides a palette when:
+* Always activated and shows a palette until:
+
+To have the macros in a Macro Group always ready to be triggered, set the Macro Group to be “Always activated”.
+
+To have macros that are active only immediately after you trigger the Macro Group with no visible palette, set the Macro Group to be activated “Activated for one action when”. The macros in the Macro Group will be enabled when you trigger the Macro Group and will remain enabled until either any macro is triggered or you press any other key. You could use this to create a set of related actions with easily remembered hot keys that will not conflict with normal use because they are not activated until you trigger the group. For example, you could have a group of macros to launch various applications so that Command-Control-L activates the group and then a single letter press launched the application (eg M for Mail, S for Safari, F for Finder).
+
+As with each of the following options, you can trigger the macro group by pressing a Hot~~Key, by selecting from the Status Menu, or by clicking on the global floating palette.
+
+To have Macros that are remain active after you trigger the Macro Group, set the Macro Group to be “Activated/deactivated when”. The Macros in the Macro Group will be enabled when you trigger the Macro Group and will remain enabled until you dismiss the Macro Group by repeating the trigger. You could use this to create a set of related actions with easily remembered hot keys that will not conflict with normal use because they are not activated until you press the group Hot Key. For example, you could have a group of macros to move and resize windows and have Command-Control-W activate the group. Then a single arrow key press moves the front window. When the window is positioned, press Command-Control-W a second time to disable the macros.
+
+To have Macros that are active and displayed in a macro palette only immediately after you trigger the Macro Group, set the Macro Group to “Shows a palette for one action when”. The Macros in the Macro Group will be displayed in a floating Macro Palette and enabled when you trigger the Macro Group and will remain displayed until either any macro is triggered or you press any other key. You could use this to create a set of related actions that do not even need a Hot Key. For example, you could have a group of macros to launch various applications like Mail, Safari and the Finder so when you press Command-Control-L, a palette of these macros is displayed and a single click on the desired application will launch the application.
+
+To have Macros that are active and displayed in a macro palette after you trigger the Macro Group, set the Macro Group to “Shows/hides a palette when”. The Macros in the Macro Group will be displayed in a floating Macro Palette and enabled when you trigger the Macro Group and will remain displayed until you trigger the Macro Group again. You could use this to create a set of related actions that do not even need a Hot Key. For example, you could have a group of macros to align objects in a CAD application, so when you press Command-Control-A, a palette of these macros is displayed and you can click various alignment options (distribute left-right, align top edges) and then close the palette by pressing Command-Control-A a second time.
+
+To have Macros that are initially active and displayed in a palette, set the Macro Group to “Shows a palette until”. The Macros in the Macro Group will be displayed in a floating Macro Palette and enabled. The palette will close when (if) you trigger the Macro Group and will remain closed (and the macros disabled) until you trigger the Macro Group again. You could use this to create a set of related actions that do not even need a Hot Key and that are available in a Macro Palette. You could make the Macro Group available only in a specific application so that it appears only in that application. For example, you could have a group of macros to align objects in a CAD application, and have the Macro Group available (and hence the palette displayed) only in the CAD application.
+
+Whether the macros are displayed in a Palette or not, the macros can still have Hot~~Key (or any other kind of) triggers which will be available whenever the macro group is active.
+
+With the previous three settings, the macros are active if and only if the palette is displayed.  The final three options are the same except that the macros are always active, so they are always available to be triggered by another means, and sometimes by the palette.
+
+You can also display the Macro Group in the menu bar. You can select which icon to display and what title text to show in the macro bar, both of which can be dynamically updated allowing you to show information like stock prices, word counts, reminders, time, etc. For example, you could have an icon and time that showed how long you had been working without a break. The menu can include all the macros in the group, or just those macros with the [[trigger:Group_Status_Menu|Group Status Menu]] trigger.
+
+You can change the targeting of an existing group by selecting it in the Groups list and ensuring you are in Edit mode by clicking the BUTTON{{{Edit}}} button, or by double clicking the macro group.
+
+You can disable or enable a macro group by selecting it and clicking the BUTTON{{{✓}}} button at the bottom of the Groups list.  If a Macro~~Group is disabled or inactive for any reason, all its contained Macros will be inactive.  You can disable or enable a Macro Group using the Set Macro Enable action, you can show in a palette or activate a Macro Group using the Show Macro Group or Activate Macro Group actions.
+
+Disabled Macro Groups can optionally be hidden using the choosing the [[Menus#Hide_Disabled_Macro_Groups|View ➤ Hide Disabled Macro Groups menu]].
+
+You can control or right click on a macro group to:
+
+* Cut, Copy, Duplicate or Delete the Macro Group.
+* Copy the Macro Group as XML, or its UUID.
+* Copy the Macro Group as a [[action:Set_Macro_or_Group_Enable|Set Macro or Group Enable]] or [[action:Activate_Macro_Group|Toggle Macro Group]] action.
+* Disable or Rename the Macro Group.
+* Export the entire Macro Group.
+
+The Keyboard Maestro editor has full AppleScript support so you can manipulate macro groups in many ways via AppleScript.  See [[:Scripting_the_Keyboard_Maestro_editor#Macro_Groups|Scripting the Keyboard Maestro editor]].
+
+To delete a Macro~~Group, select the macro group and then press Command-Delete or click the BUTTON{{{-}}} button at the bottom of the Groups list. Like all actions, you can Undo this if you make a mistake.
+
+You cannot delete or rename or disable the Global~~Macro~~Group.  If you want to control when some of the macros within the Global Macro Group are active, make a new macro group and drag those macros to it.

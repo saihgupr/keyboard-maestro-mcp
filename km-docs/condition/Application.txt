@@ -1,0 +1,27 @@
+====== Application Condition ======
+
+The //Application condition// looks for an application and determines if it:
+
+* is currently running.
+* is not currently running.
+* is currently at the front.
+* is not currently at the front.
+* is currently running but not at the front.
+* is currently hidden. (v8+)
+* is running but hidden. (v8+)
+* is not hidden. (v8+)
+
+You can (v9.0+) select whether to match the application in the normal way (based on the path or the bundle ID), or require the path, or just by the bundle ID.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+=== Conditions ===
+
+* [[:Conditions|See all Conditions]]

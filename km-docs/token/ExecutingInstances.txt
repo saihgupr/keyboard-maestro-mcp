@@ -1,0 +1,26 @@
+====== ExecutingInstances Action ======
+
+The //%ExecutingInstances%// token returns (v9.0+) a command-separated list of opaque IDs of the currently executing instance. It can be used to retrieve Local and Instance variables via AppleScript and to cancel the specific macro instances.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Cancel_a_Specific_Macro|Cancel a Specific Macro]] action
+* [[:Actions|See all Actions]]
+
+==== Tokens ====
+
+* [[token:ExecutingMacro|%ExecutingMacro%]]
+* [[token:ExecutingMacroUUID|%ExecutingMacroUUID%]]
+* [[token:ExecutingMacroGroup|%ExecutingMacroGroup%]]
+* [[token:ExecutingMacroGroupUUID|%ExecutingMacroGroupUUID%]]
+* [[token:ExecutingThisMacro|%ExecutingThisMacro%]]
+* [[token:ExecutingThisMacroUUID|%ExecutingThisMacroUUID%]]
+* [[token:ExecutingThisMacroGroup|%ExecutingThisMacroGroup%]]
+* [[token:ExecutingThisMacroGroupUUID|%ExecutingThisMacroGroupUUID%]]
+* [[token:ExecutingInstance|%ExecutingInstance%]]
+* [[token:ExecutingInstances|%ExecutingInstances%]]
+* [[token:ExecutingInstanceName|%ExecutingInstanceName%]]
+* [[token:MacroNameForUUID|%MacroNameForUUID%]]
+* [[:Tokens|See all Tokens]]

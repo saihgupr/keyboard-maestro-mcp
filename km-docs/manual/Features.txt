@@ -1,0 +1,152 @@
+====== Features ======
+
+Keyboard~~Maestro is a productivity enhancer with several main functions.  It allows you to:
+
+* record and design your own macro shortcuts and activate them at any time.
+* work with clipboard history using [[Clipboard History Switcher]].
+* work with an unlimited number of saved clipboards using [[Named Clipboard Switcher]].
+* navigate through running applications with [[Application Switcher]] and open windows with [[Window Switcher]].
+
+[[Macro Groups]] allow you to organize your macros. Think of them as folders of macros. Each Macro Group controls when the macros it contains are active. A [[Macros|Macro]] is made of two parts: a set of [[Macro Triggers|Triggers]] you choose to determine when the macro is executed and a list of [[Macro Actions|Actions]] that define what the macro does when it is executed.
+
+By creating macros, you can customize your Mac to suit your use, streamline tedious tasks, and remove opportunities for mistakes by automating repetitive jobs.  Make stubbornly difficult applications behave the way you want them to; press a key and have the computer do the next minute worth of tedious tasks for you; type a few characters and have a page full of boilerplate text appear; and so much more.  Soon you’ll wonder how you could have used your Mac without Keyboard Maestro.
+
+Here are some of the primary features of Keyboard Maestro.
+
+===== General =====
+
+* Use Dark Mode or Light Mode (10.14+).
+* Sync your macros across multiple Macs using DropBox or other file sharing systems.
+* Trigger macros by key, typed string, menu, by name, remotely, via MIDI, and more.
+* Use the included [[Assistance]] system to help if you get stuck.
+* Use the included [[Macro Debugger]] for detailed control of your macros in action.
+
+===== Macro Groups =====
+
+* Create Macro Groups, which contain Macros and control when they are active.
+* Macro Groups can be displayed in the menu bar with additional information and macros.
+* Macro Groups can be restricted to or excluded from specific applications.
+* Macro Groups can be restricted to or excluded from specific windows.
+* Macro Groups can be activated or deactivated with hot keys, or via the status menu or global macro palette.
+* Macro Groups can display a themed palette of contained macros.
+* Macro Groups can be enabled or disabled.
+* Customize the Macro Group icon by pasting an icon, or using the [[Icon Chooser]] and creator.
+* If you are syncing your macros, Macro Groups can be disabled on specific Macs.
+
+===== Triggers =====
+
+* Macros can be triggered by one or more [[Macro Triggers]] using any number of the following:
+  * [[/trigger/Hot_Key|Hot Key trigger]] – when you press, hold, release or multi-tap a key.
+  * [[/trigger/Global_Macro_Palette|Global Macro Palette trigger]] – with a click on a context sensitive Macro~~Palette.
+  * [[/trigger/Status_Menu|Status Menu trigger]] – by selecting from a global system status menu.
+  * [[/trigger/Typed_String|Typed String trigger]] – type a string of keys.
+  * [[trigger:Appearance_Changed|Appearance Changed trigger]] - when the Mac changes system appearance.
+  * [[/trigger/Application|Application trigger]] – on launch, quit, activate, deactivate, or periodically while an application is running or active.
+  * [[/trigger/Audio_Output_Changed|Audio Output Changed trigger]] – whenever your audio output device changes.
+  * [[/trigger/Clipboard_Changed|Clipboard Changed trigger]] – when the system clipboard changes.
+  * [[/trigger/Clipboard_Filter|Clipboard Filter trigger]] – select macros from the clipboard switchers.
+  * [[/trigger/Cron| Cron trigger]] – periodically based on time or day or date.
+  * [[/trigger/Display_Layout_Changed| Display Layout Changed trigger]] – trigger when the display layout changes.
+  * [[/trigger/Dragged_File| Dragged File trigger]] – trigger when a file is dragged onto the macro in a palette icon.
+  * [[/trigger/Engine_Launch|Engine Launch trigger]] – when the Keyboard Maestro engine launches.
+  * [[/trigger/Focused_Window|Focused Window trigger]] – when the front/focused window changes.
+  * [[/trigger/Folder| Folder trigger]] – when a file is added to or removed from a folder.
+  * [[/trigger/Gesture| Gesture trigger]] – when you draw a pre-set shape with the mouse or trackpad.
+  * [[trigger:Group_Status_Menu|Group Status Menu trigger]] - include your macro in the parent macro group menu bar item.
+  * [[/trigger/Idle| Idle trigger]] – when your Mac has been idle for a period of time (but not yet asleep).
+  * [[/trigger/Login|Login trigger]] – when you log in to your Mac.
+  * [[/trigger/MIDI|MIDI trigger]] – when a MIDI note is pressed or released, on controller change, or any packet.
+  * [[/trigger/Mounted_Volume|Mounted Volume trigger]] – when a volume is mounted or unmounted.
+  * [[/trigger/Periodic|Periodic trigger]] – periodically while logged in.
+  * [[trigger:Power_Status_Changed|Power Status Changed trigger]] - when your Mac’s is connected or disconnected from power.
+  * [[/trigger/Public_Web|Public Web trigger]] – over the Internet, explicitly to the public, or via authenticated log in.
+  * [[/trigger/Remote|Remote trigger]] – when you access a link on our trigger server.
+  * [[/trigger/Sleep|Sleep trigger]] – when the system goes to sleep.
+  * [[trigger:Space_Changed|Space Changed trigger]] - when you change Spaces.
+  * [[trigger:Subroutine|Subroutine trigger]] - when called from an [[action:Execute_a_Subroutine|Execute Subroutine]] action.
+  * [[/trigger/Time_of_Day|Time of Day trigger]] – at a particular time of day.
+  * [[/trigger/USB_Device_Key|USB Device Key trigger]] – when you press, hold, release or multi-tap any HID (Human Interface Device) device key.
+  * [[/trigger/USB_Device|USB Device trigger]] – when a USB device is attached or detached.
+  * [[trigger:Unlock|Unlock trigger]] - when the Mac is unlocked.
+  * [[/trigger/Wake|Wake trigger]] – when the system wakes from sleep.
+  * [[/trigger/Wireless_Network|Wireless Network trigger]] – when your Mac connects or disconnects to/from a wireless network.
+  * [[/trigger/Script|Script trigger]] – from an AppleScript or other script.
+  * [[/trigger/keyboardmaestro|keyboardmaestro]] – from the keyboardmaestro CLI tool.
+  * [[/trigger/URL|URL trigger]] – from an AppleScript or other script.
+
+
+===== Actions =====
+
+* You can create [[Macro Actions]] manually or by recording them.
+* You can save preconfigured actions as favorites for reuse.
+* You can [[https://www.stairways.com/action/linkthru?thirdpartyactions|download]] or write your own [[Plug In Actions]].
+* There are [[:Actions|many, many actions]] covering a broad range of facilities, including:
+  * Plug In Third Party Actions.
+  * Application Control actions to launch, activate, quit, show, hide, etcetera, applications.
+  * Clipboard actions to set, read, delete, style, filter, search, replace, etcetera clipboards.
+  * Control Flow actions to pause, loop, test conditions, process sets of items, and more.
+  * Debugger actions to breakpoint, pause, step over, step into, etcetera, while debugging macros.
+  * Execute AppleScripts, shell scripts, JavaScript (for Automation or in Safari/Chrome) and more.
+  * Read, write, trash, duplicate, append files, or get or set information about them.
+  * Safari/Chrome actions to work with the front web page, filling forms.
+  * Image actions to find, capture, read, write, crop, annotate, or display images.
+  * Interface actions to move or resize windows, click the mouse, type keystrokes, press buttons, etcetera.
+  * iTunes actions to play tracks, fast forward, rewind, change the volume and more.
+  * Actions to control Keyboard Maestro itself, enabling or disabling macros, showing and hiding palettes, etcetera.
+  * MIDI actions to send notes, control changes, or arbitrary packets.
+  * Send notifications via email, SMS, iMessage, notification center, sounds, alerts, etcetera.
+  * Open files, folders, URLs, system preferences, even 1Password bookmarks.
+  * QuickTime player actions to play movies, step forward or backward and more.
+  * Actions to control a Stream Deck device.
+  * Actions to launch applications, select windows, or switch clipboards.
+  * Sleep, restart or shut down your Mac, Fast User Switch, log out, change brightness or volume, etcetera.
+  * Type or paste strings, speak text, work with variables or dictionaries.
+  * Perform calculations, prompt for information, read or write passwords from the Keychain and more.
+  * Web actions to search the web, download files, remotely trigger actions, etcetera.
+
+Basically, if you can do it yourself, Keyboard Maestro can probably do it for you.
+
+===== Editor =====
+
+* Dark Mode support.
+* Multiple editor windows.
+* Interactive Help system.
+* Large Text support.
+* Basic Touch Bar support.
+* Smart Groups.
+* Select from recently triggered or edited macros.
+* Autocompletion.
+* Integrated access to wiki help.
+* Rename, color, group, and add notes to actions.
+* Palette Theme Editor.
+
+===== Named Clipboard and Clipboard History Switcher =====
+
+* Never lose your clipboard again.
+* Browse your past clipboards and paste any previous clipboard item.
+* An unlimited number of Named~~Clipboards.
+* Send clipboard entries to other Macs.
+* Clipboards display rich text and images.
+* Use Quick Look to view clipboard entries.
+* Apple Clipboard Filter triggered macros directly to selected clipboard entries.
+* Set clipboard entries as favorites so they are always available in your clipboard history.
+* Copy, Cut or Paste to/from Named~~Clipboards using a single keystroke.
+* Clipboard History is optionally saved across logins and restarts.
+* Named Clipboards are saved permanently.
+
+===== Application and Window Launching and Switching =====
+
+* Display a Cover Flow view of available applications for quick launching.
+* Optionally replace the system Command-Tab application switcher.
+* Customize the switcher to match the look you want.
+* Switch to any application or window with a keystroke.
+* Switch to an application and hide all others.
+* Easily select the exact application or window you want.
+* Launch, hide, quit or force quit any application.
+* Close or minimize any window.
+* Quit (or force quit) and relaunch applications.
+* Get Info or reveal applications.
+* Choose the application ordering you want: alphabetically, by last use, or by launch order.
+* Sort windows alphabetically or by window depth order.
+* Optionally hide other applications.
+* Optionally always hide other applications.

@@ -1,0 +1,9 @@
+====== Sleep and Wake Screen Actions ======
+
+The *Sleep and Wake Screen* actions immediately sleep or wake the monitor.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]

@@ -1,0 +1,28 @@
+====== Apply Modifiers to a Specific Application ======
+
+The *Apply Modifiers to a Specific Application* action accepts either a path or modifiers, usually from the [[token:TriggerValue|TriggerValue token]] and performs an action on an application, either opening the file, or activating, hiding, or other actions on the application in the same way that the [[manual:Applications_Palette|Applications Palette]] does.
+
+{{ apply-modifiers-action.png?nolink&512x138 | Apply Modifiers to a Specific Application Action }}
+
+This allows you to build macro palettes containing macros that act on palettes, and potentially accept dragged files as well if you use the [[trigger:Dragged_File|Dragged File]] trigger.
+
+There is an Application Palette entry in the [[manual:Macro_Library|Macro Library]] which shows how you can use this facilities to create a palette with a fixed set of applications and similar behaviour to the [[manual:Applications_Palette|Applications Palette]].
+
+You can default to Hide Other Applications When Switching in the action (gear) ⚙ menu (v11.0+).
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[trigger:Dragged_File|Dragged File]]
+
+=== Actions ===
+
+* [[action:Activate a Specific Application| Activate a Specific Application]]
+* [[action:Open a File Folder or Application|Open a File Folder or Application]]
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]

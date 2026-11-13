@@ -1,0 +1,33 @@
+====== Path condition ======
+
+The //Path condition// checks the file system at a specified path to determine if:
+
+* nothing exists.
+* something exists.
+* a file exists.
+* a file does not exist.
+* a folder exists.
+* a folder does not exist.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Execute a Shell Script|Execute a Shell Script]]
+* [[action:For Each|For Each]]
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+=== Conditions ===
+
+* [[condition:Variable|Variable]]
+* [[:Conditions|See all Conditions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/how-to-determine-if-a-folder-is-empty-or-not/3082|How to determine if a folder is empty or not?]]
+- [[https://forum.keyboardmaestro.com/t/how-to-test-whether-a-specific-file-exists/3163/5|How to test whether a specific file exists]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Path%20condition|Keyboard Maestro Forum topics about Path condition]]

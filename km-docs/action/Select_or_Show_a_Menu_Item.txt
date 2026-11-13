@@ -1,0 +1,52 @@
+The **Select or Show a Menu Item** action selects a menu item OR shows (opens) a menu in the main menubar.
+
+{{ :action:select.menu.action.keyboard.maestro.snapz.001.jpg?nolink |}}
+
+You can choose to execute a menu in the front application, or in a specific application (in which case the application is briefly brought to the front, the menu is selected, and then the front application is restored).
+
+The Select Menu Item action includes a *Menu* popup menu so that you can choose from all currently running applications and their menus, which helps ensure you have correctly specified the menu. 
+
+If you leave the menu item blank, Keyboard Maestro will show you the menu and leave it displayed so that you can then select the desired menu item manually.
+
+The Select Menu action allow you to specify multiple options separated by a vertical bar (eg Show|Hide) to allow for toggling or varying menus. They will also ignore the difference between three dots (\.\.\.) and an ellipsis (…) so you do not have to worry which one the menu uses. 
+
+Alternatively, you can start the name with an ^ and use a regular expression to match the menu. 
+
+Also the action will translate the word “APPLICATION” (all capitals) into the current application name, allowing menu selections like *APPLICATION ➤ About APPLICATION*. (!) Note that applications may not have names that match their *Application* menu name (such as Microsoft Word, whose menu name is just Word). You can use APPLICATION as part of a set of multiple items, so you can work around this using *APPLICATION|Word|Excel ➤ About APPLICATION|About Word|About Excel* for example.
+
+For menus in the Apple menu, use the title “Apple”.
+
+Before 7.0, unlike most text fields in Keyboard Maestro, the Select Menu Item fields do not process text tokens.  As of 7.0+, the fields do process text tokens.
+
+The Select Menu action will, by default, abort the macro if the action is not successful (for example if the menu cannot be found or is disabled). The action can be configured to allow the macro to continue if the menu is not essential (such as “Mark As Read” which might be disabled if the item is already marked as read).
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]
+
+=== Tokens ===
+
+* [[:Tokens|See all Tokens]]
+
+==== Topics ====
+
+* [[:Text Fields|Text Fields]]
+* [[:Frequently Asked Questions|FAQ]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/tag-selected-files/220/6|Tag Selected Files]]
+
+- [[https://forum.keyboardmaestro.com/t/contextual-menu-items-services/4989/11|Contextual Menu Items/Services]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Select%20Show%20Menu%20Item|Keyboard Maestro Forum topics about Select or Show a Menu Item]]

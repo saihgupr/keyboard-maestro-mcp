@@ -1,0 +1,12 @@
+====== LastApplication Token ======
+
+The //%LastApplication%// token returns the name of the last application (same as //%Application%2%//).
+
+===== See Also =====
+
+==== Tokens ====
+
+* [[token:Application|%Application%]]
+* [[token:ApplicationBundleID|%ApplicationBundleID%]]
+* [[token:ApplicationPath|%ApplicationPath%]]
+* [[:Tokens|See all Tokens]]

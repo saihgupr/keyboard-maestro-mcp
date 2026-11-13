@@ -1,0 +1,19 @@
+====== Macro Triggers ======
+
+A Macro is executed when any of its Macro~~Triggers is activated.  There are many [[/Triggers|triggers ]] to choose from, the most common being a [[trigger:Hot_Key|Hot Key]], that is the Macro is executed in response to a keystroke, usually in conjunction with one or more modifier keys.  You can also trigger a macro by typing a string.  Or you can display a Macro~~Group as a floating palette and execute the macro by clicking on an entry, or execute macros remotely.
+
+Hold the option key down while adding a new trigger to get help on that trigger.
+
+{{ help-trigger-menu.png?nolink&423x285 | Help Trigger Menu }}
+
+You can also trigger macros by name using the [[/action/Trigger_Macro_by_Name|Trigger Macro by Name action]], which in turn can be in a macro and triggered any way you desire.
+
+The [[/trigger/Hot_Key|Hot Key trigger]] is perhaps the most common and most basic of all triggers. When you press the configured keyboard key, the system swallows the keystroke, and Keyboard Maestro executes the macro.
+
+The [[/trigger/Typed_String|Typed String trigger]] is also very common, it lets you execute a macro in response to a sequence of keys like an abbreviation.
+
+The [[/trigger/Global_Macro_Palette|Global Macro Palette trigger]] lets you add your macro to a floating palette, so you can trigger it by clicking on the macro name in the palette.
+
+The [[/trigger/Status_Menu|Status Menu trigger]] lets you add your macro to the Keyboard Maestro status menu so you can trigger it by selecting the macro name from the status menu.
+
+There are many more triggers, and you can learn more about them on the [[/Triggers|wiki Triggers page]].

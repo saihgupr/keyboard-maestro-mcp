@@ -1,0 +1,59 @@
+====== Typed String Trigger ======
+
+The *Typed String trigger* lets you execute a macro in response to a sequence of keys.
+
+Typed String triggers allow you to use more verbose (and hence descriptive) sequences of keys to trigger a macro. Because the keys first go through to the current application, the keys are usually deleted prior to executing the macro, although with this disabled you can use it in an application that largely ignores keys. Triggers can include non-ASCII characters, but you should verify that the deletes work appropriately in these cases. Triggers can include modifier (⌃⌥⇧⌘) characters (v11.0+) which you can type by tapping the appropriate modifier.
+
+(!) You should generally not use a Typed String trigger that simulates deletes in a non-text typing context, as the simulated delete keystrokes could be destructive.
+
+(i) If you are going to immediately change focus (for example, with a Prompt For User Input, or by switching windows or applications), then you may need a short pause at the start of the macro to allow the simulated deletes to be processed before the focus changes.
+
+To avoid macros firing unexpectedly it is a good idea to include a consistent prefix and/or suffix to your strings. For example, to insert your email address, rather than use just “em” (which would fire if you typed “them”), use something like “=em=” which you will not type accidentally.
+
+Keyboard Maestro will accept the trigger even if you use the delete key to correct it (for example, in the case above, if you typed "=en«delete»m=" the trigger will still fire. If you need to type the trigger text without the macro firing, type and delete a Shift-Space in the middle, like "=e«Shift-Space»«delete»m=".
+
+As above, typing Shift-Space will cancel the sequence, as will any control key or command key (eg Command-.), any actively (Hot Key, USB Device Key) triggered macro execution, switching applications, clicking the mouse, or not typing for more than a few seconds. Tapping a modifier will not cancel the sequence, but will be considered part of the trigger string (v11.0+).
+
+You can optionally allow typed string triggers to work regardless of case, regardless of diacriticals.
+
+You can have the case of the typed string and affect Insert Text actions. This means that if you type the string in all uppercase, the resulting Insert Text will also be uppercased.  If you type just the first letter in uppercase, just the first resulting Insert Text will be uppercase.
+
+You can limit the typed string trigger to only work after a word break (which means any non-alphanumeric character, or any case that cancels the sequence as described above).  **Note** that this means the match will happen only after you type a word break and then the Typed String - Keyboard Maestro does not know what you will type in the future so it cannot restrict matches to only happen if you plan to type a word break next.
+
+Alternatively, you can use a [[:Regular Expressions|regular expression]] to match a trigger. The trigger is matched against the end of the typing sequence, so there is an implicit \z on the end of the [[:Regular Expressions|regular expression]]. Note that it would be useless to try to match a word break at the end with \b or some sort of positive or negative lookahead assertion as the typing sequence always ends at the current character. So for example "ell\b" would match "hell" even if the next character you planned on typing was an "o".
+
+You can use the [[token:TriggerValue|%TriggerValue% Text Token]] to determine the exact text that was typed.
+
+If multiple typed string triggers match from the end (eg "hello" and "llo"), the longest will be used. If there are multiple matches with the same length (as can occur if you use the case or diacritic options), the conflict palette will be displayed, offering a selection of the matching macros. In this case, if all of the typed string triggers have the "Simulate N deletes before executing" option enabled, the deletes will be simulated immediately and then the conflict palette will be displayed; otherwise the deletes will not be simulated.
+
+Note that the system will not allow Keyboard Maestro Engine to see keys typed in its own windows (such as the [[action:Prompt for User Input]] or [[action:Custom HTML Prompt]]), so the Typed String triggers will not work within Keyboard Maestro Engine windows. Also note that Typed String triggers will not work well in the Keyboard Maestro editor itself as any change to the macros results in the macros being saved and resets the Typed String trigger buffer. So you will need to use a different trigger for working within the Keyboard Maestro Engine or editor.
+
+The system also will (rightly) not allow Keyboard Maestro to see keys typed in password fields, so Typed String triggers will not fire if you type them in most password fields. You can use Insert Text by Typing to type in to password fields (although this is a serious security concern, and there are some cases where it will not work properly), but you cannot use Typed String triggers while inside a password field.
+
+Note also that there is a relatively prevalent [[http://wiki.keyboardmaestro.com/Troubleshooting#Not_Being_Able_To_Enter_a_Hot_Key|third party / system bug]]
+ that makes the system think it is permanently in a password field, and this will prevent typed string triggers from working.
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]
+
+==== Topics ====
+
+* [[:Regular Expressions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/generic-or-universal-text-expansion/3331/2|Generic or Universal Text Expansion]]
+- [[https://forum.keyboardmaestro.com/t/keyboard-maestro-append-suffix-ation-to-typed-word-macro/3335|Keyboard Maestro “Append suffix '-ation' to typed word” Macro]]
+- [[https://forum.keyboardmaestro.com/t/customize-keyboard-shortcut-in-conflict-palette/3682/2|Customize keyboard shortcut in conflict palette?]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Typed%20String%20trigger|Keyboard Maestro Forum topics about Typed String trigger]]

@@ -1,0 +1,27 @@
+====== Accessibility Permission Problem ======
+
+Accessibility access to control your computer is required to use many features including selecting menu items, manipulating windows, pressing buttons, typed string triggers and the window switcher.
+
+You will need to enable Accessibility permissions for both Keyboard Maestro and Keyboard Maestro Engine. This is not something Keyboard Maestro can work around - it is a security feature of macOS.
+
+On modern macOS, you enable Accessibility permissions by opening System Settings, going to the Privacy  & Security preferences, and in the Accessibility and ensure that both Keyboard Maestro and Keyboard Maestro Engine are ticked. On some systems, you may get results by unticking and reticking these permissions.
+
+In Big Sur and later, as well as the Accessibility permissions, you will need to check the Input Monitoring permissions. If Keyboard Maestro or Keyboard Maestro Engine is listed there, you must ensure it is enabled. Input Monitoring permissions can override accessibility permissions.
+
+If you cannot enable the Accessibility permissions you can try removing Keyboard Maestro Engine from the Accessibility permissions, and then quit and relaunch the Keyboard Maestro Engine (in Keyboard Maestro, File ➤ Quit Engine, File ➤ Launch Engine) to re-add it, and then you should be able to enable it. 
+
+If Keyboard Maestro or Keyboard Maestro Engine are not listed in the Accessibility list, try restarting each of them. In Keyboard Maestro, choose File ➤ Quit Engine, File ➤ Launch Engine to restart the Keyboard Maestro Engine. Then quit and relaunch Keyboard Maestro. If that does not work, try Restarting and repeat the process. Failing that, you can drag the Keyboard Maestro.app in to the list, or control-click on the Keyboard Maestro.app, and select Show Package Contents, Contents, MacOS and then drag the Keyboard Maestro Engine.app in to the list.
+
+If you continue to have problems with enabling Accessibility permissions, ensure you only have one copy of Keyboard Maestro on your Mac, that it is in the /Applications folder, that you moved it there **using the Finder** and restart and try again.
+
+If you continue to have problems, you can use the `tccutil reset Accessibility` command to reset the Accessibility permissions.
+
+Failing all that, and having Restarted your Mac and tried the processes again, you can try reinstalling the Keyboard Maestro.app, which may poke the security system enough to make it work. Ensure you only have one copy of Keyboard Maestro on your Mac, that it is in the /Applications folder, then reinstall Keyboard Maestro by:
+
+* Quit Keyboard Maestro and Keyboard Maestro Engine
+* Download a fresh copy from [[https://download.keyboardmaestro.com/|our web site]].
+* If the file is still a .zip file, unzip it.
+* **Use the Finder** to move the resulting Keyboard Maestro.app application to the Applications folder (replacing the old version).
+* Launch the Keyboard Maestro app from the Applications folder.
+
+If you continue to have problems, [[https://support.keyboardmaestro.com/|contact support]].

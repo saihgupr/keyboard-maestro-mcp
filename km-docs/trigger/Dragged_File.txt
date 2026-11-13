@@ -1,0 +1,28 @@
+====== Dragged File Trigger ======
+
+The *Dragged File trigger* executes when a file or folder is dragged on to a macro in a macro palette.
+
+The path of the dragged file is available via the [[token:TriggerValue|TriggerValue token]].
+
+You could use this trigger to perform actions on files or folders, or you can use it in combination with the [[action:Apply Modifiers to a Specific Application|Apply Modifiers to a Specific Application]] or [[action:Open_a_File_Folder_or_Application|Open a File Folder or Application]] action action to have the file opened in an application. 
+
+===== See Also =====
+
+=== Actions ===
+
+=== Actions ===
+
+* [[action:Apply_Modifiers_to_a_Specific_Application|Apply Modifiers to a Specific Application action]]
+* [[action:Open_a_File_Folder_or_Application|Open a File Folder or Application]] action
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]

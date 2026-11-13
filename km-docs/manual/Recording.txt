@@ -1,0 +1,71 @@
+====== Recording ======
+
+Keyboard~~Maestro has the ability to create macro action sequences by recording your actions.
+
+For example, to create a macro that simulates keystrokes, rather than create each macro action individually you can enable recording and then simply type the keystrokes.
+
+Keyboard Maestro can record the following actions:
+
+* Moving a window
+* Resizing a window
+* Miniaturizing a window
+* Clicking the mouse
+* Typing a Keystroke
+* Moving the scroll wheel
+* Selecting a menu
+* Activating an application
+* Quitting an application
+
+There are two ways you can use recording: when creating or editing a macro, or via a Record Quick Macro action.
+
+===== Recording into a Macro =====
+
+When you are creating or editing a macro, with the [[Windows#Macro_Editor_Window|Macro Editor window]] displayed, simply click the BUTTON{{{Record}}} button.  After a short pause for you to get ready, recording will begin. To avoid the pause, hold the option key down while clicking the BUTTON{{{Record}}} button).
+
+Once recording starts, demonstrate the task you would like to perform using any of the above actions and Keyboard~~Maestro will record your actions directly into your macro.
+
+While Keyboard~~Maestro is recording, it will display the [[Windows#Recording_Window|Recording window]].
+
+{{ recording.png?nolink&86x125 |Recording Window }}
+
+While you are recording, you can pause the recording by clicking the BUTTON{{{Pause}}} button in the Recording window.
+
+Normally, Keyboard Maestro does not record pauses between actions, so the macro will play back at fast speed.  However, you can add a 0.25 second pause to your macro by clicking the BUTTON{{{Clock}}} button, or you can option-click the BUTTON{{{Clock}}} button to turn on “real time”, and Keyboard Maestro will record a pause between each action which will simulate playback at approximately the same speed as you recorded.
+
+When you are finished, click the BUTTON{{{Record}}} button again to stop recording, or you can stop all recording by clicking on the Recording window.
+
+Typically you will need to make a few adjustments to the Macro~~Actions to ensure the macro will operate robustly when used.  Generally, use recording to create a base sequence of actions and then adjust as necessary.
+
+===== Recording via a Quick Macro =====
+
+The other way to use recording is via a [[action:Record_Quick_Macro|Record Quick Macro]] action.  When triggered, the //Record Quick Macro// immediately starts recording your actions into a private macro.  When you have demonstrated the sequence of actions you want, trigger the //Record Quick Macro// action again.  The sequence can now be executed via the specified Hot~~Key or the Status Menu or Macro~~Palette.  For example, if the //Record Quick Macro// is triggered by pressing Control-F1, and the specified Hot~~Key is Option-F1, then if you typed:
+
+Control-F1, h, e, l, l, o, Control-F1
+
+Then each time you press Option-F1, Keyboard~~Maestro will type “hello” for you.  One common use for this is if you want to adjust a sequence of lines in a systematic way.  For example, if you had a list of colors, and wanted to change them in to a list of constants, say from this:
+
+<code>
+color Red
+color Green
+color Blue
+</code>
+
+to
+
+<code>
+const int kRed = "Red";
+const int kGreen = "Green";
+const int kBlue = "kBlue";
+</code>
+
+You could do this with grep and regular~~expression, replacing “color (.*)” with “const int k\1 = "\1";”, which is fine if you can remember how to do grep with regular~~expressions, whether it is \1 or $1, and whether the application you are in supports regular~~expressions or not.  But perhaps a simpler way is to just show Keyboard~~Maestro how to do the first line and then let it do the others with a single keystroke each.
+
+So move the cursor to the start of the first line, press Control-F1, then the sequence:
+
+<code>
+Option-Shift-Right Arrow, Delete, Forward Delete, Command-Shift-Right Arrow, Command-X, c, o, n, s, t, <space>, i, n, t, <space>, k, Command-V, =, ", Command-V, ", ;.
+</code>
+
+Finish with Command-Left Arrow, Down Arrow to carefully put the cursor at the start of the next line.  Now press Control-F1 again to finish the recording, and Option-F1 twice to translate the next two lines.
+
+//Record Quick Macros// can record the same set of actions that normal recording can, however because you cannot see or edit the recorded actions it is wise to keep them simple, preferably just a sequence of keystrokes.  Typically, recorded Quick Macros will be used immediately and not reused, but they are saved and remain available until you record over them.

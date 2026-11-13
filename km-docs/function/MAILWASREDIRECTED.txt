@@ -1,0 +1,17 @@
+====== MAILWASREDIRECTED Function ======
+
+The MAILWASREDIRECTED() function returns the was redirected status of the currently selected mail message.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MAILDATERECEIVED]]
+* [[MAILDATESENT]]
+* [[MAILFLAG]]
+* [[MAILFLAGGED]]
+* [[MAILJUNKSTATUS]]
+* [[MAILREADSTATUS]]
+* [[MAILWASFORWARDED]]
+* [[MAILWASREPLIEDTO]]
+* [[:Functions|See all Functions]]

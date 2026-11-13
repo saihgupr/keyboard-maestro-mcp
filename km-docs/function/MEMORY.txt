@@ -1,0 +1,10 @@
+====== MEMORY Function ======
+
+The MEMORY() function returns the amount of RAM in the Mac.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[PROCESSORS]]
+* [[:Functions|See all Functions]]

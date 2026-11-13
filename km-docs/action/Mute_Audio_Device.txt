@@ -1,0 +1,17 @@
+====== Mute Audio Device ======
+
+The //Mute Audio Device// actions (v11.0+) let you mute, unmute or toggle mute of the default audio device, the sound effects device, or a specific audio device.
+
+{{ mute-audio-device-action.png?nolink&674x88 | Mute Audio Device Action }}
+
+You can select from available devices in the popup menu on the right of the field.
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[:Tokens|All Tokens]]
+
+=== Actions ===
+
+* [[:Actions|All Actions]]

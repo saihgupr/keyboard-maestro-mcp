@@ -1,0 +1,20 @@
+====== PastClipboardFlavors Token======
+
+The //%PastClipboardFlavors%// token (v11.0+) returns the flavors of a specified past clipboard. It has the form //%PastClipboardFlavors%<Index>%// where `<Index>` is a calculation which specifies which past clipboard to use.
+
+The indices start at 0 for the current system clipboard, 1 for the previous clipboard, and then onwards for as many clipboards as Keyboard Maestro has in its history (the default maximum is 200).
+
+===== See Also =====
+
+* [[/Clipboards|Clipboards]]
+
+=== Tokens ===
+
+* [[SystemClipboard|%SystemClipboard%]] token
+* [[PastClipboard|%PastClipboard%]] token
+* [[NamedClipboard|%NamedClipboard%]] token
+* [[TriggerClipboard |%TriggerClipboard%]] token
+* [[SystemClipboardFlavors|%SystemClipboardFlavors%]] token
+* [[NamedClipboardFlavors|%NamedClipboardFlavors%]] token
+* [[TriggerClipboardFlavors|%TriggerClipboardFlavors%]] token
+* [[/Tokens|All Tokens]]

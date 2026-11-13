@@ -1,0 +1,17 @@
+====== MAILWASFORWARDED Function ======
+
+The MAILWASFORWARDED() function returns the was forwarded status of the currently selected mail message.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MAILDATERECEIVED]]
+* [[MAILDATESENT]]
+* [[MAILFLAG]]
+* [[MAILFLAGGED]]
+* [[MAILJUNKSTATUS]]
+* [[MAILREADSTATUS]]
+* [[MAILWASREDIRECTED]]
+* [[MAILWASREPLIEDTO]]
+* [[:Functions|See all Functions]]

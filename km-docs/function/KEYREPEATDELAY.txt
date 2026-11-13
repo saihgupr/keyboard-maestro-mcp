@@ -1,0 +1,11 @@
+====== KEYREPEATDELAY Function======
+
+The *KEYREPEATDELAY()* function returns (v10.0+) the system key repeat delay. This is the time before the system starts repeating a key. Modern macOS typically do not repeat keys when held down, instead it displays a popup for some keys (eg `e`) offering options for the key.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[function:KEYREPEATINTERVAL|KEYREPEATINTERVAL]] function
+* [[function:DOUBLECLICKINTERVAL|DOUBLECLICKINTERVAL]] function
+* [[:Functions|See all Functions ]]

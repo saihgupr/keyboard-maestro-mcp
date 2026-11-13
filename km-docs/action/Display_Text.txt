@@ -1,0 +1,81 @@
+====== Display Text Action ======
+
+The //Display Text// Action provides two very different functions:
+  - Display Text in a Popup Window
+  - Insert Text in a Text Document or Text Field
+
+
+===== Action Screenshot =====
+
+When you initially insert this _Action_, it looks like this:
+
+{{:action:km-7.3-display-text-action.png?nolink|}}
+
+Text may also include [[:Tokens|text tokens]]. Select text tokens using the Insert Token arrow at the right-hand end of the text area.
+
+===== Action Options (Gear ⚙ Menu) =====
+
+You can control what text processing happens by selecting one of these options from the Gear Menu (7.2+) :
+
+* Process Text Normally (process text tokens and backslash characters)
+* Process Text Tokens Only (process text tokens but not backslash characters)
+* Process Nothing (process neither text tokens nor backslash characters)
+
+Most other [[:Text Fields|Text Fields]] in Keyboard Maestro process both [[:Tokens|text tokens]] and (except for regular expression fields) backslash characters. 
+===== 1. Display Text Choices =====
+
+  *Display text in a window
+  *Display text briefly
+  *Display text large
+
+==== 1.1 Display Text In a Window ====
+
+  * The _Display Text In a Window_ displays plain text, rich text, and/or images in a popup window with only a "OK"  button.
+  * It remains visible until the user clicks on the button, or presses RETURN twice.
+  * It is still available even if you switch to other apps that hide it.
+  * Rich Text and Images
+    * You can enter the rich text in the _Action_ setup by either pasting from the Clipboard, or by selecting text already in the _Action_, and applying a style to it, using the Keyboard Maestro Editor _Edit > Format_ menu:
+    * {{:action:km-7.3-format-menu.png?nolink|}}
+
+
+**Example Created by Pasting Rich Text and Image, then Formatting**
+
+{{:action:km-7.3-display-text-win-example.png?nolink|}}
+
+
+==== 1.2 Display Text Briefly ====
+
+Display text briefly displays the text in a notification which disappears after a few moments.  This uses the standard system Notification, so if you have disabled Notifications from displaying you may not see any results.
+
+**Note:** If you are mirroring screens, have turned on Do Not Disturb, or have disabled Notifications for any other reason, then these will not appear.
+
+==== 1.3 Display Text Large ====
+
+Display text large displays text in white across a transparent gray background in the centre of the screen. The more text there is the smaller the text size so that it fits on a single line. That means it’s a good idea to keep the text short. The text disappears after a few moments.
+
+===== 2. Insert Text Choices =====
+
+  *Insert text by typing
+  *Insert text by pasting
+  *Insert styled text by pasting
+
+
+
+
+
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Custom HTML Prompt|Custom HTML Prompt]]
+* [[action:Notification|Notification]]
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/query-about-display-text-in-a-window-function/2890/2|Query about “Display text in a window” function]]
+- [[https://forum.keyboardmaestro.com/t/create-menu-bar-status-icons-using-bitbar/3658|Create menu bar status icons using BitBar]]
+- [[https://forum.keyboardmaestro.com/t/display-an-rtf-file/4609/4|Display an RTF file?]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Display%20text|Keyboard Maestro Forum topics about Display text]]

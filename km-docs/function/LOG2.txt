@@ -1,0 +1,13 @@
+====== LOG2 Function ======
+
+The LOG2(x) function returns logarithm with base two.
+
+    LOG2(128) === 7
+
+===== See Also =====
+
+=== Functions ===
+
+* [[function:LOG|LOG]]
+* [[function:LOG10|LOG10]]
+* [[:Functions|See all Functions]]

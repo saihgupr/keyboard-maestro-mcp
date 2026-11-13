@@ -1,0 +1,25 @@
+====== Conflict Palette ======
+
+{{:conflict_palette.png|}}
+
+
+===== Definition =====
+
+When you use a trigger (hot key, device key, or typed string trigger) that is assigned to more than one macro, and all of these macros are active, then Keyboard Maestro does not know which macro to trigger.
+
+So instead, it displays the Conflict Palette listing all the triggered macros and lets you select the desired macro, either by clicking on it or by typing a letter that narrows that palette down until only one macro remains at which point that macro is triggered. 
+
+You can use the Conflict Palette to limit the number of hot keys you need to remember by giving a bunch of similar or related macros the same hot key and then selecting the desired macro with a further keystroke based on the now visible palette.
+
+You can control the appearance of the Conflict Palette in the [[manual:Preferences#Palettes_Preferences |Palette  Preferences]].
+
+You can trigger a conflict palette from another macro using the the [[action/Trigger_Macros_by_Hot_Key|Trigger_Macros_by_Hot_Key]] action.
+
+(!) In languages where characters change length when they are uppercased or lowercased (such as the German ß), Keyboard Maestro will not be able to handle either case selection for triggering the entry in the palette, so you will have to use the case as presented in the macro name.
+
+===== See Also =====
+
+=== Forum ===
+
+  - [Example Using Multiple Macro Groups To Use Same HotKey for Different Macros in Different Apps](https://forum.keyboardmaestro.com/t/how-can-i-use-the-same-hotkey-in-different-apps-but-with-no-conflict-palette-appearing/16427/6)
+  - [Example for Using Multiple Macro Groups that Exclude Applications](https://forum.keyboardmaestro.com/t/how-can-i-use-the-same-hotkey-in-different-apps-but-with-no-conflict-palette-appearing/16427/7)

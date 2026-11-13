@@ -1,0 +1,19 @@
+====== Select Menu by Name ======
+
+The //Select Menu by Name// action (v11.0+) lets you select a menu item by name.
+
+{{ select-menu-by-name-action.png?nolink&674x118 | Select Menu by Name Action }}
+
+You can include a default search string.  You can also configure the width of the window (narrow, normal, wide, automatic) and whether to sort the entries or include the full path of each menu item.
+
+If there is no title and no search string and less than 100 items, then all the items will be shown in the scrolling list.  Otherwise no items will be shown until you search for something and then matching items will be shown in the list. To display all of the items even when more than 100 items, use the search string “all:”.
+
+The values are displayed in a Spotlight-like window, similar to the [[action:Trigger_Macro_by_Name|Trigger Macro by Name]] action.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[Trigger_Macro_by_Name|Trigger Macro by Name]] action
+* [[:Actions|All Actions]]
+

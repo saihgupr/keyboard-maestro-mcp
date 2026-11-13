@@ -1,0 +1,146 @@
+====== Window Related Tokens ======
+
+This Wiki page receives the redirect for a number or windows related tokens:
+
+  * `%WindowName%` and `%FrontWindowName%`
+  * `%WindowFrame%` and `%FrontWindowFrame%`
+  * `%WindowPosition%` and `%FrontWindowPosition%`
+  * `%WindowSize%` and `%FrontWindowSize%`
+
+Each of these text tokens return information about the specified window.  
+
+==== Token Parameters ====
+
+The non-Front variants take a parameter indicating the window.  The parameter is the value _after_ the percent sign of the main token.  For example: `%TokenName%TokenParameter%` or `%WindowFrame%1%`.
+
+The parameter may be:
+
+^ Parameter ^ Meaning ^
+| Front or 0 | the focused/main window. Usually the same as index 1. |
+| Positive Number | the indexed window from front to back. |
+| Negative Number | the indexed window from back to front. |
+| All | All of the windows, one per line, from front to back. |
+
+So for example, //%WindowFrame%1%// gives the frame of the front window (the same as `%FrontWindowFrame%`).
+
+The Front variants are older versions that are equivalent to using Front as the parameter. 
+
+Like all coordinates in Keyboard Maestro, the WindowPosition and WindowFrame are from the top left corner of the main screen (the defined one with the menu bar on it, although this is less apparent now that the menu bar is on all monitors).
+
+==== WindowName (FrontWindowName) ====
+
+The `%WindowName%` tokens returns the window title of the specified window.
+
+`%FrontWindowName%` is a synonym for `%WindowName%Front%` and may be used interchangeably.
+
+==== WindowFrame (FrontWindowFrame) ====
+
+The `%WindowFrame%` tokens returns the location of the window in pixels of left, top, width, and height of the window in a comma-delimited numerical string.
+
+`%FrontWindowFrame%` is a synonym for `%WindowFrame%Front%` and may be used interchangeably.
+
+Example Return of these tokens:
+
+```
+228,23,1314,1173
+
+left,top,width,height
+```
+
+==== WindowPosition (FrontWindowPosition) ====
+
+The `%WindowPosition%` token returns the location of the window in pixels of left and top of the window in a comma-delimited numerical string.
+
+`%FrontWindowPosition%` is a synonym for `%WindowPosition%Front%` and may be used interchangeably.
+
+Example Return of these tokens:
+
+```
+228,23
+
+left,top
+```
+
+==== WindowSize (FrontWindowSize) ====
+
+The `%WindowSize%` token returns the size of the window in pixels of width and height of the window in a comma-delimited numerical string.
+
+`%FrontWindowSize%` is a synonym for `%WindowSize%Front%` and may be used interchangeably.
+
+For example, these tokens return values for:\\ width,height:
+
+
+```
+1314,1173
+```
+
+==== Accessing Window, Screen, & Image Coordinates ====
+
+When a Window, screen token or a [[token:FoundImage|FoundImage Token]] returns a set of 4 comma-delimited values as one result into a Keyboard Maestro Variable (which is always text), you can access the individual values, and calculate other values, by using certain _coordinate names_ appended to the Variable name in a [[token:Calculate|Calculate Token]], such as the following:
+
+{{:token:km-7.3-window-coordinates.png?nolink|}}
+
+This produces the following results, in the Display Action:
+
+```
+Window Frame:  2810,66,1281,1049
+
+Left:	2810
+Top:	66
+Width:	1281
+Height:	1049
+
+Right:	4091
+Bottom:	1115
+MidX:	3450.5
+MidY:	590.5
+```
+
+For WindowPosition, you can use Left and Top, and for WindowSize you can use Width and Height.
+
+=== Screen/Window/Image Coordinate Names ===
+
+
+* Left
+* Right
+* Top
+* Bottom
+* Width
+* Height
+* MidX
+* MidY
+
+===== See Also =====
+
+=== Functions ===
+
+* [[function:SCREEN|SCREEN()]]
+* [[function:SCREENVISIBLE|SCREENVISIBLE()]]
+* [[function:WINDOW|WINDOW()]]
+* [[function:WINDOWCOUNT|WINDOWCOUNT()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:FrontWindowName|%FrontWindowName%]]
+* [[token:FrontWindowFrame|%FrontWindowFrame%]]
+* [[token:FrontWindowPosition|%FrontWindowPosition%]]
+* [[token:FrontWindowSize|%FrontWindowSize%]]
+* [[token:WindowName|%WindowName%]]
+* [[token:WindowFrame|%WindowFrame%]]
+* [[token:WindowPosition|%WindowPosition%]]
+* [[token:WindowSize|%WindowSize%]]
+* [[token:FoundImage|FoundImage Token]]
+
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[trigger:Focused Window|Focused Window trigger]]
+* [[:Triggers|See all Triggers]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/trapping-dialogs-in-pause-condition/3046/4|Trapping dialogs in Pause condition]]
+
+- [[https://forum.keyboardmaestro.com/search?q=WindowFrame|Keyboard Maestro Forum topics about WindowFrame]]

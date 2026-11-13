@@ -1,0 +1,16 @@
+====== RANDOM Function ======
+
+The RANDOM() functions return a random real number.
+
+* RANDOM() returns a random real number from 0 to, but not including, 1.
+* RANDOM(N) returns a random real number from 0 to, but not including, N.
+* RANDOM(A,B) returns (v9.0+) a random real number from A to, but not including, B.
+
+In the two parameter version, A must not equal B, and if B is less than A, they are implicitly swapped.
+
+===== See Also =====
+
+==== Functions ====
+
+* [[RAND]]
+* [[:Functions|See all Functions]]

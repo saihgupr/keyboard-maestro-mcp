@@ -1,0 +1,18 @@
+====== KMDARKMODE Function ======
+
+The KMDARKMODE() function  (v9.0+, OS X 10.14+) returns 1 if Keyboard Maestro is in Dark Mode (either explicitly, or because the system is), 0 otherwise.
+
+The function will always return 0 in systems before OS X 10.14 Mojave.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Set_Keyboard_Maestro_to_Dark_Mode | Set Keyboard Maestro Dark Mode]]
+* [[action:Set_System_to_Dark_Mode | Set System Dark Mode]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:KMDARKMODE]]
+* [[:Functions|See all Functions]]

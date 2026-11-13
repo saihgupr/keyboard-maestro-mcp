@@ -1,0 +1,108 @@
+====== Manipulate a Window Action ======
+
+The //**Manipulate a Window**// action allows you to operate on a window, in a specified application, with a wide variety of actions like scale, move, resize, bring to front, etc. (see complete list below). 
+
+:!:  **Note:  All units are in //nominal resolution pixels// (sometimes called points), not //raw pixels//**.  So a typical retina screen will have half as many nominal resolution pixels as raw pixels.  See the [[function:SCREEN|SCREEN function]] for more info.
+
+This action is in the //Interface Control// Action Category, and the default configuration is set for the **//Resize Front Window//** Operation:
+
+{{:action:km-manipulate-window-action-no-points.png?nolink|}}
+
+===== Configuration Options =====
+
+You will need to select (by popup button ( {{:action:km-double-vertical-arrows.png?nolink|}} )) a choice for each of the following:
+  - **Operation** to perform
+  - **Window** to act on
+  - **Application** that contains the Window
+
+==== 1. Action Choices ====
+
+All units (except percent) are in //nominal resolution pixels//.
+
+  *Scale size by.
+  *Resize by.
+  *Resize to.
+  *Move by.
+  *Move to.
+  *Move and Resize
+    * Custom, Full Screen, Left Column, Right Column,  \\  Top Half, Bottom Half, Top Left, Top Right, Bottom Left, Bottom Right.
+  *Center.
+  *Center at.
+  *Close.
+  *Zoom.
+  *Minimize.
+  *Unminimize.
+  *Toggle Minimize.
+  *Bring to front.
+
+==== 2. Window Choices ====
+
+  * the front window.
+  * the window with title.
+  * windows with title containing.
+  * windows with title matching regular expression.
+  * the window with window index (Z-order, negative windows order from the back (eg -1 is last window)). 
+  * the engine window with specified id.
+  * the last engine window.
+
+You can get the window id from AppleScript, or using the [[token:LastWindowID|%LastWindowID%]] token.
+
+
+==== 3. Application Choices ====
+
+  *Select from list of running, recent, or available applications
+  *Front Application
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Bring Application Windows to Front]]
+* [[action:Login Window|Login Window]]
+* [[action:Move or Click Mouse|Move or Click Mouse]]
+* [[action:New_Google_Chrome_Window|]]
+* [[action:New_Safari_Window]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[condition:Any Window|]]
+* [[condition:Front Window|]]
+* [[:Conditions|See all Conditions]]
+
+=== Functions ===
+
+* [[function:MENUBARHEIGHT|MENUBARHEIGHT()]]
+* [[function:MOUSEBUTTON|MOUSEBUTTON()]]
+* [[function:MOUSEX|MOUSEX()]]
+* [[function:MOUSEY|MOUSEY()]]
+* [[function:SCREEN|SCREEN()]]
+* [[function:SCREENCOUNT|SCREENCOUNT()]]
+* [[function:SCREENVISIBLE|SCREENVISIBLE()]]
+* [[function:WINDOW|WINDOW()]]
+* [[function:WINDOWCOUNT|WINDOWCOUNT()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:FrontWindowFrame|%FrontWindowFrame%]]
+* [[token:FrontWindowName|%FrontWindowName%]]
+* [[token:FrontWindowPosition|%FrontWindowPosition%]]
+* [[token:FrontWindowSize|%FrontWindowSize%]]
+* [[token:LastWindowID|%LastWindowID%]]
+* [[token:WindowFrame|%WindowFrame%]]
+* [[token:WindowName|%WindowName%]]
+* [[token:WindowPosition|%WindowPosition%]]
+* [[token:WindowSize|%WindowSize%]]
+* [[:Tokens|See all Tokens]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/how-do-i-resize-a-window-on-my-external-monitor-screen/6952/15?u=jmichaeltx | Tips by @PeterNLewis]]
+- [[https://forum.keyboardmaestro.com/t/if-you-display-a-clipboard-how-do-you-explicitly-close-it-or-is-there-a-time-out-function/1279/3|If you display a clipboard, how do you explicitly close it or is there a time out function?]]
+- [[https://forum.keyboardmaestro.com/t/two-step-split-window-macro/2626|Two Step Split Window Macro]]
+- [[https://forum.keyboardmaestro.com/t/move-window-to-top-right/2935/2|Move window to top right]]
+- [[https://forum.keyboardmaestro.com/t/close-window-missing-quickeys-user-wants-to-know/3278/2|Close Window missing? Quickeys user wants to know!]]
+
+- [[https://forum.keyboardmaestro.com/search?q=%22Close%20Window%22|Keyboard Maestro Forum topics about Close Window]]
+- [[https://forum.keyboardmaestro.com/search?q=%22Move%20Window%22|Keyboard Maestro Forum topics about Move Window]]

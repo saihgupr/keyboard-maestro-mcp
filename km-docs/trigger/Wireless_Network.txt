@@ -1,0 +1,13 @@
+The *Wireless Network trigger* executes when a wireless network is connected to or disconnected from.
+
+You can trigger on any wireless network connection, or only with wireless networks with matching names, or better yet BSSID (which is a more unique ID — lots of people have wireless networks named "Home" or "Work" for example).
+
+(!) Note that wireless information requires Location system security permissions in macOS Sonoma, so ensure the Keyboard Maestro Engine has Locations permissions if you are using Sonoma or later.
+
+If the name text field is focused when you connect or disconnect a wireless network, the name (or BSSID) of the network will be filled in for you (v7.0+).
+
+Since you typically have a well known specific wireless network at home and at work, you can use this trigger with a MacBook to configure your Mac for work or home use.  An obvious use for this is to change your network location when you connect to a wireless network using the [[action:Set_Network_Location| Set Network Location action]].
+
+Keep in mind that you will disconnect and reconnect your wireless network every time you sleep and wake your Mac and your Mac may disconnect and reconnect your wireless network transparently, so your macros should be safe to run multiple times.  
+
+You can get the current [[token:WirelessNetwork| Wireless Network Name(s)]] or [[token:NetworkLocation| Network Location]] [[:Tokens|Text Tokens]].

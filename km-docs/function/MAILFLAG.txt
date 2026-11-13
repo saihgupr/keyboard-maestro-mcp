@@ -1,0 +1,17 @@
+====== MAILFLAG Function ======
+
+The MAILFLAG() function returns the flag of the currently selected mail message.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MAILDATERECEIVED]]
+* [[MAILDATESENT]]
+* [[MAILFLAGGED]]
+* [[MAILJUNKSTATUS]]
+* [[MAILREADSTATUS]]
+* [[MAILWASFORWARDED]]
+* [[MAILWASREDIRECTED]]
+* [[MAILWASREPLIEDTO]]
+* [[:Functions|See all Functions]]

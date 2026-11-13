@@ -1,0 +1,31 @@
+====== COUNT Function ======
+
+The COUNT() (v9.0+) function returns the size of the enclosing JSON array. This function is a special context sensitive function that only works while evaluating a [[:manual:JSON#JSON_Paths|JSON path]].
+
+===== See Also =====
+
+See the [[manual:JSON]] user manual section for more details on JSON.
+
+=== Actions ===
+
+* [[action:Set_JSON_Value | Set JSON Value]]
+* [[action:Set_Variables_to_JSON | Set Variables to JSON]]
+* [[action:Set_Dictionary_to_JSON | Set Dictionary to JSON]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:JSONVALUE | JSONVALUE(jsonpath)]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:JSONFromDictionary | JSONFromDictionary]]
+* [[token:JSONFromVariables | JSONFromVariables]]
+* [[token:JSONValue | JSONValue]]
+* [[:Tokens|See all Tokens]]
+
+=== Collections ===
+
+* [[collection:JSON_Keys | JSON Keys]]
+* [[:Collections |See all Tokens]]

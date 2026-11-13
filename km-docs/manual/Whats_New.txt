@@ -1,0 +1,276 @@
+====== What’s New? ======
+
+Keyboard~~Maestro~~11 expands on the powerful base of previous versions, improving the editor, adding many new actions and triggers, New Macro Wizard, a new Security preference pane, a keyboardmaestro command line tool, support for Apple Text Recognition, and more. Keyboard~~Maestro~~11 requires macOS 10.13 High Sierra or later.
+
+
+==== Changed in 11.1.1 ====
+
+* Fixed an issue with the [[manual:Application_Switcher|Application Switcher]] not progressing with multiple option/control-Tab presses in Tahoe and later.
+* Corrected spelling of Asynchronously in [[action:Play_Sound|Play Sound]] action.
+
+==== Changed in 11.1 ====
+
+* Support [[action:OCR_Screen|Apple Text Recognition OCR]] in additional languages, including various European languages, Cantonese, Chinese, and Automatic Detection.
+* Respect SF Symbols aspect ratios when drawing SF Symbol based icons.
+* Added option to disable Dimming Hidden applications in [[manual:Application_Switcher|Application Switcher]]. 
+* Resolved an issue with not scrolling to selected actions.
+* [[action:Trigger_Macro_by_Name|Trigger Macro by Name]] sort order honours sorting characters.
+* Adjusted the [[function:PIXEL|PIXEL]] function to return Calibrated RGB and White color spaces.
+* Added AppleScript `use count` property of macros.
+* Added support for [[action:Set_Next_Engine_Window_Position|Set Next Engine Window Position]] action and [[token:LastWindowID|%LastWindowID%]] token to [[manual:Clipboard_History_Switcher|Clipboard History Switcher]]. ([forum](https://forum.keyboardmaestro.com/t/system-clipboard-positioning/51390/10))
+* Work around Tahoe’s obscession with squircles.
+* Really default new [[action:OCR_Screen|OCR]] actions to Apple Text Recognition in 10.15+
+* Fixed an issue with popup menu text extending beyond the edge of the action.
+* Fixed `Save to File` option in editor to show as Token field.
+* Fixed erroneous swapping of action names involving Environment Variables and Variables. ([forum](https://forum.keyboardmaestro.com/t/how-to-remove-trailing-newline-from-long-text/41035/3))
+* Fixed a drawing issue with the field type indicators.
+* Stop Tahoe from autofilling One Time Codes in text fields.
+* Corrected the type of fields in the [[action:Set_Audio_Device|Audio Device]] actions.
+* Fixed dragging of files in the [[action:Split_Path|Split Path]] action.
+* Fixed text display of [[condition:Typed_String|Typed String]] condition.
+* Fixed hidden preferences with colour settings that included alphas.
+* Fixed `Command Escape` in Tahoe not closing the [[manual:Application_Switcher|Application Switcher]].
+* Fixed search not matching [[action:Display_Progress|Display Progress]] progress field.
+* Add raw [[trigger:Typed_String|Typed String]] trigger as searchable. ([forum](https://forum.keyboardmaestro.com/t/engine-log-how-do-i-find-action-number-in-my-list-of-actions/51643/11))
+* Fixed clipboard information not matching in the [[action:Display_Clipboard|Display Clipboard]] action.
+* Worked around an issue with four-byte unicode typing that could cause problems for other applications.
+* Fixed [[token:ScreenResolution|%ScreenResolution[s]%All%]] tokens. ([forum](https://forum.keyboardmaestro.com/t/bug-screenresolution-s-all-returns-nothing/51627))
+
+==== Changed in 11.0.4 ====
+
+* Added display to [[action:Switch_or_Case|Switch/Case]] actions to indicate which entries are true/would execute currently.
+* Adjusted [[action:Set_Variable_to_Calculation|Set Variable to Calculation]] format to be a token text filed. ([forum](https://forum.keyboardmaestro.com/t/increment-variable-maintain-padding/38243))
+* Show Macro Group name when multiple macros from the same group are displayed in the Macro Inspector. ([forum](https://forum.keyboardmaestro.com/t/macro-inspector/39737))
+* Support Apple Text Recognition in [[condition:OCR|OCR]] condition. ([forum](https://forum.keyboardmaestro.com/t/unexpected-inconsistency-in-ocr/37630))
+* Default to Apple Text Recognition in OCR [[action:OCR_Image|action]]/[[condition:OCR|conditions]] in 10.15+.
+* Added Tool Tips for [[manual:Macro_Debugger|Macro Debugger]] window. ([forum](https://forum.keyboardmaestro.com/t/debugger-please-add-tooltips/37484))
+* Ensure all export default names are consistent.
+* Added `com.microsoft.ShadowWorkbook` to clipboard flavor exclusion list.
+* Removed animation of some lists because of performance issues in modern macOS.
+* Re-enable `exists` condition for [[condition:Environment_Variable|Environment Variable]] condition.
+* Added warning if you use `document.kmvar` in a script when in modern syntax. ([forum](https://forum.keyboardmaestro.com/t/warning-for-execute-javascript-action-with-modern-syntax-using-document-kmvar-variable/37621))
+* Allow Environment Variable values as script input.
+* Added display name for Menu/Application key.
+* Return true for `has image` condition when the clipboard contains an image reference. ([forum](https://forum.keyboardmaestro.com/t/macro-paste-text-unformatted-from-copied-text-or-image/38213))
+* Display Mouse lock time now honours hidden preference. ([forum](https://forum.keyboardmaestro.com/t/countdown-delay-for-setting-mouse-pointer-coordinates/40347/9))
+* Fixed Macro Library Clipboard Filter Rotate 180° to actually Rotate 180°.
+* Fixed an issue with [[condition:OCR|OCR]], [[condition:Found_Image|Found Image]] and [[condition:Script|Script]] conditions not being searchable.
+* Fixed an issue with [[trigger:Subroutine|Subroutine]] trigger not being searchable.
+* Fixed a possible bug in Engine Window details.
+* Fixed an issue with [[action:Filter|Filter]] HTML List.
+* Fixed an issue with search highlighting triggers. ([forum](https://forum.keyboardmaestro.com/t/found-another-bug-in-the-editors-search/37583))
+* Fixed an issue with some icon displays in Sonoma and later.
+* Fixed an issue with the [[action:Prompt_With_List|Prompt With List]] action not being canceled in all cases when Cancel All Macros is used. ([forum](https://forum.keyboardmaestro.com/t/some-actions-dont-cancel-if-their-parent-macro-is-cancelled/37445))
+* Fixed an issue with the [[condition:Typed_String|Typed String]] condition. ([forum](https://forum.keyboardmaestro.com/t/typed-string-condition-failing-to-detect-title-case-v11-0-3/37942))
+* Fixed incorrect trigger value for [[trigger:USB_Device_Key|USB Device Key]] Control keys. ([forum](https://forum.keyboardmaestro.com/t/bug-control-key-wrongfully-returnes-by-the-triggervalue-as-enter-symbol/39100))
+* Fixed Select Macros Column menu item not being disabled when the column is selected. ([forum](https://forum.keyboardmaestro.com/t/enabled-state-of-menu-item-view-select-macros-column/39516))
+
+==== Changed in 11.0.3 ====
+
+* Support dragging a file on to the File Selection button in the Write to File action. ([forum](https://forum.keyboardmaestro.com/t/dragging-file-to-purple-folder-doesnt-get-the-path/34084))
+* Added the SelectMenuByNameText token. ([forum](https://forum.keyboardmaestro.com/t/how-to-get-last-selected-menu-item/35954/14))
+* Corrected %LongSystemVersion% token to %SystemLongVersion%. ([forum](https://forum.keyboardmaestro.com/t/km-11-token-systemlongversion-not-giving-a-result/34830))
+* Worked around a bug in NSRegularExpression erroneously setting NSMatchingHitEnd. ([forum](https://forum.keyboardmaestro.com/t/find-and-replace-with-regex-doesnt-find-every-occurrence/35137))
+* Worked around an issue with [[action:Open_the_Finder_Selection|Open the Finder Selection]] action. ([forum](https://forum.keyboardmaestro.com/t/the-application-cant-be-opened/34974))
+* Remove `exists` condition for [[condition:Variable|Variable]] condition which has no single meaning.
+* Resolved a crash if you enter percent characters in USB Device or [[trigger:Mounted_Volume|Mounted Volume]] trigger names.
+* Fixed [[action:Manipulate_a_Window|Manipulate a Window]] action not working on multiple windows when it should have.
+* Fixed an issue with [[trigger:Focused_Window|Focused Window Titled Changed]] trigger on activation. ([forum](https://forum.keyboardmaestro.com/t/focused-window-title-changes-trigger-gets-triggered-upon-group-activation/35128))
+* Fixed an issue with displaying some forms of styled text. ([forum](https://forum.keyboardmaestro.com/t/named-clipboards-how-to-change-font-and-background-color-font-type-size-etc/36116))
+* Fixed an issue where the Active Macro Groups palette could be incorrect.
+* Fixed a possible issue with [[action:New_Google_Chrome_Window|New Google Chrome Window]] action putting the URL in the old window.
+* Fixed an issue where modifiers could be added to the search field if it was the focussed field when the editor activated. ([forum](https://forum.keyboardmaestro.com/t/keyboard-maestro-editor-unintentionally-inserting-modifiers-in-to-search-field/34463))
+* Tried again to resolve issues with non-integer refresh rates and the [[action:Set_Screen_Resolution|Set Screen Resolution]] action.
+
+==== Changed in 11.0.2 ====
+
+* Resolved an issue [[action:Display_Text|Display Large Text]] action stealing focus in Sonoma.
+* Worked around an issue when setting window position and size when the system is animating the changes and gets confused.
+* Fixed the [[action:Alert|Alert]] action to honor the [[action:Set_Next_Engine_Window_Position|Set Next Engine Window Position]] action. ([forum](https://forum.keyboardmaestro.com/t/possible-bug-the-alert-window-does-not-respond-to-the-set-next-engine-window-action/33870))
+* Resolved an issue with keys in the status menu not being handled for a period of time after the Status Menu is opened.
+* Resolved an issue with [[action:Set_Variable_to_Text|Set Variable to Text]] action and arrays within tokens. ([forum](https://forum.keyboardmaestro.com/t/bug-version-11-set-variable-to-text-variable-name-by-indirection-variable-name-from-array-with-custom-delimiter/33934))
+* [[action:Set_Variable_to_Text|Set Variable to Text]] action will error if it is setting an indexed element and the index is out of range. ([forum](https://forum.keyboardmaestro.com/t/how-to-write-to-a-position-in-an-array-variable/25702/7))
+* Resolved a performance issue with the [[token:FrontDocumentPath|%FrontDocumentPath%]] token in the editor.
+* Possibly resolved an issue with [[trigger:USB_Device_Key|USB Device Key]] triggers when lots of 0 packets are sent by the device.
+* Fixed an issue with the non-edit display of OCR languages.
+* Fixed an issue with non-integer screen refresh rates.
+
+==== Changed in 11.0.1 ====
+
+* Request Calendar permission when using the [[action:Create_Calendar_Event|Create Calendar Event]] action.
+* Fixed an issue with [[action:Press_a_Button|Press a Button]] and other actions when it fails but does not abort the macro.
+* Fixed some issues with the [[action:Select_Menu_by_Name|Select Menu by Name]] action.
+* Fixed [[action:Search_and_Replace|Search and Replace]] action to fail when the source cannot be read.
+* Mitigate issue with 1Password corrupted bookmarks causing a crash/lag.
+* Fixed an issue with [[action:Show_Palette_of_Macros|Show Palette of Macros]] action not using the default theme initially. ([forum](https://forum.keyboardmaestro.com/t/palettes-all-changed-with-v11/33685))
+* Fixed the [[token:TriggerBase|%TriggerBase%]] token for the Periodic, Time of Day and other triggers. ([forum](https://forum.keyboardmaestro.com/t/possible-bug-periodic-trigger-s-triggerbase-value-has-changed-in-km11/33607))
+* Fixed an issue with [[token:FinderSelections|%FinderSelections%]] and other tokens on pre-Ventura systems. 
+* Added a TokenTimeout and ForceSynchronousTokens preference. ([forum](https://forum.keyboardmaestro.com/t/possible-bug-finderselections-token-returns-inaccurate-results-when-selecting-large-number-of-items/33713))
+* Fixed some false positives with modifier only [[trigger:Typed_String|Typed String]] triggers.
+* Fixed an issue with [[action:Find_Image_on_Screen|Find Image]] & [[action:Move_or_Click_Mouse|Click Mouse With Found Image]] actions when Waiting For Match.
+* Resolved an issue with the macro group Toggle window stealing focus in Sonoma.
+* Fixed a possible issue with some [[trigger:Wireless_Network|Wireless Network]] trigger names.
+* Fixed a minor issue with the non-Edit display of Smart Groups.
+
+==== Editor ====
+
+* Added New Macro Wizard to quickly make new macros.
+* Added Security [[manual:Preferences|preference pane]] to summarise the state and adjust the various system security settings. 
+* Added [[manual:Macro_Groups|Macro Group]] synching option to Disable Macro Group on All Macs. ([forum](https://forum.keyboardmaestro.com/t/request-new-group-creation-pref-disabled-on-this-mac-on-all-cpus/32698))
+* Report if macros that are deleted are in use by other macros.
+* Added deprecated: [[manual:Search_Strings|search string]].
+* Added action:1234 [[manual:Search_Strings|search string]].
+* Added word:wombat [[manual:Search_Strings|search string]].
+* Show Click Location in Quick Look view of images in [[action:Move_or_Click_Mouse|Click at Found Image]] action (contstant offsets only).
+* Added “Do Not Ask Again” option to Evaluate Conditions alert.
+* Added link to wiki [[manual:Preferences|Preferences]] in the General preferences settings. 
+* Support inserting “¬” characters with option-Return in AppleScript script fields.
+* Support text completion for Path fields.
+* Support `macros` in AppleScript smart groups. ([forum](https://forum.keyboardmaestro.com/t/feature-request-applescript-parity-between-macro-groups-and-smart-macro-groups/14602/4))
+* Added warning if the Keyboard Maestro application is moved while it is running. ([link](https://www.keyboardmaestro.com/action/linkthru?applicationmoved))
+* Added Find button when deleting a named clipboard that is used by one or more macros.
+* Added Move Action Up/Down menu items.
+* Added support to [[action:Press_a_Button|Press a Button]] action to scan application windows for buttons.
+* Default new [[action:Execute_a_JavaScript_in_Front_Browser|Execute a JavaScript]] actions to modern syntax. 
+* Added live results to the [[action:Search_and_Replace|Search and Replace]] action. ([forum](https://forum.keyboardmaestro.com/t/action-live-result-display/3124))
+
+==== Engine ====
+
+* Added [[trigger:keyboardmaestro|keyboardmaestro]] command line tool for triggering or editing macros.
+* Added modern JavaScript syntax mode.
+* Added support for limiting variables passed to scripts.
+* Added Apple Text Recognition to OCR options (macOS 10.15+). ([forum](https://forum.keyboardmaestro.com/t/apple-vision-ocr-instead-of-tessaract/24464))
+* Added Active Macro Groups palette to show which groups are active (available via the Help menu or the Status Menu).
+* Simplified `Paste "xyz"` submenu in the status menu to just display the text.
+* Added an option to include macro icons in the status menu.
+* Added an option to include macro icons in the group status menus.
+* AppleScript `do script` now returns results from the [[action:Return_from_Subroutine|Return]] action.
+* Execute Macro shortcut returns results from the [[action:Return_from_Subroutine|Return]] action.
+* Added Blue Topaz palette theme. ([forum](https://forum.keyboardmaestro.com/t/custom-palette-style-colors/3516/28))
+* Request Screen Recording permission if the [[condition:Pixel|Pixel]] condition is used.
+* Request Contacts permission if the [[token:AddressBook|%AddressBook%]] token is used.
+* Allow [[action:Create_Unique_File|Create Unique File]] action without an output variable to execute without error.
+* Improved detection and reporting of errors in [[actions:Browser_Actions|Browser Actions]].
+* Use custom [[action:For_Each|For Each]] action name in Display Progress title. ([forum](https://forum.keyboardmaestro.com/t/for-each-action-now-has-its-own-progress-bar-km10/26437/8))
+* Added an option to show only images in the [[manual:Clipboard_History_Switcher|Clipboard History Switcher]]. ([forum](https://forum.keyboardmaestro.com/t/search-filter-images-only-in-clipboard-history-switcher/30123))
+* Support Command & Command-Shift Arrows in Spotlight-like windows.
+* Support `\` processing in variable token array item separators (eg %Variable%Lines[3]\n%).
+* Limit [[token:FrontBrowserJavaScript|%JavaScript%]] tokens maximum execution time to half a second.
+* Support arbitrarily large numbers of files [[trigger:Dragged_File|dropped on a palette entry]]. ([forum](https://forum.keyboardmaestro.com/t/increase-maximum-number-of-files-that-can-be-dropped-on-a-macro/31285))
+* Resolve symlinks for Applications (specifically this helps with the move of Safari in Ventura).
+* Removed use of deprecated SecKeychainUnlock et al.
+* Remove the "The text is" (and similar) from the Display Text windows. ([forum](https://forum.keyboardmaestro.com/t/change-manipulate-the-title-of-the-display-text-in-window/32567/4))
+* Allow [[action:Prompt_for_User_Input|Prompt for User Input]] sliders to return decimals. ([forum](https://forum.keyboardmaestro.com/t/slider-keeps-rounding-my-values-down/32936/2))
+
+==== Triggers ====
+
+* Added [[trigger:Space_Changed|Space Changed]] trigger. ([forum](https://forum.keyboardmaestro.com/t/feature-request-new-trigger-desktop-space-change/32640))
+* Added tapped only once/twice/3 times options to [[trigger:Hot_Key|Hot Key]] and [[trigger:USB_Device_Key|USB Device Key]] triggers.
+* Added support for modifiers in [[trigger:Typed_String|Typed String]] triggers (eg “em⇧” means e, m, tap the shift key). ([forum](https://forum.keyboardmaestro.com/t/suggestion-use-key-sequences-including-modifiers-to-trigger-macros/27093))
+
+==== Actions ====
+
+* Added [[action:Prompt_for_Snippet|Prompt for Snippet]] action.
+* Added [[action:Create_Calendar_Event|Create Calendar Event]] action (macOS 10.14+).
+* Added [[action:Send_Pushover_Notification|Send Pushover Notification]] action.
+* Added [[action:Set_Screen_Resolution|Set Screen Resolution]] action.
+* Added [[action:Select_Menu_by_Name|Select Menu by Name]] action.
+* Added [[action:Remove_Clipboard_Flavors|Remove Clipboard Flavors]] action.
+* Added [[action:Set_Audio_Device|Set Audio Input/Output/Sound Effects Device]] actions. 
+* Added [[action:Mute_Audio_Device|Mute/Unmute Audio Device]] actions.
+* Added [[action:Get_Location|Get Location]] action.
+* Added option to [[action:Move_or_Click_Mouse|Click at Found Image]] action to wait for the image to appear.
+* Added option to [[action:Find_Image_on_Screen|Find Image on Screen]] action to wait for the image to appear.
+* Added Progress Bar option to [[action:Group|Group]] action. ([forum](https://forum.keyboardmaestro.com/t/for-each-action-now-has-its-own-progress-bar-km10/26437/12))
+* Added Progress Bar option to [[action:Repeat|Repeat]] action.
+* Added support for other kinds of behaviours (eg showing a menu) to the [[action:Press_a_Button|Press a Button]] action. ([forum](https://forum.keyboardmaestro.com/t/whats-the-best-way-to-work-with-mini-menus-not-the-menu-bar/10853/2))
+* Added an optional HelpURL field to [[manual:Plug_In_Actions|Plug In Actions]]. ([forum](https://forum.keyboardmaestro.com/t/feature-request-support-for-proper-help-information-in-third-party-plugins/20285))
+* Added support to [[action:Set_JSON_Value|Set JSON Value]] action to delete dictionary or array entries by setting to `%Delete%`.
+* Added explicit File Move and File Rename options to the [[action:Move_or_Rename_a_File|Move or Rename a File]] action. ([forum](https://forum.keyboardmaestro.com/t/wiki-update-file-actions/11023))
+* Added Hide Other Applications, Bring All Windows to Front and Reopen Initial Windows options to [[action:Activate_a_Specific_Application|Activate a Specific Application]] action when already at front.
+* Added an option to reduce the CPU usage of [[action:Pause_Until|Pause Until]] actions for long running pauses.
+* Support [[action:Set_Variable_to_Text|Set Variable to Text]] action setting array elements of a variable. ([forum](https://forum.keyboardmaestro.com/t/how-to-loop-through-array-variable/13498/3))
+* Added configurable themes for [[action:Show_Palette_of_Macros|Show Palette of Macros]] action. ([forum](https://forum.keyboardmaestro.com/t/how-to-have-multiple-conflict-palette-styles/29239))
+* Added option to [[manual:Applications_Palette|Applications Palette]] to default to Hide Others when switching.
+* Added option to [[action:Apply_Modifiers_to_a_Specific_Application|Apply Modifiers to Application]] action to default to Hide Others when switching.
+* Add options for All Windows and Reopen Windows to [[action:Activate_Last_Application|Activate Last Application]] action. ([forum](https://forum.keyboardmaestro.com/t/is-there-a-km-action-equivalent-to-btt-switch-to-previous-window/31917/25))
+* Added File option to [[action:Stream_Deck_Set_Image|Stream Deck Set Image]] action. ([forum](https://forum.keyboardmaestro.com/t/stream-deck-set-the-image-to-a-file-like-found-image-works/22619))
+* Support Save to File as an output option to the [[action:Get_a_URL|Get a URL]], [[action:Execute_a_Shell_Script|Execute Script]]/[[action:Execute_Shortcut|Shortcut]], and [[action:Plug_In|Plug In]] actions. ([forum](https://forum.keyboardmaestro.com/t/copying-an-image-from-a-web-page-into-clipboard-having-some-issues-best-approach/30527/6))
+* Support saving images to Clipboard/File in a variety of formats for [[action:Get_a_URL|Get a URL]], [[action:Execute_a_Shell_Script|Execute Script]]/[[action:Execute_Shortcut|Shortcut]], and [[action:Plug_In|Plug In]] actions.
+* Adjusted [[action:Hide_Front_Application|Hide Front Application]] action to wait for the application to no longer be active before proceeding.
+* Adjusted [[action:Quit_a_Specific_Application|Quit Application]] (et al) actions to wait for the application to terminate (or relaunch).
+
+==== Conditions ====
+
+* Add a [[condition:File_Attribute|File Attribute]] condition. ([forum](https://forum.keyboardmaestro.com/t/how-prevent-an-action-from-working-under-certain-conditions/24333))
+* Added [[condition:Macro|Macro is Executing]] condition condition.
+
+==== Filters ====
+
+* Added Sentence Case [[manual:Filters|filter]].
+* Added Styled Text to/from RTF [[manual:Filters|filter]]. ([forum](https://forum.keyboardmaestro.com/t/request-for-a-new-token-compositetextwidth/23344/15))
+* Adjusted the Word Count [[manual:Filters|filter]] so that “1.49” is one word.
+
+==== Tokens ====
+
+* Added [[token:FrontBrowserWindowName|%Safari/Chrome/FrontBrowserWindowName%]] tokens.
+* Added [[token:FrontBrowserVersion|%Safari/Chrome/FrontBrowserVersion/LongVersion%]] tokens.
+* Added [[token:FrontBrowserPath|%Safari/ChromeBundleID/Path/Name%]] tokens.
+* Added [[token:FrontDocumentPath|%FrontDocumentPath%]] token (thanks Chris!). ([forum](https://forum.keyboardmaestro.com/t/finding-the-file-path-for-the-front-document-in-the-front-application/7095))
+* Added [[token:ApplicationVersion|%ApplicationVersion/LongVersion%]] tokens. ([forum](https://forum.keyboardmaestro.com/t/feature-request-an-enhancement-to-get-hardware-and-software-based-information-without-coding/31812))
+* Added [[token:KeyboardMaestroVersion|%KeyboardMaestroVersion/LongVersion%]] tokens. ([forum](https://forum.keyboardmaestro.com/t/feature-request-an-enhancement-to-get-hardware-and-software-based-information-without-coding/31812))
+* Added [[token:SystemVersion|%SystemVersion/LongVersion%]] tokens. ([forum](https://forum.keyboardmaestro.com/t/feature-request-an-enhancement-to-get-hardware-and-software-based-information-without-coding/31812))
+* Added [[token:LastAbortedActionID|%LastAbortedActionID%]] token. ([forum](https://forum.keyboardmaestro.com/t/try-catch-would-love-to-get-more-details-in-tokens/25244/3))
+* Added [[token:OptionReturn|%OptionReturn%]] token (valid in Insert Text by Typing only).
+* Added [[token:ScreenResolution|%ScreenResolution(s)%]] tokens.
+* Added [[token:AudioInputDevice|%AudioInputDevice(UID)%]] tokens.
+* Added [[token:AudioOutputDevice|%AudioOutputDevice(UID)%]] tokens.
+* Added [[token:AudioSoundEffectsDevice|%AudioSoundEffectsDevice(UID)%]] tokens.
+* Added [[token:AudioInputDevices|%AudioInputDevices%]] and [[token:AudioOutputDevices|%AudioOutputDevices%]] tokens.
+* Added [[token:MusicPlayerState|%MusicPlayerState%]] token.
+* Added [[token:SystemClipboardFlavors|%SystemClipboardFlavors%]] token
+* Added [[token:PastClipboardFlavors|%PastClipboardFlavors%]] token
+* Added [[token:NamedClipboardFlavors|%NamedClipboardFlavors%]] token
+* Added [[token:TriggerClipboardFlavors|%TriggerClipboardFlavors%]] token
+* Adjusted the [[token:FinderSelection|%FinderSelection(s)%]] tokens to return the selected item, not the target of an alias/link. ([forum](https://forum.keyboardmaestro.com/t/finderselections-with-symbolic-links/29015))
+
+==== Functions ====
+
+* Added [[function:PROCESSORS|PROCESSORS()]] function. ([forum](https://forum.keyboardmaestro.com/t/feature-request-an-enhancement-to-get-hardware-and-software-based-information-without-coding/31812))
+* Added [[function:MEMORY|MEMORY()]] function. ([forum](https://forum.keyboardmaestro.com/t/feature-request-an-enhancement-to-get-hardware-and-software-based-information-without-coding/31812))
+* Added [[function:UPTIME|UPTIME()]] function. ([forum](https://forum.keyboardmaestro.com/t/feature-request-an-enhancement-to-get-hardware-and-software-based-information-without-coding/31812))
+* Added an optional second parameter to [[function:ROUND|ROUND]], [[function:CEIL|CEIL]], [[function:FLOOR|FLOOR]], and [[function:TRUNC|TRUNC]] functions.
+
+==== Fixes ====
+
+* Fixed a performance issue in the editor switching to/from macros with large numbers of triggers. ([forum](https://forum.keyboardmaestro.com/t/performance-of-a-macro-with-many-key-triggers/16128))
+* Fixed a crash that could happen if the icon of one macro was dependent on another recursively. ([forum](https://forum.keyboardmaestro.com/t/km-editor-crashing-at-launch/32735))
+* Fixed a possible crash after duplicate [[trigger:Typed_String|Typed String]] triggers fire and the macros are immediately reloaded.
+* Fixed an issue with [[action:Prompt_for_User_Input|Prompt for User Input]] sliders with initial values above 100. ([forum](https://forum.keyboardmaestro.com/t/slider-keeps-rounding-my-values-down/32936/2))
+* Fixed some issues with the Ruler in text views.
+* Fixed an issue with the [[token:VBAR|%|%]] token and emoji. ([forum](https://forum.keyboardmaestro.com/t/bug-cursor-positioned-incorrectly-after-inserting-text-with-emojis/32446))
+* Fixed an issue searching for greater than 16-bit unicode characters. ([forum](https://forum.keyboardmaestro.com/t/im-not-sure-that-emoji-are-reliably-searchable-in-the-keyboard-maestro-editor/16852))
+* Fixed some issues with truncating strings with greater than 16-bit unicode characters.
+* Fixed a glitch in the KeyCaps.icns file. ([forum](https://forum.keyboardmaestro.com/t/other-icons-export-as-trigger-file/31740/3))
+* Fixed an issue with [[token:FinderSelection|%FinderSelection%]] and [[token:FinderSelections|%FinderSelections%]] tokens.
+* Fixed an issue with [[trigger:USB_Device_Key|USB Device Key]] trigger and MacBook Pro M2 Product ID = 0 keyboards.
+* Fixed [[action:Execute_a_JavaScript_in_Custom_Prompt|Execute a JavaScript in Custom Prompt]] action to process tokens on script paths.
+* Fixed using Helvetica in the Spotlight-like windows.
+* Fixed [[manual:URL_Schemes|keyboardmaestro: URL]] so it works when the editor is launched.
+* Fixed [[trigger:Typed_String|Typed String]] triggers with regular expressions to produce conflict palettes if appropriate.
+* Fixed an issue with the non-edit trigger display of times in certain time zones. ([forum](https://forum.keyboardmaestro.com/t/set-a-time-trigger-shows-a-different-time/29059))
+* Fixed setting [[action:Trigger_Macro_by_Name|Trigger Macro by Name]] to a Smart Macro Group. ([forum](https://forum.keyboardmaestro.com/t/trigger-macro-by-name-limit-to-smart-group-results/29546))
+* Fixed a memory leak when finding images. ([forum](https://forum.keyboardmaestro.com/t/excessive-keyboard-maestro-engine-memory-usage/30175/))
+* Fixed an issue with the Interactive Help listing macro execution multiple times.
+* Fixed an issue with the Interactive Help not listing recorded Quick Macro executions.
+* Added some logging for failed Accessibility window manipulations.
+* Fixed issue where a duplicated search string matched action does not appear matched.
+* Fixed an issue with overly enthusiastic search field completion suggestions. 
+* Fixed issue with Palettes displaying wide enough to hold a title that is not shown. ([forum](https://forum.keyboardmaestro.com/t/cant-understand-why-palette-contains-a-wide-blank-area/33081/4))
+* Fixed an issue with the window switcher switching to different monitors. ([forum](https://forum.keyboardmaestro.com/t/window-switcher-activate-window-on-other-monitor/33018))
+
+==== Download =====
+
+[[https://www.stairways.com/action/linkthru?download|Download Keyboard Maestro]] now to try all these great capabilities. Or keep reading for even more details about the [[Features]] of Keyboard Maestro.
+
+Alternatively, you can [[mailto:support@stairways.com|contact us]] if you have a question about whether Keyboard Maestro can solve your automation needs. We want all our customers to be satisfied, so we are happy to help you understand how Keyboard Maestro can achieve your automation goals.

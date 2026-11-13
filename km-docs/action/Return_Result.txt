@@ -1,0 +1,29 @@
+====== Return Result Action ======
+
+The *Return Result * action (v10.0+) returns a specified value.
+
+The result is returned to an [[action:Execute_a_Subroutine|Execute a Subroutine]] action that executed this macro (directly or indirectly). The returned value will be stored in the variable specified by the Execute a Subroutine action (if any).
+
+If no Execute a Subroutine action executed the macro, then the result will be returned to an AppleScript `do script` (v11.0+) or to the [[manual:Command_Line_Tool|Command Line Tool]] (v11.0+), or the [[action:Execute_a_Macro|Execute a Macro]] action (v11.0+).
+
+ExtraSearchTags: *Run Macro*, *Run a Macro*, *Call Macro*, *Sub Macro*
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[trigger:Subroutine|Subroutine]] trigger
+* [[trigger:URL|URL]] triggers
+* [[:Triggers|See all Triggers]]
+
+=== Actions ===
+
+* [[action:Execute_a_Subroutine|Execute a Subroutine]] action
+* [[action:Execute_a_Macro|Execute a Macro]] action
+* [[/Actions|Actions]]
+
+=== Other ===
+
+* [[manual:Command_Line_Tool|Command Line Tool]]
+* [[manual:Scripting|Scripting]]
+* [[/Shortcut_Actions|Shortcut Actions]]

@@ -1,0 +1,1 @@
+A ModifiedJulianDate (MJD) is days (and fractions of days) since the start of November 17, 1858.

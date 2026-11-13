@@ -1,0 +1,35 @@
+====== MOUSEBUTTON Function ======
+
+The *MOUSEBUTTON()* function returns whether the Mac's mouse button is pressed. It returns 1 if the button is pressed or 0 otherwise.  It takes an optional parameter indicating the desired mouse button.
+
+    MOUSEBUTTON() === MOUSEBUTTON(1) === whether the left mouse button is pressed
+    MOUSEBUTTON(2) === whether the right mouse button is pressed
+    MOUSEBUTTON(3) === whether the middle mouse button is pressed
+    
+4, 5 and 6 may also be valid buttons depending on your mouse.
+
+===== See Also =====
+
+==== Actions====
+
+* [[action:Manipulate_a_Window|Manipulate a Window]] action
+* [[action:Move_or_Click_Mouse|Move or Click Mouse]] action
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[function:MENUBARHEIGHT|MENUBARHEIGHT]] function
+* [[function:MOUSEX|MOUSEX]] function
+* [[function:MOUSEY|MOUSEY]] function
+* [[function:SCREEN|SCREEN]] function
+* [[function:SCREENVISIBLE| SCREENVISIBLE]] function
+* [[function:SCREENINDEX| SCREENINDEX]] function
+* [[function:WINDOW|WINDOW]] function
+* [[function:WINDOWCOUNT|WINDOWCOUNT]] function
+* [[:Functions|See all Functions]]
+
+==== Forum ====
+
+* [[https://forum.keyboardmaestro.com/t/i-need-a-conditional-if-there-are-two-monitors/3031/5|I need a conditional if there are two monitors]]
+* [[https://forum.keyboardmaestro.com/t/repeat-until-mouse-click/4584|Repeat until mouse-click?]]
+

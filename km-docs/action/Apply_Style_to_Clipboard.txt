@@ -1,0 +1,51 @@
+The Apply Style to Clipboard action applies a style (like font, size, color or underline) to all or part of the system clipboard or a Named Clipboard.
+
+{{:action:applystyletoclipboard.png?400|}}
+
+Select whether to apply the styles to the system clipboard or a named clipboard.
+
+Style the text as you wish by selecting from the options as required.
+
+Choose a font from the pop-up or leave it at Unchanged. When you select a font, variants such as bold or italic may become available, depending on the font family you select.
+
+As you make your various choices the text in the Sample field previews the changes.
+
+Choose a size: smaller, bigger or a fixed size.
+
+If you wish, choose colors for the text and for the background behind the text. 
+
+Strikethrough and underline offer options for the line: None, Single, Thick, Double.
+
+Superscript allows you to choose super or subscript.
+
+Finally choose whether to apply the styles to the whole string or just part of it. Options are:
+  * Characters to
+  * Characters from
+  * Last characters
+  * Characters in range 
+  * Characters from and to
+
+Each selection of a partial string then allows you to specify exactly which part of the string to style.
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Insert Text by Pasting|Insert (Styled) Text by Pasting]]
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:NamedClipboard|%NamedClipboard%Clipboard Name%]]
+* [[:Tokens|See all Tokens]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/microsoft-word-make-numbers-in-selected-text-superscript-without-affecting-the-words/2895/4|Microsoft Word: Make numbers in selected text superscript without affecting the words]]
+- [[https://forum.keyboardmaestro.com/t/the-km-format-menu/3852|The KM Format menu]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Apply%20Style|Keyboard Maestro Forum topics about Apply Style]]

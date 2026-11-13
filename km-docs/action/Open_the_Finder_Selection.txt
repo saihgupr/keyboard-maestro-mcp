@@ -1,0 +1,19 @@
+====== Open the Finder Selection Action ======
+
+The Open the Finder Selection action opens the files or folders that are currently selected in the Finder.  
+
+Select the application to open the file.
+
+(!) Note that in Sonoma, if the file has the quarantine bit security feature set (which you can check with the shell command `xattr -p com.apple.quarantine /path/to/file`), then the system API used to open the file with an application will fail with error -128 (user canceled - presumably because the system API does not know how to ask permission). You can remove the security settings with the shell command `xattr -d com.apple.quarantine /path/to/file`.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Activate a Specific Application|Activate a Specific Application]]
+* [[action:Open a URL|Open a URL]]
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/the-application-cant-be-opened/34974|“The Application Can’t Be Opened”]]

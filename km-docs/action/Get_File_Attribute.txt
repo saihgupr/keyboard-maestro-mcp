@@ -1,0 +1,79 @@
+====== Get File Attribute Action ======
+
+The //Get File Attribute// action returns the specified attribute for the specified file to a Variable. 
+
+===== How To Use =====
+
+Click the File Chooser button to the right of the action to select an existing file on disk. Option-click on the File Chooser button to show the currently selected file in the Finder (assuming it exists already).
+
+The result of the action is displayed at the bottom of the action.
+
+===== File attributes available =====
+
+{{page>include:GettableFileAttributes#}}
+
+===== Addition File Attributes =====
+
+There are several more attributes available using the [[action:Filter|Filter]] action.
+
+  * Delete the the path extension.
+  * Expand Path to full page, replacing tilde (~) in the path.
+  * Resolve symlinks, or standardize the path.
+
+
+===== Using Alias and SymLink Files =====
+
+If you select an Alias or SymLink file using the _File Chooser_ it will return the _target_ rather than the actual path.
+
+{{:action:get-file-attribute-km8.png?nolink|}}
+
+If you want to determine if the Finder Item is an Alias or SymLink, you can use this AppleScript, which will return either "Link: Alias" OR "Link: SymLink" OR the file kind.
+
+```applescript
+tell application "Finder"
+  set theSel to the selection
+  set theItem to item 1 of theSel
+  set itemKindStr to (kind of theItem) as text
+  
+  if (itemKindStr ≠ "folder") then
+    set itemFileType to (file type of theItem) as text
+  else
+    set itemFileType to "folder"
+  end if
+  
+  if (itemKindStr = "Alias") then
+    if (itemFileType = "missing value") then
+      set itemKindStr to "Link: SymLink"
+    else
+      set itemKindStr to "Link: Alias"
+    end if
+  end if
+  
+end tell
+
+return itemKindStr
+-->Link: Alias
+-->Link: SymLink
+-->BBEdit text document
+
+```
+
+===== See Also =====
+
+==== Actions ====
+
+* [[Set File Attribute]]
+* [[Filter]]
+* [[:Actions|See all Actions]]
+
+=== Conditions ===
+
+* [[condition:File_Attribute|File Attribute]]
+* [[condition:Path|Path]]
+* [[:Conditions|See all Conditions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/getting-url-of-most-recently-added-file-to-folder/2902/3|Getting url of most recently added file to folder]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Get%20File%20Attribute|Keyboard Maestro Forum topics about Get File Attribute]]

@@ -1,0 +1,15 @@
+====== SystemVersion Token ======
+
+The //%SystemVersion%// and //%SystemLongVersion%// tokens (v11.0+) return the macOS version that is running on this Mac.
+
+Note the //%SystemLongVersion%// token was incorrectly //%LongSystemVersion%// from v11.0-v11.0.2.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens |See all Tokens]]

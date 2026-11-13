@@ -1,0 +1,22 @@
+====== About Keyboard Maestro ======
+
+[Keyboard Maestro](http://www.keyboardmaestro.com/) is a powerful macro program for macOS which has received glowing reviews.
+
+Keyboard Maestro 11 is now available, improving the editor, adding many new actions and triggers, New Macro Wizard, a new Security preference pane, a keyboardmaestro command line tool, support for Apple Text Recognition, and more.
+
+You can [download the free trial](https://download.keyboardmaestro.com/) and [buy direct from us](https://purchase.keyboardmaestro.com/) when see how much Keyboard Maestro can do for you.
+
+Keyboard Maestro enables you to create or record custom macro shortcuts that you can activate at any time. For example, your macros could help you navigate runnings applications or work with an unlimited number of clipboards. Best of all, every macro you create is available using simple keystrokes you choose. The only limit to Keyboard Maestro is your imagination and where that fails, this Wiki and the [[https://forum.keyboardmaestro.com/|forum]] is designed to help.
+
+Using Keyboard Maestro’s powerful Macros, you can control applications, windows, or menus; insert text; open documents, applications or URLs; execute scripts; control the system, iTunes or QuickTime Player; and more — all with the touch of a key, click of the mouse, periodically or at specific times, when an application is launched or running, or even over the Internet using using a web browser to access Keyboard Maestro’s built-in web server or the [[trigger:Remote|Remote]] trigger.
+
+Using Keyboard Maestro’s Application Switcher and Window Switcher you can cycle through applications or windows, closing, hiding, launching, and more. The Application Launcher lets you quickly launch applications. Keyboard Maestro can even help you regain control of your crowded screen by letting you close or hide multiple windows or applications.
+
+Using Keyboard Maestro’s Clipboard History Switcher, you can access previous clipboards. You'll never lose something on your clipboard again! The Clipboard History Switcher also makes it easy to copy and paste multiple items, such as a username and password or a serial number, without having to switch back and forth between applications for each item. You can mark a clipboard as a favorite so it stays forever or send it to another Mac running Keyboard Maestro.
+
+Using Keyboard Maestro’s Clipboard Switcher, you can select from a number of named clipboards, storing information away for later retrieval, or store the details you are working on and access them by name again and again.
+
+Keyboard Maestro 11 requires macOS 10.13 High Sierra or later.
+
+Keyboard Maestro is [free to try](https://download.keyboardmaestro.com/) with no limitations. Once the trial period ends, a [license must be purchased](https://purchase.keyboardmaestro.com/) to continue using it.
+

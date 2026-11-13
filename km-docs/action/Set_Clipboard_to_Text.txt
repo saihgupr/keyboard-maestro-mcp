@@ -1,0 +1,21 @@
+The Set Clipboard to Text action allows you to set the system clipboard to plain or styled text. 
+
+{{:action:setclipboardtostyledtext.png?direct&600|}}
+
+Select the clipboard to set from the //Set// pop-up.
+
+Choose from the //to// pop-up either:
+  *plain text.
+  *styled text.
+
+Enter the text to use in the text area. To set the clipboard to styled text paste already styled text from another source.
+
+Use the arrow at the right of the text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+The action allows you to control what text processing happens in the gear menu (7.2+) :
+
+* Process Text Normally (process text tokens and backslash characters)
+* Process Text Tokens Only (process text tokens but not backslash characters)
+* Process Nothing (process neither text tokens nor backslash characters)
+
+Most other [Text Fields](https://wiki.keyboardmaestro.com/Text_Fields) in Keyboard Maestro process both text tokens and (except for regular expression fields) backslash characters. 

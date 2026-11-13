@@ -1,0 +1,143 @@
+====== Move or Click Mouse Action ======
+
+
+The Move or Click Mouse action allows you to move, click or move and click the mouse using any mouse button, and optionally dragging. 
+
+You can specify modifiers such as the shift key, as well as the position, relative to any corner of the front window, the main screen, or the current mouse location, or a found image on the screen.
+
+===== Examples =====
+
+
+Simple Example: Click Mouse at Location Relative to Window
+
+{{:action:moveorclickmouse.png?511|}}
+
+===== Setup of Action =====
+
+As you select options further settings may become available. For example, if you //click// then you can also choose a button to click with and whether or not to also press a modifier key such as Control.
+
+{{:action:move-click-mouse-action-setup-km-7.3.png?nolink|}}
+
+==== Mouse Operation ====
+  *Just Move.
+  *Click.
+  *Double Click.
+  *Triple click.
+  *Release.
+
+
+==== Mouse Button ====
+
+  * left button (default)
+  * right button
+  * center button
+  * button 4
+  * button 5
+  * button 6
+
+==== Modifier Keys ====
+
+Select zero or more modifier keys by clicking the relevant icon:
+  *Control — ⌃.
+  *Option — ⌥. 
+  *Shift — ⇧.
+  *Command — ⌘.
+
+When a modifier key is included the icon is filled with blue.
+
+==== X & Y Locations for Mouse Action ====
+  * Enter Coordinates in pixels
+  * Location may be absolute or relative, based on next setting.
+
+==== Location Relative To ====
+  *mouse location.
+  *absolute position.
+  *front window's corner (top left, top right, bottom left, bottom right).
+  *front window's center.
+  *screen's corner (top left, top right, bottom left, bottom right).
+  *screen's center.
+  *found image's corner (top left, top right, bottom left, bottom right).
+  *found image's center.
+
+**To get the relative distance** (offset) of the Mouse position relative to some location, like the window top, left corner, use the _Get_ button _after_ you have set the _relative to_ location.
+
+==== Setup and Testing ====
+The //Go// and //Get// Buttons are used only during setup of the Action.  They have no effect when the macro is executed.
+  * //Go// button moves the mouse to the specified X & Y location.
+  * //Get// button sets the X & Y location to current mouse position
+    * Relative to the location set by the //relative to// popup
+    * Gives you a countdown from 5 to allow time to move the mouse pointer.
+
+==== Mouse Drag Options ====
+
+Specify from the pop-up whether the click operation is:
+  *without dragging.
+  *and drag to.
+  *and drag absolute.
+  *and drag relative.
+  *and hold.
+
+Notes: 
+  - buttons that are pressed stay pressed only as long as the macro continues to run.
+  - use the gear icon at top right of the action to select whether or not to //Restore Mouse Location//.
+
+===== Click at Found Image =====
+
+You can also click relative to a [[:Found Image|Found Image]].  By default the image has to be unique (which includes not being visible in the action if the image is small enough not to be shrunk in the image well) otherwise Keyboard Maestro will not know where to click. Alternatively, you can specify which image to click (Best, Topmost, Leftmost, Bottommost or Rightmost). You can also use the [[action:Find_Image_on_Screen|Find Image on Screen]] action or the [[action:For_Each|For Each]] action with the [[collection:Found_Images|Found Images]] collection to find all matching images and click on them as appropriate.
+
+{{page>::Found_Image#How To Use&noheader&nofooter}}
+
+If the click offsets are all fixed values (not calculations), you can select the image well and press <key>SPACE</key> to show the image with the location of the click displayed on the image (v11.0+).
+
+There is an option in the action (gear) ⚙ menu to have the action wait until the image appears (v11.0+).
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Bring Application Windows to Front]]
+* [[action:Find Image on Screen|Find Image on Screen]]
+* [[action:Login Window|Login Window]]
+* [[action:Manipulate a Window|Manipulate a Window]]
+* [[action:New_Google_Chrome_Window|]]
+* [[action:New_Safari_Window]]
+* [[:Actions|See all Actions]]
+
+====  Collections ====
+
+* [[collection:Found Images|Found Images]]
+* [[:Collections|See all Collections]]
+
+====  Conditions ====
+
+* [[condition:Found Image|Found Image]]
+* [[:Conditions|See all Conditions]]
+
+==== Functions ====
+
+* [[function:MENUBARHEIGHT|MENUBARHEIGHT()]]
+* [[function:MOUSEBUTTON|MOUSEBUTTON()]]
+* [[function:MOUSEX|MOUSEX()]]
+* [[function:MOUSEY|MOUSEY()]]
+* [[function:SCREEN|SCREEN()]]
+* [[function:SCREENCOUNT|SCREENCOUNT()]]
+* [[function:SCREENVISIBLE|SCREENVISIBLE()]]
+* [[function:WINDOW|WINDOW()]]
+* [[function:WINDOWCOUNT|WINDOWCOUNT()]]
+* [[:Functions|See all Functions]]
+
+==== Tokens ====
+
+* [[token:CurrentMouse|%CurrentMouse%]]
+* [[token:FrontWindowFrame|%FrontWindowFrame%]]
+* [[token:FrontWindowName|%FrontWindowName%]]
+* [[token:FrontWindowPosition|%FrontWindowPosition%]]
+* [[token:FrontWindowSize|%FrontWindowSize%]]
+* [[token:WindowFrame|%WindowFrame%]]
+* [[token:WindowName|%WindowName%]]
+* [[token:WindowPosition|%WindowPosition%]]
+* [[token:WindowSize|%WindowSize%]]
+* [[:Tokens|See all Tokens]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/macro-move-window-1-space-left-right-or-to-different-desktop/3100/2|MACRO: Move Window 1 Space Left/Right or to Different Desktop]]

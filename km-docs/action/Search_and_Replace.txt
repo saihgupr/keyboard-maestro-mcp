@@ -1,0 +1,66 @@
+The //Search and Replace// action allows you to search and replace the [[:Clipboards|System Clipboard]], a [[:Clipboards|Named Clipboard]], the [[:Clipboards|Trigger Clipboard]] (v8+), a variable, some tokenised text (v8+), or a file (v8+).
+
+Prior to v8.0 there were separate Search and Replace Variable and Search and Replace Clipboard actions and the results always went back to the source variable or clipboard.
+
+{{:action:searchreplace.png?nolink|}}
+
+You can search for:
+  * Strings, matching the case.
+  * Strings, ignoring the case.
+  * Regular Expression, matching the case.
+  * Regular Expression, ignoring the case.
+
+Select the source to search using the //Search// pop-up.
+
+Select the kind of search to run, from the //using// pop-up. Then enter the text to search for in the text area.
+
+Enter what to replace the found text with in the //and replace with// text area. Use the arrow at the right of the text area to select variables, clipboards and other tokens to enter in the text area.
+
+For regular expressions, the replacement can refer to capture groups using either `$1` or `\1` notation (eg `%Calculate%CHARACTERS(\1)%` would be the count of characters in the first capture match (v8+)), or named capture groups (using `(?<name>...)` with the notation `${name}`.
+
+Like other [[/Text_Fields|Text Fields]], you can use [[manual:Tokens#Text_Case_Conversions | text case conversion]] escape sequences like `\U` and `\L` in the replacement field.
+
+Select where you want the result to be saved (back to the source, or to some other variable or clipboard or file).
+
+Using the action (gear) ⚙ menu, you can select (v10.0+) to replace all, or only the first or last match.
+
+Examples:
+  * Search for a string such as Monday and replace with Tuesday.
+  * Use a regular expression to search through a list of names where the last name appears first and switch them to be First Name Last Name. In its simplest form this could look like the following:
+
+Search for: (.+) (.+)
+Replace with: $2 $1
+
+{{:action:search-replace-example.png?nolink&516|}}
+
+Which results in:
+
+{{:action:search-replace-example-result.png?nolink&511|}}
+
+Note that you can use tokens in the replace field (eg `%Variable%Whatever%`), but that when those tokens are expanded, the contents will themselves not be further expanded, so, for example you could not have a variable that contains `$1` and expect that to be replaced by a the corresponding capture group. You could use an AppleScript like this:
+
+```applescript
+tell application "Keyboard Maestro Engine"
+	set src to getvariable "Source"
+	set s to getvariable "Search"
+	set r to getvariable "Replace"
+	set o to search src for s replace r with regex
+end tell
+```
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Search_using_Regular_Expression|Search using Regular Expression]] action
+* [[:Actions|See all Actions]]
+
+==== Topics ====
+
+* [[:Regular Expressions|Regular Expressions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/extracting-substring-of-a-variable/3007/2|Extracting substring of a Variable]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Search%20 Replace |Keyboard Maestro Forum topics about Search Replace]]

@@ -1,0 +1,12 @@
+====== Applications Palette Actions ======
+
+The //Hide Applications Palette// and //Show Applications Palette// and //Toggle Applications Palette// actions hide, show, or toggle the [[manual:Applications Palette]]. 
+
+===== See Also =====
+
+==== Actions ====
+
+* Hide Applications Palette
+* Show Applications Palette
+* Toggle Applications Palette
+* [[:Actions|See all Actions]]

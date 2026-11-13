@@ -1,0 +1,72 @@
+====== Find Image on Screen Action ======
+
+The //Find Image on Screen// action finds a specified image on the screen in a specified area and stores the image location and fuzziness (left,top,width,height,fuzz) in a Keyboard Maestro [[manual:Variables|Variable]].
+
+{{ findimageonscreen.png?nolink&503x201 | Find Image on Screen }}
+
+You can specify the image to search based on:
+
+* An image pasted in to the action.
+* An image from the System Clipboard, Trigger Clipboard or a Named Clipboard (v9.0+).
+* An image loaded from a file (v9.0+).
+* An image from elsewhere on the screen (v9.0+).
+
+You can also specify the fuzz allowed in the match, as well as whether to display the possible matches (generally used for debugging), and whether the image must be unique, or if not, which of the acceptable images to choose (the best, the topmost (v9.0+), leftmost (v9.0+), bottommost (v9.0+), or rightmost (v9.0+)).
+
+You can search the entire desktop, or you can restrict your search to a specific screen or window, or to a specific area on the screen.
+
+There is an option in the action (gear) ⚙ menu to have the action wait until the image appears (v11.0+).
+
+Suppose that the image location is stored in the [[manual:Variables|Variable]] `ImageLocation` (chosen by you in the action).  Then parts of the image data (properties) may be referenced in other actions like [[action:Move_or_Click_Mouse|Move and Click Mouse]] using the following notation:
+
+* ImageLocation.x — Horizontal position of upper left corner.
+* ImageLocation.y — Vertical position of upper left corner.
+* ImageLocation.width — the Width of the match (same as the source image).
+* ImageLocation.height — the Height of the match (same as the source image).
+* ImageLocation.fuzz — the Fuzz of the match.
+* ImageLocation.MidX — Horizontal position of center.
+* ImageLocation.MidY — Vertical position of center.
+
+If this action fails to find the image, the variable will be set to the empty string.
+
+After an action like this is executed, and an image was found, then the [[token:FoundImage|%FoundImage%]] token (v8+) will return the data of the last found image.
+
+Please note that "ImageLocation" is just an example Variable (which you the user can set), whereas [[token:FoundImage|%FoundImage%]] is a token provided by the Keyboard Maestro Engine.
+
+===== How To Use =====
+
+{{page>::Found_Image#How To Use&noheader&nofooter}}
+
+===== Example =====
+
+{{:action:find.image.on.screen2.kmmacros|Find Image on Screen.kmmacros}}
+
+{{ find-image-on-screen2.png?nolink&503x591 | Find Image Example }}
+{{ find-image-on-screen3.png?nolink&452x456 | Find Image Results }}
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Highlight Location|Highlight Location]]
+* [[action:Move or Click Mouse|Move or Click Mouse]]
+* [[:Actions|See all Actions]]
+
+====  Conditions ====
+
+* [[condition:Found Image|Found Image]]
+* [[:Conditions|See all Conditions]]
+
+====  Collections ====
+
+* [[collection:Found Images|Found Images]]
+* [[:Collections|See all Collections]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/can-i-zoom-the-picture-i-have-saved-in-click-at-found-image-action/2103/2|Can I zoom the picture I have saved in "Click at found image" action?]]
+- [[https://forum.keyboardmaestro.com/t/how-to-search-for-multiple-found-image-actions/3093|How To Search For Multiple "Found Image" Actions]]
+- [[https://forum.keyboardmaestro.com/t/find-image-on-screen-using-clipboard-image/3510/4|Find Image on Screen using Clipboard Image?]]
+- [[https://forum.keyboardmaestro.com/t/km-cant-see-portion-of-screen-i-just-pasted-into-it/3547/3|KM can't see portion of screen I just pasted into it]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Find%20Image%20on%20Screen|Keyboard Maestro Forum topics about Find Image on Screen]]

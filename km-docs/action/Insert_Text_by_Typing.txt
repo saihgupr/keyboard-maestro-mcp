@@ -1,0 +1,31 @@
+====== Insert Text by Typing Action ======
+
+The Insert Text by Typing action converts plain (simple) text into keystrokes and then types each of them individually. It only works with characters that can be typed on the keyboard with one or two keystrokes (eg Option-e e usually types é, and Keyboard Maestro can duplicate that typing).
+
+The Insert Text by Typing action is just like typing yourself, permitting characters like tab/return and maintaining the current style in the program into which you are typing, but it is slow for large amounts of text and can't type exotic characters like Emoji.
+
+===== How To Use =====
+
+Use Insert Text by Typing whenever:
+  *The text consists of plain text characters that can be typed on the keyboard, and
+  *The text is relatively short (up to say 30 or 40 characters), or
+  *You want to use characters like Return or Tab to perform actions like moving to the next field.
+
+===== Send To Background App (v8+) =====
+
+You can also optionally choose (v8+) which application to send the typed text to. This allows you to send keystrokes to an application in the background. Note that the system and many applications do not expect to see keystrokes in the background, so how well this solves any given problem will vary depending on the exact circumstances.
+
+{{:action:insert-text-by-typing-send-to-background-km8.png?nolink|}}
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Insert Text by Pasting| Insert (Styled) Text by Pasting]]
+* [[action:Insert_Text|Insert Text]]
+* [[action:Set Action Delay|Set Action Delay]]
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens|See all Tokens]]

@@ -1,0 +1,48 @@
+====== Filters ======
+
+Keyboard Maestro includes a variety of filters that can be applied to either the system clipboard, Named~~Clipboards, or variables.  For clipboards, the filters preserve style information to whatever degree is possible.  Use the [[/action/Filter|Filter action]] to apply filters.
+
+The filters are:
+
+* Remove Styles (clipboards only, make the clipboard plain text).
+* Set line endings to Mac (CR), Unix (LF) or Windows/DOS (CRLF).
+* Trim Whitespace.  (Remove leading and trailing whitespace from a string.)
+* Hard wrap or unwrap paragraphs.
+* Lowercase (all characters), Lowercase First (just the first character).
+* Uppercase (all characters), Uppercase First (just the first character).
+* Capitalize (all words) or Title Case (intelligently uppercase certain first letters).
+* Sentence Case (first character of each sentence) (v11.0+).
+* Change double quotes to Smart, Dumb or French quotation marks (single quotes are ignored).
+* Encode HTML or non-ASCII HTML entities.
+* Encode HTML with numeric entities.
+* Decode HTML entities.
+* Generate an HTML list.
+* [Percent Encode](https://developer.mozilla.org/en-US/docs/Glossary/percent-encoding) or Decode a URL.  Percent Encode will encode **all** non-alphanumeric characters.
+* Encode for Regular Expression.
+* Encode or decode Base64.
+* Calculate MD5.
+* Styled Text to/from RTF plain text (v11.0+).
+* Quote for AppleScript, JavaScript, Shell (bash) Script, Swift, JSON or Process Tokens.
+* Convert a JSON object string to Compact or Pretty format.
+* Get parent of a path.
+* Get the filename component of a path.
+* Get the base name of the path (ie the filename without directory or extension).
+* Get or delete the path extension.
+* Get the display name of a path.
+* Expand tilde (~) paths, or abbreviate with a tilde.
+* Resolve symlinks, or standardize the path.
+* Get the URL scheme, host, port, user, password, path, fragment or query.
+* Sort, reverse (first<=>last), or shuffle (permute) lines.
+* Delete or bullet (•) control characters.
+* Calculate an expression and return the result, see the [[manual:Calculations]] section.
+* Process Text Tokens and return the result, see the [[manual:Tokens]] section.
+* Get the value of a named Variable or Named Clipboard.
+* Count the characters, words or lines and return the result.
+
+We will likely expand the list of possible filters, so if you have specific filtering needs that you think might be of general interest, please let us know.
+
+You can also process text using an AppleScript or shell script, for example the shell script:
+
+{{ perl-pe-filter.png?nolink&583 |}}
+
+is roughly equivalent to the Lowercase filter, except that it only works with ASCII characters.

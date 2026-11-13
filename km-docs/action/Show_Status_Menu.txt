@@ -1,0 +1,21 @@
+The Show Status Menu action shows the Keyboard Maestro status menu.  
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Activate Macro Group|Activate Macro Group]]
+* [[action:Show or Hide Macro Group|Show or Hide Macro Group]]
+* [[action:Show Macro Group|Show Macro Group]]
+* [[action:Show Macro Group for One Action|Show Macro Group for One Action]]
+* [[:Actions|See all Actions]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/show-palette-for-one-action-but-dont-disable-group-after-selecting-an-action/3411/2|Show palette for one action, but don't disable group after selecting an action]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Show%20Status%20Menu|Keyboard Maestro Forum topics about Show Status Menu Action]]

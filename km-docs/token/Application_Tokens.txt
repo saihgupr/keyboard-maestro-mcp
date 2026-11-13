@@ -1,0 +1,33 @@
+====== Application Tokens ======
+
+You can get information about running applications using the variable Application tokens:
+
+^Token^Meaning^
+| Application\\ (or ApplicationName (v11.0+)) | The name of the application |
+| ApplicationBundleID| The bundle ID of the application|
+| ApplicationPath (v9.0+)| The path to the application |
+| ApplicationVersion (v11.0+)| The version of the application|
+| ApplicationLongVersion (v11.0+)| The long version of the application|
+
+==== Token Parameters ====
+
+Each token take a parameter indicating the application.  The parameter is the value _after_ the percent sign of the main token.  For example: //%Application%1%//.
+
+The parameter may be:
+
+^ Parameter ^ Meaning ^
+| 0 or 1 | the front application. |
+| Positive Number | the indexed application from front to back. |
+| Negative Number | the indexed application from back to front. |
+| All | All of the applications, one per line, from front to back. |
+| Foreground | All foreground applications, one per line, from front to back. |
+| Background | All background applications, one per line, from front to back. |
+
+So for example, //%Application%1%// gives the name of the front application.
+
+===== See Also =====
+
+==== Tokens ====
+
+* [[token:LastApplication|%LastApplication%]]
+* [[:Tokens|See all Tokens]]

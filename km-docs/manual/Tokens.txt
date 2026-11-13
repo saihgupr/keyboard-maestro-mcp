@@ -1,0 +1,112 @@
+====== Tokens ======
+
+Keyboard Maestro provides two means to get information about objects (like web pages and windows) in the user's environment:
+
+1. [[:Tokens|Tokens]] (returns text, used in [[/Text_Fields|text token fields]])
+2. [[:Functions|Functions]] (returns numbers, used in [[/Text_Fields|numeric fields]])
+
+You can enter a Token in any [[/Text_Fields|text field]] in an [[:Actions|Action]], and when the Macro is triggered and the Action is executed, the token will be replaced by the value that is returned at that time.  This allows you to easily combine static text with dynamic data that is supplied when the macro is executed, in most any Action that has a text field, like [[action:Display_Text|Display Text]] and [[action:Set_Variable_to_Text|Set Variable to Text]] actions.
+
+===== Token Format =====
+
+Tokens are identified by a pair of percent `%` symbols at the start and end of the Token name.
+
+^ Usage ^ Format ^ Example ^ Token\\ Results ^
+| No Parameter | `%TokenName%` | Safari open to this web page:\\ [[https://wiki.keyboardmaestro.com/Home_Page]] | [[token:FrontBrowserTitle|%FrontBrowserTitle%]] returns:\\ "Home Page [Keyboard Maestro Wiki]" |
+| With Parameter | `%TokenName%Parameter%` | Frontmost Window Size | [[token:WindowSize|%WindowSize%1%]] returns:\\ "1991,1417" |
+
+===== Entering Tokens into Actions =====
+
+The available tokens, and their definitions, are listed on the [[/Tokens|Token List page]].
+
+When you are editing a Macro, put the text cursor in a text field, and do one of the following to select and insert a Token into the text field.
+
+1. Press ⌘⌃T (or use the Menu) to display a prompt to select the Token by Name
+2. Use the [[Menus#Insert_Token|Edit ➤ Insert Token menu]]
+3. Click on the "Insert Token" popup at the top right of the text fields to see the same menu as in #2.
+4. Of course, you can always just type the Token.
+
+You can tell that a text field accepts tokens because a small BUTTON{{{T}}} shows in the field while editing it.
+
+===== Examples =====
+
+Let's look at a real-world example.  Let's say you would like to set the Clipboard to a [[https://www.markdownguide.org/basic-syntax/#links | Markdown Link]] of the current web page you are reading.  All you need to do is insert these two tokens (using the Markdown format) in a [[action:Set_Clipboard_to_Text|Set Clipboard]] Action:
+
+1. [[token:FrontBrowserTitle|%FrontBrowserTitle%]]
+2. [[token:FrontBrowserURL|%FrontBrowserURL%]]
+
+{{ token-example-set-clipboard.png?nolink&424x174 | Token Example }}
+
+The "`[]()`" are just characters you type, part of the markdown text and not part of the tokens.
+
+After the macro and Action are executed, you will see something like this on the Clipboard:
+
+    [Keyboard Maestro: Work Faster with Macros for macOS](https://www.keyboardmaestro.com/main/)
+
+That's all you need for a great macro, which you can create yourself or  [[https://forum.keyboardmaestro.com/t/set-clipboard-to-markdown-link-of-frontmost-browser-wiki-example-macro-v9-0-1d2/15025|download from here]].
+
+
+===== Processing =====
+
+The Tokens are processed, that is replaced by their value when the action is run, and the Action containing the Token is executed.
+
+In most text fields, you can control how Tokens are processed using the Gear BUTTON{{{⚙}}} popup menu:
+
+* Process tokens normally, or 
+* Just tokens (not backslashed characters) or 
+* Do not process any text.  
+
+===== Other Uses for Tokens =====
+
+=== Non-Printing Control Characters ===
+
+An exception to the rule of enclosing Tokens in percent `%` characters, is the use of these Non-Printing Control Characters `\a,\b,\e,\f,\t,\r,\n` which correspond to (bell,backspace,escape,form feed,tab,return,line feed).  These will be replaced with their value in text fields, except for Regular Expression (RegEx) fields.
+
+=== Convert Hex to Unicode Characters ===
+
+Text token fields also process %NN% or %NNNN% or %NNNNNN% as arbitrary hex unicode characters (eg %41% is an A, %01F300% is 🌀).
+
+=== Using Special Characters as Plain Text ===
+
+To include a percent in your text, simply double the percent (%%). To include a backslash \ in your text, double the backslash (\\).
+
+
+===== Text Case Conversions =====
+
+Text fields also support text case conversion using the below meta characters. You may use these in both standard Text Fields and in the Replace field of a [[action:Search_and_Replace|Search and Replace by regular expression]] action (even though these meta characters are _not_ supported by ICS Regular Expressions).
+
+The Available Case Conversion Meta Characters are:
+
+* `\U` converts everything up to the next `\L` or `\E` to uppercase.
+* `\L` converts everything up to the next `\U` or `\E` to lowercase.
+* `\u` converts the next character to uppercase.
+* `\l` converts the next character to lowercase.
+* `\U\l` lowercase first, then uppercase.
+* `\L\u` uppercase first, then lowercase.
+* `\E` stop changing case.
+
+You should not use `\u` after `\U` or `\l` after `\L` unless you terminate the sequence with `\E` first.
+
+==== Access to an Item in Token Results ====
+
+With tokens that return a list of information (comma separated by default), you can access the individual items using the Variable array notation, append the item number in square brackets `[ ]` to the Token name, just before the closing `%`.
+
+For example:
+
+Token for Window Frame, [[token:WindowFrame | %WindowFrame[3]%1%]], will be the third comma-separated value, which is the Window width in this case.
+
+* %WindowFrame%1% returns "3606,23,1514,1417"
+* %WindowFrame[3]%1% returns "1514"
+
+Some tokens that allow indexing include:
+
+* [[token:TriggerValue|TriggerValue]]
+* [[token:WindowFrame|FrontWindow*]]
+* [[token:WindowFrame|Window*]]
+* [[token:Screen|Screen*]]
+* [[token:SystemClipboard|SystemClipboard]]
+* [[token:PastClipboard|PastClipboard]]
+* [[token:NamedClipboard|NamedClipboard]]
+* [[token:TriggerClipboard|TriggerClipboard]]
+* [[token:CurrentMouse|CurrentMouse]]
+* [[token:FoundImage|FoundImage]]

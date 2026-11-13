@@ -1,0 +1,203 @@
+====== How do I ...? ======
+
+===== How do I install Keyboard Maestro? =====
+
+To install Keyboard~~Maestro, [[https://download.keyboardmaestro.com/|download it]] and then use the Finder to move it to your Mac’s FILE{{{Applications}}} folder (or anywhere you like).
+
+Note: You must use the Finder to do this since the Finder will turn off [[assistance:Translocation_Problem|Apple's App Translocation]] security feature when you move the application.
+
+When you launch Keyboard~~Maestro it launches an invisible “Keyboard~~Maestro~~Engine” that continues to run even after you quit Keyboard~~Maestro. The engine is the process that enables your [[Macros]], [[Application Switcher]], and [[Clipboard History Switcher]] to work.  This means that they will continue to work after you quit Keyboard~~Maestro, as long as the engine is still running.
+
+You can quit or launch the engine manually using the [[Menus#File|File menu]].
+
+You should consider turning on the “Launch Engine at Login” preference in the [[Windows#Preferences_General_Pane|General preference pane]] to ensure all of Keyboard~~Maestro’s facilities are available to you as soon as you login or startup your Mac.
+
+===== How do I upgrade Keyboard Maestro? =====
+
+Keyboard~~Maestro includes an automatic upgrade mechanism, so to upgrade Keyboard~~Maestro simply click the BUTTON{{{Install~~Update}}} button when prompted.
+
+To upgrade Keyboard~~Maestro manually, quit the engine by choosing the [[Menus#Quit_Engine|File ➤ Quit Engine menu]], and quit the editor, and replace the Keyboard~~Maestro application in your FILE{{{Applications}}} folder with the new one.  Finally, launch Keyboard Maestro to restart the engine.
+
+Keyboard~~Maestro will automatically import your previous version macros, clipboards and preferences.  Your old macros will be saved in the FILE{{{~/Library/Preferences/Keyboard Maestro/Keyboard Maestro Macros Saved Version 10.plist}}} in case you wish to revert to version 10 for any reason.
+
+If you are upgrading directly from a much older version, you will get better results by upgrading to the last of each major version in turn, ie, run 2.1.3, then 3.5, then 4.3.2, then 5.3.2, then 6.4.8, then 7.3.1, then 8.4.2, 9.2, 10.2, and then the current version.  You can download old versions from our [[https://files.stairways.com/|file archive]].
+
+===== How do I purchase Keyboard Maestro? =====
+
+New customers can purchase Keyboard~~Maestro for US$36 by choosing the [[Menus#Purchase_Keyboard_Maestro|Keyboard Maestro ➤ Purchase Keyboard Maestro menu]].  If you own a previous version of Keyboard Maestro and it is already registered, you can purchase the upgrade at a discount by choosing [[Menus#Purchase_Keyboard_Maestro_Upgrade|Keyboard Maestro ➤ Purchase Keyboard Maestro Upgrade menu]]. Customers with ten or more users should contact us for a volume discount quote.
+
+You can look up your current or previous license status and serial numbers, and get information about discounted upgrades from [[https://enquiry.stairways.com/]].
+
+Thanks for supporting us and enabling us to continue work on Keyboard~~Maestro.
+
+See also the [[Purchase]] section.
+
+===== Can I purchase Keyboard Maestro from the Mac App Store? =====
+
+Keyboard Maestro will not be available on the Mac App Store.  Apple requires applications on the Mac App Store to be ~~Sandboxed, and workflow applications like Keyboard Maestro cannot be sandboxed so it is excluded from the Mac App Store.
+
+See also the [[Purchase]] section.
+
+===== How do I register Keyboard Maestro? =====
+
+When you purchase Keyboard~~Maestro you will be given a serial number, and will also promptly be emailed your username (email address) and serial number in the “Thanks For Your Purchase” email.  Although you can retrieve this information from us at any time in the future, it is a good idea to keep this safe.
+
+If you do not receive your serial number promptly after purchasing, it may be that the email has not reached you, possibly due to spam filtering on your email service.  In this case, try looking up your purchase at [[https://enquiry.stairways.com/]] (although that will email you your serial number which might again be lost to over-zealous spam filters).
+
+Once you have your username (email address) and serial number, launch Keyboard~~Maestro and either immediately click the BUTTON{{{Use Existing License}}} button or choose [[Menus#Register_Keyboard_Maestro|Keyboard Maestro ➤ Register Keyboard Maestro menu]] and then enter the username (email address) exactly as shown and the serial number exactly as shown and click the BUTTON{{{OK}}} button.  If you have any problems, recheck that the email address and serial number you are entering are exactly as shown (the serial number’s email address does not change even if you have changed your email address with us) and also that your license matches the major version number (eg, a version 10 license will work with version 10.x of Keyboard~~Maestro).
+
+If you are already registered, the Register~~Keyboard~~Maestro menu will show you the registration details in the About Keyboard Maestro window — if it says it is registered to you, you are all set.
+
+===== How do I get started? =====
+
+The first thing to do is to read the [[Quick Start]] and do the tutorial by choosing the [[Menus#Tutorial|Help ➤ Tutorial menu]].  You may also want to subscribe to our Getting Started emails (Keyboard Maestro will ask you to subscribe or you can do that at your [[https://www.stairways.com/form/manageemail|customer database page]] on our web site).
+
+The best way to start using Keyboard Maestro is to start simple and then grow your macros organically. Simple things might include:
+
+* launching or switching to a particular application.
+* opening a particular document.
+* typing a specific string of text (eg your name, address, etc).
+
+You may also like to joint the forum (https://forum.keyboardmaestro.com/) and ask for help with any macros you get stuck on. The forum is a fantastic resource, and if you are having troubles building a specific macro, the forum is the first place you should go to ask for help since we frequently cannot help with macros for specific applications that we probably don't have access to.
+
+If you would really like to extend your use of Keyboard Maestro, consider enrolling in David Spark’s [[https://learn.macsparky.com/p/km|Keyboard Maestro Field Guide]].
+
+Then use your Mac normally and keep an eye out for things you do repetitively.
+
+When you notice something, think about making a Macro to do it and assigning it to a [[trigger:Hot_Key|Hot Key]] or [[trigger:Global_Macro_Palette|Global Macro Palette]] or [[trigger:Status_Menu|Status Menu]] trigger.
+
+Try to be consistent with your Hot~~Keys, for example you might have a set of applications you open, using a function key for each, and a set of documents you open, using a Control-Function Key combination for each of them, and a bunch of snippets of text your type, using Control-Letter for each of them (the letter could be a mnemonic to help you remember which one is which).  Consider putting a sticker on your keyboard across the top of your function keys to help you remember which ones do which function.  Remember that you can use the number pad keys as well.
+
+Also, keep in mind common command keys and system defined hot keys and try to avoid conflicting with them.
+
+And remember that you can give a bunch of macros the same hot key trigger and Keyboard Maestro will ask you which one you want to use when you press the key.
+
+See also the [[Tips]] section.
+
+===== How do I create a new Macro? =====
+
+If you have not done so, use the tutorial by choosing the [[Menus#Tutorial|Help ➤ Tutorial menu]] to lead you through the process of creating a simple macro.
+
+To create a Macro, launch Keyboard~~Maestro and select the Global Macro Group, then click the BUTTON{{{+}}} button under the Macros list.  Give the Macro a name, add one or more triggers, and one or more actions.  The Macro is immediately active — you do not need to stop editing, quit the editor or anything else.
+
+An easy way to generate macro actions is to turn on recording and proceed to show Keyboard~~Maestro what you want to do.  Then turn recording back off and look through the actions — chances are you will want to delete or adjust some of the recorded actions to make a robust macro, but this will give you a quick start on creating the macro.
+
+===== How do I find a Macro I've used or modified recently? =====
+
+You can sort the macros by name, by trigger, by date created, modified or used.  So if you launch Keyboard Maestro, select the All Macros smart group, and then choose the [[Menus#Sort_Macros_by_Date_Modified|View ➤ Sort Macros by Date Modified menu]] (or choose the [[Menus#Sort_Macros_by_Date_Used|View ➤ Sort Macros by Date Used menu]]) to sort the recently modified (or used) macros to the top.
+
+You can also click the BUTTON{{{◷}}} button above the macro editor pane to select from recently modified macros, or use the BUTTON{{{⌘}}} button to select from recently used macros.
+
+===== How do I cancel a running Macro? =====
+
+You can cancel all running macros by holding all the modifiers (Control, Option, Shift and optionally Command) and clicking on the Keyboard Maestro Status Menu Icon.
+
+You can cancel a specific macro by choosing from the [[Menus#Cancel|Status Menu ➤ Cancel menu]] and selecting the macro.  This is also a useful way of seeing what macros are currently running, if any.
+
+You can also see and cancel macros by choosing the [[Menus#Start_Debugging|Status Menu ➤ Start Debugging menu]].
+
+And finally, you can use the [[action:Cancel_All_Macros|Cancel All Macros, Cancel Other Macros, Cancel This Macro, or Cancel Just This Macro]] actions.
+
+In desperation, you can quit the Keyboard Maestro Engine from the status menu or Safe Boot the Mac to restart it without launching any applications, and then you can launch the editor while holding all the modifiers down to quit all running engines.
+
+===== How can I get the mouse coordinates on the screen or in a window? =====
+
+If possible, you should avoid using mouse click actions. They tend to be very fragile, easily broken by subtle changes to the system or applications. And they also require the screen to be in the expected state, so you usually need to add a Pause action before them to ensure the item they are clicking on is where it is expected to be.
+
+That said, you can use the [[Windows#Mouse_Display_Window|Mouse Display window]] by choosing the [[Menus#Mouse_Display|Window ➤ Mouse Display menu]] which will let you see the mouse coordinates relative to the window or main screen.  Click the lock button to lock the display after a few seconds, and then put your mouse over the desired location.  You can then change the relative corner, and click the Clipboard buttons to copy the coordinates.
+
+Alternatively, you can simply record the click. Turn on recording in Keyboard Maestro, go to where you want to be, wait a couple seconds for the screen to be stabilised so the click will be relative to the front window, and click. Turn off recording, delete any extraneously recorded actions and you have your coordinates.  Immediately after recording you can adjust the relative corner of the window or screen, and the recorded coordinates will adjust to match.
+
+Remember that offsets are always to positive to the right and positive down, so if you are making a mouse click up from bottom edge of a window or screen, or left from the right edge of a window or screen, you will need to use negative coordinates.
+
+===== How do I insert styled/colored text or images? =====
+
+You can use the [[/action/Insert_Text|Insert Text action]] to insert styled text by pasting.
+
+You can insert an image by copying it to the clipboard and then pasting it in using the [[/action/Paste|Paste action]] (which just types the Command-V keystroke).
+
+You can get your image from a Named~~Clipboard, or by reading an image file.
+
+Here is how to create a Macro to insert an image when you press a Hot~~Key.
+
+* Create a macro (see the [[How_do_I#How_do_I_create_a_new_Macro?|How do I create a new Macro?]] section) with the [[action:Set_Clipboard_to_Image | Set Clipboard to Image]] action.
+* Paste your image in to the action, or have the action read the image from a file or Named~~Clipboard.
+* Then use the [[action:Paste | Paste]] action to paste your image.
+
+Name the macro, and assign it whatever trigger you desire.
+
+Now whenever you trigger the macro you just created, your image will be pasted in.
+===== How do I Insert the current date? =====
+
+You can insert text using the [[/action/Insert_Text|Insert Text action]], and it processes [[Tokens]].  There are some basic date format tokens (such as the [[token:LongDate|%LongDate%]] token), or you can use the [[token:ICUDateTime|%ICUDateTime%]] token with any [[https://www.stairways.com/action/linkthru?icudatetime|ICU date format]].
+===== How do I get more than one Macro Palette (Toolbar)? =====
+
+There are three kinds of palettes in Keyboard Maestro:
+
+* There is one “Global Macro Palette” which includes any active macro that has the Macro Palette trigger. It appears whenever there is any active macro with the Macro Palette trigger. It shrinks to the size of an icon until you hover over it and then it expands to display the currently active macros with Macro Palette triggers.  You can show and hide it using specific Macro Palette actions.
+* Each Macro Group can be displayed as a palette. The macro group can be global to all applications, or specific to any subset of applications. It can be toggled on and off with a hot key (or a status menu selection or from the Global Macro Palette) or it can be displayed for a single action.  Actions can hide or show the macro group palettes.
+* When a hot key (or typed string or device key) conflicts (ie, triggers more than one macro), the [[Windows#Conflict_Palette|Conflict Palette]] appears which lets you select from the conflicting macros. This can be an easy way to allow a single hot key to offer a multitude of similar actions. You can then use number keys or the mouse to select the desired hot key, or can use other keys to filter the palette until only one macro remains.
+
+So to have more than one macro palette, create a macro group for each desired palette and configure it to show a palette as desired. Put your macros in there. Create as many of these as you like. The macros in such a macro group are only active while the palette is displayed, so if you only display it occasionally, especially only for one action, then they can have very simple hot keys (like plain letters for example).
+
+You can control the order of macros in a macro palette (or the status menu) by prefixing their name with two characters and a closing parenthesis (eg "01)" - two characters and a closing bracket). The macros will be sorted based on the code, but the code will be stripped off before display in the palette (or status menu).
+
+===== How do I use a multiple keystroke trigger? =====
+
+You can assign the same hot key to multiple macros, and Keyboard Maestro will display a palette of the conflicting macros when you press that hot key allowing you to select the desired macro. You can select a macro from the palette using either number keys, or by typing the first distinct character to filter the macros down until only one is left. This is especially useful when you have a variety of similar or related tasks. You can also assign a hot key to a macro group which can activate it for one action (with or without a palette), and the contained macros can have whatever ”second” hot key you desire.
+
+But Keyboard Maestro does not directly support assigning a two-keystroke hot key to a trigger. The problem with multiple keystroke triggers like Option-F R is what to do if you type Option-F A? Logic dictates that the Option-F A should go through to the system unimpeded, but Option-F R should be swallowed entirely. But this is impossible. The only way to do it would be to swallow the Option-F key, and then swallow the second key and then resubmit the Option F and the second key unless it matches Option-F R.
+
+However, that is fraught with peril and cannot work robustly in the presence of other applications placing things on the keyboard event queue (or even a sufficiently fast typist).
+
+For example, suppose you quickly typed Option-F A B. Keyboard Maestro would have swallowed the Option F and then the A, and then resubmitted it to the event queue, resulting in the stream of characters B, Option-F, A. There is no way to avoid this race condition, and as such Keyboard Maestro does not support any such mechanism.
+
+As described above, Keyboard Maestro has a variety of ways you can use Option-F as a hot key that allows a second key to be used to select a macro. However in all cases it is clear that the Option-F has been used and there is no concept that the Option-F might come back later to do something else.
+
+===== How do I configure the Application Switcher? =====
+
+The Application~~Switcher (and all the switchers) are activated by macro actions.  Keyboard Maestro creates a default “Switcher~~Group” Macro~~Group containing several macros, each macro has a hot key trigger and a matching action which activates the appropriate switcher.
+
+So to configure the Application~~Switcher, launch Keyboard Maestro, select the Switcher Group, and double click the Activate Application Switcher macro.  You can then configure the various Application Switcher parameters, such as style and icon size by configuring the Application Switcher action.  You can also configure the hot key used to activate the switcher, or disable the switcher.
+
+===== How do I backup / migrate / transfer my installation to another Mac? =====
+
+Your macros are stored on your local Mac in the Application Support folder. So ensure you have good backups of your entire Mac to ensure your macros are safe (good backups are always a good idea!).
+
+If you are going to continue using both Macs, you should use [[Macro_Syncing|Macro Syncing]] rather than transferring your information.  And indeed you can use Macro Syncing to transfer to a new Mac (even if both Macs wont be on at the same time as long as you preserve the sync file).
+
+To transfer all your information to a new Mac you can copy the FILE{{{~/Library/Application Support/Keyboard Maestro}}} folder and optionally the FILE{{{~/Library/Preferences/com.stairways.keyboardmaestro.*}}} files to your new Mac. You can get to FILE{{{~/Library}}} in the Finder by holding down the shift (or option) key and selecting Library from the Go menu.
+
+Make sure that Keyboard Maestro and Keyboard Maestro Engine are not running on the source or target Mac when you transfer the folder.  And make sure the resulting files and folders have the **correct ownership and permissions**.
+
+If you copy the FILE{{{com.stairways.keyboardmaestro.*}}} files, the new Mac will have the same [[token:MacUUID]] token and be considered the same Mac for syncing purposes, so you should not do this if you intend to continue using the old Mac.
+
+Alternatively, to just transfer the macros, you can turn on Macro Syncing and save the macro sync file anywhere.  Transfer it to the new Mac, install Keyboard Maestro as normal, and then turn on macro syncing and select the transferred file to replace your macros.  Then turn off macro syncing.  This will transfer just the macros, not any settings, variables, or clipboards or the like.
+
+===== How do I uninstall Keyboard Maestro? =====
+
+Launch Keyboard~~Maestro and ensure the “Launch Engine at Login” preference in the [[Windows#Preferences_General_Pane|General preference pane]] is turned off.  Then choose the [[Menus#Quit_Engine|File ➤ Quit Engine menu]] to quit the engine, and then choose the [[Menus#Quit_Keyboard_Maestro|Keyboard Maestro ➤ Quit Keyboard Maestro menu]] to quit the application.
+
+You can then trash the Keyboard~~Maestro application from your FILE{{{Applications}}} folder, as well as the preferences in the FILE{{{~/Library/Application Support/Keyboard Maestro}}} folder and FILE{{{~/Library/Preferences/com.stairways.keyboardmaestro.*}}} files and logs in the FILE{{{~/Library/Logs/Keyboard Maestro}}} folder.
+
+===== How do I revert to a previous version of Keyboard Maestro? =====
+
+Launch Keyboard~~Maestro and ensure the “Launch Engine at Login” preference in the [[Windows#Preferences_General_Pane|General preference pane]] is turned off.  Then choose the [[Menus#Quit_Engine|File ➤ Quit Engine menu]] to quit the engine, and then choose the [[Menus#Quit_Keyboard_Maestro|Keyboard Maestro ➤ Quit Keyboard Maestro menu]] to quit the application.  You can then trash the Keyboard~~Maestro application from your FILE{{{Applications}}} folder.
+
+For version 2, open the FILE{{{~/Library/Preferences}}} folder and the folder FILE{{{~/Library/Preferences/Keyboard Maestro/Saved Version 2}}} folder.  Move the files from the latter folder into the former folder.  Trash the FILE{{{~/Library/Preferences/Keyboard Maestro}}} folder.  Download Keyboard~~Maestro~~2.1.3, if necessary, from [[https://files.stairways.com/keyboardmaestro/keyboardmaestro-213.dmg]].  Move Keyboard~~Maestro~~2 to the Applications folder and launch it.  Turn on the “Launch Engine at Login” preference if desired.
+
+For version 3, open the FILE{{{~/Library/Preferences/Keyboard Maestro}}} folder.  Trash the FILE{{{Keyboard Maestro Macros.plist}}} and replace it with the FILE{{{Keyboard Maestro Macros Saved Version 6.plist}}}.  Download Keyboard~~Maestro~~3.5, if necessary, from [[https://files.stairways.com/keyboardmaestro/keyboardmaestro-35.zip]].  Move Keyboard~~Maestro~~3 to the Applications folder and launch it.  Turn on the “Launch Engine at Login” preference if desired.
+
+For version 4, open the FILE{{{~/Library/Preferences/Keyboard Maestro}}} folder.  Trash the FILE{{{Keyboard Maestro Macros.plist}}} and replace it with the FILE{{{Keyboard Maestro Macros Saved Version 6.plist}}}.  Download Keyboard~~Maestro~~4.3.2, if necessary, from [[https://files.stairways.com/keyboardmaestro/keyboardmaestro-432.zip]].  Move Keyboard~~Maestro~~4 to the Applications folder and launch it.  Turn on the “Launch Engine at Login” preference if desired.
+
+For version 5, open the FILE{{{~/Library/Application Support/Keyboard Maestro}}} folder.  Trash the FILE{{{Keyboard Maestro Macros.plist}}} and replace it with the FILE{{{Keyboard Maestro Macros Saved Version 6.plist}}}.  Download Keyboard~~Maestro~~5.3.2, if necessary, from [[https://files.stairways.com/keyboardmaestro/keyboardmaestro-532.zip]].  Move Keyboard~~Maestro~~5 to the Applications folder and launch it.  Turn on the “Launch Engine at Login” preference if desired.
+
+For version 6, open the FILE{{{~/Library/Application Support/Keyboard Maestro}}} folder.  Trash the FILE{{{Keyboard Maestro Macros.plist}}} and replace it with the FILE{{{Keyboard Maestro Macros Saved Version 6.plist}}}.  Download Keyboard~~Maestro~~6.4.8, if necessary, from [[https://files.stairways.com/keyboardmaestro/keyboardmaestro-648.zip]].  Move Keyboard~~Maestro~~6 to the Applications folder and launch it.  Turn on the “Launch Engine at Login” preference if desired.
+
+For version 7, open the FILE{{{~/Library/Application Support/Keyboard Maestro}}} folder.  Trash the FILE{{{Keyboard Maestro Macros.plist}}} and replace it with the FILE{{{Keyboard Maestro Macros Saved Version 7.plist}}}.  Download Keyboard~~Maestro~~7.3.1, if necessary, from [[https://files.stairways.com/keyboardmaestro/keyboardmaestro-731.zip]].  Move Keyboard~~Maestro~~7 to the Applications folder and launch it.  Turn on the “Launch Engine at Login” preference if desired.
+
+For version 8, open the FILE{{{~/Library/Application Support/Keyboard Maestro}}} folder.  Trash the FILE{{{Keyboard Maestro Macros.plist}}} and replace it with the FILE{{{Keyboard Maestro Macros Saved Version 8.plist}}}.  Download Keyboard~~Maestro~~8.2.4, if necessary, from [[https://files.stairways.com/keyboardmaestro/keyboardmaestro-824.zip]].  Move Keyboard~~Maestro~~8 to the Applications folder and launch it.  Turn on the “Launch Engine at Login” preference if desired.
+
+For version 9, open the FILE{{{~/Library/Application Support/Keyboard Maestro}}} folder.  Trash the FILE{{{Keyboard Maestro Macros.plist}}} and replace it with the FILE{{{Keyboard Maestro Macros Saved Version 9.plist}}}.  Download Keyboard~~Maestro~~9.2, if necessary, from [[https://files.stairways.com/keyboardmaestro/keyboardmaestro-92.zip]].  Move Keyboard~~Maestro~~9 to the Applications folder and launch it.  Turn on the “Launch Engine at Login” preference if desired.
+
+For version 10, open the FILE{{{~/Library/Application Support/Keyboard Maestro}}} folder.  Trash the FILE{{{Keyboard Maestro Macros.plist}}} and replace it with the FILE{{{Keyboard Maestro Macros Saved Version 10.plist}}}.  Download Keyboard~~Maestro~~10.2, if necessary, from [[https://files.stairways.com/keyboardmaestro/keyboardmaestro-1020.zip]].  Move Keyboard~~Maestro~~10 to the Applications folder and launch it.  Turn on the “Launch Engine at Login” preference if desired.

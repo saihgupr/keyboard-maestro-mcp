@@ -1,0 +1,53 @@
+====== Activate a Specific Application ======
+
+This action switches to, and launches if necessary, the specified application.  It is the equivalent of using the macOS App Switcher, or launching the application by any means.
+
+{{ activate-a-specific-application-action.png?nolink&634x539 | Activate a Specific Application Action }}
+
+
+===== How To Use =====
+
+  - **Select the App from the "Activate:" Popup**
+  - **In the same Popup, choose how to identify the app**: (v9.0+)
+     * Match Using Default (first by path, then by Bundle ID if needed)
+     * Match Only by Path
+     * Match Only by Bundle ID
+  - **Check the Options To Use**
+    * Check to Show all windows or Unchecked to show only the FrontMost Window
+    * Reopen the app's initial window(s)
+    * If the application is already at the front, you can choose to
+      * leave it there.
+      * or switch to the previous application.
+      * or bring its windows to the front.
+      * or reopen its initial windows.
+      * or hide it.
+      * or hide other applications.
+      * or quit it.
+
+===== Activating an Application by Variable =====
+
+This Action requires that you select the App during Macro design, and you cannot use a Variable for the name.
+
+However, there are several alternatives that will allow you to use a Variable for the App Name:
+  - **[[action:Use_Variable|Use Variable]]** to set the Frontmost App.  This will have the same effect as Activating the app.
+  - **[Activate Application by Name String -- Custom PlugIn](https://forum.keyboardmaestro.com/t/activate-application-by-name-string/1806)** -- A third-party custom PlugIn that will allow you to set the application by its name in a Variable.
+  - Use the `open` shell command with the [[action:Execute_a_Shell_Script|Execute a Shell Script]] action.
+  - Use the [[action:Open_a_File_Folder_or_Application|Open an Application]] action with a variable path.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Open a File Folder or Application|Open a File Folder or Application]]
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Application|%Application%n%]]
+* [[token:CurrentApplication|%CurrentApplication%]]
+* [[token:LastApplication|%LastApplication%]]
+* [[:Tokens|See all Tokens]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/search?q=Activate%20Specific%20Application|Keyboard Maestro Forum topics about Activate a Specific Application]]

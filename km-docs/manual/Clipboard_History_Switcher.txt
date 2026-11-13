@@ -1,0 +1,106 @@
+====== Clipboard History Switcher ======
+
+The Clipboard~~History~~Switcher is in essence a Clipboard Manager.  Whenever you copy something from any app, the Keyboard Maestro Engine saves a copy of the System Clipboard at that time to the _Clipboard History_ file.
+
+
+The _Clipboard History Switcher_ allows you to:
+
+* Save a copy of the System Clipboard every time you make a copy from anywhere.
+* Paste any previous saved clipboard in your History
+* View all of the Clipboards in your History
+* Perform special operations before you paste, like convert to plain text
+* Merge multiple Clipboards into one new Clipboard
+* Paste multiple Clipboards with a user-selected delimiter
+* Trigger Your Custom Macros to operate on the selected Clipboard.
+* Saves up to 200 items (the number is user adjustable in the [[Preferences]]).
+
+A typical display of the _Clipboard History Switcher_ looks like this: 
+
+{{ manual:clipboardhistoryswitcher.png?nolink&674x718 | Clipboard History Switcher Window }}
+
+The Clipboard History Switcher will also shown information such as the size and dimensions of images, and the character, word and line count of text.
+
+===== How To Use =====
+
+==== Display the Clipboard History Switcher====
+
+The _Clipboard History Switcher_ is displayed using the [[action:Activate_Clipboard_History_Switcher|Activate Clipboard History Switcher]] Action.  You can find a Macro that uses this Action in the _Switcher Group_ Macro Group (which  comes installed with Keyboard Maestro).
+
+==== Pasting from the Clipboard History Switcher====
+
+* To Paste the Selected Clipboard as is, do any of these:
+  * Double-Click on the Clipboard.
+  * Press the Return or Enter key.
+  * Click on the Paste button.
+  * Right-click on the Clipboard and select “Paste”.
+  * Drag a Clipboard entry onto App document.
+
+Hold the Shift key while pressing return or double clicking to paste as plain text.
+
+Hold the Option key while pressing return or double clicking to just set the system clipboard.
+
+Command-Numbers will paste the corresponding entry. Command-Shift-Numbers will paste in plain text, and Command-Option-Numbers will just set the system clipboard.
+
+
+
+==== Toolbar ====
+
+Most of these Toolbar buttons operate on the selected Clipboard.  
+
+The buttons from left to right are:
+
+* Toggle between the Clipboard History and the [[manual:Named_Clipboard_Switcher|Named Clipboards]].
+* Cut the current application selection to the Clipboard History.
+* Copy the current application selection to the Clipboard History.
+* Paste the current Clipboard History selection.
+* Mark the current Clipboard History selection as a favorite (so it will never be deleted).
+* Quick Look at the current Clipboard History selection.
+* Send the current Clipboard History selection to another Mac running Keyboard Maestro.
+* Delete the current Clipboard History selection.
+* Toggle whether the Clipboard History Switcher will close after pasting.
+* Toggle showing additional information.
+
+You can search the Clipboard History with the search field, and limit the display to Images-only (v11.0+) or Favorites-only.
+
+==== Gear & Context Menu ====
+
+This menu is available by either clicking on the Gear BUTTON{{{⚙}}} Button on a Clipboard, or by right-clicking anywhere on a Clipboard.
+
+Most of the these menu items are designed to operate on one or more Clipboards, and produce a **new** Clipboard, which can later be pasted if desired.
+
+{{:manual:clipboard-history-switcher-context-menu.png?nolink|}}
+
+You can add entries to this menu using the [[trigger:Clipboard_Filter|Clipboard Filter]] trigger.
+
+==== Operating on Multiple Clipboards ====
+
+Select two or more Clipboards (using standard macOS multiselection), and then you can:
+
+* Paste them as a single unit, or 
+* Press ⌘C to merge them to the System Clipboard.  
+
+The Gear BUTTON{{{⚙}}} menu includes a selection for the separator to include between each item when pasting multiple entires.  If multiple images are selected, merging them creates a single larger image (horizontally or vertically, depending on the separator).
+
+==== Other Operations ====
+
+* Passwords -- Clipboard entries that resemble passwords are obscured, deleted after they reach position ten in the clipboard history, and not saved to disk.  You can option click on an obscured password to reveal it.
+* Send to another Mac
+  * You can send clipboards to another Mac running Keyboard Maestro. 
+  * The receiving Mac will show the received clipboard entries  in the clipboard history (assuming the Keyboard Maestro Web Server is enabled on the destination Mac).
+
+
+===== Preferences =====
+
+==== Excluding Clipboards from Selected Apps ====
+
+Keyboard Maestro keeps a copy of everything you copy automatically each time you copy something.  You can exclude certain applications (for example, badly behaved applications or applications that often have very large clipboards) using the [[manual:Preferences#Excluded_Preferences|Preferences > Excluded Preferences Panel]] in the Keyboard Maestro Editor app.
+
+==== Hidden Preferences ====
+
+The default Maximum Number of Items stored in the Clipboard History is 200.
+
+This along with several other features may be changed with the [[Preferences]].
+
+By default, Keyboard~~Maestro creates a Clipboard~~History~~Switcher macro in the “Switcher~~Group” Macro~~Group, triggered by Command-Control-Shift-V.  You can disable the Macros by selecting them in the [[Windows#Macros_Window|Macros window pane]] and clicking the BUTTON{{{✓}}} button.
+
+Keyboard~~Maestro also has many macros in the [[Macro Library]], such as macros for Paste Plain Text (Command-Shift-V) and Paste Previous Clipboard (Command-Control-V).

@@ -1,0 +1,16 @@
+====== AccessedVariablesToken ======
+
+
+The //%AccessedVariables%// token returns (v10.0+) a comma-separated list of variables accessed by this macro.
+
+Note that variables can be accessed for all manner of reasons, and sometimes implicitly by actions, so this token should generally be used for debugging purposes (eg, logging the values of all accessed variables), not for things like cleaning up/deleting used variables.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens |See all Tokens]]

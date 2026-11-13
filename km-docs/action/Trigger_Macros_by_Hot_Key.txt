@@ -1,0 +1,3 @@
+====== Remote Trigger ======
+
+The //Trigger Macros by Hot Key// action (v8+) triggers any currently active macros with the specified Hot Key.  If there are multiple active macros, it will display a Conflict Palette for you to choose the macro.

@@ -1,0 +1,18 @@
+====== Space Token ======
+
+The //%Space%// token returns the space character.
+
+===== See Also =====
+
+=== Tokens ===
+
+* [[token:Return|%Return%]]
+* [[token:LineFeed|%LineFeed%]]
+* [[token:Tab|%Tab%]]
+* [[token:OptionReturn|%OptionReturn%]]
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+* [[:Text Fields|Text Fields]]
+* [[:Frequently Asked Questions|FAQ]]

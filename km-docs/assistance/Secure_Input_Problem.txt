@@ -1,0 +1,40 @@
+====== Secure Input Problem ======
+
+macOS will not let applications watch the keyboard when you are in a password field (to prevent hackers getting hold of your passwords). However, the system can sometimes get into a state where it thinks it is permanently in a password fields. There are many possible culprits for this but almost anything that asks for a password could cause the problem (eg, web password fields, web password managers, VPN connections, Mail, Parallels, etc). Quitting the appropriate affected application or restarting will resolve the issue (until it reappears).  Terminal has a Secure Keyboard Entry mode, as does Webroot SecureAnywhere by default.
+
+Keyboard Maestro will tell you if it detects the system is in Secure Input Mode and if possible indicate the process which is causing the issue in the Keyboard Maestro status menu or by clicking the yellow warning triangle in the bottom right corner of the Keyboard Maestro editor. 
+
+Note that if a background process enables Secure Input Mode then the system may incorrectly attribute the cause to the current foreground process, which will mislead Keyboard Maestro and then you as to which application is responsible (thanks to Smile Software for reporting this!).
+
+If Keyboard Maestro reports the `loginwindow` as the process, that just means that it is likely a Startup Agent or Daemon asking for the password that is causing the problem, but unfortunately Keyboard Maestro was unable to determine which process in particular has the Secure Input Mode enabled.
+
+Note that there is nothing Keyboard Maestro can do to “work around” Secure Input Mode - it is a system security feature that has been erroneously left on. Keyboard Maestro can detect and report it, but it can no more work around the problem than it could bypass any other security features of macOS.
+
+There is a [[https://forum.keyboardmaestro.com/t/disable-secure-input/2410|forum topic]] on the subject and the Smile Software folks have a [very good page](https://textexpander.com/secure-input) on this subject (as it affects TextExpander similarly to Keyboard Maestro) which lists a lot of possible causes, including:
+
+* 1Password
+* Authy
+* Box
+* Chronories
+* Firefox
+* Fluid
+* Game Center
+* Google Chrome
+* Hulu Desktop
+* iFinance
+* Keybase
+* LastPass
+* loginwindow
+* Notational Velocity
+* Parallels Desktop 9 and 10
+* Quicken Scheduler
+* Safari
+* Slack
+* Terminal
+* Webroot SecureAnywhere
+
+I also have reports of:
+
+* Bitwarden (possibly the "Unlock with Biometrics")
+
+If you continue to have problems, [[https://support.keyboardmaestro.com/|contact support]].

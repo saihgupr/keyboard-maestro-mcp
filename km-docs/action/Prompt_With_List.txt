@@ -1,0 +1,50 @@
+====== Prompt With List Action ======
+
+The //Prompt With List// action (v8+) lets you select from a list of values.  The values should be placed on separate lines, and can come from a clipboard, variable, file or text within the action.
+
+{{ promptwithlist.png?nolink&575x264 | Prompt With List }}
+
+You can include a title (which is only displayed when the search field is empty), as well as a default search string (v8.1+).  You can also configure the width of the window (narrow, normal, wide, automatic) and whether to allow multiple selections (v8.1+) and whether to sort the entries (v9.0+).
+
+If a single entry is returned, it is returned by itself (no newline character).  If multiple entries are returned, they will be returned as multiple lines, each followed by a newline character (v8.1+).
+
+If there is no title and no search string and less than 100 items, then all the items will be shown in the scrolling list.  Otherwise no items will be shown until you search for something and then matching items will be shown in the list. To display all of the items even when more than 100 items, enable the Always Show All Entries option in the gear BUTTON{{{⚙}}} menu (v10.2+).
+
+The values are displayed in a Spotlight-like window, similar to the [[action:Trigger_Macro_by_Name|Trigger Macro by Name]] action.
+
+==== Output of Results ====
+
+The selected item will be saved back to the source of the list, or to a specified clipboard, variable or file.
+
+If you press Escape, the action will fail and no result will be saved. By default the macro will be canceled and you will be notified of the failure, but you can adjust that in the gear BUTTON{{{⚙}}} menu.
+
+The resulting items will be trimmed of leading or trailing white space by default, but you can (v10.2+) disable this by turning off Trim Lines in the gear BUTTON{{{⚙}}} menu.
+
+==== How to Store a Different Value than Displayed ====
+
+If you want to display a “friendly” value as the default value, but store a different value (like a code), you can do this by using a code followed by two underscores (`__`) and then the value, for example:
+
+```
+A__Excellent
+B__Good
+C__OK
+F__Fail
+```
+
+will display a list with Excellent, Good, OK, and Fail, but return a value of A, B, C or F as appropriate.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Alert|Alert]] action
+* [[action:Prompt_for_User_Input|Prompt for User Input]]
+* [[action:Prompt_for_File|Prompt for File]] action
+* [[action:Prompt_for_Screen_Rectangle|Prompt for Screen Rectangle]] action
+* [[action:Custom_HTML_Prompt|Custom HTML Prompt]] action
+* [[action:Get_Touch_Bar_Selection|Get Touch Bar Selection]] action
+* [[:Actions|All Actions]]
+
+=== Forum ===
+
+* [[https://forum.keyboardmaestro.com/t/macro-spotlight-search-prompt/4665|MACRO: Spotlight Search Prompt]]

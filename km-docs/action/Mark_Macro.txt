@@ -1,0 +1,30 @@
+The //Mark Macro action// allows you to “mark” a macro.  A marked macro shows up in the status menu with a tick mark next to it, or in a toolbar with a tick on it.  This can be useful to convey the state of the macro or whatever it controls.
+
+The action allows you to:
+
+* mark a macro.
+* unmark a macro.
+* toggle the mark of a macro.
+
+{{ :action:icon-dock-marks.png?nolink |}}
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Show or Hide Macro Group|Show or Hide Macro Group]]
+* [[:Actions|See all Actions]]
+
+==== Topics ====
+
+* [[:Frequently Asked Questions|FAQ]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/application-dock/4747|Application Dock]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Mark%20Macro|Keyboard Maestro Forum topics about Mark Macro]]

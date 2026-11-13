@@ -1,0 +1,21 @@
+====== Clipboard Changed Trigger ======
+
+The //Clipboard Changed trigger// executes the macro whenever the clipboard changes (v7.0+).
+
+===== See Also =====
+
+=== Actions ===
+
+ * [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]
+

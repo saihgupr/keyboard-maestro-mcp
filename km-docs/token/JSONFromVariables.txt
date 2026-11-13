@@ -1,0 +1,46 @@
+====== JSONFromVariables ======
+
+The //%JSONFromVariables%prefix%// token returns the JSON object constructed from the variables with the specified prefix.
+
+The variables with names starting with the specified prefix (with the prefix removed) are used as field names for the resulting JSON object, and the variable values are the corresponding values.
+
+(!) Note: JSON keys are case sensitive, but Keyboard Maestro variables are case insensitive. The `prefix` in this token is also case sensitive. Further, there may be more than one variable with the same resulting key, for example with a prefix of `Local`, both `Local Var` and `LocalVar` will result in the same `Var` key, only one of which will appear in the result with no way to know which it is.
+
+
+The token has Pretty and Compact variants (by appending either to the token name), as well as a Strict variant (appending Strict) (for example `%JSONFromVariablesStrictCompact%dictionary%`).  The order of the variants does not matter, but you cannot have both Compact and Pretty (See the [[manual:JSON]] user manual section).
+
+* JSONFromVariables (equivalent to JSONFromVariablesCompact)
+* JSONFromVariablesCompact
+* JSONFromVariablesPretty
+* JSONFromVariablesStrictCompact
+* JSONFromVariablesStrictPretty
+
+Strict mode affects how the variable values will be interpreted.  In Strict mode, the variable values must be strict JSON objects - strings need to be double quoted and appropriately escaped.  In Non-Strict mode, values are assumed to be strings unless they look like JSON containers (containers must always be strictly JSON objects as always) (See the [[manual:JSON]] user manual section).
+
+===== See Also =====
+
+See the [[manual:JSON]] user manual section for more details on JSON.
+
+=== Actions ===
+
+* [[action:Set_JSON_Value | Set JSON Value]]
+* [[action:Set_Variables_to_JSON | Set Variables to JSON]]
+* [[action:Set_Dictionary_to_JSON | Set Dictionary to JSON]]
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:JSONVALUE | JSONVALUE(jsonpath)]]
+* [[function:COUNT | COUNT()]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:JSONFromDictionary | JSONFromDictionary]]
+* [[token:JSONValue | JSONValue]]
+* [[:Tokens|See all Tokens]]
+
+=== Collections ===
+
+* [[collection:JSON_Keys | JSON Keys]]
+* [[:Collections |See all Tokens]]

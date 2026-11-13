@@ -1,0 +1,17 @@
+The Get Image Size action captures one of several parameters of image dimension to a variable.
+
+{{:action:getimagesize.png|}}
+
+Select which dimensions to capture from the //Get image// pop-up:
+
+  *pixel size.
+  *pixel width.
+  *pixel height.
+  *point size.
+  *point width.
+  *point height.
+  *dpi
+
+Select which clipboard to work with from the //of// pop-up.
+
+Specify the variable to save the data to in the //to variable// text area, either by entering a variable name or choosing one from the arrow at the right-hand end of the text area.

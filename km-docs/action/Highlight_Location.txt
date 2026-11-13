@@ -1,0 +1,55 @@
+The Highlight Location action highlights a location on screen. This can be specially useful for finding the mouse pointer.
+
+There are several parameters to set.
+
+{{:action:hilitelocation.png|}}
+
+This will highlight the location that has the top left corner where the mouse is (MOUSEX(), MOUSEY()) and is 100 pixels wide and 100 pixels down.
+
+Highlight location with:
+  *Rectangle.
+  *Oval.
+  *Target.
+
+With Animate checked, the highlight animates drawing the shape over a few seconds, while unchecking that option makes the shape simply appear instantly.
+
+Choose the horizontal and vertical location to highlight. The action defaults to //MOUSEX()// and //MOUSEY()// which will highlight the mouse pointer. Instead you may choose to enter a value in pixels to highlight a portion of the screen.
+
+Choose the width and height in pixels for the hilite shape. 
+
+Enter a number in the //display for// text area or choose a number from the stepper to control how long the animation stays on screen.
+
+
+Note: rectangles are drawn from the top left, the width and height are specified. Ovals and targets are specified from the centre and have a horizontal and vertical radius.
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Find Image on Screen|Find Image on Screen]]
+* [[action:Move or Click Mouse|Move or Click Mouse]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[condition:Found Image|Found Image]]
+* [[:Conditions|See all Conditions]]
+
+===  Collections ===
+
+* [[collection:Found Images|Found Images]]
+* [[:Collections|See all Collections]]
+
+=== Functions ===
+
+* [[function:MOUSEX|MOUSEX()]]
+* [[function:MOUSEY|MOUSEY()]]
+* [[:Functions|See all Functions]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/search?q=Highlight|Keyboard Maestro Forum topics about Highlight Location action]]

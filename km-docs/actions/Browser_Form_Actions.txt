@@ -1,0 +1,102 @@
+====== Browser Form Actions ======
+
+===== Introduction =====
+
+The *Browser Form Actions* let you interact with form fields in a active web browser page, including submitting forms, reading, writing and focusing fields, and more.  These are companion actions to the [[Browser_Window_Actions|browser window actions]] for creating and moving between tabs and windows.
+
+:!:  **NOTICE:**  Some web pages may use dynamically generated element IDs and/or classes, which may result in some Keyboard Maestro Actions that do not work as designed.  For these pages, you may need to use Keyboard Maestro tools like [[actions:Execute_a_JavaScript_in_Browser|Execute a JavaScript in Browser actions]] with JavaScript tools like [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) to get and set these dynamic web form fields.
+==== Available Actions ====
+
+The following Actions are available to deal with browser forms:
+
+* Focus Front Browser Field
+* Select Front Browser Field
+* Set Front Browser Checkbox
+* Set Front Browser Field to Text
+* Set Front Browser Radio Button
+* Set Variable to Front Browser Field
+* Submit Front Browser Form
+* Reset Front Browser Form
+
+Where "Front Browser" will use either Google Chrome or Safari, whichever was frontmost last.\\
+If you want to target a specific browser, then replace "Front Browser" with "Google Chrome" or "Safari"
+
+==== Action Parameter ====
+
+Each _Action_ has a parameter to uniquely identify the form or form field on the web page.
+The parameter can be an [[:XPath]] or a JavaScript.  Keyboard Maestro will try to identify all forms and field on the web page, and make them available in a popup on the _Action_.  To view the popup, click on the button labeled "Front Browser" or "Google Chrome" or "Safari", based on the specific Action you have selected.
+
+===== Definitions =====
+
+
+==== Focus Field ====
+
+The pop-up menu at the right side of the Action builds a list of all form fields on the active tab. Select the field you want to focus and it will be entered in the action’s Focus Field text area. Use the arrow at the right of the text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+==== Select Field ====
+
+The pop-up menu at the right side of the Action builds a list of all form fields on the active tab. Select the field whose contents you want to select and it will be entered in the action’s Select Field text area. When the action runs any text in that form field will be selected. Use the arrow at the right of the text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+==== Set Field to Text ====
+
+The pop-up menu at the right side of the Action builds a list of all form fields on the active tab. Select the field to fill and it will be entered in the action’s Set Field text area. Next type or paste  the text to enter into the selected field in the action’s to text area. Use the arrow at the right of the text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+At the bottom of the action you can see a preview of what will be entered.
+
+==== Set Variable to Field ====
+
+This action allows you to capture text from a form field to a variable. Use the arrow beside the action’s Set Variable text area to select the variable you wish to set. Its name will be entered in the text area. 
+
+The pop-up menu at the right side of the Action builds a list of all form fields on the active tab. Select the field to capture from and it will be entered in the action’s to field value text area. Use the arrow at the right of the text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+At the bottom of the action you can see a preview of what will be captured.
+
+==== Set Checkbox ====
+
+The pop-up menu at the right side of the Action builds a list of all checkboxes on the active tab. Select the checkbox to set and it will be entered in the action’s Set checkbox text area. Use the arrow at the right of the text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+Select the checkbox status from the pop-up. The choices are:
+
+* Checked
+* Unchecked
+* Value
+
+If you select Value you can enter specific text.
+
+At the bottom of the action you can see a preview of what will be captured.
+
+==== Set Radio Button ====
+
+The pop-up menu at the right side of the Action builds a list of all radio buttons on the active tab. Select the radio button to set and it will be entered in the action’s Set radio button text area. Use the arrow at the right of the text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+Select the radio button value from the pop-up. The choices reflect the specific radio button labels used on the page. For example on a news website you may use Google to search for either news on the site or the whole web.
+
+If you select Value you can enter text that reflects the label for the radio button.
+
+At the bottom of the action you can see a preview of the outcome of running the action.
+
+==== Submit Form ====
+
+This action submits the selected web form.
+
+==== Reset Form ====
+
+This action resets the selected web form, clearing all entered text and values.
+
+===== Examples =====
+
+{{:actions:set-form-field-to-text-km8.png?nolink|}}
+
+{{:action:interactwithwebform.png|}}
+
+===== See Also =====
+
+=== Actions ===
+
+* [[Browser_Actions|Browser Actions]]
+* [[Browser_Window_Actions|Browser Window Actions]]
+* [[Wait_For_Browser_to_Finish_Loading| Wait For Browser to Finish Loading actions]]
+
+* [[:Actions|See all Actions]]
+
+==== Forum ====

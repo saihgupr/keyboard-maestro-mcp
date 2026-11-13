@@ -1,0 +1,24 @@
+The *Composite onto Image* action allows you to add images, styled text or text tokens onto an existing image which is on the system clipboard or a named clipboard. 
+
+For example, you could add a date or copyright notice.
+
+{{:action:compositeontoimage.png|}}
+
+Select the image from the //On image// pop-up.
+
+Select whether to add text or a clipboard onto the image. If you select //clipboard// then a pop-up allows you to choose which clipboard to add.
+
+If you choose text then a text area becomes available where you can enter text. Use the arrow at the right of the text area to select variables, calculations, clipboards and other tokens to enter in the text area.
+
+Set the position for the composited items, using the pop-up(s) by the //at// field. 
+
+Choose //at// to position to items a number of pixels from the left and from the top of the image.
+
+ Choose //in// to position to items a number of pixels from the left and from the top of the image and to limit the width and height.
+
+Note: be careful selecting the position for the composited items so that they are actually contained within the bounds of the image.
+
+Example:
+
+{{:action:compositeontoimageexample.png|}}
+

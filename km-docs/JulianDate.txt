@@ -1,0 +1,1 @@
+A JulianDate (JD) is days (and fractions of days) since January 1, 4713 BC Greenwich noon.

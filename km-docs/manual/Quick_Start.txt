@@ -1,0 +1,53 @@
+====== Quick Start ======
+
+Keyboard~~Maestro is easy to use once you understand the way the Editor and Engine, Macro~~Groups and Macros, Triggers and Actions work together.
+
+By using these six components together, you can dramatically enhance your Mac experience.
+
+Just remember:
+
+* If you want to **make changes**, use the Editor.
+* If you want anything to work, make sure the Engine is running.
+* If you want to control **when a Macro is active**, configure the Macro~~Group.
+* If you want to control **when a Macro is executed**, configure its Triggers.
+* If you want to control **what a Macro does**, configure its Actions.
+
+==== Keyboard Maestro editor ====
+
+The Keyboard~~Maestro application is the editor. It lets you create and modify macros and configure preferences which are stored on your local Mac. You use it only when you want to make changes and then you quit it. It does not always need to be running. Whenever you launch Keyboard~~Maestro, it also launches the Keyboard~~Maestro~~Engine which continues running until you log out (you can, and should, have the Keyboard~~Maestro~~Engine launched automatically when you login by enabling the “Launch Engine at Login” preference in the [[Windows#Preferences_General_Pane|General preference pane]]).
+
+==== Keyboard Maestro Engine ====
+
+The Keyboard~~Maestro~~Engine is a background only application that performs all of Keyboard~~Maestro’s features. It responds to your Hot~~Key presses, watches the time, tracks applications and maintains your clipboard history, handles receiving clipboards, displays palettes, and, of course, executes your Macros. It should be running at all times, so we recommend you enable the “Launch Engine at Login” preference in the [[Windows#Preferences_General_Pane|General preference pane]].
+
+==== Macro Groups ====
+
+Keyboard~~Maestro allow you to organize your Macros into Macro~~Groups which are like folders of macros. Each Macro~~Group controls when the macros it contains are active. A Macro~~Group can target or exclude specific applications, which means the macros it contains will only be active in those desired applications. For example, you can have macros which are active only in Mail.app, or only in Mail.app when a compose window is open.
+
+A Macro~~Group can also act as a container for specific-use macros which are available to be triggered only when you specifically activate them. For example, you could create a Macro~~Group containing macros that resized or repositioned windows using the arrow keys, but those macros would only be active after a specific Hot~~Key was pressed so that the arrow keys could be used normally at other times.
+
+Macro~~Groups can be displayed as palettes, allowing you to create your own custom toolbars which can be configured with a variety of themes.
+
+Macro~~Groups can be displayed in the menu bar, allowing you to show updating information in the menu bar, and quickly access the macros it contains.
+
+You create a Macro~~Group by clicking the BUTTON{{{+}}} button at the bottom of the Macro~~Groups list. You can disable or enable Macro~~Groups by clicking the BUTTON{{{✓}}} button. You can configure a Macro~~Group by selecting it and clicking the Edit button, or by double-clicking on it.
+
+You can also create Smart~~Groups, which are essentially saved searches and will show you any macros that match any of the set of search criteria.
+
+==== Macros ====
+
+Keyboard~~Maestro’s main purpose is to execute Macros. A Macro lives in a Macro~~Group and consists of a set of Triggers that determine when the macro is executed, together with a list of Actions that define what the macro does when it is executed. You create a Macro by clicking the BUTTON{{{+}}} button at the bottom of the Macros list or by clicking the BUTTON{{{⊕}}} which will let you quickly create a simple macro by giving it a name, selecting a macro group, and choosing a common trigger and action. Either way you can add or edit triggers and actions later. You can disable or enable Macros by clicking the BUTTON{{{✓}}} button. Keep in mind that a Macro can only be active when the Macro~~Group that contains it is active. You can edit a Macro by selecting it and clicking the Edit button, or by double-clicking on it. There is no `Save` in Keyboard Maestro, your macros are always saved a few seconds after you make any changes.
+
+A macro is available to be triggered only if it is enabled, and it’s parent macro group is enabled and active. 
+
+==== Triggers ====
+
+A [[Macro Triggers|Trigger]] defines when a macro will be executed. There are a variety of Triggers available, the most common is the Hot~~Key trigger which executes the macro when a specified Hot~~Key is pressed. Similarly, you can use a Typed~~String trigger to execute a macro when you type some text (for example =addr=). Other common triggers are the Macro~~Palette which lets you trigger a macro by clicking on a context (front application or window) sensitive floating palette of macros and the Status Menu trigger which displays the macro in the Status Menu.  You can trigger macros from the clipboard history (to apply to the clipboard entry), or by drawing a shape with the mouse or trackpad.
+
+You can also trigger a macro when you login or when your Mac sleeps or wakes or goes idle, at a specific time or on a specific day, when an application launches, activates or quits, by executing a script, or remotely using a web browser or iPhone or our trigger server. And you can trigger a macro when something changes, like a volume being mounted or unmounted, plugging in headphones, connecting a monitor, a USB device, or to a wireless network.
+
+A Trigger will only execute the macro if the Macro is enabled and the Macro~~Group is enabled and currently active. You create Triggers by creating or editing a Macro and clicking the green BUTTON{{{+}}} button near the top of the macro detail view.
+
+==== Actions ====
+
+When a Macro is Triggered it executes a list of [[Macro Actions|Actions]]. Keyboard~~Maestro performs each of the Actions in order. There are a wide variety of Actions allowing you to control applications, simulate user interface events like key presses, mouse clicks and menu selections, work with files or images, control your Mac or the clipboard, or display a variety of powerful switchers (Application, Window, Clipboard and Clipboard History Switchers). You can also execute a script (AppleScript, Java, Swift, shell Script or Automator Workflow) or even download or create your own custom plug in actions. There are [[:Actions|many, many more actions]], so if you can do it yourself, Keyboard Maestro can probably do it for you.  You create Actions by creating or editing a Macro and clicking the BUTTON{{{+}}} button to display available actions, or by clicking on the Record button and performing the action while Keyboard~~Maestro records your actions to your Macro.

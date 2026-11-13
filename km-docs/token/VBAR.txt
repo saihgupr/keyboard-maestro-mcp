@@ -1,0 +1,17 @@
+The vertical bar text token (//%|%//) is a special token used with the [[action:Insert Text|Insert Text action]] which adds a sequence of left arrow keystrokes to the end of the action to (attempt to) position the insertion cursor at the desired spot.  For example:
+
+    Insert Text: Sally said "%|%" to Nikola.
+
+After inserting the text, Keyboard Maestro will left arrow 12 times (in this case) to return the cursor to the desired location within the quotation.
+
+When the text is known, you could simply add the 12 arrow keys yourself, but if the text was variable, eg:
+
+    Insert Text: Sally said "%|%" to %Variable%Name%.
+
+it becomes much more difficult and this token becomes valuable.
+
+--------------------------------------------------------
+
+Tags: Cursor Location, Cursor Position, Text Substitution, Text Insertion Point, Text Insertion Location
+
+--------------------------------------------------------

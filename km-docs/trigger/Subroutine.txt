@@ -1,0 +1,15 @@
+====== Subroutine Trigger ======
+
+The *Subroutine trigger* (v10+) lets you execute a macro using the [[action:Execute_a_Subroutine|Execute a Subroutine]] action. This trigger defines the parameters that can be passed to the macro, and the variables they are stored in, as well as whether the macro returns a result.
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[/Triggers|Triggers]]
+
+=== Actions ===
+
+* [[action:Execute_a_Subroutine|Execute a Subroutine]] action
+* [[action:Execute_a_Macro|Execute a Macro]] action
+* [[/Actions|Actions]]

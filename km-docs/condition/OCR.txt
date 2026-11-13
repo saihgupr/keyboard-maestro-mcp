@@ -1,0 +1,48 @@
+====== OCR Condition ======
+
+The //OCR condition// (v9.0+) extracts the text from an image using OCR (Optical Character Recognition) (specifically using Apple Text Recognition (v11+ and macOS 10.15+) or the [[https://en.wikipedia.org/wiki/Tesseract_(software)|Tesseract OCR library]]) and determines if it currently meets the specified.
+
+{{ ocr-condition.png?nolink&503x326 | OCR Condition }}
+
+The source image can be pasted  into the action, or read from the System Clipboard, Trigger Clipboard, a Named Clipboard, or a file, or you can get the image from the screen.
+
+When reading from the screen, you can get the image from all screens, or from a specific screen or window or area on the screen.
+
+You can choose what language or script the text is in.  Each language will require a download, typically between 1 and 10 MB, though there are a few scripts that are significantly larger.
+
+You select the _comparison criteria_ in the popup menu.
+
+^ PopUp Item ^ Description ^
+^ is empty | does not contain any. |
+^ is not empty | contains some text. |
+^ is | has text that exactly matches a specified string. |
+^ is not | does not have text that exactly matches a specified string. |
+^ contains | has text that contains (case insensitively) a specified string. |
+^ does not contain | does not have text that contains (case insensitively) a specified string. |
+^ starts with | has text that starts with (case insensitively) a specified string. |
+^ ends with | has text that ends with (case insensitively) a specified string. |
+^ is before | has text that is alphabetically before a specified string. |
+^ is after | has text that is alphabetically after a specified string. |
+^ matches | has text that matches a specified regular expression. |
+^ does not match | does not have text that matches a specified regular expression. |
+
+As with any OCR, the text may contain errors so you should be relatively liberal in how specifying your criteria.
+
+Note that the Tesseract OCR software prefers black-on-white text, and while it will often work with white-on-black text, it will be more likely to fail in those cases.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:OCR Image]]
+* [[action:If Then Else]]
+* [[action:Pause Until]]
+* [[action:For Each]]
+* [[action:Repeat]]
+* [[action:Until]]
+* [[action:Assert]]
+* [[:Actions|See all Actions]]
+
+==== Conditions====
+
+* [[:Conditions|See all Conditions]]

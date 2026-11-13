@@ -1,0 +1,9 @@
+====== CLIPBOARDSEED Function ======
+
+The CLIPBOARDSEED() function returns an integer that changes when the clipboard changes.  It will never repeat, so you can use this to test when the clipboard has changed.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[:Functions|See all Functions]]

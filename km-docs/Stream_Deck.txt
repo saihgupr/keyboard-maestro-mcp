@@ -1,0 +1,44 @@
+====== Stream Deck ======
+
+The [[https://www.elgato.com/en/gaming/stream-deck|Elgato Stream Deck]] is an external keypad/keyboard with a number of programmable buttons.
+
+Keyboard Maestro (v9.0+) supports the Stream Deck via an Stream Deck Plug In and the [[trigger:USB_Device_Key|USB Device Key]] trigger, as well as a number of Stream Deck specific actions.
+
+Note that these instructions apply to the first-party Keyboard Maestro plugin, but there is also third-party `KM Link` and `KM Runner` plug ins that you may want to look at.
+
+===== Installation======
+
+Ensure you have Stream Deck 4.2 or later installed.
+
+The Keyboard Maestro Stream Deck Plug In is available from the Elgato Marketplace.
+
+Note: There is also a `KM Link` Stream Deck Plug In which works differently - this article describes the native Keyboard Maestro first party Plug In. See [[https://www.thoughtasylum.com/2020/01/11/keyboard-maestro-stream-deck-plugins/|this article]] for a description of the two Plug Ins and their differences.
+===== Configuration =====
+
+For any button you want to use with Keyboard Maestro, drag the resulting Keyboard Maestro entry (in the Automation category) to a button.
+
+In Stream Deck, you can configure the button:
+
+{{ action:stream-deck-button-detail.png?nolink&494x208 | Stream Deck Button Detail }}
+
+You can configure the position and font and size of the title which appears in the button, as well as the title of the button.
+
+The button also has an ID which is how you refer to it from Keyboard Maestro actions, as well as a row and column number which is how the button appears to the USB Device Key trigger.  By default these will track the position of the button on the keyboard, and you should probably leave them all blank unless you have specific needs. If you wish the button to remain triggering the same macro when you move it, you should set the row and column explicitly. Also, if you have multiple Stream Deck Profiles, and buttons on different profiles that are intended to trigger different macros, then you should set the row and column uniquely in each Profile.
+
+Since the button works the same as any other [[trigger:USB_Device_Key|USB Device Key]] trigger, you can detect press, release, tap, tap twice, and so forth, giving you many ways to interact with the button.
+
+And since you can set the title and image on the button from Keyboard Maestro, you can have a lot of feedback on the keyboard as well.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:Stream Deck Set Title]]
+* [[action:Stream Deck Set Image]]
+* [[action:Stream Deck Show OK]]
+* [[action:Stream Deck Show Alert]]
+* [[:Actions|See all Actions]]
+
+==== Triggers ====
+
+* [[trigger:USB_Device_Key|USB Device Key]]

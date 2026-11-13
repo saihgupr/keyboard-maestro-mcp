@@ -1,0 +1,22 @@
+====== Open a File Folder or Application Action ======
+
+The //Open a File Folder or Application// action allows you to open an item and to select the application to open it with.
+
+ Click the File Chooser button to the right of the action to select an existing file on disk. Option-click on the File Chooser button to show the currently selected file in the Finder (assuming it exists already).
+
+Select from the //with// pop-up which application to open the item with.
+
+(!) Note that this is almost never the right action to use to launch an application.  Instead, use the [[action:Activate_a_Specific_Application|Activate a Specific Application]] action, which will both launch and activate the application.  If you really want to use this action, ensure you select the Finder as the application to use to “open” the application - otherwise the system may try to open the application as a document using some other application, which is highly unlikely to be what you want to do (except in very rare circumstances, like perhaps opening an application with a compression utility to compress it for network transport).
+
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Activate a Specific Application|Activate a Specific Application]]
+* [[action:Open a URL|Open a URL]]
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/stationary-pad-file-not-duplicated-when-opened/3039/2|Stationary Pad File Not Duplicated When Opened]]

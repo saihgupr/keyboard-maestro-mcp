@@ -1,0 +1,22 @@
+The //Folder Contents collection// contains the paths of item in a specified folder.
+
+You can choose to scan the folder:
+
+* alphabetically
+* by file size
+* by creation date
+* by modification date
+* by date added
+* by date downloaded
+* by date last used
+* recursively — including contents of sub-folders.
+
+And you can optionally reverse the order.
+
+Prior to version 8.0, the only options were recursive or the unordered direct contents of the folder.
+
+This allows you, for example, to find the most (or least) recently added file, or the largest or smallest.
+
+As of 7.1+, if the folder is scanned non-recursively then the entire folder is read first, and then iterated through allowing you to safely make changes to the folder while iterating.
+
+By default, hidden files like ".DS_Store" files are excluded, but you can choose to include them if desired.

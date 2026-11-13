@@ -1,0 +1,9 @@
+The //Send SMS// and //Send iMessage// actions let you send a message to someone using Apple’s Messages application, which can generally send iMessages, and if linked to your phone, can send SMS messages as well.
+
+(!) Note: these actions rely on Apple’s Messages AppleScript support, and Apple’s Messages in Big Sur has been rewritten as a Catalyst application without any AppleScript support. As such these actions will not work in Big Sur or later unless something changes.
+
+(!) Warning: there have been cases where Messages sends the message to the wrong recipient.  Do not send overly sensitive messages and verify delivery.
+
+You can select a recipient from the Contact popup menu, or use a name, email address or phone number as appropriate.
+
+(!) Note: The Contact popup menu only shows recent recipients in Messages.

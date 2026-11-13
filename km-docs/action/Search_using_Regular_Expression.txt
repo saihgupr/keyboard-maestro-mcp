@@ -1,0 +1,74 @@
+====== Search using Regular Expression Action ======
+
+The //Search using Regular Expression// action allows you to search a clipboard, variable, a file (v8+) or some text (v8+) for a [[:Regular Expressions|regular expression]] and capture what you find to one or more variables. This can be very useful for splitting apart the contents of a variable.
+
+{{:action:search-using-regex.png?nolink&516|}}
+
+**Note:  This search returns _only the first_ match in the source text.** If you want to process _all_ matches, you will need to use a [[action:For_Each|For Each Action]] as shown in [[:Regular_Expressions#Examples|this example]].
+
+===== How To Use =====
+
+==== Source ====
+
+Select the source to search to search using the //Search// pop-up.  In all of the RegEx searches, you can choose to search in any one of the following: System Clipboard, Variable, File, Text entered into the Action, and Named Clipboard.
+
+==== Case Sensitivity ====
+
+Select whether or not to match the case from the //using Regular Expression// pop-up. You can also use a RegEx flag at the beginning of the pattern to indicate case insensitive matching:  `(?i)`
+
+==== RegEx Pattern to Search For ====
+
+Then enter the RegEx pattern to search for in the text area.
+
+==== Save Capture Groups to Variables ====
+
+Enter the [[manual:Variables|Variable]] for each the entire Match and each Capture Group you wish to save as a Variable.  This output section will auto-expand to present one field for each Capture Group in your RegEx pattern.
+
+For more information, see [[https://www.regular-expressions.info/brackets.html | Capture Groups]].
+
+==== Handling Search Failure ====
+
+If the search fails (no match), by default (7.1+) the action will abort the macro and notify you of the failure.  The destination variables will not be modified.  You can turn off aborting the macro and/or notifying you in the gear menu (the destination variables will still not be modified in this case).
+
+===== Examples =====
+
+**1. Use a regular expression to search through a product price list and save only certain parts of it.**
+
+
+If your Source String (data) is: 
+```text
+SKU1234Δ    Widget 1Δ	$12.95
+```
+(the "Δ" character is a TAB character)\\
+
+then you would use a RegEx pattern like:\\
+`(SKU\d{4})\h(.+)\h(.+)`
+
+To see a detailed explanation, and live editor, see https://regex101.com/r/MQ5FwG/1/.\\
+
+Save the first and third bracketed items (Capture Groups) to save the SKU number and the price. 
+
+To work through a list you would need to include a loop or repeat of some kind. 
+
+{{:action:searchvariableexample.png?514|}}
+
+Which results in:
+
+{{:action:searchvariableresult.png?345|}}
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+==== Topics ====
+
+* [[:Regular Expressions|Regular Expressions]]
+* [[:Clipboards|Clipboards]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/extracting-substring-of-a-variable/3007/2|Extracting substring of a Variable]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Search%20Variable|Keyboard Maestro Forum topics about Search Variable]]

@@ -1,0 +1,9 @@
+The Create New Image action allows you to create an image of specified dimensions and color and save it to the system clipboard or a named clipboard.
+
+{{:action:createnewimage.png|}}
+
+Select the color by clicking on the color square and choosing a new color from the Colors palette. Close the palette when you’ve finished.
+
+Then set the width and height of the image in pixels, either by entering them nasally or using the stepper arrows.
+
+Choose which clipboard to save the image to from the //to// pop-up.

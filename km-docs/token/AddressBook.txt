@@ -1,0 +1,8 @@
+The //%AddressBook%x%// token returns information about your AddressBook entry (the "Me" card).  You can ask for the:
+
+* //%AddressBook%Name%// - your AddressBook name.
+* //%AddressBook%First%// - your AddressBook first name.
+* //%AddressBook%Last%// - your AddressBook last name.
+* //%AddressBook%Nickname%// - your AddressBook nickname.
+* //%AddressBook%Organization%// - your AddressBook organization.
+* //%AddressBook%Note%// - your AddressBook note.

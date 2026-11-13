@@ -1,0 +1,26 @@
+====== Functions ======
+
+Keyboard Maestro has a variety of functions. Functions allow you to calculate certain information for use in numeric fields. You can insert functions into a field using the Insert Function menu in the Edit menu.  Most fields that are numeric (can be only numbers) can include functions.  Such fields typically start off small and include up/down arrows, but if you start typing anything more complex than a decimal number, they will expand to give you room to write expressions.
+
+See the [[manual:Calculations|Calculations]] section of the User Manual for more information on calculations and functions and how to use them.
+
+===== Function List =====
+
+Some available functions include:
+
+~~NOCACHE~~
+<nspages function -textPages="">
+
+===== See Also =====
+
+*  [[manual:Calculations|Calculations]]
+*  [[manual:Calculations#Operators|MOD (Modulo) Operator]]
+* [[/Text_Fields|Text Fields]]
+
+==== Tokens ====
+
+* [[:Tokens|See all Tokens]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/public-service-announcement-function-names-must-be-uppercase/3691|[Public Service Announcement] FUNCTION NAMES must be uppercase]]

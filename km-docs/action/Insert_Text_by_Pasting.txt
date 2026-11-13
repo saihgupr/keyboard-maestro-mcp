@@ -1,0 +1,38 @@
+The Insert (Styled) Text by Pasting action sets the clipboard to the (optionally styled) text and then types a Command-V keystroke.
+
+The Insert Text by Pasting action is fast for large text and can include any kind of characters, as well as styles like bold and italic, but it overwrites your clipboard and its handling of styles may occasionally not conform to your expectation.
+
+Use Insert Text by Pasting when:
+  *You don't mind the clipboard being overwritten, and
+  *The text is long, or
+  *The text contains exotic untypable characters, or
+  *The text contains returns or tabs which you don't want to perform actions like moving to the next field.
+
+
+===== See Also =====
+
+----
+
+=== Actions ===
+
+* [[action:Insert Text by Typing|Insert Text by Typing]]
+* [[action:Insert_Text|Insert Text]]
+* [[action:Set Action Delay|Set Action Delay]]
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens|See all Tokens]]
+
+==== Topics ====
+
+* [[:Text Fields|Text Fields]]
+* [[:Frequently Asked Questions|FAQ]]
+
+----
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/option-space-keyboard-combination/4794/8|Option-Space Keyboard Combination]]
+
+- [[https://forum.keyboardmaestro.com/search?q=Insert%20Text%20by%20Pasting|Keyboard Maestro Forum topics about Insert Text by Pasting]]

@@ -1,0 +1,20 @@
+====== CEIL Function ======
+
+The CEIL(x) function takes a number and returns the first integer that is greater than or equal to the argument:
+
+    CEIL(5.5) === CEIL(5.1) === CEIL(6) === 6
+    CEIL(-5.5) === CEIL(-5.1) === CEIL(-5) === -5
+
+The CEIL() function (v11.0+) takes a second optional parameter to indicate the number of decimal digits to operate to:
+
+    CEIL(5.6789,2) === 5.68
+    CEIL(-5.6789,2) === -5.67
+
+===== See Also =====
+
+=== Functions ===
+
+* [[FLOOR]]
+* [[TRUNC]]
+* [[ROUND]]
+* [[:Functions|See all Functions]]

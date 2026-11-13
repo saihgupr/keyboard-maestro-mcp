@@ -1,0 +1,27 @@
+The *Click Browser Link* actions let you click a link in a active web browser page.  These actions sit alongside the [[Browser_Window_Actions|browser window actions]] for creating and moving between tabs and windows and the [[Browser_Form_Actions|browser form actions]] for interacting with the active browser page.
+
+Like other [[Browser_Actions|browser actions]], these actions work with Safari or Google Chrome (or whichever of the two was last at the front).
+
+{{:action:click-safari-link-km-7.3.png?nolink|}}
+
+The parameter can be an [[:XPath]] or the title of a link.
+
+The action has a popup menu of links for the current page.
+
+{{:action:browser-dropdown-link-list-km-7.3.png?nolink|}}
+
+Note that all links visible on the web page may _not_ be visible to Keyboard Maestro if the web page uses Frames or JavaScript or other tricks to display it.
+
+===== See Also =====
+
+* [[Browser_Actions|Browser Actions]]
+* [[Browser_Window_Actions|Browser Window Actions]]
+* [[Browser_Form_Actions|Browser Form Actions]]
+* [[Wait_For_Browser_to_Finish_Loading| Wait For Browser to Finish Loading actions]]
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+==== Forum ====
+

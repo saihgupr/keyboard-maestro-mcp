@@ -1,0 +1,10 @@
+The Conceal Macro Palettes action allows you to:
+  *Reveal Macro Palettes.
+  *Conceal Macro Palettes.
+  *Conceal Macro Palettes until Application Switch.
+
+Select the required option from the pop-up.
+
+The Conceal options include a //Reveal if already concealed// checkbox, which would reveal the palettes if they are currently concealed.
+
+This action conceals **all** Keyboard Maestro palettes.  It is designed for cases like watching a video full screen where you want to hide all palettes from the screen.  The //Conceal Macro Palettes until Application Switch// variant is particularly useful for watching videos full screen in Safari for example, and then revealing the palettes as soon as you switch out.

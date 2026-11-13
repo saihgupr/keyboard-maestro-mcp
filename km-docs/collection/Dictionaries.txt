@@ -1,0 +1,21 @@
+The //Dictionaries collection// (v8+) lists all the dictionaries that you have created with Keyboard Maestro.
+
+===== See Also =====
+
+* [[manual:Dictionaries|Dictionaries]] User Manual section
+
+=== Actions ===
+
+* [[action:Set_Dictionary_Value|Set Dictionary Value]] action
+
+=== Tokens ===
+
+* [[token:Dictionary|%Dictionary%]] token
+
+=== Collections ===
+
+* [[collection:Dictionary_Keys|Dictionary Keys]] collection
+
+=== Forum ===
+
+- [[https://forum.keyboardmaestro.com/search?q=Dictionary|Keyboard Maestro Forum topics about Dictionaries]]

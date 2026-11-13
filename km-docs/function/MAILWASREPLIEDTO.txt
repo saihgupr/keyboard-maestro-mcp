@@ -1,0 +1,17 @@
+====== MAILWASREPLIEDTO Function ======
+
+The MAILWASREPLIEDTO() function returns the was replied to status of the currently selected mail message.
+
+===== See Also =====
+
+=== Functions ===
+
+* [[MAILDATERECEIVED]]
+* [[MAILDATESENT]]
+* [[MAILFLAG]]
+* [[MAILFLAGGED]]
+* [[MAILJUNKSTATUS]]
+* [[MAILREADSTATUS]]
+* [[MAILWASFORWARDED]]
+* [[MAILWASREDIRECTED]]
+* [[:Functions|See all Functions]]

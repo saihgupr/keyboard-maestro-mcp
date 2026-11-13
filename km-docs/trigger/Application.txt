@@ -1,0 +1,50 @@
+====== Application Trigger ======
+
+The //Application trigger// allows you to execute a macro when an specified application (or any application) does any of the following:
+
+* Launches.
+* Quits.
+* Is Running (and periodically while it remains running).
+* Activates.
+* Deactivates.
+* Is Active (and periodically while it remains at the front).
+
+An application Activates when it comes to the foreground, and deactivates when another application comes to the foreground.
+
+The `Is Running` and `Is Active` variant will trigger once when the application first launches/activates, and then periodically thereafter while the application continues to run/remains at the front.
+
+You could use a trigger like this to simulate workspaces by automatically setting up an application the way you want when you launch it, or you could clean up after an application when you quit.
+
+You can use the [[token:TriggerValue|%TriggerValue% Text Token]] to determine the path of the application (previous to 9.0, the `%TriggerValue%` token contained the name of the application).
+
+(!) If a macro that is triggered by an application launching is in a macro group that is active only when that application is running or active, then the trigger will probably never fire since the macro will be inactive until after the event has passed.  As such, macros that are triggered by as application trigger should be in a macro group that is always active (or at least, a macro group that is active both before and after the event happens).
+
+===== See Also =====
+
+=== Actions ===
+
+ * [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[condition:Application|Application]] condition
+* [[:Conditions|See all Conditions]]
+
+=== Tokens ===
+
+* [[token:Application|%Application%]] token
+* [[token:ApplicationPath|%ApplicationPath%]] token
+* [[token:ApplicationBundleID|%ApplicationBundleID%]] token
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]
+
+=== Triggers ===
+
+* [[:Triggers|See all Triggers]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/application-dock/4747|Application Dock]]
+- [[https://forum.keyboardmaestro.com/search?q=Application%20Trigger|Keyboard Maestro Forum topics about Trigger Application]]

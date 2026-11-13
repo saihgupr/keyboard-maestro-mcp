@@ -1,0 +1,36 @@
+====== OCR Screen or Image ======
+
+The //OCR Image// action allows you to extract the text from an image using OCR (Optical Character Recognition) (specifically using either Apple Text Recognition (v11+ and macOS 10.15+) or the [[https://en.wikipedia.org/wiki/Tesseract_(software)|Tesseract OCR library]]).
+
+{{ ocr-image.png?nolink&503x171 | OCR Image }}
+
+The source image can be pasted  into the action, or read from the System Clipboard, Trigger Clipboard, a Named Clipboard, or a file, or you can get the image from the screen.
+
+When reading from the screen, you can get the image from all screens, or from a specific screen or window or area on the screen.
+
+You can choose what language or script the text is in.  Each language will require a download, typically between 1 and 10 MB, though there are a few scripts that are significantly larger.
+
+As with any OCR, the text may contain errors so you should be careful not to assume the result is 100% accurate.
+
+By default there is a [[trigger:Clipboard_Filter|Clipboard Filter]] macro to OCR images available in the Clipboard Filters folder which you can access from the [[manual:Clipboard_History_Switcher|Clipboard History Switcher]] Gear (⚙) menu.
+
+{{ ocr-clipboard-filter.png?nolink&537x428 | OCR Clipboard Filter }}
+
+Note that the Tesseract OCR software prefers black-on-white text, and while it will often work with white-on-black text, it will be more likely to fail in those cases.
+
+===== See Also =====
+
+==== Actions ====
+
+* [[If Then Else]]
+* [[Pause Until]]
+* [[For Each]]
+* [[Repeat]]
+* [[Until]]
+* [[Assert]]
+* [[:Actions|See all Actions]]
+
+==== Conditions====
+
+* [[condition:OCR]]
+* [[:Conditions|See all Conditions]]

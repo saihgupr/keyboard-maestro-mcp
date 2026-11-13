@@ -1,0 +1,15 @@
+This macro duplicates the current line. It will work well in most text editors. It works by selecting the current line, then Copy, then deselect the line and Paste, and finally restores the clipboard. It then reselects the just duplicated line to highlight it and allow further duplication.
+
+Download: {{::macros:duplicate-line.kmmacros|}}
+
+Default Trigger: Hot Key ⌘L
+
+Actions:
+
+* Type the ⌘Left Arrow Keystroke
+* Type the ⇧Down Arrow Keystroke
+* Type the ⌘C Keystroke
+* Type the Down Arrow Keystroke
+* Type the ⌘V Keystroke
+* Type the ⇧Up Arrow Keystroke
+* Set Clipboard To Past Clipboard 1

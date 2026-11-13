@@ -1,0 +1,56 @@
+===== Shortcut Actions Provided by Keyboard Maestro =====
+
+Apple introduced Shortcuts to macOS Monterey as an alternative way of automating tasks on macOS.
+
+Keyboard Maestro (v10.1+) allows you to execute Shortcuts with the [[action:Execute_Shortcut|Execute Shortcut]] action, and also provides a wealth of native macOS Shortcuts to add power to the Shortcuts application and any Shortcuts you write for macOS.
+
+==== Terminology ====
+
+In Keyboard Maestro, you have the [[manual:Macro Groups]], containing [[manual:Macros]], which are triggered by [[Triggers]], and then perform [[Actions]]. Macros are performed by the Keyboard Maestro Engine, and are edited with the Keyboard Maestro editor.
+
+In macOS Shortcuts, you have Folders, containing Shortcuts, which you trigger in various ways, and then perform //Shortcut Actions//. Shortcuts are performed by the system, and are edited with the Shortcuts application.
+
+For clarity, we will always use //Shortcut Actions// when referring to actions within a Shortcut or the Shortcuts application, rather than the native Keyboard Maestro actions.
+
+This page is primarily focussed on //Shortcut Actions// that Keyboard Maestro provides to the Shortcuts application for use in Shortcuts you write for macOS.
+
+==== Get Macro ====
+
+Gets a Macro for use in a future //Shortcut Action//. You can specify a specific macro, or you will be prompted for one.
+
+==== Edit Macro ====
+
+Opens the Keyboard Maestro editor and edits the specified macros.
+
+==== Execute Macro ====
+
+Executes the specified macro. You can pass text to the macro (which will be available via the [[token:TriggerValue|%TriggerValue%]] token). The [[action:Return_Result|Return Result]] action can be used to return a result to the Shortcut (v11.0+).
+
+
+==== Get Variable ====
+
+Gets the value of a specified variable and returns it. You can optionally specify a macro instance to retrieve local or instance variables.
+
+==== Set Variable ====
+
+Sets the value of a specified variable. You can optionally specify a macro instance to retrieve local or instance variables.
+
+==== Get Active Macros ====
+
+Returns a list of the currently active macros.
+
+==== Calculate  ====
+
+Calculates the result of an expression using Keyboard Maestro’s calculation engine, including access to all of its [[Functions]]. You can optionally specify a macro instance to retrieve local or instance variables.
+
+==== Process Tokens ====
+
+Process text tokens using Keyboard Maestro’s text processing engine, including access to all of its [[Tokens]]. You can optionally specify a macro instance to retrieve local or instance variables.
+
+==== Search ====
+
+Search for a specified search string within specified text. You can specify whether you want the search to use regular expressions, be case sensitive, or to process text tokens. You can optionally specify a macro instance to retrieve local or instance variables.
+
+==== Search and Replace ====
+
+Search and Replace for a specified search string within specified text and replace it with specified text. You can specify whether you want the search to use regular expressions, be case sensitive, or to process text tokens, and optionally to only replace the first or last match. You can optionally specify a macro instance to retrieve local or instance variables.

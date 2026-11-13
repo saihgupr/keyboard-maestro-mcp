@@ -1,0 +1,42 @@
+====== Search Strings ======
+
+Search Strings are filters which, in addition to the text you type, can include qualifiers that may be applied to searches for Macros and Actions in:
+  - The [[Windows#Macro_Editor_Window|Keyboard Maestro Editor]] search field.
+  - A Smart Group.
+  - A [[action:Trigger_Macro_by_Name|Trigger Macro by Name]] action.
+
+Keyboard Maestro will search for the text you type, and all of the below qualifiers that you specify, for matches in your list of macros.   Each word is searched for separately (and in any order) unless you quote a phrase.
+
+In the editor, matching actions and triggers will be highlighted with blue stripes:
+
+{{ search-matched-action.png?nolink&596x165 | Search Matched Action }}
+
+Note that the [[action:Trigger_Macro_by_Name|Trigger Macro by Name]] action only searches among active macros.
+
+**Search Qualifiers:**
+
+Qualifier tokens should not include a space (eg `name:mine` not `name: mine`).
+
+^ Qualifier ^ Short form ^ Definition ^ Example ^
+| all: | al: | Match everything | `all:`\\ (Otherwise the empty search string matches nothing) |
+| word: | w: | Match that must be at a word boundary \\ (Use quotes if Word contains spaces) | `word:amp` \\ (Matches “Turn on amp” and not “example”) |
+| group: | gr: | Match any macro within the named macro group\\  (Use quotes if Name contains spaces) | `group:"Forum Examples"` |
+| name: | n: | Match any macro that has a name matching the specified string | `n:PDF` |
+| global: | gl: | Match any macro within any macro group that is globally active | `global:`\\  (aka universal:) |
+| application | app: | Match any macro that is specific to (or excluded from) the specified application | `app:Finder` |
+| enabled: | e: | Match any macro that is enabled | `e:`\\ (not necessarily active) |
+| deprecated: | dep: | Match anything that uses deprecated features | `dep:` |
+| trigger: | t: | Match any macro that has a trigger matching the specified string | `t:=sig=`\\ (Typed String of “=sig=”) |
+| action: | act: | Match an action with the specified action ID | `action:1234`\\ (Action ID of “1234”) |
+| hotkey: | h: | Match any macro with specified HotKey\\ Match any macro with any HotKey if no HotKey is specified.\\ Modifier Keys must be one of these: `⌃⌥⇧⌘` | `h:⌘⌃C`\\ (CMD CTRL C)\\  \\ `h:`\\  (Matches any HotKey) |
+| created: | cre: | Match any macro that was created less that the specified time ago | `cre:1w` |
+| modified: | mod: | Match any macro that was modified less that the specified time ago | `mod:1d` |
+| used: | use: | Match any macro that was used less that the specified time ago | `use:1m` |
+| size: | siz: | Match any macro that has a storage size more than the specified size | `size:10000` |
+| note: | not: | Match any action that contains the text in a Note | `note:custom` |
+
+For the created:, modified:, used:, the parameter is a number followed by a letter (s for seconds, m for minutes, h for hours, d for days, or w for weeks).
+
+You can use a negative sign (-) to negate any match (for example, "-name:PDF").
+
+The qualifier can generally be shorted to its shortest unique name, as shown in the _Short Form_ column.

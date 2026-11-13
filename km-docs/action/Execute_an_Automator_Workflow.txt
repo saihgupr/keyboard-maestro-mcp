@@ -1,0 +1,18 @@
+====== Execute Automator Workflow ======
+
+The Execute Automator Workflow action executes a specified Automator Workflow.
+
+Select the workflow by specifying its path. Click the File Chooser button to the right of the action to select an existing file on disk. Option-click on the File Chooser button to show the currently selected file in the Finder (assuming it exists already).
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Execute or Edit Shortcut|Execute or Edit Shortcut]]
+* [[action:Edit Shortcut|Edit Shortcut]]
+* [[action:Execute a Shell Script|Execute an Shell Script]]
+* [[action:Execute an AppleScript|Execute an AppleScript]]
+* [[action:Execute_Shortcut|Execute Shortcut]]
+* [[action:Execute a JavaScript For Automation|Execute a JavaScript For Automation]]
+* [[action:Filter|Filter Variable with Expand Tilde In Path]]
+* [[:Actions|See all Actions]]

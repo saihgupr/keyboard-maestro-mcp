@@ -1,0 +1,29 @@
+====== Icon Chooser ======
+
+Keyboard Maestro includes an Icon Chooser and creator to allow you to select custom icons for your macro groups and macros.
+
+You can display the Icon Chooser by choosing the [[Menus#Icon_Chooser|Window ➤ Icon Chooser menu]].
+
+{{ iconchoosercharacter.png?nolink&425x638 | Icon Chooser Window }}
+
+Click on an image well for a macro or macro group (in Edit mode), and then click on an icon in the Icon Chooser to select it.
+
+The Icon Chooser includes three panes with different icons:
+
+* Internal – all the icons Keyboard Maestro normally uses.
+* Applications – all the icons Keyboard Maestro can find on your Mac.
+* Character – icons you create based on a character.
+
+The [[Windows#Icon_Chooser_Window|Character Icon Choose pane]] allows you to create your own custom icons by setting a few simple parameters. You can set the background and foreground color, shape, and an optional character:
+
+{{ iconchoosercharacter.png?nolink&425 |Icon Chooser Window }}
+
+When you have a Macro or Macro Group icon well selected, and you make any change in the Icon Chooser, or if you click the icon in the Icon Chooser, then the icon for the Macro/Macro Group will be set.
+
+To load the Icon Chooser from an existing Macro or Macro Group, select the icon well of the Macro/Macro Group and then open the Icon Chooser (close it first if necessary).
+
+If an icon well is //not// selected when you open the Icon Chooser, then it will retain the settings that were last used.
+
+Note that icons configured from the Icon Chooser will be very small in storage size in your macros.  Icons set any other way will take up more storage in your macros.
+
+To transfer an icon from one macro to another, copy it from the icon well in the source macro and paste it in to the target macro image well.

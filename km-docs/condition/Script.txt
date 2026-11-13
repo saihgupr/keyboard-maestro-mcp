@@ -1,0 +1,50 @@
+The //Script condition// executes a script and checks the result.
+
+The script can be in a file or text within the application, and can be:
+
+* an AppleScript.
+* a Shell script.
+* a Swift script.
+* a JavaScript for Automation (JXA) script.
+* a JavaScript in Front Browser script (v9.0+).
+
+For text AppleScript or JavaScript, press `Enter` to format the script (v10.0+).
+
+You can test the result of executing the script:
+
+* returns success (that is, the script ran without errors).
+* returns an error (the script returned some sort of error code).
+* returns a specific status code (unlike almost all other numeric fields, this cannot be a calculation).
+* returns not text. (v8+)
+* returns some text. (v8+)
+* returns text that is exactly (case insensitively) a specified string.
+* returns text that is not exactly (case insensitively) a specified string.
+* returns text that contains (case insensitively) a specified string.
+* returns text that does not contain (case insensitively) a specified string.
+* returns text that starts with (case insensitively) a specified string. (v8+)
+* returns text that ends with (case insensitively) a specified string. (v8+)
+* returns text that is alphabetically before a specified string. (v7.2+)
+* returns text that is alphabetically after a specified string. (v7.2+)
+* returns text that is matches a specified [[:Regular Expressions|regular expression]].
+* returns text that is does not matches a specified [[:Regular Expressions|regular expression]].
+* returns text that is numerically less than a specified calculation. (v8+)
+* returns text that is numerically less than or equal to a specified calculation. (v8+)
+* returns text that is numerically equal to a specified calculation. (v8+)
+* returns text that is numerically greater than or equal to a specified calculation. (v8+)
+* returns text that is numerically greater than a specified calculation. (v8+)
+* returns text that is numerically not equal to a specified calculation. (v8+)
+
+The script will receive the Keyboard Maestro variables in its environment as usual for any executed script in Keyboard Maestro.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:If Then Else|If Then Else]]
+* [[action:Pause_Until|Pause Until Conditions Met]]
+* [[action:Until|Execute Action Until Conditions Met]]
+* [[:Actions|See all Actions]]
+
+===  Conditions ===
+
+* [[:Conditions|See all Conditions]]

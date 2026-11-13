@@ -1,0 +1,26 @@
+====== Press a Button Action ======
+
+The //Press a Button// action presses a named button in the front window.
+
+As well as pressing buttons, you can perform other actions (v11.0+) such as showing the menu for the button, or incrementing or decrementing a slider, or canceling the button.
+
+(i) Sometimes buttons change names, for example //Show sidebar// may become //Hide sidebar// after being pressed.
+
+There is a popup menu (v11.0+) to scan the front window of a selected application. Ensure the window of interest is the front window in your target application, then select the application in the popup menu. Keyboard Maestro will scan the window. Then select the popup menu and there will be an additional menu of all the buttons in the front window of the target application. Hold the Option key down to sort the buttons (by default they are roughly in the window layout order), and hold the Shift key down to display the details of the button. Buttons can be matched explicitly by Title, or by Description, and can have an array index for duplicate buttons with the same name.
+
+The action allows you to specify multiple options separated by a vertical bar (eg This|That) to allow for toggling or varying buttons. They will also ignore the difference between three dots (\.\.\.) and an ellipsis (…) so you do not have to worry which one is used. 
+
+Alternatively, you can start the name with an ^ and use a regular expression to match the button name. 
+
+As of v7.1+, you can use Text Tokens in the field.
+
+As of v10.2 there is an option (in the action (gear) ⚙ menu) to have this action wait until the button exists and is enabled and then press it.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Move_or_Click_Mouse|Move or Click Mouse]] action
+* [[action:Type_a_Keystroke|Type a Keystroke]] action
+* [[:Actions|All Actions]]
+

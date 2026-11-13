@@ -1,0 +1,28 @@
+====== MOUSEX Function ======
+
+The *MOUSEX()* function returns the x location of the mouse pointer relative to the top left corner of the main screen.
+
+===== See Also =====
+
+==== Actions====
+
+* [[action:Manipulate_a_Window|Manipulate a Window]] action
+* [[action:Move_or_Click_Mouse|Move or Click Mouse]] action
+* [[:Actions|See all Actions]]
+
+==== Functions ====
+
+* [[function:MENUBARHEIGHT|MENUBARHEIGHT]] function
+* [[function:MOUSEBUTTON|MOUSEBUTTON]] function
+* [[function:MOUSEY|MOUSEY]] function
+* [[function:SCREEN|SCREEN]] function
+* [[function:SCREENVISIBLE| SCREENVISIBLE]] function
+* [[function:SCREENINDEX| SCREENINDEX]] function
+* [[function:WINDOW|WINDOW]] function
+* [[function:WINDOWCOUNT|WINDOWCOUNT]] function
+* [[:Functions|See all Functions]]
+
+==== Forum ====
+
+- [[https://forum.keyboardmaestro.com/t/i-need-a-conditional-if-there-are-two-monitors/3031/5|I need a conditional if there are two monitors]]
+

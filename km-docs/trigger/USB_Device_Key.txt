@@ -1,0 +1,36 @@
+====== USB Device Key Trigger ======
+
+**This is an advanced trigger** — generally you should use a [[trigger:Hot_Key|Hot Key Trigger]] if possible.
+
+The *USB Device Key trigger* executes a macro when any device key is pressed — this includes modifier keys, mouse buttons, many programmable keyboards, and even the brightness buttons on USB connected monitors.
+
+Unlike hot key triggers, the pressed key is not removed or affected in any way. This trigger watches input devices at a low level, but it does not affect them, so any key presses continue to have their normal operation as well as triggering the macro. This is fine for modifiers, unused mouse buttons, programmable keyboards and other unused buttons, but would likely be problematic for normal keystrokes which will continue to have some other, probably unwanted, affect.
+
+===== When =====
+
+You can configure the trigger to execute the macro when the key is pressed, when it is long pressed (v10.0+), when it is released, or repeatedly while the key is held down.  This allows you to do things like have a macro execute when the key is pressed, and then a second macro execute when the key is released, for example to toggle a setting on and then off again.
+
+You can configure the trigger to execute when the key is tapped (press and released quickly) each time, the first tap, double tapped, triple tapped, or quadruple tapped (v7.0+).
+
+You can configure the trigger to execute when the key is tapped (press and released quickly) only on the first tap, or the second tap, or the third tap, or the fourth tap (v11.0+).  Keep in mind that Keyboard Maestro cannot see the future, so to determine that this is explicitly the second tap, the macro will not fire when the key is released, but must wait a short period of time to see that it is not pressed a third time. As such there will be a short delay before the macro is executed when using the “only once” style options.
+
+===== See Also =====
+
+=== Triggers ===
+
+* [[trigger:Hot_Key|Hot Key]] trigger
+* [Typed String](https://wiki.keyboardmaestro.com/trigger/Typed_String) trigger
+* [[:Triggers|See all Triggers]]
+
+=== Actions ===
+
+* [Type a Keystroke](https://wiki.keyboardmaestro.com/action/Type_a_Keystroke) action
+* [Insert Text by Typing](https://wiki.keyboardmaestro.com/action/Insert_Text_by_Typing) action
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:Trigger|%Trigger%]]
+* [[token:TriggerBase|%TriggerBase%]]
+* [[token:TriggerValue|%TriggerValue%]]
+* [[:Tokens|See all Tokens]]

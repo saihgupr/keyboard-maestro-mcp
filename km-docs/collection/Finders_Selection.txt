@@ -1,0 +1,95 @@
+{{:collection:mac-finder-icon.png?nolink|}}
+
+====== Working with the Finder Selection ======
+
+**with the //[[action:For_Each|For Each Item]]// Action using the //[[:Collections|Finder's Selection Collection]]//**
+
+As you probably know, you can select multiple files and/or folders in the Mac Finder, and then perform a manual operation on the entire selection, like copy, move, delete, apply tags, etc.  If you have an operation that you often perform, then Keyboard Maestro can most likely automate that for you.
+
+===== Potential Use Cases =====
+
+Some examples of Keyboard Maestro macros performing operations (actions) on a Finder Selection:
+  - Move the selected files to another folder you often use for a specific purpose
+  - Assigning Mac Tags to the selection (can't be done via AppleScript)
+  - Renaming the selected files using a consistent prefix and number scheme
+
+
+===== Setup of the For Each Item Action =====
+
+In Keyboard Maestro, you work with the Finder Selection by using the [[action:For_Each| For Each action ]] to iterate over the selected files. For each file in the selection, you can do whatever you would like with the file using the various file actions, including an [[action:Execute_an_AppleScript|Execute Script]] Action. Even if you are writing a macro to operate on only a single item, this is how you get that item. 
+
+In the For Each Item Action, you can add one or more of any of the Keyboard Maestro Actions.  These Action(s) will be repeated for each file in the selection.
+
+{{:collection:km-for-each-finder.png?nolink|}}
+
+===== Examples =====
+
+The //Finder’s Selection collection// sets the //**For Each**// Variable to the full path of each file in the selection.
+
+Note the consistency between the first three examples. And note that you could do all three in a single For Each action if you wanted (you would have to ensure the Move was done last of course, as that will change the path to the file).
+
+==== #1 - Move Selected Files ====
+
+To move the files to the Documents folder, you would do this:\\
+{{ :action:move-to-documents.png?516;nolink |}}
+
+==== #2 - Assign Mac Tags to Selection ====
+
+To change the Finder Tags, you would use:
+{{ :action:change-tag.png?516;nolink |}}
+
+==== #3 - Rename Selected Files ====
+
+You could rename the selected files from .txt to .html like this:
+
+{{ :action:rename-selected.png?nolink&516 |}}
+
+==== #4.  Pass the File Path to a Shell Script ====
+
+You can pass each file to a shell script using something like this:
+
+{{ :action:pass-to-shell.png?516;nolink |}}
+
+==== #5.  Combining Multiple Actions in One For Each Item Action ====
+
+This macro will take the selected items in the Finder and perform the following Actions:
+  - Get the original File Path
+  - Generate a new sequenced name using the specified Base File Name
+    - New File Name:  `BaseFileName-n.ext` as in "`My Base File Name-1.jpg`"
+  - Add a Mac Tag to the File
+  - Rename the file using the text in the `baseFileName` variable and adding a hyphen and a sequential number to it.
+
+The file extension will be retained.  (A folder or a file with NO file extension will end up with a '.' at the end of the item-name, but I'll fix that soon.)
+
+See download link for this macro below. 
+
+{{ :collection:working-with-the-finder-selection.png?nolink |}}
+
+===== Downloads ====
+
+  - {{:collection:finder_rename_and_sequentially_number_selected_items.kmmacros|}}
+
+===== See Also =====
+
+==== Actions ====
+
+* [[action:For_Each|For Each]] action
+* [[action:File_Actions|File Actions]] action
+* [[action:Get_File_Attribute|Get File Attribute]] action
+* [[action:Set_File_Attribute|Set File Attribute]] action
+
+==== Collections ====
+
+* [[collection:Finders_Selection|Finders Selection]] collection
+* [[collection:Folder_Contents|Folder Contents]] collection
+* [[collection:Mounted_Volumes|Mounted Volumes]] collection
+
+==== Tokens====
+
+* [[token:FinderInsertionLocation|%FinderInsertionLocation%]] token
+* [[token:FinderSelection|%FinderSelection%]] token
+* [[token:FinderSelections|%FinderSelections%]] token
+
+==== Forum ====
+
+  * [Working with the Finder Selection](https://forum.keyboardmaestro.com/t/working-with-the-finder-selection/278)

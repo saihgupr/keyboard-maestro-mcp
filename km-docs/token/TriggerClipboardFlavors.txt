@@ -1,0 +1,27 @@
+====== TriggerClipboardFlavorsToken ======
+
+The //%TriggerClipboardFlavors%// token (v11.0+) returns the flavors of a [[/Clipboards#Trigger_Clipboard|Trigger Clipboard]].
+
+The Trigger Clipboard is not a clipboard per se, but a reference to a clipboard, either the System Clipboard, a past clipboard in the Clipboard History, or a Named Clipboard.  It is the clipboard referenced by a [[trigger:Clipboard Filter]] menu selection in the Clipboard Switcher.
+
+===== See Also =====
+
+* [[/Clipboards|Clipboards]]
+
+=== Tokens ===
+
+* [[SystemClipboard|%SystemClipboard%]] token
+* [[PastClipboard|%PastClipboard%]] token
+* [[NamedClipboard|%NamedClipboard%]] token
+* [[TriggerClipboard|%TriggerClipboard%]] token
+* [[SystemClipboardFlavors|%SystemClipboardFlavors%]] token
+* [[PastClipboardFlavors|%PastClipboardFlavors%]] token
+* [[NamedClipboardFlavors|%NamedClipboardFlavors%]] token
+* [[Trigger|%Trigger%]] token
+* [[TriggerBase|%TriggerBase%]] token
+* [[TriggerValue|%TriggerValue%]] token
+* [[/Tokens|All Tokens]]
+
+=== Triggers ===
+
+* [[trigger:Clipboard_Filter|Clipboard Filter]] trigger

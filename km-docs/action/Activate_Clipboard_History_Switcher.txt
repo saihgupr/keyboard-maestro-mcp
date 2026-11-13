@@ -1,0 +1,27 @@
+====== Activate Clipboard History Switcher ======
+
+The [[manual:Clipboard_History_Switcher|Clipboard History Switcher]] saves a copy of each clipboard every time you copy something. You can then paste any previous system clipboard by triggering the Clipboard History Switcher macro. Clipboard History Switcher will present you with a window allowing you to select any of the past clipboard and paste them.
+
+{{ manual:clipboardhistoryswitcher.png?nolink&674 | Clipboard History Switcher Window }}
+
+By default, Keyboard Maestro creates an Activate Clipboard History Switcher macro in the “Switcher Group” Macro Group, triggered by Command-Control-Shift-V. You can disable the Macros by selecting them in the Macros window pane and clicking the ✓ button.
+
+You can also configure the switcher to appear under the mouse instead of in the same place each time.
+
+Keyboard Maestro also creates a Clipboard Filter macro group which includes a variety of macros that you can trigger from the BUTTON{{{⚙}}} menu to perform actions like Uppercase, Translate, or OCR.
+
+Keyboard Maestro also creates disabled macros for Paste Plain Text (Command-Shift-V) and Paste Previous Clipboard (Command-Control-V) in the “Global Macro Group” Macro Group. You can enable these by selecting the Global Macros Group, then selecting the macros and and clicking the ✓ button below the Macros list.
+
+===== See Also =====
+
+=== User Manual ===
+
+* [[manual:Clipboard History Switcher]]
+* [[manual: Named Clipboard Switcher]]
+* [[/User_Manual| User Manual]]
+
+=== Actions ===
+
+* [[action:Activate Named Clipboard Switcher]] action
+* [[action:Paste by Name]] action
+* [[:Actions|See all Actions]]

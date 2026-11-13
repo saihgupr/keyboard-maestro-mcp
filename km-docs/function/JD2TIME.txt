@@ -1,0 +1,45 @@
+====== JD2TIME Function ======
+
+The JD2TIME(x) function converts a time from [[:JulianDate]] to [[:unixtime]].
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Filter|Filter]] (Process Text Tokens)
+* [[:Actions|See all Actions]]
+
+=== Functions ===
+
+* [[function:DAY|DAY]]
+* [[function:DOW|DOW]]
+* [[function:GMTOFFSET|GMTOFFSET]]
+* [[function:NOW|NOW]] (unixtime)
+* [[function:TIME|TIME]] (unixtime)
+* [[function:TIME2JD|TIME2JD]]
+* [[function:TIME2MJD|TIME2MJD]]
+* [[function:JD|JD]]
+* [[function:JD2MJD|JD2MJD]]
+* [[function:MJD|MJD]]
+* [[function:MJD2JD|MJD2JD]]
+* [[function:MJD2TIME|MJD2TIME]]
+* [[:Functions|See all Functions]]
+
+=== Tokens ===
+
+* [[token:ICUDateTime|%ICUDateTime%]] (local)
+* [[token:ICUDateTimeFor|%ICUDateTimeFor%]] (local)
+* [[token:ICUDateTimeMinus|%ICUDateTimeMinus%]] (local)
+* [[token:ICUDateTimePlus|%ICUDateTimePlus%]] (local)
+* [[token:LongDate|%LongDate%]] (local)
+* [[token:LongTime|%LongTime%]] (local)
+* [[token:NumberDate|%NumberDate%]] (local)
+* [[token:ShortDate|%ShortDate%]] (local)
+* [[token:ShortTime|%ShortTime%]] (local)
+* [[:Tokens|See all Tokens]]
+
+=== Topics ===
+
+- [[:Dates_and_Times|Dates and Times]]
+- [[:JulianDate|JulianDate]]
+- [[:unixtime]] in GMT

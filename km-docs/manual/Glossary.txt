@@ -1,0 +1,44 @@
+====== Glossary ======
+
+| Active/Deactivated | A Macro Group is active only if the conditions of the macro group are satisfied (eg a specific application is frontmost). A macro is available to be triggered only if it is enabled, and it’s parent macro group is enabled and active. Active is a transient state and can change over time as the state of the system changes (eg as different applications are frontmost) |
+| Collection | An ordered list of things (like "Lines" in a Variable or File) that you can iterate through using the [[/action/For_Each|For Each action]] |
+| Clipboard | The system clipboard is where you store items when you Copy and Paste.  When you Copy an item, it is temporarily stored in the Clipboard and when you Paste, the item is copied from the Clipboard into your currently selection |
+| Clipboard~~History | Normally the system stores only one clipboard.  Keyboard Maestro keeps a history of your system clipboard, ensuring you never lose data on the clipboard and allowing you to copy and paste multiple items, |
+| Clipboard~~Switcher | is a feature of Keyboard~~Maestro that allows you to copy or paste to/from a set of Named~~Clipboards |
+| Conflict~~Palette | is a palette that lets you disambiguate your selection when a macro trigger triggers multiple macros simultaneously |
+| Enabled/Disabled | Macros and Macro Groups can be enabled or disabled in the editor. A macro is available to be triggered only if it is enabled, and it’s parent macro group is enabled and active. |
+| Excluded~~Applications | is the set of applications that should not appear in the Application~~Switcher list, allowing you to hide applications you rarely want to switch to.  These applications are also ignored when hiding other applications |
+| Global Macro Group | a predefined Macro~~Group that always exists and is the default location for new Macros |
+| GUID | see UUID |
+| Hot~~Key | A keystroke that acts as a Macro~~Trigger to start the execution of Macro~~Actions in a Macro |
+| KeyCue | software from ergonis that displays command keys and can also display Keyboard Maestro Hot~~Keys ([[https://www.stairways.com/action/linkthru?keycue|more info]]) |
+| Keyboard~~Maestro~~Engine | The process that enables your [[Macros]], [[Application Switcher]], [[Window Switcher]], [[Named Clipboard Switcher]] and web server to work even after you quit Keyboard~~Maestro |
+| Mac~~OS~~X | see macOS  |
+| macOS | The Apple Macintosh Operating System.  Formerly known as "OS X". |
+| Macro  | [[Macros|Macros]] are used to automate your workflow, procedure, or process on your Mac.  A Macro consists of \\   • A set of steps called [[:Actions|Actions]]. \\   • One or more [[:Triggers|Triggers]] to execute the Macro, if it is [[:Macro_Activation|Active]]. |
+| Macro~~Action | an action you wish to perform, such as opening a file, typing some text, controlling Safari, and so on |
+| Macro~~Group | a set of Macros which can be restricted to only a defined set of applications |
+| Macro~~Palette | a floating palette containing any active Macros that have a Macro Palette trigger.  The palette only appears in applications with at least once active Macro Palette triggered Macro |
+| Macro~~Trigger | an event, such as a Hot~~Key, application launch, time of day, that starts the execution of a Macro |
+| Michael~~Kamprath | the original developer of Application~~Switcher and Keyboard~~Maestro |
+| Named~~Clipboard | Keyboard~~Maestro provides a set of named clipboards where you can permanently store information (text, logos, graphics, etc) |
+| Notification~~Center | Mac OS X Mountain Lion introduced a system wide notification center which shows you alerts in the upper-right corner of your screen, without interrupting what you're doing |
+| OS~~X | Apple’s Macintosh operating system versions 10.0 and up |
+| Palette | a floating window containing macros that you can trigger.  There are several different kinds of [[Palettes|palettes]] and you can style them in various ways |
+| Program~~Switcher | the premier application management utility for Classic~~Mac~~OS, written by Michael~~Kamprath it was in part the inspiration for Keyboard~~Maestro and forms one of the components of Keyboard~~Maestro |
+| Quick~~Macro | a macro recorded on the fly in another application.  see the [[Recording]] section |
+| Record~~Quick~~Macro | the action that when triggered records a Quick~~Macro.  see the [[Recording]] section |
+| Regular~~Expression | aka RegEx, a way of matching strings based on patterns. When Keyboard Maestro refers to “matching” it means by regular expression, in particular [[https://www.stairways.com/action/linkthru?icuregex|ICU Regular Expressions]] |
+| Sandboxed | an Apple technology that limits what an application can do and how it can interface with the rest of the system and other applications.  This is great for security for applications that work with just their own data, but is impossible with workflow applications like Keyboard Maestro |
+| Shortcut | a Shortcut is another name for a Macro (it is also another name for an Alias but that is a different context to the normal Keyboard~~Maestro Macro context) |
+| Smart~~Group | a saved search set of Macros |
+| Sorting~~Characters | You can control the sorting order of macros by prefixing two characters and a closing parenthesis to the name, eg “01)My Macro”. The prefix will be removed before displaying in the macro palette or status menu, but will be used to control the order of the macros shown. |
+| Status~~Menu | the icon menus at the right of your menu bar |
+| Text~~Tokens | See Tokens |
+| Tokens | tokens allow you to insert dynamic text, such as the current date or time, into various text fields, see the [[Tokens]] section |
+| Tokenized | see Tokens |
+| Toolbar | see Palette |
+| UID | see UUID |
+| UUID | a Universally Unique IDentifier for [[Macros]] and [[Macro_Groups|Macro Groups]] and other purposes that remains the same even if you rename or modify a macro or macro group, or import a Macro built on another Mac. Also known as a [GUID](https://en.wikipedia.org/wiki/Globally_unique_identifier). |
+| Variables | Like most programming languages, Keyboard Maestro allows you to create [[https://en.wikipedia.org/wiki/Variable_(computer_science)|Variables]] to store data for use later on in the same Macro, or in other Macros.\\ Variables can be set from many actions. You can set variables to specific text, to the result of a calculations, from user input, from the Keychain, by searching other variables, from the clipboard or Named Clipboards, as the result of scripts, and from many other sources.\\ For more details, see [[manual:Variables|Variables]]. |
+| Z-order | refers to the order of windows from frontmost to furthest back |

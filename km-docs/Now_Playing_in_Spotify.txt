@@ -1,0 +1,13 @@
+This macro will paste a line that tells people what you are listening to in Spotify. It will also link them to the track in Spotify so they can click it and listen to it with one click. The line will say something like: 
+
+    Listening to SongTitle by ArtistName - spotify://track/4c79qPVAI5MMHi5g34ay76
+
+The spotify link will only be clickable for the user if they have the Spotify app installed on their computer.
+
+Download: {{:macros:spotify.kmmacros|}}
+
+Default Trigger: Type "/now" without quotes. Of course, you can change the trigger.
+
+Actions:
+
+* Execute AppleScript

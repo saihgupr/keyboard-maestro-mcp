@@ -1,0 +1,15 @@
+====== WirelessNetwork======
+
+The //%WirelessNetwork%// token returns the name of the currently connected wireless network(s).
+
+(!) Note that wireless information requires Location system security permissions in macOS Sonoma, so ensure the Keyboard Maestro Engine has Locations permissions if you are using Sonoma or later.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[:Tokens |See all Tokens]]

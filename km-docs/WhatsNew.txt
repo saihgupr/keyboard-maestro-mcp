@@ -1,0 +1,9 @@
+===== What’s New =====
+
+==== Updates to Keyboard Maestro ====
+
+* [[manual:Whats_New |What's New (Release Notes)]] from the [[User Manual]].
+
+==== Updates to this Wiki ====
+
+* See [[Home_Page?do=recent|Recent changes]] link at the top right.

@@ -1,0 +1,16 @@
+====== PromptWithListModifiers Token ======
+
+
+The //%PromptWithListModifiers%// token returns (v10.2+) the modifiers used to complete the last [[action:Prompt_With_List|Prompt With List]] action.
+
+===== See Also =====
+
+=== Actions ===
+
+* [[action:Prompt_With_List|Prompt With List]] action
+* [[:Actions|See all Actions]]
+
+=== Tokens ===
+
+* [[token:PromptWithListText|PromptWithListText]] token
+* [[:Tokens |See all Tokens]]

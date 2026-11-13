@@ -1,0 +1,27 @@
+QuickTime Player Control actions allow you to interact with QuickTime Player, playing movies, stopping or pausing, stepping forward or backward, or adjusting the volume. All actions will launch QuickTime Player if it is not already running. 
+
+{{:action:quicktimeplayeractions.png|}}
+
+===== Play Current Movie ===== 
+Play the current movie.
+
+===== Pause Current Movie ===== 
+Pause the current movie.
+
+===== Play/Pause Current Movie ===== 
+Toggle from playing to pausing or vice-versa.
+
+===== Step Backward Current Movie ===== 
+Step the current movie backward by a specified number of frames. Select the number of frames from the stepper with double arrows beside the //Step backward// area or enter a number manually.
+
+===== Step Forward Current Movie ===== 
+Step the current movie forward by a specified number of frames. Select the number of frames from the stepper with double arrows beside the //Step forward// area or enter a number manually.
+
+===== Decrease Current Movie Volume by 10% ===== 
+Decrease the QuickTime Player volume in 10% increments. For example, it would decrease from 100% to 90%, or from 90% to 80%.
+
+===== Increase Current Movie Volume by 10% ===== 
+Increase the QuickTime Player volume in 10% increments. For example, it would increase from 80% to 90%, or from 90% to 100%.
+
+===== Set QuickTime Player Volume ===== 
+Set the QuickTime Player volume to a specific level by using the slider. The action tells you the specific value you have set.
