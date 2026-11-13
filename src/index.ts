@@ -5,6 +5,11 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import {
     CallToolRequestSchema,
     ListToolsRequestSchema,
+    ListResourcesRequestSchema,
+    ListResourceTemplatesRequestSchema,
+    ReadResourceRequestSchema,
+    ListPromptsRequestSchema,
+    GetPromptRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 
 // Import our tool modules
@@ -47,6 +52,17 @@ import {
     addShellScriptAction
 } from './tools/macros.js';
 import { getVariable, setVariable, deleteVariable } from './tools/variables.js';
+import {
+    searchDocs,
+    getDocMarkdown,
+    listDocs,
+    listCategories,
+    docUri,
+    DOCS_URI_PREFIX,
+} from './tools/docs.js';
+import { SERVER_INSTRUCTIONS, MACRO_AUTHORING_GUIDE } from './tools/guide.js';
+
+const GUIDE_URI = `${DOCS_URI_PREFIX}guide/macro_authoring`;
 
 // Create the MCP server
 const server = new Server(
@@ -57,12 +73,52 @@ const server = new Server(
     {
         capabilities: {
             tools: {},
+            resources: {},
+            prompts: {},
         },
+        instructions: SERVER_INSTRUCTIONS,
     }
 );
 
 // Define all available tools
 const TOOLS = [
+    // Documentation Tools
+    {
+        name: 'km_search_docs',
+        description: 'Search the offline Keyboard Maestro wiki (actions, tokens, functions, conditions, triggers, user manual, topics). Returns ranked page ids with snippets; read a page with km_get_doc. Omit query to list every page in a category.',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                query: {
+                    type: 'string',
+                    description: 'Search terms, e.g. "clipboard history", "shell script path", "JSONValue"',
+                },
+                category: {
+                    type: 'string',
+                    enum: ['action', 'token', 'function', 'condition', 'trigger', 'manual', 'collection', 'application', 'assistance', 'actions', 'topic'],
+                    description: 'Optional: limit to one category',
+                },
+                limit: {
+                    type: 'number',
+                    description: 'Max results (default 10, max 50). Ignored when listing a category.',
+                },
+            },
+        },
+    },
+    {
+        name: 'km_get_doc',
+        description: 'Get a Keyboard Maestro wiki page as Markdown. Accepts a page id from km_search_docs or a link in another page (e.g. "action/Execute_a_Shell_Script", "token/ClipboardText", "manual/Variables", "km-docs://Tokens"), or a page title. Use "guide" for the macro authoring guide.',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                page: {
+                    type: 'string',
+                    description: 'Page id, km-docs:// URI, or title',
+                },
+            },
+            required: ['page'],
+        },
+    },
     // Log Analysis Tools
     {
         name: 'km_get_errors',
@@ -280,26 +336,37 @@ const TOOLS = [
 
     // Variable Tools
     {
-        name: 'km_manage_variable',
-        description: 'Manage Keyboard Maestro variables (get, set, delete).',
+        name: 'km_get_variable',
+        description: 'Get the value of a global Keyboard Maestro variable. Returns "(empty)" if it is unset.',
         inputSchema: {
             type: 'object' as const,
             properties: {
-                action: {
-                    type: 'string',
-                    enum: ['get', 'set', 'delete'],
-                    description: 'Action to perform',
-                },
-                name: {
-                    type: 'string',
-                    description: 'Variable name',
-                },
-                value: {
-                    type: 'string',
-                    description: 'Value to set (required for "set" action)',
-                },
+                name: { type: 'string', description: 'Variable name' },
             },
-            required: ['action', 'name'],
+            required: ['name'],
+        },
+    },
+    {
+        name: 'km_set_variable',
+        description: 'Set a global Keyboard Maestro variable, overwriting any existing value. Setting it to an empty string deletes it.',
+        inputSchema: {
+            type: 'object' as const,
+            properties: {
+                name: { type: 'string', description: 'Variable name' },
+                value: { type: 'string', description: 'New value' },
+            },
+            required: ['name', 'value'],
+        },
+    },
+    {
+        name: 'km_delete_variable',
+        description: 'Delete a global Keyboard Maestro variable.',
+        inputSchema: {
+            type: 'object' as const,
+            properties: {
+                name: { type: 'string', description: 'Variable name' },
+            },
+            required: ['name'],
         },
     },
 
@@ -464,26 +531,42 @@ const TOOLS = [
         },
     },
     {
-        name: "km_manage_group",
-        description: "Manage macro groups (create, delete, toggle, list).",
+        name: 'km_list_groups',
+        description: 'List all macro groups with their names and UIDs.',
+        inputSchema: { type: 'object' as const, properties: {} },
+    },
+    {
+        name: 'km_create_group',
+        description: 'Create a new macro group.',
         inputSchema: {
-            type: "object" as const,
+            type: 'object' as const,
             properties: {
-                action: {
-                    type: "string",
-                    enum: ["create", "delete", "toggle", "list"],
-                    description: "Action to perform",
-                },
-                identifier: {
-                    type: "string",
-                    description: "Group name or UID (required for create, delete, toggle)",
-                },
-                enabled: {
-                    type: "boolean",
-                    description: "Enable/disable state (required for toggle)",
-                },
+                name: { type: 'string', description: 'Name for the new group' },
             },
-            required: ["action"],
+            required: ['name'],
+        },
+    },
+    {
+        name: 'km_delete_group',
+        description: 'Delete a macro group and every macro in it. WARNING: This cannot be undone!',
+        inputSchema: {
+            type: 'object' as const,
+            properties: {
+                identifier: { type: 'string', description: 'Group name or UID' },
+            },
+            required: ['identifier'],
+        },
+    },
+    {
+        name: 'km_enable_group',
+        description: 'Enable or disable a macro group. Macros in a disabled group do not fire.',
+        inputSchema: {
+            type: 'object' as const,
+            properties: {
+                identifier: { type: 'string', description: 'Group name or UID' },
+                enabled: { type: 'boolean', description: 'true to enable, false to disable' },
+            },
+            required: ['identifier', 'enabled'],
         },
     },
     {
@@ -740,9 +823,87 @@ const TOOLS = [
     },
 ];
 
+// Tool annotations (MCP spec): clients such as Claude use these to group tools
+// and decide what needs confirmation. Hints describe effects on Keyboard Maestro.
+type ToolAnnotations = {
+    title: string;
+    readOnlyHint: boolean;
+    destructiveHint?: boolean;
+    idempotentHint?: boolean;
+    openWorldHint: boolean;
+};
+
+// Only reads Keyboard Maestro or the bundled docs
+const READ = { readOnlyHint: true, openWorldHint: false };
+// Adds something new; never removes or overwrites existing data
+const ADD = { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false };
+// Changes state in a way that is easy to reverse (enable/disable, move)
+const UPDATE = { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: false };
+// Overwrites or deletes existing data
+const OVERWRITE = { readOnlyHint: false, destructiveHint: true, idempotentHint: true, openWorldHint: false };
+const DELETE = { readOnlyHint: false, destructiveHint: true, idempotentHint: false, openWorldHint: false };
+
+const TOOL_ANNOTATIONS: Record<string, ToolAnnotations> = {
+    // Docs
+    km_search_docs: { title: 'Search Keyboard Maestro docs', ...READ },
+    km_get_doc: { title: 'Read Keyboard Maestro doc page', ...READ },
+    // Logs
+    km_get_errors: { title: 'Get recent macro errors', ...READ },
+    km_get_log: { title: 'Read engine log', ...READ },
+    // Macros
+    km_list_macros: { title: 'List macros', ...READ },
+    km_search_macros: { title: 'Search macros', ...READ },
+    km_get_macro: { title: 'Get macro', ...READ },
+    km_get_macro_xml: { title: 'Get macro XML', ...READ },
+    km_create_macro: { title: 'Create macro', ...ADD },
+    km_clone_macro: { title: 'Clone macro', ...ADD },
+    km_enable_macro: { title: 'Enable or disable macro', ...UPDATE },
+    km_move_macro: { title: 'Move macro to group', ...UPDATE },
+    km_delete_macro: { title: 'Delete macro', ...DELETE },
+    // Running a macro can do anything the macro does, including outside Keyboard Maestro
+    km_run_macro: { title: 'Run macro', readOnlyHint: false, destructiveHint: true, idempotentHint: false, openWorldHint: true },
+    // Groups
+    km_list_groups: { title: 'List macro groups', ...READ },
+    km_create_group: { title: 'Create macro group', ...ADD },
+    km_enable_group: { title: 'Enable or disable macro group', ...UPDATE },
+    km_delete_group: { title: 'Delete macro group', ...DELETE },
+    // Actions
+    km_list_actions: { title: 'List macro actions', ...READ },
+    km_get_action_xml: { title: 'Get action XML', ...READ },
+    km_add_action: { title: 'Add action', ...ADD },
+    km_add_notification: { title: 'Add notification action', ...ADD },
+    km_add_pause: { title: 'Add pause action', ...ADD },
+    km_add_set_variable: { title: 'Add set variable action', ...ADD },
+    km_add_calculation: { title: 'Add calculation action', ...ADD },
+    km_add_display_text: { title: 'Add display text action', ...ADD },
+    km_add_if_variable_contains: { title: 'Add if-variable-contains action', ...ADD },
+    km_add_if_calculation: { title: 'Add if-calculation action', ...ADD },
+    km_add_execute_macro: { title: 'Add execute macro action', ...ADD },
+    km_add_shell_script: { title: 'Add shell script action', ...ADD },
+    km_move_action: { title: 'Move action', ...UPDATE, idempotentHint: false },
+    km_set_action_xml: { title: 'Replace action XML', ...OVERWRITE },
+    km_search_replace_action: { title: 'Search and replace in action', ...OVERWRITE, idempotentHint: false },
+    km_delete_action: { title: 'Delete action', ...DELETE },
+    // Triggers
+    km_get_trigger_xml: { title: 'Get trigger XML', ...READ },
+    km_add_trigger: { title: 'Add trigger', ...ADD },
+    km_set_trigger_xml: { title: 'Replace trigger XML', ...OVERWRITE },
+    km_delete_trigger: { title: 'Delete trigger', ...DELETE },
+    // Variables
+    km_get_variable: { title: 'Get variable', ...READ },
+    km_set_variable: { title: 'Set variable', ...OVERWRITE },
+    km_delete_variable: { title: 'Delete variable', ...DELETE },
+};
+
+const ANNOTATED_TOOLS = TOOLS.map(tool => {
+    const annotations = TOOL_ANNOTATIONS[tool.name];
+    if (!annotations) throw new Error(`Missing annotations for tool ${tool.name}`);
+    return { ...tool, title: annotations.title, annotations };
+});
+
 // Handle tool listing
 server.setRequestHandler(ListToolsRequestSchema, async () => {
-    return { tools: TOOLS };
+    return { tools: ANNOTATED_TOOLS };
 });
 
 // Handle tool execution
@@ -751,6 +912,31 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     try {
         switch (name) {
+            // Documentation tools
+            case 'km_search_docs': {
+                const query = ((args?.query as string) || '').trim();
+                const category = args?.category as string | undefined;
+                if (!query) {
+                    if (!category) {
+                        return { content: [{ type: 'text', text: JSON.stringify({ categories: listCategories() }, null, 2) }] };
+                    }
+                    const pages = listDocs(category).map(p => ({ id: p.id, title: p.title }));
+                    return { content: [{ type: 'text', text: JSON.stringify(pages, null, 2) }] };
+                }
+                const results = searchDocs(query, { category, limit: args?.limit as number | undefined });
+                const text = results.length ? JSON.stringify(results, null, 2) : `No docs found for "${query}".`;
+                return { content: [{ type: 'text', text }] };
+            }
+
+            case 'km_get_doc': {
+                const page = args?.page as string;
+                if (!page) throw new Error('page is required');
+                if (/^(km-docs:\/\/)?guide(\/macro_authoring)?$/i.test(page.trim())) {
+                    return { content: [{ type: 'text', text: MACRO_AUTHORING_GUIDE }] };
+                }
+                return { content: [{ type: 'text', text: getDocMarkdown(page) }] };
+            }
+
             // Log tools
             case 'km_get_errors': {
                 const hours = (args?.hours as number) || 24;
@@ -857,30 +1043,27 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             }
 
             // Variable tools
-            case 'km_manage_variable': {
-                const action = args?.action as string;
+            case 'km_get_variable': {
+                const name = args?.name as string;
+                if (!name) throw new Error('name is required');
+                const val = await getVariable(name);
+                return { content: [{ type: 'text', text: val || '(empty)' }] };
+            }
+
+            case 'km_set_variable': {
                 const name = args?.name as string;
                 const value = args?.value as string;
-
                 if (!name) throw new Error('name is required');
+                if (value === undefined) throw new Error('value is required');
+                const result = await setVariable(name, value);
+                return { content: [{ type: 'text', text: result }] };
+            }
 
-                switch (action) {
-                    case 'get': {
-                        const val = await getVariable(name);
-                        return { content: [{ type: 'text', text: val || '(empty)' }] };
-                    }
-                    case 'set': {
-                        if (value === undefined) throw new Error('value is required for set action');
-                        const result = await setVariable(name, value);
-                        return { content: [{ type: 'text', text: result }] };
-                    }
-                    case 'delete': {
-                        const result = await deleteVariable(name);
-                        return { content: [{ type: 'text', text: result }] };
-                    }
-                    default:
-                        throw new Error(`Unknown variable action: ${action}`);
-                }
+            case 'km_delete_variable': {
+                const name = args?.name as string;
+                if (!name) throw new Error('name is required');
+                const result = await deleteVariable(name);
+                return { content: [{ type: 'text', text: result }] };
             }
 
             // Action editing tools
@@ -960,35 +1143,32 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
                 };
             }
 
-            case "km_manage_group": {
-                const action = args?.action as string;
+            case 'km_list_groups': {
+                const groups = await listGroups();
+                return { content: [{ type: 'text', text: JSON.stringify(groups, null, 2) }] };
+            }
+
+            case 'km_create_group': {
+                const name = args?.name as string;
+                if (!name) throw new Error('name is required');
+                const result = await createGroup(name);
+                return { content: [{ type: 'text', text: result }] };
+            }
+
+            case 'km_delete_group': {
+                const identifier = args?.identifier as string;
+                if (!identifier) throw new Error('identifier is required');
+                const result = await deleteGroup(identifier);
+                return { content: [{ type: 'text', text: result }] };
+            }
+
+            case 'km_enable_group': {
                 const identifier = args?.identifier as string;
                 const enabled = args?.enabled as boolean;
-
-                switch (action) {
-                    case 'list': {
-                        const groups = await listGroups();
-                        return { content: [{ type: 'text', text: JSON.stringify(groups, null, 2) }] };
-                    }
-                    case 'create': {
-                        if (!identifier) throw new Error('identifier (name) is required for create action');
-                        const result = await createGroup(identifier);
-                        return { content: [{ type: 'text', text: result }] };
-                    }
-                    case 'delete': {
-                        if (!identifier) throw new Error('identifier is required for delete action');
-                        const result = await deleteGroup(identifier);
-                        return { content: [{ type: 'text', text: result }] };
-                    }
-                    case 'toggle': {
-                        if (!identifier) throw new Error('identifier is required for toggle action');
-                        if (enabled === undefined) throw new Error('enabled is required for toggle action');
-                        const result = await toggleGroup(identifier, enabled);
-                        return { content: [{ type: 'text', text: result }] };
-                    }
-                    default:
-                        throw new Error(`Unknown group action: ${action}`);
-                }
+                if (!identifier) throw new Error('identifier is required');
+                if (enabled === undefined) throw new Error('enabled is required');
+                const result = await toggleGroup(identifier, enabled);
+                return { content: [{ type: 'text', text: result }] };
             }
 
             case 'km_get_trigger_xml': {
@@ -1119,6 +1299,77 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             isError: true,
         };
     }
+});
+
+// Documentation resources
+server.setRequestHandler(ListResourcesRequestSchema, async () => {
+    return {
+        resources: [
+            {
+                uri: GUIDE_URI,
+                name: 'Guide: Building Keyboard Maestro macros',
+                description: 'How to use this server to write macros: variables, tokens, action XML, safe editing',
+                mimeType: 'text/markdown',
+            },
+            ...listDocs().map(p => ({
+                uri: docUri(p),
+                name: `${p.category === 'topic' ? '' : p.category + ': '}${p.title}`,
+                mimeType: 'text/markdown',
+            })),
+        ],
+    };
+});
+
+server.setRequestHandler(ListResourceTemplatesRequestSchema, async () => {
+    return {
+        resourceTemplates: [
+            {
+                uriTemplate: `${DOCS_URI_PREFIX}{category}/{page}`,
+                name: 'Keyboard Maestro wiki page',
+                description: 'A page from the Keyboard Maestro wiki, e.g. km-docs://action/Execute_a_Shell_Script',
+                mimeType: 'text/markdown',
+            },
+        ],
+    };
+});
+
+server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
+    const uri = request.params.uri;
+    const text = uri === GUIDE_URI ? MACRO_AUTHORING_GUIDE : getDocMarkdown(uri);
+    return { contents: [{ uri, mimeType: 'text/markdown', text }] };
+});
+
+// Prompts
+server.setRequestHandler(ListPromptsRequestSchema, async () => {
+    return {
+        prompts: [
+            {
+                name: 'km_macro_authoring',
+                description: 'Load the guide for building and editing Keyboard Maestro macros with this server',
+                arguments: [
+                    {
+                        name: 'task',
+                        description: 'Optional: what the macro should do',
+                        required: false,
+                    },
+                ],
+            },
+        ],
+    };
+});
+
+server.setRequestHandler(GetPromptRequestSchema, async (request) => {
+    if (request.params.name !== 'km_macro_authoring') {
+        throw new Error(`Unknown prompt: ${request.params.name}`);
+    }
+    const task = request.params.arguments?.task?.trim();
+    const text = MACRO_AUTHORING_GUIDE + (task
+        ? `\n## Task\n${task}\n\nLook up the relevant actions and tokens with km_search_docs before building the macro.\n`
+        : '');
+    return {
+        description: 'Keyboard Maestro macro authoring guide',
+        messages: [{ role: 'user', content: { type: 'text', text } }],
+    };
 });
 
 // Start the server
